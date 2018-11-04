@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TheoremDep</title>
+    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<style>
+.search-result-title {
+    font-size: 1.2em;
+}
+.search-result-uci {
+    color: darkgreen;
+    font-family: monospace;
+    font-size: 0.8em;
+}
+.search-result-description {
+    font-size: 0.95em;
+    color: rgba(0, 0, 0, 0.8);
+}
+#search-results ul {
+    padding: 0;
+    margin: 0;
+}
+#search-results li {
+    list-style: none;
+    margin: 1.5em 0;
+}
+#search-results a {
+    text-decoration: none;
+}
+#search-results a:hover .search-result-title {
+    text-decoration: underline;
+}
+</style>
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Search</h1>
+<noscript><p>JavaScript is disabled. Enable JavaScript to search.</p></noscript>
+<div id="search-results"></div>
+</div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.js"></script>
+<script type="text/javascript">var siteurl = 'https://sharmaeklavya2.github.io/theoremdep';</script>
+<script src="https://sharmaeklavya2.github.io/theoremdep/theme/search.js"></script>
+</body>
+</html>

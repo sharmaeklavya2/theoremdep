@@ -1,0 +1,9 @@
+*.pyc
+__pycache__/
+
+# Trash
+*~
+*.sw[po]
+*.db
+Desktop.ini
+.DS_Store

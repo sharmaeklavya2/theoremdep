@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Euler's Theorem - TheoremDep</title>
+    <meta name="description" content="If a and n are coprime, then a^phi(n) ≡ 1 (mod n), where phi is Euler's Totient Function." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Euler's Theorem</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/coprime.html">
+            <span class="deptitle">Coprime</span>
+            <span class="depuci litooltip">/number-theory/coprime</span>
+        </a>
+        <span class="reason litooltip">Used in definition</span>
+        </li>
+        <li>
+        <span class="deptitleuci missing">/number-theory/eulers-totient-function</span>
+        <span class="reason litooltip">Used in definition</span>
+        </li>
+        <li>
+        <span class="deptitleuci missing">/number-theory/modular-equivalence</span>
+        <span class="reason litooltip">Used in definition</span>
+        </li>
+        <li>
+        <span class="deptitleuci missing">/abstract-algebra/znstar-is-a-group</span>
+        <span class="reason litooltip">Used in proof</span>
+        </li>
+        <li>
+        <span class="deptitleuci missing">/abstract-algebra/group-elem-to-the-power-group-size-equals-identity</span>
+        <span class="reason litooltip">Used in proof</span>
+        </li>
+    </ul>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/coprime.html">
+            <span class="deptitle">Coprime</span>
+            <span class="depuci litooltip">/number-theory/coprime</span>
+        </a>
+        <span class="reason litooltip">Used in definition</span>
+        </li>
+        <li>
+        <span class="deptitleuci missing">/number-theory/eulers-totient-function</span>
+        <span class="reason litooltip">Used in definition</span>
+        </li>
+        <li>
+        <span class="deptitleuci missing">/number-theory/modular-equivalence</span>
+        <span class="reason litooltip">Used in definition</span>
+        </li>
+        <li>
+        <span class="deptitleuci missing">/number-theory/mutliplication-permutes-znstar</span>
+        <span class="reason litooltip">Used in proof</span>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>If $a$ and $n$ are coprime, then $a^{\phi(n)} \equiv 1 \pmod{n}$, where $\phi$ is the <a href="eulers-totient-function.html">Euler's Totient function</a>.</p>
+<h2>Proof using Abstract Algebra</h2>
+<ul>
+<li>$\mathbb{Z}_n^*$ is a group under multiplication modulo $n$.</li>
+<li>The order of $\mathbb{Z}_n^*$ is $\phi(n)$ as per the definition of $\mathbb{Z}_n^*$ and $\phi(n)$.</li>
+<li>$\forall a \in G, a^{|G|} = e$.</li>
+</ul>
+<p>These facts combined together complete the proof.</p>
+<h2>Direct Proof</h2>
+<p>Let $\mathbb{Z}_n^* = \{x_1, x_2, \ldots\}$ be the set of all numbers less than $n$ which are coprime to $n$.
+$\mathbb{Z}_n^*$ has size $\phi(n)$, as per the definition of $\phi(n)$.</p>
+<p>Let $a\mathbb{Z}_n^* = \{ax_1, ax_2, \ldots\}$. <a href="multiplication-permutes-znstar.html">$\Rightarrow a\mathbb{Z}_n^* = \mathbb{Z}_n^*$</a>.</p>
+<p>$$
+\prod \left(a\mathbb{Z}_n^*\right)
+\equiv \prod_{i=1}^{\phi(n)} (ax_i)
+\equiv a^{\phi(n)} \prod_{i=1}^{\phi(n)} x_i
+\equiv a^{\phi(n)} \prod \mathbb{Z}_n^*
+\pmod{n}
+$$</p>
+<p>$$ \Rightarrow a^{\phi(n)} \equiv 1 \pmod{n} $$</p>
+<h2>Further Reading</h2>
+<p><a href="https://en.wikipedia.org/wiki/Euler%27s_theorem">https://en.wikipedia.org/wiki/Euler%27s_theorem</a></p>
+</div>
+</body>
+</html>

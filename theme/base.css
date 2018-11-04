@@ -1,0 +1,113 @@
+html {
+    font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Open Sans", "Helvetica Neue", sans-serif;
+}
+body {
+    margin: 0;
+}
+#main {
+    padding: 0 2rem 2rem 2rem;
+}
+nav {
+    background-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+}
+#sitename {
+    font-size: 2em;
+    padding: 0.25rem 2rem;
+    margin-right: 2rem;
+    display: block;
+    align-self: center;
+}
+nav form {
+    display: flex;
+    flex: 1;
+    align-self: stretch;
+    align-items: stretch;
+}
+nav #searchbox, nav #searchbutton {
+    display: block;
+}
+#searchbutton {
+    font-size: 1.6em;
+    padding: 0.2rem;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+#searchbutton:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+#searchbutton:active {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+#searchbox {
+    flex: 1;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    font-size: 1em;
+    padding: 0.2rem 0.5rem;
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+    }
+    #main {
+        padding: 0 1rem 1rem 1rem;
+    }
+}
+
+a:not(:hover) {
+    text-decoration: none;
+}
+table {
+    border-collapse: collapse;
+}
+td, th {
+    border: 1px solid gray;
+    padding: 2px 8px;
+}
+
+blockquote {
+    margin: 0;
+    padding-left: 1em;
+    border-left: 0.1em solid silver;
+}
+blockquote footer {
+    text-align: right;
+}
+blockquote footer::before {
+    content: "\2014 ";
+}
+.codehilite pre {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+code {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+.horizontal-rule {
+    margin: 1em 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);;
+}
+li:not(:hover) .litooltip {
+    visibility: hidden;
+}
+
+.deplist .missing {
+    font-family: monospace;
+}
+.depuci, .index-uci {
+    margin-left: 1em;
+    text-decoration: none;
+    font-size: 0.8em;
+    color: rgba(0, 0, 0, 0.4);
+    font-family: monospace;
+}
+.deptitleuci, .index-titleuci {
+    font-family: monospace;
+}
+.deplist .reason {
+    margin-left: 1em;
+    color: rgba(0, 0, 0, 0, 0.4);
+    font-size: 0.8em;
+}

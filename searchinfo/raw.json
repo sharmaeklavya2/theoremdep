@@ -1,0 +1,22 @@
+{
+"fields": [
+"title",
+"description"
+],
+"corpus": [
+{
+"type": "definition",
+"title": "Coprime",
+"description": "Two numbers are coprime iff 1 is the only positive number which divides both of them.",
+"uci": "/number-theory/coprime",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/coprime.html"
+},
+{
+"type": "theorem",
+"title": "Euler's Theorem",
+"description": "If a and n are coprime, then a^phi(n) \u2261 1 (mod n), where phi is Euler's Totient Function.",
+"uci": "/number-theory/eulers-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/eulers-theorem.html"
+}
+]
+}
