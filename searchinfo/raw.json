@@ -5,6 +5,63 @@
 ],
 "corpus": [
 {
+"type": "axiom",
+"title": "Well-Ordering Principle",
+"description": "The well-ordering principle states that every non-empty set of non-negative integers contains a least element.",
+"uci": "/misc/well-ordering-principle",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/well-ordering-principle.html"
+},
+{
+"type": "theorem",
+"title": "GCD is the smallest Linear Combination",
+"description": "The gcd of two numbers is their smallest positive linear combination.",
+"uci": "/number-theory/gcd-is-min-lincomb",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd-is-min-lincomb.html"
+},
+{
+"type": "definition",
+"title": "Divisibility",
+"keywords": [
+"divide",
+"division",
+"divisor"
+],
+"description": "If a = b*k for some integer k, then b divides a.",
+"uci": "/number-theory/divisibility",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/divisibility.html"
+},
+{
+"type": "theorem",
+"title": "Integer Division Theorem",
+"keywords": [
+"euclid",
+"division"
+],
+"description": "Let a and b be integers, with b > 0. Then there exist unique integers q and r such that a = b*q + r and 0 \u2264 r < b.",
+"uci": "/number-theory/integer-division-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/integer-division-theorem.html"
+},
+{
+"type": "theorem",
+"title": "Fundamental Theorem of Arithmetic",
+"keywords": [
+"prime",
+"factor",
+"factorize",
+"factorization"
+],
+"description": "An integer can be written as a product of primes in a unique way.",
+"uci": "/number-theory/fundamental-theorem-of-arithmetic",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/fundamental-theorem-of-arithmetic.html"
+},
+{
+"type": "theorem",
+"title": "Euclid's lemma",
+"description": "If a prime divides the product of two numbers, it must divide at least one of those numbers.",
+"uci": "/number-theory/euclids-lemma",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/euclids-lemma.html"
+},
+{
 "type": "definition",
 "title": "Coprime",
 "description": "Two numbers are coprime iff 1 is the only positive number which divides both of them.",
@@ -17,6 +74,23 @@
 "description": "If a and n are coprime, then a^phi(n) \u2261 1 (mod n), where phi is Euler's Totient Function.",
 "uci": "/number-theory/eulers-theorem",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/eulers-theorem.html"
+},
+{
+"type": "theorem",
+"title": "gcd(a, b) = gcd(a-b, b)",
+"keywords": [
+"gcd",
+"subtraction"
+],
+"uci": "/number-theory/gcd-subtraction",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd-subtraction.html"
+},
+{
+"type": "definition",
+"title": "Modular Equivalence",
+"description": "a is equivalent to b mod n iff n divides (a-b).",
+"uci": "/number-theory/modular-equivalence",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/modular-equivalence.html"
 }
 ]
 }

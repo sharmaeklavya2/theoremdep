@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Coprime - TheoremDep</title>
-    <meta name="description" content="Two numbers are coprime iff 1 is the only positive number which divides both of them." />
+    <title>Fundamental Theorem of Arithmetic - TheoremDep</title>
+    <meta name="description" content="An integer can be written as a product of primes in a unique way." />
+    <meta name="keywords" content="prime,factor,factorize,factorization" />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,18 +26,22 @@
     </form>
 </nav>
 <div id="main">
-<h1>Coprime</h1>
+<h1>Fundamental Theorem of Arithmetic</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/divisibility.html">
-            <span class="deptitle">Divisibility</span>
-            <span class="depuci litooltip">/number-theory/divisibility</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/euclids-lemma.html">
+            <span class="deptitle">Euclid's lemma</span>
+            <span class="depuci litooltip">/number-theory/euclids-lemma</span>
         </a>
+        <span class="reason litooltip">Used in proof</span>
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Two numbers are coprime iff 1 is the only positive number which divides both of them.</p>
+<h2>Proof</h2>
+<p>$n = p_1p_2\ldots = q_1q_2\ldots$</p>
+<p>By Euclid's lemma, every $p_i$ must divide a $q_j$. We can prove this theorem using mathematical induction.</p>
+<p>See <a href="https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic">complete proof on Wikipedia</a>.</p>
 </div>
 </body>
 </html>

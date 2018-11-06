@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Coprime - TheoremDep</title>
-    <meta name="description" content="Two numbers are coprime iff 1 is the only positive number which divides both of them." />
+    <title>gcd(a, b) = gcd(a-b, b) - TheoremDep</title>
+    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <meta name="keywords" content="gcd,subtraction" />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,18 +26,24 @@
     </form>
 </nav>
 <div id="main">
-<h1>Coprime</h1>
-<h2> Dependencies: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/divisibility.html">
-            <span class="deptitle">Divisibility</span>
-            <span class="depuci litooltip">/number-theory/divisibility</span>
-        </a>
-        </li>
-    </ul>
+<h1>gcd(a, b) = gcd(a-b, b)</h1>
+<h2> Dependencies: None </h2>
 <div class="horizontal-rule"></div>
-<p>Two numbers are coprime iff 1 is the only positive number which divides both of them.</p>
+<h2>Proof</h2>
+<p>Let $D(p, q) = \{x: x \mid p \wedge x \mid q\}$.</p>
+<p>Let $g = \gcd(a, b) = \max{D(a, b)}$.</p>
+<p>Let $g' = \gcd(a-b, b) = \max{D(a-b, b)}$.</p>
+<p>$$g \mid a \wedge g \mid b
+\Rightarrow g \mid (a-b) \wedge g \mid b
+\Rightarrow g \in D(a-b, b)
+\Rightarrow g \le \max{D(a-b, b)} = g'
+$$</p>
+<p>$$g' \mid (a-b) \wedge g' \mid b
+\Rightarrow g' \mid a \wedge g' \mid b
+\Rightarrow g' \in D(a, b)
+\Rightarrow g' \le \max{D(a, b)} = g
+$$</p>
+<p>Since $g \le g'$ and $g' \le g$, $\gcd(a, b) = \gcd(a-b, b)$.</p>
 </div>
 </body>
 </html>

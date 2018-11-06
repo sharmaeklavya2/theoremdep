@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Integer Division Theorem - TheoremDep</title>
+    <meta name="description" content="Let a and b be integers, with b > 0. Then there exist unique integers q and r such that a = b*q + r and 0 ≤ r < b." />
+    <meta name="keywords" content="euclid,division" />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Integer Division Theorem</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/misc/well-ordering-principle.html">
+            <span class="deptitle">Well-Ordering Principle</span>
+            <span class="depuci litooltip">/misc/well-ordering-principle</span>
+        </a>
+        <span class="reason litooltip">Used in proof</span>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $a$ and $b$ be integers, with $b$ &gt; 0.
+Then there exist unique integers $q$ and $r$ such that $a = b*q + r$ and $0 ≤ r &lt; b$.</p>
+<h2>Proof</h2>
+<p>Let $S = \{a - bk : k \in \mathbb{Z} \textrm{ and } a - bk \ge 0\}$.</p>
+<p>If $a &gt; 0$, $S$ is non-empty for $k=0$.
+If $a \le 0$, $S$ is non-empty for $k=2a$.
+Since $S$ is a non-empty set of non-negative integers,
+by well-ordering principle $S$ has a smallest element.</p>
+<p>Let $r = \min{S}$. Then $\exists q$ such that $r = a - bq$.
+Assume (for proof by contradiction), that $r \ge b$.
+Then $r-b = a - (b+1)q \in S$.
+Since $r-b &lt; r$ and $r = \min{S}$, we have a contradiction.</p>
+<p>Hence, our assumption was wrong, so $0 \le r &lt; b$.
+This proves the existence of $q$ and $r$.</p>
+<p>Let $a = bq_1 + r_1 = bq_2 + r_2$. Then $b(q_1 - q_2) = (r_2 - r_1) \Rightarrow b \textrm{ divides } (r_2 - r_1)$.
+$r_2 - r_1 = 0$ is the only possibility because $-(b-1) \le r_2 - r_1 \le (b-1)$.
+Therefore, $r_1 = r_2$ and $q_1 = q_2$. This proves the uniqueness of $q$ and $r$.</p>
+</div>
+</body>
+</html>

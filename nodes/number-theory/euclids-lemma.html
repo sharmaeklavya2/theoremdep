@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Coprime - TheoremDep</title>
-    <meta name="description" content="Two numbers are coprime iff 1 is the only positive number which divides both of them." />
+    <title>Euclid's lemma - TheoremDep</title>
+    <meta name="description" content="If a prime divides the product of two numbers, it must divide at least one of those numbers." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,18 +25,28 @@
     </form>
 </nav>
 <div id="main">
-<h1>Coprime</h1>
+<h1>Euclid's lemma</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/divisibility.html">
-            <span class="deptitle">Divisibility</span>
-            <span class="depuci litooltip">/number-theory/divisibility</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd-is-min-lincomb.html">
+            <span class="deptitle">GCD is the smallest Linear Combination</span>
+            <span class="depuci litooltip">/number-theory/gcd-is-min-lincomb</span>
         </a>
+        <span class="reason litooltip">Used in proof</span>
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Two numbers are coprime iff 1 is the only positive number which divides both of them.</p>
+<p>Let $p$ be a prime. If $p \mid ab$, then $p \mid a \vee p \mid b$.</p>
+<h2>Proof by contradiction</h2>
+<p>Assume $p \not\mid a \wedge p \not\mid b$.</p>
+<p>\begin{align}
+&amp;\Rightarrow \gcd(p, a) = 1
+\\ &amp;\Rightarrow \exists r \exists s \textrm{ such that } pr + as = 1
+\\ &amp;\Rightarrow prb + asb = b = p(rb) + s(ab)
+\\ &amp;\Rightarrow p \mid b \Rightarrow \bot
+\end{align}</p>
+<p>This is a contradiction, which means $p \mid a \vee p \mid b$.</p>
 </div>
 </body>
 </html>
