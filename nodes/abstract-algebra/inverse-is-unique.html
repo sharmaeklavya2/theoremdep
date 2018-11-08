@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Euclid's lemma - TheoremDep</title>
-    <meta name="description" content="If a prime divides the product of two numbers, it must divide at least one of those numbers." />
+    <title>Inverse of a group element is unique - TheoremDep</title>
+    <meta name="description" content="Inverse of a group element is unique." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,28 +25,30 @@
     </form>
 </nav>
 <div id="main">
-<h1>Euclid's lemma</h1>
+<h1>Inverse of a group element is unique</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-is-min-lincomb.html">
-            <span class="deptitle">GCD is the smallest Linear Combination</span>
-            <span class="depuci litooltip">/number-theory/gcd/gcd-is-min-lincomb</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/group.html">
+            <span class="deptitle">Group</span>
+            <span class="depuci litooltip">/abstract-algebra/group</span>
         </a>
-        <span class="reason litooltip">Used in proof</span>
+        <span class="reason litooltip">Used in definition</span>
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Let $p$ be a prime. If $p \mid ab$, then $p \mid a \vee p \mid b$.</p>
-<h2>Proof by contradiction</h2>
-<p>Assume $p \not\mid a \wedge p \not\mid b$.</p>
+<p>Inverse of a group element is unique.</p>
+<h2>Proof</h2>
+<p>Let $l_i$ be the $i^{\textrm{th}}$ left inverse and $r_i$ be the $i^{\textrm{th}}$ right inverse.</p>
 <p>\begin{align}
-&amp;\Rightarrow \gcd(p, a) = 1
-\\ &amp;\Rightarrow \exists r \exists s \textrm{ such that } pr + as = 1
-\\ &amp;\Rightarrow prb + asb = b = p(rb) + s(ab)
-\\ &amp;\Rightarrow p \mid b \Rightarrow \bot
+l_i &amp;= l_i * e \tag{$e$ is identity}
+\\ &amp;= l_i * (a * r_j) \tag{$r_j$ is right inverse}
+\\ &amp;= (l_i * a) * r_j \tag{associativity}
+\\ &amp;= e * r_j \tag{$l_i$ is left inverse}
+\\ &amp;= r_j \tag{$e$ is identity}
 \end{align}</p>
-<p>This is a contradiction, which means $p \mid a \vee p \mid b$.</p>
+<p>This means that every left inverse is equal to every right inverse.
+This means that they're all equal.</p>
 </div>
 </body>
 </html>

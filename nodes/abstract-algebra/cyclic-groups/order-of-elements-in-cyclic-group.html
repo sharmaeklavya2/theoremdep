@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Order of elements in cyclic group - TheoremDep</title>
+    <meta name="description" content="Order of elements in a cyclic group." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Order of elements in cyclic group</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-divide.html">
+            <span class="deptitle">gcd(a/d, b/d) = gcd(a, b)/d</span>
+            <span class="depuci litooltip">/number-theory/gcd/gcd-divide</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/if-coprime-to-first-then-divides-second.html">
+            <span class="deptitle">If x divides ab and x is coprime to a, then x divides b</span>
+            <span class="depuci litooltip">/number-theory/if-coprime-to-first-then-divides-second</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>In a cyclic group of infinite order,
+identity has order 1 and all other elements have order $\infty$.</p>
+<p>In a cyclic group of order $n$, order of $a^k$ is $\frac{n}{\gcd(n, k)}$.
+Furthermore, the (distinct) elements which have order $\frac{n}{d}$ are
+$\left\{a^{di}: i \in \mathbb{Z}_{\frac{n}{d}}^*\right\}$.</p>
+<h2>Proof that $\operatorname{order}(a^k) = \frac{n}{\gcd(k, n)}$</h2>
+<p>Let $g = \gcd(k, n) = rk + pn$ and $k = sg$.</p>
+<p>Let $o = \operatorname{order}(a^k)$.</p>
+<p>$$ (a^k)^{\frac{n}{g}} = a^{ns} = e \implies o \mid \frac{n}{g}$$</p>
+<p>$$ a^{ko} = (a^k)^o = e \implies n \mid ko \implies \frac{n}{g} \mid so $$</p>
+<p>$$ \gcd(k, n) = g \Rightarrow \gcd\left(s, \frac{n}{g}\right) = 1 $$</p>
+<p>Since $\frac{n}{g}$ and $s$ are coprime and $\frac{n}{g}$ divides $so$,
+by Euclid's lemma 2, we get that $\frac{n}{g}$ divides $o$.</p>
+<p>Therefore, $\operatorname{order}(a^k) = \frac{n}{g}$.</p>
+<h2>Proof that elements with order $\frac{n}{d}$ are $\left\{ a^{di}: i \in \mathbb{Z}_{\frac{n}{d}}^* \right\}$</h2>
+<p>$$
+\operatorname{order}(a^j) = \frac{n}{d}
+\iff \gcd(j, n) = d
+\iff \gcd(j/d, n/d) = 1
+\iff j/d \in \mathbb{Z}_{n/d}^*
+$$</p>
+</div>
+</body>
+</html>

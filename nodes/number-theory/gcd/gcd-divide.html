@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>gcd(a/d, b/d) = gcd(a, b)/d - TheoremDep</title>
+    <meta name="description" content="gcd(a/d, b/d) = gcd(a, b)/d" />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>gcd(a/d, b/d) = gcd(a, b)/d</h1>
+<h2 class="no-deps"> Dependencies: None </h2>
+<div class="horizontal-rule"></div>
+<p>$\gcd\left(\frac{a}{d}, \frac{b}{d}\right) = \frac{\gcd(a, b)}{d}$, where $d \mid \gcd(a, b)$.</p>
+<h2>Proof</h2>
+<p>Let $\operatorname{D}(a, b)$ be the set of common divisors of $a$ and $b$.</p>
+<p>\begin{align}
+&amp; g = \gcd(a, b)
+\\ &amp;\Rightarrow g \mid a \wedge g \mid b
+\\ &amp;\Rightarrow \frac{g}{d} \mid \frac{a}{d} \wedge \frac{g}{d} \mid \frac{b}{d}
+\\ &amp;\Rightarrow \frac{g}{d} \in \operatorname{D}\left(\frac{a}{d}, \frac{b}{d}\right)
+\\ &amp;\Rightarrow \frac{g}{d} \le \gcd\left(\frac{a}{d}, \frac{b}{d}\right)
+\end{align}</p>
+<p>\begin{align}
+&amp; g' = \gcd\left(\frac{a}{d}, \frac{b}{d}\right)
+\\ &amp;\Rightarrow g' \mid \frac{a}{d} \wedge g' \mid \frac{b}{d}
+\\ &amp;\Rightarrow g'd \mid a \wedge g'd \mid b
+\\ &amp;\Rightarrow g'd \in \operatorname{D}(a, b)
+\\ &amp;\Rightarrow g'd \le \gcd(a, b)
+\\ &amp;\Rightarrow g' \le \frac{g}{d}
+\end{align}</p>
+<p>$g' \le \frac{g}{d}$ and $\frac{g}{d} \le g'$ imply that $g' = \frac{g}{d}$.</p>
+<p>Therefore, $\gcd\left(\frac{a}{d}, \frac{b}{d}\right) = \frac{\gcd(a, b)}{d}$, where $d \mid \gcd(a, b)$.</p>
+</div>
+</body>
+</html>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Modular Equivalence - TheoremDep</title>
-    <meta name="description" content="a is equivalent to b mod n iff n divides (a-b)." />
+    <title>Identity of a group is unique - TheoremDep</title>
+    <meta name="description" content="Identity of a group is unique." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,10 +25,26 @@
     </form>
 </nav>
 <div id="main">
-<h1>Modular Equivalence</h1>
-<h2 class="no-deps"> Dependencies: None </h2>
+<h1>Identity of a group is unique</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/group.html">
+            <span class="deptitle">Group</span>
+            <span class="depuci litooltip">/abstract-algebra/group</span>
+        </a>
+        <span class="reason litooltip">Used in definition</span>
+        </li>
+    </ul>
 <div class="horizontal-rule"></div>
-<p>$a \equiv b \pmod{n} \iff n \mid (a-b)$</p>
+<p>Identity of a group is unique.</p>
+<h2>Proof</h2>
+<p>Let $e_1$ and $e_2$ be identities of $G$.</p>
+<ul>
+<li>Since $e_1$ is identity, $e_1 * e_2 = e_2$.</li>
+<li>Since $e_2$ is identity, $e_1 * e_2 = e_1$.</li>
+</ul>
+<p>Therefore, $e_1 = e_2$.</p>
 </div>
 </body>
 </html>

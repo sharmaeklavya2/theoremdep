@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Euclid's lemma - TheoremDep</title>
-    <meta name="description" content="If a prime divides the product of two numbers, it must divide at least one of those numbers." />
+    <title>If x divides ab and x is coprime to a, then x divides b - TheoremDep</title>
+    <meta name="description" content="If a number divides the product of two numbers and is coprime to the first number in the product, then it must divide the second number in the product." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,28 +25,33 @@
     </form>
 </nav>
 <div id="main">
-<h1>Euclid's lemma</h1>
+<h1>If x divides ab and x is coprime to a, then x divides b</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/coprime.html">
+            <span class="deptitle">Coprime</span>
+            <span class="depuci litooltip">/number-theory/coprime</span>
+        </a>
+        </li>
         <li>
         <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-is-min-lincomb.html">
             <span class="deptitle">GCD is the smallest Linear Combination</span>
             <span class="depuci litooltip">/number-theory/gcd/gcd-is-min-lincomb</span>
         </a>
-        <span class="reason litooltip">Used in proof</span>
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Let $p$ be a prime. If $p \mid ab$, then $p \mid a \vee p \mid b$.</p>
+<p>If $x \mid ab$ and $x$ is coprime to $a$, then $x \mid b$.</p>
 <h2>Proof by contradiction</h2>
-<p>Assume $p \not\mid a \wedge p \not\mid b$.</p>
+<p>Assume $x \not\mid b$.</p>
 <p>\begin{align}
-&amp;\Rightarrow \gcd(p, a) = 1
-\\ &amp;\Rightarrow \exists r \exists s \textrm{ such that } pr + as = 1
-\\ &amp;\Rightarrow prb + asb = b = p(rb) + s(ab)
-\\ &amp;\Rightarrow p \mid b \Rightarrow \bot
+&amp;\Rightarrow \gcd(x, a) = 1
+\\ &amp;\Rightarrow \exists r \exists s \textrm{ such that } xr + as = 1
+\\ &amp;\Rightarrow xrb + asb = b = x(rb) + s(ab)
+\\ &amp;\Rightarrow x \mid b \Rightarrow \bot
 \end{align}</p>
-<p>This is a contradiction, which means $p \mid a \vee p \mid b$.</p>
+<p>This is a contradiction, which means $p \mid b$.</p>
 </div>
 </body>
 </html>

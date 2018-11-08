@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Modular Equivalence - TheoremDep</title>
-    <meta name="description" content="a is equivalent to b mod n iff n divides (a-b)." />
+    <title>Inverse of product of two elements of a group - TheoremDep</title>
+    <meta name="description" content="(a*b)^(-1) = (b^(-1)) * (a^(-1))" />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,10 +25,19 @@
     </form>
 </nav>
 <div id="main">
-<h1>Modular Equivalence</h1>
-<h2 class="no-deps"> Dependencies: None </h2>
+<h1>Inverse of product of two elements of a group</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/group.html">
+            <span class="deptitle">Group</span>
+            <span class="depuci litooltip">/abstract-algebra/group</span>
+        </a>
+        </li>
+    </ul>
 <div class="horizontal-rule"></div>
-<p>$a \equiv b \pmod{n} \iff n \mid (a-b)$</p>
+<p>$$(ab)(b^{-1}a^{-1}) = a(bb^{-1})a^{-1} = aa^{-1} = e$$</p>
+<p>Therefore, $(ab)^{-1} = b^{-1}a^{-1}$.</p>
 </div>
 </body>
 </html>

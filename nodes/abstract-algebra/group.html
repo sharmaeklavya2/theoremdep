@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Modular Equivalence - TheoremDep</title>
-    <meta name="description" content="a is equivalent to b mod n iff n divides (a-b)." />
+    <title>Group - TheoremDep</title>
+    <meta name="description" content="A group is a set along with a binary operator which satisfies certain properties." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,10 +25,19 @@
     </form>
 </nav>
 <div id="main">
-<h1>Modular Equivalence</h1>
+<h1>Group</h1>
 <h2 class="no-deps"> Dependencies: None </h2>
 <div class="horizontal-rule"></div>
-<p>$a \equiv b \pmod{n} \iff n \mid (a-b)$</p>
+<p>A group G is a set S along with a binary operator $*$ which satisfies certain properties:</p>
+<ul>
+<li><strong>Closure</strong>: $\forall a \in S, \forall b \in S, a * b \in S$.</li>
+<li><strong>Associativity</strong>: $\forall a,b,c \in S, (a*b)*c = a*(b*c)$.</li>
+<li><strong>Existence of Identity</strong>: $\exists e \in S, \forall a \in S, a*e = e*a = a$.
+  Such an $e$ is called the identity of $G$ (denoted as $\operatorname{id}(G)$).
+  It can be proven that the identity is unique.</li>
+<li><strong>Existence of Inverses</strong>: $\forall a \in S, (\exists l \in S, l*a = e) \wedge (\exists r \in S, a*r = e)$.
+  It can be proven that $l$ is unique, $r$ is unique and $l = r$.</li>
+</ul>
 </div>
 </body>
 </html>

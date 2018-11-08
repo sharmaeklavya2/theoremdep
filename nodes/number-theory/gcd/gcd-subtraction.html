@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Modular Equivalence - TheoremDep</title>
-    <meta name="description" content="a is equivalent to b mod n iff n divides (a-b)." />
+    <title>gcd(a, b) = gcd(a-b, b) - TheoremDep</title>
+    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <meta name="keywords" content="gcd,subtraction" />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,10 +26,24 @@
     </form>
 </nav>
 <div id="main">
-<h1>Modular Equivalence</h1>
+<h1>gcd(a, b) = gcd(a-b, b)</h1>
 <h2 class="no-deps"> Dependencies: None </h2>
 <div class="horizontal-rule"></div>
-<p>$a \equiv b \pmod{n} \iff n \mid (a-b)$</p>
+<h2>Proof</h2>
+<p>Let $D(p, q) = \{x: x \mid p \wedge x \mid q\}$.</p>
+<p>Let $g = \gcd(a, b) = \max{D(a, b)}$.</p>
+<p>Let $g' = \gcd(a-b, b) = \max{D(a-b, b)}$.</p>
+<p>$$g \mid a \wedge g \mid b
+\Rightarrow g \mid (a-b) \wedge g \mid b
+\Rightarrow g \in D(a-b, b)
+\Rightarrow g \le \max{D(a-b, b)} = g'
+$$</p>
+<p>$$g' \mid (a-b) \wedge g' \mid b
+\Rightarrow g' \mid a \wedge g' \mid b
+\Rightarrow g' \in D(a, b)
+\Rightarrow g' \le \max{D(a, b)} = g
+$$</p>
+<p>Since $g \le g'$ and $g' \le g$, $\gcd(a, b) = \gcd(a-b, b)$.</p>
 </div>
 </body>
 </html>

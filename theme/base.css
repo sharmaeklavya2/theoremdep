@@ -92,6 +92,11 @@ code {
 li:not(:hover) .litooltip {
     visibility: hidden;
 }
+@media (max-width: 600px) {
+    li .litooltip {
+        display: none;
+    }
+}
 
 .deplist .missing {
     font-family: monospace;
@@ -110,4 +115,7 @@ li:not(:hover) .litooltip {
     margin-left: 1em;
     color: rgba(0, 0, 0, 0, 0.4);
     font-size: 0.8em;
+}
+.no-deps {
+    font-size: 1em;
 }

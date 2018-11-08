@@ -13,10 +13,10 @@
 },
 {
 "type": "theorem",
-"title": "GCD is the smallest Linear Combination",
-"description": "The gcd of two numbers is their smallest positive linear combination.",
-"uci": "/number-theory/gcd-is-min-lincomb",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd-is-min-lincomb.html"
+"title": "Existence of Modular Inverse",
+"description": "Modular inverse of a mod n exists iff gcd(a, n) = 1",
+"uci": "/number-theory/mod-inv-existence",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/mod-inv-existence.html"
 },
 {
 "type": "definition",
@@ -77,13 +77,10 @@
 },
 {
 "type": "theorem",
-"title": "gcd(a, b) = gcd(a-b, b)",
-"keywords": [
-"gcd",
-"subtraction"
-],
-"uci": "/number-theory/gcd-subtraction",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd-subtraction.html"
+"title": "If x divides ab and x is coprime to a, then x divides b",
+"description": "If a number divides the product of two numbers and is coprime to the first number in the product, then it must divide the second number in the product.",
+"uci": "/number-theory/if-coprime-to-first-then-divides-second",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/if-coprime-to-first-then-divides-second.html"
 },
 {
 "type": "definition",
@@ -91,6 +88,93 @@
 "description": "a is equivalent to b mod n iff n divides (a-b).",
 "uci": "/number-theory/modular-equivalence",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/modular-equivalence.html"
+},
+{
+"type": "theorem",
+"title": "GCD is the smallest Linear Combination",
+"description": "The gcd of two numbers is their smallest positive linear combination.",
+"uci": "/number-theory/gcd/gcd-is-min-lincomb",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-is-min-lincomb.html"
+},
+{
+"type": "theorem",
+"title": "gcd(a/d, b/d) = gcd(a, b)/d",
+"description": "gcd(a/d, b/d) = gcd(a, b)/d",
+"uci": "/number-theory/gcd/gcd-divide",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-divide.html"
+},
+{
+"type": "theorem",
+"title": "gcd(a, b) = gcd(a-b, b)",
+"keywords": [
+"gcd",
+"subtraction"
+],
+"uci": "/number-theory/gcd/gcd-subtraction",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-subtraction.html"
+},
+{
+"type": "theorem",
+"title": "Inverse of a group element is unique",
+"description": "Inverse of a group element is unique.",
+"uci": "/abstract-algebra/inverse-is-unique",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/inverse-is-unique.html"
+},
+{
+"type": "theorem",
+"title": "Condition for a subset to be a subgroup",
+"description": "Condition for a subset to be a subgroup.",
+"uci": "/abstract-algebra/subgroup-condition-2",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/subgroup-condition-2.html"
+},
+{
+"type": "theorem",
+"title": "Conditions for a subset to be a subgroup",
+"description": "Conditions for a subset to be a subgroup.",
+"uci": "/abstract-algebra/subgroup-condition",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/subgroup-condition.html"
+},
+{
+"type": "theorem",
+"title": "Double inverse",
+"description": "(a^(-1))^(-1) = a",
+"uci": "/abstract-algebra/double-inverse",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/double-inverse.html"
+},
+{
+"type": "theorem",
+"title": "Identity of a group is unique",
+"description": "Identity of a group is unique.",
+"uci": "/abstract-algebra/identity-is-unique",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/identity-is-unique.html"
+},
+{
+"type": "definition",
+"title": "Group",
+"description": "A group is a set along with a binary operator which satisfies certain properties.",
+"uci": "/abstract-algebra/group",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/group.html"
+},
+{
+"type": "theorem",
+"title": "Inverse of product of two elements of a group",
+"description": "(a*b)^(-1) = (b^(-1)) * (a^(-1))",
+"uci": "/abstract-algebra/inverse-of-product",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/inverse-of-product.html"
+},
+{
+"type": "theorem",
+"title": "Subgroups of a cyclic group",
+"description": "For an infinite-order cyclic group <a>, subgroups are <a^k> for all k. For a cyclic group <a> of order n, subgroups are <a^k> for all divisors k of n.",
+"uci": "/abstract-algebra/cyclic-groups/subgroups-of-cyclic-group",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cyclic-groups/subgroups-of-cyclic-group.html"
+},
+{
+"type": "theorem",
+"title": "Order of elements in cyclic group",
+"description": "Order of elements in a cyclic group.",
+"uci": "/abstract-algebra/cyclic-groups/order-of-elements-in-cyclic-group",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cyclic-groups/order-of-elements-in-cyclic-group.html"
 }
 ]
 }

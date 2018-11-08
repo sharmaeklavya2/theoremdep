@@ -3,9 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>gcd(a, b) = gcd(a-b, b) - TheoremDep</title>
-    <meta name="description" content="Track dependencies between theorems and definitions." />
-    <meta name="keywords" content="gcd,subtraction" />
+    <title>Existence of Modular Inverse - TheoremDep</title>
+    <meta name="description" content="Modular inverse of a mod n exists iff gcd(a, n) = 1" />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -26,24 +25,25 @@
     </form>
 </nav>
 <div id="main">
-<h1>gcd(a, b) = gcd(a-b, b)</h1>
-<h2> Dependencies: None </h2>
+<h1>Existence of Modular Inverse</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-is-min-lincomb.html">
+            <span class="deptitle">GCD is the smallest Linear Combination</span>
+            <span class="depuci litooltip">/number-theory/gcd/gcd-is-min-lincomb</span>
+        </a>
+        <span class="reason litooltip">Used in proof</span>
+        </li>
+    </ul>
 <div class="horizontal-rule"></div>
+<p>$(\exists x, ax \equiv 1 \pmod{n}) \iff \gcd(a, n) = 1$</p>
 <h2>Proof</h2>
-<p>Let $D(p, q) = \{x: x \mid p \wedge x \mid q\}$.</p>
-<p>Let $g = \gcd(a, b) = \max{D(a, b)}$.</p>
-<p>Let $g' = \gcd(a-b, b) = \max{D(a-b, b)}$.</p>
-<p>$$g \mid a \wedge g \mid b
-\Rightarrow g \mid (a-b) \wedge g \mid b
-\Rightarrow g \in D(a-b, b)
-\Rightarrow g \le \max{D(a-b, b)} = g'
+<p>$$
+\gcd(a, n) = 1
+\iff \exists x \exists y, ax + ny = 1
+\iff \exists x, ax \equiv 1 \pmod{n}
 $$</p>
-<p>$$g' \mid (a-b) \wedge g' \mid b
-\Rightarrow g' \mid a \wedge g' \mid b
-\Rightarrow g' \in D(a, b)
-\Rightarrow g' \le \max{D(a, b)} = g
-$$</p>
-<p>Since $g \le g'$ and $g' \le g$, $\gcd(a, b) = \gcd(a-b, b)$.</p>
 </div>
 </body>
 </html>
