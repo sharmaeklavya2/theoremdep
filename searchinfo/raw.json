@@ -19,18 +19,6 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/mod-inv-existence.html"
 },
 {
-"type": "definition",
-"title": "Divisibility",
-"keywords": [
-"divide",
-"division",
-"divisor"
-],
-"description": "If a = b*k for some integer k, then b divides a.",
-"uci": "/number-theory/divisibility",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/divisibility.html"
-},
-{
 "type": "theorem",
 "title": "Integer Division Theorem",
 "keywords": [
@@ -53,6 +41,13 @@
 "description": "An integer can be written as a product of primes in a unique way.",
 "uci": "/number-theory/fundamental-theorem-of-arithmetic",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/fundamental-theorem-of-arithmetic.html"
+},
+{
+"type": "def",
+"title": "Euler's Totient Function",
+"description": "Euler's totient function \u03d5(n) is the number of numbers smaller than n and coprime to it.",
+"uci": "/number-theory/eulers-totient-function",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/eulers-totient-function.html"
 },
 {
 "type": "theorem",
@@ -98,6 +93,13 @@
 },
 {
 "type": "theorem",
+"title": "Common divisor of two numbers divides their GCD",
+"description": "Commmon divisor of two numbers divides their GCD.",
+"uci": "/number-theory/gcd/common-divisor-divides-gcd",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/common-divisor-divides-gcd.html"
+},
+{
+"type": "theorem",
 "title": "gcd(a/d, b/d) = gcd(a, b)/d",
 "description": "gcd(a/d, b/d) = gcd(a, b)/d",
 "uci": "/number-theory/gcd/gcd-divide",
@@ -136,10 +138,9 @@
 },
 {
 "type": "theorem",
-"title": "Double inverse",
-"description": "(a^(-1))^(-1) = a",
-"uci": "/abstract-algebra/double-inverse",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/double-inverse.html"
+"title": "Order of element divides order of group",
+"uci": "/abstract-algebra/order-of-element-divides-order-of-group",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/order-of-element-divides-order-of-group.html"
 },
 {
 "type": "theorem",
@@ -157,10 +158,78 @@
 },
 {
 "type": "theorem",
+"title": "Group element to the power group size equals identity",
+"description": "a^|G| = e",
+"uci": "/abstract-algebra/group-elem-to-the-power-group-size-equals-identity",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/group-elem-to-the-power-group-size-equals-identity.html"
+},
+{
+"type": "theorem",
 "title": "Inverse of product of two elements of a group",
 "description": "(a*b)^(-1) = (b^(-1)) * (a^(-1))",
 "uci": "/abstract-algebra/inverse-of-product",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/inverse-of-product.html"
+},
+{
+"type": "deftheorem",
+"title": "Parity of a permutation",
+"description": "If a permutation can be written as a product of only an odd number of transpositions, it is called an odd permutation. If a permutation can be written as a product of only an even number of transpositions, it is called an even permutation. Every permutation is either an odd permutation or an even permutation.",
+"uci": "/abstract-algebra/permutation-groups/parity",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/permutation-groups/parity.html"
+},
+{
+"type": "def",
+"title": "Canonical cycle notation of a permutation",
+"description": "Canonical cycle notation is a unique way of writing a permutation as a product of disjoint cycles.",
+"uci": "/abstract-algebra/permutation-groups/canonical-cycle-notation",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/permutation-groups/canonical-cycle-notation.html"
+},
+{
+"type": "theorem",
+"title": "Product of disjoint cycles is commutative",
+"uci": "/abstract-algebra/permutation-groups/product-of-disjoint-cycles-is-commutative",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/permutation-groups/product-of-disjoint-cycles-is-commutative.html"
+},
+{
+"type": "def",
+"title": "Alternating Group",
+"description": "The set of all even permutations is called the alternating group",
+"uci": "/abstract-algebra/permutation-groups/alternating-group",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/permutation-groups/alternating-group.html"
+},
+{
+"type": "theorem",
+"title": "Permutation is transposition product",
+"description": "Every finite permutation can be written as a product of transpositions.",
+"uci": "/abstract-algebra/permutation-groups/permutation-is-transposition-product",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/permutation-groups/permutation-is-transposition-product.html"
+},
+{
+"type": "deftheorem",
+"title": "Symmetric Group",
+"description": "The symmetric group is the set of all permutations where the operation is composition of permutations.",
+"uci": "/abstract-algebra/permutation-groups/symmetric-group",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/permutation-groups/symmetric-group.html"
+},
+{
+"type": "theorem",
+"title": "Transposition bijects even and odd permutations",
+"description": "There is a bijection between even and odd permutations. The bijective function multiplies a permutation by a transposition.",
+"uci": "/abstract-algebra/permutation-groups/transposition-bijects-even-and-odd-permutations",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/permutation-groups/transposition-bijects-even-and-odd-permutations.html"
+},
+{
+"type": "theorem",
+"title": "Permutation is disjoint cycle product",
+"description": "Every permutation can be written as the product of a unique set of disjoint cycles.",
+"uci": "/abstract-algebra/permutation-groups/permutation-is-disjoint-cycle-product",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/permutation-groups/permutation-is-disjoint-cycle-product.html"
+},
+{
+"type": "theorem",
+"title": "Product of cycles and a transposition",
+"uci": "/abstract-algebra/permutation-groups/product-of-cycles-and-transposition",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/permutation-groups/product-of-cycles-and-transposition.html"
 },
 {
 "type": "theorem",
@@ -171,10 +240,71 @@
 },
 {
 "type": "theorem",
+"title": "Group of prime order is cyclic",
+"uci": "/abstract-algebra/cyclic-groups/group-of-prime-order-is-cyclic",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cyclic-groups/group-of-prime-order-is-cyclic.html"
+},
+{
+"type": "theorem",
 "title": "Order of elements in cyclic group",
 "description": "Order of elements in a cyclic group.",
 "uci": "/abstract-algebra/cyclic-groups/order-of-elements-in-cyclic-group",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cyclic-groups/order-of-elements-in-cyclic-group.html"
+},
+{
+"type": "theorem",
+"title": "A cyclic group of order n has \u03d5(n) generators",
+"uci": "/abstract-algebra/cyclic-groups/cyclic-group-has-phi-generators",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cyclic-groups/cyclic-group-has-phi-generators.html"
+},
+{
+"type": "theorem",
+"title": "a(bH) = (ab)H for subset H of a group",
+"description": "Multiplication of a coset by a group element is associative. For subset H of a group, a(bH) = (ab)H.",
+"uci": "/abstract-algebra/cosets/associativity",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/associativity.html"
+},
+{
+"type": "def",
+"title": "Coset",
+"metadata": "A coset is a set obtained by multiplying every element of a subgroup by a group element.",
+"uci": "/abstract-algebra/cosets/coset",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/coset.html"
+},
+{
+"type": "theorem",
+"title": "Two cosets are either identical or disjoint",
+"description": "Two cosets are either identical or disjoint.",
+"uci": "/abstract-algebra/cosets/cosets-are-either-identical-or-disjoint",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/cosets-are-either-identical-or-disjoint.html"
+},
+{
+"type": "theorem",
+"title": "gH = H iff g in H",
+"description": "Coset of a subgroup equals the subgroup iff the representative is in the subgroup.",
+"uci": "/abstract-algebra/cosets/coset-equals-subgroup-iff-elem-in-subgroup",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/coset-equals-subgroup-iff-elem-in-subgroup.html"
+},
+{
+"type": "theorem",
+"title": "Lagrange's Theorem",
+"description": "Order of subgroup divides order of group. Furthermore, number of cosets equals ratio of orders of group and subgroup.",
+"uci": "/abstract-algebra/cosets/lagranges-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/lagranges-theorem.html"
+},
+{
+"type": "theorem",
+"title": "Inverse of a coset",
+"description": "(gH)^(-1) = H^(-1)g^(-1)",
+"uci": "/abstract-algebra/cosets/inverse",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/inverse.html"
+},
+{
+"type": "theorem",
+"title": "Size of coset equals size of subset",
+"description": "Size of a coset of a subset equals the size of the subset",
+"uci": "/abstract-algebra/cosets/size",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/size.html"
 }
 ]
 }

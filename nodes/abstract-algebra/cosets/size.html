@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Size of coset equals size of subset - TheoremDep</title>
+    <meta name="description" content="Size of a coset of a subset equals the size of the subset" />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Size of coset equals size of subset</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/coset.html">
+            <span class="deptitle">Coset</span>
+            <span class="depuci litooltip">/abstract-algebra/cosets/coset</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $H$ be a subset of a group $G$. Let $g \in G$.
+Then $|gH| = |H|$.</p>
+<h2>Proof</h2>
+<p>Each element $h \in H$ has a corresponding value $gh \in gH$.
+There cannot be two $h$ which map to the same $gh$,
+because $gh_1 = gh_2 \Rightarrow h_1 = h_2$.
+Therefore, $|gH| = |H|$.</p>
+</div>
+</body>
+</html>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Double inverse - TheoremDep</title>
-    <meta name="description" content="(a^(-1))^(-1) = a" />
+    <title>Permutation is transposition product - TheoremDep</title>
+    <meta name="description" content="Every finite permutation can be written as a product of transpositions." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,18 +25,27 @@
     </form>
 </nav>
 <div id="main">
-<h1>Double inverse</h1>
+<h1>Permutation is transposition product</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/group.html">
-            <span class="deptitle">Group</span>
-            <span class="depuci litooltip">/abstract-algebra/group</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/permutation-groups/permutation-is-disjoint-cycle-product.html">
+            <span class="deptitle">Permutation is disjoint cycle product</span>
+            <span class="depuci litooltip">/abstract-algebra/permutation-groups/permutation-is-disjoint-cycle-product</span>
         </a>
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>$(a^{-1})^{-1} = a$</p>
+<p>Every finite permutation can be written as a product of transpositions.</p>
+<h2>Proof</h2>
+<p>The cycle $(a_1, a_2, \ldots, a_n)$ can as a product of transpositions in many ways.
+Here are two ways of doing it:</p>
+<ul>
+<li>$(a_1, a_2)(a_2, a_3)\ldots(a_{n-2}, a_{n-1})(a_{n-1}, a_n)$</li>
+<li>$(a_1, a_n)(a_1, a_{n-1})\ldots(a_1, a_3)(a_1, a_2)$</li>
+</ul>
+<p>Since every permutation can be written as a product of disjoint cycles,
+every permutation can be written as a product of transpositions.</p>
 </div>
 </body>
 </html>

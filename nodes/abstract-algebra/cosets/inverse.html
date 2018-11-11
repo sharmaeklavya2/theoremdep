@@ -3,9 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Divisibility - TheoremDep</title>
-    <meta name="description" content="If a = b*k for some integer k, then b divides a." />
-    <meta name="keywords" content="divide,division,divisor" />
+    <title>Inverse of a coset - TheoremDep</title>
+    <meta name="description" content="(gH)^(-1) = H^(-1)g^(-1)" />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -26,10 +25,23 @@
     </form>
 </nav>
 <div id="main">
-<h1>Divisibility</h1>
-<h2 class="no-deps"> Dependencies: None </h2>
+<h1>Inverse of a coset</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/coset.html">
+            <span class="deptitle">Coset</span>
+            <span class="depuci litooltip">/abstract-algebra/cosets/coset</span>
+        </a>
+        </li>
+    </ul>
 <div class="horizontal-rule"></div>
-<p>If $a = bk$ for $k \in \mathbb{Z}$, then $b$ divides $a$ (written as $b \mid a$).</p>
+<p>Let $H$ be a subset of group $G$. $H^{-1}$ is defined to be $\{h^{-1}: h \in H\}$.</p>
+<p>Then $(gH)^{-1} = H^{-1}g^{-1}$.
+When $H$ is a group, $(gH)^{-1} = Hg^{-1}$.</p>
+<h2>Proof</h2>
+<p>$$ (gH)^{-1} = \{(gh)^{-1}: h \in H\} = \{h^{-1}g^{-1}: h \in H\} = H^{-1}g^{-1} $$</p>
+<p>When $H$ is a group, $H^{-1} = H$, because $H^{-1} \subseteq H$ and $|H^{-1}| = |H|$.</p>
 </div>
 </body>
 </html>

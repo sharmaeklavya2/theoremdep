@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A cyclic group of order n has ϕ(n) generators - TheoremDep</title>
+    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>A cyclic group of order n has ϕ(n) generators</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/eulers-totient-function.html">
+            <span class="deptitle">Euler's Totient Function</span>
+            <span class="depuci litooltip">/number-theory/eulers-totient-function</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cyclic-groups/order-of-elements-in-cyclic-group.html">
+            <span class="deptitle">Order of elements in cyclic group</span>
+            <span class="depuci litooltip">/abstract-algebra/cyclic-groups/order-of-elements-in-cyclic-group</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>A cyclic group $\langle a \rangle$ of order $n$ has $\phi(n)$ generators.</p>
+<h2>Proof</h2>
+<p>$\operatorname{order}(a^k) = \frac{n}{\gcd(k, n)}$.</p>
+<p>For $a^k$ to be a generator, it should have order $n$. So $\gcd(k, n) = 1$.
+That means $k$ can take $\phi(n)$ values.
+Therefore, $\langle a \rangle$ has $\phi(n)$ generators.</p>
+</div>
+</body>
+</html>
