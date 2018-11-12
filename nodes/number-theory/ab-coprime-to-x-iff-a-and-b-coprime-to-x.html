@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ab is coprime to x iff a and b are coprime to x - TheoremDep</title>
+    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>ab is coprime to x iff a and b are coprime to x</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/every-number-has-prime-factorization.html">
+            <span class="deptitle">Every number has a prime factorization</span>
+            <span class="depuci litooltip">/number-theory/every-number-has-prime-factorization</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/euclids-lemma.html">
+            <span class="deptitle">Euclid's lemma</span>
+            <span class="depuci litooltip">/number-theory/euclids-lemma</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>$ab$ is coprime to $x$ iff $a$ and $b$ are coprime to $x$.</p>
+<p>This is equivalent to the statement</p>
+<p>$$ (\gcd(a, x) = 1 \wedge \gcd(b, x) = 1) \iff \gcd(ab, x) = 1 $$</p>
+<h2>Proof of 'only if' part</h2>
+<p>We are given that $\gcd(a, x) = \gcd(b, x) = 1$.</p>
+<p>Let $g = \gcd(ab, x)$, where $g &gt; 1$.</p>
+<p>Since every number has a prime-factorization and $g &gt; 1$,
+$g$ has a prime divisor $p$.</p>
+<p>\begin{align}
+&amp; \Rightarrow p \mid ab \wedge p \mid x
+\\ &amp;\Rightarrow (p \mid a \vee p \mid b) \wedge p \mid x \tag{By Euclid's lemma}
+\\ &amp;\Rightarrow (p \mid a \wedge p \mid x) \vee (p \mid a \wedge p \mid x)
+\\ &amp;\Rightarrow (p \in D(a, x)) \vee (p \in D(b, x)) \tag{$D(m, n)$ is the set of common divisors of $m$ and $n$}
+\\ &amp;\Rightarrow (p \le \gcd(a, x)) \vee (p \le \gcd(b, x))
+\\ &amp;\Rightarrow (p \le 1) \vee (p \le 1) \tag{$a$ and $b$ are coprime to $x$}
+\\ &amp;\Rightarrow p \le 1
+\end{align}</p>
+<h2>Proof of 'if' part</h2>
+<p>We are given that $\gcd(ab, x) = 1$.</p>
+<p>Let $g_a = \gcd(a, x)$ and $g_b = \gcd(b, x)$.</p>
+<p>\begin{align}
+&amp; g_a \mid a \wedge g_a \mid x \wedge g_b \mid b \wedge g_b \mid x
+\\ &amp;\Rightarrow g_a \mid ab \wedge g_a \mid x \wedge g_b \mid ab \wedge g_b \mid x
+\\ &amp;\Rightarrow g_a \le \gcd(ab, x) \wedge g_b \le \gcd(ab, x)
+\\ &amp;\Rightarrow g_a \le 1 \wedge g_b \le 1
+\\ &amp;\Rightarrow \gcd(a, x) = \gcd(b, x) = 1
+\end{align}</p>
+</div>
+</body>
+</html>

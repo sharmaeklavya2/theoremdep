@@ -20,6 +20,12 @@
 },
 {
 "type": "theorem",
+"title": "Every number has a prime factorization",
+"uci": "/number-theory/every-number-has-prime-factorization",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/every-number-has-prime-factorization.html"
+},
+{
+"type": "theorem",
 "title": "Integer Division Theorem",
 "keywords": [
 "euclid",
@@ -72,10 +78,23 @@
 },
 {
 "type": "theorem",
+"title": "ab is coprime to x iff a and b are coprime to x",
+"uci": "/number-theory/ab-coprime-to-x-iff-a-and-b-coprime-to-x",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/ab-coprime-to-x-iff-a-and-b-coprime-to-x.html"
+},
+{
+"type": "theorem",
 "title": "If x divides ab and x is coprime to a, then x divides b",
 "description": "If a number divides the product of two numbers and is coprime to the first number in the product, then it must divide the second number in the product.",
 "uci": "/number-theory/if-coprime-to-first-then-divides-second",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/if-coprime-to-first-then-divides-second.html"
+},
+{
+"type": "theorem",
+"title": "Multiplication permutes Zn*",
+"description": "Multiplying all elements of Zn* by a number coprime to n returns a permutation of Zn*",
+"uci": "/number-theory/multiplication-permutes-znstar",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/multiplication-permutes-znstar.html"
 },
 {
 "type": "definition",
@@ -135,6 +154,13 @@
 "description": "Conditions for a subset to be a subgroup.",
 "uci": "/abstract-algebra/subgroup-condition",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/subgroup-condition.html"
+},
+{
+"type": "theorem",
+"title": "Zn* is a group",
+"description": "The set of integers coprime to n is a group under multiplication mod n",
+"uci": "/abstract-algebra/znstar-is-a-group",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/znstar-is-a-group.html"
 },
 {
 "type": "theorem",
