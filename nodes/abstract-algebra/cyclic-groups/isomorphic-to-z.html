@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cyclic groups are isomorphic to Z or Zn - TheoremDep</title>
+    <meta name="description" content="A cyclic group of infinite order is isomorphic to Z. A cyclic group of order n is isomorphic to Zn." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Cyclic groups are isomorphic to Z or Zn</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/group-isomorphism/group-isomorphism.html">
+            <span class="deptitle">Isomorphism on Groups</span>
+            <span class="depuci litooltip">/abstract-algebra/group-isomorphism/group-isomorphism</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>A cyclic group of infinite order is isomorphic to $\mathbb{Z}$.
+A cyclic group of order $n$ is isomorphic to $\mathbb{Z}_n$.</p>
+<h2>Proof</h2>
+<p>Let $\phi(k) = a^k$.</p>
+<p>\[ \phi(k_1 + k_2) = a^{k_1 + k_2} = a^{k_1}a^{k_2} = \phi(k_1)\phi(k_2) \]</p>
+<p>\[ \phi(k_1) = \phi(k_2) \Rightarrow a^{k_1} = a^{k_2} \Rightarrow a^{k_1 - k_2} = e \]</p>
+<p>When $\langle a \rangle$ is infinite, this is only possible when $k_1 = k_2$.
+When $\langle a \rangle$ has order $n$, this means $n \mid (k_1 - k_2)$.
+This means $k_1 = k_2$, because $k_1, k_2 \in \mathbb{Z}_n$.
+Therefore, $\phi$ is one-to-one.</p>
+<p>Every element in $\langle a \rangle$ can be written as $a^k = \phi(k)$.
+When $\langle a \rangle$ has infinite order, $k \in \mathbb{Z}$.
+When $\langle a \rangle$ has finite order, $k \in \mathbb{Z}_n$.
+Therefore, $\phi$ is onto.</p>
+<p>Therefore, $\phi$ is an isomorphism from $\mathbb{Z}$ or $\mathbb{Z}_n$ to $\langle a \rangle$.</p>
+</div>
+</body>
+</html>

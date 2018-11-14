@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cayley's Theorem - TheoremDep</title>
+    <meta name="description" content="Every group is isomorphic to a permutation group" />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Cayley's Theorem</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/group-isomorphism/group-isomorphism.html">
+            <span class="deptitle">Isomorphism on Groups</span>
+            <span class="depuci litooltip">/abstract-algebra/group-isomorphism/group-isomorphism</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Every group $G$ is isomorphic to a group of permutations of elements of $G$.</p>
+<h2>Proof</h2>
+<p>Let $g \in G$. Let $\lambda_g: G \mapsto G$ where $\lambda_g(x) = gx$.</p>
+<p>\[ \lambda_g(x) = \lambda_g(y) \Rightarrow gx = gy \Rightarrow x = y \Rightarrow \lambda_g \textrm{ is one-to-one} \]
+\[ \lambda_g(g^{-1}x) = gg^{-1}x = x \Rightarrow \lambda_g \textrm{ is onto} \]</p>
+<p>Therefore, $\lambda_g$ is a permutation.</p>
+<p>Let $H = \{\lambda_g: g \in G\}$. We will prove that $H$ is a group.</p>
+<ul>
+<li>
+<p>Closure:
+\[
+(\lambda_{g_1}\lambda_{g_2})(x)
+= \lambda_{g_1}(\lambda_{g_2}(x))
+= g_1(g_2(x)) = (g_1g_2)(x)
+= \lambda_{g_1g_2}(x)
+\implies \lambda_{g_1}\lambda_{g_2} \in H
+\]</p>
+</li>
+<li>
+<p>Associativity: Function composition is associative.</p>
+</li>
+<li>
+<p>Identity: $\lambda_e\lambda_g = \lambda_{eg} = \lambda_g \wedge \lambda_g\lambda_e = \lambda_{ge} = \lambda_g$.
+Therefore, $\lambda_e$ is the identity.</p>
+</li>
+<li>
+<p>Inverse: $\lambda_g\lambda_{g^{-1}} = \lambda_{gg^{-1}} = \lambda_e \wedge \lambda_{g^{-1}}\lambda_g = \lambda_{g^{-1}g} = \lambda_e$.
+Therefore, $\lambda_{g^{-1}}$ is the inverse of $\lambda_g$.</p>
+</li>
+</ul>
+<p>Therefore, $H$ is a group of permutations of elements on $G$.</p>
+<p>Let $\phi(g) = \lambda_g$.</p>
+<p>\[ \phi(g_1g_2) = \lambda_{g_1g_2} = \lambda_{g_1}\lambda_{g_2} = \phi(g_1)\phi(g_2) \]</p>
+<p>Every element in $H$ can be written as $\lambda_g$. $\phi(g) = \lambda_g$. Therefore, $\phi$ is onto on $H$.</p>
+<p>\[
+\phi(g_1) = \phi(g_2)
+\Rightarrow \lambda_{g_1} = \lambda_{g_2}
+\Rightarrow \forall x \in G, \lambda_{g_1}(x) = \lambda_{g_2}(x)
+\Rightarrow \forall x \in G, g_1x = g_2x
+\Rightarrow g_1 = g_2
+\]</p>
+<p>Therefore, $\phi$ is one-to-one.</p>
+<p>Hence, $\phi$ is an isomorphism from $G$ to $H$.
+Therefore, $G$ is isomorphic to a permutation group.</p>
+</div>
+</body>
+</html>

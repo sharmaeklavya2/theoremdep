@@ -20,12 +20,6 @@
 },
 {
 "type": "theorem",
-"title": "Every number has a prime factorization",
-"uci": "/number-theory/every-number-has-prime-factorization",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/every-number-has-prime-factorization.html"
-},
-{
-"type": "theorem",
 "title": "Integer Division Theorem",
 "keywords": [
 "euclid",
@@ -34,19 +28,6 @@
 "description": "Let a and b be integers, with b > 0. Then there exist unique integers q and r such that a = b*q + r and 0 \u2264 r < b.",
 "uci": "/number-theory/integer-division-theorem",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/integer-division-theorem.html"
-},
-{
-"type": "theorem",
-"title": "Fundamental Theorem of Arithmetic",
-"keywords": [
-"prime",
-"factor",
-"factorize",
-"factorization"
-],
-"description": "An integer can be written as a product of primes in a unique way.",
-"uci": "/number-theory/fundamental-theorem-of-arithmetic",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/fundamental-theorem-of-arithmetic.html"
 },
 {
 "type": "def",
@@ -97,11 +78,75 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/multiplication-permutes-znstar.html"
 },
 {
+"type": "theorem",
+"title": "GCD times LCM equals product",
+"description": "gcd(a, b) * lcm(a, b) = a * b",
+"uci": "/number-theory/gcd-times-lcm-equals-product",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd-times-lcm-equals-product.html"
+},
+{
 "type": "definition",
 "title": "Modular Equivalence",
 "description": "a is equivalent to b mod n iff n divides (a-b).",
 "uci": "/number-theory/modular-equivalence",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/modular-equivalence.html"
+},
+{
+"type": "theorem",
+"title": "Divisible iff PFEL is less than or equal",
+"description": "a divides b iff PFEL(a) \u2264 PFEL(b).",
+"uci": "/number-theory/prime-factorization/divisible-iff-pfel-less-than",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/divisible-iff-pfel-less-than.html"
+},
+{
+"type": "theorem",
+"title": "Every number has a prime factorization",
+"uci": "/number-theory/prime-factorization/every-number-has-prime-factorization",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/every-number-has-prime-factorization.html"
+},
+{
+"type": "theorem",
+"title": "PFEL of product is sum of PFEL",
+"uci": "/number-theory/prime-factorization/pfel-of-product-is-sum-of-pfel",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/pfel-of-product-is-sum-of-pfel.html"
+},
+{
+"type": "theorem",
+"title": "Fundamental Theorem of Arithmetic",
+"keywords": [
+"prime",
+"factor",
+"factorize",
+"factorization"
+],
+"description": "An integer can be written as a product of primes in a unique way.",
+"uci": "/number-theory/prime-factorization/fundamental-theorem-of-arithmetic",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/fundamental-theorem-of-arithmetic.html"
+},
+{
+"type": "theorem",
+"title": "PFEL of gcd is min of PFEL",
+"uci": "/number-theory/prime-factorization/pfel-of-gcd-is-min-of-pfel",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/pfel-of-gcd-is-min-of-pfel.html"
+},
+{
+"type": "def",
+"title": "Prime Factorization Exponent List (PFEL)",
+"description": "PFEL of a number is the list of exponents in the prime factorization of that number.",
+"uci": "/number-theory/prime-factorization/pfel",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/pfel.html"
+},
+{
+"type": "theorem",
+"title": "PFEL of lcm is max of PFEL",
+"uci": "/number-theory/prime-factorization/pfel-of-lcm-is-max-of-pfel",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/pfel-of-lcm-is-max-of-pfel.html"
+},
+{
+"type": "theorem",
+"title": "PFEL of ratio is difference of PFEL",
+"uci": "/number-theory/prime-factorization/pfel-of-ratio-is-difference-of-pfel",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/pfel-of-ratio-is-difference-of-pfel.html"
 },
 {
 "type": "theorem",
@@ -150,6 +195,13 @@
 },
 {
 "type": "theorem",
+"title": "External direct product is a group",
+"description": "For groups G and H, G \u00d7 H is a group",
+"uci": "/abstract-algebra/external-direct-product-is-group",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/external-direct-product-is-group.html"
+},
+{
+"type": "theorem",
 "title": "Conditions for a subset to be a subgroup",
 "description": "Conditions for a subset to be a subgroup.",
 "uci": "/abstract-algebra/subgroup-condition",
@@ -176,6 +228,13 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/identity-is-unique.html"
 },
 {
+"type": "theorem",
+"title": "Order of element in external direct product",
+"description": "order of (g, h) in G \u00d7 H = lcm(order(g), order(h))",
+"uci": "/abstract-algebra/order-of-element-in-external-direct-product",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/order-of-element-in-external-direct-product.html"
+},
+{
 "type": "definition",
 "title": "Group",
 "description": "A group is a set along with a binary operator which satisfies certain properties.",
@@ -195,6 +254,66 @@
 "description": "(a*b)^(-1) = (b^(-1)) * (a^(-1))",
 "uci": "/abstract-algebra/inverse-of-product",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/inverse-of-product.html"
+},
+{
+"type": "def",
+"title": "Isomorphism on Groups",
+"description": "Two groups are isomorphic iff they are related via a bijection \u03d5 such that \u03d5(ab) = \u03d5(a)\u03d5(b).",
+"uci": "/abstract-algebra/group-isomorphism/group-isomorphism",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/group-isomorphism/group-isomorphism.html"
+},
+{
+"type": "theorem",
+"title": "Mapping of power is power of mapping",
+"description": "\u03d5(g^k) = \u03d5(g)^k",
+"uci": "/abstract-algebra/group-isomorphism/mapping-of-power-is-power-of-mapping",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/group-isomorphism/mapping-of-power-is-power-of-mapping.html"
+},
+{
+"type": "theorem",
+"title": "Order of elements is invariant under isomorphism",
+"description": "If G is isomorphic to H, then G and H have the same frequencies of orders of elements.",
+"uci": "/abstract-algebra/group-isomorphism/order-of-elements",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/group-isomorphism/order-of-elements.html"
+},
+{
+"type": "theorem",
+"title": "Cyclicness is invariant under isomorphism",
+"description": "If < a > is isomorphic to G via \u03d5, then G = < \u03d5(a) >.",
+"uci": "/abstract-algebra/group-isomorphism/cyclicness-is-invariant-under-isomorphism",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/group-isomorphism/cyclicness-is-invariant-under-isomorphism.html"
+},
+{
+"type": "theorem",
+"title": "Cayley's Theorem",
+"description": "Every group is isomorphic to a permutation group",
+"uci": "/abstract-algebra/group-isomorphism/cayleys-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/group-isomorphism/cayleys-theorem.html"
+},
+{
+"type": "theorem",
+"title": "Isomorphism of groups is an equivalence relation",
+"uci": "/abstract-algebra/group-isomorphism/equivalence-relation",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/group-isomorphism/equivalence-relation.html"
+},
+{
+"type": "theorem",
+"title": "Abelianness is invariant under isomorphism",
+"description": "If G is isomorphic to H and G is abelian, then H is abelian.",
+"uci": "/abstract-algebra/group-isomorphism/abelianness",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/group-isomorphism/abelianness.html"
+},
+{
+"type": "theorem",
+"title": "Inverse of a group isomorphism is a group isomorphism",
+"uci": "/abstract-algebra/group-isomorphism/inverse",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/group-isomorphism/inverse.html"
+},
+{
+"type": "theorem",
+"title": "Zm \u00d7 Zn is isomorphic to Zmn iff m and n are coprime",
+"uci": "/abstract-algebra/group-isomorphism/zm-cross-zn-isomorphic-to-zmn",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/group-isomorphism/zm-cross-zn-isomorphic-to-zmn.html"
 },
 {
 "type": "deftheorem",
@@ -282,6 +401,13 @@
 "title": "A cyclic group of order n has \u03d5(n) generators",
 "uci": "/abstract-algebra/cyclic-groups/cyclic-group-has-phi-generators",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cyclic-groups/cyclic-group-has-phi-generators.html"
+},
+{
+"type": "theorem",
+"title": "Cyclic groups are isomorphic to Z or Zn",
+"description": "A cyclic group of infinite order is isomorphic to Z. A cyclic group of order n is isomorphic to Zn.",
+"uci": "/abstract-algebra/cyclic-groups/isomorphic-to-z",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cyclic-groups/isomorphic-to-z.html"
 },
 {
 "type": "theorem",

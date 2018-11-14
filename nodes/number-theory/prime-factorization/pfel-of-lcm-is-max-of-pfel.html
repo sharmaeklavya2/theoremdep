@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PFEL of lcm is max of PFEL - TheoremDep</title>
+    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>PFEL of lcm is max of PFEL</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/pfel.html">
+            <span class="deptitle">Prime Factorization Exponent List (PFEL)</span>
+            <span class="depuci litooltip">/number-theory/prime-factorization/pfel</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/divisible-iff-pfel-less-than.html">
+            <span class="deptitle">Divisible iff PFEL is less than or equal</span>
+            <span class="depuci litooltip">/number-theory/prime-factorization/divisible-iff-pfel-less-than</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>PFEL of $\operatorname{lcm}(a, b)$ equals the element-wise maximum of PFELs of $a$ and $b$.</p>
+<h2>Proof</h2>
+<p>Let $\operatorname{PFEL}(a) = [a_i]_{i=1}^\infty$ and $\operatorname{PFEL}(b) = [b_i]_{i=1}^\infty$.</p>
+<p>Let $l = \operatorname{lcm}(a, b)$ and $l_i = \operatorname{PFEL}(\operatorname{lcm}(a, b))_i$.</p>
+<p>Let $m_i = \max(a_i, b_i)$ and $m = \prod_{i=1}^\infty p_i^{m_i}$.</p>
+<p>$$ a_i \le m_i \wedge b_i \le m_i \implies a \mid m \wedge b \mid m \implies l \le m $$</p>
+<p>\begin{align}
+&amp; a \mid l \wedge b \mid l
+\\ &amp;\Rightarrow a_i \le l_i \wedge b_i \le l_i
+\\ &amp;\Rightarrow \max(a_i, b_i) = m_i \le l_i
+\\ &amp;\Rightarrow m \mid l
+\\ &amp;\Rightarrow m \le l
+\end{align}</p>
+<p>Therefore, $m = l$ and $m_i = l_i$.</p>
+</div>
+</body>
+</html>

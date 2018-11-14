@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Divisible iff PFEL is less than or equal - TheoremDep</title>
+    <meta name="description" content="a divides b iff PFEL(a) ≤ PFEL(b)." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Divisible iff PFEL is less than or equal</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/pfel.html">
+            <span class="deptitle">Prime Factorization Exponent List (PFEL)</span>
+            <span class="depuci litooltip">/number-theory/prime-factorization/pfel</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/pfel-of-ratio-is-difference-of-pfel.html">
+            <span class="deptitle">PFEL of ratio is difference of PFEL</span>
+            <span class="depuci litooltip">/number-theory/prime-factorization/pfel-of-ratio-is-difference-of-pfel</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>$b \mid a \iff \operatorname{PFEL}(a) \ge \operatorname{PFEL}(b)$</p>
+<h2>Proof</h2>
+<p>Let $\operatorname{PFEL}(a)_i = a_i$ and $\operatorname{PFEL}(b)_i = b_i$.</p>
+<p>\begin{align}
+&amp; b \mid a
+\\ &amp;\iff \frac{a}{b} \in \mathbb{Z}
+\\ &amp;\iff \forall i \in \mathbb{N}, \operatorname{PFEL}(\frac{a}{b})_i \ge 0
+\\ &amp;\iff \forall i \in \mathbb{N}, a_i - b_i \ge 0
+\\ &amp;\iff \forall i \in \mathbb{N}, \operatorname{PFEL}(a)_i \ge \operatorname{PFEL}(b)_i
+\\ &amp;\iff \operatorname{PFEL}(a) \ge \operatorname{PFEL}(b)
+\end{align}</p>
+</div>
+</body>
+</html>

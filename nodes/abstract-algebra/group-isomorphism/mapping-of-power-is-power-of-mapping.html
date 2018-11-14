@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Symmetric Group - TheoremDep</title>
-    <meta name="description" content="The symmetric group is the set of all permutations where the operation is composition of permutations." />
+    <title>Mapping of power is power of mapping - TheoremDep</title>
+    <meta name="description" content="ϕ(g^k) = ϕ(g)^k" />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,28 +25,36 @@
     </form>
 </nav>
 <div id="main">
-<h1>Symmetric Group</h1>
+<h1>Mapping of power is power of mapping</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/group.html">
-            <span class="deptitle">Group</span>
-            <span class="depuci litooltip">/abstract-algebra/group</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/group-isomorphism/group-isomorphism.html">
+            <span class="deptitle">Isomorphism on Groups</span>
+            <span class="depuci litooltip">/abstract-algebra/group-isomorphism/group-isomorphism</span>
         </a>
-        </li>
-        <li>
-        <span class="deptitleuci missing">/misc/composition-of-bijections-is-a-bijection</span>
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>The symmetric group $S_X$ is the set of all permutations of $X$ where the operation is composition of permutations.</p>
-<h2>Proof that it is a group</h2>
-<ul>
-<li>Closure: Composition of bijections is a bijection.</li>
-<li>Associativity: Function composition is associative.</li>
-<li>Identity: Identity permutation exists.</li>
-<li>Inverse: Inverse permutation exists.</li>
-</ul>
+<p>Let $\phi$ be an isomorphism from $G$ to $H$. Let $g \in G$.
+Then $\phi(g^k) = \phi(g)^k$.</p>
+<h2>Proof</h2>
+<p>For $k &gt; 0$,
+\[ \phi(g^k) = \phi(gg\ldots g) = \phi(g)\phi(g)\ldots\phi(g) = \phi(g)^k \]</p>
+<p>For $k = 0$,
+\[
+e_Ge_G = e_G
+\Rightarrow \phi(e_G)\phi(e_G) = \phi(e_G)
+\Rightarrow \phi(e_G) = e_H
+\Rightarrow \phi(g^k) = \phi(g)^k
+\]</p>
+<p>For $k &lt; 0$,
+\[
+e_H = \phi(e_G) = \phi(gg^{-1}) = \phi(g)\phi(g^{-1})
+\implies \phi(g^{-1}) = \phi(g)^{-1}
+\]
+\[ \phi(g^k) = \phi((g^{-1})^{-k}) = \phi(g^{-1})^{-k} = (\phi(g)^{-1})^{-k} = \phi(g)^k \]</p>
+<p>In all 3 cases, $\phi(g^k) = \phi(g)^k$.</p>
 </div>
 </body>
 </html>
