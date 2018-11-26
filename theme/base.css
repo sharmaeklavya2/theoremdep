@@ -3,6 +3,9 @@ html {
 }
 body {
     margin: 0;
+    color: #202020;
+    line-height: 1.5;
+    font-size: 1.1em;
 }
 #main {
     padding: 0 2rem 2rem 2rem;
@@ -14,7 +17,7 @@ nav {
 }
 #sitename {
     font-size: 2em;
-    padding: 0.25rem 2rem;
+    padding: 0 2rem;
     margin-right: 2rem;
     display: block;
     align-self: center;
@@ -89,23 +92,8 @@ code {
     margin: 1em 0;
     border: 1px solid rgba(0, 0, 0, 0.1);;
 }
-li:not(:hover) .litooltip {
-    visibility: hidden;
-}
-@media (max-width: 600px) {
-    li .litooltip {
-        display: none;
-    }
-}
 
 .deplist .missing {
-    font-family: monospace;
-}
-.depuci, .index-uci {
-    margin-left: 1em;
-    text-decoration: none;
-    font-size: 0.8em;
-    color: rgba(0, 0, 0, 0.4);
     font-family: monospace;
 }
 .deptitleuci, .index-titleuci {
