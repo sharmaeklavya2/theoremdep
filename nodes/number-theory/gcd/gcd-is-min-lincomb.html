@@ -39,9 +39,13 @@
 <p>The GCD of two numbers is their smallest positive linear combination.</p>
 <h2>Proof</h2>
 <p>Let $p_{a, b}(x, y): \gcd(x, y) = \gcd(a, b) \wedge x, y \in a\mathbb{Z} + b\mathbb{Z}$.</p>
-<p>$$(\gcd(x, y) = \gcd(x-y, y) = \gcd(a, b)) \wedge (x, y \in a\mathbb{Z} + b\mathbb{Z} \iff x-y, y \in a\mathbb{Z} + b\mathbb{Z})$$</p>
-<p>Therefore,</p>
-<p>$$(p_{a, b}(x, y) \iff p_{a, b}(x, y)) \Rightarrow (p_{a, b}(x, y) \iff p_{a, b}(y, x\%y))$$</p>
+<p>\begin{align}
+&amp;p_{a, b}(x, y)
+\\ &amp;\iff \gcd(x, y) = \gcd(a, b) \wedge x, y \in a\mathbb{Z} + b\mathbb{Z}
+\\ &amp;\iff \gcd(x-y, y) = \gcd(a, b) \wedge x-y, y \in a\mathbb{Z} + b\mathbb{Z}
+\\ &amp;\iff p_{a, b}(x-y, y)
+\end{align}</p>
+<p>Therefore, $p_{a, b}(x, y) = p_{a, b}(y, x\% y)$.</p>
 <p>Let $\lambda$ be the operation defined by $(x, y) \mapsto (y, x\%y)$ where $y$ is not 0.
 $p_{a, b}$ is invariant over $\lambda$.</p>
 <p>Applying $\lambda$ on $(x, y)$ decreases $y$.
@@ -51,7 +55,8 @@ $p_{a, b}(e, 0)$ is true since $p_{a, b}$ is invariant over $\lambda$.</p>
 <p>$$p_{a, b}(e, 0)
 \Rightarrow e = \gcd(a, b) \wedge e \in a\mathbb{Z} + b\mathbb{Z}
 \Rightarrow \gcd(a, b) \in a\mathbb{Z} + b\mathbb{Z}$$</p>
-<p>Let $d$ be the smallest positive linear combination of $a$ and $b$.</p>
+<p>Let $d$ be the smallest positive linear combination of $a$ and $b$.
+Since $g$ is a linear combination of $a$ and $b$, $d \le g$.</p>
 <p>$$g \mid a \wedge g \mid b \Rightarrow g \mid d \Rightarrow g \le d \Rightarrow g = d$$</p>
 <p>Therefore, $\gcd(a, b)$ is the smallest positive linear combination of $a$ and $b$.</p>
 </div>
