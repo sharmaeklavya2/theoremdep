@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mapping of power is power of mapping - TheoremDep</title>
-    <meta name="description" content="ϕ(g^k) = ϕ(g)^k" />
+    <title>Product of normal cosets is well-defined - TheoremDep</title>
+    <meta name="description" content="Let N be a normal subgroup. Then the product (aN)(bN) = (ab)N is well-defined." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,35 +25,31 @@
     </form>
 </nav>
 <div id="main">
-<h1>Mapping of power is power of mapping</h1>
+<h1>Product of normal cosets is well-defined</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/group-isomorphism/group-isomorphism.html">
-            <span class="deptitle">Isomorphism on Groups</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/associativity.html">
+            <span class="deptitle">For subset H of a group, a(bH) = (ab)H and (aH)b = a(Hb)</span>
         </a>
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Let $\phi$ be an isomorphism from $G$ to $H$. Let $g \in G$.
-Then $\phi(g^k) = \phi(g)^k$.</p>
+<p>Let $N$ be a normal subgroup of $G$. This means that $gN = Ng$ for all $g \in G$.</p>
+<p>Define the product of cosets $aN$ and $bN$ as
+\[ (aN)(bN) = (ab)N \]</p>
+<p>This product is well-defined, which means that it does not depend on the representation of the coset.
+This means that
+\[ a_1N = a_2N \wedge b_1N = b_2N \Rightarrow (a_1N)(b_1N) = (a_2N)(b_2N) \]</p>
 <h2>Proof</h2>
-<p>For $k &gt; 0$,
-\[ \phi(g^k) = \phi(gg\ldots g) = \phi(g)\phi(g)\ldots\phi(g) = \phi(g)^k \]</p>
-<p>For $k = 0$,
-\[
-e_Ge_G = e_G
-\Rightarrow \phi(e_G)\phi(e_G) = \phi(e_G)
-\Rightarrow \phi(e_G) = e_H
-\Rightarrow \phi(g^k) = \phi(g)^k
-\]</p>
-<p>For $k &lt; 0$,
-\[
-e_H = \phi(e_G) = \phi(gg^{-1}) = \phi(g)\phi(g^{-1})
-\implies \phi(g^{-1}) = \phi(g)^{-1}
-\]
-\[ \phi(g^k) = \phi((g^{-1})^{-k}) = \phi(g^{-1})^{-k} = (\phi(g)^{-1})^{-k} = \phi(g)^k \]</p>
-<p>In all 3 cases, $\phi(g^k) = \phi(g)^k$.</p>
+<p>\begin{align}
+&amp; (a_1N)(b_1N) &amp;= (a_1b_1)N
+\\ &amp;= a_1(b_1N) &amp;= a_1(b_2N)
+\\ &amp;= a_1(Nb_2) &amp;= (a_1N)b_2
+\\ &amp;= (a_2N)b_2 &amp;= a_2(Nb_2)
+\\ &amp;= a_2(b_2N) &amp;= (a_2b_2)N
+\\ &amp;= (a_2N)(b_2N)
+\end{align}</p>
 </div>
 </body>
 </html>

@@ -188,6 +188,13 @@
 },
 {
 "type": "theorem",
+"title": "Third isomorphism theorem",
+"description": "(G/N)/(K/N) is isomorphic to G/K.",
+"uci": "/abstract-algebra/third-isomorphism-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/third-isomorphism-theorem.html"
+},
+{
+"type": "theorem",
 "title": "Condition for a subset to be a subgroup",
 "description": "Condition for a subset to be a subgroup.",
 "uci": "/abstract-algebra/subgroup-condition-2",
@@ -209,6 +216,13 @@
 },
 {
 "type": "theorem",
+"title": "Second isomorphism theorem",
+"description": "Let S be a subgroup of G and N be a normal subgroup of G. Then SN/N is isomorphic to S/(S\u2229N).",
+"uci": "/abstract-algebra/second-isomorphism-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/second-isomorphism-theorem.html"
+},
+{
+"type": "theorem",
 "title": "Zn* is a group",
 "description": "The set of integers coprime to n is a group under multiplication mod n",
 "uci": "/abstract-algebra/znstar-is-a-group",
@@ -219,6 +233,13 @@
 "title": "Order of element divides order of group",
 "uci": "/abstract-algebra/order-of-element-divides-order-of-group",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/order-of-element-divides-order-of-group.html"
+},
+{
+"type": "theorem",
+"title": "First isomorphism theorem",
+"description": "Image of homomorphism \u03d5 from G to H is isomorphic to quotient group G/ker(\u03d5).",
+"uci": "/abstract-algebra/first-isomorphism-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/first-isomorphism-theorem.html"
 },
 {
 "type": "theorem",
@@ -261,13 +282,6 @@
 "description": "Two groups are isomorphic iff they are related via a bijection \u03d5 such that \u03d5(ab) = \u03d5(a)\u03d5(b).",
 "uci": "/abstract-algebra/group-isomorphism/group-isomorphism",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/group-isomorphism/group-isomorphism.html"
-},
-{
-"type": "theorem",
-"title": "Mapping of power is power of mapping",
-"description": "\u03d5(g^k) = \u03d5(g)^k",
-"uci": "/abstract-algebra/group-isomorphism/mapping-of-power-is-power-of-mapping",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/group-isomorphism/mapping-of-power-is-power-of-mapping.html"
 },
 {
 "type": "theorem",
@@ -411,8 +425,36 @@
 },
 {
 "type": "theorem",
-"title": "a(bH) = (ab)H for subset H of a group",
-"description": "Multiplication of a coset by a group element is associative. For subset H of a group, a(bH) = (ab)H.",
+"title": "Mapping of power is power of mapping",
+"description": "\u03d5(g^k) = \u03d5(g)^k",
+"uci": "/abstract-algebra/group-homomorphism/mapping-of-power-is-power-of-mapping",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/group-homomorphism/mapping-of-power-is-power-of-mapping.html"
+},
+{
+"type": "theorem",
+"title": "Homomorphic mapping of subgroup of domain is subgroup of codomain",
+"description": "Homomorphic mapping of subgroup of domain is subgroup of codomain. Inverse mapping of subgroup of codomain is subgroup of domain.",
+"uci": "/abstract-algebra/group-homomorphism/subgroup",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/group-homomorphism/subgroup.html"
+},
+{
+"type": "theorem",
+"title": "Homomorphic mapping and inverse mapping of normal subgroup is normal",
+"description": "Homomorphic mapping of normal subgroup is normal in homomorphic mapping of group. Homomorphic inverse mapping of normal subgroup of codomain is normal in domain.",
+"uci": "/abstract-algebra/group-homomorphism/normal-subgroup",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/group-homomorphism/normal-subgroup.html"
+},
+{
+"type": "theorem",
+"title": "Correspondence theorem",
+"description": "A subgroup of G/N is of the form K/N, where K is a subgroup of G. If K is a subgroup of G, then K/N is a subgroup of G/N.",
+"uci": "/abstract-algebra/cosets/correspondence-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/correspondence-theorem.html"
+},
+{
+"type": "theorem",
+"title": "For subset H of a group, a(bH) = (ab)H and (aH)b = a(Hb)",
+"description": "Multiplication of a coset by a group element is associative. For subset H of a group, a(bH) = (ab)H and (aH)b = a(Hb).",
 "uci": "/abstract-algebra/cosets/associativity",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/associativity.html"
 },
@@ -438,6 +480,13 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/coset-equals-subgroup-iff-elem-in-subgroup.html"
 },
 {
+"type": "deftheorem",
+"title": "Factor group",
+"description": "The group of all cosets of a normal subgroup is called the factor group or quotient group.",
+"uci": "/abstract-algebra/cosets/factor-group",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/factor-group.html"
+},
+{
 "type": "theorem",
 "title": "Lagrange's Theorem",
 "description": "Order of subgroup divides order of group. Furthermore, number of cosets equals ratio of orders of group and subgroup.",
@@ -450,6 +499,20 @@
 "description": "(gH)^(-1) = H^(-1)g^(-1)",
 "uci": "/abstract-algebra/cosets/inverse",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/inverse.html"
+},
+{
+"type": "theorem",
+"title": "Normal correspondence theorem",
+"description": "A normal subgroup of G/N is of the form K/N, where K is a normal subgroup of G. If K is a normal subgroup of G, then K/N is a normal subgroup of G/N.",
+"uci": "/abstract-algebra/cosets/normal-correspondence-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/normal-correspondence-theorem.html"
+},
+{
+"type": "theorem",
+"title": "Product of normal cosets is well-defined",
+"description": "Let N be a normal subgroup. Then the product (aN)(bN) = (ab)N is well-defined.",
+"uci": "/abstract-algebra/cosets/product-of-normal-cosets",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/product-of-normal-cosets.html"
 },
 {
 "type": "theorem",

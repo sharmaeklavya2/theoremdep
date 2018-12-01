@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Every number has a prime factorization - TheoremDep</title>
-    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <title>Mapping of power is power of mapping - TheoremDep</title>
+    <meta name="description" content="ϕ(g^k) = ϕ(g)^k" />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,17 +25,28 @@
     </form>
 </nav>
 <div id="main">
-<h1>Every number has a prime factorization</h1>
+<h1>Mapping of power is power of mapping</h1>
 <h2 class="no-deps"> Dependencies: None </h2>
 <div class="horizontal-rule"></div>
-<p>Every positive number has a prime factorization.</p>
+<p>Let $\phi$ be a homomorphism from $G$ to $H$. Let $g \in G$.
+Then $\phi(g^k) = \phi(g)^k$.</p>
 <h2>Proof</h2>
-<p>Let $n$ be the smallest number without a prime factorization.
-1 has the empty factorization. Therefore, $n \ge 2$.</p>
-<p>Also, $n$ is not prime, so it can be written as a product of factors other than 1 and itself.
-Therefore, all its factors have a prime factorization.
-Therefore, $n$ also has a prime factorization.
-This is a contradiction, which means all numbers have a prime factorization.</p>
+<p>For $k &gt; 0$,
+\[ \phi(g^k) = \phi(gg\ldots g) = \phi(g)\phi(g)\ldots\phi(g) = \phi(g)^k \]</p>
+<p>For $k = 0$,
+\[
+e_Ge_G = e_G
+\Rightarrow \phi(e_G)\phi(e_G) = \phi(e_G)
+\Rightarrow \phi(e_G) = e_H
+\Rightarrow \phi(g^k) = \phi(g)^k
+\]</p>
+<p>For $k &lt; 0$,
+\[
+e_H = \phi(e_G) = \phi(gg^{-1}) = \phi(g)\phi(g^{-1})
+\implies \phi(g^{-1}) = \phi(g)^{-1}
+\]
+\[ \phi(g^k) = \phi((g^{-1})^{-k}) = \phi(g^{-1})^{-k} = (\phi(g)^{-1})^{-k} = \phi(g)^k \]</p>
+<p>In all 3 cases, $\phi(g^k) = \phi(g)^k$.</p>
 </div>
 </body>
 </html>
