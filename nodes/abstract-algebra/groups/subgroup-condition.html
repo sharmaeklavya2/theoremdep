@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Conditions for a subset to be a subgroup - TheoremDep</title>
+    <meta name="description" content="Conditions for a subset to be a subgroup." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Conditions for a subset to be a subgroup</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+            <span class="deptitle">Group</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/identity-is-unique.html">
+            <span class="deptitle">Identity of a group is unique</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/inverse-is-unique.html">
+            <span class="deptitle">Inverse of a group element is unique</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $H$ be a subset of $G$. $H$ is a subgroup of $G$ iff</p>
+<ul>
+<li>$H$ is closed under $*$.</li>
+<li>$\operatorname{id}(G) \in H$.</li>
+<li>$\forall h \in H, h^{-1} \in H$.</li>
+</ul>
+<h2>Proof</h2>
+<ul>
+<li>
+<p>Closure: Given.</p>
+</li>
+<li>
+<p>Associativity: True since $H$ inherits its operator from $G$.</p>
+</li>
+<li>
+<p>Identity: Let $e_G = \operatorname{id}(G)$ and $e_H = \operatorname{id}(H)$ (if it exists).
+  We'll prove both sides of the implication:</p>
+<ul>
+<li>$\forall h \in H, he_G = e_Gh = h$ because $h \in G$.
+  Since identity of a group is unique, $e_G \in H \Rightarrow e_H \textrm{ exists}$.</li>
+<li>Now assume that $e_H$ exists.
+  $e_He_H = e_H$ because $e_H = \operatorname{id}(H)$.
+  $e_He_G = e_H$ because $e_G = \operatorname{id}(G)$ and $e_H \in G$.
+  Therefore, $e_G = e_H \Rightarrow e_G \in H$.</li>
+</ul>
+</li>
+<li>
+<p>Inverse: Since inverse is unique in $G$, only the inverse in $G$ has the possibility of being an inverse in $H$.</p>
+</li>
+</ul>
+</div>
+</body>
+</html>

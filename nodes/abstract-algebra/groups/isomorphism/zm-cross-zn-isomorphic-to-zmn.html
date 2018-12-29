@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zm × Zn is isomorphic to Zmn iff m and n are coprime - TheoremDep</title>
+    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Zm × Zn is isomorphic to Zmn iff m and n are coprime</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/group-isomorphism.html">
+            <span class="deptitle">Isomorphism on Groups</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/cyclicness-is-invariant-under-isomorphism.html">
+            <span class="deptitle">Cyclicness is invariant under isomorphism</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/order-of-element-in-external-direct-product.html">
+            <span class="deptitle">Order of element in external direct product</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/order-of-elements-in-cyclic-group.html">
+            <span class="deptitle">Order of elements in cyclic group</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/isomorphic-to-z.html">
+            <span class="deptitle">Cyclic groups are isomorphic to Z or Zn</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd-times-lcm-equals-product.html">
+            <span class="deptitle">GCD times LCM equals product</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>$\mathbb{Z}_m \times \mathbb{Z}_n \cong \mathbb{Z}_{mn} \iff \gcd(m, n) = 1$</p>
+<h2>Proof</h2>
+<h3>Proof of 'only if' part</h3>
+<p>$\mathbb{Z}_m \times \mathbb{Z}_n \cong \mathbb{Z}_{mn} \implies \mathbb{Z}_m \times \mathbb{Z}_n$ is cyclic.</p>
+<p>Let $(a, b)$ be a generator of $\mathbb{Z}_m \times \mathbb{Z}_n$.
+Then $\operatorname{order}((a, b)) = mn$. </p>
+<p>Let $o_a = \operatorname{order}(a)$ and $o_b = \operatorname{order}(b)$.</p>
+<p>\begin{align}
+&amp; o_a \mid m \wedge o_b \mid n \tag{$\mathbb{Z}_m$ and $\mathbb{Z}_n$ are cyclic}
+\\ &amp;\Rightarrow o_a, o_b \mid \operatorname{lcm}(m, n)
+\\ &amp;\Rightarrow \operatorname{lcm}(m, n) \textrm{ is a common multiple of } o_a \textrm{ and } o_b
+\\ &amp;\Rightarrow \operatorname{lcm}(o_a, o_b) \le \operatorname{lcm}(m, n)
+\end{align}</p>
+<p>$$\operatorname{order}((a, b)) = \operatorname{lcm}(o_a, o_b) \le \operatorname{lcm}(m, n) = \frac{mn}{\gcd(m, n)}$$</p>
+<p>Therefore, $\gcd(m, n) = 1$.</p>
+<h3>Proof of 'if' part</h3>
+<p>Let $\gcd(m, n) = 1$.</p>
+<p>Let $a$ and $b$ be generators of $\mathbb{Z}_m$ and $\mathbb{Z}_n$ respectively,
+$o_a = m$ and $o_b = n$.</p>
+<p>\begin{align}
+&amp; \operatorname{order}((a, b)) = \operatorname{lcm}(o_a, o_b) = \operatorname{lcm}(m, n) = \frac{mn}{\gcd(m, n)} = mn
+\\ &amp;\Rightarrow \mathbb{Z}_m \times \mathbb{Z}_n = \langle (a, b) \rangle \wedge |\mathbb{Z}_m \times \mathbb{Z}_n| = mn
+\\ &amp;\Rightarrow \mathbb{Z}_m \times \mathbb{Z}_n \cong \mathbb{Z}_{mn}
+\end{align}</p>
+</div>
+</body>
+</html>

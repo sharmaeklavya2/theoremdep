@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Second isomorphism theorem - TheoremDep</title>
+    <meta name="description" content="Let S be a subgroup of G and N be a normal subgroup of G. Then SN/N is isomorphic to S/(S∩N)." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Second isomorphism theorem</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <span class="deptitleuci missing">/abstract-algebra/cosets/factor-group</span>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/subgroup-condition-2.html">
+            <span class="deptitle">Condition for a subset to be a subgroup</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/product-of-normal-cosets.html">
+            <span class="deptitle">Product of normal cosets is well-defined</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/coset-equals-subgroup-iff-elem-in-subgroup.html">
+            <span class="deptitle">gH = H iff g in H</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/first-isomorphism-theorem.html">
+            <span class="deptitle">First isomorphism theorem</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $G$ be a group. Let $S$ be a subgroup of $G$ and $N$ be a normal subgroup of $G$.
+Then the following hold:</p>
+<ol>
+<li>$SN$ is a subgroup of $G$.</li>
+<li>$S \cap N$ is a normal subgroup of $S$.</li>
+<li>$SN/N \cong S/(S \cap N)$.</li>
+</ol>
+<h2>Proof or result 1</h2>
+<p>$SN$ is a non-empty subset of $G$.</p>
+<p>Let $s_1n_1, s_2n_2 \in SN$ where $s_1, s_2 \in S$ and $n_1, n_2 \in N$.</p>
+<p>\begin{align}
+&amp; (s_1n_1)(s_2n_2)^{-1}
+\\ &amp;= s_1n_1n_2^{-1}s_2^{-1}
+\\ &amp;= s_1ns_2^{-1} \tag{where $n = n_1n_2^{-1} \in N$}
+\\ &amp;= s_1s_2^{-1}n' \tag{where $n' \in N$, because $N$ is normal in $G$}
+\\ &amp;= sn' \tag{where $s = s_1s_2^{-1} \in S$}
+\\ &amp;\in SN
+\end{align}</p>
+<p>Therefore, $SN$ is a subgroup of $G$.</p>
+<h2>Proof of result 2</h2>
+<p>$S \cap N$ is a non-empty subset of $S$.</p>
+<p>\begin{align}
+&amp; h_1, h_2 \in S \cap N
+\\ &amp;\Rightarrow h_1, h_2 \in S \wedge h_1, h_2 \in N
+\\ &amp;\Rightarrow h_1h_2^{-1} \in S \wedge h_1h_2^{-1} \in N \tag{because $S$ and $N$ are subgroups of $G$}
+\\ &amp;\Rightarrow h_1h_2^{-1} \in S \cap N
+\end{align}</p>
+<p>Therefore, $S \cap N$ is a subgroup of $S$.</p>
+<p>Let $s \in S$ and $h \in S \cap N$.</p>
+<p>$shs^{-1} \in S$, because of closure of $S$.
+$shs^{-1} \in N$, because $N$ is normal in $G$.</p>
+<p>Therefore, $shs^{-1} \in S \cap N$, which means $S \cap N$ is normal in $S$.</p>
+<h2>Proof of result 3</h2>
+<p>\[ SN/N = \{snN: s \in S, n \in N\} = \{sN: s \in S \} \]</p>
+<p>Let $\psi: S \mapsto G/N$ such that $\psi(s) = sN$.
+Then $\psi(S) = \{sN: s \in S\} = SN/N$.</p>
+<p>\begin{align}
+&amp; \psi(s_1s_2)
+\\ &amp;= (s_1s_2)N
+\\ &amp;= (s_1N)(s_2N) \tag{because $N$ is normal in $G$}
+\\ &amp;= \psi(s_1)\psi(s_2)
+\end{align}</p>
+<p>Therefore, $\psi$ is a homomorphism.</p>
+<p>\begin{align}
+&amp; \psi(s) = \operatorname{id}(G/N) = N
+\\ &amp;\Rightarrow sN = N
+\\ &amp;\Rightarrow s \in N
+\\ &amp;\Rightarrow s \in S \cap N
+\end{align}</p>
+<p>Therefore, $\operatorname{ker}(\psi) = S \cap N$.</p>
+<p>By the first isomorphism theorem,
+\[ \psi(S) \cong S/\operatorname{ker}(\psi) \Rightarrow SN/N \cong S/(S \cap N) \]</p>
+</div>
+</body>
+</html>

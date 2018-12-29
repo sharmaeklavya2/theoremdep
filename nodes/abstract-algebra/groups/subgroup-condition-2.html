@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Coset - TheoremDep</title>
-    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <title>Condition for a subset to be a subgroup - TheoremDep</title>
+    <meta name="description" content="Condition for a subset to be a subgroup." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,7 +25,7 @@
     </form>
 </nav>
 <div id="main">
-<h1>Coset</h1>
+<h1>Condition for a subset to be a subgroup</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
@@ -33,12 +33,29 @@
             <span class="deptitle">Group</span>
         </a>
         </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/subgroup-condition.html">
+            <span class="deptitle">Conditions for a subset to be a subgroup</span>
+        </a>
+        </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Let $H$ be a subset of a group $G$ and $g \in G$.
-Then the left coset of $H$ with representative $G$ is the set $gH = \{gh: h \in H\}$.
-Similarly, the right coset of $H$ with representative $G$ is the set $Hg = \{hg: h \in H\}$.</p>
-<p>Usually (unless stated otherwise), $H$ is a subgroup of $G$.</p>
+<p>$H$ is a subgroup of $G$ iff $H \neq \phi$ and $(h_1, h_2 \in H \Rightarrow h_1 h_2^{-1} \in H)$.</p>
+<h2>Proof</h2>
+<p>We will prove both sides of the implication.</p>
+<h3>Part 1</h3>
+<p>Let $H$ be a group. Then $H \neq \phi$.</p>
+<p>$h_1, h_2 \in H \Rightarrow h_1, h_2^{-1} \in H \Rightarrow h_1 h_2^{-1} \in H$.</p>
+<p>Therefore, if $H$ is a subgroup of $G$, then $H \neq \phi$ and $(h_1, h_2 \in H \Rightarrow h_1 h_2^{-1} \in H)$.</p>
+<h3>Part 2</h3>
+<p>$H \neq \phi \Rightarrow \exists h \in H$.</p>
+<p>In $(h_1, h_2 \in H \Rightarrow h_1 h_2^{-1} \in H)$:</p>
+<ul>
+<li>Substitute $(h_1=h, h_2=h)$ to get $\operatorname{id}(G) \in H$.</li>
+<li>Substitute $(h_1=\operatorname{id}(G), h_2=h)$ to get $h^{-1} \in H$.</li>
+<li>$(h_1=h_1, h_2=h_2^{-1})$ to get $h_1 h_2 \in H$.</li>
+</ul>
+<p>By the above 3 properties, $H$ is a subgroup of $G$.</p>
 </div>
 </body>
 </html>

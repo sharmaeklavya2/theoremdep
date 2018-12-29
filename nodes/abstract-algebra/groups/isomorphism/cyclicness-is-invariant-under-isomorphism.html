@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Coset - TheoremDep</title>
-    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <title>Cyclicness is invariant under isomorphism - TheoremDep</title>
+    <meta name="description" content="If < a > is isomorphic to G via ϕ, then G = < ϕ(a) >." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,20 +25,31 @@
     </form>
 </nav>
 <div id="main">
-<h1>Coset</h1>
+<h1>Cyclicness is invariant under isomorphism</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
-            <span class="deptitle">Group</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/group-isomorphism.html">
+            <span class="deptitle">Isomorphism on Groups</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/homomorphism/mapping-of-power-is-power-of-mapping.html">
+            <span class="deptitle">Mapping of power is power of mapping</span>
         </a>
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Let $H$ be a subset of a group $G$ and $g \in G$.
-Then the left coset of $H$ with representative $G$ is the set $gH = \{gh: h \in H\}$.
-Similarly, the right coset of $H$ with representative $G$ is the set $Hg = \{hg: h \in H\}$.</p>
-<p>Usually (unless stated otherwise), $H$ is a subgroup of $G$.</p>
+<p>If $\langle a \rangle \cong H$ via $\phi$, then $H = \langle \phi(a) \rangle$.
+This means that $H$ is cyclic.</p>
+<h2>Proof</h2>
+<p>\begin{align}
+&amp; g \in \langle \phi(a) \rangle
+\\ &amp;\iff \exists k, g = \phi(a)^k
+\\ &amp;\iff \exists k, g = \phi(a^k)
+\\ &amp;\iff g \in \phi(\langle a \rangle) = H
+\end{align}</p>
+<p>Therefore, $\langle \phi(a) \rangle = H$.</p>
 </div>
 </body>
 </html>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Coset - TheoremDep</title>
-    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <title>External direct product is a group - TheoremDep</title>
+    <meta name="description" content="For groups G and H, G × H is a group" />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,7 +25,7 @@
     </form>
 </nav>
 <div id="main">
-<h1>Coset</h1>
+<h1>External direct product is a group</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
@@ -35,10 +35,38 @@
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Let $H$ be a subset of a group $G$ and $g \in G$.
-Then the left coset of $H$ with representative $G$ is the set $gH = \{gh: h \in H\}$.
-Similarly, the right coset of $H$ with representative $G$ is the set $Hg = \{hg: h \in H\}$.</p>
-<p>Usually (unless stated otherwise), $H$ is a subgroup of $G$.</p>
+<p>If $G$ and $H$ are groups, $G \times H$ is a group.</p>
+<p>$G \times H$ is defined to be $\{(g, h): g \in G \wedge h \in H\}$.</p>
+<h2>Proof</h2>
+<ul>
+<li>Closure:</li>
+</ul>
+<p>\begin{align}
+&amp;  (g_1, h_1), (g_2, h_2) \in G \times H
+\\ &amp;\implies g_1, g_2 \in G \wedge h_1, h_2 \in H
+\\ &amp;\implies g_1g_2 \in G \wedge h_1h_2 \in H \tag{$\because G$ and $H$ are closed}
+\\ &amp;\implies (g_1g_2, h_1h_2) \in G \times H
+\\ &amp;\implies (g_1, h_1)(g_2, h_2) \in G \times H
+\end{align}</p>
+<ul>
+<li>Associativity:</li>
+</ul>
+<p>\begin{align}
+&amp; ((g_1, h_1)(g_2, h_2))(g_3, h_3)
+\\ &amp;= (g_1g_2, h_1h_2)(g_3, h_3)
+\\ &amp;= ((g_1g_2)g_3, (h_1h_2)h_3)
+\\ &amp;= (g_1(g_2g_3), h_1(h_2h_3)) \tag{$\because G$ and $H$ are associative}
+\\ &amp;= (g_1, h_1)(g_2g_3, h_2h_3)
+\\ &amp;= (g_1, h_1)((g_2, h_2), (g_3, h_3))
+\end{align}</p>
+<ul>
+<li>
+<p>Identity: $\operatorname{id}(G \times H) = (\operatorname{id}(G), \operatorname{id}(H))$</p>
+</li>
+<li>
+<p>Inverse: $(g, h)^{-1} = (g^{-1}, h^{-1})$</p>
+</li>
+</ul>
 </div>
 </body>
 </html>

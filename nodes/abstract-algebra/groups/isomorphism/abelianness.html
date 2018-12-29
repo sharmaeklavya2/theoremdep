@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Coset - TheoremDep</title>
-    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <title>Abelianness is invariant under isomorphism - TheoremDep</title>
+    <meta name="description" content="If G is isomorphic to H and G is abelian, then H is abelian." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,20 +25,19 @@
     </form>
 </nav>
 <div id="main">
-<h1>Coset</h1>
+<h1>Abelianness is invariant under isomorphism</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
-            <span class="deptitle">Group</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/group-isomorphism.html">
+            <span class="deptitle">Isomorphism on Groups</span>
         </a>
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Let $H$ be a subset of a group $G$ and $g \in G$.
-Then the left coset of $H$ with representative $G$ is the set $gH = \{gh: h \in H\}$.
-Similarly, the right coset of $H$ with representative $G$ is the set $Hg = \{hg: h \in H\}$.</p>
-<p>Usually (unless stated otherwise), $H$ is a subgroup of $G$.</p>
+<p>If $G \cong H$ and $G$ is abelian, then $H$ is abelian.</p>
+<h2>Proof</h2>
+<p>Let $\phi(a), \phi(b) \in H$. Then $\phi(a)\phi(b) = \phi(ab) = \phi(ba) = \phi(b)\phi(a)$.</p>
 </div>
 </body>
 </html>

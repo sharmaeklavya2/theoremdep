@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Coset - TheoremDep</title>
+    <title>Product of disjoint cycles is commutative - TheoremDep</title>
     <meta name="description" content="Track dependencies between theorems and definitions." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
@@ -25,20 +25,42 @@
     </form>
 </nav>
 <div id="main">
-<h1>Coset</h1>
+<h1>Product of disjoint cycles is commutative</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
-            <span class="deptitle">Group</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/symmetric-group.html">
+            <span class="deptitle">Symmetric Group</span>
         </a>
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Let $H$ be a subset of a group $G$ and $g \in G$.
-Then the left coset of $H$ with representative $G$ is the set $gH = \{gh: h \in H\}$.
-Similarly, the right coset of $H$ with representative $G$ is the set $Hg = \{hg: h \in H\}$.</p>
-<p>Usually (unless stated otherwise), $H$ is a subgroup of $G$.</p>
+<h2>Proof</h2>
+<p>Let $\sigma = (a_1, a_2, \ldots, a_k)$ and $\tau = (b_1, b_2, \ldots, b_l)$ be two disjoint permutations
+in the symmetric group $S_X$.</p>
+<p>We have to prove that $\forall x \in X, \sigma(\tau(x)) = \tau(\sigma(x))$.</p>
+<ul>
+<li>
+<p>Case 1: $x \not\in \sigma \wedge x \not\in \tau$:</p>
+<ul>
+<li>$\sigma(\tau(x)) = \sigma(x) = x$</li>
+<li>$\tau(\sigma(x)) = \tau(x) = x$.</li>
+</ul>
+</li>
+<li>
+<p>Case 2: $x = a_i \in \sigma \wedge x \not\in \tau$:</p>
+<ul>
+<li>$\sigma(\tau(a_i)) = \sigma(a_i) = a_{(i+1)\%k}$</li>
+<li>$\tau(\sigma(a_i)) = \tau(a_{(i+1)\%k}) = a_{(i+1)\%k}$</li>
+</ul>
+</li>
+<li>
+<p>Case 3: $x \not\in \sigma \wedge x = b_i \in \tau$:</p>
+<p>Similar to case 2.</p>
+</li>
+</ul>
+<p>Since in all 3 cases $\sigma(\tau(x)) = \tau(\sigma(x))$,
+product of two disjoint cycles is commutative.</p>
 </div>
 </body>
 </html>

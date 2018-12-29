@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Normal correspondence theorem - TheoremDep</title>
+    <meta name="description" content="A normal subgroup of G/N is of the form K/N, where K is a normal subgroup of G. If K is a normal subgroup of G, then K/N is a normal subgroup of G/N." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Normal correspondence theorem</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/factor-groups/factor-group.html">
+            <span class="deptitle">Factor group</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/factor-groups/correspondence-theorem.html">
+            <span class="deptitle">Correspondence theorem</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $N$ be a normal subgroup of $G$. Then:</p>
+<ol>
+<li>If $K$ is a normal subgroup of $G$, then $K/N$ is a normal subgroup of $G/N$.</li>
+<li>Every normal subgroup of $G/N$ is of the form $K/N$, where $K$ is a normal subgroup of $G$.</li>
+<li>Let $\phi(K) = K/N$. Then $\phi$ is a bijection from the normal subgroups of $G$
+    containing $N$ to normal subgroups of $G/N$.</li>
+</ol>
+<h2>Proof of 1</h2>
+<p>Let $gN \in G/N$ and $kN \in K/N$.</p>
+<p>\begin{align}
+&amp; (gN)(kN)(gN)^{-1}
+\\ &amp;= (gN)(kN)(g^{-1}N)
+\\ &amp;= (gkg^{-1})N
+\\ &amp;= k'N \tag{where $k' \in K$, because $K$ is normal in $G$}
+\\ &amp;\in K/N
+\end{align}</p>
+<p>Since $\forall gN \in G/N, \forall kN \in K/N, (gN)(kN)(gN)^{-1} \in K/N$,
+$K/N$ is normal in $G/N$.</p>
+<h2>Proof of 2</h2>
+<p>Let $K/N$ be a normal subgroup of $G/N$.
+We must prove that $K$ is normal in $G$.</p>
+<p>Let $g \in G$ and $k \in K$.</p>
+<p>\begin{align}
+&amp; (gN)(kN)(gN)^{-1} \in K/N \tag{$K/N$ is normal in $G/N$}
+\\ &amp;\Rightarrow (gkg^{-1})N \in K/N
+\\ &amp;\Rightarrow gkg^{-1} \in K
+\end{align}</p>
+<p>Since $\forall g \in G, \forall k \in K, gkg^{-1} \in K$,
+$K$ is normal in $G$.</p>
+<h2>Proof of 3</h2>
+<p>By result 2, $\phi$ is onto.</p>
+<p>Let $\phi(K_1) = \phi(K_2) \Rightarrow K_1/N = K_2/N$.</p>
+<p>\[ k_1 \in K_1 \Rightarrow k_1N \in K_1/N = K_2/N \Rightarrow k_1 \in K_2 \Rightarrow K_1 \subseteq K_2 \]</p>
+<p>Similarly, $K_2 \subseteq K_1$. Therefore, $K_1 = K_2$, which means $\phi$ is one-to-one.</p>
+<p>Therefore, $\phi$ is a bijection.</p>
+</div>
+</body>
+</html>

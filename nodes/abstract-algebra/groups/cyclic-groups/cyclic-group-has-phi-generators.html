@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Coset - TheoremDep</title>
+    <title>A cyclic group of order n has ϕ(n) generators - TheoremDep</title>
     <meta name="description" content="Track dependencies between theorems and definitions." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
@@ -25,20 +25,27 @@
     </form>
 </nav>
 <div id="main">
-<h1>Coset</h1>
+<h1>A cyclic group of order n has ϕ(n) generators</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
-            <span class="deptitle">Group</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/eulers-totient-function.html">
+            <span class="deptitle">Euler's Totient Function</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/order-of-elements-in-cyclic-group.html">
+            <span class="deptitle">Order of elements in cyclic group</span>
         </a>
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Let $H$ be a subset of a group $G$ and $g \in G$.
-Then the left coset of $H$ with representative $G$ is the set $gH = \{gh: h \in H\}$.
-Similarly, the right coset of $H$ with representative $G$ is the set $Hg = \{hg: h \in H\}$.</p>
-<p>Usually (unless stated otherwise), $H$ is a subgroup of $G$.</p>
+<p>A cyclic group $\langle a \rangle$ of order $n$ has $\phi(n)$ generators.</p>
+<h2>Proof</h2>
+<p>$\operatorname{order}(a^k) = \frac{n}{\gcd(k, n)}$.</p>
+<p>For $a^k$ to be a generator, it should have order $n$. So $\gcd(k, n) = 1$.
+That means $k$ can take $\phi(n)$ values.
+Therefore, $\langle a \rangle$ has $\phi(n)$ generators.</p>
 </div>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Coset - TheoremDep</title>
+    <title>A finite integral domain is a field - TheoremDep</title>
     <meta name="description" content="Track dependencies between theorems and definitions." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
@@ -25,20 +25,33 @@
     </form>
 </nav>
 <div id="main">
-<h1>Coset</h1>
+<h1>A finite integral domain is a field</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
-            <span class="deptitle">Group</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+            <span class="deptitle">Ring</span>
         </a>
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Let $H$ be a subset of a group $G$ and $g \in G$.
-Then the left coset of $H$ with representative $G$ is the set $gH = \{gh: h \in H\}$.
-Similarly, the right coset of $H$ with representative $G$ is the set $Hg = \{hg: h \in H\}$.</p>
-<p>Usually (unless stated otherwise), $H$ is a subgroup of $G$.</p>
+<p>Let $D$ be a finite integral domain. Then $D$ is a field.</p>
+<h2>Proof</h2>
+<p>Let $D^* = D - \{0\}$. Let $a \in D^*$.
+We must show that $a$ has a multiplicative inverse.</p>
+<p>Let $\lambda_a: D^* \mapsto D^*$ where $\lambda_a(d) = ad$.</p>
+<p>\begin{align}
+&amp; \lambda_a(d_1) = \lambda_a(d_2)
+\\ &amp;\Rightarrow ad_1 = ad_2
+\\ &amp;\Rightarrow a(d_1 - d_2) = 0 \tag{distributivity}
+\\ &amp;\Rightarrow d_1 - d_2 = 0 \tag{$a \neq 0$ and $D$ is an integral domain}
+\\ &amp;\Rightarrow d_1 = d_2
+\end{align}</p>
+<p>Therefore, $\lambda_a$ is one-to-one.
+Since the domain and co-domain of $\lambda_a$ have the same size,
+$\lambda_a$ is also onto.</p>
+<p>Therefore, pre-image of 1 exists in $\lambda_a$.
+Let it be $d$. Therefore, $ad=1$. Therefore, inverse of $a$ exists (and it is $d$).</p>
 </div>
 </body>
 </html>

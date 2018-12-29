@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Homomorphic mapping and inverse mapping of normal subgroup is normal - TheoremDep</title>
+    <meta name="description" content="Homomorphic mapping of normal subgroup is normal in homomorphic mapping of group. Homomorphic inverse mapping of normal subgroup of codomain is normal in domain." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Homomorphic mapping and inverse mapping of normal subgroup is normal</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/homomorphism/subgroup.html">
+            <span class="deptitle">Homomorphic mapping of subgroup of domain is subgroup of codomain</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/size.html">
+            <span class="deptitle">Size of coset equals size of subset</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $H_1$ and $H_2$ be subgroups of $G_1$ and $G_2$.
+Let $\phi$ be a homomorphism from $G_1$ to $G_2$.</p>
+<p>Then</p>
+<ol>
+<li>If $H_1$ is normal in $G_1$, then $\phi(H_1)$ is normal in $\phi(G_1)$.</li>
+<li>Let $\phi^{-1}(H_2) = \{g_1: \phi(g_1) \in H_2\}$.
+    If $H_2$ is normal in $G_2$, then $\phi^{-1}(H_2)$ is normal in $G_1$.</li>
+</ol>
+<h2>Proof of part 1</h2>
+<p>\begin{align}
+&amp; H_1 \textrm{ is normal in } G_1
+\\ &amp;\Rightarrow \forall g \in G_1, gH = Hg
+\\ &amp;\Rightarrow \forall g \in G_1, \forall h \in H_1, gh = hg
+\\ &amp;\Rightarrow \forall g \in G_1, \forall h \in H_1, \phi(gh) = \phi(hg)
+\\ &amp;\Rightarrow \forall \phi(g) \in \phi(G_1), \forall \phi(h) \in \phi(H_1), \phi(g)\phi(h) = \phi(h)\phi(g)
+\\ &amp;\Rightarrow \forall \phi(g) \in \phi(G_1), \phi(g)\phi(H_1) = \phi(H_1)\phi(g)
+\\ &amp;\Rightarrow \phi(H_1) \textrm{ is normal in } \phi(G_1)
+\end{align}</p>
+<h2>Proof of part 2</h2>
+<p>Let $g_1 \in G_1$ and $h_1 \in \phi^{-1}(H_2)$.</p>
+<p>\begin{align}
+&amp; \phi(g_1)\phi(h_1)\phi(g_1)^{-1} = \phi(h_1) \tag{since $H_2$ is normal in $G_2$}
+\\ &amp;\Rightarrow \phi(g_1 h_1 g_1^{-1}) = \phi(h_1) \in H_2
+\\ &amp;\Rightarrow g_1 h_1 g_1^{-1} \in \phi^{-1}(H_2)
+\end{align}</p>
+<p>Therefore, $\forall g_1 \in G_1, g_1 \phi^{-1}(H_2) g_1^{-1} \subseteq \phi^{-1}(H_2)$.
+Since $|g_1 \phi^{-1}(H_2) g_1^{-1}| = |\phi^{-1}(H_2)|$, $g_1 \phi^{-1}(H_2) g_1^{-1} = \phi^{-1}(H_2)$.</p>
+<p>Therefore, $\phi^{-1}(H_2)$ is normal in $G_1$.</p>
+</div>
+</body>
+</html>

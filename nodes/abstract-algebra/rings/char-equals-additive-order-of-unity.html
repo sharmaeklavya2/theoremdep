@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Characteristic of ring equals additive order of unity - TheoremDep</title>
+    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Characteristic of ring equals additive order of unity</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+            <span class="deptitle">Ring</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $R$ be a ring with unity.</p>
+<p>The characteristic of $R$ ($\operatorname{char}(R)$) is the smallest positive integer $n$ such that
+$\forall r \in R, nr = 0$. If no such $n$ exists, $\operatorname{char}(R) = 0$.</p>
+<p>$\operatorname{char}(R) = 0 \iff \operatorname{order_+}(1) = \infty$.
+Otherwise $\operatorname{char}(R) = \operatorname{order_+}(1)$.</p>
+<h2>Proof</h2>
+<p>Let $n = \operatorname{char}(R)$ and $m = \operatorname{order_+}(1)$.</p>
+<h3>Lemma 1</h3>
+<p>Let $k \in \mathbb{Z}$.</p>
+<p>\begin{align}
+kr &amp;= (r + r + \ldots + r)
+\\ &amp;= (r \cdot 1 + r \cdot 1 + \ldots + r \cdot 1)
+\\ &amp;= r \cdot (1 + 1 + \ldots + 1) \tag{distributivity}
+\\ &amp;= r \cdot (k1)
+\end{align}</p>
+<p>Therefore, $kr = r(k1)$.</p>
+<h3>Part 1</h3>
+<p>Assume $m \neq \infty$. Then $mr = r(m1) = r0 = 0$. Therefore, characteristic exists, which means $n \neq 0$.</p>
+<p>Assume $n \neq 0$. Then $n1 = 0 \Rightarrow m \mid n$. Therefore $m \neq \infty$.</p>
+<p>Therefore, $n = 0 \iff m = \infty$.</p>
+<h3>Part 2</h3>
+<p>Assume $n \neq 0$ (which means $m \neq \infty$).</p>
+<p>Since $n1 = 0$, $m \mid n \Rightarrow m \le n$.</p>
+<p>$mr = r(m1) = r0 = 0$. Therefore, $n \le m$. Therefore, $m = n$.</p>
+</div>
+</body>
+</html>

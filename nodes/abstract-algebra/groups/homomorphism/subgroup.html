@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Homomorphic mapping of subgroup of domain is subgroup of codomain - TheoremDep</title>
+    <meta name="description" content="Homomorphic mapping of subgroup of domain is subgroup of codomain. Inverse mapping of subgroup of codomain is subgroup of domain." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Homomorphic mapping of subgroup of domain is subgroup of codomain</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/subgroup-condition-2.html">
+            <span class="deptitle">Condition for a subset to be a subgroup</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/homomorphism/mapping-of-power-is-power-of-mapping.html">
+            <span class="deptitle">Mapping of power is power of mapping</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $H_1$ and $H_2$ be subgroups of $G_1$ and $G_2$.
+Let $\phi$ be a homomorphism from $G_1$ to $G_2$.</p>
+<p>Then</p>
+<ol>
+<li>$\phi(H_1)$ is a subgroup of $G_2$.</li>
+<li>$\phi^{-1}(H_2) = \{g_1: \phi(g_1) \in H_2\}$ is a subgroup of $G_1$.</li>
+</ol>
+<h2>Proof of part 1</h2>
+<p>$\phi(H_1)$ is a non-empty subset of $G_2$.</p>
+<p>Let $\phi(a), \phi(b) \in \phi(H_1)$, where $a, b \in H_1$.
+Then
+\[ \phi(a)\phi(b)^{-1} = \phi(a)\phi(b^{-1}) = \phi(ab^{-1}) \in \phi(H_1) \]</p>
+<p>Therefore, $H_1$ is a subgroup of $G_2$.</p>
+<h2>Proof of part 2</h2>
+<p>Since $H_2$ is non-empty, $\phi^{-1}(H_2)$ is a non-empty subset of $G_1$.</p>
+<p>\begin{align}
+&amp; a, b \in \phi^{-1}(H_2)
+\\ &amp;\Rightarrow \phi(a), \phi(b) \in H_2
+\\ &amp;\Rightarrow \phi(a)\phi(b)^{-1} \in H_2
+\\ &amp;\Rightarrow \phi(a)\phi(b^{-1}) \in H_2
+\\ &amp;\Rightarrow \phi(ab^{-1}) \in H_2
+\\ &amp;\Rightarrow ab^{-1} \in \phi^{-1}(H_2)
+\end{align}</p>
+<p>Therefore, $\phi^{-1}(H_2)$ is a subgroup of $G_1$.</p>
+</div>
+</body>
+</html>

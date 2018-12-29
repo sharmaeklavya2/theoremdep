@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>GCD is the smallest Linear Combination - TheoremDep</title>
-    <meta name="description" content="The gcd of two numbers is their smallest positive linear combination." />
+    <meta name="description" content="The gcd of a set of numbers is their smallest positive linear combination." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -29,36 +29,26 @@
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-subtraction.html">
-            <span class="deptitle">gcd(a, b) = gcd(a-b, b)</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/integer-division-theorem.html">
+            <span class="deptitle">Integer Division Theorem</span>
         </a>
         <span class="reason">Used in proof</span>
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>The GCD of two numbers is their smallest positive linear combination.</p>
+<p>The GCD of a set of numbers is their smallest positive linear combination.</p>
+<p>\[ \gcd(a_1, a_2, \ldots, a_n) = \min^+\left( \sum_{i=1}^n a_i\mathbb{Z} \right) \]</p>
 <h2>Proof</h2>
-<p>Let $p_{a, b}(x, y): \gcd(x, y) = \gcd(a, b) \wedge x, y \in a\mathbb{Z} + b\mathbb{Z}$.</p>
-<p>\begin{align}
-&amp;p_{a, b}(x, y)
-\\ &amp;\iff \gcd(x, y) = \gcd(a, b) \wedge x, y \in a\mathbb{Z} + b\mathbb{Z}
-\\ &amp;\iff \gcd(x-y, y) = \gcd(a, b) \wedge x-y, y \in a\mathbb{Z} + b\mathbb{Z}
-\\ &amp;\iff p_{a, b}(x-y, y)
-\end{align}</p>
-<p>Therefore, $p_{a, b}(x, y) = p_{a, b}(y, x\% y)$.</p>
-<p>Let $\lambda$ be the operation defined by $(x, y) \mapsto (y, x\%y)$ where $y$ is not 0.
-$p_{a, b}$ is invariant over $\lambda$.</p>
-<p>Applying $\lambda$ on $(x, y)$ decreases $y$.
-Therefore, successively applying $\lambda$ on $(a, b)$ will eventually reduce it to the form $(e, 0)$.</p>
-<p>$p_{a, b}(a, b)$ is trivially true.
-$p_{a, b}(e, 0)$ is true since $p_{a, b}$ is invariant over $\lambda$.</p>
-<p>$$p_{a, b}(e, 0)
-\Rightarrow e = \gcd(a, b) \wedge e \in a\mathbb{Z} + b\mathbb{Z}
-\Rightarrow \gcd(a, b) \in a\mathbb{Z} + b\mathbb{Z}$$</p>
-<p>Let $d$ be the smallest positive linear combination of $a$ and $b$.
-Since $g$ is a linear combination of $a$ and $b$, $d \le g$.</p>
-<p>$$g \mid a \wedge g \mid b \Rightarrow g \mid d \Rightarrow g \le d \Rightarrow g = d$$</p>
-<p>Therefore, $\gcd(a, b)$ is the smallest positive linear combination of $a$ and $b$.</p>
+<p>Let $g = \gcd(a_1, a_2, \ldots, a_n)$.
+Let $d = \sum_{i=1}^n k_ia_i$ be the smallest positive linear combination of $[a_1, a_2, \ldots, a_n]$.</p>
+<p>Since $g \mid a_i$, $g \mid d$. So $g \le d$.</p>
+<p>Let $a_i = qd + r$, where $0 \le r \lt d$ (by integer division theorem).
+Therefore, $r = a_i - qd$ is a linear combination of $[a_1, a_2, \ldots, a_n]$ which is smaller than $d$.
+Since $d$ is the smallest positive linear combination, $r$ must be 0.
+Therefore, $d$ divides $a_i$.</p>
+<p>Since $d$ divides all $a_i$, it is a common divisor of $[a_1, a_2, \ldots, a_n]$.
+Therefore, $d \le g$.</p>
+<p>Since $d \le g$ and $g \le d$, $d = g$.</p>
 </div>
 </body>
 </html>

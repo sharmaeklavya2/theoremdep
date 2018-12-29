@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Coset - TheoremDep</title>
+    <title>Group of prime order is cyclic - TheoremDep</title>
     <meta name="description" content="Track dependencies between theorems and definitions." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
@@ -25,7 +25,7 @@
     </form>
 </nav>
 <div id="main">
-<h1>Coset</h1>
+<h1>Group of prime order is cyclic</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
@@ -33,12 +33,20 @@
             <span class="deptitle">Group</span>
         </a>
         </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/order-of-element-divides-order-of-group.html">
+            <span class="deptitle">Order of element divides order of group</span>
+        </a>
+        </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Let $H$ be a subset of a group $G$ and $g \in G$.
-Then the left coset of $H$ with representative $G$ is the set $gH = \{gh: h \in H\}$.
-Similarly, the right coset of $H$ with representative $G$ is the set $Hg = \{hg: h \in H\}$.</p>
-<p>Usually (unless stated otherwise), $H$ is a subgroup of $G$.</p>
+<p>Let $G$ be a group where $|G|$ is prime.</p>
+<p>Since $|G| &gt; 1$, $G$ has an element $g$ which is not identity.
+$\operatorname{order}(g) &gt; 1$, because $g$ is not identity.</p>
+<p>$\operatorname{order}(g)$ divides $|G|$ and $|G|$ is prime.
+Therefore, $\operatorname{order}(g) = |G|$.
+This means $g$ is a generator of $G$.</p>
+<p>Therefore, a group of prime order is cyclic and all non-identity elements are generators.</p>
 </div>
 </body>
 </html>

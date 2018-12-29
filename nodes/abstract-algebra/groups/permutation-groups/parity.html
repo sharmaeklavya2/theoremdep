@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Parity of a permutation - TheoremDep</title>
+    <meta name="description" content="If a permutation can be written as a product of only an odd number of transpositions, it is called an odd permutation. If a permutation can be written as a product of only an even number of transpositions, it is called an even permutation. Every permutation is either an odd permutation or an even permutation." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Parity of a permutation</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/canonical-cycle-notation.html">
+            <span class="deptitle">Canonical cycle notation of a permutation</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/product-of-cycles-and-transposition.html">
+            <span class="deptitle">Product of cycles and a transposition</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>If a permutation can be written as a product of only an odd number of transpositions, it is called an odd permutation.
+If a permutation can be written as a product of only an even number of transpositions, it is called an even permutation.
+Every permutation is either an odd permutation or an even permutation.</p>
+<h2>Proof</h2>
+<p>Let there be $n$ cycles in the canonical cycle notation of the permutation $\lambda$.
+Let the $i^{\textrm{th}}$ cycle be $\sigma_i$ of length $n_i$.
+Then the parity of $\lambda$ is defined as</p>
+<p>\[ \operatorname{parity}(\lambda) = \left( \sum_{i=1}^n (n_i - 1) \right) \% 2 \]</p>
+<h3>Lemma 1: multiplying a permutation by a transposition changes its parity</h3>
+<p>Let $\tau$ be a transposition.</p>
+<ul>
+<li>
+<p>Case 1: $\tau$ does not intersect $\lambda$:</p>
+<p>Then $\operatorname{parity}(\lambda\tau) = (\operatorname{parity}(\lambda) + 1) \% 2$</p>
+</li>
+<li>
+<p>Case 2: One element of $\tau$ intersects $\sigma_i$:</p>
+<p>The canonical cycle notation of $\lambda\tau$ is
+$\sigma_1\ldots\sigma_{i-1}\mu\sigma_{i+1}\ldots\sigma_n$,
+where $\mu$ is a cycle of length $n_i+1$.
+Therefore, $\operatorname{parity}(\lambda\tau) = (\operatorname{parity}(\lambda) + 1) \% 2$</p>
+</li>
+<li>
+<p>Case 3: Both elements of $\tau$ intersect $\sigma_i$:</p>
+<p>The canonical cycle notation of $\lambda\tau$ is
+$\sigma_1\ldots\sigma_{i-1}\mu_1\mu_2\sigma_{i+1}\ldots\sigma_n$,
+where the sum of lengths of cycles $\mu_1$ and $\mu_2$ is $n_i$.
+Therefore, $\operatorname{parity}(\lambda\tau) = (\operatorname{parity}(\lambda) - 1) \% 2$</p>
+</li>
+<li>
+<p>Case 4: $\tau$ intersects both $\sigma_i$ and $\sigma_j$, where $i&lt;j$:</p>
+<p>The canonical cycle notation of $\lambda\tau$ is
+$\sigma_1\ldots\sigma_{i-1}\mu\sigma_{i+1}\ldots\sigma_{j-1}\sigma_{j+1}\ldots\sigma_n$,
+where $\mu$ is a cycle of length $n_i + n_j$.
+Therefore, $\operatorname{parity}(\lambda\tau) = (\operatorname{parity}(\lambda) + 1) \% 2$</p>
+</li>
+</ul>
+<p>Therefore, $\operatorname{parity}(\lambda\tau)$ is different from $\operatorname{parity}(\lambda)$.</p>
+<h3>Lemma 2: The parity of the product of $n$ transpositions is $n\%2$.</h3>
+<p><strong>Proof by induction</strong>:</p>
+<p>$P(n)$: Product of $n$ transpositions is $n\%2$.</p>
+<p><strong>Base case</strong>: A permutation with 0 transpositions is the identity permutation
+and its parity is 0. $\implies P(0)$.</p>
+<p><strong>Inductive step</strong>:</p>
+<p>Assume $P(n)$, where $n \ge 0$.
+Let $\lambda\tau$ be a product of $n+1$ transpositions, where $\tau$ is a transposition.</p>
+<p>\begin{align}
+&amp; \operatorname{parity}(\lambda\tau)
+\\ &amp;= (\operatorname{parity}(\lambda) + 1) \% 2 \tag{By lemma 1}
+\\ &amp;= (n + 1) \% 2 \tag{By induction hypothesis}
+\\ &amp;\Rightarrow P(n+1)
+\end{align}</p>
+<p>Since $P(0)$ and $P(n) \Rightarrow P(n+1)$, by mathematical induction, $P(n)$ holds $\forall n \ge 0$.</p>
+<h3>Conclusion</h3>
+<p>We can therefore define the parity of a permutation as the parity of the number
+of transpositions it can be written as the product of.</p>
+</div>
+</body>
+</html>

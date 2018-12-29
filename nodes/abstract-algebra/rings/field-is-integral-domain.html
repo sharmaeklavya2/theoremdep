@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A field is an integral domain - TheoremDep</title>
+    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>A field is an integral domain</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+            <span class="deptitle">Ring</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/0x-is-0.html">
+            <span class="deptitle">In a ring, 0x = 0 = x0 for all x</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>$(R, +, \circ)$ is a field iff $(R, +, \circ)$ is a ring and $(R-\{0\}, \circ)$ is an abelian group.</p>
+<p>$(R, +, \circ)$ is an integral domain iff $\circ$ is commutative, $\circ$ has an identity
+and $(R, +, \circ)$ has no zero-divisors. $a, b \in R-\{0\}$ are zero-divisors iff $ab = 0$.</p>
+<p>If $(R, +, \circ)$ is a field then it is also an integral domain.</p>
+<h2>Proof by contradiction</h2>
+<p>Assume that $R$ has zero-divisors.
+Let $a, b \in R-\{0\}$ be two zero-divisors of $R$.</p>
+<p>Since $R$ is a field, $a$ and $b$ have multiplicative inverses.
+Let them be $a^{-1}$ and $b^{-1}$ respectively.</p>
+<p>\[ 1 = (a^{-1}a)(bb^{-1}) = a^{-1}(ab)b^{-1} = a^{-1}0b^{-1} = 0 \]</p>
+<p>This is a contradiction. Hence $R$ has no zero-divisors.
+Therefore, $R$ is an integral domain.</p>
+</div>
+</body>
+</html>

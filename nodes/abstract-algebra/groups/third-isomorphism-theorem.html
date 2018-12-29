@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Third isomorphism theorem - TheoremDep</title>
+    <meta name="description" content="(G/N)/(K/N) is isomorphic to G/K." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Third isomorphism theorem</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <span class="deptitleuci missing">/abstract-algebra/cosets/factor-group</span>
+        </li>
+        <li>
+        <span class="deptitleuci missing">/abstract-algebra/cosets/normal-correspondence-theorem</span>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/coset-equals-subgroup-iff-elem-in-subgroup.html">
+            <span class="deptitle">gH = H iff g in H</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/first-isomorphism-theorem.html">
+            <span class="deptitle">First isomorphism theorem</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>If $K$ is a normal subgroup of $G$ and $N$ is a normal subgroup of $K$,
+then $(G/N)/(K/N) \cong G/K$.</p>
+<h2>Proof</h2>
+<p>Let $\psi: G/N \mapsto G/K$, where $\psi(gN) = gK$.</p>
+<p>\begin{align}
+&amp; g_1N = g_2N
+\\ &amp;\Rightarrow (g_2^{-1}g_1)N = N
+\\ &amp;\Rightarrow g_2^{-1}g_1 \in N
+\\ &amp;\Rightarrow g_2^{-1}g_1 \in K \tag{$N \subseteq K$}
+\\ &amp;\Rightarrow g_2^{-1}g_1K = K
+\\ &amp;\Rightarrow g_1K = g_2K
+\\ &amp;\Rightarrow \psi(g_1N) = \psi(g_2N)
+\end{align}</p>
+<p>Therefore, $\psi$ is well-defined.</p>
+<p>\begin{align}
+&amp; \psi((g_1N)(g_2N))
+\\ &amp;= \psi(g_1g_2N)
+\\ &amp;= g_1g_2K
+\\ &amp;= (g_1K)(g_2K)
+\\ &amp;= \psi(g_1N)\psi(g_2N)
+\end{align}</p>
+<p>Therefore, $\psi$ is a homomorphism.</p>
+<p>\begin{align}
+&amp; \psi(gN) = \operatorname{id}(G/K) = K
+\\ &amp;\iff gK = K
+\\ &amp;\iff g \in K
+\\ &amp;\iff gN \in K/N
+\end{align}</p>
+<p>Therefore, $\operatorname{ker}(\psi) = K/N$.</p>
+<p>\begin{align}
+&amp; \psi(G/N)
+\\ &amp;= \{ \psi(gN): gN \in G/N \}
+\\ &amp;= \{ gK: g \in G \}
+\\ &amp;= G/K
+\end{align}</p>
+<p>Therefore, $\psi(G/N) = G/K$.</p>
+<p>Since $\psi: G/N \mapsto G/K$ is a homomorphism, by the first isomorphism theorem, we get</p>
+<p>\[ \psi(G/N) \cong (G/N)/\operatorname{ker}(\psi) \Rightarrow G/K \cong (G/N)/(K/N) \]</p>
+</div>
+</body>
+</html>

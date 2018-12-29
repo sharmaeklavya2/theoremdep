@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Coset - TheoremDep</title>
-    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <title>Ring - TheoremDep</title>
+    <meta name="description" content="A ring is a set with 2 operations (addition and multiplication) which satisfies certain properties." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,7 +25,7 @@
     </form>
 </nav>
 <div id="main">
-<h1>Coset</h1>
+<h1>Ring</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
@@ -35,10 +35,13 @@
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Let $H$ be a subset of a group $G$ and $g \in G$.
-Then the left coset of $H$ with representative $G$ is the set $gH = \{gh: h \in H\}$.
-Similarly, the right coset of $H$ with representative $G$ is the set $Hg = \{hg: h \in H\}$.</p>
-<p>Usually (unless stated otherwise), $H$ is a subgroup of $G$.</p>
+<p>$(R, +, \circ)$ is a ring iff all of the following conditions are met:</p>
+<ul>
+<li>$(R, +)$ is an abelian group (identity is denoted as 0).</li>
+<li>Closure of multiplication: $\forall a, b \in R, ab \in R$.</li>
+<li>Associativity of multiplication: $\forall a, b, c \in R, (ab)c = a(bc)$.</li>
+<li>Distributive property: $\forall a, b, c \in R, (a(b+c) = ab+ac \wedge (a+b)c = ac+bc)$.</li>
+</ul>
 </div>
 </body>
 </html>

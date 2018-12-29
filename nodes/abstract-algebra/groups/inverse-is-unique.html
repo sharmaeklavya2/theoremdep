@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Coset - TheoremDep</title>
-    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <title>Inverse of a group element is unique - TheoremDep</title>
+    <meta name="description" content="Inverse of a group element is unique." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,20 +25,29 @@
     </form>
 </nav>
 <div id="main">
-<h1>Coset</h1>
+<h1>Inverse of a group element is unique</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
         <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
             <span class="deptitle">Group</span>
         </a>
+        <span class="reason">Used in definition</span>
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Let $H$ be a subset of a group $G$ and $g \in G$.
-Then the left coset of $H$ with representative $G$ is the set $gH = \{gh: h \in H\}$.
-Similarly, the right coset of $H$ with representative $G$ is the set $Hg = \{hg: h \in H\}$.</p>
-<p>Usually (unless stated otherwise), $H$ is a subgroup of $G$.</p>
+<p>Inverse of a group element is unique.</p>
+<h2>Proof</h2>
+<p>Let $l_i$ be the $i^{\textrm{th}}$ left inverse and $r_i$ be the $i^{\textrm{th}}$ right inverse.</p>
+<p>\begin{align}
+l_i &amp;= l_i * e \tag{$e$ is identity}
+\\ &amp;= l_i * (a * r_j) \tag{$r_j$ is right inverse}
+\\ &amp;= (l_i * a) * r_j \tag{associativity}
+\\ &amp;= e * r_j \tag{$l_i$ is left inverse}
+\\ &amp;= r_j \tag{$e$ is identity}
+\end{align}</p>
+<p>This means that every left inverse is equal to every right inverse.
+This means that they're all equal.</p>
 </div>
 </body>
 </html>
