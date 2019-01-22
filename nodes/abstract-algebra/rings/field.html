@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>0x = 0 = x0 - TheoremDep</title>
-    <meta name="description" content="Let R be a ring. For all elements x in R, 0x = 0 = x0." />
+    <title>Field - TheoremDep</title>
+    <meta name="description" content="(R, +, *) is a field iff (R, +) and (R, *) are abelian groups and the distributive property holds." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,7 +25,7 @@
     </form>
 </nav>
 <div id="main">
-<h1>0x = 0 = x0</h1>
+<h1>Field</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
@@ -35,10 +35,14 @@
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Let $R$ be a ring. Then $\forall x \in R, 0{\cdot}x = 0 = x{\cdot}0$.</p>
-<h2>Proof</h2>
-<p>$0x = (0+0)x = 0x + 0x$. Therefore, $0x = 0$.</p>
-<p>$x0 = x(0+0) = x0 + x0$. Therefore, $x0 = 0$.</p>
+<p>$(R, +, \circ)$ is a field iff all of the following conditions are met:</p>
+<ul>
+<li>$(R, +)$ is an abelian group (identity is denoted as 0).</li>
+<li>$(R, \circ)$ is an abelian group (identity is denoted as 1).</li>
+<li>Distributive property: $\forall a, b, c \in R, (a(b+c) = ab+ac \wedge (a+b)c = ac+bc)$.</li>
+</ul>
+<p>Consequently, a field is also a ring.</p>
+<p>Also, a field has at least 2 elements, 0 and 1.</p>
 </div>
 </body>
 </html>

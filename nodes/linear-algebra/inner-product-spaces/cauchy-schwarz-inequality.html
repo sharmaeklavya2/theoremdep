@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cauchy-Schwarz Inequality - TheoremDep</title>
+    <meta name="description" content="< u, v >² ≤ < u, u > < v, v >" />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Cauchy-Schwarz Inequality</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/inner-product-space.html">
+            <span class="deptitle">Inner product space</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/zero.html">
+            <span class="deptitle">Zero in inner product</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $V$ be an inner product space and $\mathbf{u}, \mathbf{v} \in V$.
+Then $|\langle \mathbf{u}, \mathbf{v} \rangle|^2 \le \langle \mathbf{u}, \mathbf{u} \rangle \langle \mathbf{v}, \mathbf{v} \rangle$.</p>
+<h2>Proof</h2>
+<p>\[ \mathbf{v} = 0 \Rightarrow |\langle \mathbf{u}, \mathbf{v} \rangle|^2 = 0 = \langle \mathbf{u}, \mathbf{u} \rangle \langle \mathbf{v}, \mathbf{v} \rangle \]</p>
+<p>\[ k = \frac{\langle \mathbf{u}, \mathbf{v} \rangle}{\|\mathbf{v}\|^2} \Rightarrow \langle \mathbf{u}, \mathbf{v} \rangle = k\|\mathbf{v}\|^2 \]</p>
+<p>\begin{align}
+0 &amp;\le \| \mathbf{u} - k\mathbf{v} \|^2 \tag{by positive semidefiniteness}
+\\ &amp;= \langle \mathbf{u} - k\mathbf{v}, \mathbf{u} - k\mathbf{v} \rangle
+\\ &amp;= \langle \mathbf{u}, \mathbf{u} \rangle - \langle \mathbf{u}, k\mathbf{v} \rangle - \langle k\mathbf{v}, \mathbf{u} \rangle + \langle k\mathbf{v}, k\mathbf{v} \rangle \tag{by linearity}
+\\ &amp;= \langle \mathbf{u}, \mathbf{u} \rangle - \overline{k}\langle \mathbf{u}, \mathbf{v} \rangle - k\overline{\langle \mathbf{u}, \mathbf{v} \rangle}
+    + k\overline{k}\langle \mathbf{v}, \mathbf{v} \rangle \tag{by linearity and conjugate symmetry}
+\\ &amp;= \|\mathbf{u}\|^2 - \overline{k}k\|\mathbf{v}\|^2 - k\overline{k\|\mathbf{v}\|^2} + k\overline{k}\|\mathbf{v}\|^2
+\\ &amp;= \|\mathbf{u}\|^2 - k\overline{k}\|\mathbf{v}\|^2 - k\overline{k}\|\mathbf{v}\|^2 + k\overline{k}\|\mathbf{v}\|^2
+\\ &amp;= \|\mathbf{u}\|^2 - k\overline{k}\|\mathbf{v}\|^2
+\\ &amp;= \|\mathbf{u}\|^2 - \frac{\langle \mathbf{u}, \mathbf{v} \rangle}{\|\mathbf{v}\|^2} \frac{\overline{\langle \mathbf{u}, \mathbf{v} \rangle}}{\|\mathbf{v}\|^2} \|\mathbf{v}\|^2
+\\ &amp;= \|\mathbf{u}\|^2 - \frac{|\langle \mathbf{u}, \mathbf{v} \rangle|^2}{\|\mathbf{v}\|^2}
+\end{align}</p>
+<p>Therefore, $|\langle \mathbf{u}, \mathbf{v} \rangle|^2 \le \|\mathbf{u}\|^2\|\mathbf{v}\|^2$</p>
+</div>
+</body>
+</html>

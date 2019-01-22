@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>I is a maximal ideal iff R/I is a field - TheoremDep</title>
+    <meta name="description" content="Let I be an ideal of R, a commutative ring with unity. Then I is maximal in R iff R/I is a field." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>I is a maximal ideal iff R/I is a field</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ideal.html">
+            <span class="deptitle">Ideal</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+            <span class="deptitle">Field</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/quotient-ring.html">
+            <span class="deptitle">Quotient Ring</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/coset-equals-subgroup-iff-elem-in-subgroup.html">
+            <span class="deptitle">gH = H iff g in H</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $R$ be a commutative ring with unity. Let $I$ be a proper ideal of $R$.</p>
+<p>$I$ is defined to be a maximal ideal iff no proper ideal of $R$ is a proper superset of $I$.</p>
+<p>$I$ is a maximal ideal iff $R/I$ is a field.</p>
+<h2>Proof</h2>
+<p>Since $R$ is a commutative ring with unity,
+$R/I$ is a commutative ring with unity $1+I$.</p>
+<h3>Proof of 'only-if' part</h3>
+<p>Let $a+I \in R/I$ be a non-zero element.
+Thus, $a \not\in I$.
+Since $0 \in I$, $a \neq 0$.</p>
+<p>Let $J = \{ra + i: r \in R \wedge i \in I\}$.</p>
+<ul>
+<li>$0 = 0a + 0 \in J$, so $J$ is non-empty.</li>
+<li>Let $r_1a + i_1, r_2a + i_2 \in J$. Then $(r_1a + i_1) - (r_2a + i_2) = (r_1 - r_2)a + (i_1 - i_2) \in J$.</li>
+<li>Let $r_1a + i_1, r_2a + i_2 \in J$. Then $(r_1a + i_1)(r_2a + i_2) = (r_1ar_2)a + (r_1ai_2 + i_1r_2a + i_1i_2) \in J$.</li>
+<li>Let $r' \in R \wedge ra + i \in J$. Then $r'(ra + i) = (r'r)a + r'i \in J$ and $(ra + i)r' = (rr')a + ir' \in J$.</li>
+</ul>
+<p>Therefore, $J$ is an ideal of $R$.</p>
+<p>Let $i \in I$. Then $i = 0a + i \in J$. Therefore, $I \subseteq J$.
+$a = 1a + 0 \in J$, but $a \not\in I$. Therefore, $I \subset J$ and $I \neq J$.</p>
+<p>Let $I$ be a maximal ideal. This means that $J = R$.</p>
+<p>Since $1 \in R, 1 \in J$, which means $\exists b \exists i, 1 = ba + i$.
+$\Rightarrow 1 + I = ba + I = (b + I)(a + I)$.
+Therefore, every non-0 element $a+I$ in $R/I$ has an inverse.
+Therefore, $R/I$ is a field.</p>
+<h3>Proof of 'if' part</h3>
+<p>Let $R/I$ be a field. So $0 + I, 1 + I \in R/I$.
+Therefore, $I \neq R$.</p>
+<p>Since $I$ is not a maximal ideal, let $J$ be an ideal of $R$ which is a superset of $I$.
+Let $a \in J-I$. Since $a \not\in I, a + I \neq 0 + I$.</p>
+<p>Since $R/I$ is a field and $a+I$ is non-0, $a+I$ has an inverse.
+Therefore, $\exists b, (a+I)(b+I) = ab + I = 1 + I$.
+Therefore, $\exists i, ab + i = 1$.</p>
+<p>$ba \in J$ because $a \in J$ and absorption.
+$ba + i \in J$ because $I \subset J$ and closure of $J$.
+Therefore, $1 \in J$.
+By absorption, $\forall r \in R, r \in J$.
+Therefore, $R = J$.
+Therefore, $I$ is maximal.</p>
+</div>
+</body>
+</html>

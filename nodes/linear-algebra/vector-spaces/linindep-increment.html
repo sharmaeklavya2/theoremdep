@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Incrementing a linearly independent set - TheoremDep</title>
+    <meta name="description" content="If S is linearly independent and v is not a linear combination of S, then S+{v} is linearly independent." />
+    <meta name="keywords" content="increment,expand,increase,grow" />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Incrementing a linearly independent set</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep.html">
+            <span class="deptitle">Linear independence</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $S = \{v_1, v_2, \ldots, v_n\}$ be a linearly independent subset of vector space $V$.
+Let $u$ be a vector which cannot be represented as a linear combination of vectors in $S$.
+Then $S \cup \{u\}$ is linearly independent.</p>
+<h2>Proof</h2>
+<p>\[ S \cup \{u\} \textrm{ is linearly dependent}
+\Rightarrow \exists (a_1, a_2, \ldots, a_n, b) \neq 0, bu + \sum_{i=1}^n a_iv_i = 0
+\]</p>
+<h3>Case 1: $b \neq 0$</h3>
+<p>\[ bu + \sum_{i=1}^n a_iv_i = 0
+\Rightarrow u = \sum_{i=1}^n (-b^{-1}a_i)v_i
+\]</p>
+<p>Therefore, $u$ is a linear combination of vectors in $S$.
+This is a contradiction.</p>
+<h3>Case 2: $b = 0$</h3>
+<p>\[ bu + \sum_{i=1}^n a_iv_i = 0
+\implies \sum_{i=1}^n a_iv_i = 0
+\implies (a_1, a_2, \ldots, a_n) = 0 \tag{$\because$ $S$ is linearly independent}
+\]</p>
+<p>This is a contradiction because we assumed that $(a_1, a_2, \ldots, a_n, b) \neq 0$.</p>
+<p>Since assuming that $S \cup \{u\}$ is linearly dependent gives us a contradiction,
+$S \cup \{u\}$ is linearly independent.</p>
+</div>
+</body>
+</html>

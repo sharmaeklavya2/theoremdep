@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Minimally spanning iff basis - TheoremDep</title>
+    <meta name="description" content="A set of vectors S minimally spans V iff S is a basis." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Minimally spanning iff basis</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html">
+            <span class="deptitle">Basis of a vector space</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span-decrement.html">
+            <span class="deptitle">Decrementing a span</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-is-smaller-than-span.html">
+            <span class="deptitle">Linearly independent set is smaller than a span</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>A set $S$ minimally spans $V$ iff it is a basis.</p>
+<h2>Proof</h2>
+<p>Let $S$ be minimally spanning. Assume $S$ is linearly dependent.
+Therefore, $\exists v \in S, \operatorname{span}(S - \{v\}) = \operatorname{span}(S) = V$.
+This contradicts the fact that $S$ is minimally spanning.
+Therefore, $S$ is linearly independent, which makes $S$ a basis.</p>
+<p>Let $S$ be a basis. Assume $S$ is not minimally spanning.
+Therefore, $\exists v \in S, \operatorname{span}(S - \{v\}) = \operatorname{span}(S) = V$.
+Since $S$ is linearly independent and $S - \{v\}$ spans $V$,
+$|S| \le |S - \{v\}| \Rightarrow |S| \le |S| - 1 \Rightarrow \bot$.
+Therefore, $S$ is minimally spanning.</p>
+</div>
+</body>
+</html>

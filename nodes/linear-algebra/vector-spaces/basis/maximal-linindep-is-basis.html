@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Maximally linearly independent iff basis - TheoremDep</title>
+    <meta name="description" content="A set is maximally linearly independent iff it is a basis." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Maximally linearly independent iff basis</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html">
+            <span class="deptitle">Basis of a vector space</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-is-smaller-than-span.html">
+            <span class="deptitle">Linearly independent set is smaller than a span</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-increment.html">
+            <span class="deptitle">Incrementing a linearly independent set</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>A set $S$ is maximally linearly independent iff it is a basis.</p>
+<h2>Proof</h2>
+<p>Let $S$ be maximally linearly independent. Assume $S$ doesn't span $V$.
+Therefore, there is a vector $v \in V$ which is not a linear combination of elements of $S$.
+Therefore, $S \cup \{v\}$ is also linearly independent.
+This contradicts the fact that $S$ is maximally linearly independent.
+Therefore, $S$ spans $V$, which makes $S$ a basis of $V$.</p>
+<p>Let $S$ be a basis. Assume $S$ is not maximally linearly independent.
+Therefore, $\exists v \in V, S \cup \{v\}$ is linearly independent.
+Since $S \cup \{v\}$ is linearly independent and $S$ spans $V$,
+$|S \cup \{v\}| \le |S| \Rightarrow |S| + 1 \le |S| \Rightarrow \bot$.
+Therefore, $S$ is maximally linearly independent.</p>
+</div>
+</body>
+</html>

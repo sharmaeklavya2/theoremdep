@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Linearly independent set is smaller than a span - TheoremDep</title>
+    <meta name="description" content="The size of every finite linearly independent subset of a vector space is less than or equal to the size of every spanning set of that vector space." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Linearly independent set is smaller than a span</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep.html">
+            <span class="deptitle">Linear independence</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span.html">
+            <span class="deptitle">Span</span>
+        </a>
+        </li>
+        <li>
+        <span class="deptitleuci missing">/linear-algebra/matrices/multiplication</span>
+        </li>
+        <li>
+        <span class="deptitleuci missing">/linear-algebra/system-of-equations/more-variables-than-unknowns</span>
+        </li>
+        <li>
+        <span class="deptitleuci missing">/linear-algebra/matrices/transpose-of-product</span>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $U = [u_1, u_2, \ldots, u_m]$ and $V = [v_1, v_2, \ldots, v_n]$ be sequences of vectors from the vector space $W$.
+If $W = \operatorname{span}(V)$ and $m &gt; n$, then $U$ is linearly dependent.</p>
+<h2>Proof</h2>
+<p>Since $W = \operatorname{span}(V)$, $U \subset \operatorname{span}(V)$.
+So let $u_i = \sum_{j=1}^n a_{i, j}v_j$.</p>
+<p>Let $A$ be an $m$-by-$n$ matrix where $A_{i, j} = a_{i, j}$.
+If we treat $U$ and $V$ as column vectors, $U = AV$.</p>
+<p>$U$ is linearly dependent iff $\exists$ a column vector $B \neq 0$ such that $B^TU = 0$.</p>
+<p>Consider the system of equations $A^TX = 0$.
+This is a system of $n$ equations in $m$ variables.
+Since the number of equations is less than the number of unknows, there exists a non-trivial solution.
+Let $X = B$ be such a solution. $\Rightarrow B \neq 0 \wedge A^TB = 0$.</p>
+<p>\[ B^TU = B^T(AV) = (B^TA)V = (A^TB)^TV = 0V = 0 \]</p>
+<p>Therefore, $U$ is linearly dependent.</p>
+</div>
+</body>
+</html>

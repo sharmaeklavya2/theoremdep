@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>A field is an integral domain - TheoremDep</title>
-    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <title>Vector Space - TheoremDep</title>
+    <meta name="description" content="A vector space is a set of vectors along with a scalar multiplication operation." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,7 +25,7 @@
     </form>
 </nav>
 <div id="main">
-<h1>A field is an integral domain</h1>
+<h1>Vector Space</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
@@ -33,27 +33,21 @@
             <span class="deptitle">Field</span>
         </a>
         </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/intdom.html">
-            <span class="deptitle">Integral Domain</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/0x-is-0.html">
-            <span class="deptitle">0x = 0 = x0</span>
-        </a>
-        </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>If $R$ is a field then it is also an integral domain.</p>
-<h2>Proof by contradiction</h2>
-<p>Assume that $R$ has zero-divisors.
-Let $a, b \in R-\{0\}$ be two zero-divisors of $R$.</p>
-<p>Since $R$ is a field, $a$ and $b$ have multiplicative inverses.
-Let them be $a^{-1}$ and $b^{-1}$ respectively.</p>
-<p>\[ 1 = (a^{-1}a)(bb^{-1}) = a^{-1}(ab)b^{-1} = a^{-1}0b^{-1} = 0 \]</p>
-<p>This is a contradiction. Hence $R$ has no zero-divisors.
-Therefore, $R$ is an integral domain.</p>
+<p>A vector space $V$ over a field $F$ is a set with
+a vector addition operation ($V \times V \mapsto V$)
+and a scalar multiplication operation ($F \times V \mapsto V$)
+which satisfies all of these axioms:</p>
+<ol>
+<li>$(V, +)$ is an abelian group.</li>
+<li>Scalar associativity: $\forall a \in F, \forall b \in F, \forall v \in V, a(bv) = (ab)v$.</li>
+<li>Distributivity: $\forall a \in F, \forall b \in F, \forall v \in V, (a+b)v = (av + bv)$.</li>
+<li>Distributivity: $\forall a \in F, \forall u \in V, \forall v \in V, a(u+v) = (au + av)$.</li>
+<li>Unit scalar: $1v = v$.</li>
+</ol>
+<p>The elements of $V$ are called vectors.
+The elements of $F$ are called scalars.</p>
 </div>
 </body>
 </html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Linearly independent set can be expanded into a basis - TheoremDep</title>
+    <meta name="description" content="If a set of vectors is linearly independent, a finite number of vectors can be added to it to make it a basis if the vector space has a finite-sized basis." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Linearly independent set can be expanded into a basis</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html">
+            <span class="deptitle">Basis of a vector space</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-is-smaller-than-span.html">
+            <span class="deptitle">Linearly independent set is smaller than a span</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-increment.html">
+            <span class="deptitle">Incrementing a linearly independent set</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $S = \{v_1, v_2, \ldots, v_k\}$ be a linearly independent subset of a vector space $V$.
+Let $V$ have a basis of size $n$.
+Then $k \le n$ and $\exists S' = \{v_{k+1}, \ldots, v_n\} \subset V$ such that $S \cup S'$ is a basis of $V$.</p>
+<h2>Proof</h2>
+<p>Let $B$ be a basis of $V$. Since $B$ spans $V$ and $S$ is linearly dependent,
+$|S| \le |B| \Rightarrow k \le n$.</p>
+<p>Define $S_k = S$. $|S_k| = k$.</p>
+<p>If $S_i$ doesn't span $V$, $\exists v \in V$ which cannot be expressed as a linear combination of $S_i$.
+Define $S_{i+1} = S_i \cup \{v\}$. If $S_i$ is linearly independent, $S_{i+1}$ is linearly independent.
+$|S_{i+1}| = |S_i| + 1$.</p>
+<p>Therefore, from $S_k$ we can generate $S_{k+1}$ if $S_k$ doesn't span $V$,
+from $S_{k+1}$ we can generate $S_{k+2}$ if $S_{k+1}$ doesn't span $V$, and so on.
+We will either eventually get a set $S_m$ which spans $V$,
+or $S_i$ doesn't span $V$ for all $i \ge k$.</p>
+<p>Using mathematical induction, it can be proved that for all $i \ge k$:</p>
+<ul>
+<li>$S_i$ is linearly independent.</li>
+<li>$|S_i| = i$.</li>
+<li>$S \subseteq S_i$.</li>
+</ul>
+<h3>Case 1: $S_i$ doesn't span $V$ for all $i \ge k$</h3>
+<p>Since $S_{n+1}$ is linearly independent and $B$ spans $V$,
+$|S_{n+1}| \le |B| \Rightarrow n+1 \le n \Rightarrow \bot$.</p>
+<p>Therefore, such a case cannot occur.</p>
+<h3>Case 2: There is a set $S_m$ which spans $V$</h3>
+<p>This makes $S_m$ a basis of $V$.</p>
+<p>Since $S_m$ spans $V$ and $B$ is linearly independent, $|B| \le |S_m|$.
+Since $S_m$ is linearly independent and $B$ spans $V$, $|S_m| \le |B|$.
+Therefore, $|S_m| = m = |B| = n$.</p>
+<p>Therefore, it is possible to extend $S$ to get a basis of $V$ of size $n$.</p>
+</div>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>A field is an integral domain - TheoremDep</title>
+    <title>Every ideal of Z is a principal ideal - TheoremDep</title>
     <meta name="description" content="Track dependencies between theorems and definitions." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
@@ -25,35 +25,32 @@
     </form>
 </nav>
 <div id="main">
-<h1>A field is an integral domain</h1>
+<h1>Every ideal of Z is a principal ideal</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
-            <span class="deptitle">Field</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ideal.html">
+            <span class="deptitle">Ideal</span>
         </a>
         </li>
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/intdom.html">
-            <span class="deptitle">Integral Domain</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/0x-is-0.html">
-            <span class="deptitle">0x = 0 = x0</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/integer-division-theorem.html">
+            <span class="deptitle">Integer Division Theorem</span>
         </a>
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>If $R$ is a field then it is also an integral domain.</p>
-<h2>Proof by contradiction</h2>
-<p>Assume that $R$ has zero-divisors.
-Let $a, b \in R-\{0\}$ be two zero-divisors of $R$.</p>
-<p>Since $R$ is a field, $a$ and $b$ have multiplicative inverses.
-Let them be $a^{-1}$ and $b^{-1}$ respectively.</p>
-<p>\[ 1 = (a^{-1}a)(bb^{-1}) = a^{-1}(ab)b^{-1} = a^{-1}0b^{-1} = 0 \]</p>
-<p>This is a contradiction. Hence $R$ has no zero-divisors.
-Therefore, $R$ is an integral domain.</p>
+<p>Let $I$ be an ideal of $\mathbb{Z}$.
+Then $I$ is a principal ideal, i.e. $I$ is of the form $n\mathbb{Z}$ for some $n \in \mathbb{Z}$.</p>
+<h2>Proof</h2>
+<p>Let $n$ be the smallest positive element of $I$.
+Let $a \in I$.</p>
+<p>By the integer division theorem, $a = qn + r$, where $0 \le r \lt n$.
+$r = a - qn \in I$ by absorption and commutativity.
+Since $r \in I$, $r &lt; n$ and $n$ is the smallest positive element of $I$, $r = 0$.</p>
+<p>Therefore, every element of $I$ is a multiple of $n$.
+Also, all multiples of $n$ are in $I$ by the absorption property.</p>
+<p>Therefore, $I = n\mathbb{Z}$.</p>
 </div>
 </body>
 </html>

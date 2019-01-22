@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Condition for being a subspace - TheoremDep</title>
+    <meta name="description" content="Let W be a subset of vector space V. Then W is a subspace of V iff W is closed under addition and scalar multiplication." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Condition for being a subspace</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+            <span class="deptitle">Vector Space</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/subgroup-condition-2.html">
+            <span class="deptitle">Condition for a subset to be a subgroup</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/negation.html">
+            <span class="deptitle">Negation in vector space</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $W$ be a subset of a vector space $V$ over $F$.
+Then $W$ is a subspace of $V$ iff it is closed under addition and scalar multiplication.</p>
+<h2>Proof</h2>
+<p>If $W$ is a subspace of $V$, then $W$ is closed under addition and scalar multiplication by the axioms of a vector space.</p>
+<p>$W$ inherits scalar associativity, distributivity and existence of scalar identity from $V$.
+We only need to prove that $W$ is an abelian group.</p>
+<p>\begin{align}
+&amp; u, v \in W
+\\ &amp;\Rightarrow u, (-1)v \in W \tag{by scalar multiplication closure}
+\\ &amp;\Rightarrow u, -v \in W
+\\ &amp;\Rightarrow u - v \in W \tag{by addition closure}
+\end{align}</p>
+<p>Therefore, $W$ is a group. $W$ inherits additive commutativity from $V$, so it is an abelian group.</p>
+</div>
+</body>
+</html>

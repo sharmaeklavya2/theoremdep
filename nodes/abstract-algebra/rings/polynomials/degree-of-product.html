@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Degree of product of polynomials - TheoremDep</title>
+    <meta name="description" content="deg(pq) ≤ deg(p) + deg(q). If coefficients of p and q are from an integral domain, deg(pq) = deg(p) + deg(q)." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Degree of product of polynomials</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/polynomials/polynomial.html">
+            <span class="deptitle">Polynomial</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/intdom.html">
+            <span class="deptitle">Integral Domain</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $p, q \in R[x]$.
+Then $\operatorname{deg}(pq) \le \operatorname{deg}(p) + \operatorname{deg}(q)$.
+If coefficients of $p$ and $q$ are from an integral domain,
+$\operatorname{deg}(pq) = \operatorname{deg}(p) + \operatorname{deg}(q)$.</p>
+<h2>Proof</h2>
+<p>$(pq)_i = \sum_{j=0}^i p_jq_{i-j} \in R$.</p>
+<p>Let $k = \operatorname{deg}(p) + \operatorname{deg}(q)$. Let $i &gt; k$</p>
+<p>\begin{align}
+&amp; j \le \operatorname{deg}(p)
+\\ &amp;\Rightarrow i-j \ge k+1-j
+\\ &amp;= \operatorname{deg}(p) + \operatorname{deg}(q) + 1 - j
+\\ &amp;= \operatorname{deg}(q) + 1 + (\operatorname{deg}(p) - j)
+\\ &amp;&gt; \operatorname{deg}(q)
+\\ &amp;\Rightarrow q_{i-j} = 0
+\end{align}</p>
+<p>So, if $j \le \operatorname{deg}(p)$, $q_{i-j} = 0$ and if $j &gt; \operatorname{deg}(p)$, $p_j = 0$.
+Therefore, $p_jq_{i-j} = 0$ for all $0 \le j \le i$.</p>
+<p>$(pq)_i = \sum_{j=0}^i p_jq_{i-j} = 0$ for all $i &gt; k$.
+Therefore, $pq \in R[x]$ and $\operatorname{deg}(pq) \le \operatorname{deg}(p) + \operatorname{deg}(q)$.</p>
+<p>\begin{align}
+&amp; j &lt; \operatorname{deg}(p)
+\\ &amp;\Rightarrow k-j
+\\ &amp;= \operatorname{deg}(q) + \operatorname{deg}(p) - j
+\\ &amp;&gt; \operatorname{deg}(q)
+\\ &amp;\Rightarrow q_{k-j} = 0
+\end{align}</p>
+<p>\begin{align}
+&amp; (pq)_k = \sum_{j=0}^{\operatorname{deg}(p)-1} p_jq_{k-j}
+  + p_{\operatorname{deg}(p)}q_{k-\operatorname{deg}(p)}
+  + \sum_{j=\operatorname{deg}(p)+1}^k p_jq_{k-j}
+\\ &amp;= \sum_{j=0}^{\operatorname{deg}(p)-1} p_j0
+  + p_{\operatorname{deg}(p)}q_{\operatorname{deg}(q)}
+  + \sum_{j=\operatorname{deg}(p)+1}^k 0q_{k-j}
+\\ &amp;= p_{\operatorname{deg}(p)}q_{\operatorname{deg}(q)}
+\end{align}</p>
+<p>By definition, $p_{\operatorname{deg}(p)} \neq 0$ and $q_{\operatorname{deg}(q)} \neq 0$.
+If $R$ is an integral domain, their product is non-zero.
+Therefore, $\operatorname{deg}(pq) = k = \operatorname{deg}(p) + \operatorname{deg}(q)$.</p>
+</div>
+</body>
+</html>

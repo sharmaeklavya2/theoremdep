@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>All bases of a vector space have the same size - TheoremDep</title>
+    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>All bases of a vector space have the same size</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html">
+            <span class="deptitle">Basis of a vector space</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-is-smaller-than-span.html">
+            <span class="deptitle">Linearly independent set is smaller than a span</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $B_1$ and $B_2$ be 2 bases of a vector space $V$.
+Then $B_1$ are either $B_2$ both infinite or both are finite and have the same size.</p>
+<p>If $V$ has a finite basis of size $n$, we say that $\operatorname{dim}(V) = n$.
+$\operatorname{dim}(V)$ is well-defined since all bases of $V$ have the same size.</p>
+<h2>Proof</h2>
+<p>Without loss of generality, assume $B_1$ is finite.</p>
+<p>Assume $B_2$ is larger than $B_1$ ($|B_2| &gt; |B_1|$).
+Let $S$ be a finite subset of $B_2$ which is larger than $B_1$.
+Since $B_1$ spans $V$ and $S$ is larger than $B_1$, $S$ is linearly dependent.
+This means $B_2$ is linearly dependent, which contradicts the fact that $B_2$ is a basis of $V$.
+Therefore, no subset of $B_2$ is larger than $B_1$.
+Therefore, $|B_2| \le |B_1|$.</p>
+<p>This means $B_2$ is finite.
+Using a similar argument as above and interchanging the roles of $B_1$ and $B_2$,
+we can prove that $|B_1| \le |B_2|$.
+Therefore, $|B_1| = |B_2|$.</p>
+</div>
+</body>
+</html>

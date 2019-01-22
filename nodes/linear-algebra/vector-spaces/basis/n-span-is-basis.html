@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>A field is an integral domain - TheoremDep</title>
+    <title>Spanning set of size dim(V) is a basis - TheoremDep</title>
     <meta name="description" content="Track dependencies between theorems and definitions." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
@@ -25,35 +25,35 @@
     </form>
 </nav>
 <div id="main">
-<h1>A field is an integral domain</h1>
+<h1>Spanning set of size dim(V) is a basis</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
-            <span class="deptitle">Field</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html">
+            <span class="deptitle">Basis of a vector space</span>
         </a>
         </li>
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/intdom.html">
-            <span class="deptitle">Integral Domain</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span-decrement.html">
+            <span class="deptitle">Decrementing a span</span>
         </a>
         </li>
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/0x-is-0.html">
-            <span class="deptitle">0x = 0 = x0</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-is-smaller-than-span.html">
+            <span class="deptitle">Linearly independent set is smaller than a span</span>
         </a>
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>If $R$ is a field then it is also an integral domain.</p>
-<h2>Proof by contradiction</h2>
-<p>Assume that $R$ has zero-divisors.
-Let $a, b \in R-\{0\}$ be two zero-divisors of $R$.</p>
-<p>Since $R$ is a field, $a$ and $b$ have multiplicative inverses.
-Let them be $a^{-1}$ and $b^{-1}$ respectively.</p>
-<p>\[ 1 = (a^{-1}a)(bb^{-1}) = a^{-1}(ab)b^{-1} = a^{-1}0b^{-1} = 0 \]</p>
-<p>This is a contradiction. Hence $R$ has no zero-divisors.
-Therefore, $R$ is an integral domain.</p>
+<p>Let $V = \operatorname{span}(S)$.
+Let $B$ be a finite basis of $V$.
+If $|S| = |B|$, then $S$ is a basis of $V$.</p>
+<h2>Proof</h2>
+<p>Assume $S$ is linearly dependent.
+$\Rightarrow \exists v \in S, \operatorname{span}(S-\{v\}) = \operatorname{span}(S) = V$.</p>
+<p>Since $S - \{v\}$ spans $V$ and $B$ is linearly independent,
+$|B| \le |S - \{v\}| \Rightarrow |B| \le |B|-1 \Rightarrow \bot$.
+Therefore, $S$ is linearly independent, which makes it a basis.</p>
 </div>
 </body>
 </html>

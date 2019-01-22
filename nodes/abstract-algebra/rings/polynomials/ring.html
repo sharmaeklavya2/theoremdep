@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Polynomials of a ring form a ring - TheoremDep</title>
+    <meta name="description" content="The set of all polynomials is a ring if the coefficients are from a ring." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Polynomials of a ring form a ring</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/polynomials/polynomial.html">
+            <span class="deptitle">Polynomial</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/polynomials/degree-of-sum.html">
+            <span class="deptitle">Degree of sum of polynomials</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/polynomials/degree-of-product.html">
+            <span class="deptitle">Degree of product of polynomials</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>$R[x]$ is a ring if $R$ is a ring.</p>
+<h2>Proof</h2>
+<p>Let $p, q, r \in R[x]$.</p>
+<ul>
+<li>
+<p>Closure of addition:</p>
+<p>If $p = 0$, $p+q = q \in R[x]$. If $q = 0$, $p+q = p \in R[x]$.</p>
+<p>$(p+q)_i = p_i + q_i \in R$.
+$\deg{p+q} \le \operatorname{max}(\operatorname{deg}(p), \operatorname{deg}(q))$.
+Therefore, $p+q \in R[x]$.</p>
+</li>
+<li>
+<p>Associativity of addition:</p>
+<p>\begin{align}
+&amp; (p+(q+r))_i = p_i + (q+r)_i
+\\ &amp;= p_i + (q_i + r_i) = (p_i + q_i) + r_i
+\\ &amp;= (p+q)_i + r_i = ((p+q)+r)_i
+\end{align}</p>
+</li>
+<li>
+<p>Commutativity of addition: $(p+q)_i = p_i + q_i = q_i + p_i = (q+p)_i$.</p>
+</li>
+<li>Additive identity: $(0+p)_i = 0_i + p_i = 0 + p_i = p_i$.</li>
+<li>Additive inverse: $(-p)_i = -p_i$. Therefore, $(p+(-p))_i = p_i + (-p_i) = 0 = 0_i$.</li>
+</ul>
+<p>Therefore, $R[x]$ is an abelian group under addition.</p>
+<ul>
+<li>
+<p>Closure of multiplication:</p>
+<p>If $p = 0$ or $q = 0$, $pq = 0 \in R[x]$.</p>
+<p>$(pq)_i = \sum_{j=0}^i p_jq_{i-j} \in R$ and
+$\operatorname{deg}(pq) \le \operatorname{deg}(p) + \operatorname{deg}(q)$.
+Therefore, $pq \in R[x]$.</p>
+</li>
+<li>
+<p>Associativity of multiplication: $(pq)_i = \sum_{j=0}^i p_jq_{i-j} \in R$.</p>
+<p>\begin{align}
+&amp; ((pq)r)_i
+\\ &amp;= \sum_{j=0}^i (pq)_jr_{i-j}
+\\ &amp;= \sum_{j=0}^i (pq)_jr_{i-j}
+\\ &amp;= \sum_{j=0}^i \left( \sum_{k=0}^j p_k q_{j-k} \right) r_{i-j}
+\\ &amp;= \sum_{j=0}^i \sum_{k=0}^j p_k q_{j-k}r_{i-j} \tag{distributivity in $R$}
+\\ &amp;= \sum_{k=0}^i \sum_{j=k}^i p_k q_{j-k}r_{i-j}
+\\ &amp;= \sum_{k=0}^i \sum_{t=0}^{i-k} p_k q_t r_{i-k-t}
+\\ &amp;= \sum_{k=0}^i p_k \left( \sum_{t=0}^{i-k} q_t r_{i-k-t} \right) \tag{distributivity in $R$}
+\\ &amp;= \sum_{k=0}^i p_k (qr)_{i-k}
+\\ &amp;= (p(qr))_i
+\end{align}</p>
+</li>
+<li>
+<p>Distributivity:</p>
+<p>\begin{align}
+&amp; (p(q+r))_i
+\\ &amp;= \sum_{j=0}^i p_j (q+r)_{i-j}
+\\ &amp;= \sum_{j=0}^i p_j (q_{i-j} + r_{i-j})
+\\ &amp;= \sum_{j=0}^i (p_jq_{i-j} + p_jr_{i-j}) \tag{distributivity in $R$}
+\\ &amp;= \sum_{j=0}^i p_jq_{i-j} + \sum_{j=0}^i p_jr_{i-j} \tag{additive commutativity in $R$}
+\\ &amp;= (pq)_i + (pr)_i
+\\ &amp;= (pq+pr)_i
+\end{align}</p>
+<p>Distributivity in the other direction can be proved similarly.</p>
+</li>
+</ul>
+</div>
+</body>
+</html>

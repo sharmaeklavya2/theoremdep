@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Linear independence - TheoremDep</title>
+    <meta name="description" content="A set of vectors are linearly independent iff no linear combination of them with some positive coefficients is 0." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Linear independence</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+            <span class="deptitle">Vector Space</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $S = \{v_1, v_2, \ldots, v_n\}$ be a subset of vector space $V$ over field $F$.
+Then $S$ is linearly independent iff</p>
+<p>\[ \forall (a_1, a_2, \ldots, a_n) \in F^n, \left (\sum_{i=1}^n a_iv_i = 0 \Rightarrow (\forall i, a_i = 0 )\right) \]</p>
+<p>This can also be stated as</p>
+<p>\[ \forall (a_1, a_2, \ldots, a_n) \neq 0 \in F^n, \sum_{i=1}^n a_iv_i \neq 0 \]</p>
+<p>This is equivalent to saying that "no vector in $S$ is a linear combination of the rest of the elements of $S$".
+When a vector $v$ in $S$ is a linear combination of the other elements of $S$,
+$v$ is said to be linearly dependent in $S$.</p>
+<h2>Proof</h2>
+<p>Let $S$ be linearly dependent.
+$\Rightarrow \exists (a_1, a_2, \ldots, a_n) \neq 0 \in F^n, \sum_{i=1}^n a_iv_i = 0$.</p>
+<p>$(a_1, a_2, \ldots, a_n) \neq 0 \iff \exists k, a_k \neq 0$.</p>
+<p>\begin{align}
+&amp; \sum_{i=1}^n a_iv_i = 0
+\\ &amp;\Rightarrow \sum_{i=1}^{k-1} a_iv_i + a_kv_k + \sum_{i=k+1}^n a_iv_i = 0
+\\ &amp;\Rightarrow a_kv_k = \sum_{i=1}^{k-1} (-a_i)v_i + \sum_{i=k+1}^n (-a_i)v_i
+\\ &amp;\Rightarrow v_k = \sum_{i=1}^{k-1} (-a_k^{-1}a_i)v_i + \sum_{i=k+1}^n (-a_k^{-1}a_i)v_i
+\end{align}</p>
+<p>Therefore, $v_k$ is a linear combination of the rest of the vectors in $S$.</p>
+<p>Conversely, assume $v_k$ is a linear combination of the rest of the vectors in $S$.</p>
+<p>\begin{align}
+&amp; v_k = \sum_{i=1}^{k-1} a_iv_i + \sum_{i=k+1}^n a_iv_i
+&amp; \sum_{i=1}^{k-1} a_iv_i + (-1)v_k + \sum_{i=k+1}^n a_iv_i = 0
+\end{align}</p>
+<p>Therefore, a linear combination of $S$ is 0 where all coefficients are not 0.
+Therefore, $S$ is linearly dependent.</p>
+</div>
+</body>
+</html>

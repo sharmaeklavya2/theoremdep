@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>0x = 0 = x0 - TheoremDep</title>
-    <meta name="description" content="Let R be a ring. For all elements x in R, 0x = 0 = x0." />
+    <title>p-norm - TheoremDep</title>
+    <meta name="description" content="The p-norm is a function which maps a vector to a number" />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,20 +25,22 @@
     </form>
 </nav>
 <div id="main">
-<h1>0x = 0 = x0</h1>
+<h1>p-norm</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
-            <span class="deptitle">Ring</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector.html">
+            <span class="deptitle">Vector</span>
         </a>
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Let $R$ be a ring. Then $\forall x \in R, 0{\cdot}x = 0 = x{\cdot}0$.</p>
-<h2>Proof</h2>
-<p>$0x = (0+0)x = 0x + 0x$. Therefore, $0x = 0$.</p>
-<p>$x0 = x(0+0) = x0 + x0$. Therefore, $x0 = 0$.</p>
+<p>The $p$-norm of a vector $v$ is defined as:</p>
+<p>\[ \|v\|_p = \left( \sum_{i=1}^n |v_i|^p \right)^{\frac{1}{p}} \]</p>
+<p>A few special cases:</p>
+<p>\[ \|v\|_1 = \sum_{i=1}^n |v_i| \]
+\[ \|v\|_2 = \|v\| = \sqrt{\sum_{i=1}^n v_i^2} \]
+\[ \|v\|_{\infty} = \max_{i=1}^n |v_i| \]</p>
 </div>
 </body>
 </html>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>0x = 0 = x0 - TheoremDep</title>
-    <meta name="description" content="Let R be a ring. For all elements x in R, 0x = 0 = x0." />
+    <title>gcd is associative - TheoremDep</title>
+    <meta name="description" content="gcd(a1, a2, ..., am, b1, b2, ... bn) = gcd(gcd(a1, a2, ..., am), b1, b2, ..., bm)" />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,20 +25,31 @@
     </form>
 </nav>
 <div id="main">
-<h1>0x = 0 = x0</h1>
+<h1>gcd is associative</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
-            <span class="deptitle">Ring</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/common-divisor-divides-gcd.html">
+            <span class="deptitle">Common divisor divides GCD</span>
         </a>
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Let $R$ be a ring. Then $\forall x \in R, 0{\cdot}x = 0 = x{\cdot}0$.</p>
+<p>$\gcd(a_1, a_2, \ldots, a_m, b_1, b_2, \ldots, b_n) = \gcd(\gcd(a_1, a_2, \ldots, a_m), b_1, b_2, \ldots, b_m)$.</p>
 <h2>Proof</h2>
-<p>$0x = (0+0)x = 0x + 0x$. Therefore, $0x = 0$.</p>
-<p>$x0 = x(0+0) = x0 + x0$. Therefore, $x0 = 0$.</p>
+<p>Let $g = \gcd(a_1, a_2, \ldots, a_m, b_1, b_2, \ldots, b_n)$,
+$g_a = \gcd(a_1, a_2, \ldots, a_m)$ and $g' = \gcd(g_a, b_1, b_2, \ldots, b_m)$.</p>
+<p>\begin{align}
+&amp; g \mid a_i \wedge g \mid b_j
+\\ &amp;\Rightarrow g \mid g_a \wedge g \mid b_j \tag{common divisor divides gcd}
+\\ &amp;\Rightarrow g \mid g' \tag{common divisor divides gcd}
+\end{align}</p>
+<p>\begin{align}
+&amp; g' \mid g_a \wedge g' \mid b_j
+\\ &amp;\Rightarrow g' \mid a_i \wedge g' \mid b_j
+\\ &amp;\Rightarrow g' \mid g \tag{common divisor divides gcd}
+\end{align}</p>
+<p>Therefore, $g = g'$.</p>
 </div>
 </body>
 </html>

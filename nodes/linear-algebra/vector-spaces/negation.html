@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>0x = 0 = x0 - TheoremDep</title>
-    <meta name="description" content="Let R be a ring. For all elements x in R, 0x = 0 = x0." />
+    <title>Negation in vector space - TheoremDep</title>
+    <meta name="description" content="-v = (-1)v. -(av) = (-a)v = a(-v)." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,20 +25,25 @@
     </form>
 </nav>
 <div id="main">
-<h1>0x = 0 = x0</h1>
+<h1>Negation in vector space</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
-            <span class="deptitle">Ring</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/zero.html">
+            <span class="deptitle">Zeros in vector space</span>
         </a>
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Let $R$ be a ring. Then $\forall x \in R, 0{\cdot}x = 0 = x{\cdot}0$.</p>
+<p>Let $V$ be a vector space over $F$. Let $a \in F$ and $\mathbf{v} \in V$.</p>
+<ol>
+<li>$-v = (-1)v$.</li>
+<li>$-(av) = (-a)v = a(-v)$.</li>
+</ol>
 <h2>Proof</h2>
-<p>$0x = (0+0)x = 0x + 0x$. Therefore, $0x = 0$.</p>
-<p>$x0 = x(0+0) = x0 + x0$. Therefore, $x0 = 0$.</p>
+<p>\[ 0 = 0v = (1 + (-1))v = v + (-1)v \Rightarrow (-1)v = -v \]
+\[ 0 = 0v = (a + (-a))v = av + (-a)v \Rightarrow (-a)v = -(av) \]
+\[ 0 = a0 = a(v + (-v)) = av + a(-v) \Rightarrow a(-v) = -(av) \]</p>
 </div>
 </body>
 </html>

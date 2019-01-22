@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Decrementing a span - TheoremDep</title>
+    <meta name="description" content="If S has a linearly dependent element v, then span(S-{v}) = span(S)." />
+    <meta name="keywords" content="decrement,contract,reduce,shrink" />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Decrementing a span</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep.html">
+            <span class="deptitle">Linear independence</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span.html">
+            <span class="deptitle">Span</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $S = \{v_1, v_2, \ldots, v_n\}$ be a subset of vector space $V$ over a field $F$.
+Let $S$ be linearly dependent. Without loss of generality, assume $v_n$ is a linear combination of the rest of the elements of $S$.
+Then $\operatorname{span}(S - \{v_n\}) = \operatorname{span}(S)$.</p>
+<h2>Proof</h2>
+<p>Any linear combination of $S - \{v_n\}$ is also a linear combination of $S$.
+Therefore, $\operatorname{span}(S - \{v_n\}) \subseteq \operatorname{span}(S)$.</p>
+<p>Let $v_n = \sum_{i=1}^{n-1} b_iv_i$.</p>
+<p>\begin{align}
+&amp; \textrm{Let } u \in \operatorname{span}(S)
+\\ &amp;\Rightarrow u = \sum_{i=1}^n a_iv_i \tag{for some $(a_1, a_2, \ldots, a_n) \in F^n$}
+\\ &amp;\Rightarrow u = \sum_{i=1}^{n-1} a_iv_i + a_n\left(\sum_{i=1}^{n-1} b_iv_i \right)
+\\ &amp;\Rightarrow u = \sum_{i=1}^{n-1} (a_i + a_nb_i)v_i \tag{using commutativity of addition and distributivity}
+\\ &amp;\Rightarrow u \in \operatorname{span}(S - \{v_n\})
+\end{align}</p>
+<p>Therefore, $\operatorname{span}(S) \subseteq \operatorname{span}(S - \{v_n\})$.</p>
+</div>
+</body>
+</html>

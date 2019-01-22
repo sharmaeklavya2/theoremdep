@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zeros in vector space - TheoremDep</title>
+    <meta name="description" content="0v = 0, a0 = 0, (av = 0 iff a=0 or v=0)." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Zeros in vector space</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+            <span class="deptitle">Vector Space</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $V$ be a vector space over $F$. Let $a \in F$ and $\mathbf{v} \in V$.</p>
+<ol>
+<li>$0\mathbf{v} = \mathbf{0}$.</li>
+<li>$a\mathbf{0} = \mathbf{0}$.</li>
+<li>$a\mathbf{v} = \mathbf{0} \iff a = 0 \vee \mathbf{v} = \mathbf{0}$.</li>
+</ol>
+<h2>Proof</h2>
+<p>\[ 0\mathbf{v} = (0 + 0)\mathbf{v} = 0\mathbf{v} + 0\mathbf{v} \Rightarrow 0\mathbf{v} = \mathbf{0} \]
+\[ a\mathbf{0} = a(\mathbf{0} + \mathbf{0}) = a\mathbf{0} + a\mathbf{0} \Rightarrow a\mathbf{0} = \mathbf{0} \]</p>
+<p>By the above 2 statements, $a = 0 \vee \mathbf{v} = \mathbf{0} \Rightarrow a\mathbf{v} = \mathbf{0}$.</p>
+<p>Let $a \neq 0$.
+\begin{align}
+&amp; a\mathbf{v} = \mathbf{0}
+\\ &amp;\Rightarrow a^{-1}(a\mathbf{v}) = a^{-1}\mathbf{0} \tag{$a^{-1}$ exists because $a \neq 0$}
+\\ &amp;\Rightarrow (a^{-1}a)\mathbf{v} = \mathbf{0} \tag{using scalar associativity and result 2 from above}
+\\ &amp;\Rightarrow \mathbf{v} = \mathbf{0}
+\end{align}</p>
+<p>Therefore, $a\mathbf{v} = \mathbf{0} \Rightarrow a = 0 \vee \mathbf{v} = \mathbf{0}$.</p>
+</div>
+</body>
+</html>

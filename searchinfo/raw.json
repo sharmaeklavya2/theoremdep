@@ -150,6 +150,13 @@
 },
 {
 "type": "theorem",
+"title": "gcd is associative",
+"description": "gcd(a1, a2, ..., am, b1, b2, ... bn) = gcd(gcd(a1, a2, ..., am), b1, b2, ..., bm)",
+"uci": "/number-theory/gcd/associativity",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/associativity.html"
+},
+{
+"type": "theorem",
 "title": "GCD is the smallest Linear Combination",
 "description": "The gcd of a set of numbers is their smallest positive linear combination.",
 "uci": "/number-theory/gcd/gcd-is-min-lincomb",
@@ -466,11 +473,51 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/homomorphism/normal-subgroup.html"
 },
 {
+"type": "def",
+"title": "Ideal",
+"description": "An ideal I is a subring of R with the absorption property, i.e. aI = I for all a in R.",
+"uci": "/abstract-algebra/rings/ideal",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ideal.html"
+},
+{
 "type": "theorem",
-"title": "In a ring, 0x = 0 = x0 for all x",
+"title": "0x = 0 = x0",
 "description": "Let R be a ring. For all elements x in R, 0x = 0 = x0.",
 "uci": "/abstract-algebra/rings/0x-is-0",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/0x-is-0.html"
+},
+{
+"type": "theorem",
+"title": "I is a prime ideal iff R/I is an integral domain",
+"description": "Let I be an ideal of R, a commutative ring with unity. Then I is prime in R iff R/I is an integral domain.",
+"uci": "/abstract-algebra/rings/prime-ideal-intdom",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/prime-ideal-intdom.html"
+},
+{
+"type": "def",
+"title": "Field",
+"description": "(R, +, *) is a field iff (R, +) and (R, *) are abelian groups and the distributive property holds.",
+"uci": "/abstract-algebra/rings/field",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html"
+},
+{
+"type": "theorem",
+"title": "I is a maximal ideal iff R/I is a field",
+"description": "Let I be an ideal of R, a commutative ring with unity. Then I is maximal in R iff R/I is a field.",
+"uci": "/abstract-algebra/rings/maximal-ideal-field",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/maximal-ideal-field.html"
+},
+{
+"type": "theorem",
+"title": "(-a)b = a(-b) = -ab",
+"uci": "/abstract-algebra/rings/minus-outside",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/minus-outside.html"
+},
+{
+"type": "theorem",
+"title": "Conditions for a subset of a ring to be a subring",
+"uci": "/abstract-algebra/rings/subring-condition",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/subring-condition.html"
 },
 {
 "type": "def",
@@ -480,10 +527,30 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html"
 },
 {
+"type": "deftheorem",
+"title": "Quotient Ring",
+"description": "Let I be an ideal of R. The quotient ring R/I is the set of all additive cosets of I.",
+"uci": "/abstract-algebra/rings/quotient-ring",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/quotient-ring.html"
+},
+{
 "type": "theorem",
 "title": "Characteristic of ring equals additive order of unity",
 "uci": "/abstract-algebra/rings/char-equals-additive-order-of-unity",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/char-equals-additive-order-of-unity.html"
+},
+{
+"type": "def",
+"title": "Integral Domain",
+"description": "R is an integral domain iff R is a commutative ring with unity and R has no zero-divisors.",
+"uci": "/abstract-algebra/rings/intdom",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/intdom.html"
+},
+{
+"type": "theorem",
+"title": "Every ideal of Z is a principal ideal",
+"uci": "/abstract-algebra/rings/ideal-of-z-is-principal",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ideal-of-z-is-principal.html"
 },
 {
 "type": "theorem",
@@ -496,6 +563,33 @@
 "title": "A finite integral domain is a field",
 "uci": "/abstract-algebra/rings/finite-integral-domain-is-field",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/finite-integral-domain-is-field.html"
+},
+{
+"type": "theorem",
+"title": "Degree of sum of polynomials",
+"description": "The degree of sum of 2 polynomials is at most the maximum of the degrees of those polynomials.",
+"uci": "/abstract-algebra/rings/polynomials/degree-of-sum",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/polynomials/degree-of-sum.html"
+},
+{
+"type": "theorem",
+"title": "Degree of product of polynomials",
+"description": "deg(pq) \u2264 deg(p) + deg(q). If coefficients of p and q are from an integral domain, deg(pq) = deg(p) + deg(q).",
+"uci": "/abstract-algebra/rings/polynomials/degree-of-product",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/polynomials/degree-of-product.html"
+},
+{
+"type": "def",
+"title": "Polynomial",
+"uci": "/abstract-algebra/rings/polynomials/polynomial",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/polynomials/polynomial.html"
+},
+{
+"type": "theorem",
+"title": "Polynomials of a ring form a ring",
+"description": "The set of all polynomials is a ring if the coefficients are from a ring.",
+"uci": "/abstract-algebra/rings/polynomials/ring",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/polynomials/ring.html"
 },
 {
 "type": "theorem",
@@ -534,6 +628,13 @@
 },
 {
 "type": "theorem",
+"title": "Product of ideal cosets is well-defined",
+"description": "Let I be an ideal. The product of cosets (a+I)(b+I) = ab+I is well-defined.",
+"uci": "/abstract-algebra/cosets/product-of-ideal-cosets",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/product-of-ideal-cosets.html"
+},
+{
+"type": "theorem",
 "title": "Inverse of a coset",
 "description": "(gH)^(-1) = H^(-1)g^(-1)",
 "uci": "/abstract-algebra/cosets/inverse",
@@ -552,6 +653,190 @@
 "description": "Size of a coset of a subset equals the size of the subset",
 "uci": "/abstract-algebra/cosets/size",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/size.html"
+},
+{
+"type": "definition",
+"title": "p-norm",
+"description": "The p-norm is a function which maps a vector to a number",
+"uci": "/linear-algebra/p-norm",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/p-norm.html"
+},
+{
+"type": "def",
+"title": "Dot-product of vectors",
+"metadata": "The dot product of vectors u and v is the sum of product of corresponding elements in u and v.",
+"uci": "/linear-algebra/dot",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/dot.html"
+},
+{
+"type": "definition",
+"title": "Vector",
+"description": "A vector is a sequence of numbers with an element-wise addition operation and a scalar multiplication operation.",
+"uci": "/linear-algebra/vector",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector.html"
+},
+{
+"type": "def",
+"title": "Inner product space",
+"description": "An inner product space is a vector space equipped with an inner product operator, which is an abstract generalization of the dot product.",
+"uci": "/linear-algebra/inner-product-spaces/inner-product-space",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/inner-product-space.html"
+},
+{
+"type": "theorem",
+"title": "Triangle inequality",
+"description": "|x+y| \u2264 |x| + |y|",
+"uci": "/linear-algebra/inner-product-spaces/triangle-inequality",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/triangle-inequality.html"
+},
+{
+"type": "theorem",
+"title": "Pythagorean theorem",
+"description": "If < u, v > = 0, < u, u > + < v, v > = < u+v, u+v >.",
+"uci": "/linear-algebra/inner-product-spaces/pythagorean-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/pythagorean-theorem.html"
+},
+{
+"type": "theorem",
+"title": "Zero in inner product",
+"description": "< 0, v > = < v, 0 > = 0.",
+"uci": "/linear-algebra/inner-product-spaces/zero",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/zero.html"
+},
+{
+"type": "theorem",
+"title": "Cauchy-Schwarz Inequality",
+"description": "< u, v >\u00b2 \u2264 < u, u > < v, v >",
+"uci": "/linear-algebra/inner-product-spaces/cauchy-schwarz-inequality",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/cauchy-schwarz-inequality.html"
+},
+{
+"type": "def",
+"title": "Norm",
+"description": "norm(x) = sqrt(< x, x >)",
+"uci": "/linear-algebra/inner-product-spaces/norm",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/norm.html"
+},
+{
+"type": "theorem",
+"title": "Incrementing a linearly independent set",
+"keywords": [
+"increment",
+"expand",
+"increase",
+"grow"
+],
+"description": "If S is linearly independent and v is not a linear combination of S, then S+{v} is linearly independent.",
+"uci": "/linear-algebra/vector-spaces/linindep-increment",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-increment.html"
+},
+{
+"type": "def",
+"title": "Vector Space",
+"description": "A vector space is a set of vectors along with a scalar multiplication operation.",
+"uci": "/linear-algebra/vector-spaces/vector-space",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html"
+},
+{
+"type": "def",
+"title": "Span",
+"description": "The span of a set of vectors is the set of all linear combinations of those vectors.",
+"uci": "/linear-algebra/vector-spaces/span",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span.html"
+},
+{
+"type": "theorem",
+"title": "Linearly independent set is smaller than a span",
+"description": "The size of every finite linearly independent subset of a vector space is less than or equal to the size of every spanning set of that vector space.",
+"uci": "/linear-algebra/vector-spaces/linindep-is-smaller-than-span",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-is-smaller-than-span.html"
+},
+{
+"type": "theorem",
+"title": "Negation in vector space",
+"description": "-v = (-1)v. -(av) = (-a)v = a(-v).",
+"uci": "/linear-algebra/vector-spaces/negation",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/negation.html"
+},
+{
+"type": "theorem",
+"title": "Condition for being a subspace",
+"description": "Let W be a subset of vector space V. Then W is a subspace of V iff W is closed under addition and scalar multiplication.",
+"uci": "/linear-algebra/vector-spaces/subspace-condition",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/subspace-condition.html"
+},
+{
+"type": "theorem",
+"title": "Zeros in vector space",
+"description": "0v = 0, a0 = 0, (av = 0 iff a=0 or v=0).",
+"uci": "/linear-algebra/vector-spaces/zero",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/zero.html"
+},
+{
+"type": "theoremdef",
+"title": "Linear independence",
+"description": "A set of vectors are linearly independent iff no linear combination of them with some positive coefficients is 0.",
+"uci": "/linear-algebra/vector-spaces/linindep",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep.html"
+},
+{
+"type": "theorem",
+"title": "Decrementing a span",
+"keywords": [
+"decrement",
+"contract",
+"reduce",
+"shrink"
+],
+"description": "If S has a linearly dependent element v, then span(S-{v}) = span(S).",
+"uci": "/linear-algebra/vector-spaces/span-decrement",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span-decrement.html"
+},
+{
+"type": "theorem",
+"title": "Linearly independent set can be expanded into a basis",
+"description": "If a set of vectors is linearly independent, a finite number of vectors can be added to it to make it a basis if the vector space has a finite-sized basis.",
+"uci": "/linear-algebra/vector-spaces/basis/expand-linindep-to-basis",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/expand-linindep-to-basis.html"
+},
+{
+"type": "theorem",
+"title": "Maximally linearly independent iff basis",
+"description": "A set is maximally linearly independent iff it is a basis.",
+"uci": "/linear-algebra/vector-spaces/basis/maximal-linindep-is-basis",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/maximal-linindep-is-basis.html"
+},
+{
+"type": "def",
+"title": "Basis of a vector space",
+"description": "If a set of vectors S is linearly independent and spans a vector space V, then S is a basis of V.",
+"uci": "/linear-algebra/vector-spaces/basis/basis",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html"
+},
+{
+"type": "theorem",
+"title": "Minimally spanning iff basis",
+"description": "A set of vectors S minimally spans V iff S is a basis.",
+"uci": "/linear-algebra/vector-spaces/basis/minimal-span-is-basis",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/minimal-span-is-basis.html"
+},
+{
+"type": "theorem",
+"title": "All bases of a vector space have the same size",
+"uci": "/linear-algebra/vector-spaces/basis/all-bases-have-same-size",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/all-bases-have-same-size.html"
+},
+{
+"type": "theorem",
+"title": "Spanning set of size dim(V) is a basis",
+"uci": "/linear-algebra/vector-spaces/basis/n-span-is-basis",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/n-span-is-basis.html"
+},
+{
+"type": "theorem",
+"title": "A set of dim(V) linearly independent vectors is a basis",
+"uci": "/linear-algebra/vector-spaces/basis/n-linindep-is-basis",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/n-linindep-is-basis.html"
 }
 ]
 }

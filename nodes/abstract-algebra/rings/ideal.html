@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>0x = 0 = x0 - TheoremDep</title>
-    <meta name="description" content="Let R be a ring. For all elements x in R, 0x = 0 = x0." />
+    <title>Ideal - TheoremDep</title>
+    <meta name="description" content="An ideal I is a subring of R with the absorption property, i.e. aI = I for all a in R." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,7 +25,7 @@
     </form>
 </nav>
 <div id="main">
-<h1>0x = 0 = x0</h1>
+<h1>Ideal</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
@@ -35,10 +35,12 @@
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Let $R$ be a ring. Then $\forall x \in R, 0{\cdot}x = 0 = x{\cdot}0$.</p>
-<h2>Proof</h2>
-<p>$0x = (0+0)x = 0x + 0x$. Therefore, $0x = 0$.</p>
-<p>$x0 = x(0+0) = x0 + x0$. Therefore, $x0 = 0$.</p>
+<p>Let $I$ be a subring of $R$.</p>
+<ul>
+<li>$I$ is a left ideal iff it follows left-absorption, i.e. $\forall a \in R, aI \subseteq I$.</li>
+<li>$I$ is a right ideal iff it follows right-absorption, i.e. $\forall a \in R, Ia \subseteq I$.</li>
+<li>$I$ is a two-sided ideal iff it is both a left ideal and a right ideal.</li>
+</ul>
 </div>
 </body>
 </html>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>0x = 0 = x0 - TheoremDep</title>
-    <meta name="description" content="Let R be a ring. For all elements x in R, 0x = 0 = x0." />
+    <title>Vector - TheoremDep</title>
+    <meta name="description" content="A vector is a sequence of numbers with an element-wise addition operation and a scalar multiplication operation." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,20 +25,29 @@
     </form>
 </nav>
 <div id="main">
-<h1>0x = 0 = x0</h1>
+<h1>Vector</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
         <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
             <span class="deptitle">Ring</span>
         </a>
+        <span class="reason">optional</span>
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Let $R$ be a ring. Then $\forall x \in R, 0{\cdot}x = 0 = x{\cdot}0$.</p>
-<h2>Proof</h2>
-<p>$0x = (0+0)x = 0x + 0x$. Therefore, $0x = 0$.</p>
-<p>$x0 = x(0+0) = x0 + x0$. Therefore, $x0 = 0$.</p>
+<p>A vector $v$ is a sequence of numbers.
+The $i^{\textrm{th}}$ element in the sequence is denoted by $v_i$.
+The number of elements in the vector is called the length or size of the vector.</p>
+<p>The elements of a vector are generally real numbers. Such vectors are called real-valued vectors.
+However, there can be vectors of other types, like vectors of integers, vectors of complex numbers
+and vectors of rings or fields. (Ring and field are concepts from abstract algebra.)</p>
+<p>The set of all vectors of length $n$ whose elements are from the set $S$ is denoted by $S^n$.
+Consequently, the set of vectors of real numbers of length $n$ is denoted by $\mathbb{R}^n$.</p>
+<p>The sum of two vectors is defined as their element-wise sum:
+\[ (u + v)_i = u_i + v_i \]</p>
+<p>Scalar multiplication is defined as follows:
+\[ (cv)_i = cv_i \]</p>
 </div>
 </body>
 </html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Product of ideal cosets is well-defined - TheoremDep</title>
+    <meta name="description" content="Let I be an ideal. The product of cosets (a+I)(b+I) = ab+I is well-defined." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Product of ideal cosets is well-defined</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ideal.html">
+            <span class="deptitle">Ideal</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/coset-equals-subgroup-iff-elem-in-subgroup.html">
+            <span class="deptitle">gH = H iff g in H</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $I$ be an ideal of ring $R$.
+The product of cosets $a+I$ and $b+I$ is defined as:
+$(a+I)(b+I) = ab+I$.</p>
+<p>This product is well-defined, i.e. it does not depend on the choice of coset representative.</p>
+<h2>Proof</h2>
+<p>Let $a_1+I = a_2+I$ and $b_1+I = b_2+I$.</p>
+<p>We will prove that $a_1b_1 + I = a_2b_2 + I$.</p>
+<ul>
+<li>$a_1+I = a_2+I \Rightarrow (\exists i \in I, a_2 = a_1 + i)$.</li>
+<li>$b_1+I = b_2+I \Rightarrow (\exists j \in I, b_2 = b_1 + j)$.</li>
+</ul>
+<p>\[ a_2b_2 - a_1b_1 = (a_1+i)(b_1+i) - a_1b_1 = a_1j + b_1i + ij \]</p>
+<p>This belongs to $I$ because $j$ absorbs $a_1$, $i$ absorbs $b_1$ and closure of addition and multiplication in $I$.</p>
+<p>Therefore, $a_2b_2 - a_1b_1 \in I \Rightarrow a_2b_2 + I = a_1b_1 + I$.</p>
+</div>
+</body>
+</html>
