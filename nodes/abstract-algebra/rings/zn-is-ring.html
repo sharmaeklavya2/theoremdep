@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zn is a ring - TheoremDep</title>
+    <meta name="description" content="The set of integers modulo n is a ring." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Zn is a ring</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+            <span class="deptitle">Ring</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/modular-equivalence.html">
+            <span class="deptitle">Modular Equivalence</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/mod-add.html">
+            <span class="deptitle">Modular addition</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/mod-mult.html">
+            <span class="deptitle">Modular multiplication</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/integer-division-theorem.html">
+            <span class="deptitle">Integer Division Theorem</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>$\mathbb{Z}_n = \{0, 1, \ldots, n-1\}$.
+Let $a, b \in \mathbb{Z}_n$.
+The sum of $a$ and $b$ is defined as $\operatorname{add}(a, b) = (a+b)\%n$.
+The product of $a$ and $b$ is defined as $\operatorname{mult}(a, b) = (ab)\%n$.</p>
+<p>Under these operations, $\mathbb{Z}_n$ forms a commutative ring with unity.</p>
+<h2>Lemmas</h2>
+<p>\begin{align}
+&amp; a \equiv b \pmod{n}
+\\ &amp;\iff n \mid (a - b)
+\\ &amp;\iff n \mid (a\%n + n\left\lfloor\frac{a}{n}\right\rfloor - b\%n - n\left\lfloor\frac{b}{n}\right\rfloor)
+\\ &amp;\iff n \mid (a\%n - b\%n)
+\\ &amp;\iff a\%n - b\%n = 0
+\\ &amp;\iff a\%n = b\%n
+\end{align}</p>
+<p>This is because $a\%n - b\%n \in \{-(n-1), -(n-2), \ldots, n-2, n-1\}$
+and the only divisor of $n$ in this set is 0.</p>
+<p>\[ n \mid (a - a\%n) \iff a \equiv a\%n \pmod{n} \]</p>
+<h2>Proof that $\mathbb{Z}_n$ is a ring</h2>
+<ul>
+<li>
+<p>Closure: $\forall x \in \mathbb{Z}, x \% n \in \mathbb{Z}_n$.
+Therefore, $\operatorname{add}(a, b) = (a+b) \% n \in \mathbb{Z}_n$
+and $\operatorname{mult}(a, b) = (ab)\%n \in \mathbb{Z}_n$.</p>
+</li>
+<li>
+<p>$+$ commutativity: $\operatorname{add}(a, b) = (a+b) \% n = (b+a) \% n = \operatorname{add}(b, a)$.</p>
+</li>
+<li>
+<p>$+$ Associativity:
+    \begin{align}
+    &amp; (a+b)\%n \equiv a+b \pmod{n}
+    \\ &amp;\Rightarrow (a+b)\%n + c \equiv a+b+c \pmod{n}
+    \\ &amp;\Rightarrow ((a+b)\%n + c)\%n = (a+b+c)\%n
+    \end{align}</p>
+<p>\begin{align}
+&amp; (b+c)\%n \equiv b+c \pmod{n}
+\\ &amp;\Rightarrow a+(b+c)\%n \equiv a+b+c \pmod{n}
+\\ &amp;\Rightarrow (a+(b+c)\%n)\%n = (a+b+c)\%n
+\end{align}</p>
+<p>Therefore, $((a+b)\%n+c)\%n = (a+(b+c)\%n)\%n$.</p>
+</li>
+<li>
+<p>Additive identity: 0</p>
+</li>
+<li>Additive inverse:
+    $\operatorname{inv}_+{0} = 0$.
+    When $x \neq 0$, $\operatorname{inv}_+{x} = n-x$.</li>
+</ul>
+<p>Therefore, $\mathbb{Z}_n$ is an abelian group under addition.</p>
+<ul>
+<li>
+<p>$\times$ commutativity: $\operatorname{mult}(a, b) = (ab) \% n = (ba) \% n = \operatorname{mult}(ba)$</p>
+</li>
+<li>
+<p>$\times$ Associativity:
+    \begin{align}
+    &amp; (ab)\%n \equiv ab \pmod{n}
+    \\ &amp;\Rightarrow ((ab)\%n) c \equiv abc \pmod{n}
+    \\ &amp;\Rightarrow (((ab)\%n) c)\%n \equiv (abc)\%n \pmod{n}
+    \end{align}</p>
+<p>\begin{align}
+&amp; (bc)\%n \equiv bc \pmod{n}
+\\ &amp;\Rightarrow a ((bc)\%n) \equiv abc \pmod{n}
+\\ &amp;\Rightarrow (a((ab)\%n))\%n \equiv (abc)\%n \pmod{n}
+\end{align}</p>
+<p>Therefore, $(((ab)\%n)c)\%n = (a((bc)\%n))\%n$.</p>
+</li>
+<li>
+<p>Unity: 1</p>
+</li>
+<li>
+<p>Distributivity:
+    \begin{align}
+    &amp; (a+b)\%n \equiv a+b \pmod{n}
+    \\ &amp;\Rightarrow (a+b)\%n c \equiv (a+b)c \pmod{n}
+    \\ &amp;\Rightarrow ((a+b)\%n c)\%n = ((a+b)c)\%n
+    \end{align}</p>
+<p>\begin{align}
+&amp; (ac)\%n \equiv ac \wedge (bc)\%n \equiv bc \pmod{n}
+\\ &amp;\Rightarrow (ac)\%n + (bc)\%n \equiv (ac+bc) \pmod{n}
+\\ &amp;\Rightarrow ((ac)\%n + (bc)\%n)\%n = (ac+bc)\%n = ((a+b)c)\%n
+\end{align}</p>
+<p>Therefore, $(((a+b)\%n)c)\%n = ((ac)\%n + (bc)\%n)\%n$.</p>
+</li>
+</ul>
+<p>Therefore, $\mathbb{Z}_n$ is a commutative ring with unity.</p>
+</div>
+</body>
+</html>

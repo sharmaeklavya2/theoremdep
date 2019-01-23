@@ -40,9 +40,9 @@ where the elements of the sequence are in $R$ and the last element is non-zero.
 The elements of $p$ are indexed from 0 to $n$ and the $i^{\textrm{th}}$ element is denoted by $p_i$.
 The elements of $p$ are called the coefficients of $p$.
 $p_n$ is called the leading coefficient.
-The degree of $p$ is denoted as $\operatorname{deg}(p)$.</p>
+The degree of $p$ is denoted as $\deg(p)$.</p>
 <p>Additionally, the zero of $R$ is defined to be a polynomial corresponding to an empty sequence.
-It has no leading coefficient.</p>
+It has no leading coefficient. Its degree is defined to be $-\infty$.</p>
 <p>Equivalently, a polynomial $p$ in $R$ of degree $n$ is a function from $R$ to $R$ of the form
 \[ p(x) = \sum_{i=0}^n p_i x^i \]
 where $p_i \in R \forall 0 \le i &lt; n$, $p_n \neq 0$ and $p_i = 0 \forall n &lt; i$.</p>
@@ -55,6 +55,7 @@ Multivariate polynomials are polynomials whose coefficients are themselves polyn
 The set of all $n$-variable polynomials is denoted as
 $R[x_1, x_2, \ldots, x_n] = (R[x_1, x_2, \ldots, x_{n-1}])[x_n]$.</p>
 <p>$R \subseteq R[x]$, because elements of $R-\{0\}$ have degree 0 and 0 is defined to be in $R[x]$.</p>
+<p>Polynomials whose leading coefficient is 1 are called monic polynomials.</p>
 </div>
 </body>
 </html>

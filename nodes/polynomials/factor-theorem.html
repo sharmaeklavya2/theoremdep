@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Factor theorem - TheoremDep</title>
+    <meta name="description" content="(x-a) is a factor of p(x) iff p(a) = 0" />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Factor theorem</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/division-theorem.html">
+            <span class="deptitle">Polynomial division theorem</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $F$ be a field. Let $p(x) \in F[x]$ and $a \in F$.</p>
+<p>$p(a) = 0 \iff (x-a) \mid p(x)$</p>
+<h2>Proof of 'only if' part</h2>
+<p>Let $p(a) = 0$.</p>
+<p>By the division theorem, there is a unique $(q, r)$ such that $p(x) = (x-a)q(x) + r(x)$
+such that $\deg(r) &lt; \deg(x-a) = 1$.</p>
+<p>$\deg(r) &lt; 1 \Rightarrow r \in F$. Therefore, $p(x) = (x-a)q(x) + r$.</p>
+<p>$ 0 = p(a) = (a-a)q(a) + r = r$.</p>
+<p>Therefore, $p(x) = (x-a)q(x) \Rightarrow (x-a) \mid \mid p(x)$.</p>
+<h2>Proof of 'if' part</h2>
+<p>$(x-a) \mid p(x) \Rightarrow p(x) = (x-a)q(x)$ for some $q(x) \in F[x]$.</p>
+<p>Therefore, $p(a) = (a-a)q(a) = 0$.</p>
+</div>
+</body>
+</html>

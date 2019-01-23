@@ -85,11 +85,25 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd-times-lcm-equals-product.html"
 },
 {
+"type": "theorem",
+"title": "Modular addition",
+"description": "a1 \u2261 b1 and a2 \u2261 b2 implies a1+a2 \u2261 b1+b2",
+"uci": "/number-theory/mod-add",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/mod-add.html"
+},
+{
 "type": "definition",
 "title": "Modular Equivalence",
 "description": "a is equivalent to b mod n iff n divides (a-b).",
 "uci": "/number-theory/modular-equivalence",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/modular-equivalence.html"
+},
+{
+"type": "theorem",
+"title": "Modular multiplication",
+"description": "a1 \u2261 b1 and a2 \u2261 b2 implies a1a2 \u2261 b1b2",
+"uci": "/number-theory/mod-mult",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/mod-mult.html"
 },
 {
 "type": "theorem",
@@ -502,6 +516,13 @@
 },
 {
 "type": "theorem",
+"title": "Zn is a ring",
+"description": "The set of integers modulo n is a ring.",
+"uci": "/abstract-algebra/rings/zn-is-ring",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/zn-is-ring.html"
+},
+{
+"type": "theorem",
 "title": "I is a maximal ideal iff R/I is a field",
 "description": "Let I be an ideal of R, a commutative ring with unity. Then I is maximal in R iff R/I is a field.",
 "uci": "/abstract-algebra/rings/maximal-ideal-field",
@@ -518,6 +539,13 @@
 "title": "Conditions for a subset of a ring to be a subring",
 "uci": "/abstract-algebra/rings/subring-condition",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/subring-condition.html"
+},
+{
+"type": "theorem",
+"title": "Zp is a field",
+"description": "If p is prime, Zp is a field",
+"uci": "/abstract-algebra/rings/zp-is-field",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/zp-is-field.html"
 },
 {
 "type": "def",
@@ -563,33 +591,6 @@
 "title": "A finite integral domain is a field",
 "uci": "/abstract-algebra/rings/finite-integral-domain-is-field",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/finite-integral-domain-is-field.html"
-},
-{
-"type": "theorem",
-"title": "Degree of sum of polynomials",
-"description": "The degree of sum of 2 polynomials is at most the maximum of the degrees of those polynomials.",
-"uci": "/abstract-algebra/rings/polynomials/degree-of-sum",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/polynomials/degree-of-sum.html"
-},
-{
-"type": "theorem",
-"title": "Degree of product of polynomials",
-"description": "deg(pq) \u2264 deg(p) + deg(q). If coefficients of p and q are from an integral domain, deg(pq) = deg(p) + deg(q).",
-"uci": "/abstract-algebra/rings/polynomials/degree-of-product",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/polynomials/degree-of-product.html"
-},
-{
-"type": "def",
-"title": "Polynomial",
-"uci": "/abstract-algebra/rings/polynomials/polynomial",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/polynomials/polynomial.html"
-},
-{
-"type": "theorem",
-"title": "Polynomials of a ring form a ring",
-"description": "The set of all polynomials is a ring if the coefficients are from a ring.",
-"uci": "/abstract-algebra/rings/polynomials/ring",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/polynomials/ring.html"
 },
 {
 "type": "theorem",
@@ -857,6 +858,68 @@
 "title": "A set of dim(V) linearly independent vectors is a basis",
 "uci": "/linear-algebra/vector-spaces/basis/n-linindep-is-basis",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/n-linindep-is-basis.html"
+},
+{
+"type": "theorem",
+"title": "Factor theorem",
+"description": "(x-a) is a factor of p(x) iff p(a) = 0",
+"uci": "/polynomials/factor-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/factor-theorem.html"
+},
+{
+"type": "theorem",
+"title": "Zero divisors of a polynomial",
+"description": "Ring R has no zero divisors iff the ring of polynomials R[x] has no zero divisors",
+"uci": "/polynomials/zero-divisors",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/zero-divisors.html"
+},
+{
+"type": "theorem",
+"title": "Polynomial GCD theorem",
+"description": "The GCD of polynomials is unique and equals their least degree monic linear combination.",
+"uci": "/polynomials/gcd-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/gcd-theorem.html"
+},
+{
+"type": "theorem",
+"title": "Degree of sum of polynomials",
+"description": "The degree of sum of 2 polynomials is at most the maximum of the degrees of those polynomials.",
+"uci": "/polynomials/degree-of-sum",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-sum.html"
+},
+{
+"type": "theorem",
+"title": "Degree of product of polynomials",
+"description": "deg(pq) \u2264 deg(p) + deg(q). If coefficients of p and q are from an integral domain, deg(pq) = deg(p) + deg(q).",
+"uci": "/polynomials/degree-of-product",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-product.html"
+},
+{
+"type": "def",
+"title": "Polynomial",
+"uci": "/polynomials/polynomial",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/polynomial.html"
+},
+{
+"type": "theorem",
+"title": "Polynomial division theorem",
+"description": "If a and b are polynomials, a can be uniquely expressed as bq + r where deg(r) < deg(b).",
+"uci": "/polynomials/division-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/division-theorem.html"
+},
+{
+"type": "def",
+"title": "GCD of polynomials",
+"description": "The GCD of a set of polynomials over a ring with unity is a largest degree monic polynomial which divides all polynomials in that set. Since 1 divides all polynomials, every set of polynomials has a GCD.",
+"uci": "/polynomials/gcd",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/gcd.html"
+},
+{
+"type": "theorem",
+"title": "Polynomials of a ring form a ring",
+"description": "The set of all polynomials is a ring if the coefficients are from a ring.",
+"uci": "/polynomials/ring",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/ring.html"
 }
 ]
 }

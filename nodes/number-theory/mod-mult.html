@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Modular multiplication - TheoremDep</title>
+    <meta name="description" content="a1 ≡ b1 and a2 ≡ b2 implies a1a2 ≡ b1b2" />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Modular multiplication</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/modular-equivalence.html">
+            <span class="deptitle">Modular Equivalence</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>If $a_1 \equiv b_1 \pmod{n}$ and $a_2 \equiv b_2 \pmod{n}$,
+then $a_1a_2 \equiv b_1b_2 \pmod{n}$.</p>
+<h2>Proof</h2>
+<p>\begin{align}
+&amp; a_1 \equiv b_1 \wedge a_2 \equiv b_2 \pmod{n}
+\\ &amp;\Rightarrow n \mid (a_1-b_1) \wedge n \mid (a_2-b_2)
+\\ &amp;\Rightarrow n \mid b_2(a_1-b_1) + a_1(a_2-b_2)
+\\ &amp;\Rightarrow n \mid (a_1a_2 - a_1b_2 + a_1b_2 - b_1b_2)
+\\ &amp;\Rightarrow n \mid (a_1a_2 - b_1b_2)
+\\ &amp;\Rightarrow a_1a_2 \equiv b_1b_2 \pmod{n}
+\end{align}</p>
+</div>
+</body>
+</html>

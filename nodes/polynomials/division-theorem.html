@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Polynomial division theorem - TheoremDep</title>
+    <meta name="description" content="If a and b are polynomials, a can be uniquely expressed as bq + r where deg(r) < deg(b)." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Polynomial division theorem</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+            <span class="deptitle">Field</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-sum.html">
+            <span class="deptitle">Degree of sum of polynomials</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-product.html">
+            <span class="deptitle">Degree of product of polynomials</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/zero-divisors.html">
+            <span class="deptitle">Zero divisors of a polynomial</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field-is-integral-domain.html">
+            <span class="deptitle">A field is an integral domain</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $a(x), b(x) \in F[x]$, where $F$ is a field and $b \neq 0$.
+Then $a$ can be uniquely expressed as $bq + r$, where
+$p(x), r(x) \in F[x]$ and $\deg(r) &lt; \deg(b)$.</p>
+<p>This can be used to define the modulo operation on polynomials:
+$r(x) = a(x) \% b(x)$.</p>
+<h2>Proof</h2>
+<h3>Case 1: $\deg(b) = 0$</h3>
+<p>$\deg(b) = 0 \Rightarrow b \in F$.</p>
+<p>$\deg(r) &lt; \deg(b) = 0 \Rightarrow r = 0 \Rightarrow a = bq \Rightarrow q = b^{-1}a$.</p>
+<p>Therefore, $q = b^{-1}a, r = 0$ is a solution and this is the only solution.</p>
+<h3>Case 2: $\deg(b) &gt; 0$.</h3>
+<p>Let $S = \{a(x) - b(x)c(x): c \in F[x]\}$.
+Let $r$ be a polynomial of minimum degree in $S$.
+Let $r = a - bq$.</p>
+<p>Assume that $\deg(r) \ge \deg(b) \ge 1$.</p>
+<p>This means $r \neq 0$ and $b \neq 0$, so both $r$ and $b$ have a leading coefficient.</p>
+<p>Let $r(x) = r_{\deg(r)}x^{\deg(r)} + r'(x)$ and $b(x) = b_{\deg(b)}x^{\deg(b)} + b'(x)$.
+Therefore, $\deg(r') &lt; \deg(r)$ and $\deg(b') &lt; \deg(b)$.</p>
+<p>Let $q'(x) = r_{\deg(r)}x^{\deg(r) - \deg(b)}b_{\deg(b)}^{-1}$
+($q'$ is a valid polynomial since $\deg(r) \ge \deg(b)$).
+Let $r'' = r - q'b$.</p>
+<p>$r'' = r - q'b = (a - qb) - q'b = a - (q + q')b \in S$.</p>
+<p>\begin{align}
+&amp; r'' = r - q'b
+\\ &amp;= (r' + r_{\deg(r)}x^{\deg(r)}) - (r_{\deg(r)}x^{\deg(r) - \deg(b)}b_{\deg(b)}^{-1})(b' + b_{\deg(b)}x^{\deg(b)})
+\\ &amp;= r' - r_{\deg(r)}b_{\deg(b)}^{-1}x^{\deg(r)-\deg(b)}b'
+\end{align}</p>
+<p>\begin{align}
+&amp; \deg(r'')
+\\ &amp;= \deg(r' - r_{\deg(r)}b_{\deg(b)}^{-1}x^{\deg(r)-\deg(b)}b')
+\\ &amp;\le \max(\deg(r'), \deg(x^{\deg(r)-\deg(b)}b')) \tag{degree of sum}
+\\ &amp;\le \max(\deg(r'), \deg(r) - \deg(b) + \deg(b')) \tag{degree of product}
+\\ &amp;\le \max(\deg(r)-1, \deg(r) - \deg(b) + (\deg(b) -1)) \tag{$\deg(r') &lt; \deg(r) \wedge \deg(b') &lt; \deg(b)$}
+\\ &amp;\le \deg(r) - 1
+\end{align}</p>
+<p>This is a contradiction since $r'' \in S$, $r$ is the least degree polynomial in $S$ and $\deg(r'') &lt; \deg(r)$.
+Therefore, $\deg(r) &lt; \deg(b)$.
+Since a polynomial of least degree exists in $S$ and all elements are of the form $a-bc$,
+a solution to $a = bq + r$ exists such that $\deg(r) &lt; \deg(b)$.</p>
+<p>Let there be 2 solutions $(q_1, r_1)$ and $(q_2, r_2)$.</p>
+<p>\[ a = bq_1 + r_1 \wedge a = bq_2 + r_2 \implies b(q_1 - q_2) = r_2 - r_1 \]</p>
+<h4>Case 2a: $r_1 = r_2$</h4>
+<p>Since $F$ is an integral domain, $F[x]$ has no zero-divisors.
+Therefore, $r_1 = r_2 \Rightarrow b(q_1 - q_2) = 0 \Rightarrow q_1 = q_2$.</p>
+<p>Therefore, $(r_1, q_1) = (r_2, q_2)$.</p>
+<h4>Case 2b: $r_1 \neq r_2$</h4>
+<p>$r_1 \neq r_2 \Rightarrow b(q_1 - q_2) \neq 0 \Rightarrow q_1 - q_2 \neq 0 \Rightarrow \deg(q_1 - q_2) \ge 0$.</p>
+<p>\begin{align}
+&amp; \deg(r_1 - r_2)
+\\ &amp;= \deg(b(q_1 - q_2))
+\\ &amp;= \deg(b) + \deg(q_1 - q_2) \tag{degree of product}
+\\ &amp;\ge \deg(b) \tag{$\deg(q_1 - q_2) \ge 0$}
+\end{align}</p>
+<p>$\deg(r_1 - r_2) \le \max(\deg(r_1), \deg(-r_2)) \le \max(\deg(b) - 1, \deg(b) - 1) = \deg(b) - 1$</p>
+<p>This is a contradiction. Therefore, this case is not possible.</p>
+<p>Therefore, a unique solution $(q, r)$ exists to $a = bq + r$ such that $\deg(b) &lt; \deg(r)$.</p>
+</div>
+</body>
+</html>

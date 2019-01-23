@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Polynomial GCD theorem - TheoremDep</title>
+    <meta name="description" content="The GCD of polynomials is unique and equals their least degree monic linear combination." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Polynomial GCD theorem</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+            <span class="deptitle">Field</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/gcd.html">
+            <span class="deptitle">GCD of polynomials</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/division-theorem.html">
+            <span class="deptitle">Polynomial division theorem</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-product.html">
+            <span class="deptitle">Degree of product of polynomials</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $F$ be a field. Let $L = \{f_1(x), f_2(x), \ldots, f_n(x)\} \subseteq F[x]$.
+Let $g$ be a GCD of $L$.
+Let $S$ be the set of non-zero monic linear combinations of $L$.</p>
+<p>\[ S = \left\{p: p(x) \in F[x]-\{0\} \wedge p \textrm{ is monic} \wedge
+\left(\exists (h_1, h_2, \ldots, h_n) \in F[x]^n, p = \sum_{i=1}^n h_if_i \right) \right\} \]</p>
+<p>Let $d$ be a least degree polynomial in $S$.</p>
+<p>The GCD theorem says that $g = d$.</p>
+<p>This implies that every GCD is equal to every least-degree polynomial in $S$.
+This means that GCD is unique and the least-degree polynomial in $S$ is unique.</p>
+<h2>Proof</h2>
+<p>According to the division theorem for polynomials, $f_i = q_id + r_i$ where $\deg(r_i) &lt; \deg(d)$.
+Assume $r_i$ is non-zero. This means $r_i$ has a leading coefficient $\lambda$.
+$r_i / \lambda$ is a monic polynomial. Since $d$ is a linear combination of $L$ and $r_i = f_i - dq_i$,
+$r_i / \lambda$ is a linear combination of $L$.</p>
+<p>Since $r_i / \lambda$ is a non-zero monic linear combination of $L$, $r_i / \lambda \in S$.
+$\deg(r_i / \lambda) = \deg(r_i) &lt; \deg(d)$ which contradicts that fact that
+$d$ is a least degree polynomial in $S$.
+Therefore our assumption that $r_i$ is non-zero is wrong.
+Therefore, $d \mid f_i$.</p>
+<p>Therefore, $d$ is a common divisor of $L$. Since $g$ is a maximum-degree common divisor of $L$,
+$\deg(d) \le \deg(g)$.</p>
+<p>Since $g \mid f_i$ and $d$ is a linear combination of all $f_i$, $g \mid d$.</p>
+<p>Let $d = gh$. $\Rightarrow \deg(d) = \deg(g) + \deg(h) \Rightarrow \deg(h) = \deg(d) - \deg(g) \le 0$.</p>
+<p>Since $d \neq 0$ and $g \neq 0$, $h \neq 0 \Rightarrow \deg(h) = 0 \Rightarrow h \in F-\{0\}$.</p>
+<p>Since $d$ and $g$ are monic, $h = 1$. Therefore, $g = d$.</p>
+</div>
+</body>
+</html>
