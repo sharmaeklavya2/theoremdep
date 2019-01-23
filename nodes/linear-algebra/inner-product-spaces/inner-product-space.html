@@ -35,27 +35,7 @@
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Let $F$ be a field such that $F$ contains 3 disjoint
-(but not necessarily exhaustive) subsets: $\{0\}, F^+, F^-$ such that:</p>
-<ul>
-<li>$x \in F^+ \iff (-x) \in F^-$.</li>
-<li>$x, y \in F^+ \Rightarrow (x + y \in F^+ \wedge xy \in F^+)$.</li>
-</ul>
-<p>The conjugate is a function from $F$ to $F$. The conjugate of $x$ is denoted as $\overline{x}$.
-It satisfies these properties:</p>
-<ul>
-<li>$\overline{xy} = \overline{x}\overline{y}$.</li>
-<li>$\overline{x + y} = \overline{x} + \overline{y}$.</li>
-<li>$\overline{\overline{x}} = x$.</li>
-<li>$x \neq 0 \Rightarrow x\overline{x} \in F^+$. $x\overline{x}$ is also denoted as $|x|^2$.</li>
-<li>$x \in F^+ \Rightarrow \overline{x} = x$.</li>
-</ul>
-<p>\[ \overline{0} = \overline{0 + 0} = \overline{0} + \overline{0} \Rightarrow \overline{0} = 0 \]
-\[ 0 = \overline{0} = \overline{x+(-x)} = \overline{x} + \overline{(-x)} \Rightarrow \overline{(-x)} = -\overline{x} \]
-\[ \overline{1} = 0 \Rightarrow 1 = \overline{\overline{1}} = \overline{0} = 0 \Rightarrow \bot
-\Rightarrow \overline{1} \neq 0 \Rightarrow \overline{1}^{-1} \textrm{ exists} \]
-\[ \overline{1} = \overline{1 \cdot 1} = \overline{1} \cdot \overline{1} \Rightarrow \overline{1} = 1 \]</p>
-<p>Let $V$ be a vector space over $F$.</p>
+<p>Let $F$ be a subfield of $\mathbb{C}$ (complex numbers). Let $V$ be a vector space over $F$.</p>
 <p>The inner product is a function from $V \times V$ to $F$.
 The inner product of $\mathbf{u}$ and $\mathbf{v}$ is denoted as $\langle \mathbf{u}, \mathbf{v} \rangle$.</p>
 <p>$V$ is an inner product space if it satisfies the following properties:</p>
@@ -63,11 +43,11 @@ The inner product of $\mathbf{u}$ and $\mathbf{v}$ is denoted as $\langle \mathb
 <li>Conjugate symmetry: $\langle \mathbf{u}, \mathbf{v} \rangle = \overline{\langle \mathbf{v}, \mathbf{u} \rangle}$.</li>
 <li>Linearity in the first argument:<ul>
 <li>$\langle \mathbf{u_1} + \mathbf{u_2}, \mathbf{v} \rangle = \langle \mathbf{u_1}, \mathbf{v} \rangle + \langle \mathbf{u_2}, \mathbf{v} \rangle$.</li>
-<li>$a\langle \mathbf{u}, \mathbf{v} \rangle = \langle au, \mathbf{v} \rangle$.</li>
+<li>$a\langle \mathbf{u}, \mathbf{v} \rangle = \langle a\mathbf{u}, \mathbf{v} \rangle$.</li>
 </ul>
 </li>
 <li>Positive definiteness:<ul>
-<li>(positive semidefiniteness) $\langle \mathbf{v}, \mathbf{v} \rangle \in F^+ \cup \{0\}$.</li>
+<li>(positive semidefiniteness) $\langle \mathbf{v}, \mathbf{v} \rangle \ge 0$.</li>
 <li>$\langle \mathbf{v}, \mathbf{v} \rangle = 0 \iff \mathbf{v} = 0$.</li>
 </ul>
 </li>

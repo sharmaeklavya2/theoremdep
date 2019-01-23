@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Zero in inner product - TheoremDep</title>
-    <meta name="description" content="< 0, v > = < v, 0 > = 0." />
+    <title>A set of mutually orthogonal vectors is linearly independent - TheoremDep</title>
+    <meta name="description" content="Track dependencies between theorems and definitions." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,7 +25,7 @@
     </form>
 </nav>
 <div id="main">
-<h1>Zero in inner product</h1>
+<h1>A set of mutually orthogonal vectors is linearly independent</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
@@ -35,15 +35,22 @@
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>$\langle \mathbf{0}, \mathbf{v} \rangle = \langle \mathbf{v}, \mathbf{0} \rangle = 0$.</p>
+<p>Let $S = \{v_1, v_2, \ldots, v_n\}$ be a set of non-zero vectors from an inner product space $V$.
+If $\langle v_i, v_j \rangle = 0$ for all $v_i, v_j \in S$, then $S$ is linearly independent.</p>
 <h2>Proof</h2>
-<p>\[ \langle \mathbf{0}, \mathbf{v} \rangle
-= \langle \mathbf{0} + \mathbf{0}, \mathbf{v} \rangle
-= \langle \mathbf{0}, \mathbf{v} \rangle + \langle \mathbf{0}, \mathbf{v} \rangle \tag{linearity in first argument}
-\Rightarrow \langle \mathbf{0}, \mathbf{v} \rangle = 0 \]</p>
-<p>\[ \langle \mathbf{v}, \mathbf{0} \rangle
-= \overline{\langle \mathbf{0}, \mathbf{v} \rangle} \tag{conjugate symmetry}
-= \overline{0} = 0 \]</p>
+<p>Assume that $S$ is linearly dependent.
+Without loss of generality, assume that $v_n$ is a linear combination of the rest of the vectors.
+Let $v_n = \sum_{i=1}^{n-1} a_iv_i$.</p>
+<p>\begin{align}
+&amp; \|v_n\|^2 = \langle v_n , v_n \rangle
+\\ &amp;= \left\langle \sum_{i=1}^{n-1} a_iv_i , v_n \right\rangle
+\\ &amp;= \sum_{i=1}^{n-1} a_i \langle v_i, v_n \rangle \tag{by linearity}
+\\ &amp;= \sum_{i=1}^{n-1} a_i 0
+\\ &amp;= 0
+\end{align}</p>
+<p>By the positive-definiteness property of inner-product spaces, $\|v_n\|^2 = 0 \Rightarrow v_n = 0$.
+This contradicts the fact that all vectors in $S$ are non-zero.
+Therefore, $S$ is linearly independent.</p>
 </div>
 </body>
 </html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Inner product is anti-linear in second argument - TheoremDep</title>
+    <meta name="description" content="< u, av > = conj(a) < u, v > and < u, v1+v2 > = < u, v1 > + < u, v2 >" />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Inner product is anti-linear in second argument</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/inner-product-space.html">
+            <span class="deptitle">Inner product space</span>
+        </a>
+        </li>
+        <li>
+        <span class="deptitleuci missing">/complex-numbers/conjugation-is-homomorphic</span>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $V$ be an inner-product space.
+The inner product is anti-linear in the second argument.
+This means that:</p>
+<ul>
+<li>$\langle \mathbf{u}, a \mathbf{v} \rangle = \overline{a}\langle \mathbf{u}, \mathbf{v} \rangle$.</li>
+<li>$\langle \mathbf{u}, \mathbf{v_1} + \mathbf{v} _2 \rangle = \langle \mathbf{u}, \mathbf{v_1} \rangle + \langle \mathbf{u}, \mathbf{v} _2 \rangle$.</li>
+</ul>
+<h2>Proof</h2>
+<p>\begin{align}
+&amp; \langle \mathbf{u}, a \mathbf{v} \rangle
+\\ &amp;= \overline{\langle a \mathbf{v}, \mathbf{u} \rangle} \tag{by conjugate symmetry}
+\\ &amp;= \overline{a\langle \mathbf{v}, \mathbf{u} \rangle} \tag{by linearity in first argument}
+\\ &amp;= \overline{a}\overline{\langle \mathbf{v}, \mathbf{u} \rangle} \tag{conjugation is homomorphic}
+\\ &amp;= \overline{a} \langle \mathbf{u}, \mathbf{v} \rangle \tag{by conjugate symmetry}
+\end{align}</p>
+<p>\begin{align}
+&amp; \langle \mathbf{u}, \mathbf{v_1} + \mathbf{v_2} \rangle
+\\ &amp;= \overline{\langle \mathbf{v_1} + \mathbf{v_2}, \mathbf{u} \rangle} \tag{by conjugate symmetry}
+\\ &amp;= \overline{\langle \mathbf{v_1}, \mathbf{u} \rangle + \langle \mathbf{v_2}, \mathbf{u} \rangle} \tag{by linearity in first argument}
+\\ &amp;= \overline{\langle \mathbf{v_1}, \mathbf{u} \rangle} + \overline{\langle \mathbf{v_2}, \mathbf{u} \rangle} \tag{conjugation is homomorphic}
+\\ &amp;= \langle \mathbf{u}, \mathbf{v_1} \rangle + \langle \mathbf{u}, \mathbf{v_2} \rangle \tag{by conjugate symmetry}
+\end{align}</p>
+</div>
+</body>
+</html>

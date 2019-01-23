@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>x and y are parallel iff ∥x∥²∥y∥² = |< x, y >|². - TheoremDep</title>
+    <meta name="description" content="Two vectors are parallel iff the absolute value of their dot product equals the product of their norms." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>x and y are parallel iff ∥x∥²∥y∥² = |< x, y >|².</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/antilin-in-2nd.html">
+            <span class="deptitle">Inner product is anti-linear in second argument</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/zero.html">
+            <span class="deptitle">Zero in inner product</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $x$ and $y$ be vectors from the inner product space $V$ and $x \neq 0$.
+Then $y = kx$ for some scalar $k$ iff $|\langle x, y \rangle|^2 = \|x\|^2\|y\|^2$.</p>
+<h2>Proof of 'only-if' part</h2>
+<p>Let $y = kx$ for some scalar $k$.</p>
+<p>\begin{align}
+&amp; |\langle x, y \rangle|^2
+\\ &amp;= \langle x, kx \rangle \overline{\langle x, kx \rangle}
+\\ &amp;= \langle x, kx \rangle \langle kx, x \rangle \tag{by conjugate symmetry}
+\\ &amp;= \overline{k}\langle x, x \rangle k\langle x, x \rangle \tag{by (anti-)linearity}
+\\ &amp;= \langle x, x \rangle k\overline{k}\langle x, x \rangle \tag{multiplicative commutativity in field}
+\\ &amp;= \langle x, x \rangle \langle kx, kx \rangle \tag{by (anti-)linearity}
+\\ &amp;= \|x\|^2 \|y\|^2
+\end{align}</p>
+<h2>Proof of 'if' part</h2>
+<p>By the positive-definiteness property of inner-product spaces, $x \neq 0 \Rightarrow \|x\|^2 \neq 0$.</p>
+<p>Let $|\langle x, y \rangle|^2 = \|x\|^2\|y\|^2$.</p>
+<p>\[ w = y - \frac{\langle y, x \rangle}{\|x\|^2}x \]</p>
+<p>(Intutively, $w$ is the component of $y$ perpendicular to $x$. We have to prove that this is 0.)</p>
+<p>\begin{align}
+&amp; \langle w, x \rangle
+\\ &amp;= \left\langle y - \frac{\langle y, x \rangle}{\|x\|^2}x, x \right\rangle
+\\ &amp;= \langle y, x \rangle - \frac{\langle y, x \rangle}{\|x\|^2} \langle x, x \rangle \tag{by linearity in first argument}
+\\ &amp;= \langle y, x \rangle - \langle y, x \rangle = 0
+\end{align}</p>
+<p>\begin{align}
+&amp; \langle w, y \rangle
+\\ &amp;= \left\langle y - \frac{\langle y, x \rangle}{\|x\|^2}x , y \right\rangle
+\\ &amp;= \langle y, y \rangle - \frac{\langle y, x \rangle}{\|x\|^2} \langle x , y \rangle \tag{by linearity in first argument}
+\\ &amp;= \frac{\|x\|^2\|y\|^2 - \langle y, x \rangle\langle x , y \rangle}{\|x\|^2}
+\\ &amp;= \frac{\|x\|^2\|y\|^2 - \overline{\langle x, y \rangle}\langle x , y \rangle}{\|x\|^2} \tag{conjugate symmetry}
+\\ &amp;= \frac{\|x\|^2\|y\|^2 - |\langle x, y \rangle|^2}{\|x\|^2} = 0
+\end{align}</p>
+<p>\begin{align}
+&amp; \|w\|^2 = \langle w, w \rangle
+\\ &amp;= \left\langle w, y - \frac{\langle y, x \rangle}{\|x\|^2}x \right\rangle
+\\ &amp;= \langle w, y \rangle - \frac{\overline{\langle y, x \rangle}}{\|x\|^2} \langle w, x \rangle \tag{by anti-linearity}
+\\ &amp;= 0 - \frac{\overline{\langle y, x \rangle}}{\|x\|^2} 0 = 0
+\end{align}</p>
+<p>By the positive-definiteness property of inner-product spaces, $\|w\|^2 = 0 \Rightarrow w = 0$</p>
+<p>Therefore, $y = \frac{\langle y, x \rangle}{\|x\|^2}x \Rightarrow y = kx$ for some scalar $k$.</p>
+</div>
+</body>
+</html>

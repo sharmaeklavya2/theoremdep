@@ -29,13 +29,13 @@
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/inner-product-space.html">
-            <span class="deptitle">Inner product space</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/zero.html">
+            <span class="deptitle">Zero in inner product</span>
         </a>
         </li>
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/zero.html">
-            <span class="deptitle">Zero in inner product</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/antilin-in-2nd.html">
+            <span class="deptitle">Inner product is anti-linear in second argument</span>
         </a>
         </li>
     </ul>
@@ -48,9 +48,9 @@ Then $|\langle \mathbf{u}, \mathbf{v} \rangle|^2 \le \langle \mathbf{u}, \mathbf
 <p>\begin{align}
 0 &amp;\le \| \mathbf{u} - k\mathbf{v} \|^2 \tag{by positive semidefiniteness}
 \\ &amp;= \langle \mathbf{u} - k\mathbf{v}, \mathbf{u} - k\mathbf{v} \rangle
-\\ &amp;= \langle \mathbf{u}, \mathbf{u} \rangle - \langle \mathbf{u}, k\mathbf{v} \rangle - \langle k\mathbf{v}, \mathbf{u} \rangle + \langle k\mathbf{v}, k\mathbf{v} \rangle \tag{by linearity}
+\\ &amp;= \langle \mathbf{u}, \mathbf{u} \rangle - \langle \mathbf{u}, k\mathbf{v} \rangle - \langle k\mathbf{v}, \mathbf{u} \rangle + \langle k\mathbf{v}, k\mathbf{v} \rangle \tag{by (anti-)linearity}
 \\ &amp;= \langle \mathbf{u}, \mathbf{u} \rangle - \overline{k}\langle \mathbf{u}, \mathbf{v} \rangle - k\overline{\langle \mathbf{u}, \mathbf{v} \rangle}
-    + k\overline{k}\langle \mathbf{v}, \mathbf{v} \rangle \tag{by linearity and conjugate symmetry}
+    + k\overline{k}\langle \mathbf{v}, \mathbf{v} \rangle \tag{by (anti-)linearity and conjugate symmetry}
 \\ &amp;= \|\mathbf{u}\|^2 - \overline{k}k\|\mathbf{v}\|^2 - k\overline{k\|\mathbf{v}\|^2} + k\overline{k}\|\mathbf{v}\|^2
 \\ &amp;= \|\mathbf{u}\|^2 - k\overline{k}\|\mathbf{v}\|^2 - k\overline{k}\|\mathbf{v}\|^2 + k\overline{k}\|\mathbf{v}\|^2
 \\ &amp;= \|\mathbf{u}\|^2 - k\overline{k}\|\mathbf{v}\|^2

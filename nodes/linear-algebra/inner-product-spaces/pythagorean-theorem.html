@@ -29,8 +29,8 @@
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/inner-product-space.html">
-            <span class="deptitle">Inner product space</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/antilin-in-2nd.html">
+            <span class="deptitle">Inner product is anti-linear in second argument</span>
         </a>
         </li>
     </ul>
@@ -38,12 +38,16 @@
 <p>Let $V$ be an inner product space and $\mathbf{u}, \mathbf{v} \in V$.
 If $\langle \mathbf{u}, \mathbf{v} \rangle = 0$, then $\|\mathbf{u}\|^2 + \|\mathbf{v}\|^2 = \|\mathbf{u}+\mathbf{v}\|^2$.</p>
 <h2>Proof</h2>
-<p>\[ \langle \mathbf{v}, \mathbf{u} \rangle = \overline{\langle \mathbf{u}, \mathbf{v} \rangle} = \overline{0} = 0 \]</p>
-<p>\[ \|\mathbf{u}+\mathbf{v}\|^2
-= \langle \mathbf{u}+\mathbf{v}, \mathbf{u}+\mathbf{v} \rangle
-= \langle \mathbf{u}, \mathbf{u} \rangle + \langle \mathbf{u}, \mathbf{v} \rangle + \langle \mathbf{v}, \mathbf{u} \rangle + \langle \mathbf{v}, \mathbf{v} \rangle
-= \langle \mathbf{u}, \mathbf{u} \rangle + \langle \mathbf{v}, \mathbf{v} \rangle
-= \|\mathbf{u}\|^2 + \|\mathbf{v}\|^2 \]</p>
+<p>\[ \langle \mathbf{v}, \mathbf{u} \rangle
+= \overline{\langle \mathbf{u}, \mathbf{v} \rangle} \tag{by conjugate symmetry}
+= \overline{0} = 0 \]</p>
+<p>\begin{align}
+&amp; \|\mathbf{u}+\mathbf{v}\|^2
+\\ &amp;= \langle \mathbf{u}+\mathbf{v}, \mathbf{u}+\mathbf{v} \rangle
+\\ &amp;= \langle \mathbf{u}, \mathbf{u} \rangle + \langle \mathbf{u}, \mathbf{v} \rangle + \langle \mathbf{v}, \mathbf{u} \rangle + \langle \mathbf{v}, \mathbf{v} \rangle \tag{by (anti-)linearity}
+\\ &amp;= \langle \mathbf{u}, \mathbf{u} \rangle + \langle \mathbf{v}, \mathbf{v} \rangle
+\\ &amp;= \|\mathbf{u}\|^2 + \|\mathbf{v}\|^2
+\end{align}</p>
 </div>
 </body>
 </html>

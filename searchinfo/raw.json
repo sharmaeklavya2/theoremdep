@@ -691,6 +691,13 @@
 },
 {
 "type": "theorem",
+"title": "x and y are parallel iff \u2225x\u2225\u00b2\u2225y\u2225\u00b2 = |< x, y >|\u00b2.",
+"description": "Two vectors are parallel iff the absolute value of their dot product equals the product of their norms.",
+"uci": "/linear-algebra/inner-product-spaces/parallelism",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/parallelism.html"
+},
+{
+"type": "theorem",
 "title": "Pythagorean theorem",
 "description": "If < u, v > = 0, < u, u > + < v, v > = < u+v, u+v >.",
 "uci": "/linear-algebra/inner-product-spaces/pythagorean-theorem",
@@ -711,11 +718,24 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/cauchy-schwarz-inequality.html"
 },
 {
+"type": "theorem",
+"title": "A set of mutually orthogonal vectors is linearly independent",
+"uci": "/linear-algebra/inner-product-spaces/ortho-vectors-are-linindep",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/ortho-vectors-are-linindep.html"
+},
+{
 "type": "def",
 "title": "Norm",
 "description": "norm(x) = sqrt(< x, x >)",
 "uci": "/linear-algebra/inner-product-spaces/norm",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/norm.html"
+},
+{
+"type": "theorem",
+"title": "Inner product is anti-linear in second argument",
+"description": "< u, av > = conj(a) < u, v > and < u, v1+v2 > = < u, v1 > + < u, v2 >",
+"uci": "/linear-algebra/inner-product-spaces/antilin-in-2nd",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/antilin-in-2nd.html"
 },
 {
 "type": "theorem",
