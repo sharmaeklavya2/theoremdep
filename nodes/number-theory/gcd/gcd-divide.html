@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>gcd(a/d, b/d) = gcd(a, b)/d - TheoremDep</title>
-    <meta name="description" content="gcd(a/d, b/d) = gcd(a, b)/d" />
+    <title>gcd(a1/d, a2/d, ..., an/d) = gcd(a1, a_2, ..., an)/d - TheoremDep</title>
+    <meta name="description" content="Track dependencies between theorems and definitions." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,7 +25,7 @@
     </form>
 </nav>
 <div id="main">
-<h1>gcd(a/d, b/d) = gcd(a, b)/d</h1>
+<h1>gcd(a1/d, a2/d, ..., an/d) = gcd(a1, a_2, ..., an)/d</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
@@ -35,26 +35,29 @@
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>$\gcd\left(\frac{a}{d}, \frac{b}{d}\right) = \frac{\gcd(a, b)}{d}$, where $d \mid \gcd(a, b)$.</p>
+<p>\[ \gcd\left(\frac{a_1}{d}, \frac{a_2}{d}, \ldots, \frac{a_n}{d}\right)
+= \frac{\gcd(a_1, a_2, \ldots, a_n)}{d} \textrm{, where } d \mid \gcd(a_1, a_2, \ldots, a_n) \]</p>
 <h2>Proof</h2>
-<p>Let $\operatorname{D}(a, b)$ be the set of common divisors of $a$ and $b$.</p>
+<p>Let $\operatorname{D}(a_1, a_2, \ldots, a_n)$ be the set of common divisors of $a_1, a_2, \ldots, a_n$.</p>
 <p>\begin{align}
-&amp; g = \gcd(a, b)
-\\ &amp;\Rightarrow g \mid a \wedge g \mid b
-\\ &amp;\Rightarrow \frac{g}{d} \mid \frac{a}{d} \wedge \frac{g}{d} \mid \frac{b}{d}
-\\ &amp;\Rightarrow \frac{g}{d} \in \operatorname{D}\left(\frac{a}{d}, \frac{b}{d}\right)
-\\ &amp;\Rightarrow \frac{g}{d} \le \gcd\left(\frac{a}{d}, \frac{b}{d}\right)
+&amp; g = \gcd(a_1, a_2, \ldots, a_n)
+\\ &amp;\Rightarrow g \mid a_i \forall i
+\\ &amp;\Rightarrow \frac{g}{d} \mid \frac{a_i}{d} \forall i
+\\ &amp;\Rightarrow \frac{g}{d} \in \operatorname{D}\left(\frac{a_1}{d}, \frac{a_2}{d}, \ldots, \frac{a_n}{d}\right)
+\\ &amp;\Rightarrow \frac{g}{d} \le \gcd\left(\frac{a_1}{d}, \frac{a_2}{d}, \ldots, \frac{a_n}{d}\right)
 \end{align}</p>
 <p>\begin{align}
-&amp; g' = \gcd\left(\frac{a}{d}, \frac{b}{d}\right)
-\\ &amp;\Rightarrow g' \mid \frac{a}{d} \wedge g' \mid \frac{b}{d}
-\\ &amp;\Rightarrow g'd \mid a \wedge g'd \mid b
-\\ &amp;\Rightarrow g'd \in \operatorname{D}(a, b)
-\\ &amp;\Rightarrow g'd \le \gcd(a, b)
+&amp; g' = \gcd\left(\frac{a_1}{d}, \frac{a_2}{d}, \ldots, \frac{a_n}{d}\right)
+\\ &amp;\Rightarrow g' \mid \frac{a_i}{d} \forall i
+\\ &amp;\Rightarrow g'd \mid a_i \forall i
+\\ &amp;\Rightarrow g'd \in \operatorname{D}(a_1, a_2, \ldots, a_n)
+\\ &amp;\Rightarrow g'd \le \gcd(a_1, a_2, \ldots, a_n)
 \\ &amp;\Rightarrow g' \le \frac{g}{d}
 \end{align}</p>
 <p>$g' \le \frac{g}{d}$ and $\frac{g}{d} \le g'$ imply that $g' = \frac{g}{d}$.</p>
-<p>Therefore, $\gcd\left(\frac{a}{d}, \frac{b}{d}\right) = \frac{\gcd(a, b)}{d}$, where $d \mid \gcd(a, b)$.</p>
+<p>Therefore,
+\[ \gcd\left(\frac{a_1}{d}, \frac{a_2}{d}, \ldots, \frac{a_n}{d}\right)
+= \frac{\gcd(a_1, a_2, \ldots, a_n)}{d} \textrm{, where } d \mid \gcd(a_1, a_2, \ldots, a_n) \]</p>
 </div>
 </body>
 </html>

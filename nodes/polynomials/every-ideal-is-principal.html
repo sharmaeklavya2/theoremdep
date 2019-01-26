@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Every ideal in F[x] is principal - TheoremDep</title>
+    <meta name="description" content="Every ideal the ring of polynomials of a field is a principal ideal" />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Every ideal in F[x] is principal</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/principal-ideal.html">
+            <span class="deptitle">Principal ideal</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/division-theorem.html">
+            <span class="deptitle">Polynomial division theorem</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/principal-ideal-trivial.html">
+            <span class="deptitle">p(x)F[x] = F[x] iff p is a non-zero constant</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $F$ be a field. Every ideal of $F[x]$ is a principal ideal, i.e. of the form $p(x)F[x]$.</p>
+<h2>Proof</h2>
+<p>A trivial ideal is a principal ideal, because $\{0\} = 0F[x]$ and $F[x] = 1F[x]$.</p>
+<p>Let $I$ be a non-trivial ideal of $F[x]$.
+Let $p(x)$ be the polynomial of least degree in $I - \{0\}$.
+Since $I$ is an ideal, $p(x)F[x] \subseteq I \subseteq F[x]$.</p>
+<p>When $p \in F-\{0\}$, $p(x)F[x] = F[x] = I$. So $I$ is a principal ideal.</p>
+<p>Let $p(x) \not\in F$.
+Let $a(x) \in I$ such that $p \not\mid a$ in $F[x]$.
+Then by the polynomial division theorem, $\exists q, r \in F[x]$ such that
+$a = pq + r$ and $\deg(r) &lt; \deg(p)$ and $r \neq 0$.</p>
+<p>\begin{align}
+&amp; a, p \in I
+\\ &amp;\Rightarrow a, pq \in I \tag{$\because$ $I$ is a field}
+\\ &amp;\Rightarrow r = a - pq \in I \tag{closure in ring $I$}
+\end{align}</p>
+<p>Since $r \in I - \{0\}$, $\deg(r) &lt; \deg(p)$ and $p$ is a least degree polynomial in $I - \{0\}$,
+we have a contradiction.
+Therefore, $p \mid a$ for all $a(x) \in I$.
+Therefore, $I = p(x)F[x]$.</p>
+</div>
+</body>
+</html>

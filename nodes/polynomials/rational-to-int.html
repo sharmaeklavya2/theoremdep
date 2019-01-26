@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A polynomial in rationals is a rational times a polynomial in integers - TheoremDep</title>
+    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>A polynomial in rationals is a rational times a polynomial in integers</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/polynomial.html">
+            <span class="deptitle">Polynomial</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-divide.html">
+            <span class="deptitle">gcd(a1/d, a2/d, ..., an/d) = gcd(a1, a_2, ..., an)/d</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $p(x) \in \mathbb{Q}[x]$.
+Then $p = \frac{r}{s}q$, where</p>
+<ul>
+<li>$r, s \in \mathbb{Z}$ and $s &gt; 0$.</li>
+<li>$\gcd(r, s) = 1$</li>
+<li>$q(x) \in \mathbb{Z}[x]$</li>
+<li>GCD of coefficients of $q$ is 1
+(The GCD of an empty sequence is by definition equal to 1).</li>
+<li>If $q \neq 0$, the leading coefficient of $q$ is positive.</li>
+</ul>
+<h2>Proof</h2>
+<p>Let
+\[ p(x) = \sum_{i=0}^n \frac{b_i}{c_i}x^i \]</p>
+<p>Then $p(x)$ can be re-written as</p>
+<p>\[ p(x) = \frac{1}{\prod_{i=0}^n c_i} \sum_{i=0}^n d_ix^i \]</p>
+<p>where $d_i \in \mathbb{Z}$.</p>
+<p>Let $d = \gcd(d_0, d_1, \ldots, d_n)$.
+Since $d | d_i$, let $a_i = \frac{d_i}{d} \in \mathbb{Z}$.</p>
+<p>\[ p(x) = \frac{d}{\prod_{i=0}^n c_i} \sum_{i=0}^n a_ix^i \]</p>
+<p>$\frac{d}{\prod_{i=0}^n c_i}$ can be reduced to lowest terms $\frac{r}{s}$ by dividing
+both the numerator and denominator by their GCD.</p>
+<p>\[ \gcd(a_0, a_1, \ldots, a_n)
+= \gcd\left(\frac{d_0}{d}, \frac{d_1}{d}, \ldots, \frac{d_n}{d}\right)
+= \frac{\gcd(d_0, d_1, \ldots, d_n)}{d}
+= \frac{d}{d} = 1 \]</p>
+<p>Therefore, $p(x) = \frac{r}{s} \sum_{i=0}^n a_ix^i$, which is the required form if $a_n &gt; 0$.
+If $a_n &lt; 0$, negate all $a_i$ and negate $r$.</p>
+</div>
+</body>
+</html>

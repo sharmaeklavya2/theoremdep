@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>F[x]/p(x): A ring - TheoremDep</title>
+    <meta name="description" content="F[x]/p(x) is the ring of all polynomials modulo p(x)." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>F[x]/p(x): A ring</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field-is-integral-domain.html">
+            <span class="deptitle">A field is an integral domain</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/division-theorem.html">
+            <span class="deptitle">Polynomial division theorem</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/commutative.html">
+            <span class="deptitle">R is commutative iff R[x] is commutative</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-sum.html">
+            <span class="deptitle">Degree of sum of polynomials</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/subgroup-condition-2.html">
+            <span class="deptitle">Condition for a subset to be a subgroup</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/divisibility.html">
+            <span class="deptitle">Polynomial divisibility</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-product.html">
+            <span class="deptitle">Degree of product of polynomials</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $F$ be a field. Let $p(x) \in F[x]-\{0\}$.
+Let $F[x]/p(x) = \{a(x)\%p(x): a(x) \in F[x]\}$.</p>
+<p>Then $(F[x]/p(x), +, \circ)$ is a commutative ring,
+where $a(x) \circ b(x) = (a(x)b(x))\% p(x)$.</p>
+<h2>Proof</h2>
+<p>\begin{align}
+&amp; p \in F - \{0\}
+\\ &amp;\Rightarrow \forall a(x) \in F[x], a(x) \% p(x) = 0
+\\ &amp;\Rightarrow F[x]/p(x) = \{0\}
+\\ &amp;\Rightarrow (F[x]/p(x), +, \circ) \textrm{ is a commutative ring}
+\end{align}</p>
+<p>So let's assume $p(x) \in F[x]-F \Rightarrow \deg(p) \ge 1$.</p>
+<h3>Lemma 1: $\deg(a) &lt; \deg(p) \iff a(x) \in F[x]/p(x)$</h3>
+<p>\[ a(x) \in F[x]/p(x)
+\Rightarrow \exists f(x) \in F[x], a(x) = f(x) \% p(x)
+\Rightarrow \deg(a) &lt; \deg(p) \]</p>
+<p>\begin{align}
+&amp; \deg(a) &lt; \deg(p)
+\\ &amp;\Rightarrow a(x) = 0p(x) + a(x)
+\\ &amp;\Rightarrow a(x) = a(x) \% p(x)
+\\ &amp;\Rightarrow a(x) \in F[x]/p(x)
+\end{align}</p>
+<h3>$(F[x]/p(x), +)$ is an abelian group</h3>
+<p>$F[x]/p(x)$ is a subset of $F[x]$.
+$0 \in F[x]/p(x) \Rightarrow F[x]/p(x) \neq \{\}$.</p>
+<p>\begin{align}
+&amp; a(x), b(x) \in F[x]/p(x)
+\\ &amp;\Rightarrow (\deg(a) &lt; \deg(p) \wedge \deg(b) &lt; \deg(p)) \tag{by lemma 1}
+\\ &amp;\Rightarrow (\deg(a) &lt; \deg(p) \wedge \deg(-b) &lt; \deg(p))
+\\ &amp;\Rightarrow \deg(a-b) \le \max(\deg(a), \deg(-b)) &lt; \deg(p)
+\\ &amp;\Rightarrow a(x) - b(x) \in F[x]/p(x) \tag{by lemma 1}
+\end{align}</p>
+<p>Therefore, $(F[x]/p(x), +)$ is a subgroup of $(F[x], +)$.</p>
+<p>$F[x]/p(x)$ inherits commutativity from $F[x]$, so $(F[x]/p(x), +)$ is an abelian group.</p>
+<h3>Lemma 2: $a\%p = b\%p \iff p \mid (a - b)$ in $F[x]$</h3>
+<p>Let $a = k_ap + a\%p$ and $b = k_bp + b \% p$.</p>
+<p>\begin{align}
+&amp; a\%p = b\%p
+\\ &amp;\Rightarrow a-k_ap = b - k_bp
+\\ &amp;\Rightarrow a - b = k_ap - k_bp = (k_a - k_b)p
+\\ &amp;\Rightarrow p \mid (a - b)
+\end{align}</p>
+<p>\begin{align}
+&amp; p \mid (a - b)
+\\ &amp;\Rightarrow a - b = kp
+\\ &amp;\Rightarrow (a\%p + k_ap) - (b\%p + k_bp) = kp
+\\ &amp;\Rightarrow (a\%p - b\%p) = (k_b - k_a + k)p
+\end{align}</p>
+<p>\begin{align}
+&amp; \deg(a\%p) &lt; \deg(p) \wedge \deg(b\%p) &lt; \deg(p)
+\\ &amp;\Rightarrow \deg(a\%p - b\%p) &lt; \deg(p)
+\\ &amp;\Rightarrow \deg(p(k_b - k_a + k)) &lt; \deg(p)
+\\ &amp;\Rightarrow \deg(p) + \deg(k_b - k_a + k) &lt; \deg(p) \tag{$F$ has no zero-divisors}
+\\ &amp;\Rightarrow \deg(k_b - k_a + k) &lt; 0
+\\ &amp;\Rightarrow k_b - k_a + k = 0
+\\ &amp;\Rightarrow p(k_b - k_a + k) = 0
+\\ &amp;\Rightarrow a\%p - b\%p = 0
+\\ &amp;\Rightarrow a\%p = b\%p
+\end{align}</p>
+<h3>Multiplicative properties</h3>
+<p>\[ \deg(a \circ b) = \deg((ab)\%p) &lt; \deg(p) \Rightarrow a \circ b \in F[x]/p(x) \]
+Therefore, $F[x]/p(x)$ is closed under $\circ$.</p>
+<p>Since $F$ is commutative, $F[x]$ is commutative.
+\[ a \circ b = (ab)\% p = (ba) \% p = b \circ a \]
+Therefore, $\circ$ is commutative.</p>
+<p>\begin{align}
+&amp; a \circ b = (ab) \% p
+\\ &amp;\Rightarrow ab = pq + (a \circ b)
+\\ &amp;\Rightarrow p \mid (ab - a \circ b)
+\\ &amp;\Rightarrow p \mid (ab - a \circ b)c
+\\ &amp;\Rightarrow p \mid (abc - (a \circ b)c)
+\\ &amp;\Rightarrow (abc)\%p = ((a \circ b)c)\%p = (a \circ b) \circ c \tag{by lemma 2}
+\end{align}</p>
+<p>\begin{align}
+&amp; b \circ c = (bc) \% p
+\\ &amp;\Rightarrow bc = pq + (b \circ c)
+\\ &amp;\Rightarrow p \mid (bc - b \circ c)
+\\ &amp;\Rightarrow p \mid a(bc - b \circ c)
+\\ &amp;\Rightarrow p \mid (abc - a(b \circ c))
+\\ &amp;\Rightarrow (abc)\%p = (a(b \circ c))\%p = a \circ (b \circ c) \tag{by lemma 2}
+\end{align}</p>
+<p>Therefore, $a \circ (b \circ c) = (a \circ b) \circ c$.
+Therefore, $\circ$ is associative.</p>
+<h3>Lemma 3: $(a + b) \% p = a\%p + b\%p$</h3>
+<p>Let $a(x), b(x) \in F[x]$. Let $a = k_ap + a\%p$ and $b = k_bp + b\%p$.
+Then $a + b = (k_a + k_b)p + (a\%p + b\%p)$.
+$\deg(a\%p + b\%p) \le \max(\deg(a\%p), \deg(b\%p)) &lt; \deg(p)$.
+Therefore, by polynomial division theorem, $(a+b)\%p = a\%p + b\%p$.</p>
+<h3>Distributive properties</h3>
+<p>\begin{align}
+&amp; a \circ (b + c)
+\\ &amp;= (a(b+c)) \% p
+\\ &amp;= (ab+ac) \% p
+\\ &amp;= (ab)\%p + (ac)\%p
+\\ &amp;= (a \circ b) + (a \circ c)
+\end{align}</p>
+<p>Similarly, $(a + b) \circ c = (a \circ c) + (a \circ b)$.</p>
+<p>Therefore, $(F[x]/p(x), +, \circ)$ is a commutative ring.</p>
+</div>
+</body>
+</html>

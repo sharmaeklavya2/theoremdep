@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Principal ideal - TheoremDep</title>
+    <meta name="description" content="A principal ideal is a multiplicative coset" />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Principal ideal</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ideal.html">
+            <span class="deptitle">Ideal</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/subring-condition.html">
+            <span class="deptitle">Conditions for a subset of a ring to be a subring</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $R$ be a ring and $a \in R$.
+Let $aR = \{ar: r \in R\}$.
+Then $aR$ is a right ideal.
+Such an ideal is called a principal ideal.</p>
+<p>Similarly, $Ra$ is a left ideal.</p>
+<p>If $R$ is commutative, $aR = Ra$ is a 2-sided ideal.</p>
+<h2>Proof</h2>
+<p>Let $ar_1, ar_2 \in aR$.</p>
+<ul>
+<li>$0 = a0 \in aR \Rightarrow aR \neq \{\}$.</li>
+<li>$ar_1 - ar_2 = a(r_1 - r_2) \in aR$ (by distributivity).</li>
+<li>$(ar_1)(ar_2) = a(r_1ar_2) \in aR$</li>
+</ul>
+<p>Therefore, $aR$ is a subring of $R$.</p>
+<p>$(ar)x = a(rx) \in aR$. Therefore, $aR$ is a right ideal.</p>
+<p>Similarly it can be proved that $Ra$ is a left ideal.</p>
+<p>When $R$ is commutative,
+\[ aR = \{ar: r \in R\} = \{ra: r \in R\} = Ra \]
+Therefore, $aR$ is a 2-sided ideal.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eisenstein's criterion - TheoremDep</title>
+    <meta name="description" content="If f(x) is in Z[x] and p is prime and deg(f) = n and p divides all fi except fn and p^2 does not divide f0, then f is irreducible over Q[x]." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Eisenstein's criterion</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/irreducible.html">
+            <span class="deptitle">Irreducible polynomial</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-product.html">
+            <span class="deptitle">Degree of product of polynomials</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/gauss-lemma.html">
+            <span class="deptitle">Gauss' Lemma</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/euclids-lemma.html">
+            <span class="deptitle">Euclid's lemma</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $f(x) \in \mathbb{Z}[x] - \mathbb{Z}$ such that $\forall 0 \le i &lt; \deg(f), p \mid f_i$
+and $p \not\mid f_{\deg(f)}$ and $p^2 \not\mid f_0$. Then $f(x)$ is irreducible in $\mathbb{Q}[x]$.</p>
+<h2>Proof</h2>
+<p>Assume $f(x)$ is reducible in $\mathbb{Q}[x]$.
+Therefore, $f(x) = a(x)b(x)$, where $\deg(a) \ge 1$ and $\deg(b) \ge 1$.
+Since $\mathbb{Q}$ has no zero-divisors, $\deg(f) = \deg(a) + \deg(b)$.</p>
+<p>By Gauss' lemma, $f$ also has factors in $\mathbb{Z}[x]$.
+So we can assume that $a(x), b(x) \in \mathbb{Z}[x]$.</p>
+<p>$f_0 = a_0b_0$. Since $p^2 \not\mid f_0$ and $p \mid f_0$,
+exactly one of $a_0$ and $b_0$ is divisible by $p$.
+Without loss of generality, $p \mid a_0$ and $p \not\mid b_0$.</p>
+<p>Let $k$ be the smallest value such that $p \not\mid a_k$.
+$k \le \deg(a) &lt; \deg(a) + \deg(b) = \deg(f) \Rightarrow p \mid f_k$.</p>
+<p>$f_k = \sum_{j=0}^{k-1} a_jb_{k-j} + a_kb_0$.
+Since $p \mid a_j \forall j \le k-1$, $p \mid a_kb_0$.
+Since $p \not\mid b_0$, $p \mid a_k$ by Euclid's lemma.
+This contradicts the assumption that $k$ is the smallest value such that $p \not\mid a_k$.
+Therefore, no such smallest value exists and hence $p \mid a_i$ for all $i$.</p>
+<p>\[ (\forall i, p \mid a_i)
+\Rightarrow p \mid a(x)
+\Rightarrow p \mid f(x)
+\Rightarrow (\forall i, p \mid f_i)
+\Rightarrow p \mid f_{\deg(f)}
+\Rightarrow \bot \]</p>
+<p>Therefore $f(x)$ is irreducible.</p>
+</div>
+</body>
+</html>

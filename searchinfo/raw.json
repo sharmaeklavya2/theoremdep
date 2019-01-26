@@ -185,8 +185,7 @@
 },
 {
 "type": "theorem",
-"title": "gcd(a/d, b/d) = gcd(a, b)/d",
-"description": "gcd(a/d, b/d) = gcd(a, b)/d",
+"title": "gcd(a1/d, a2/d, ..., an/d) = gcd(a1, a_2, ..., an)/d",
 "uci": "/number-theory/gcd/gcd-divide",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-divide.html"
 },
@@ -542,6 +541,13 @@
 },
 {
 "type": "theorem",
+"title": "Zp is an integral domain",
+"description": "If p is prime, Zp is an integral domain",
+"uci": "/abstract-algebra/rings/zp-is-intdom",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/zp-is-intdom.html"
+},
+{
+"type": "theorem",
 "title": "Zp is a field",
 "description": "If p is prime, Zp is a field",
 "uci": "/abstract-algebra/rings/zp-is-field",
@@ -575,6 +581,13 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/intdom.html"
 },
 {
+"type": "theoremdef",
+"title": "Principal ideal",
+"description": "A principal ideal is a multiplicative coset",
+"uci": "/abstract-algebra/rings/principal-ideal",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/principal-ideal.html"
+},
+{
 "type": "theorem",
 "title": "Every ideal of Z is a principal ideal",
 "uci": "/abstract-algebra/rings/ideal-of-z-is-principal",
@@ -591,6 +604,19 @@
 "title": "A finite integral domain is a field",
 "uci": "/abstract-algebra/rings/finite-integral-domain-is-field",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/finite-integral-domain-is-field.html"
+},
+{
+"type": "theorem",
+"title": "Being a field is preserved under isomorphism",
+"uci": "/abstract-algebra/rings/isomorphism/field",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/isomorphism/field.html"
+},
+{
+"type": "def",
+"title": "Ring isomorphism",
+"description": "A ring isomorphism is a bijective function \u03d5 such that \u03d5(a+b) = \u03d5(a) + \u03d5(b) and \u03d5(ab) = \u03d5(a)\u03d5(b).",
+"uci": "/abstract-algebra/rings/isomorphism/isomorphism",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/isomorphism/isomorphism.html"
 },
 {
 "type": "theorem",
@@ -861,10 +887,42 @@
 },
 {
 "type": "theorem",
+"title": "q(x)F[x] is in p(x)F[x] iff p(x) divides q(x)",
+"uci": "/polynomials/subideal-condition",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/subideal-condition.html"
+},
+{
+"type": "theorem",
 "title": "Factor theorem",
 "description": "(x-a) is a factor of p(x) iff p(a) = 0",
 "uci": "/polynomials/factor-theorem",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/factor-theorem.html"
+},
+{
+"type": "theorem",
+"title": "Degree of factor is less than degree of polynomial",
+"description": "If a(x) divides p(x), degree of a(x) lies between 0 and deg(p).",
+"uci": "/polynomials/degree-of-factor",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-factor.html"
+},
+{
+"type": "theorem",
+"title": "F[x]/p(x) is isomorphic to F[x]/p(x)F[x]",
+"uci": "/polynomials/modulo-isomorphic",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/modulo-isomorphic.html"
+},
+{
+"type": "theorem",
+"title": "Eisenstein's criterion",
+"description": "If f(x) is in Z[x] and p is prime and deg(f) = n and p divides all fi except fn and p^2 does not divide f0, then f is irreducible over Q[x].",
+"uci": "/polynomials/eisensteins-criterion",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/eisensteins-criterion.html"
+},
+{
+"type": "theorem",
+"title": "R is commutative iff R[x] is commutative",
+"uci": "/polynomials/commutative",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/commutative.html"
 },
 {
 "type": "theorem",
@@ -888,11 +946,25 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-sum.html"
 },
 {
+"type": "def",
+"title": "Polynomial divisibility",
+"description": "A polynomial p(x) is divisible in F[x] by q(x) iff there exists a polynomial r(x) such that p(x), q(x), r(x) are in F[x] and p(x) = q(x)r(x).",
+"uci": "/polynomials/divisibility",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/divisibility.html"
+},
+{
 "type": "theorem",
 "title": "Degree of product of polynomials",
 "description": "deg(pq) \u2264 deg(p) + deg(q). If coefficients of p and q are from an integral domain, deg(pq) = deg(p) + deg(q).",
 "uci": "/polynomials/degree-of-product",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-product.html"
+},
+{
+"type": "def",
+"title": "Irreducible polynomial",
+"description": "A polynomial is irreducible iff it cannot be expressed as a product of polynomials of lower degree.",
+"uci": "/polynomials/irreducible",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/irreducible.html"
 },
 {
 "type": "def",
@@ -902,10 +974,29 @@
 },
 {
 "type": "theorem",
+"title": "A polynomial in rationals is a rational times a polynomial in integers",
+"uci": "/polynomials/rational-to-int",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/rational-to-int.html"
+},
+{
+"type": "theorem",
+"title": "The ideal generated by an irreducible polynomial is maximal",
+"uci": "/polynomials/irred-ideal-is-maximal",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/irred-ideal-is-maximal.html"
+},
+{
+"type": "theorem",
 "title": "Polynomial division theorem",
 "description": "If a and b are polynomials, a can be uniquely expressed as bq + r where deg(r) < deg(b).",
 "uci": "/polynomials/division-theorem",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/division-theorem.html"
+},
+{
+"type": "theoremdef",
+"title": "F[x]/p(x): A ring",
+"description": "F[x]/p(x) is the ring of all polynomials modulo p(x).",
+"uci": "/polynomials/modulo-ring",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/modulo-ring.html"
 },
 {
 "type": "def",
@@ -916,10 +1007,36 @@
 },
 {
 "type": "theorem",
+"title": "Every ideal in F[x] is principal",
+"description": "Every ideal the ring of polynomials of a field is a principal ideal",
+"uci": "/polynomials/every-ideal-is-principal",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/every-ideal-is-principal.html"
+},
+{
+"type": "theorem",
+"title": "The ring F[x]/p(x) is a field iff p is irreducible",
+"uci": "/polynomials/modulo-field",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/modulo-field.html"
+},
+{
+"type": "theorem",
+"title": "p(x)F[x] = F[x] iff p is a non-zero constant",
+"uci": "/polynomials/principal-ideal-trivial",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/principal-ideal-trivial.html"
+},
+{
+"type": "theorem",
 "title": "Polynomials of a ring form a ring",
 "description": "The set of all polynomials is a ring if the coefficients are from a ring.",
 "uci": "/polynomials/ring",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/ring.html"
+},
+{
+"type": "theorem",
+"title": "Gauss' Lemma",
+"description": "If a polynomial in Z[x] has a factor in Q[x], it also has a factor in Z[x] of the same degree.",
+"uci": "/polynomials/gauss-lemma",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/gauss-lemma.html"
 }
 ]
 }

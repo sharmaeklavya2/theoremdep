@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>F[x]/p(x) is isomorphic to F[x]/p(x)F[x] - TheoremDep</title>
+    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>F[x]/p(x) is isomorphic to F[x]/p(x)F[x]</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/isomorphism/isomorphism.html">
+            <span class="deptitle">Ring isomorphism</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/ring.html">
+            <span class="deptitle">Polynomials of a ring form a ring</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/modulo-ring.html">
+            <span class="deptitle">F[x]/p(x): A ring</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/principal-ideal.html">
+            <span class="deptitle">Principal ideal</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/quotient-ring.html">
+            <span class="deptitle">Quotient Ring</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/coset-equals-subgroup-iff-elem-in-subgroup.html">
+            <span class="deptitle">gH = H iff g in H</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-sum.html">
+            <span class="deptitle">Degree of sum of polynomials</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/division-theorem.html">
+            <span class="deptitle">Polynomial division theorem</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $F$ be a field.
+Let $\phi: F[x]/p(x) \mapsto F[x]/p(x)F[x]$ where
+$\phi(f(x)) = f(x) + p(x)F[x]$.
+Then $\phi$ is an isomorphism.</p>
+<h2>Proof</h2>
+<h3>$\phi$ is homomorphic</h3>
+<p>\begin{align}
+&amp; \phi(f_1(x)) + \phi(f_2(x))
+\\ &amp;= (f_1(x) + p(x)F[x]) + (f_2(x) + p(x)F[x])
+\\ &amp;= (f_1(x) + f_2(x)) + p(x)F[x] \tag{coset addition}
+\\ &amp;= \phi(f_1(x) + f_2(x)) + p(x)F[x]
+\end{align}</p>
+<p>\begin{align}
+&amp; \phi(f_1(x))\phi(f_2(x))
+\\ &amp;= (f_1(x) + p(x)F[x])(f_2(x) + p(x)F[x])
+\\ &amp;= f_1(x)f_2(x) + p(x)F[x] \tag{coset multiplication}
+\\ &amp;= \phi(f_1(x)f_2(x))
+\end{align}</p>
+<h3>$\phi$ is injective</h3>
+<p>\begin{align}
+&amp; \phi(f_1(x)) = \phi(f_2(x))
+\\ &amp;\Rightarrow f_1(x) + p(x)F[x] = f_2(x) + p(x)F[x]
+\\ &amp;\Rightarrow (f_1(x)-f_2(x)) + p(x)F[x] = p(x)F[x] \tag{coset subtraction}
+\\ &amp;\Rightarrow f_1(x) - f_2(x) \in p(x)F[x]
+\\ &amp;\Rightarrow \exists q(x) \in F[x], f_1(x) - f_2(x) = p(x)q(x)
+\end{align}</p>
+<p>\begin{align}
+&amp; f_1(x), f_2(x) \in F[x]/p(x)
+\\ &amp;\Rightarrow (\deg(f_1) &lt; \deg(p) \wedge \deg(f_2) &lt; \deg(p))
+\\ &amp;\Rightarrow \deg(f_1 - f_2) \le \max(\deg(f_1), \deg(f_2)) &lt; \deg(p)
+\\ &amp;\Rightarrow \deg(pq) &lt; \deg(p)
+\\ &amp;\Rightarrow \deg(p) + \deg(q) &lt; \deg(p)
+\\ &amp;\Rightarrow \deg(q) &lt; 0
+\\ &amp;\Rightarrow q = 0
+\\ &amp;\Rightarrow pq = f_1 - f_2 = 0
+\\ &amp;\Rightarrow f_1 = f_2
+\end{align}</p>
+<h3>$\phi$ is surjective</h3>
+<p>Let $f(x) + p(x)F[x] \in F[x]/p(x)F[x]$.
+By polynomial division theorem, $f = pq + r$ and $\deg(r) &lt; \deg(p) \Rightarrow r(x) \in F[x]/p(x)$.</p>
+<p>\begin{align}
+&amp; f(x) - r(x) = p(x)q(x) \in p(x)F[x]
+\\ &amp;\Rightarrow (f(x) - r(x)) + p(x)F[x] = p(x)F[x]
+\\ &amp;\Rightarrow f(x) + p(x)F[x] = r(x) + p(x)F[x] = \phi(r)
+\end{align}</p>
+</div>
+</body>
+</html>

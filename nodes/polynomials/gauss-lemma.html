@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gauss' Lemma - TheoremDep</title>
+    <meta name="description" content="If a polynomial in Z[x] has a factor in Q[x], it also has a factor in Z[x] of the same degree." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Gauss' Lemma</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/divisibility.html">
+            <span class="deptitle">Polynomial divisibility</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-factor.html">
+            <span class="deptitle">Degree of factor is less than degree of polynomial</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-product.html">
+            <span class="deptitle">Degree of product of polynomials</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/rational-to-int.html">
+            <span class="deptitle">A polynomial in rationals is a rational times a polynomial in integers</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/euclids-lemma.html">
+            <span class="deptitle">Euclid's lemma</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/modular-equivalence.html">
+            <span class="deptitle">Modular Equivalence</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/mod-mult.html">
+            <span class="deptitle">Modular multiplication</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/zp-is-intdom.html">
+            <span class="deptitle">Zp is an integral domain</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/zero-divisors.html">
+            <span class="deptitle">Zero divisors of a polynomial</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $p(x)$ be a polynomial in $\mathbb{Z}[x]$
+and $\alpha(x) \in \mathbb{Q}[x]$ divides $p(x)$.</p>
+<p>Then $\exists a(x) \in \mathbb{Z}[x]$ such that
+$a(x) \mid p(x)$ in $\mathbb{Z}[x]$ and $\deg(a) = \deg(\alpha)$.</p>
+<p>Further, if $p$ is monic then $a$ is also monic.</p>
+<h2>Proof</h2>
+<p>Let $p(x) = \alpha(x)\beta(x)$ where $\alpha(x), \beta(x) \in \mathbb{Q}[x]$.
+Since $\mathbb{Q}$ has no zero-divisors,
+$0 \le \deg(\alpha) \le \deg(p)$ and $0 \le \deg(\beta) \le \deg(p)$.</p>
+<p>If $\deg(\alpha) = 0$, $a = 1$. If $\deg(\alpha) = \deg(p)$, $a = p$.
+In both these cases, $a$ is a polynomial in $\mathbb{Z}[x]$ with $\deg(a) = \deg(\alpha)$
+and $a$ is monic if $p$ is monic. So let $1 \le \deg(\alpha) \le \deg(p)-1$.</p>
+<p>Since $\mathbb{Q}$ has no zero-divisors,
+\[ \deg(p) = \deg(\alpha) + \deg(\beta)
+\implies \deg(\beta) = \deg(p) - \deg(\alpha)
+\implies 1 \le \deg(\beta) \le p-1 \]</p>
+<p>Since a polynomial in rationals is a rational times a polynomial in integers,
+we can express $\alpha(x)$ and $\beta(x)$ as follows:</p>
+<p>\[ \alpha(x) = \frac{c_1}{d_1} \sum_{i=0}^m a_ix^i = \frac{c_1}{d_1} a(x) \]
+\[ \beta(x) = \frac{c_2}{d_2} \sum_{i=0}^n b_ix^i = \frac{c_2}{d_2} b(x) \]</p>
+<p>where $\gcd(a_0, a_1, \ldots, a_n) = 1$, $\gcd(b_0, b_1, \ldots, b_n) = 1$, $a_m &gt; 0$ and $b_n &gt; 0$.
+$\deg(\alpha) = \deg(a)$ and $\deg(\beta) = \deg(b)$.</p>
+<p>Therefore,
+\[ p(x) = \frac{c_1}{d_1}a(x) \frac{c_2}{d_2}b(x) \implies dp(x) = ca(x)b(x) \]
+where $c, d \in \mathbb{Z}$ and $\gcd(c, d) = 1$ and $d &gt; 0$.</p>
+<h3>Case 1: $d \neq 1$</h3>
+<p>Let $k$ be a prime factor of $d$.
+Since $\gcd(c, d) = 1$, $k \not\mid c$.</p>
+<p>Let $a'(x) = a(x) \% k$ and $b'(x) = b(x) \% k$.
+Therefore, $a'(x), b'(x) \in \mathbb{Z}_k[x]$.</p>
+<p>Since $\gcd(a_0, a_1, \ldots, a_m) = 1$, $\exists i, k \not\mid a_i \Rightarrow a'(x) \neq 0$.
+Similarly $\exists j, k \not\mid b_j \Rightarrow b'(x) \neq 0$.</p>
+<p>\begin{align}
+&amp; k \mid d
+\\ &amp;\Rightarrow k \mid dp(x)
+\\ &amp;\Rightarrow k \mid ca(x)b(x)
+\\ &amp;\Rightarrow k \mid a(x)b(x) \tag{by Euclid's lemma}
+\\ &amp;\Rightarrow a(x)b(x) \equiv 0 \pmod{k}
+\end{align}</p>
+<p>\begin{align}
+&amp; a'(x) \equiv a(x) \pmod{k} \wedge b'(x) \equiv b(x) \pmod{k}
+\\ &amp;\Rightarrow a'(x)b'(x) \equiv a(x)b(x) \equiv 0 \pmod{k}
+\end{align}</p>
+<p>Since $a'(x) \neq 0$ and $b'(x) \neq 0$ but $a'(x)b'(x) \equiv 0 \pmod{k}$,
+$a'(x)$ and $b'(x)$ are zero-divisors.
+Since $\mathbb{Z}_k$ is an integral domain, it doesn't have 0 divisors,
+which means $\mathbb{Z}_k[x]$ shouldn't have zero-divisors.</p>
+<p>This is a contradiction, so this case is not possible.</p>
+<h3>Case 2: $d = 1$</h3>
+<p>$p(x) = ca(x)b(x)$.
+This means $p$ has 2 factors $ca(x)$ and $b(x)$ in $\mathbb{Z}[x]$
+where $\deg(ca) = \deg(\alpha)$ and $\deg(b) = \deg(\beta)$.</p>
+<p>Let $p$ be monic, so leading coefficient of $p(x)$ is one.
+Leading coefficient of $ca(x)b(x)$ is $ca_mb_n$.
+Therefore, $ca_mb_n = 1$.</p>
+<p>Since $a_m &gt; 0, b_n &gt; 0$, $a_m = b_n = c = 1$.
+Therefore, $a$ and $b$ are monic and $p(x) = a(x)b(x)$.</p>
+</div>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Every ideal of Z is a principal ideal - TheoremDep</title>
+    <title>R is commutative iff R[x] is commutative - TheoremDep</title>
     <meta name="description" content="Track dependencies between theorems and definitions." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
@@ -25,32 +25,35 @@
     </form>
 </nav>
 <div id="main">
-<h1>Every ideal of Z is a principal ideal</h1>
+<h1>R is commutative iff R[x] is commutative</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/principal-ideal.html">
-            <span class="deptitle">Principal ideal</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/polynomial.html">
+            <span class="deptitle">Polynomial</span>
         </a>
         </li>
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/integer-division-theorem.html">
-            <span class="deptitle">Integer Division Theorem</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/ring.html">
+            <span class="deptitle">Polynomials of a ring form a ring</span>
         </a>
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Let $I$ be an ideal of $\mathbb{Z}$.
-Then $I$ is a principal ideal, i.e. $I$ is of the form $n\mathbb{Z}$ for some $n \in \mathbb{Z}$.</p>
+<p>Let $R$ be a ring.</p>
+<p>$R$ is commutative iff $R[x]$ is commutative.</p>
 <h2>Proof</h2>
-<p>Let $n$ be the smallest positive element of $I$.
-Let $a \in I$.</p>
-<p>By the integer division theorem, $a = qn + r$, where $0 \le r \lt n$.
-$r = a - qn \in I$ by absorption and commutativity.
-Since $r \in I$, $r &lt; n$ and $n$ is the smallest positive element of $I$, $r = 0$.</p>
-<p>Therefore, every element of $I$ is a multiple of $n$.
-Also, all multiples of $n$ are in $I$ by the absorption property.</p>
-<p>Therefore, $I = n\mathbb{Z}$.</p>
+<p>Since $R \subset R[x]$, $R[x]$ is commutative implies $R$ is commutative.</p>
+<p>Let $R$ be commutative.
+Let $a(x), b(x) \in R[x]$.</p>
+<p>\begin{align}
+&amp; (ab)_i
+\\ &amp;= \sum_{j=0}^i a_jb_{i-j}
+\\ &amp;= \sum_{j=0}^i b_{i-j}a_j \tag{$\because$ $R$ is commutative}
+\\ &amp;= \sum_{k=0}^i b_ka_{i-k} \tag{$k = i - j$}
+\\ &amp;= (ba)_i
+\end{align}</p>
+<p>Therefore, $ab = ba$. Therefore, $R[x]$ is commutative.</p>
 </div>
 </body>
 </html>

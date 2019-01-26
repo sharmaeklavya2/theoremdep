@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Degree of factor is less than degree of polynomial - TheoremDep</title>
+    <meta name="description" content="If a(x) divides p(x), degree of a(x) lies between 0 and deg(p)." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Degree of factor is less than degree of polynomial</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-product.html">
+            <span class="deptitle">Degree of product of polynomials</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $R$ be a ring with no zero-divisors.
+Let $p(x) = a(x)b(x)$ where $a(x), b(x), p(x) \in R[x]$ and $p \neq 0$.
+Then $0 \le \deg(a) \le \deg(p)$ and $0 \le \deg(b) \le \deg(p)$.</p>
+<h2>Proof</h2>
+<p>\[ p \neq 0
+\implies (a \neq 0 \wedge b \neq 0)
+\implies (\deg(a) \ge 0 \wedge \deg(b) \ge 0) \]</p>
+<p>Since $R$ has no zero-divisors,
+$\deg(p) = \deg(a) + \deg(b)$.</p>
+<p>\[ 0 \le \deg(a) \le \deg(a) + \deg(b) = \deg(p) \]
+\[ 0 \le \deg(b) \le \deg(a) + \deg(b) = \deg(p) \]</p>
+</div>
+</body>
+</html>

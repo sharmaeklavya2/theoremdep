@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The ring F[x]/p(x) is a field iff p is irreducible - TheoremDep</title>
+    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>The ring F[x]/p(x) is a field iff p is irreducible</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field-is-integral-domain.html">
+            <span class="deptitle">A field is an integral domain</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/modulo-ring.html">
+            <span class="deptitle">F[x]/p(x): A ring</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-product.html">
+            <span class="deptitle">Degree of product of polynomials</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/gcd-theorem.html">
+            <span class="deptitle">Polynomial GCD theorem</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $F$ be a field. Let $p(x) \in F[x]-F$.
+Then $F[x]/p(x)$ is a field iff $p$ is irreducible.</p>
+<h2>Proof</h2>
+<p>Suppose $p$ is reducible. $\Rightarrow p = ab$, where $a, b \in F[x]-F$.
+Then $a \circ b = (ab)\%p = p\%p = 0$.
+This means $F[x]/p(x)$ has zero-divisors.
+Therefore, $F[x]/p(x)$ is not a field.</p>
+<p>The unity of $F$ is also a unity of $F[x]/p(x)$.</p>
+<p>Suppose $p$ is irreducible.</p>
+<p>Let $a(x) \in F[x]/p(x)-\{0\} \Rightarrow 0 \le \deg(a) &lt; \deg(p)$.
+Let $g = \gcd(a, p)$.</p>
+<p>$g \mid a \Rightarrow \exists b \in F[x], a = gb$.</p>
+<p>\begin{align}
+&amp; a \neq 0
+\\ &amp;\Rightarrow (g \neq 0 \wedge b \neq 0)
+\\ &amp;\Rightarrow (0 \le \deg(g) \wedge 0 \le \deg(b))
+\\ &amp;\Rightarrow 0 \le \deg(g) \le \deg(a) &lt; \deg(p) \tag{$\deg(a) = \deg(g) + \deg(b)$}
+\end{align}</p>
+<p>$g \mid p \Rightarrow \exists h \in F[x], p = gh$.</p>
+<p>\[ p \neq 0 \Rightarrow (g \neq 0 \wedge h \neq 0) \]</p>
+<p>\begin{align}
+&amp; p \textrm{ is irreducible}
+\\ &amp;\Rightarrow g \in F \vee h \in F
+\\ &amp;\Rightarrow g \in F-\{0\} \vee h \in F-\{0\} \tag{$g \neq 0 \wedge h \neq 0$}
+\\ &amp;\Rightarrow \deg(g) = 0 \vee \deg(h) = 0
+\\ &amp;\Rightarrow \deg(g) = 0 \vee \deg(g) = \deg(p) \tag{$\deg(p) = \deg(g) + \deg(h)$}
+\\ &amp;\Rightarrow \deg(g) = 0 \tag{$\deg(g) \le \deg(a) &lt; \deg(p)$}
+\\ &amp;\Rightarrow g = 1 \tag{$g$ is monic}
+\end{align}</p>
+<p>By the GCD theorem, $1 = \gcd(a, p) = sa + tp$ where $s, t \in F[x]$.</p>
+<p>Let $s = kp + s\%p$. Then</p>
+<p>\[ 1 = sa + tp = (s\%p + kp)a + tp = (s\%p)a + (ka+t)p \]</p>
+<p>Therefore, we can assume without loss of generality that $s \in F[x]/p(x)$.</p>
+<p>\[ (s \circ a) = (sa)\%p = (1 - tp)\%p = 1 \]
+Therefore, $a^{-1} = s$.
+Therefore, every element in $F[x]/p(x)-\{0\}$ has a multiplicative inverse.
+therefore, $F[x]/p(x)$ is a field.</p>
+</div>
+</body>
+</html>
