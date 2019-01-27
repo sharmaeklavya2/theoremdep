@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Product of stacked matrices - TheoremDep</title>
+    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Product of stacked matrices</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/stacking.html">
+            <span class="deptitle">Stacking</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $A_{i, j}$ be an $m_i$ by $p_j$ matrix for $1 \le i \le m$ and $1 \le j \le p$.
+Let $B_{i, j}$ be an $p_i$ by $n_j$ matrix for $1 \le i \le p$ and $1 \le j \le n$.</p>
+<p>Then $\operatorname{stack}(A)\operatorname{stack}(B) = \operatorname{stack}(C)$,
+where $C_{i, j}$ is an $m_i$ by $n_j$ matrix for $1 \le i \le m$ and $1 \le j \le n$ and
+\[ C_{i, j} = \sum_{k=1}^p A_{i, k}B_{k, j} \]</p>
+<h2>Proof</h2>
+<h3>Lemma 1</h3>
+<p>\[ M \begin{bmatrix} A_1 &amp; A_2 &amp; \cdots &amp; A_n \end{bmatrix}
+= \begin{bmatrix} MA_1 &amp; MA_2 &amp; \cdots &amp; MA_n \end{bmatrix} \]</p>
+<p>(Proof yet to be written)</p>
+<h3>Lemma 2</h3>
+<p>\[ \begin{bmatrix} A_1 \\ A_2 \\ \vdots \\ A_n \end{bmatrix} M
+= \begin{bmatrix} A_1M \\ A_2M \\ \vdots \\ A_nM \end{bmatrix} \]</p>
+<p>(Proof yet to be written)</p>
+<h3>Lemma 3</h3>
+<p>\[ \begin{bmatrix} A_1 &amp; A_2 &amp; \cdots &amp; A_n \end{bmatrix}
+\begin{bmatrix} B_1 \\ B_2 \\ \vdots \\ B_n \end{bmatrix}
+= \sum_{i=1}^n A_iB_i \]</p>
+<p>(Proof yet to be written)</p>
+<h3>Main result</h3>
+<p>Let
+\[ A_i = \begin{bmatrix} A_{i, 1} &amp; A_{i, 2} &amp; \cdots &amp; A_{i, p} \end{bmatrix} \]
+\[ B_j = \begin{bmatrix} B_{1, j} \\ B_{2, j} \\ \vdots \\ B_{p, j} \end{bmatrix} \]</p>
+<p>\begin{align}
+&amp; \operatorname{stack}(A)\operatorname{stack}(B)
+\\ &amp;= \begin{bmatrix} A_1 \\ A_2 \\ \vdots \\ A_m \end{bmatrix}
+\begin{bmatrix} B_1 &amp; B_2 &amp; \cdots &amp; B_n \end{bmatrix}
+\\ &amp;= \begin{bmatrix} A_1 \begin{bmatrix} B_1 &amp; B_2 &amp; \cdots &amp; B_n \end{bmatrix}
+\\ A_2 \begin{bmatrix} B_1 &amp; B_2 &amp; \cdots &amp; B_n \end{bmatrix}
+\\ \vdots
+\\ A_m \begin{bmatrix} B_1 &amp; B_2 &amp; \cdots &amp; B_n \end{bmatrix}
+\end{bmatrix} \tag{by lemma 2}
+\\ &amp;= \begin{bmatrix} \begin{bmatrix} A_1B_1 &amp; A_1B_2 &amp; \cdots &amp; A_1B_n \end{bmatrix}
+\\ \begin{bmatrix} A_2B_1 &amp; A_2B_2 &amp; \cdots &amp; A_2B_n \end{bmatrix}
+\\ \vdots
+\\ \begin{bmatrix} A_mB_1 &amp; A_mB_2 &amp; \cdots &amp; A_mB_n \end{bmatrix}
+\end{bmatrix} \tag{by lemma 1}
+\\ &amp;= \begin{bmatrix} A_1B_1 &amp; A_1B_2 &amp; \cdots &amp; A_1B_n
+\\ A_2B_1 &amp; A_2B_2 &amp; \cdots &amp; A_2B_n
+\\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots
+\\ A_mB_1 &amp; A_mB_2 &amp; \cdots &amp; A_mB_n
+\end{bmatrix}
+\end{align}</p>
+<p>\begin{align}
+&amp; A_iB_j
+\\ &amp;= \begin{bmatrix} A_{i, 1} &amp; A_{i, 2} &amp; \cdots &amp; A_{i, p} \end{bmatrix}
+\begin{bmatrix} B_{1, j} \\ B_{2, j} \\ \vdots \\ B_{p, j} \end{bmatrix}
+\\ &amp;= \sum_{k=1}^p A_{i, k}B_{k, j} \tag{by lemma 3}
+\end{align}</p>
+</div>
+</body>
+</html>

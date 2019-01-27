@@ -200,6 +200,13 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-subtraction.html"
 },
 {
+"type": "def",
+"title": "Semiring",
+"description": "A semiring is an algebraic structure similar to a ring, but without the requirement that each element must have an additive inverse.",
+"uci": "/abstract-algebra/semiring",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html"
+},
+{
 "type": "theorem",
 "title": "Inverse of a group element is unique",
 "description": "Inverse of a group element is unique.",
@@ -884,6 +891,79 @@
 "title": "A set of dim(V) linearly independent vectors is a basis",
 "uci": "/linear-algebra/vector-spaces/basis/n-linindep-is-basis",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/n-linindep-is-basis.html"
+},
+{
+"type": "theorem",
+"title": "Matrices over a field form a vector space",
+"description": "",
+"uci": "/linear-algebra/matrices/vector-space",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/vector-space.html"
+},
+{
+"type": "theorem",
+"title": "Square matrices form a (semi)ring",
+"uci": "/linear-algebra/matrices/semiring",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/semiring.html"
+},
+{
+"type": "theorem",
+"title": "Transpose of product",
+"description": "(AB)' = B'A'",
+"uci": "/linear-algebra/matrices/transpose-of-product",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/transpose-of-product.html"
+},
+{
+"type": "theorem",
+"title": "Matrix multiplication distributes over addition",
+"description": "A(B+C) = AB + AC.",
+"uci": "/linear-algebra/matrices/distributive",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/distributive.html"
+},
+{
+"type": "theoremdef",
+"title": "Identity matrix",
+"description": "The identity matrix is a matrix I such that AI = IA = A.",
+"uci": "/linear-algebra/matrices/identity",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity.html"
+},
+{
+"type": "theoremdef",
+"title": "Matrix",
+"description": "A matrix is set of numbers arranged in rows and columns.",
+"uci": "/linear-algebra/matrices/matrix",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html"
+},
+{
+"type": "theorem",
+"title": "Matrix multiplication is associative",
+"uci": "/linear-algebra/matrices/mult-assoc",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/mult-assoc.html"
+},
+{
+"type": "theorem",
+"title": "Transpose of stacked matrix",
+"uci": "/linear-algebra/matrices/stacking/transpose",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/transpose.html"
+},
+{
+"type": "theorem",
+"title": "Sum of stacked matrices",
+"uci": "/linear-algebra/matrices/stacking/sum",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/sum.html"
+},
+{
+"type": "theorem",
+"title": "Product of stacked matrices",
+"description": "",
+"uci": "/linear-algebra/matrices/stacking/product",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/product.html"
+},
+{
+"type": "def",
+"title": "Stacking",
+"description": "[A|B] is the horizontal stacking of matrices. [A/B] is the vertical stacking of matrices.",
+"uci": "/linear-algebra/matrices/stacking/stacking",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/stacking.html"
 },
 {
 "type": "theorem",

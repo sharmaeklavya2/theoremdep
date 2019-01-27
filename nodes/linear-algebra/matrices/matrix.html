@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Matrix - TheoremDep</title>
+    <meta name="description" content="A matrix is set of numbers arranged in rows and columns." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Matrix</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html">
+            <span class="deptitle">Semiring</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+            <span class="deptitle">Ring</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $R$ be a semiring.
+An $m$ by $n$ matrix in $R$ is a rectangular array of $m$ rows and $n$ columns
+where each element in the matrix belongs to $R$.</p>
+<p>The element in row $i$ and column $j$ of matrix $A$ is denoted as $A[i, j]$ or $A_{i, j}$ or $a_{i, j}$.
+Rows and columns are generally numbered from 1 onwards.
+Sometimes they are numbered from 0 onwards.</p>
+<p>The set of $m$ by $n$ matrices in $R$ is denoted by $\mathbb{M}_{m, n}(R)$.</p>
+<p>A matrix where the number of rows equals the number of columns is a square matrix.
+A matrix where the number of columns is 1 is called a column matrix.
+A matrix where the number of rows is 1 is called a row matrix.</p>
+<p>A zero matrix (denoted by $0$) is a matrix whose all elements are 0.</p>
+<p>\[ (A+0)[i, j] = A[i, j] + 0[i, j] = A[i, j] + 0 = A[i, j]
+\implies A+0 = A \]
+\[ (0+A)[i, j] = 0[i, j] + A[i, j] = 0 + A[i, j] = A[i, j]
+\implies 0+A = A \]</p>
+<h2>Operations on a matrix</h2>
+<ul>
+<li>
+<p>Addition: Let $A$ and $B$ be $m$ by $n$ matrices.
+$A+B$ is defined to be an $m$ by $n$ matrix such that
+$(A+B)_{i, j} = A_{i, j} + B_{i, j}$.
+\begin{align}
+&amp; ((A+B)+C)[i, j]
+\\ &amp;= (A+B)[i, j] + C[i, j]
+\\ &amp;= (A[i, j] + B[i, j]) + C[i, j]
+\\ &amp;= A[i, j] + (B[i, j] + C[i, j])
+\\ &amp;= A[i, j] + (B+C)[i, j]
+\\ &amp;= (A+(B+C))[i, j]
+\\ &amp;\implies (A+B)+C = A+(B+C)
+\end{align}
+\[ (A+B)[i, j] = A[i, j] + B[i, j]
+= B[i, j] + A[i, j] = (B+A)[i, j]
+\implies A+B = B+A \]</p>
+</li>
+<li>
+<p>Scalar multiplication: Let $A$ be an $m$ by $n$ matrix and $r \in R$.
+Then $rA$ is an $m$ by $n$ matrix such that $(rA)_{i, j} = rA_{i, j}$.
+$rA$ is called the scalar product of $r$ and $A$.
+\[ (r(sA))_{i, j} = r(sA)_{i, j} = r(sA_{i, j}) = (rs)A_{i, j} = ((rs)A)_{i, j}
+\implies r(sA) = (rs)A \]
+\begin{align}
+&amp; ((r+s)A)_{i, j} = (r+s)A_{i, j}
+\\ &amp;= rA_{i, j} + sA_{i, j} = (rA)_{i, j} + (sA)_{i, j}
+\\ &amp;= (rA + sA)_{i, j} \implies (r+s)A = (rA+sA)
+\end{align}
+\begin{align}
+&amp; (r(A+B))_{i, j} = r(A+B)_{i, j}
+\\ &amp;= r(A_{i, j}+B_{i, j}) = rA_{i, j} + rB_{i, j}
+\\ &amp;= (rA)_{i, j} + (rB)_{i, j} = (rA + rB)_{i, j}
+\\ &amp;\implies r(A+B) = (rA+rB)
+\end{align}</p>
+</li>
+<li>
+<p>Matrix multiplication: Let $A$ be an $m$ by $p$ matrix and $B$ be a $p$ by $n$ matrix.
+$AB$ is defined to be an $m$ by $n$ matrix such that
+\[ (AB)_{i, j} = \sum_{k=1}^p A_{i, k} B_{k, j} \]</p>
+</li>
+<li>
+<p>Transpose: Let $A$ be an $m$ by $n$ matrix.
+The transpose of $A$, denoted by $A^T$ is an $n$ by $m$ matrix such that
+$A^T_{i, j} = A_{j, i}$.
+A matrix which is equal to its transpose is called a symmetric matrix.
+\[ (A^T)^T[i, j] = A^T[j, i] = A[i, j] \implies (A^T)^T = A \]
+\[ (A + B)^T_{i, j} = (A + B)_{j, i} = A_{j, i} + B_{j, i} = A^T_{i, j} + B^T_{i, j} = (A^T + B^T)_{i, j}
+\implies (A+B)^T = (A^T + B^T) \]
+\[ (rA)^T_{i, j} = (rA)_{j, i} = rA_{j, i} = rA^T_{i, j} = (rA^T)_{i, j}
+\implies (rA)^T = rA^T \]</p>
+</li>
+<li>
+<p>Negation: If $R$ is a ring, then $-A$ (called the additive inverse) is defined as
+$(-A)[i, j] = -A[i, j]$.
+\[ (A + (-A))[i, j] = A[i, j] + (-A)[i, j] = A[i, j] + (-A[i, j]) = 0 \implies A + (-A) = 0 \]</p>
+</li>
+</ul>
+</div>
+</body>
+</html>

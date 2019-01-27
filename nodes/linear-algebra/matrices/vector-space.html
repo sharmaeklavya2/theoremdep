@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Matrices over a field form a vector space - TheoremDep</title>
+    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Matrices over a field form a vector space</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+            <span class="deptitle">Matrix</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+            <span class="deptitle">Vector Space</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $F$ be a field.
+Then $\mathbb{M}_{m, n}(F)$ is a vector space on $F$.</p>
+<h2>Proof</h2>
+<ul>
+<li>Addition is closed</li>
+<li>Addition is associative</li>
+<li>Addition is commutative</li>
+<li>Zero matrix exists</li>
+<li>Additive inverse exists</li>
+</ul>
+<p>Therefore, $\mathbb{M}_{m, n}(F)$ is an abelian group.</p>
+<ul>
+<li>Scalar product is associative: $r(sA) = (rs)A$.</li>
+<li>Scalar product is distributive: $(r+s)A = rA + sA$ and $r(A+B) = rA + rB$.</li>
+<li>Unit scalar: $1A = A$.</li>
+</ul>
+<p>Therefore, $\mathbb{M}_{m, n}(F)$ is a vector space.</p>
+</div>
+</body>
+</html>

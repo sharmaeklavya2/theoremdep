@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stacking - TheoremDep</title>
+    <meta name="description" content="[A|B] is the horizontal stacking of matrices. [A/B] is the vertical stacking of matrices." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Stacking</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+            <span class="deptitle">Matrix</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $A_i$ be an $m$ by $n_i$ matrix for $1 \le i \le k$.
+Then the horizontal stacking of the matrices $A_1, A_2, \ldots, A_k$,
+is an $m$ by $\sum_{t=1}^k n_t$ matrix:</p>
+<p>\[ \begin{bmatrix} A_1 &amp; A_2 &amp; \cdots &amp; A_k \end{bmatrix}_{i, j} = \begin{cases}
+A_1[i, j] &amp; 1 \le j \le n_1
+\\ A_2[i, j-n_1] &amp; n_1 &lt; j \le n_1+n_2
+\\ A_3[i, j-n_1-n_2] &amp; n_1+n_2 &lt; j \le n_1+n_2+n_3
+\\ \ldots
+\\ A_k\left[i, j-\sum_{t=1}^{k-1} n_t\right] &amp; \sum_{t=1}^{k-1} n_t &lt; j \le \sum_{t=1}^k n_t
+\end{cases} \]</p>
+<p>Let $B_i$ be an $m_i$ by $n$ matrix for $1 \le i \le k$.
+Then the vertical stacking of the matrices $B_1, B_2, \ldots, B_k$,
+is a $\sum_{t=1}^k m_t$ by $n$ matrix:</p>
+<p>\[ \begin{bmatrix} B_1 \\ B_2 \\ \vdots \\ B_k \end{bmatrix}_{i, j} = \begin{cases}
+B_1[i, j] &amp; 1 \le i \le m_1
+\\ B_2[i, j-m_1] &amp; m_1 &lt; i \le m_1+m_2
+\\ B_3[i, j-m_1-m_2] &amp; m_1+m_2 &lt; i \le m_1+m_2+m_3
+\\ \ldots
+\\ B_k\left[i, j-\sum_{t=1}^{k-1} m_t\right] &amp; \sum_{t=1}^{k-1} m_t &lt; i \le \sum_{t=1}^k m_t
+\end{cases} \]</p>
+<p>Let $A_{i, j}$ be an $m_i$ by $n_j$ matrix for $1 \le m_i \le p$ and $1 \le n_j \le q$.
+Then a $p$ by $q$ stacking of all $A_{i, j}$ is an $\sum_{r=1}^p m_r$ by $\sum_{r=1}^q n_s$ matrix:</p>
+<p>\[ \operatorname{stack}(A) = \begin{bmatrix}
+   A_{1, 1} &amp; A_{1, 2} &amp; \cdots &amp; A_{1, q}
+\\ A_{2, 1} &amp; A_{2, 2} &amp; \cdots &amp; A_{2, q}
+\\ \vdots   &amp; \vdots   &amp; \ddots &amp; \vdots
+\\ A_{p, 1} &amp; A_{p, 2} &amp; \cdots &amp; A_{p, q}
+\end{bmatrix}_{i, j} = A_{u, v}\left[i - \sum_{r=1}^{u-1} m_r, j - \sum_{s=1}^{v-1} n_s \right]
+\textrm{ where } \sum_{r=1}^{u-1} m_r &lt; i \le \sum_{r=1}^u m_r \wedge \sum_{s=1}^{v-1} n_s &lt; j \le \sum_{s=1}^v n_s \]</p>
+<p>It can be easily seen that</p>
+<p>\[ \operatorname{stack}(A) = \begin{bmatrix}
+   A_{1, 1} &amp; A_{1, 2} &amp; \cdots &amp; A_{1, q}
+\\ A_{2, 1} &amp; A_{2, 2} &amp; \cdots &amp; A_{2, q}
+\\ \vdots   &amp; \vdots   &amp; \ddots &amp; \vdots
+\\ A_{p, 1} &amp; A_{p, 2} &amp; \cdots &amp; A_{p, q}
+\end{bmatrix}
+= \begin{bmatrix}
+   \begin{bmatrix} A_{1, 1} &amp; A_{1, 2} &amp; \cdots &amp; A_{1, q} \end{bmatrix}
+\\ \begin{bmatrix} A_{2, 1} &amp; A_{2, 2} &amp; \cdots &amp; A_{2, q} \end{bmatrix}
+\\ \vdots
+\\ \begin{bmatrix} A_{p, 1} &amp; A_{p, 2} &amp; \cdots &amp; A_{p, q} \end{bmatrix}
+\end{bmatrix}
+= \begin{bmatrix}
+   \begin{bmatrix} A_{1, 1} \\ A_{2, 1} \\ \vdots \\ A_{p, 1} \end{bmatrix}
+&amp; \begin{bmatrix} A_{1, 2} \\ A_{2, 2} \\ \vdots \\ A_{p, 2} \end{bmatrix}
+&amp; \cdots
+&amp; \begin{bmatrix} A_{1, q} \\ A_{2, q} \\ \vdots \\ A_{p, q} \end{bmatrix}
+\end{bmatrix}
+\]</p>
+</div>
+</body>
+</html>

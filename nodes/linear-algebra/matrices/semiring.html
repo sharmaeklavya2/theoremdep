@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Square matrices form a (semi)ring - TheoremDep</title>
+    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Square matrices form a (semi)ring</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html">
+            <span class="deptitle">Semiring</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+            <span class="deptitle">Matrix</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/mult-assoc.html">
+            <span class="deptitle">Matrix multiplication is associative</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/distributive.html">
+            <span class="deptitle">Matrix multiplication distributes over addition</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity.html">
+            <span class="deptitle">Identity matrix</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $R$ be a semiring. Then $\mathbb{M}_{n, n}(R)$ is a semiring.
+Additionally, if $R$ is a ring, then $\mathbb{M}_{n, n}(R)$ is a ring.
+If $R$ has a unity, then $\mathbb{M}_{n, n}(R)$ also has a unity.</p>
+<h2>Proof</h2>
+<ul>
+<li>Addition is closed.</li>
+<li>Addition is commutative.</li>
+<li>Addition is associative.</li>
+<li>Additive identity: Zero matrix</li>
+<li>Multiplication is closed on square matrices.</li>
+<li>Multiplication is associative: See dependencies</li>
+<li>Distributivity: See dependencies</li>
+</ul>
+<p>Therefore, $\mathbb{M}_{n, n}(R)$ is a semiring.</p>
+<p>If $R$ is a ring, $-A$ is an additive inverse of $A$.
+Therefore, $\mathbb{M}_{n, n}(R)$ is a ring.</p>
+<p>If $R$ has a unity, the identity matrix $I_n$ is a unity of $\mathbb{M}_{n, n}(R)$.</p>
+</div>
+</body>
+</html>

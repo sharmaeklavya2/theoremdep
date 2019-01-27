@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Identity matrix - TheoremDep</title>
+    <meta name="description" content="The identity matrix is a matrix I such that AI = IA = A." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Identity matrix</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+            <span class="deptitle">Matrix</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $R$ be a semiring with unity.
+The identity matrix of size $n$, denoted as $I_n$, is a matrix in $\mathbb{M}_{n, n}(R)$ such that
+\[ I_n[i, j] = \begin{cases} 1 &amp; i = j \\ 0 &amp; i \neq j \end{cases} \]</p>
+<p>Let $A \in \mathbb{M}_{m, n}$. Then</p>
+<p>\[ AB = A \iff B = I_n \]
+\[ BA = A \iff B = I_m \]</p>
+<h2>Proof</h2>
+<h3>Part 1</h3>
+<p>\begin{align}
+&amp; (AI_n)[i, j]
+\\ &amp;= \sum_{k=1}^n A[i, k] I_n[k, j]
+\\ &amp;= \left(\sum_{k=1}^{j-1} A[i, k] I_n[k, j]\right) + (A[i, j] I_n[j, j]) + \left(\sum_{k=j+1}^n A[i, k] I_n[k, j] \right)
+\\ &amp;= \left(\sum_{k=1}^{j-1} A[i, k] 0\right) + (A[i, j] 1) + \left(\sum_{k=j+1}^n A[i, k] 0 \right)
+\\ &amp;= A[i, j]
+\end{align}</p>
+<p>Therefore, $AI_n = A$.</p>
+<p>Similarly,
+\[ (I_mA)[i, j] = \sum_{k=1}^m I_m[i, k] A[k, j] = A[i, j]
+\implies I_mA = A \]</p>
+<h3>Part 2</h3>
+<p>$AB = A \Rightarrow B \in \mathbb{M}_{n, n}(R)$.</p>
+<p>\begin{align}
+&amp; (AB)[i, j] = A[i, j]
+\\ &amp;\Rightarrow \sum_{k=1}^n A[i, k]B[k, j] = A[i, j]
+\\ &amp;\Rightarrow B[k, j] = \begin{cases} 1 &amp; k = j \\ 0 &amp; k \neq j \end{cases} \tag{comparing coefficients of $A[i, *]$}
+\end{align}</p>
+<p>Therefore, $B = I_n$.</p>
+<p>Similarly, when $BA = A$, $B = I_m$.</p>
+</div>
+</body>
+</html>
