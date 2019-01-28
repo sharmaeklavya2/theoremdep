@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>c(AB) = (cA)B and (AB)c = A(Bc) - TheoremDep</title>
+    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>c(AB) = (cA)B and (AB)c = A(Bc)</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+            <span class="deptitle">Matrix</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $R$ be a semiring. Let $c \in R$.
+Let $A \in \mathbb{M}_{m, p}(R)$ and $B \in \mathbb{M}_{p, n}(R)$.
+Then $c(AB) = (cA)B$ and $(AB)c = A(Bc)$.</p>
+<p>When $R$ is commutative, this means $c(AB) = (cA)B = A(cB)$.</p>
+<h2>Proof</h2>
+<p>\begin{align}
+&amp; (c(AB))[i, j] = c(AB)[i, j]
+\\ &amp;= c \left( \sum_{k=1}^p A[i, k]B[k, j] \right)
+\\ &amp;= \sum_{k=1}^p c(A[i, k]B[k, j]) \tag{distributivity in $R$}
+\\ &amp;= \sum_{k=1}^p (cA[i, k])B[k, j] \tag{Multiplicative associativity in $R$}
+\\ &amp;= \sum_{k=1}^p (cA)[i, k]B[k, j]
+\\ &amp;= ((cA)B)[i, j]
+\end{align}</p>
+<p>Therefore, $c(AB) = (cA)B$.</p>
+<p>\begin{align}
+&amp; ((AB)c)[i, j] = (AB)[i, j]c
+\\ &amp;= \left( \sum_{k=1}^p A[i, k]B[k, j] \right) c
+\\ &amp;= \sum_{k=1}^p (A[i, k]B[k, j])c \tag{distributivity in $R$}
+\\ &amp;= \sum_{k=1}^p A[i, k](B[k, j]c) \tag{Multiplicative associativity in $R$}
+\\ &amp;= \sum_{k=1}^p A[i, k](Bc)[k, j]
+\\ &amp;= (A(Bc))[i, j]
+\end{align}</p>
+<p>Therefore, $(AB)c = A(Bc)$.</p>
+<p>When $R$ is commutative,</p>
+<p>$c(AB) = (AB)c = A(Bc) = A(cB)$.</p>
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+</div>
+</body>
+</html>

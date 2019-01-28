@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Inverse of a matrix - TheoremDep</title>
+    <meta name="description" content="The inverse of matrix A is a matrix B such that AB = BA = I." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Inverse of a matrix</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity.html">
+            <span class="deptitle">Identity matrix</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/mult-assoc.html">
+            <span class="deptitle">Matrix multiplication is associative</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $F$ be a field and $A \in \mathbb{M}_{n, n}(F)$.</p>
+<p>If a matrix $L$ exists such that $LA = I_n$, then $L$ is a left inverse of $A$.
+If a matrix $R$ exists such that $AR = I_n$, then $R$ is a right inverse of $A$.
+If $A$ has both a left inverse and a right inverse,
+it can be proven that all left inverses and right inverses are identical.
+Therefore, such a matrix is simply called the inverse of $A$
+and is denoted as $A^{-1}$.</p>
+<p>A matrix whose inverse exists is called an invertible matrix.</p>
+<h2>Proof</h2>
+<p>Suppose $A$ has a left inverse $L$ and a right inverse $R$.</p>
+<p>\[ L = LI_n = L(AR) = (LA)R = I_nR = R \]</p>
+<p>Hence, every left inverse is equal to every right inverse.
+Therefore, they are all equal.</p>
+<p>(It can actually be proven that a left inverse is also a right inverse).</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inverse-of-product.html">
+            <span class="deptitle">Inverse of product</span>
+        </a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

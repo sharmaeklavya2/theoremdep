@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Every number has a prime factorization - TheoremDep</title>
+    <title>Every elementary row operation has an inverse - TheoremDep</title>
     <meta name="description" content="Track dependencies between theorems and definitions." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
@@ -25,30 +25,32 @@
     </form>
 </nav>
 <div id="main">
-<h1>Every number has a prime factorization</h1>
-<h2 class="no-deps"> Dependencies: None </h2>
+<h1>Every elementary row operation has an inverse</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop.html">
+            <span class="deptitle">Elementary row operation</span>
+        </a>
+        </li>
+    </ul>
 <div class="horizontal-rule"></div>
-<p>Every positive number has a prime factorization.</p>
+<p>Every elementary row operation has an inverse.</p>
+<ul>
+<li>Inverse of $\langle i \rangle \leftarrow c\langle i \rangle$ is $\langle i \rangle \leftarrow (c^{-1}) \langle i \rangle$.</li>
+<li>Inverse of $\langle i \rangle \leftarrow \langle i \rangle + c\langle j \rangle$
+is $\langle i \rangle \leftarrow \langle i \rangle - c\langle j \rangle$.</li>
+<li>$\langle i \rangle \leftrightarrow \langle j \rangle$ is its own inverse.</li>
+</ul>
 <h2>Proof</h2>
-<p>Let $n$ be the smallest number without a prime factorization.
-1 has the empty factorization. Therefore, $n \ge 2$.</p>
-<p>Also, $n$ is not prime, so it can be written as a product of factors other than 1 and itself.
-Therefore, all its factors have a prime factorization.
-Therefore, $n$ also has a prime factorization.
-This is a contradiction, which means all numbers have a prime factorization.</p>
+<p>(To be done)</p>
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/ab-coprime-to-x-iff-a-and-b-coprime-to-x.html">
-            <span class="deptitle">ab is coprime to x iff a and b are coprime to x</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv.html">
+            <span class="deptitle">Row equivalence</span>
         </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/fundamental-theorem-of-arithmetic.html">
-            <span class="deptitle">Fundamental Theorem of Arithmetic</span>
-        </a>
-        <span class="reason">Used in proof</span>
         </li>
     </ul>
 </div>
