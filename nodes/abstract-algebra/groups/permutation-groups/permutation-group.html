@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Permutation group - TheoremDep</title>
+    <meta name="description" content="A permutation group on a finite set X is a group of bijections on X, where the group operator is function composition." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Permutation group</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+            <span class="deptitle">Group</span>
+        </a>
+        </li>
+        <li>
+        <span class="deptitleuci missing">/misc/composition-of-bijections-is-a-bijection</span>
+        </li>
+        <li>
+        <span class="deptitleuci missing">/misc/function-composition-is-associative</span>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $X$ be a finite set.</p>
+<p>A permutation of $X$ is a bijection from $X$ to $X$.
+A group where every element is a permutation of $X$ is called a permutation group.
+The group operator is function composition.</p>
+<p>The set of all permutations of $X$, denoted by $S_X$, is a group and is called the symmetric group on $X$.
+Consequently, all permutation groups are subgroups of the symmetric group.</p>
+<p>A cycle of length $n$, denoted as $(a_1, a_2, \ldots, a_n)$, is a permutation where
+$a_i$ maps to $a_{i+1}$ for all $1 \le i &lt; n$ and $a_n$ maps to $a_1$.</p>
+<p>A transposition is a cycle of length 2.</p>
+<h2>Proof that $S_X$ is a group</h2>
+<ul>
+<li>Closure: The composition of 2 bijections is a bijection.</li>
+<li>Associativity: Function composition is associative.</li>
+<li>Identity: The identity permutation, which maps $x$ to $x$ for all $x \in X$, is the identity of $S_X$.</li>
+<li>Inverse: Every bijection has an inverse.</li>
+</ul>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/product-of-disjoint-cycles-is-commutative.html">
+            <span class="deptitle">Product of disjoint cycles is commutative</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/permutation-is-disjoint-cycle-product.html">
+            <span class="deptitle">Permutation is disjoint cycle product</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/product-of-cycles-and-transposition.html">
+            <span class="deptitle">Product of cycles and a transposition</span>
+        </a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

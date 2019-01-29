@@ -29,19 +29,31 @@
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/symmetric-group.html">
-            <span class="deptitle">Symmetric Group</span>
-        </a>
-        </li>
-        <li>
         <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/parity.html">
             <span class="deptitle">Parity of a permutation</span>
         </a>
         </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/subgroup-condition-2.html">
+            <span class="deptitle">Condition for a subset to be a subgroup</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/inverse-of-product.html">
+            <span class="deptitle">Inverse of product of two elements of a group</span>
+        </a>
+        </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>The alternating group $A_X$ is the set of all even permutations of $X$.
-It is a subgroup of the symmetric group $S_X$.</p>
+<p>The alternating group $A_X$ is the set of all even permutations of $X$.</p>
+<h2>Proof that $A_X$ is a group</h2>
+<p>Let $\sigma_1 = \pi_1\pi_2\ldots\pi_{2m}$ and $\sigma_2 = \tau_1\tau_2\ldots\tau_{2n}$ be even permutations.
+\[ \sigma_1\sigma_2^{-1}
+= \pi_1\pi_2\ldots\pi_{2m}(\tau_1\tau_2\ldots\tau_{2n})^{-1}
+= \pi_1\pi_2\ldots\pi_{2m}\tau_{2n}^{-1}\tau_{2n-1}^{-1}\ldots\tau_1^{-1}
+= \pi_1\pi_2\ldots\pi_{2m}\tau_{2n}\tau_{2n-1}\ldots\tau_1
+\in A_X \]</p>
+<p>Therefore, $A_X$ is a subgroup of $S_X$.</p>
 <div class="horizontal-rule"></div>
 <h2 class="no-deps"> Dependency for: None </h2>
 </div>

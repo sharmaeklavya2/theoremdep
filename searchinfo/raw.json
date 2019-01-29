@@ -391,11 +391,11 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/permutation-is-transposition-product.html"
 },
 {
-"type": "deftheorem",
-"title": "Symmetric Group",
-"description": "The symmetric group is the set of all permutations where the operation is composition of permutations.",
-"uci": "/abstract-algebra/groups/permutation-groups/symmetric-group",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/symmetric-group.html"
+"type": "theoremdef",
+"title": "Permutation group",
+"description": "A permutation group on a finite set X is a group of bijections on X, where the group operator is function composition.",
+"uci": "/abstract-algebra/groups/permutation-groups/permutation-group",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/permutation-group.html"
 },
 {
 "type": "theorem",
@@ -491,6 +491,13 @@
 "description": "Homomorphic mapping of normal subgroup is normal in homomorphic mapping of group. Homomorphic inverse mapping of normal subgroup of codomain is normal in domain.",
 "uci": "/abstract-algebra/groups/homomorphism/normal-subgroup",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/homomorphism/normal-subgroup.html"
+},
+{
+"type": "def",
+"title": "Homomorphism on groups",
+"description": "A homomorphism \u03d5 is a function from one group to another such that \u03d5(ab) = \u03d5(a)\u03d5(b).",
+"uci": "/abstract-algebra/groups/homomorphism/homomorphism",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/homomorphism/homomorphism.html"
 },
 {
 "type": "def",
