@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>System of linear equations - TheoremDep</title>
+    <meta name="description" content="A system of linear equations is a set of equations which equate linear combinations of variables to a value." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>System of linear equations</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+            <span class="deptitle">Field</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+            <span class="deptitle">Matrix</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/stacking.html">
+            <span class="deptitle">Stacking</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $F$ be a field.
+Let $A \in \mathbb{M}_{m, n}(F), X \in \mathbb{M}_{n, 1}, B \in \mathbb{M}_{m, 1}$.</p>
+<p>The equation $AX = B$, where $A$ and $B$ are known and $X$ is unknown
+is called a system of $m$ linear equations in $n$ variables.</p>
+<p>This is because expanding the $i^{\textrm{th}}$ row of $AX$ and $B$ gives us:</p>
+<p>\[ B[i, 1] = (AX)[i, 1] = \sum_{k=1}^n A[i, k]X[k, 1] \]</p>
+<p>which is a linear equation in $n$ variables.</p>
+<p>The stacked matrix $[A|B]$ is called the augmented matrix of the system of linear equations.</p>
+<p>If $B = 0$, the system is called homogenous.
+A homogenous system always has a trivial solution $X = 0$.
+(There may be other solutions where $X \neq 0$)</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/row-equiv-have-same-solutions.html">
+            <span class="deptitle">Equations with row equivalent matrices have the same solution set</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/rank-homogenous.html">
+            <span class="deptitle">Rank of a homogenous system of linear equations</span>
+        </a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

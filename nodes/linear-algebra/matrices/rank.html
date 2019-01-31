@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Reduced Row Echelon Form (RREF) - TheoremDep</title>
-    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <title>Rank of a matrix - TheoremDep</title>
+    <meta name="description" content="The rank of a matrix is the number of non-zero rows in the RREF of the matrix." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,34 +25,34 @@
     </form>
 </nav>
 <div id="main">
-<h1>Reduced Row Echelon Form (RREF)</h1>
+<h1>Rank of a matrix</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
-            <span class="deptitle">Matrix</span>
-        </a>
-        </li>
-    </ul>
-<div class="horizontal-rule"></div>
-<p>A matrix is in Reduced Row Echelon Form (RREF) iff it satisfies all the following conditions:</p>
-<ul>
-<li>The first nonzero entry in each row is 1.</li>
-<li>Each successive row has its first nonzero entry in a later column.</li>
-<li>All entries above and below the first nonzero entry of each row are zero.</li>
-<li>All rows which only have zeros are at the bottom.</li>
-</ul>
-<div class="horizontal-rule"></div>
-<h2> Dependency for: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-square-rref-is-identity.html">
-            <span class="deptitle">Full-rank square matrix in RREF is the identity matrix</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+            <span class="deptitle">Field</span>
         </a>
         </li>
         <li>
         <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/unique-rref.html">
             <span class="deptitle">RREF is unique</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>The rank of a matrix over a field is the number of non-zero rows in the RREF of the matrix.</p>
+<p>Since any 2 row-equivalent matrices have the same RREF, they also have the same rank.</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-inv.html">
+            <span class="deptitle">Full-rank square matrix is invertible</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/rank-homogenous.html">
+            <span class="deptitle">Rank of a homogenous system of linear equations</span>
         </a>
         </li>
     </ul>

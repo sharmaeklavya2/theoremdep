@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Elementary row operation is matrix pre-multiplication - TheoremDep</title>
+    <meta name="description" content="Every elementary row operation has a corresponding invertible matrix R such that the result of applying the operation on a matrix A is RA." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Elementary row operation is matrix pre-multiplication</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+            <span class="deptitle">Field</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop-inv.html">
+            <span class="deptitle">Every elementary row operation has a unique inverse</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity.html">
+            <span class="deptitle">Identity matrix</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inverse.html">
+            <span class="deptitle">Inverse of a matrix</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $A$ be a $m$ by $n$ matrix over a field.
+Let $f$ be an elementary row operation.
+Then there exists a unique invertible $m$ by $m$ matrix $R$
+such that $f(A) = RA$.</p>
+<p>By plugging in $A = I_m$ (identity matrix), we get $R = f(I_m)$.
+Therefore, the maxtrix associated with a row operation is the one obtained
+by applying that operation on the identity matrix.</p>
+<h2>Proof</h2>
+<p>We will show that there is a unique matrix $R$ which satisfies
+$f(A) = RA$ for all $A$.</p>
+<ul>
+<li>
+<p>$\langle p \rangle \leftarrow c\langle p \rangle$:
+\[ (RA)[i, j] = \sum_k R[i, k] A[k, j] = \begin{Bmatrix} c &amp; i = p \\ 1 &amp; i \neq p \end{Bmatrix}A[i, j] \]
+On comparing coefficients of $A[*, j]$, we get
+\[ R[i, j] = \begin{cases} c &amp; i = j = p \\ 1 &amp; j = i \neq p \\ 0 &amp; i \neq j \end{cases} \]</p>
+</li>
+<li>
+<p>$\langle p \rangle \leftarrow \langle p \rangle + c\langle q \rangle$:
+\[ (RA)[i, j] = \sum_k R[i, k] A[k, j] = \begin{cases} A[i, j] &amp; i \neq p \\ A[p, j] + cA[q, j] &amp; i = p \end{cases} \]
+On comparing coefficients of $A[*, j]$, we get
+\[ R[i, j] = \begin{cases}
+    0 &amp; i \neq p \wedge i \neq j
+\\  1 &amp; i \neq p \wedge i = j
+\\  0 &amp; i = p \wedge j \neq p \wedge j \neq q
+\\  1 &amp; i = p \wedge j = p
+\\  c &amp; i = p \wedge j = q
+\end{cases} \]</p>
+</li>
+<li>
+<p>$\langle p \rangle \leftrightarrow \langle q \rangle$:
+\[ (RA)[i, j] = \sum_k R[i, k] A[k, j] = \begin{cases}
+A[i, j] &amp; i \neq p \wedge i \neq q
+\\ A[q, j] &amp; i = p
+\\ A[p, j] &amp; i = q
+\end{cases} \]
+On comparing coefficients of $A[*, j]$, we get
+\[ R[i, j] = \begin{cases}
+    0 &amp; i \neq p \wedge i \neq q \wedge i \neq j
+\\  1 &amp; i \neq p \wedge i \neq q \wedge i = j
+\\  0 &amp; i = p \wedge j \neq q
+\\  1 &amp; i = p \wedge j = q
+\\  0 &amp; i = q \wedge j \neq p
+\\  1 &amp; i = q \wedge j = p
+\end{cases} \]</p>
+</li>
+<li>
+<p>Invertibility:</p>
+<p>Let $R$ be the matrix corresponding to an elementary row operation.
+Since every row operation has an inverse, let $S$ be the matrix of that inverse operation.</p>
+<p>Since $S$ represents the inverse operation of $R$, $S(RA) = A$ for all $A$.
+For $A = I_m$, we get $SR = I_m$.
+Since $R$ represents the inverse operation of $S$, $R(SA) = A$ for all $A$.
+For $A = I_m$, we get $RS = I_m$.</p>
+<p>Therefore, $R$ is invertible and its inverse is $S$.</p>
+</li>
+</ul>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv-matrix.html">
+            <span class="deptitle">Row equivalence matrix</span>
+        </a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

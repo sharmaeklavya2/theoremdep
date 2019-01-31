@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Every elementary row operation has an inverse - TheoremDep</title>
+    <title>Every elementary row operation has a unique inverse - TheoremDep</title>
     <meta name="description" content="Track dependencies between theorems and definitions." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
@@ -25,9 +25,14 @@
     </form>
 </nav>
 <div id="main">
-<h1>Every elementary row operation has an inverse</h1>
+<h1>Every elementary row operation has a unique inverse</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+            <span class="deptitle">Field</span>
+        </a>
+        </li>
         <li>
         <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop.html">
             <span class="deptitle">Elementary row operation</span>
@@ -35,21 +40,59 @@
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Every elementary row operation has an inverse.</p>
+<p>Let $A$ be a matrix over a field.
+Then every elementary row operation on $A$ has a unique inverse
+which is also an elementary row operation.</p>
+<p>This means that if applying $R$ on $A$ gives $B$,
+then applying the inverse of $R$ (denoted as $R^{-1}$) on $B$ gives $A$.</p>
 <ul>
 <li>Inverse of $\langle i \rangle \leftarrow c\langle i \rangle$ is $\langle i \rangle \leftarrow (c^{-1}) \langle i \rangle$.</li>
 <li>Inverse of $\langle i \rangle \leftarrow \langle i \rangle + c\langle j \rangle$
-is $\langle i \rangle \leftarrow \langle i \rangle - c\langle j \rangle$.</li>
+$(i \neq j)$ is $\langle i \rangle \leftarrow \langle i \rangle - c\langle j \rangle$.</li>
 <li>$\langle i \rangle \leftrightarrow \langle j \rangle$ is its own inverse.</li>
 </ul>
+<p>By the above means of finding inverse, it can be seen that the inverse of $R^{-1}$ is $R$.</p>
 <h2>Proof</h2>
-<p>(To be done)</p>
+<p>Suppose $B$ is obtained from $A$ by applying the operation $R$.
+Let $a_i$ be the $i^{\textrm{th}}$ row of $A$
+and $b_i$ be the $i^{\textrm{th}}$ row of $B$.</p>
+<ul>
+<li>
+<p>$\langle p \rangle \leftarrow c\langle p \rangle$:
+\[ b_i = \begin{cases} a_i &amp; i \neq p \\ ca_i &amp; i = p \end{cases}
+\implies a_i = \begin{cases} b_i &amp; i \neq p \\ (c^{-1})b_i &amp; i = p \end{cases}
+\]</p>
+</li>
+<li>
+<p>$\langle p \rangle \leftarrow \langle p \rangle + c\langle q \rangle$ where $p \neq q$:
+\[ b_i = \begin{cases} a_i &amp; i \neq p \\ a_p + ca_q &amp; i = p \end{cases}
+\implies a_i = \begin{cases} b_i &amp; i \neq p \\ b_p - ca_q &amp; i = p \end{cases}
+= \begin{cases} b_i &amp; i \neq p \\ b_p - cb_q &amp; i = p \end{cases}
+\]</p>
+</li>
+<li>
+<p>$\langle p \rangle \leftrightarrow \langle q \rangle$:
+\[ b_i = \begin{cases} a_i &amp; i \neq p \wedge i \neq q \\ a_q &amp; i = p \\ a_p &amp; i = q \end{cases}
+\implies a_i = \begin{cases} b_i &amp; i \neq p \wedge i \neq q \\ b_p &amp; i = q \\ b_q &amp; i = p \end{cases}
+\]</p>
+</li>
+</ul>
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
     <ul class="deplist">
         <li>
         <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv.html">
-            <span class="deptitle">Row equivalence</span>
+            <span class="deptitle">Row equivalence of matrices</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv-matrices-have-same-row-space.html">
+            <span class="deptitle">Row equivalent matrices have the same row space</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop-matrix.html">
+            <span class="deptitle">Elementary row operation is matrix pre-multiplication</span>
         </a>
         </li>
     </ul>

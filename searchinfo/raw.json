@@ -921,10 +921,45 @@
 },
 {
 "type": "theorem",
+"title": "Full-rank square matrix in RREF is the identity matrix",
+"description": "Let A be an n by n matrix. If A is in RREF and all rows of A are non-zero, then A is the identity matrix.",
+"uci": "/linear-algebra/matrices/full-rank-square-rref-is-identity",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-square-rref-is-identity.html"
+},
+{
+"type": "theorem",
+"title": "RREF([A|I]) = [I|inv(A)] iff A is invertible",
+"description": "This is an algorithm for finding the inverse of a matrix by calculating RREF.",
+"uci": "/linear-algebra/matrices/rref-inv",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rref-inv.html"
+},
+{
+"type": "theorem",
+"title": "Full-rank square matrix is invertible",
+"description": "Let A be an n by n matrix. Then rank(A) = n iff A has an inverse.",
+"uci": "/linear-algebra/matrices/full-rank-inv",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-inv.html"
+},
+{
+"theorem": "theorem",
+"title": "RREF is unique",
+"description": "Every matrix is row equivalent to a unique matrix in RREF.",
+"uci": "/linear-algebra/matrices/unique-rref",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/unique-rref.html"
+},
+{
+"type": "theorem",
 "title": "Transpose of product",
 "description": "(AB)' = B'A'",
 "uci": "/linear-algebra/matrices/transpose-of-product",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/transpose-of-product.html"
+},
+{
+"type": "def",
+"title": "Row space",
+"description": "The row space of a matrix is the set of all linear combinations of the rows of the matrix.",
+"uci": "/linear-algebra/matrices/row-space",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-space.html"
 },
 {
 "type": "theorem",
@@ -941,10 +976,17 @@
 },
 {
 "type": "theoremdef",
-"title": "Row equivalence",
-"description": "A and B are row equivalent iff B can be obtained from A by applying a finite number of elementary row operations to A.",
+"title": "Row equivalence of matrices",
+"description": "Matrices A and B are row equivalent iff B can be obtained from A by applying a finite number of elementary row operations to A.",
 "uci": "/linear-algebra/matrices/row-equiv",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv.html"
+},
+{
+"type": "theorem",
+"title": "Row equivalence matrix",
+"description": "If A and B are row equivalent, then there exists an invertible matrix R such that B = RA.",
+"uci": "/linear-algebra/matrices/row-equiv-matrix",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv-matrix.html"
 },
 {
 "type": "theoremdef",
@@ -974,6 +1016,26 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rref.html"
 },
 {
+"type": "def",
+"title": "Rank of a matrix",
+"description": "The rank of a matrix is the number of non-zero rows in the RREF of the matrix.",
+"uci": "/linear-algebra/matrices/rank",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rank.html"
+},
+{
+"type": "theorem",
+"title": "Row equivalent matrices have the same row space",
+"uci": "/linear-algebra/matrices/row-equiv-matrices-have-same-row-space",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv-matrices-have-same-row-space.html"
+},
+{
+"type": "theorem",
+"title": "Elementary row operation is matrix pre-multiplication",
+"description": "Every elementary row operation has a corresponding invertible matrix R such that the result of applying the operation on a matrix A is RA.",
+"uci": "/linear-algebra/matrices/elementary-rowop-matrix",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop-matrix.html"
+},
+{
 "type": "theorem",
 "title": "Inverse of product",
 "description": "inv(AB) = inv(B)inv(A)",
@@ -982,7 +1044,7 @@
 },
 {
 "type": "theorem",
-"title": "Every elementary row operation has an inverse",
+"title": "Every elementary row operation has a unique inverse",
 "uci": "/linear-algebra/matrices/elementary-rowop-inv",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop-inv.html"
 },
@@ -991,6 +1053,19 @@
 "title": "Matrix multiplication is associative",
 "uci": "/linear-algebra/matrices/mult-assoc",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/mult-assoc.html"
+},
+{
+"type": "theorem",
+"title": "AB = I implies BA = I",
+"uci": "/linear-algebra/matrices/product-equals-identity-implies-invertible",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/product-equals-identity-implies-invertible.html"
+},
+{
+"type": "theorem",
+"title": "Elementary row operation on stacked matrix",
+"description": "Let f be an elementary row operation. Then f([A|B]) = [f(A)|f(B)].",
+"uci": "/linear-algebra/matrices/stacking/elementary-rowop",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/elementary-rowop.html"
 },
 {
 "type": "theorem",
@@ -1017,6 +1092,34 @@
 "description": "[A|B] is the horizontal stacking of matrices. [A/B] is the vertical stacking of matrices.",
 "uci": "/linear-algebra/matrices/stacking/stacking",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/stacking.html"
+},
+{
+"type": "theorem",
+"title": "System of linear equations",
+"description": "A system of linear equations is a set of equations which equate linear combinations of variables to a value.",
+"uci": "/linear-algebra/system-of-linear-equations/system-of-linear-equations",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/system-of-linear-equations.html"
+},
+{
+"type": "theorem",
+"title": "Equations with row equivalent matrices have the same solution set",
+"description": "If [A|B] is row equivalent to [C|D], then AX=B and CX=D have the same solution set.",
+"uci": "/linear-algebra/system-of-linear-equations/row-equiv-have-same-solutions",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/row-equiv-have-same-solutions.html"
+},
+{
+"type": "theorem",
+"title": "Rank of a homogenous system of linear equations",
+"description": "If AX = 0 is a system of equations, then rank(A) = n iff X=0 is the only solution.",
+"uci": "/linear-algebra/system-of-linear-equations/rank-homogenous",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/rank-homogenous.html"
+},
+{
+"type": "theorem",
+"title": "Homogeneous linear equations with more variables than unknowns",
+"description": "If AX = 0 is a system of linear equations with more variables than unknowns, then there exists a non-trivial solution.",
+"uci": "/linear-algebra/system-of-linear-equations/more-variables-than-unknowns",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/more-variables-than-unknowns.html"
 },
 {
 "type": "theorem",

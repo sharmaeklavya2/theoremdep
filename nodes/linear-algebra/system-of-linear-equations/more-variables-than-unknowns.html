@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Reduced Row Echelon Form (RREF) - TheoremDep</title>
-    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <title>Homogeneous linear equations with more variables than unknowns - TheoremDep</title>
+    <meta name="description" content="If AX = 0 is a system of linear equations with more variables than unknowns, then there exists a non-trivial solution." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,34 +25,26 @@
     </form>
 </nav>
 <div id="main">
-<h1>Reduced Row Echelon Form (RREF)</h1>
+<h1>Homogeneous linear equations with more variables than unknowns</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
-            <span class="deptitle">Matrix</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/rank-homogenous.html">
+            <span class="deptitle">Rank of a homogenous system of linear equations</span>
         </a>
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>A matrix is in Reduced Row Echelon Form (RREF) iff it satisfies all the following conditions:</p>
-<ul>
-<li>The first nonzero entry in each row is 1.</li>
-<li>Each successive row has its first nonzero entry in a later column.</li>
-<li>All entries above and below the first nonzero entry of each row are zero.</li>
-<li>All rows which only have zeros are at the bottom.</li>
-</ul>
+<p>Let $AX = 0$ be a system of $m$ linear equations in $n$ variables where $m &lt; n$.
+Then there is a non-trivial solution.</p>
+<h2>Proof</h2>
+<p>$\operatorname{rank}(A) \le m &lt; n \Rightarrow$ there is a non-trivial solution.</p>
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-square-rref-is-identity.html">
-            <span class="deptitle">Full-rank square matrix in RREF is the identity matrix</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/unique-rref.html">
-            <span class="deptitle">RREF is unique</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-is-smaller-than-span.html">
+            <span class="deptitle">Linearly independent set is smaller than a span</span>
         </a>
         </li>
     </ul>

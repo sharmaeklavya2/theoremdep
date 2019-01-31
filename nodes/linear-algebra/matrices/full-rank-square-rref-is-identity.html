@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Full-rank square matrix in RREF is the identity matrix - TheoremDep</title>
+    <meta name="description" content="Let A be an n by n matrix. If A is in RREF and all rows of A are non-zero, then A is the identity matrix." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Full-rank square matrix in RREF is the identity matrix</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rref.html">
+            <span class="deptitle">Reduced Row Echelon Form (RREF)</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity.html">
+            <span class="deptitle">Identity matrix</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $A$ be an $n$ by $n$ matrix.
+Let $A$ be in RREF and all rows of $A$ be non-zero.
+Then $A = I_n$ (identity matrix).</p>
+<h2>Proof</h2>
+<p>Let $\alpha_i$ be the smallest value of $j$ such that $A[i, j] \neq 0$.
+Since $A$ is in RREF, $\alpha_i &lt; \alpha_{i+1}$.
+Therefore, $1 \le \alpha_1 &lt; \alpha_2 &lt; \ldots &lt; \alpha_n \le n$.
+Therefore, $\alpha_i = i$.</p>
+<p>Since $A$ is in RREF, $A[i, i] = A[i, \alpha_i] = 1$
+and there is only one non-zero entry in the $\alpha_i^{\textrm{th}}$ column.</p>
+<p>Therefore, $A$ is the identity matrix.</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rref-inv.html">
+            <span class="deptitle">RREF([A|I]) = [I|inv(A)] iff A is invertible</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-inv.html">
+            <span class="deptitle">Full-rank square matrix is invertible</span>
+        </a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RREF is unique - TheoremDep</title>
+    <meta name="description" content="Every matrix is row equivalent to a unique matrix in RREF." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>RREF is unique</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rref.html">
+            <span class="deptitle">Reduced Row Echelon Form (RREF)</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv-matrices-have-same-row-space.html">
+            <span class="deptitle">Row equivalent matrices have the same row space</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $C$ be a matrix over a field.
+Then $C$ is row-equivalent to a unique matrix $A$ in RREF.</p>
+<p>$A$ is called the RREF of $C$.</p>
+<p>If $C$ and $D$ are row-equivalent, they are both equivalent to $A$
+by transitivity of row-equivalence.
+Therefore, $C$ and $D$ have the same RREF.</p>
+<h2>Proof</h2>
+<p>Let $A$ and $B$ be 2 $m$ by $n$ matrices in RREF which are row-equivalent to $C$.
+By transitivity of row-equivalence, $A$ and $B$ are row-equivalent.
+Let the rows of $A$ be $a_1, \ldots, a_m$ and the rows of $B$ be $b_1, \ldots, b_m$.
+Let $\alpha_i$ be the pivot column (first non-zero column) of $a_i$ if $a_i$ has a pivot
+and $\alpha_i = n+1$ if $a_i$ is fully 0.
+Similary, $\beta_i$ is the pivot column of $b_i$ and $\beta_i = n+1$ if $b_i$ is fully 0.</p>
+<p>Since $A$ is in RREF, $1 \le \alpha_i \le \alpha_{i+1}$ for all $i$
+and $\alpha_i = \alpha_{i+1}$ only if $\alpha_i = \alpha_{i+1} = n+1$.
+Let $a_i[j] = A[i, j]$.
+Since $A$ is in RREF,</p>
+<ul>
+<li>Property 1: $\alpha_i \neq n+1 \Rightarrow a_i[\alpha_i] = 1$.</li>
+<li>Property 2: $(j \neq i \wedge \alpha_j \neq n+1) \Rightarrow a_i[\alpha_j] = 0$.</li>
+<li>Property 3: $j \le \alpha_i \Rightarrow a_i[j] = 0$.</li>
+</ul>
+<p>Similar deductions can be made for $B$ and $\beta$.</p>
+<h3>Part 1 - Pivots of $A$ and $B$ are same the same</h3>
+<p>Let $k$ be the smallest value such that $\alpha_k \neq \beta_k$.
+Without loss of generality, let $\alpha_k &lt; \beta_k$.
+Therefore, $\alpha_k \le n$.
+Since $A$ is row-equivalent to $B$, they have the same row space.
+Therefore, $a_k$ is a linear combination of the rows of $B$.</p>
+<p>\[ a_k = \sum_{i=1}^n d_ib_i \]</p>
+<p>\begin{align}
+&amp; p &lt; k
+\\ &amp;\Rightarrow (\alpha_p = \beta_p \wedge \alpha_p &lt; \alpha_k \le n)
+\\ &amp;\Rightarrow (b_p[\alpha_p] = b_p[\beta_p] = 1 \wedge (\forall i \neq p, b_i[\alpha_p] = b_i[\beta_p] = 0))
+    \tag{by properties 1 and 2}
+\\ &amp;\Rightarrow \sum_{i=1}^m d_ib_i[\alpha_p] = d_p
+\\ &amp;\Rightarrow a_k[\alpha_p] = d_p = 0 \tag{by property 2}
+\end{align}</p>
+<p>Therefore, $i &lt; k \Rightarrow d_i = 0$.</p>
+<p>\begin{align}
+&amp; i \ge k
+\\ &amp;\Rightarrow \alpha_k &lt; \beta_k \le \beta_i
+\\ &amp;\Rightarrow b_i[\alpha_k] = 0 \tag{by property 3}
+\\ &amp;\Rightarrow 1 = a_k[\alpha_k] = \sum_{i=k}^m d_ib_i[\alpha_k] = \sum_{i=k}^m d_i0 = 0
+\\ &amp;\Rightarrow \bot
+\end{align}</p>
+<p>Therefore, our assumption that there is a smallest $k$ for which $\alpha_k \neq \beta_k$ is false.
+Therefore, $\alpha_i = \beta_i$ for all $i$.</p>
+<h3>Part 2 - $A$ and $B$ are the same</h3>
+<p>Let there be $p$ non-zero rows in both $A$ and $B$
+(they have the same non-zero rows because they have the same pivots).
+Since $A$ and $B$ have the same row space, every row of $A$ is a linear combination of the rows of $B$.</p>
+<p>\[ a_k = \sum_{i=1}^m d_ib_i = \sum_{i=1}^p d_ib_i \]</p>
+<p>\begin{align}
+&amp; 1 = a_k[\alpha_k] \tag{by property 1}
+\\ &amp;= a_k[\beta_k]
+\\ &amp;= \sum_{i=1}^p d_ib_i[\beta_k]
+\\ &amp;= d_k \tag{by properties 1 and 2}
+\end{align}</p>
+<p>\begin{align}
+&amp; 0 = a_k[\alpha_j] \textrm{ where } j \neq k \tag{by property 2}
+\\ &amp;= a_k[\beta_j]
+\\ &amp;= \sum_{i=1}^p d_ib_i[\beta_j]
+\\ &amp;= d_j \tag{by property 2}
+\end{align}</p>
+<p>\[ \forall k, a_k = \sum_{i=1}^p d_ib_i = b_k \]
+Therefore, $A = B$.</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rref-inv.html">
+            <span class="deptitle">RREF([A|I]) = [I|inv(A)] iff A is invertible</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-inv.html">
+            <span class="deptitle">Full-rank square matrix is invertible</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rank.html">
+            <span class="deptitle">Rank of a matrix</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/rank-homogenous.html">
+            <span class="deptitle">Rank of a homogenous system of linear equations</span>
+        </a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

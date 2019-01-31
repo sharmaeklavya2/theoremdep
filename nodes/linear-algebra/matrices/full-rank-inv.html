@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Full-rank square matrix is invertible - TheoremDep</title>
+    <meta name="description" content="Let A be an n by n matrix. Then rank(A) = n iff A has an inverse." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Full-rank square matrix is invertible</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rank.html">
+            <span class="deptitle">Rank of a matrix</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/unique-rref.html">
+            <span class="deptitle">RREF is unique</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inverse.html">
+            <span class="deptitle">Inverse of a matrix</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/rank-homogenous.html">
+            <span class="deptitle">Rank of a homogenous system of linear equations</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/mult-assoc.html">
+            <span class="deptitle">Matrix multiplication is associative</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv-matrix.html">
+            <span class="deptitle">Row equivalence matrix</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-square-rref-is-identity.html">
+            <span class="deptitle">Full-rank square matrix in RREF is the identity matrix</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $A$ be an $n$ by $n$ matrix. Then $\operatorname{rank}(A) = n$ iff $A$ has an inverse.</p>
+<h2>Proof of 'if' part</h2>
+<p>Let $A$ have an inverse $B$. Then $AB = BA = I_n$.</p>
+<p>$AX = 0$ is a homogeneous system of $n$ linear equations in $n$ variables.</p>
+<p>\[ AX = 0 \implies B(AX) = B0 \implies (BA)X = 0 \implies I_nX = 0 \implies X = 0 \]
+Therefore, $X = 0$ is the only solution to $AX = 0$.
+Therefore, $\operatorname{rank}(A) = n$.</p>
+<h2>Proof of 'only-if' part</h2>
+<p>Let $\operatorname{rank}(A) = n$.</p>
+<p>Since $\operatorname{RREF}(A)$ is row-equivalent to $A$,
+$\operatorname{RREF}(A) = RA$, where $R$ is an invertible matrix.</p>
+<p>Since $\operatorname{rank}(A) = n$, all rows of $\operatorname{RREF}(A) = RA$ are non-zero.
+Since $RA$ is a square matrix in RREF, $RA = I_n$.
+Since $R$ is invertible, all left inverses of $R$ are the same as all right inverses of $R$.
+Since $A$ is a right inverse of $R$, it is also a left inverse.
+Therefore, $AR = I_n = RA$, so $A$ is invertible.</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rref-inv.html">
+            <span class="deptitle">RREF([A|I]) = [I|inv(A)] iff A is invertible</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/product-equals-identity-implies-invertible.html">
+            <span class="deptitle">AB = I implies BA = I</span>
+        </a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

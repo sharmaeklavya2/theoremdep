@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Inverse of a matrix - TheoremDep</title>
-    <meta name="description" content="The inverse of matrix A is a matrix B such that AB = BA = I." />
+    <title>Row equivalence matrix - TheoremDep</title>
+    <meta name="description" content="If A and B are row equivalent, then there exists an invertible matrix R such that B = RA." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,17 +25,17 @@
     </form>
 </nav>
 <div id="main">
-<h1>Inverse of a matrix</h1>
+<h1>Row equivalence matrix</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
-            <span class="deptitle">Field</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv.html">
+            <span class="deptitle">Row equivalence of matrices</span>
         </a>
         </li>
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity.html">
-            <span class="deptitle">Identity matrix</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop-matrix.html">
+            <span class="deptitle">Elementary row operation is matrix pre-multiplication</span>
         </a>
         </li>
         <li>
@@ -43,24 +43,24 @@
             <span class="deptitle">Matrix multiplication is associative</span>
         </a>
         </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inverse-of-product.html">
+            <span class="deptitle">Inverse of product</span>
+        </a>
+        </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Let $F$ be a field and $A \in \mathbb{M}_{n, n}(F)$.</p>
-<p>If a matrix $L$ exists such that $LA = I_n$, then $L$ is a left inverse of $A$.
-If a matrix $R$ exists such that $AR = I_n$, then $R$ is a right inverse of $A$.
-If $A$ has both a left inverse and a right inverse,
-it can be proven that all left inverses and right inverses are identical.
-Therefore, such a matrix is simply called the inverse of $A$
-and is denoted as $A^{-1}$.</p>
-<p>A matrix whose inverse exists is called an invertible matrix.</p>
-<p>$AB = BA = I \Rightarrow$ $A$ and $B$ are inverses of each other.
-Therefore, $A = (A^{-1})^{-1}$.</p>
+<p>Let $A$ be row-equivalent to $B$.
+Then there exists an invertible matrix $R$ such that $B = RA$.</p>
 <h2>Proof</h2>
-<p>Suppose $A$ has a left inverse $L$ and a right inverse $R$.</p>
-<p>\[ L = LI_n = L(AR) = (LA)R = I_nR = R \]</p>
-<p>Hence, every left inverse is equal to every right inverse.
-Therefore, they are all equal.</p>
-<p>(It can actually be proven that a left inverse is also a right inverse).</p>
+<p>There exists a sequence of elementary row operations which transforms $A$ to $B$.
+Let $R_1, R_2, \ldots, R_p$ be the matrices associated with those operations.
+Let $R = R_pR_{p-1}\ldots R_2R_1$.
+Since each $R_i$ is invertible, $R$ is also invertible and
+$R^{-1} = (R_pR_{p-1}\ldots R_2R_1)^{-1} = R_1^{-1}R_2^{-1}\ldots R_p^{-1}$.</p>
+<p>Since $B$ is obtained by applying the operations $R_1, R_2, \ldots, R_p$,
+\[ B = R_p(\ldots(R_2(R_1(A)))\ldots) = RA \]
+by associativity of matrix multiplication</p>
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
     <ul class="deplist">
@@ -75,13 +75,8 @@ Therefore, they are all equal.</p>
         </a>
         </li>
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop-matrix.html">
-            <span class="deptitle">Elementary row operation is matrix pre-multiplication</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inverse-of-product.html">
-            <span class="deptitle">Inverse of product</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/row-equiv-have-same-solutions.html">
+            <span class="deptitle">Equations with row equivalent matrices have the same solution set</span>
         </a>
         </li>
     </ul>
