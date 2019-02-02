@@ -107,3 +107,13 @@ code {
 .no-deps {
     font-size: 1em;
 }
+.tree-collapse-js .index-heading:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+.collapsor-tree-node::after {
+    content: "…";
+}
+.collapsed-tree-node {
+    display: none;
+}
