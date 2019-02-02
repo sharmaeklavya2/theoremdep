@@ -27,15 +27,7 @@
 </nav>
 <div id="main">
 <h1>Integer Division Theorem</h1>
-<h2> Dependencies: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/misc/well-ordering-principle.html">
-            <span class="deptitle">Well-Ordering Principle</span>
-        </a>
-        <span class="reason">Used in proof</span>
-        </li>
-    </ul>
+<h2 class="no-deps"> Dependencies: None </h2>
 <div class="horizontal-rule"></div>
 <p>Let $a$ and $b$ be integers, with $b$ &gt; 0.
 Then there exist unique integers $q$ and $r$ such that $a = b*q + r$ and $0 ≤ r &lt; b$.</p>
@@ -45,7 +37,7 @@ Then there exist unique integers $q$ and $r$ such that $a = b*q + r$ and $0 ≤ 
 <p>If $a &gt; 0$, $S$ is non-empty for $k=0$.
 If $a \le 0$, $S$ is non-empty for $k=2a$.
 Since $S$ is a non-empty set of non-negative integers,
-by well-ordering principle $S$ has a smallest element.</p>
+$S$ has a smallest element.</p>
 <p>Let $r = \min{S}$. Then $\exists q$ such that $r = a - bq$.
 Assume (for proof by contradiction), that $r \ge b$.
 Then $r-b = a - (b+1)q \in S$.
@@ -81,6 +73,12 @@ Therefore, $r_1 = r_2$ and $q_1 = q_2$. This proves the uniqueness of $q$ and $r
         </a>
         </li>
     </ul>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 0</li>
+<li>Number of transitive dependencies: 0</li>
+<li>Number of transitive reverse dependencies: 30</li>
+</ul>
 </div>
 </body>
 </html>

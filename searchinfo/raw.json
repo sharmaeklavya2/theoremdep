@@ -5,13 +5,6 @@
 ],
 "corpus": [
 {
-"type": "axiom",
-"title": "Well-Ordering Principle",
-"description": "The well-ordering principle states that every non-empty set of non-negative integers contains a least element.",
-"uci": "/misc/well-ordering-principle",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/well-ordering-principle.html"
-},
-{
 "type": "theorem",
 "title": "Existence of Modular Inverse",
 "description": "Modular inverse of a mod n exists iff gcd(a, n) = 1",
