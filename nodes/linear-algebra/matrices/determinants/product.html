@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Determinant of product is product of determinants - TheoremDep</title>
+    <meta name="description" content="|AB| = |A||B|" />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Determinant of product is product of determinants</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/rank.html">
+            <span class="deptitle">A matrix is full-rank iff its determinant is non-0</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-inv.html">
+            <span class="deptitle">Full-rank square matrix is invertible</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/product-equals-identity-implies-invertible.html">
+            <span class="deptitle">AB = I implies BA = I</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-square-rref-is-identity.html">
+            <span class="deptitle">Full-rank square matrix in RREF is the identity matrix</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop-matrix.html">
+            <span class="deptitle">Elementary row operation is matrix pre-multiplication</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/mult-assoc.html">
+            <span class="deptitle">Matrix multiplication is associative</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/upper-triangular.html">
+            <span class="deptitle">Determinant of upper triangular matrix</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $A$ and $B$ be $n$ by $n$ matrices.
+Then $|AB| = |A||B|$.</p>
+<h2>Proof</h2>
+<h3>Case 1: $|A| = 0$</h3>
+<p>Assume $|AB| \neq 0$.
+\begin{align}
+&amp; |AB| \neq 0
+\\ &amp;\Rightarrow \operatorname{rank}(AB) = n
+\\ &amp;\Rightarrow (AB)^{-1} \textrm{ exists}
+\\ &amp;\Rightarrow I = AB(AB)^{-1} \textrm{ exists}
+\\ &amp;\Rightarrow B(AB)^{-1} \textrm{ is a right inverse of } A
+\\ &amp;\Rightarrow A \textrm{ is invertible}
+\\ &amp;\Rightarrow \operatorname{rank}(A) = n
+\\ &amp;\Rightarrow |A| \neq 0
+\\ &amp;\Rightarrow \bot
+\end{align}</p>
+<p>Therefore, $|AB| = 0 = |A||B|$.</p>
+<h3>Case 2: $|A| \neq 0$</h3>
+<p>\[ |A| \neq 0 \iff \operatorname{rank}(A) = n \iff \operatorname{RREF}(A) = I \]</p>
+<p>Therefore, $A$ is row-equivalent to $I$.
+Let $[R_1, R_2, \ldots, R_p]$ be the sequence of matrices of the elementary row operations which convert $I$ to $A$.
+Let $[r_1, r_2, \ldots, r_p]$ be the determinant constants associated with those operations.</p>
+<p>\begin{align}
+|AB| &amp;= |R_p(R_{p-1}(\ldots(R_1(I))\ldots)) B|
+\\ &amp;= |R_p(R_{p-1}(\ldots(R_1(B))\ldots))| \tag{Matrix multiplication is associative}
+\\ &amp;= r_p(r_{p-1}(\ldots(r_1|B|)\ldots))
+\\ &amp;= (r_pr_{p-1}\ldots r_1)|B|
+\\ &amp;= (r_pr_{p-1}\ldots r_1)|I||B| \tag{$I$ is upper-triangular, so $|I| = 1$}
+\\ &amp;= (r_p(r_{p-1}(\ldots(r_1|I|)\ldots)))|B|
+\\ &amp;= |(R_p(R_{p-1}(\ldots(R_1(I))\ldots)))||B|
+\\ &amp;= |A||B|
+\end{align}</p>
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 12</li>
+<li>Number of transitive dependencies: 36</li>
+<li>Number of transitive reverse dependencies: 0</li>
+</ul>
+</div>
+</body>
+</html>

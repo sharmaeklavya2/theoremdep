@@ -40,11 +40,12 @@
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Let $A$ be an $n$ by $n$ matrix.
-Let $A$ be in RREF and all rows of $A$ be non-zero.
-Then $A = I_n$ (identity matrix).</p>
+<p>Let $A$ be an $n$ by $n$ matrix in RREF.
+Then all rows of $A$ are non-zero iff A = I_n$ (identity matrix).</p>
 <h2>Proof</h2>
-<p>Let $\alpha_i$ be the smallest value of $j$ such that $A[i, j] \neq 0$.
+<p>If $A$ is the identity matrix, all rows of $A$ are non-zero.</p>
+<p>Let all rows of $A$ be non-zero.
+Let $\alpha_i$ be the smallest value of $j$ such that $A[i, j] \neq 0$.
 Since $A$ is in RREF, $\alpha_i &lt; \alpha_{i+1}$.
 Therefore, $1 \le \alpha_1 &lt; \alpha_2 &lt; \ldots &lt; \alpha_n \le n$.
 Therefore, $\alpha_i = i$.</p>
@@ -64,12 +65,22 @@ and there is only one non-zero entry in the $\alpha_i^{\textrm{th}}$ column.</p>
             <span class="deptitle">Full-rank square matrix is invertible</span>
         </a>
         </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/rank.html">
+            <span class="deptitle">A matrix is full-rank iff its determinant is non-0</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/product.html">
+            <span class="deptitle">Determinant of product is product of determinants</span>
+        </a>
+        </li>
     </ul>
 <h2> Info: </h2>
 <ul>
 <li>Depth: 4</li>
 <li>Number of transitive dependencies: 6</li>
-<li>Number of transitive reverse dependencies: 3</li>
+<li>Number of transitive reverse dependencies: 5</li>
 </ul>
 </div>
 </body>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Reduced Row Echelon Form (RREF) - TheoremDep</title>
-    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <title>Submatrix - TheoremDep</title>
+    <meta name="description" content="A submatrix of a matrix M is a matrix obtained by removing a few rows and/or columns of M." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,7 +25,7 @@
     </form>
 </nav>
 <div id="main">
-<h1>Reduced Row Echelon Form (RREF)</h1>
+<h1>Submatrix</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
@@ -35,24 +35,24 @@
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>A matrix is in Reduced Row Echelon Form (RREF) iff it satisfies all the following conditions:</p>
+<p>Let $A$ be a matrix.
+A submatrix of $A$ is a matrix obtained by removing certain rows and/or columns from $A$.</p>
 <ul>
-<li>The first nonzero entry in each row is 1.</li>
-<li>Each successive row has its first nonzero entry in a later column.</li>
-<li>All entries above and below the first nonzero entry of each row are zero.</li>
-<li>All rows which only have zeros are at the bottom.</li>
+<li>The submatrix $A_{S, T}$ or $A[S, T]$ is the matrix obtained by
+keeping only the rows which are in $S$ and columns which are in $T$.</li>
+<li>The submatrix $A_{i_1..i_2, j_1..j_2}$ or $A[i_1..i_2, j_1..j_2]$ is the matrix obtained by
+keeping only the rows numbered from $i_1$ to $i_2$ and columns numbered from $j_1$ to $j_2$.</li>
+<li>The submatrix $A_{-S, -T}$ or $A[-S, -T]$ or $A_{\backslash S, \backslash T}$ or $A[\backslash S, \backslash T]$
+is the matrix obtained by removing rows which are in $S$ and columns which are in $T$.</li>
+<li>The submatrix $A_{-i, -j}$ or $A[-i, -j]$ or $A_{\backslash i, \backslash j}$ or $A[\backslash i, \backslash j]$
+is the matrix obtained by removing the $i^{\textrm{th}}$ row and $j^{\textrm{th}}$ column from $A$.</li>
 </ul>
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-square-rref-is-identity.html">
-            <span class="deptitle">Full-rank square matrix in RREF is the identity matrix</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/unique-rref.html">
-            <span class="deptitle">RREF is unique</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/determinant.html">
+            <span class="deptitle">Determinant</span>
         </a>
         </li>
     </ul>
@@ -60,7 +60,7 @@
 <ul>
 <li>Depth: 3</li>
 <li>Number of transitive dependencies: 4</li>
-<li>Number of transitive reverse dependencies: 17</li>
+<li>Number of transitive reverse dependencies: 7</li>
 </ul>
 </div>
 </body>

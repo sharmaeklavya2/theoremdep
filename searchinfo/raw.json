@@ -920,6 +920,13 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-square-rref-is-identity.html"
 },
 {
+"type": "def",
+"title": "Submatrix",
+"description": "A submatrix of a matrix M is a matrix obtained by removing a few rows and/or columns of M.",
+"uci": "/linear-algebra/matrices/submatrix",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/submatrix.html"
+},
+{
 "type": "theorem",
 "title": "RREF([A|I]) = [I|inv(A)] iff A is invertible",
 "description": "This is an algorithm for finding the inverse of a matrix by calculating RREF.",
@@ -1085,6 +1092,53 @@
 "description": "[A|B] is the horizontal stacking of matrices. [A/B] is the vertical stacking of matrices.",
 "uci": "/linear-algebra/matrices/stacking/stacking",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/stacking.html"
+},
+{
+"type": "theorem",
+"title": "Determinant after elementary row operation",
+"description": "Applying an elementary row operation on a matrix multiplies its determinant by a number which depends only on the type of the operation, not on the matrix.",
+"uci": "/linear-algebra/matrices/determinants/elementary-rowop",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/elementary-rowop.html"
+},
+{
+"type": "theorem",
+"title": "Swapping last 2 rows of a matrix negates its determinant",
+"uci": "/linear-algebra/matrices/determinants/last-2-rows-swap",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/last-2-rows-swap.html"
+},
+{
+"type": "def",
+"title": "Determinant",
+"description": "A determinant is a number associated with a square matrix.",
+"uci": "/linear-algebra/matrices/determinants/determinant",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/determinant.html"
+},
+{
+"type": "theorem",
+"title": "Determinant of scalar product of matrix",
+"description": "|cA| = c^n|A|",
+"uci": "/linear-algebra/matrices/determinants/scalar-mult",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/scalar-mult.html"
+},
+{
+"type": "theorem",
+"title": "A matrix is full-rank iff its determinant is non-0",
+"uci": "/linear-algebra/matrices/determinants/rank",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/rank.html"
+},
+{
+"type": "theorem",
+"title": "Determinant of product is product of determinants",
+"description": "|AB| = |A||B|",
+"uci": "/linear-algebra/matrices/determinants/product",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/product.html"
+},
+{
+"type": "theorem",
+"title": "Determinant of upper triangular matrix",
+"description": "The determinant of an upper triangular matrix is the product of diagonal elements.",
+"uci": "/linear-algebra/matrices/determinants/upper-triangular",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/upper-triangular.html"
 },
 {
 "type": "theorem",

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Reduced Row Echelon Form (RREF) - TheoremDep</title>
+    <title>Swapping last 2 rows of a matrix negates its determinant - TheoremDep</title>
     <meta name="description" content="Track dependencies between theorems and definitions." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
@@ -25,42 +25,39 @@
     </form>
 </nav>
 <div id="main">
-<h1>Reduced Row Echelon Form (RREF)</h1>
+<h1>Swapping last 2 rows of a matrix negates its determinant</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
-            <span class="deptitle">Matrix</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/determinant.html">
+            <span class="deptitle">Determinant</span>
         </a>
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>A matrix is in Reduced Row Echelon Form (RREF) iff it satisfies all the following conditions:</p>
-<ul>
-<li>The first nonzero entry in each row is 1.</li>
-<li>Each successive row has its first nonzero entry in a later column.</li>
-<li>All entries above and below the first nonzero entry of each row are zero.</li>
-<li>All rows which only have zeros are at the bottom.</li>
-</ul>
+<p>Let $A$ be an $n$ by $n$ matrix.
+Let $B$ be the matrix obtained by swapping the last 2 rows of $A$
+($\langle n-1 \rangle \leftrightarrow \langle n \rangle$).</p>
+<p>Then $|B| = -|A|$.</p>
+<h2>Proof</h2>
+<p>Proof can be found in the book:
+'Elementary Linear Algebra', 4th Edition
+by Stephen Andrilli and David Hecker,
+in Appendix A, Theorem 3.3, page 648.</p>
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-square-rref-is-identity.html">
-            <span class="deptitle">Full-rank square matrix in RREF is the identity matrix</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/unique-rref.html">
-            <span class="deptitle">RREF is unique</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/elementary-rowop.html">
+            <span class="deptitle">Determinant after elementary row operation</span>
         </a>
         </li>
     </ul>
 <h2> Info: </h2>
 <ul>
-<li>Depth: 3</li>
-<li>Number of transitive dependencies: 4</li>
-<li>Number of transitive reverse dependencies: 17</li>
+<li>Depth: 5</li>
+<li>Number of transitive dependencies: 6</li>
+<li>Number of transitive reverse dependencies: 4</li>
 </ul>
 </div>
 </body>

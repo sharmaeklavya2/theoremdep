@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Determinant of upper triangular matrix - TheoremDep</title>
+    <meta name="description" content="The determinant of an upper triangular matrix is the product of diagonal elements." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Determinant of upper triangular matrix</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/determinant.html">
+            <span class="deptitle">Determinant</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $A$ be an $n$ by $n$ matrix.
+If $A$ is upper triangular, which means that $j &lt; i \Rightarrow A[i, j] = 0$, then</p>
+<p>\[ |A| = \prod_{i=1}^n A[i, i] \]</p>
+<h2>Proof by induction</h2>
+<p>Let $P(k): |A[1..k, 1..k]| = \prod_{i=1}^k A[i, i]$</p>
+<p>Base case:
+\[ |A[1..1, 1..1]| = A[1, 1] \implies P(1) \]</p>
+<p>Inductive step:</p>
+<p>Let $2 \le k \le n$. Assume $P(k-1)$ is true.</p>
+<p>Let $B = A[1..k, 1..k]$. Therefore, $(1 \le i \le k \wedge 1 \le j \le k) \Rightarrow B[i, j] = A[i, j]$.</p>
+<p>\begin{align}
+&amp; |B|
+\\ &amp;= \sum_{i=1}^k (-1)^{k+i} B[k, i] |B[-k, -i]|
+\\ &amp;= (-1)^{k+k} B[k, k] |B[-k, -k]| \tag{$\because B[k, i] = A[k, i] = 0$ for $i &lt; k$}
+\\ &amp;= A[k, k] |A[1..(k-1), 1..(k-1)]|
+\\ &amp;= A[k, k] \prod_{i=1}^{k-1} A[i, i] \tag{$\because P(k-1)$}
+\\ &amp;= \prod_{i=1}^{k} A[i, i]
+\\ &amp;\Rightarrow P(k)
+\end{align}</p>
+<p>Therefore, $P(n)$ is true for all $1 \le k \le n$ by mathematical induction.
+This means $|A| = \prod_{i=1}^n A[i, i]$.</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/rank.html">
+            <span class="deptitle">A matrix is full-rank iff its determinant is non-0</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/product.html">
+            <span class="deptitle">Determinant of product is product of determinants</span>
+        </a>
+        </li>
+    </ul>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 5</li>
+<li>Number of transitive dependencies: 6</li>
+<li>Number of transitive reverse dependencies: 2</li>
+</ul>
+</div>
+</body>
+</html>

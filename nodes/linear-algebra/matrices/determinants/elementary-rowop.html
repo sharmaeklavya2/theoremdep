@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Determinant after elementary row operation - TheoremDep</title>
+    <meta name="description" content="Applying an elementary row operation on a matrix multiplies its determinant by a number which depends only on the type of the operation, not on the matrix." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Determinant after elementary row operation</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop.html">
+            <span class="deptitle">Elementary row operation</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/determinant.html">
+            <span class="deptitle">Determinant</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/last-2-rows-swap.html">
+            <span class="deptitle">Swapping last 2 rows of a matrix negates its determinant</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $A$ be an $n$ by $n$ matrix.
+Let $B$ be a matrix obtained by an elementary row operation on $A$.
+Then $|B| = r|A|$, where $r$ is a non-0 scalar. Specifically,</p>
+<ul>
+<li>$\langle i \rangle \leftarrow c\langle i \rangle$, where $c \neq 0$: $|B| = c|A|$.</li>
+<li>$\langle i \rangle \leftarrow \langle i \rangle + c\langle j \rangle$, where $i \neq j$: $|B| = |A|$.</li>
+<li>$\langle i \rangle \leftrightarrow \langle j \rangle$, where $i \neq j$: $|B| = -|A|$.</li>
+</ul>
+<h2>Proof</h2>
+<h3>Part 1: $\langle i \rangle \leftarrow c\langle i \rangle$</h3>
+<p>It can be proved using induction that $|B| = c|A|$ for this row operation.
+The base case, where $A$ is a 1 by 1 matrix, is trivial to prove.</p>
+<p>Induction hypothesis:
+Assume that all $n-1$ by $n-1$ matrices satisfy $|B| = c|A|$,
+where $B$ is a matrix obtained by an operation of the type
+$\langle i \rangle \leftarrow c\langle i \rangle$ on $A$.</p>
+<ul>
+<li>
+<p>Case 1: $i = n$
+\begin{align}
+&amp; |B|
+\\ &amp;= \sum_{j=1}^n (-1)^{n+i} B[n, i] |B[-n, -i]|
+\\ &amp;= \sum_{j=1}^n (-1)^{n+i} cA[n, i] |A[-n, -i]|
+\\ &amp;= c \left(\sum_{j=1}^n (-1)^{n+i} A[n, i] |A[-n, -i]| \right) \tag{distributivity}
+\\ &amp;= c |A|
+\end{align}</p>
+</li>
+<li>
+<p>Case 2: $i \neq n$
+\begin{align}
+&amp; |B|
+\\ &amp;= \sum_{j=1}^n (-1)^{n+i} B[n, i] |B[-n, -i]|
+\\ &amp;= \sum_{j=1}^n (-1)^{n+i} A[n, i] (c|A[-n, -i]|) \tag{by induction hypothesis}
+\\ &amp;= c \left(\sum_{j=1}^n (-1)^{n+i} A[n, i] |A[-n, -i]| \right) \tag{distributivity}
+\\ &amp;= c |A|
+\end{align}</p>
+</li>
+</ul>
+<p>Therefore, $|B| = c|A|$ for all $n$ by induction.</p>
+<h3>Part 3: $\langle i \rangle \leftrightarrow \langle j \rangle, \textrm{ where } i \neq j$</h3>
+<p>It is already known that $|B| = -|A|$ for
+$\langle n-1 \rangle \leftrightarrow \langle n \rangle$</p>
+<p>It can be proved using induction that $|B| = -|A|$ for
+$\langle i \rangle \leftrightarrow \langle j \rangle$, where $i \neq j$.</p>
+<p>When $n = 2$, $\langle n-1 \rangle \leftrightarrow \langle n \rangle$
+is the only row operation which swaps rows, for which we have already proved that $|B| = -|A|$.</p>
+<p>Without loss of generality, assume that $i &lt; j$.</p>
+<p>Induction hypothesis:
+For $n \ge 3$, assume that all $n-1$ by $n-1$ matrices satisfy $|B| = -|A|$,
+where $B$ is a matrix obtained by the operation
+$\langle i \rangle \leftrightarrow \langle j \rangle$ on $A$.</p>
+<ul>
+<li>
+<p>Case 1: $i &lt; j &lt; n$.
+\begin{align}
+&amp; |B|
+\\ &amp;= \sum_{j=1}^n (-1)^{n+i} B[n, i] |B[-n, -i]|
+\\ &amp;= \sum_{j=1}^n (-1)^{n+i} A[n, i] (-|A[-n, -i]|) \tag{by induction hypothesis}
+\\ &amp;= - \left(\sum_{j=1}^n (-1)^{n+i} A[n, i] |A[-n, -i]| \right) \tag{distributivity}
+\\ &amp;= -|A|
+\end{align}</p>
+</li>
+<li>
+<p>Case 2: $i &lt; j = n$</p>
+<p>The operation $\langle i \rangle \leftrightarrow \langle n \rangle$ is the composition of these 3 operations:</p>
+<ul>
+<li>$\langle i \rangle \leftrightarrow \langle n-1 \rangle$</li>
+<li>$\langle n-1 \rangle \leftrightarrow \langle n \rangle$</li>
+<li>$\langle i \rangle \leftrightarrow \langle n-1 \rangle$</li>
+</ul>
+<p>For the above operations, we have already proved that $|B| = -|A|$.
+Therefore, $|B| = -(-(-|A|)) = -|A|$ for $\langle i \rangle \leftrightarrow \langle n \rangle$.</p>
+</li>
+</ul>
+<p>Therefore, $|B| = -|A|$ for all $n$ by induction.</p>
+<h3>Part 4: $\langle i \rangle \leftarrow \langle i \rangle + c\langle j \rangle, \textrm{ where } i \neq j$</h3>
+<p>It can be proved using induction that $|B| = |A|$ for this row operation.</p>
+<p>Base case $n=2$:</p>
+<p>Let $A = \begin{bmatrix}a &amp; b \\ c &amp; d \end{bmatrix}$.</p>
+<p>For the operation $\langle 2 \rangle \leftarrow \langle 2 \rangle + k\langle 1 \rangle$:
+\[ |B|
+= \begin{vmatrix}a &amp; b \\ c + ka &amp; d + kb \end{vmatrix}
+= (d+kb)a - (c+ka)b = ad - bc
+= \begin{vmatrix}a &amp; b \\ c &amp; d \end{vmatrix}
+= |A| \]</p>
+<p>The operation $\langle 1 \rangle \leftarrow \langle 1 \rangle + k\langle 2 \rangle$ is equivalent to the composition of:</p>
+<ul>
+<li>$\langle 1 \rangle \leftrightarrow \langle 2 \rangle$</li>
+<li>$\langle 2 \rangle \leftarrow \langle 2 \rangle + k\langle 1 \rangle$:</li>
+<li>$\langle 1 \rangle \leftrightarrow \langle 2 \rangle$</li>
+</ul>
+<p>The first and third operations both change the sign of the determinant.
+So the operation $\langle 1 \rangle \leftarrow \langle 1 \rangle + k\langle 2 \rangle$ has no effect on the determinant.</p>
+<p>Inductive step:</p>
+<p>For $n \ge 3$, for all $n-1$ by $n-1$ matrices, $|B| = |A|$
+where $B$ is obtained from $A$ by the operation
+$\langle i \rangle \leftarrow \langle i \rangle + k\langle j \rangle$.</p>
+<ul>
+<li>
+<p>Case 1: $i &lt; n \wedge j &lt; n$
+\begin{align}
+&amp; |B|
+\\ &amp;= \sum_{j=1}^n (-1)^{n+i} B[n, i] |B[-n, -i]|
+\\ &amp;= \sum_{j=1}^n (-1)^{n+i} A[n, i] |A[-n, -i]| \tag{by induction hypothesis}
+\\ &amp;= |A|
+\end{align}</p>
+</li>
+<li>
+<p>Case 2: $i = n \wedge j &lt; n$</p>
+<p>$\langle n \rangle \leftarrow \langle n \rangle + c\langle j \rangle$ is a composition of three operations:</p>
+<ul>
+<li>$\langle k \rangle \leftrightarrow \langle n \rangle$</li>
+<li>$\langle k \rangle \leftarrow \langle n-1 \rangle + c\langle j \rangle$</li>
+<li>$\langle k \rangle \leftrightarrow \langle n \rangle$</li>
+</ul>
+<p>Here $k &lt; n$ and $k \neq j$. Such a $k$ exists since $n \ge 3$.
+The first and third operations change the sign of the determinant, so overall the determinant remains unchanged.</p>
+</li>
+<li>
+<p>Case 3: $i &lt; n \wedge j = n$</p>
+<p>$\langle i \rangle \leftarrow \langle i \rangle + c\langle n \rangle$ is a composition of three operations:</p>
+<ul>
+<li>$\langle k \rangle \leftrightarrow \langle n \rangle$</li>
+<li>$\langle i \rangle \leftarrow \langle i \rangle + c\langle k \rangle$</li>
+<li>$\langle k \rangle \leftrightarrow \langle n \rangle$</li>
+</ul>
+<p>Here $k &lt; n$ and $k \neq i$. Such a $k$ exists since $n \ge 3$.
+The first and third operations change the sign of the determinant, so overall the determinant remains unchanged.</p>
+</li>
+</ul>
+<p>Therefore, $|B| = |A|$ for all $n$ by induction.</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/scalar-mult.html">
+            <span class="deptitle">Determinant of scalar product of matrix</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/rank.html">
+            <span class="deptitle">A matrix is full-rank iff its determinant is non-0</span>
+        </a>
+        </li>
+    </ul>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 6</li>
+<li>Number of transitive dependencies: 8</li>
+<li>Number of transitive reverse dependencies: 3</li>
+</ul>
+</div>
+</body>
+</html>
