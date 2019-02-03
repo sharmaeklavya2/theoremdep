@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eigenspace - TheoremDep</title>
+    <meta name="description" content="Let A be a matrix and λ be an eigenvalue of A. Then E(λ) is the vector space of all solutions to Ax = λx." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Eigenspace</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenvector.html">
+            <span class="deptitle">Eigenvalues and Eigenvectors</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/subspace-condition.html">
+            <span class="deptitle">Condition for being a subspace</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $T: V \mapsto V$ be a linear operator.
+Let $\lambda$ be an eigenvalue of $T$.</p>
+<p>Let $E_{\lambda} = \{x \in V: T(x) = \lambda x\}$.
+$E_{\lambda}$ is called the eigenspace for $(T, \lambda)$.</p>
+<p>$E_{\lambda}$ is a subspace of $V$.</p>
+<h2>Proof</h2>
+<p>\[ T(0) = T(0+0) = T(0) + T(0) \implies T(0) = 0 = \lambda 0 \implies 0 \in E_{\lambda} \]</p>
+<p>\[ x, y \in E_{\lambda}
+\implies T(x+y) = T(x) + T(y) = \lambda x + \lambda y = \lambda (x + y)
+\implies x + y \in E_{\lambda} \]</p>
+<p>\[ x \in E_{\lambda}
+\implies T(cx) = cT(x) = c(\lambda x) = \lambda (cx)
+\implies cx \in E_{\lambda} \]</p>
+<p>Since $E_{\lambda}$ is a non-empty subset of $V$ which is closed under addition and scalar multiplication,
+it is a subspace of $V$.</p>
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 17</li>
+<li>Number of transitive dependencies: 57</li>
+<li>Number of transitive reverse dependencies: 0</li>
+</ul>
+</div>
+</body>
+</html>

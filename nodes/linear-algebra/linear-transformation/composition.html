@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Composition of linear transformations - TheoremDep</title>
+    <meta name="description" content="Composition of linear transformations is a linear transformation." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Composition of linear transformations</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/linear-transformation.html">
+            <span class="deptitle">Linear transformation</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $S: U \mapsto V$ and $T: V \mapsto W$ be linear transformations.
+Then $ST$ is a linear transformation from $U$ to $W$.</p>
+<h2>Proof</h2>
+<p>\[ (ST)(u_1 + u_2) = S(T(u_1 + u_2)) = S(T(u_1) + T(u_2)) = S(T(u_1)) + S(T(u_2)) = (ST)(u_1) + (ST)(u_2) \]
+\[ (ST)(cu) = S(T(cu)) = S(cT(u)) = cS(T(u)) = c(ST)(u) \]</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/canonical-decomposition.html">
+            <span class="deptitle">Canonical decomposition of a linear transformation</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/isomorphism-equiv.html">
+            <span class="deptitle">Vector space isomorphism is an equivalence relation</span>
+        </a>
+        </li>
+    </ul>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 5</li>
+<li>Number of transitive dependencies: 5</li>
+<li>Number of transitive reverse dependencies: 8</li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Basis of range of linear transformation - TheoremDep</title>
+    <meta name="description" content="If P is a basis of the kernel and P union Q is a basis of U, then T(Q) is a basis of T(U)." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Basis of range of linear transformation</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/kernel-is-subspace.html">
+            <span class="deptitle">Kernel of linear transformation is subspace of domain</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/range-is-subspace.html">
+            <span class="deptitle">Range of linear transformation is subspace of codomain</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/expand-linindep-to-basis.html">
+            <span class="deptitle">Linearly independent set can be expanded into a basis</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $T: U \mapsto V$ be a linear transformation with kernel $K$
+where $U$ has a finite basis of size $n$.</p>
+<p>Let $P = \{u_1, u_2, \ldots, u_k\}$ be a basis of $K$.
+Since $P$ is a linearly independent subset of $U$,
+it can be expanded to form a basis of $U$
+(this also explains why $P$ should be finite).
+Let $Q = \{u_{k+1}, \ldots, u_n\}$ such that $P \cup Q$ is a basis of $U$.</p>
+<p>Then $T(Q)$ is a basis of $T(U)$.
+Consequently, $\operatorname{dim}(T(U)) = |Q| = n-k$.</p>
+<h2>Proof</h2>
+<p>\begin{align}
+&amp; \sum_{i=k+1}^n a_iT(u_i) = 0
+\\ &amp;\Rightarrow T\left(\sum_{i=k+1}^n a_iu_i\right) = 0
+\\ &amp;\Rightarrow \sum_{i=k+1}^n a_iu_i \in K
+\\ &amp;\Rightarrow \sum_{i=k+1}^n a_iu_i = \sum_{i=1}^k (-a_i)u_i \tag{for some $a_1, a_2, \ldots, a_k$}
+\\ &amp;\Rightarrow \sum_{i=1}^n a_iu_i = 0
+\\ &amp;\Rightarrow a_i = 0 \forall i
+\end{align}
+Therefore, $T(Q)$ is linearly independent.</p>
+<p>\begin{align}
+u \in U &amp;\Rightarrow u = \sum_{i=1}^n a_iu_i \tag{for some $a_1, a_2, \ldots, a_n$}
+\\ &amp;\Rightarrow T(u) = T\left(\sum_{i=1}^n a_iu_i \right)
+\\ &amp;\Rightarrow T(u) = \sum_{i=1}^n a_iT(u_i)
+\\ &amp;\Rightarrow T(u) = \sum_{i=k+1}^n a_iT(u_i)
+\\ &amp;\Rightarrow T(u) \in \operatorname{span}(T(Q))
+\end{align}</p>
+<p>Therefore, $T(Q)$ spans $T(U)$.
+Therefore, $T(Q)$ is a basis of $T(U)$.</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/isomorphic-dimension.html">
+            <span class="deptitle">Vector spaces are isomorphic iff their dimensions are same</span>
+        </a>
+        </li>
+    </ul>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 13</li>
+<li>Number of transitive dependencies: 44</li>
+<li>Number of transitive reverse dependencies: 7</li>
+</ul>
+</div>
+</body>
+</html>

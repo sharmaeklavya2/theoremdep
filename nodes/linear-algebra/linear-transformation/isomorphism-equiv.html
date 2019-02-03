@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vector space isomorphism is an equivalence relation - TheoremDep</title>
+    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Vector space isomorphism is an equivalence relation</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/composition.html">
+            <span class="deptitle">Composition of linear transformations</span>
+        </a>
+        </li>
+        <li>
+        <span class="deptitleuci missing">/misc/composition-of-bijections-is-a-bijection</span>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Vector space isomorphism is an equivalence relation.</p>
+<p>Also, inverse of an isomorphism is an isomorphism
+and composition of isomorphisms is an isomorphism.</p>
+<h2>Proof</h2>
+<ul>
+<li>
+<p>Reflexive:
+Let $T: U \mapsto U$ be the bijection $T(u) = u$.
+Then $T(u_1+u_2) = u_1 + u_2 = T(u_1) + T(u_2)$ and $T(cu) = cu = cT(u)$.
+Therefore, $T$ is an isomorphism. Therefore, $U$ is isomorphic to $U$.</p>
+</li>
+<li>
+<p>Symmetric:</p>
+<p>Let $T: U \mapsto V$ be an isomorphism.
+Therefore, $T^{-1}$ exists and is a bijection.</p>
+<p>Let $v_1, v_2 \in V$.
+\begin{align}
+&amp; (u_1 = T^{-1}(v_1) \wedge u_2 = T^{-1}(v_2))
+\\ &amp;\Rightarrow (T(u_1) = v_1 \wedge T(u_2) = v_2)
+\\ &amp;\Rightarrow T(u_1+u_2) = v_1+v_2
+\\ &amp;\Rightarrow T^{-1}(v_1+v_2) = u_1+u_2 = T^{-1}(v_1) + T^{-1}(v_2)
+\end{align}</p>
+<p>Let $v \in V$.
+\[ u = T^{-1}(v) \Rightarrow T(u) = v \Rightarrow cv = cT(u) = T(cu)
+\Rightarrow T^{-1}(cv) = cu = cT^{-1}(v) \]</p>
+<p>Therefore, $T^{-1}$ is a linear transformation.
+Therefore, $V$ is isomorphic to $U$.</p>
+</li>
+<li>
+<p>Transitive:</p>
+<p>Let $S: U \mapsto V$ and $T: V \mapsto W$ be isomorphisms.
+Therefore, $ST$ is a bijection and a linear transformation.
+Therefore, $U$ is isomorphic to $W$.</p>
+</li>
+</ul>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/canonical-decomposition.html">
+            <span class="deptitle">Canonical decomposition of a linear transformation</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/isomorphic-dimension.html">
+            <span class="deptitle">Vector spaces are isomorphic iff their dimensions are same</span>
+        </a>
+        </li>
+    </ul>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 6</li>
+<li>Number of transitive dependencies: 7</li>
+<li>Number of transitive reverse dependencies: 7</li>
+</ul>
+</div>
+</body>
+</html>

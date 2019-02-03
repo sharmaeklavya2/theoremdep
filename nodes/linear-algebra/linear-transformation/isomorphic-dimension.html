@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vector spaces are isomorphic iff their dimensions are same - TheoremDep</title>
+    <meta name="description" content="Two vector spaces are isomorphic iff they have the same dimension." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Vector spaces are isomorphic iff their dimensions are same</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/linear-transformation.html">
+            <span class="deptitle">Linear transformation</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/all-bases-have-same-size.html">
+            <span class="deptitle">All bases of a vector space have the same size</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/basis-of-range.html">
+            <span class="deptitle">Basis of range of linear transformation</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/kernel-is-subspace.html">
+            <span class="deptitle">Kernel of linear transformation is subspace of domain</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/unique-repr.html">
+            <span class="deptitle">Unique linear combination of basis</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/isomorphism-equiv.html">
+            <span class="deptitle">Vector space isomorphism is an equivalence relation</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $U$ and $V$ be finite-dimensional vector spaces.
+Then $U$ and $V$ are isomorphic iff $U$ and $V$ have the same dimension.</p>
+<p>Furthermore, if $U$ and $V$ have the same dimension and $[x_1, x_2, \ldots, x_n]$
+is a basis of $U$ and $[y_1, y_2, \ldots, y_n]$ is a basis of $V$,
+then $T\left(\sum_{i=1}^n a_ix_i \right) = \sum_{i=1}^n a_iy_i$ is an isomorphism from $U$ to $V$.</p>
+<p>Furthermore, if $U$ and $V$ are isomorphic and one of them is finite dimensional,
+then the other is also finite dimensional.</p>
+<h2>Proof of 'only-if' part</h2>
+<p>Let $U$ and $V$ be isomorphic.
+Assume that $U$ is finite dimensional.
+Let $T: U \mapsto V$ be an isomorphism.
+Let $K$ be the kernel of $T$.</p>
+<p>\[ T(0) = T(0+0) = T(0) + T(0) \implies T(0) = 0 \implies 0 \in K \]</p>
+<p>Since $T$ is one-to-one, $K = \{0\}$.
+Therefore, $\{\}$ is a basis for $K$.</p>
+<p>Let $S$ be a basis of $U$. Therefore, $T(S)$ is a basis of $T(U)$.
+Since $T$ is onto, $V = T(U)$.
+Therefore, $T(S)$ is a basis of $V$.</p>
+<p>Therefore, $\operatorname{dim}(V) = |T(S)| = |S| = \operatorname{dim}(U)$.
+This means $V$ is also finite-dimensional.</p>
+<h2>Proof of 'if' part</h2>
+<p>Let $\operatorname{dim}(U) = \operatorname{dim}(V) = n$.
+Let $X = \{x_1, x_2, \ldots, x_n\}$ be a basis of $U$
+and $Y = \{y_1, y_2, \ldots, y_n\}$ be a basis of $V$.</p>
+<p>Let $T: U \mapsto V$ where
+\[ T\left(\sum_{i=1}^n a_ix_i\right) = \sum_{i=1}^n a_iy_i \]</p>
+<p>Every vector in $U$ can be represented uniquely as a linear combination of $X$.
+Every vector in $V$ can be represented uniquely as a linear combination of $Y$.
+Therefore $T$ is well-defined and onto.</p>
+<p>\begin{align}
+&amp; T\left(\sum_{i=1}^n a_ix_i\right) = T\left(\sum_{i=1}^n b_ix_i\right)
+\\ &amp;\Rightarrow \sum_{i=1}^n a_iy_i = \sum_{i=1}^n b_iy_i
+\\ &amp;\Rightarrow a_i = b_i \forall i \tag{$\because$ of unique representation}
+\\ &amp;\Rightarrow \sum_{i=1}^n a_ix_i = \sum_{i=1}^n b_ix_i
+\end{align}</p>
+<p>Therefore, $T$ is one-to-one.</p>
+<p>\begin{align}
+&amp; T\left(\left(\sum_{i=1}^n a_ix_i\right) + \left(\sum_{i=1}^n b_ix_i \right)\right)
+\\ &amp;= T\left( \sum_{i=1}^n (a_i+b_i)x_i\right)
+\\ &amp;= \sum_{i=1}^n (a_i+b_i)y_i
+\\ &amp;= \sum_{i=1}^n a_iy_i + \sum_{i=1}^n b_iy_i
+\\ &amp;= T\left(\sum_{i=1}^n a_ix_i\right) + T\left(\sum_{i=1}^n b_ix_i\right)
+\end{align}
+\begin{align}
+&amp; T\left(c\left(\sum_{i=1}^n a_ix_i\right)\right)
+\\ &amp;= T\left(\sum_{i=1}^n (ca_i)x_i\right)
+\\ &amp;= \sum_{i=1}^n (ca_i)y_i
+\\ &amp;= c\left(\sum_{i=1}^n a_iy_i\right)
+\\ &amp;= cT\left(\sum_{i=1}^n a_ix_i\right)
+\end{align}
+Therefore, $T$ is a linear transformation.</p>
+<p>Since $T$ is a bijective linear transformation from $U$ to $V$,
+$U$ is isomorphic to $V$.</p>
+<h2>Finite dimensionality</h2>
+<p>We have already proved that if $U$ is finite-dimensional
+and $T: U \mapsto V$ is an isomorphism then $V$ is also finite-dimensional.</p>
+<p>Now assume that $V$ is finite-dimensional
+and $T: U \mapsto V$ is an isomorphism.
+Since isomorphism is an equivalence relation,
+there is an isomorphism from $V$ to $U$.
+Therefore, $U$ is also finite-dimensional.</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/canonical-decomposition.html">
+            <span class="deptitle">Canonical decomposition of a linear transformation</span>
+        </a>
+        </li>
+    </ul>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 14</li>
+<li>Number of transitive dependencies: 50</li>
+<li>Number of transitive reverse dependencies: 6</li>
+</ul>
+</div>
+</body>
+</html>

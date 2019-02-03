@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eigenvalues and Eigenvectors - TheoremDep</title>
+    <meta name="description" content="Let T be a linear transformation. If T(x) = kx is satisfied for some k and some x, then k is an eigenvalue and x is an eigenvector." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Eigenvalues and Eigenvectors</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/canonical-decomposition.html">
+            <span class="deptitle">Canonical decomposition of a linear transformation</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix.html">
+            <span class="deptitle">Matrix of linear transformation</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $V$ be a vector space over a field F.
+Let $T: V \mapsto V$ be a linear transformation.</p>
+<p>If $T(x) = \lambda x$ is true for some $\lambda \in F$ and some $x \neq 0 \in V$,
+then $\lambda$ is called an eigenvalue of $T$
+and $x$ is called an eigenvector of $T$.</p>
+<p>If $V$ is finite-dimensional,
+the eigenvalues and eigenvectors of $T$ can be found
+by finding the eigenvalues and eigenvectors of another transformation $T_2(x) = Ax$,
+where $A$ is a square matrix over $F$.</p>
+<p>Consequently, the eigenvalues and eigenvectors of a matrix $A$
+are defined as solutions to $Ax = \lambda x$.</p>
+<h2>Proof</h2>
+<p>Let $\dim(V) = n$.
+Let $T = T_1^{-1}T_2T_1$ be the canonical decomposition of $T$,
+where $T_1: V \mapsto F^n$ and $T_1$ is an isomorphism.</p>
+<p>\[ (T_1^{-1}T_2T_1)(v) = \lambda v \iff T_2(T_1(v)) = T_1(\lambda v) \iff T_2(T_1(v)) = \lambda T_1(v) \]</p>
+<p>Therefore, $(\lambda, v)$ is a solution to $T(v) = \lambda v$
+iff $(\lambda, T_1(v))$ is a solution to $T_2(x) = \lambda x$.
+Therefore, $T$ and $T_2$ have the same eigenvalues.
+Eigenvectors of $T$ can be found by applying $T_1^{-1}$ on eigenvectors of $T_2$.</p>
+<p>Every linear transformation from $F^n$ to $F^n$ can be expressed as matrix pre-multiplication.
+So $\exists A, T_2(x) = Ax$.
+Therefore, the eigenvalue equation becomes $Ax = \lambda x$.</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/diagonalization.html">
+            <span class="deptitle">Diagonalization</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenspace.html">
+            <span class="deptitle">Eigenspace</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/char-poly.html">
+            <span class="deptitle">Characteristic polynomial of a matrix</span>
+        </a>
+        </li>
+    </ul>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 16</li>
+<li>Number of transitive dependencies: 56</li>
+<li>Number of transitive reverse dependencies: 4</li>
+</ul>
+</div>
+</body>
+</html>

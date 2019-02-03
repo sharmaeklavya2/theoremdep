@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Matrices form an inner-product space - TheoremDep</title>
+    <meta name="description" content="Let F be a subfield of complex numbers. Matrices over F form an inner-product space, where the inner product is given by tr(A*B)." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Matrices form an inner-product space</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/vector-space.html">
+            <span class="deptitle">Matrices over a field form a vector space</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/inner-product-space.html">
+            <span class="deptitle">Inner product space</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/dot.html">
+            <span class="deptitle">Dot-product of vectors</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/trace.html">
+            <span class="deptitle">Trace of a matrix</span>
+        </a>
+        </li>
+        <li>
+        <span class="deptitleuci missing">/complex-numbers/conjugation-is-homomorphic</span>
+        </li>
+        <li>
+        <span class="deptitleuci missing">/complex-numbers/conjugate-product-abs</span>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/transpose-of-product.html">
+            <span class="deptitle">Transpose of product</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $F$ be a subfield of $\mathbb{C}$ (complex numbers).
+Then $\mathbb{M}_{m, n}(F)$ is an inner product space.</p>
+<p>The inner product of matrices is given by $\operatorname{tr}(B^*A)$,
+where $A^*$ is the conjugate transpose of $A$.</p>
+<p>\[ A^*[i, j] = \overline{A[j, i]} \implies A^* = \overline{A}^T = \overline{A^T} \]</p>
+<p>If we only consider column vectors ($n=1$),
+\[ \langle \mathbf{u}, \mathbf{v} \rangle
+= \operatorname{tr}(\mathbf{v}^*\mathbf{u})
+= \mathbf{v}^*\mathbf{u} = \mathbf{v} \cdot \mathbf{u} \]
+which is the dot product of $\mathbf{v}$ and $\mathbf{u}$.</p>
+<p>For real-valued matrices, $\langle A, B \rangle = \operatorname{tr}(A^TB)$
+is an equivalent definition of inner product.</p>
+<h2>Proof</h2>
+<p>Matrices over a field form a vector space.
+We only need to prove properties of the inner-product.</p>
+<ul>
+<li>
+<p>Conjugate symmetry:
+\begin{align}
+\langle A, B \rangle &amp;= \operatorname{tr}(B^*A)
+\\ &amp;= \sum_{i=1}^n (B^*A)[i, i]
+\\ &amp;= \sum_{i=1}^n \sum_{j=1}^m B^*[i, j]A[j, i]
+\\ &amp;= \sum_{i=1}^n \sum_{j=1}^m \overline{B[j, i]}A[j, i]
+\\ &amp;= \sum_{i=1}^n \sum_{j=1}^m \overline{B[j, i]}\;\overline{\overline{A[j, i]}}
+    \tag{$\overline{\overline{z}} = z \forall z \in \mathbb{C}$}
+\\ &amp;= \sum_{i=1}^n \sum_{j=1}^m \overline{B[j, i]\overline{A[j, i]}}
+    \tag{conjugation is homomorphic}
+\\ &amp;= \sum_{i=1}^n \sum_{j=1}^m \overline{\overline{A[j, i]}B[j, i]}
+\\ &amp;= \sum_{i=1}^n \sum_{j=1}^m \overline{A^*[i, j]B[j, i]}
+\\ &amp;= \sum_{i=1}^n \overline{(A^*B)[i, i]}
+\\ &amp;= \overline{\sum_{i=1}^n (A^*B)[i, i]} \tag{conjugation is homomorphic}
+\\ &amp;= \overline{\operatorname{tr}(A^*B)} = \overline{\langle B, A \rangle}
+\end{align}</p>
+</li>
+<li>
+<p>Linearity in first argument:
+\begin{align}
+\langle A+B, C \rangle &amp;= \operatorname{tr}(C^*(A+B))
+\\ &amp;= \operatorname{tr}(C^*A + C^*B) \tag{distributivity}
+\\ &amp;= \operatorname{tr}(C^*A) + \operatorname{tr}(C^*B)
+\\ &amp;= \langle A, C \rangle + \langle B, C \rangle
+\end{align}
+\begin{align}
+\langle cA, B \rangle &amp;= \operatorname{tr}(B^*(cA))
+\\ &amp;= \operatorname{tr}(c(B^*A)) \tag{associativity}
+\\ &amp;= c\operatorname{tr}(B^*A)
+\\ &amp;= c\langle A, B \rangle
+\end{align}</p>
+</li>
+<li>
+<p>Positive-definiteness:
+\begin{align}
+\langle A, A \rangle &amp;= \operatorname{tr}(A^*A)
+\\ &amp;= \sum_{i=1}^n (A^*A)[i, i]
+\\ &amp;= \sum_{i=1}^n \sum_{j=1}^m A^*[i, j]A[j, i]
+\\ &amp;= \sum_{i=1}^n \sum_{j=1}^m \overline{A[j, i]}A[j, i]
+\\ &amp;= \sum_{i=1}^n \sum_{j=1}^m |A[j, i]|^2
+\end{align}
+Therefore, $\langle A, A \rangle \ge 0$.
+\begin{align}
+\langle A, A \rangle = 0
+&amp;\iff \sum_{i=1}^n \sum_{j=1}^m |A[j, i]|^2 = 0 \iff \forall i, \forall j, |A[j, i]|^2 = 0
+\\ &amp;\iff \forall i, \forall j, A[j, i] = 0 \iff A = 0
+\end{align}</p>
+</li>
+</ul>
+<p>Therefore, $\mathbb{M}_{m, n}(F)$ is an inner-product space.</p>
+<p>If we only consider real-valued matrices,
+\[ \langle A, B \rangle = \operatorname{tr}(B^*A)
+= \operatorname{tr}(B^TA) = \operatorname{tr}((A^TB)^T)
+= \operatorname{tr}(A^TB) \]</p>
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 5</li>
+<li>Number of transitive dependencies: 14</li>
+<li>Number of transitive reverse dependencies: 0</li>
+</ul>
+</div>
+</body>
+</html>

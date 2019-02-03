@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trace of a matrix - TheoremDep</title>
+    <meta name="description" content="The trace of a square matrix is the sum of its diagonal entries." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Trace of a matrix</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+            <span class="deptitle">Matrix</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $A$ be an $n$ by $n$ matrix.
+The trace of $A$ is the sum of all diagonal entries of $A$.</p>
+<p>\[ \operatorname{tr}(A) = \sum_{i=1}^n A[i, i] \]</p>
+<p>Also,</p>
+<p>\[ \operatorname{tr}(A+B) = \sum_{i=1}^n (A+B)[i, i]
+= \sum_{i=1}^n A[i, i] + B[i, i] = \sum_{i=1}^n A[i, i] + \sum_{i=1}^n B[i, i]
+= \operatorname{tr}(A) + \operatorname{tr}(B) \]</p>
+<p>\[ \operatorname{tr}(cA) = \sum_{i=1}^n (cA)[i, i]
+= \sum_{i=1}^n cA[i, i] = c\left(\sum_{i=1}^n A[i, i]\right)
+= c\operatorname{tr}(A) \]</p>
+<p>\[ \operatorname{tr}(A^T) = \sum_{i=1}^n A^T[i, i]
+= \sum_{i=1}^n A[i, i] = \operatorname{tr}(A) \]</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inner-product-space.html">
+            <span class="deptitle">Matrices form an inner-product space</span>
+        </a>
+        </li>
+    </ul>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 3</li>
+<li>Number of transitive dependencies: 4</li>
+<li>Number of transitive reverse dependencies: 1</li>
+</ul>
+</div>
+</body>
+</html>

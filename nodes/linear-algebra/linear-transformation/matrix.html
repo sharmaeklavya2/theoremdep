@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Matrix of linear transformation - TheoremDep</title>
+    <meta name="description" content="Every linear transformation from F^m to F^n can be expressed as a matrix pre-multiplication." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Matrix of linear transformation</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/linear-transformation.html">
+            <span class="deptitle">Linear transformation</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis-of-fn.html">
+            <span class="deptitle">Basis of F^n</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $F$ be a field. Let $T: F^m \mapsto F^n$ be a linear transformation.
+Then $T$ can be expressed as pre-multiplication by a unique $n$ by $m$ matrix.
+Formally,
+\[ \exists A \in \mathbb{M}_{m, n}(F), \forall u \in U, T(u) = A^Tu \]
+where $u$ is treated as a column vector of length $m$ and $A$ is unique.</p>
+<h2>Proof</h2>
+<p>Let $E = \{e_1 = (1, 0, \ldots, 0), e_2 = (0, 1, \ldots, 0), \ldots, e_m = (0, 0, \ldots, 1) \}$ be a basis of $F^m$.</p>
+<p>Let $u \in F^m$ where $u = (u_1, u_2, \ldots, u_m) = \sum_{i=1}^m u_ie_i$.</p>
+<p>\[ T(u) = T\left(\sum_{i=1}^m u_ie_i\right) = \sum_{i=1}^m u_iT(e_i) \]</p>
+<p>$T(e_i) \in F^n$. Therefore, let $A$ be an $m$ by $n$ matrix where $A[i, j] = T(e_i)_j$.</p>
+<p>\[ T(u)_j
+= \sum_{i=1}^m u_iT(e_i)_j
+= \sum_{i=1}^m u_iA[i, j]
+= \sum_{i=1}^m A^T[j, i]u[i, 1]
+= (A^Tu)_j \]</p>
+<p>Therefore, $T(u) = A^Tu$.</p>
+<p>Let $T(u) = A^Tu = B^Tu$ for all $u \in U$.</p>
+<p>\[ (\forall u \in U, A^Tu = B^Tu)
+\implies (\forall u \in U, (A-B)^Tu = 0) \]</p>
+<p>\[ ((A-B)^Tu)_i = \sum_{j=1}^n (A-B)^T[i, j]u_j = 0 \]</p>
+<p>Comparing the coefficient of $u_j$, we get $(A-B)^T[i, j] = 0$.
+This means $(A-B)^T = 0 \Rightarrow A = B$.</p>
+<p>Therefore, $T$ has a unique matrix associated with it.</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenvector.html">
+            <span class="deptitle">Eigenvalues and Eigenvectors</span>
+        </a>
+        </li>
+    </ul>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 7</li>
+<li>Number of transitive dependencies: 12</li>
+<li>Number of transitive reverse dependencies: 5</li>
+</ul>
+</div>
+</body>
+</html>

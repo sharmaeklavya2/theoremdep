@@ -38,6 +38,9 @@
             <span class="deptitle">Row equivalent matrices have the same row space</span>
         </a>
         </li>
+        <li>
+        <span class="deptitleuci missing">/linear-algebra/matrices/gauss-jordan-algo</span>
+        </li>
     </ul>
 <div class="horizontal-rule"></div>
 <p>Let $C$ be a matrix over a field.
@@ -47,6 +50,9 @@ Then $C$ is row-equivalent to a unique matrix $A$ in RREF.</p>
 by transitivity of row-equivalence.
 Therefore, $C$ and $D$ have the same RREF.</p>
 <h2>Proof</h2>
+<p>The Gauss-Jordan elimination algorithm applies a set of specific elementary row operations
+to $C$ so that the resulting matrix is in RREF.
+Therefore, $C$ is always row-equivalent to a matrix in RREF.</p>
 <p>Let $A$ and $B$ be 2 $m$ by $n$ matrices in RREF which are row-equivalent to $C$.
 By transitivity of row-equivalence, $A$ and $B$ are row-equivalent.
 Let the rows of $A$ be $a_1, \ldots, a_m$ and the rows of $B$ be $b_1, \ldots, b_m$.
@@ -134,8 +140,8 @@ Therefore, $A = B$.</p>
 <h2> Info: </h2>
 <ul>
 <li>Depth: 7</li>
-<li>Number of transitive dependencies: 11</li>
-<li>Number of transitive reverse dependencies: 15</li>
+<li>Number of transitive dependencies: 12</li>
+<li>Number of transitive reverse dependencies: 24</li>
 </ul>
 </div>
 </body>

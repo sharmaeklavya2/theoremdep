@@ -710,6 +710,101 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector.html"
 },
 {
+"type": "theorem",
+"title": "Kernel of linear transformation is subspace of domain",
+"uci": "/linear-algebra/linear-transformation/kernel-is-subspace",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/kernel-is-subspace.html"
+},
+{
+"type": "theorem",
+"title": "Canonical decomposition of a linear transformation",
+"description": "Let T be a linear transformation from U to V. Then T = T3.T2.T1 where T1: U to F^dim(U), T2: F^dim(U) to F^dim(V), T3: F^dim(V) to V are linear transformations. This is called the canonical decomposition of T.",
+"uci": "/linear-algebra/linear-transformation/canonical-decomposition",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/canonical-decomposition.html"
+},
+{
+"type": "theorem",
+"title": "Vector space isomorphism is an equivalence relation",
+"uci": "/linear-algebra/linear-transformation/isomorphism-equiv",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/isomorphism-equiv.html"
+},
+{
+"type": "def",
+"title": "Linear transformation",
+"description": "A linear transformation is a linear function mapping one vector space to another.",
+"uci": "/linear-algebra/linear-transformation/linear-transformation",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/linear-transformation.html"
+},
+{
+"type": "theorem",
+"title": "Vector spaces are isomorphic iff their dimensions are same",
+"description": "Two vector spaces are isomorphic iff they have the same dimension.",
+"uci": "/linear-algebra/linear-transformation/isomorphic-dimension",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/isomorphic-dimension.html"
+},
+{
+"type": "theorem",
+"title": "Basis of range of linear transformation",
+"description": "If P is a basis of the kernel and P union Q is a basis of U, then T(Q) is a basis of T(U).",
+"uci": "/linear-algebra/linear-transformation/basis-of-range",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/basis-of-range.html"
+},
+{
+"type": "theorem",
+"title": "Matrix of linear transformation",
+"description": "Every linear transformation from F^m to F^n can be expressed as a matrix pre-multiplication.",
+"uci": "/linear-algebra/linear-transformation/matrix",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix.html"
+},
+{
+"type": "theorem",
+"title": "Composition of linear transformations",
+"description": "Composition of linear transformations is a linear transformation.",
+"uci": "/linear-algebra/linear-transformation/composition",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/composition.html"
+},
+{
+"type": "theorem",
+"title": "Range of linear transformation is subspace of codomain",
+"uci": "/linear-algebra/linear-transformation/range-is-subspace",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/range-is-subspace.html"
+},
+{
+"type": "theoremdef",
+"title": "Eigenvalues and Eigenvectors",
+"description": "Let T be a linear transformation. If T(x) = kx is satisfied for some k and some x, then k is an eigenvalue and x is an eigenvector.",
+"uci": "/linear-algebra/eigenvectors/eigenvector",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenvector.html"
+},
+{
+"type": "theorem",
+"title": "Diagonalization",
+"description": "Let A be a square matrix. Let P be the matrix whose columns are eigenvectors of A. Then AP = PD, where D is a diagonal matrix.",
+"uci": "/linear-algebra/eigenvectors/diagonalization",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/diagonalization.html"
+},
+{
+"type": "theoremdef",
+"title": "Eigenspace",
+"description": "Let A be a matrix and \u03bb be an eigenvalue of A. Then E(\u03bb) is the vector space of all solutions to Ax = \u03bbx.",
+"uci": "/linear-algebra/eigenvectors/eigenspace",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenspace.html"
+},
+{
+"type": "theoremdef",
+"title": "Characteristic polynomial of a matrix",
+"description": "The characteristic polynomial of a matrix A is |xI - A|. Its roots are the eigenvalues of A.",
+"uci": "/linear-algebra/eigenvectors/char-poly",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/char-poly.html"
+},
+{
+"type": "theorem",
+"title": "A is diagonalizable iff there are n linearly independent eigenvectors",
+"description": "Let A be an n by n matrix. Then A is diagonalizable iff A has n linearly independent eigenvectors.",
+"uci": "/linear-algebra/eigenvectors/diag-linindep",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/diag-linindep.html"
+},
+{
 "type": "def",
 "title": "Inner product space",
 "description": "An inner product space is a vector space equipped with an inner product operator, which is an abstract generalization of the dot product.",
@@ -861,11 +956,24 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/maximal-linindep-is-basis.html"
 },
 {
+"type": "theorem",
+"title": "Unique linear combination of basis",
+"description": "Let B be a finite basis of vector space V. Then every vector in V can be expressed uniquely as a linear combination of vectors in B.",
+"uci": "/linear-algebra/vector-spaces/basis/unique-repr",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/unique-repr.html"
+},
+{
 "type": "def",
 "title": "Basis of a vector space",
 "description": "If a set of vectors S is linearly independent and spans a vector space V, then S is a basis of V.",
 "uci": "/linear-algebra/vector-spaces/basis/basis",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html"
+},
+{
+"type": "theorem",
+"title": "Basis of F^n",
+"uci": "/linear-algebra/vector-spaces/basis/basis-of-fn",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis-of-fn.html"
 },
 {
 "type": "theorem",
@@ -893,6 +1001,13 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/n-linindep-is-basis.html"
 },
 {
+"type": "theorem",
+"title": "Matrices form an inner-product space",
+"description": "Let F be a subfield of complex numbers. Matrices over F form an inner-product space, where the inner product is given by tr(A*B).",
+"uci": "/linear-algebra/matrices/inner-product-space",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inner-product-space.html"
+},
+{
 "type": "def",
 "title": "Elementary row operation",
 "description": "An elementary row operation on a matrix either adds a multiple of a row to another row, multiplies a row by a scalar or swaps two rows.",
@@ -905,6 +1020,13 @@
 "description": "",
 "uci": "/linear-algebra/matrices/vector-space",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/vector-space.html"
+},
+{
+"type": "def",
+"title": "Trace of a matrix",
+"description": "The trace of a square matrix is the sum of its diagonal entries.",
+"uci": "/linear-algebra/matrices/trace",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/trace.html"
 },
 {
 "type": "theorem",
@@ -983,10 +1105,23 @@
 },
 {
 "type": "theorem",
+"title": "A matrix is full-rank iff its rows are linearly independent",
+"uci": "/linear-algebra/matrices/full-rank-linindep",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-linindep.html"
+},
+{
+"type": "theorem",
 "title": "Row equivalence matrix",
 "description": "If A and B are row equivalent, then there exists an invertible matrix R such that B = RA.",
 "uci": "/linear-algebra/matrices/row-equiv-matrix",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv-matrix.html"
+},
+{
+"type": "theorem",
+"title": "Rows of RREF are linearly independent",
+"description": "If a matrix is in RREF, its non-zero rows are linearly independent.",
+"uci": "/linear-algebra/matrices/rref-linindep",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rref-linindep.html"
 },
 {
 "type": "theoremdef",

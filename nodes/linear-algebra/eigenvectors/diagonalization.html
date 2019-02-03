@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Diagonalization - TheoremDep</title>
+    <meta name="description" content="Let A be a square matrix. Let P be the matrix whose columns are eigenvectors of A. Then AP = PD, where D is a diagonal matrix." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Diagonalization</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenvector.html">
+            <span class="deptitle">Eigenvalues and Eigenvectors</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/product.html">
+            <span class="deptitle">Product of stacked matrices</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $A$ be an $n$ by $n$ matrix.
+Let $P$ be an $n$ by $k$ matrix. Let $v_i$ be the $i^{\textrm{th}}$ column of $P$.
+Let $D$ be a $k$ by $k$ diagonal matrix where $D[i, i] = d_i$.</p>
+<p>Then $AP = PD \iff \forall i, (d_i, v_i)$ is an eigenvalue-eigenvector pair.</p>
+<p>If $P$ is an invertible square matrix, this means that $D = P^{-1}AP$.
+$A$ is said to be diagonalizable iff $\exists$ an invertible matrix $P$,
+such that $P^{-1}AP$ is diagonal.</p>
+<h2>Proof</h2>
+<p>\[ (PD)[i, j] = \sum_{t=1}^k P[i, t]D[t, j]
+= P[i, j]D[j, j] = (v_j)_i d_j = (d_jv_j)_i \]</p>
+<p>\[ (AP)[i, j]
+= (A[v_1|v_2|\ldots|v_k])[i, j]
+= [Av_1|Av_2|\ldots|Av_k][i, j]
+= (Av_j)_i
+\]</p>
+<p>\begin{align}
+&amp; AP = PD
+\\ &amp;\iff \forall i, \forall j, (AP)[i, j] = (PD)[i, j]
+\\ &amp;\iff \forall i, \forall j, (Av_j)_i = (d_jv_j)_i
+\\ &amp;\iff \forall j, Av_j = d_jv_j
+\\ &amp;\iff \forall j, (d_j, v_j) \textrm{ is an eigenvalue-eigenvector pair}
+\end{align}</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/diag-linindep.html">
+            <span class="deptitle">A is diagonalizable iff there are n linearly independent eigenvectors</span>
+        </a>
+        </li>
+    </ul>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 17</li>
+<li>Number of transitive dependencies: 57</li>
+<li>Number of transitive reverse dependencies: 1</li>
+</ul>
+</div>
+</body>
+</html>

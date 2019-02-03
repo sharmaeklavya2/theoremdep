@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rows of RREF are linearly independent - TheoremDep</title>
+    <meta name="description" content="If a matrix is in RREF, its non-zero rows are linearly independent." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Rows of RREF are linearly independent</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rref.html">
+            <span class="deptitle">Reduced Row Echelon Form (RREF)</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $A$ be an $m$ by $n$ matrix in RREF.
+Then the non-zero rows of $A$ are linearly independent.
+This means that if a linear combination of the rows of $A$ is 0,
+then all the coefficients of the linear combination are 0.</p>
+<h2>Proof</h2>
+<p>Let there be $k$ non-zero rows in $A$.
+Let $\mathbf{a}_i$ be the $i^{\textrm{th}}$ row of $A$.
+For each $i$, $\alpha_i$ is the smallest value so that $A[i, \alpha_i]$ is non-zero.</p>
+<p>Since $A$ is in RREF,</p>
+<ul>
+<li>$\alpha_1 &lt; \alpha_2 &lt; \ldots &lt; \alpha_k$.</li>
+<li>$A[i, \alpha_j] = \begin{cases} 1 &amp; i = j \\ 0 &amp; i \neq j \end{cases}$.</li>
+</ul>
+<p>\[ \left(\sum_{i=1}^k c_i\mathbf{a}_i\right)_{\alpha_j} = \sum_{i=1}^k c_iA[i, \alpha_j] = c_j \]</p>
+<p>Therefore, $\sum_{i=1}^k c_i\mathbf{a}_i = 0 \implies (\forall j, c_j = 0)$.
+Therefore, all non-zero rows of $A$ are linearly independent.</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-linindep.html">
+            <span class="deptitle">A matrix is full-rank iff its rows are linearly independent</span>
+        </a>
+        </li>
+    </ul>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 4</li>
+<li>Number of transitive dependencies: 5</li>
+<li>Number of transitive reverse dependencies: 2</li>
+</ul>
+</div>
+</body>
+</html>
