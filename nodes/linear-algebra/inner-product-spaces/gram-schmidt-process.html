@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gram-Schmidt Process - TheoremDep</title>
+    <meta name="description" content="The Gram-Schmidt process takes a set of n linearly independent vectors as input and outputs a set of n orthogonal vectors which have the same span." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Gram-Schmidt Process</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/inner-product-space.html">
+            <span class="deptitle">Inner product space</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/orthogonality.html">
+            <span class="deptitle">Orthogonality and orthonormality</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span.html">
+            <span class="deptitle">Span</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep.html">
+            <span class="deptitle">Linear independence</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>The Gram-Schmidt process takes a set of n linearly independent vectors as input and outputs a set of n orthogonal vectors which have the same span.</p>
+<p>Let $W = \{w_1, w_2, \ldots, w_n\}$ be a linearly independent set of vectors from an inner product space.
+Then the Gram-Schmidt process outputs $V = \{v_1, v_2, \ldots, v_n\}$ where</p>
+<p>\[ v_i = w_i - \sum_{j=1}^{i-1} c_{i, j} v_j
+\textrm{ where } c_{i, j} = \frac{\langle w_i, v_j \rangle}{\|v_j\|^2} \]</p>
+<p>Then:</p>
+<ul>
+<li>$\operatorname{span}(V) = \operatorname{span}(W)$.</li>
+<li>$\forall i, v_i \neq 0$.</li>
+<li>$\forall i \neq j, \langle v_i, v_j \rangle = 0$.</li>
+</ul>
+<p>Also, scaling each $v_i$ by a (possibly different) non-zero scalar maintains orthogonality and does not change the span.</p>
+<h2>Proof by induction</h2>
+<p>Let $V_k = \{v_1, v_2, \ldots, v_k\}$ and $W_k = \{w_1, w_2, \ldots, w_k\}$.</p>
+<p>Let the predicate $P(k)$ be the 'logical and' of the following statements:</p>
+<ol>
+<li>$\operatorname{span}(V_k) = \operatorname{span}(W_k)$.</li>
+<li>$\forall i \le k, v_i \neq 0$.</li>
+<li>$\forall i &lt; j \le k, \langle v_i, v_j \rangle = \langle v_j, v_i \rangle = 0$.</li>
+</ol>
+<p>Base case:</p>
+<p>$v_1 = w_1$.</p>
+<ol>
+<li>$\operatorname{span}(V_1) = \operatorname{span}(\{v_1\}) = \operatorname{span}(\{w_1\}) = \operatorname{span}(W_1)$.</li>
+<li>Since $W$ is linearly independent, $w_1 \neq 0 \Rightarrow v_1 \neq 0$.</li>
+<li>The third part of $P(1)$ is trivially true.</li>
+</ol>
+<p>Therefore, $P(1)$ holds.</p>
+<p>Inductive step:</p>
+<p>Assume $P(k)$ is true (inductive hypothesis).</p>
+<h3>Part 1</h3>
+<p>\[ \forall i \le k, w_i \in \operatorname{span}(W_k) = \operatorname{span}(V_k) \subseteq \operatorname{span}(V_{k+1}) \]</p>
+<p>\[ w_{k+1} = v_{k+1} + \sum_{j=1}^k c_{k+1, j} v_j \in \operatorname{span}(V_{k+1}) \]</p>
+<p>Since, each of $w_1, w_2, \ldots, w_{k+1}$ is a linear combination of $V_{k+1}$.
+Their linear combination is also a linear combination of $V_{k+1}$.
+Therefore, $\operatorname{span}(W_{k+1}) \subseteq \operatorname{span}(V_{k+1})$.</p>
+<p>\[ \forall i \le k, v_i \in \operatorname{span}(V_k) = \operatorname{span}(W_k) \subseteq \operatorname{span}(W_{k+1}) \]</p>
+<p>\begin{align}
+&amp; \sum_{j=1}^k c_{k+1, j} v_j
+    \in \operatorname{span}(V_k) = \operatorname{span}(W_k) \subseteq \operatorname{span}(W_{k+1})
+\\ &amp;\Rightarrow v_{k+1} = w_{k+1} - \sum_{j=1}^k c_{k+1, j} v_j
+    \in \operatorname{span}(W_{k+1})
+\end{align}</p>
+<p>Since, each of $v_1, v_2, \ldots, v_{k+1}$ is a linear combination of $W_{k+1}$.
+Their linear combination is also a linear combination of $W_{k+1}$.
+Therefore, $\operatorname{span}(V_{k+1}) \subseteq \operatorname{span}(W_{k+1})$.</p>
+<p>Therefore, $\operatorname{span}(V_{k+1}) = \operatorname{span}(W_{k+1})$,
+which is part 1 of $P(k+1)$.</p>
+<h3>Part 2</h3>
+<p>\[ v_{k+1} = 0 \implies w_{k+1} = \sum_{i=1}^k c_{k+1, i} v_i \in \operatorname{span}(V_k) = \operatorname{span}(W_k) \]</p>
+<p>$w_{k+1} \in \operatorname{span}(W_k)$ means $W_{k+1}$ is linearly dependent, which is a contradiction.
+Therefore, $v_{k+1} \neq 0$.
+Combining this fact with part 2 of $P(k)$, we get $\forall i \le k+1, v_i \neq 0$,
+which is the part 2 of $P(k+1)$.</p>
+<h3>Part 3</h3>
+<p>Let $i \le k$.</p>
+<p>\begin{align}
+\langle v_{k+1}, v_i \rangle
+&amp;= \left\langle w_{k+1} - \sum_{j=1}^k \frac{\langle w_{k+1}, v_j \rangle}{\|v_j\|^2} v_j \; , v_i \right\rangle
+\\ &amp;= \langle w_{k+1}, v_i \rangle - \sum_{j=1}^k \frac{\langle w_{k+1}, v_j \rangle}{\|v_j\|^2} \langle v_j, v_i \rangle
+    \tag{linearity in first argument}
+\\ &amp;= \langle w_{k+1}, v_i \rangle - \frac{\langle w_{k+1}, v_i \rangle}{\|v_i\|^2} \langle v_i, v_i \rangle
+    \tag{$\because i \neq j \Rightarrow \langle v_j, v_i \rangle = 0$}
+\\ &amp;= \langle w_{k+1}, v_i \rangle - \langle w_{k+1}, v_i \rangle = 0
+\end{align}</p>
+<p>\[ \langle v_i, v_{k+1} \rangle = \overline{\langle v_{k+1}, v_i \rangle}
+= \overline{0} = 0 \tag{by conjugate symmetry} \]</p>
+<p>Combining the above fact with part 3 of $P(k)$, we get part 3 of $P(k+1)$.</p>
+<p>Therefore, $P(n)$ is true by mathematical induction.</p>
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 6</li>
+<li>Number of transitive dependencies: 8</li>
+</ul>
+</div>
+</body>
+</html>

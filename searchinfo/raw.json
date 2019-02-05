@@ -784,6 +784,13 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/diagonalization.html"
 },
 {
+"type": "theorem",
+"title": "Eigenvectors of distinct eigenvalues are linearly independent",
+"description": "In all vectors in a set of eigenvectors correspond to different eigenvalues, then the set is linearly independent.",
+"uci": "/linear-algebra/eigenvectors/distinct-eigenvalue-linindep",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/distinct-eigenvalue-linindep.html"
+},
+{
 "type": "theoremdef",
 "title": "Eigenspace",
 "description": "Let A be a matrix and \u03bb be an eigenvalue of A. Then E(\u03bb) is the vector space of all solutions to Ax = \u03bbx.",
@@ -827,6 +834,13 @@
 },
 {
 "type": "theorem",
+"title": "Coordinatization over orthogonal vectors",
+"description": "Let (x1, x2, ..., xn) be orthogonal vectors. Coordinate of v along xi is (v.xi)/(xi.x).",
+"uci": "/linear-algebra/inner-product-spaces/coordinatization",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/coordinatization.html"
+},
+{
+"type": "theorem",
 "title": "Pythagorean theorem",
 "description": "If < u, v > = 0, < u, u > + < v, v > = < u+v, u+v >.",
 "uci": "/linear-algebra/inner-product-spaces/pythagorean-theorem",
@@ -851,6 +865,20 @@
 "title": "A set of mutually orthogonal vectors is linearly independent",
 "uci": "/linear-algebra/inner-product-spaces/ortho-vectors-are-linindep",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/ortho-vectors-are-linindep.html"
+},
+{
+"type": "theoremdef",
+"title": "Gram-Schmidt Process",
+"description": "The Gram-Schmidt process takes a set of n linearly independent vectors as input and outputs a set of n orthogonal vectors which have the same span.",
+"uci": "/linear-algebra/inner-product-spaces/gram-schmidt-process",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/gram-schmidt-process.html"
+},
+{
+"type": "def",
+"title": "Orthogonality and orthonormality",
+"description": "A set of vectors is orthogonal iff all the vectors are non-zero and the inner product of any 2 different vectors is 0. A set of vectors is orthonormal if they are orthogonal and the norm of each vector is 1.",
+"uci": "/linear-algebra/inner-product-spaces/orthogonality",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/orthogonality.html"
 },
 {
 "type": "def",
@@ -1061,6 +1089,13 @@
 "description": "Let A be an n by n matrix. Then rank(A) = n iff A has an inverse.",
 "uci": "/linear-algebra/matrices/full-rank-inv",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-inv.html"
+},
+{
+"type": "theoremdef",
+"title": "Orthogonal matrix",
+"description": "A matrix A is orthogonal iff A'A = I. Equivalently, A is orthogonal iff rows of A are orthonormal.",
+"uci": "/linear-algebra/matrices/orthogonal",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/orthogonal.html"
 },
 {
 "theorem": "theorem",

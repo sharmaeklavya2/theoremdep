@@ -17,10 +17,7 @@ function toggle_lists(element) {
 
 function collapsor(event) {
     var target = event.target;
-    if(target.tagName === 'LI') {
-        toggle_lists(target);
-    }
-    else if(TREE_COLLAPSOR_TAGS.indexOf(target.tagName) < 0 && target.parentElement.tagName === 'LI') {
+    if(TREE_COLLAPSOR_TAGS.indexOf(target.tagName) < 0 && target.parentElement.tagName === 'LI') {
         toggle_lists(target.parentElement);
     }
 }

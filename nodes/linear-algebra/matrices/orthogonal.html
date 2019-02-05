@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Orthogonal matrix - TheoremDep</title>
+    <meta name="description" content="A matrix A is orthogonal iff A'A = I. Equivalently, A is orthogonal iff rows of A are orthonormal." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Orthogonal matrix</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/product.html">
+            <span class="deptitle">Product of stacked matrices</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/transpose.html">
+            <span class="deptitle">Transpose of stacked matrix</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/product-equals-identity-implies-invertible.html">
+            <span class="deptitle">AB = I implies BA = I</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/orthogonality.html">
+            <span class="deptitle">Orthogonality and orthonormality</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inner-product-space.html">
+            <span class="deptitle">Matrices form an inner-product space</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $A$ be an $n$ by $n$ matrix over a subfield of $\mathbb{C}$.
+Let $A^* = \overline{A^T}$ be the conjugate transpose of $A$.
+Then the following statements are equivalent:</p>
+<ul>
+<li>$AA^* = I$.</li>
+<li>$A^*A = I$.</li>
+<li>Rows of $A$ are orthonormal.</li>
+<li>Columns of $A$ are orthonormal.</li>
+</ul>
+<p>If the above conditions are satisfied, $A$ is said to be orthogonal.</p>
+<h2>Proof</h2>
+<p>Since a left inverse is also a right inverse, $A^*A = I \iff AA^* = I$.
+This also means that $A$ is orthogonal iff $A^*$ is orthogonal.</p>
+<p>Let $v_1, v_2, \ldots, v_n$ be the columns of $A$.</p>
+<p>\[ A^*A
+= \begin{bmatrix} v_1^* \\ v_2^* \\ \vdots \\ v_n^* \end{bmatrix}
+\begin{bmatrix} v_1 &amp; v_2 &amp; \cdots &amp; v_n \end{bmatrix}
+= \begin{bmatrix} v_1^*v_1 &amp; v_1^*v_2 &amp; \cdots &amp; v_1^*v_n
+\\ v_2^*v_1 &amp; v_2^*v_2 &amp; \cdots &amp; v_2^*v_n
+\\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots
+\\ v_n^*v_1 &amp; v_n^*v_2 &amp; \cdots &amp; v_n^*v_n
+\end{bmatrix}
+= \begin{bmatrix} \langle v_1, v_1 \rangle &amp; \langle v_2, v_1 \rangle &amp; \cdots &amp; \langle v_n, v_1 \rangle
+\\ \langle v_1, v_2 \rangle &amp; \langle v_2, v_2 \rangle &amp; \cdots &amp; \langle v_n, v_n \rangle
+\\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots
+\\ \langle v_1, v_n \rangle &amp; \langle v_2, v_n \rangle &amp; \cdots &amp; \langle v_n, v_n \rangle
+\end{bmatrix} \]</p>
+<p>\[ A^*A = I
+\iff \langle v_i, v_j \rangle = \begin{cases} 0 &amp; i \neq j \\ 1 &amp; i = j \end{cases}
+\iff \textrm{rows of } A \textrm{ are orthonormal} \]</p>
+<p>\[ \textrm{columns of } A \textrm{ are orthonormal}
+\iff \textrm{rows of } A^* \textrm{ are orthonormal}
+\iff (A^*)^*A^* = AA^* = I \]</p>
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 12</li>
+<li>Number of transitive dependencies: 40</li>
+</ul>
+</div>
+</body>
+</html>

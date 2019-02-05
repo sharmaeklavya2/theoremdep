@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eigenvectors of distinct eigenvalues are linearly independent - TheoremDep</title>
+    <meta name="description" content="In all vectors in a set of eigenvectors correspond to different eigenvalues, then the set is linearly independent." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Eigenvectors of distinct eigenvalues are linearly independent</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenvector.html">
+            <span class="deptitle">Eigenvalues and Eigenvectors</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep.html">
+            <span class="deptitle">Linear independence</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/zero.html">
+            <span class="deptitle">Zeros in vector space</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $T: V \mapsto V$ be a linear transformation.
+Let $[v_1, v_2, \ldots, v_n]$ be eigenvectors corresponding to distinct eigenvalues
+$[\lambda_1, \lambda_2, \ldots, \lambda_n]$.
+Then $[v_1, v_2, \ldots, v_n]$ are linearly independent.</p>
+<h2>Proof by induction</h2>
+<p>Let $S_k = [v_1, v_2, \ldots, v_k]$.</p>
+<p>Let $P(k): S_k$ is linearly independent.</p>
+<p>We have to prove $P(k)$ for all $0 \le k \le n$.</p>
+<p>Base case:</p>
+<p>An empty set is linearly independent by definition.
+Therefore, $P(0)$ holds.
+Since eigenvectors are non-zero, $S_1$ is linearly independent.
+Therefore, $P(1)$ holds.</p>
+<p>Inductive step:</p>
+<p>Assume $P(k)$ holds for $1 \le k \le n$. Therefore, $S_k$ is linearly independent.</p>
+<p>Let $\sum_{i=1}^{k+1} a_iv_i = 0$.</p>
+<p>\[ T(0) = T(0 + 0) = T(0) + T(0) \implies T(0) = 0 \]</p>
+<p>\[ 0 = T(0) = T\left(\sum_{i=1}^{k+1} a_iv_i\right)
+= \sum_{i=1}^{k+1}a_iT(v_i)
+= \sum_{i=1}^{k+1}a_i\lambda_iv_i
+= a_{k+1}\lambda_{k+1}v_{k+1} + \sum_{i=1}^k a_i\lambda_iv_i \]</p>
+<p>\[ 0 = \lambda_{k+1}0 = \lambda_{k+1}\left(\sum_{i=1}^{k+1} a_iv_i\right)
+= \sum_{i=1}^{k+1}a_i\lambda_{k+1}v_i
+= a_{k+1}\lambda_{k+1}v_{k+1} + \sum_{i=1}^k a_i\lambda_{k+1}v_i \]</p>
+<p>Subtracting the above 2 equations, we get:</p>
+<p>\[ 0 = \sum_{i=1}^k a_i(\lambda_i - \lambda_{k+1})v_i \]</p>
+<p>Since $S_k$ is linearly independent, $\forall i \le k, a_i(\lambda_i - \lambda_{k+1}) = 0$.
+Since all $\lambda_i$ are distinct, $\forall i \le k, a_i = 0$.</p>
+<p>\[ 0 = \sum_{i=1}^{k+1} a_iv_i = a_{k+1}v_{k+1} \]</p>
+<p>Since $v_{k+1} \neq 0$ (because eigenvectors are non-zero), $a_{k+1} = 0$.</p>
+<p>Since $\forall i \le k+1, a_i = 0$, $S_{k+1}$ is linearly independent.</p>
+<p>By the principle of mathematical induction, $S_n$ is linearly independent.</p>
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 17</li>
+<li>Number of transitive dependencies: 57</li>
+</ul>
+</div>
+</body>
+</html>
