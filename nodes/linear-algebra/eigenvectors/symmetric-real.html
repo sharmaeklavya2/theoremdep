@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>All eigenvalues of a symmetric operator are real - TheoremDep</title>
+    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>All eigenvalues of a symmetric operator are real</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/symmetric-operator.html">
+            <span class="deptitle">Symmetric operator</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenvector.html">
+            <span class="deptitle">Eigenvalues and Eigenvectors</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/antilin-in-2nd.html">
+            <span class="deptitle">Inner product is anti-linear in second argument</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field-is-integral-domain.html">
+            <span class="deptitle">A field is an integral domain</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $L: V \mapsto V$ be a symmetric operator,
+where $V$ is a vector space over a subfield of $\mathbb{C}$.</p>
+<p>All eigenvalues of $L$ are real.</p>
+<h2>Proof</h2>
+<p>Let $(\lambda, u)$ be an eigenvalue-eigenvector pair of $L$.</p>
+<p>\begin{align}
+0 &amp;= \langle L(u), u \rangle - \langle u, L(u) \rangle \tag{$L$ is symmetric}
+\\ &amp;= \langle \lambda u, u \rangle - \langle u, \lambda u \rangle
+\\ &amp;= \lambda \langle u, u \rangle - \overline{\lambda} \langle u, u \rangle \tag{(anti-)linearity}
+\\ &amp;= (\lambda - \overline{\lambda}) \langle u, u \rangle
+\end{align}</p>
+<p>Since $u$ is an eigenvector, $u \neq 0$.
+By definiteness of inner-product, $\langle u, u \rangle \neq 0$.
+Since $\mathbb{C}$ is a field, it has no zero-divisors.
+Therefore,
+\[ (\lambda - \overline{\lambda}) \langle u, u \rangle = 0
+\implies \lambda = \overline{\lambda} \implies \lambda \in \mathbb{R} \]</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/ortho-diag.html">
+            <span class="deptitle">Orthogonally diagonalizable iff hermitian</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-operator-has-n-ortho-eigenvectors.html">
+            <span class="deptitle">Symmetric operator on V has a basis of orthonormal eigenvectors</span>
+        </a>
+        </li>
+    </ul>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 19</li>
+<li>Number of transitive dependencies: 54</li>
+</ul>
+</div>
+</body>
+</html>

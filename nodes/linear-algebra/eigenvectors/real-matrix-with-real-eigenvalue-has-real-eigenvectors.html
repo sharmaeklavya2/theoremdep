@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>A set of dim(V) linearly independent vectors is a basis - TheoremDep</title>
-    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <title>Real matrix with real eigenvalues has real eigenvectors - TheoremDep</title>
+    <meta name="description" content="If a matrix A has only real entries and λ is a real eigenvalue of A, then A has real eigenvectors corresponding to λ." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,39 +25,41 @@
     </form>
 </nav>
 <div id="main">
-<h1>A set of dim(V) linearly independent vectors is a basis</h1>
+<h1>Real matrix with real eigenvalues has real eigenvectors</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html">
-            <span class="deptitle">Basis of a vector space</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenvector.html">
+            <span class="deptitle">Eigenvalues and Eigenvectors</span>
         </a>
         </li>
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-increment.html">
-            <span class="deptitle">Incrementing a linearly independent set</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/conjugation-is-homomorphic.html">
+            <span class="deptitle">Conjugation of matrices is homomorphic</span>
         </a>
         </li>
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-is-smaller-than-span.html">
-            <span class="deptitle">Linearly independent set is smaller than a span</span>
-        </a>
+        <span class="deptitleuci missing">/complex-numbers/complex-numbers</span>
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Let $B$ be a finite basis for vector space $V$.
-Let $S$ be a set of linearly independent vectors from $V$.
-If $|S| = |B|$, then $S$ is a basis of $V$.</p>
+<p>Let $A$ be a real matrix. Let $A$ have a real eigenvalue $\lambda$ and a corresponding complex eigenvector $u$.
+Then a real eigenvector of $A$ exists corresponding to the eigenvalue $\lambda$.</p>
 <h2>Proof</h2>
-<p>Assume that $S$ doesn't span $V$.
-Therefore, there is a vector $w$ which cannot be represented as a linear combination of vectors in $S$.
-Therefore, $S \cup \{w\}$ is linearly independent.</p>
-<p>Since $S \cup \{w\}$ is linearly independent and $B$ spans $V$,
-$|S \cup \{w\}| \le |B| \Rightarrow |B| + 1 \le |B| \Rightarrow \bot$.
-Therefore, $S \cup \{w\}$ spans $V$, which makes it a basis.</p>
+<p>\[ Au = \lambda u
+\implies \overline{A}\,\overline{u} = \overline{\lambda}\,\overline{u}
+\implies A\overline{u} = \lambda\overline{u}
+\implies A(u + \overline{u}) = \lambda(u + \overline{u}) \]</p>
+<p>Therefore, $v = u + \overline{u}$ is an eigenvector of $A$ corresponding to $\lambda$.
+Also, $v = u + \overline{u} = 2\operatorname{Re}(u)$ is real.</p>
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
     <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/ortho-diag.html">
+            <span class="deptitle">Orthogonally diagonalizable iff hermitian</span>
+        </a>
+        </li>
         <li>
         <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-operator-has-n-ortho-eigenvectors.html">
             <span class="deptitle">Symmetric operator on V has a basis of orthonormal eigenvectors</span>
@@ -66,8 +68,8 @@ Therefore, $S \cup \{w\}$ spans $V$, which makes it a basis.</p>
     </ul>
 <h2> Info: </h2>
 <ul>
-<li>Depth: 13</li>
-<li>Number of transitive dependencies: 36</li>
+<li>Depth: 19</li>
+<li>Number of transitive dependencies: 51</li>
 </ul>
 </div>
 </body>

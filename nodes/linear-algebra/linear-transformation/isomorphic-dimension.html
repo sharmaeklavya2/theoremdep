@@ -34,93 +34,59 @@
         </a>
         </li>
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/all-bases-have-same-size.html">
-            <span class="deptitle">All bases of a vector space have the same size</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/coordinatization.html">
+            <span class="deptitle">Coordinatization over a basis</span>
         </a>
         </li>
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/basis-of-range.html">
-            <span class="deptitle">Basis of range of linear transformation</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/kernel-is-subspace.html">
-            <span class="deptitle">Kernel of linear transformation is subspace of domain</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/unique-repr.html">
-            <span class="deptitle">Unique linear combination of basis</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/isomorphism-equiv.html">
-            <span class="deptitle">Vector space isomorphism is an equivalence relation</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/basis-change.html">
+            <span class="deptitle">Basis change is an isomorphic linear transformation</span>
         </a>
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Let $U$ and $V$ be finite-dimensional vector spaces.
-Then $U$ and $V$ are isomorphic iff $U$ and $V$ have the same dimension.</p>
-<p>Furthermore, if $U$ and $V$ have the same dimension and $[x_1, x_2, \ldots, x_n]$
-is a basis of $U$ and $[y_1, y_2, \ldots, y_n]$ is a basis of $V$,
-then $T\left(\sum_{i=1}^n a_ix_i \right) = \sum_{i=1}^n a_iy_i$ is an isomorphism from $U$ to $V$.</p>
-<p>Furthermore, if $U$ and $V$ are isomorphic and one of them is finite dimensional,
-then the other is also finite dimensional.</p>
+<p>Let $U$ and $V$ be vector spaces.
+Then they are isomorphic iff there is a bijection from a basis of $U$ to a basis of $V$.
+The isomorphism is the basis changer function.</p>
+<p>This means that if $U$ and $V$ are finite-dimensional vector spaces,
+they are isomorphic iff $\dim(U) = \dim(V)$.</p>
+<p>This also means that a finite-dimensional vector space cannot be isomorphic to an infinite-dimensional vector space,
+since there cannot be a bijection from a finite basis to an infinite basis.</p>
 <h2>Proof of 'only-if' part</h2>
-<p>Let $U$ and $V$ be isomorphic.
-Assume that $U$ is finite dimensional.
-Let $T: U \mapsto V$ be an isomorphism.
-Let $K$ be the kernel of $T$.</p>
-<p>\[ T(0) = T(0+0) = T(0) + T(0) \implies T(0) = 0 \implies 0 \in K \]</p>
-<p>Since $T$ is one-to-one, $K = \{0\}$.
-Therefore, $\{\}$ is a basis for $K$.</p>
-<p>Let $S$ be a basis of $U$. Therefore, $T(S)$ is a basis of $T(U)$.
-Since $T$ is onto, $V = T(U)$.
-Therefore, $T(S)$ is a basis of $V$.</p>
-<p>Therefore, $\operatorname{dim}(V) = |T(S)| = |S| = \operatorname{dim}(U)$.
-This means $V$ is also finite-dimensional.</p>
+<p>Let $P$ be a basis of $U$ and $Q$ be a basis of $V$.
+Let $\phi$ be a bijection from $P$ to $Q$.
+This means that a basis-changer $T: U \mapsto V$ exists from $P$ to $Q$.
+The basis changer is an isomorphic linear transformation.
+Therefore, $U$ is isomorphic to $V$.</p>
 <h2>Proof of 'if' part</h2>
-<p>Let $\operatorname{dim}(U) = \operatorname{dim}(V) = n$.
-Let $X = \{x_1, x_2, \ldots, x_n\}$ be a basis of $U$
-and $Y = \{y_1, y_2, \ldots, y_n\}$ be a basis of $V$.</p>
-<p>Let $T: U \mapsto V$ where
-\[ T\left(\sum_{i=1}^n a_ix_i\right) = \sum_{i=1}^n a_iy_i \]</p>
-<p>Every vector in $U$ can be represented uniquely as a linear combination of $X$.
-Every vector in $V$ can be represented uniquely as a linear combination of $Y$.
-Therefore $T$ is well-defined and onto.</p>
+<p>Let $B$ be a basis of $U$.
+Let $T: U \mapsto V$ be an isomorphism.
+This means $T$ is one-to-one, therefore, $T$ is a bijection from $B$ to $T(B)$.</p>
+<h3>Part 1: $\operatorname{span}(T(B)) = T(U)$</h3>
+<p>Let $T(u) \in T(U)$, where $u \in U$.
+Since every element in $U$ is representable as a linear combination of $B$,
+$u = \sum_{b \in B} a_b b$.</p>
 <p>\begin{align}
-&amp; T\left(\sum_{i=1}^n a_ix_i\right) = T\left(\sum_{i=1}^n b_ix_i\right)
-\\ &amp;\Rightarrow \sum_{i=1}^n a_iy_i = \sum_{i=1}^n b_iy_i
-\\ &amp;\Rightarrow a_i = b_i \forall i \tag{$\because$ of unique representation}
-\\ &amp;\Rightarrow \sum_{i=1}^n a_ix_i = \sum_{i=1}^n b_ix_i
+T(u) &amp;= T\left(\sum_{b \in B} a_b b \right)
+\\ &amp;= \sum_{b \in B} a_b T(b) \tag{$\because T$ is a linear transformation}
+\\ &amp;\in \operatorname{span}(T(B))
 \end{align}</p>
-<p>Therefore, $T$ is one-to-one.</p>
-<p>\begin{align}
-&amp; T\left(\left(\sum_{i=1}^n a_ix_i\right) + \left(\sum_{i=1}^n b_ix_i \right)\right)
-\\ &amp;= T\left( \sum_{i=1}^n (a_i+b_i)x_i\right)
-\\ &amp;= \sum_{i=1}^n (a_i+b_i)y_i
-\\ &amp;= \sum_{i=1}^n a_iy_i + \sum_{i=1}^n b_iy_i
-\\ &amp;= T\left(\sum_{i=1}^n a_ix_i\right) + T\left(\sum_{i=1}^n b_ix_i\right)
-\end{align}
-\begin{align}
-&amp; T\left(c\left(\sum_{i=1}^n a_ix_i\right)\right)
-\\ &amp;= T\left(\sum_{i=1}^n (ca_i)x_i\right)
-\\ &amp;= \sum_{i=1}^n (ca_i)y_i
-\\ &amp;= c\left(\sum_{i=1}^n a_iy_i\right)
-\\ &amp;= cT\left(\sum_{i=1}^n a_ix_i\right)
-\end{align}
-Therefore, $T$ is a linear transformation.</p>
-<p>Since $T$ is a bijective linear transformation from $U$ to $V$,
-$U$ is isomorphic to $V$.</p>
-<h2>Finite dimensionality</h2>
-<p>We have already proved that if $U$ is finite-dimensional
-and $T: U \mapsto V$ is an isomorphism then $V$ is also finite-dimensional.</p>
-<p>Now assume that $V$ is finite-dimensional
-and $T: U \mapsto V$ is an isomorphism.
-Since isomorphism is an equivalence relation,
-there is an isomorphism from $V$ to $U$.
-Therefore, $U$ is also finite-dimensional.</p>
+<p>Therefore, $T(U) \subseteq \operatorname{span}(T(B))$.</p>
+<p>Let $\sum_{b \in B} a_b T(b)$ be an element of $\operatorname{span}(T(B))$.
+Then \[ \sum_{b \in B} a_b T(b) = T\left( \sum_{b \in B} a_b b \right) \in T(U) \]</p>
+<p>Therefore, $\operatorname{span}(T(B)) \subseteq T(U) \Rightarrow \operatorname{span}(T(B)) = T(U)$.</p>
+<h3>Part 2: $T(B)$ is linearly independent</h3>
+<p>\[ \sum_{b \in B} a_b T(b) = 0
+\Rightarrow T\left( \sum_{b \in B} a_b b \right) = 0 \]</p>
+<p>\[ T(0) = T(0 + 0) = T(0) + T(0) \implies T(0) = 0 \]</p>
+<p>Since $T$ is a bijection, $\sum_{b \in B} a_b b = 0$.
+Since $B$ is linearly independent, $\forall b \in B, a_b = 0$.
+Therefore, $T(B)$ is linearly independent.</p>
+<h3>Part 3: Conclusion</h3>
+<p>Since $\operatorname{span}(T(B)) = T(U)$ and $T(B)$ is linearly independent,
+$T(B)$ is a basis of $T(U)$.
+Since $T$ is onto, $T(U) = V$.</p>
+<p>Therefore, $T$ is a bijection from a basis of $U$ ($B$) to a basis of $V$ ($T(B)$).</p>
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
     <ul class="deplist">
@@ -132,8 +98,8 @@ Therefore, $U$ is also finite-dimensional.</p>
     </ul>
 <h2> Info: </h2>
 <ul>
-<li>Depth: 14</li>
-<li>Number of transitive dependencies: 50</li>
+<li>Depth: 16</li>
+<li>Number of transitive dependencies: 39</li>
 </ul>
 </div>
 </body>

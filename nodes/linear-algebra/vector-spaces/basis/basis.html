@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Basis of a vector space - TheoremDep</title>
-    <meta name="description" content="If a set of vectors S is linearly independent and spans a vector space V, then S is a basis of V." />
+    <meta name="description" content="If a set of vectors B is linearly independent and spans a vector space V, then B is a basis of V. All bases of a vector space have the same size." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -29,25 +29,47 @@
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep.html">
-            <span class="deptitle">Linear independence</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span.html">
-            <span class="deptitle">Span</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-is-smaller-than-span.html">
+            <span class="deptitle">Linearly independent set is smaller than a span</span>
         </a>
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Let $S$ be a subset of a vector space $V$.
-$S$ is a basis of $V$ iff $S$ is linearly independent and $V = \operatorname{span}(S)$.</p>
+<p>Let $B$ be a subset of a vector space $V$.
+$B$ is a basis of $V$ iff $B$ is linearly independent and $V = \operatorname{span}(B)$.</p>
+<p>All bases of a vector space have the same size
+(either they are all of infinite size or they are all of the same finite size).</p>
+<p>If $V$ has a finite basis of size $n$, we say that $\operatorname{dim}(V) = n$.
+$\operatorname{dim}(V)$ is well-defined since all bases of $V$ have the same size.</p>
+<h2>Proof that all bases have the same size</h2>
+<p>Let $B_1$ and $B_2$ be 2 bases of a vector space $V$ and one of them is finite.
+Without loss of generality, assume $B_1$ is finite.</p>
+<p>Assume $B_2$ is larger than $B_1$ ($|B_2| &gt; |B_1|$).
+Let $S$ be a finite subset of $B_2$ which is larger than $B_1$.
+Since $B_1$ spans $V$ and $S$ is larger than $B_1$, $S$ is linearly dependent.
+This means $B_2$ is linearly dependent, which contradicts the fact that $B_2$ is a basis of $V$.
+Therefore, no subset of $B_2$ is larger than $B_1$.
+Therefore, $|B_2| \le |B_1|$.</p>
+<p>This means $B_2$ is finite.
+Using a similar argument as above and interchanging the roles of $B_1$ and $B_2$,
+we can prove that $|B_1| \le |B_2|$.
+Therefore, $|B_1| = |B_2|$.</p>
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/canonical-decomposition.html">
-            <span class="deptitle">Canonical decomposition of a linear transformation</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/symmetric-operator-matrix.html">
+            <span class="deptitle">Symmetric operator iff hermitian</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-operator-has-n-ortho-eigenvectors.html">
+            <span class="deptitle">Symmetric operator on V has a basis of orthonormal eigenvectors</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/coordinatization.html">
+            <span class="deptitle">Coordinatization over a basis</span>
         </a>
         </li>
         <li>
@@ -61,11 +83,6 @@ $S$ is a basis of $V$ iff $S$ is linearly independent and $V = \operatorname{spa
         </a>
         </li>
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/unique-repr.html">
-            <span class="deptitle">Unique linear combination of basis</span>
-        </a>
-        </li>
-        <li>
         <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis-of-fn.html">
             <span class="deptitle">Basis of F^n</span>
         </a>
@@ -73,11 +90,6 @@ $S$ is a basis of $V$ iff $S$ is linearly independent and $V = \operatorname{spa
         <li>
         <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/minimal-span-is-basis.html">
             <span class="deptitle">Minimally spanning iff basis</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/all-bases-have-same-size.html">
-            <span class="deptitle">All bases of a vector space have the same size</span>
         </a>
         </li>
         <li>
@@ -98,8 +110,8 @@ $S$ is a basis of $V$ iff $S$ is linearly independent and $V = \operatorname{spa
     </ul>
 <h2> Info: </h2>
 <ul>
-<li>Depth: 5</li>
-<li>Number of transitive dependencies: 6</li>
+<li>Depth: 12</li>
+<li>Number of transitive dependencies: 34</li>
 </ul>
 </div>
 </body>

@@ -729,6 +729,19 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/isomorphism-equiv.html"
 },
 {
+"type": "theorem",
+"title": "Basis change is an isomorphic linear transformation",
+"uci": "/linear-algebra/linear-transformation/basis-change",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/basis-change.html"
+},
+{
+"type": "theorem",
+"title": "Matrix of orthonormal basis change",
+"description": "Let P and Q be orthonormal bases of U and V respectively. Then the transformation matrix of the basis-changer from P to Q is orthogonal.",
+"uci": "/linear-algebra/linear-transformation/matrix-of-orthonormal-basis-change",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix-of-orthonormal-basis-change.html"
+},
+{
 "type": "def",
 "title": "Linear transformation",
 "description": "A linear transformation is a linear function mapping one vector space to another.",
@@ -752,7 +765,7 @@
 {
 "type": "theorem",
 "title": "Matrix of linear transformation",
-"description": "Every linear transformation from F^m to F^n can be expressed as a matrix pre-multiplication.",
+"description": "Every linear transformation from F^m to F^n can be expressed as a matrix pre-multiplication. Conversely, a pre-multiplication by a matrix forms a linear transformation.",
 "uci": "/linear-algebra/linear-transformation/matrix",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix.html"
 },
@@ -764,10 +777,30 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/composition.html"
 },
 {
+"type": "def",
+"title": "Symmetric operator",
+"description": "A linear transformation L is a symmetric operator iff L(u)v = uL(v).",
+"uci": "/linear-algebra/linear-transformation/symmetric-operator",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/symmetric-operator.html"
+},
+{
+"type": "theorem",
+"title": "Symmetric operator iff hermitian",
+"description": "Let L: V to V be a linear transformation and A be the square matrix associated with L. Then L is symmetric iff A is hermitian. Also, if T(u) = Au, then A is hermitian iff T is a symmetric operator.",
+"uci": "/linear-algebra/linear-transformation/symmetric-operator-matrix",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/symmetric-operator-matrix.html"
+},
+{
 "type": "theorem",
 "title": "Range of linear transformation is subspace of codomain",
 "uci": "/linear-algebra/linear-transformation/range-is-subspace",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/range-is-subspace.html"
+},
+{
+"type": "theorem",
+"title": "Every complex matrix has an eigenvalue",
+"uci": "/linear-algebra/eigenvectors/every-complex-matrix-has-eigenvalue",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/every-complex-matrix-has-eigenvalue.html"
 },
 {
 "type": "theoremdef",
@@ -775,6 +808,13 @@
 "description": "Let T be a linear transformation. If T(x) = kx is satisfied for some k and some x, then k is an eigenvalue and x is an eigenvector.",
 "uci": "/linear-algebra/eigenvectors/eigenvector",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenvector.html"
+},
+{
+"type": "theorem",
+"title": "Degree and monicness of a characteristic polynomial",
+"description": "Let A be an n by n matrix. The characteristic polynomial of A is a monic polynomial of degree n.",
+"uci": "/linear-algebra/eigenvectors/char-poly-degree-monic",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/char-poly-degree-monic.html"
 },
 {
 "type": "theorem",
@@ -798,6 +838,20 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenspace.html"
 },
 {
+"type": "theorem",
+"title": "Real matrix with real eigenvalues has real eigenvectors",
+"description": "If a matrix A has only real entries and \u03bb is a real eigenvalue of A, then A has real eigenvectors corresponding to \u03bb.",
+"uci": "/linear-algebra/eigenvectors/real-matrix-with-real-eigenvalue-has-real-eigenvectors",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/real-matrix-with-real-eigenvalue-has-real-eigenvectors.html"
+},
+{
+"type": "theorem",
+"title": "Orthogonally diagonalizable iff hermitian",
+"description": "A matrix A is said to be orthogonally diagonalizable iff it can be expressed as PDP*, where P is orthogonal. Then A is orthogonally diagonalizable iff A = A*.",
+"uci": "/linear-algebra/eigenvectors/ortho-diag",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/ortho-diag.html"
+},
+{
 "type": "theoremdef",
 "title": "Characteristic polynomial of a matrix",
 "description": "The characteristic polynomial of a matrix A is |xI - A|. Its roots are the eigenvalues of A.",
@@ -806,10 +860,23 @@
 },
 {
 "type": "theorem",
+"title": "Symmetric operator on V has a basis of orthonormal eigenvectors",
+"description": "Let L be a symmetric operator on V, a vector space over the complex numbers. Then there is a basis of V consisting of orthonormal eigenvectors of L.",
+"uci": "/linear-algebra/eigenvectors/symmetric-operator-has-n-ortho-eigenvectors",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-operator-has-n-ortho-eigenvectors.html"
+},
+{
+"type": "theorem",
 "title": "A is diagonalizable iff there are n linearly independent eigenvectors",
 "description": "Let A be an n by n matrix. Then A is diagonalizable iff A has n linearly independent eigenvectors.",
 "uci": "/linear-algebra/eigenvectors/diag-linindep",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/diag-linindep.html"
+},
+{
+"type": "theorem",
+"title": "All eigenvalues of a symmetric operator are real",
+"uci": "/linear-algebra/eigenvectors/symmetric-real",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-real.html"
 },
 {
 "type": "def",
@@ -917,7 +984,7 @@
 {
 "type": "def",
 "title": "Span",
-"description": "The span of a set of vectors is the set of all linear combinations of those vectors.",
+"description": "The span of a set of vectors is the set of all finite linear combinations of those vectors.",
 "uci": "/linear-algebra/vector-spaces/span",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span.html"
 },
@@ -952,7 +1019,7 @@
 {
 "type": "theoremdef",
 "title": "Linear independence",
-"description": "A set of vectors are linearly independent iff no linear combination of them with some positive coefficients is 0.",
+"description": "A set of vectors are linearly independent iff no finite linear combination of them with some positive coefficients is 0.",
 "uci": "/linear-algebra/vector-spaces/linindep",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep.html"
 },
@@ -970,6 +1037,13 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span-decrement.html"
 },
 {
+"type": "theoremdef",
+"title": "Coordinatization over a basis",
+"description": "Let B be a basis of vector space V. Then every vector in V can be expressed uniquely as a finite linear combination of vectors in B. The coefficients of the linear combination are called the coordinates of that vector.",
+"uci": "/linear-algebra/vector-spaces/basis/coordinatization",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/coordinatization.html"
+},
+{
 "type": "theorem",
 "title": "Linearly independent set can be expanded into a basis",
 "description": "If a set of vectors is linearly independent, a finite number of vectors can be added to it to make it a basis if the vector space has a finite-sized basis.",
@@ -979,21 +1053,21 @@
 {
 "type": "theorem",
 "title": "Maximally linearly independent iff basis",
-"description": "A set is maximally linearly independent iff it is a basis.",
+"description": "A finite set is maximally linearly independent iff it is a basis.",
 "uci": "/linear-algebra/vector-spaces/basis/maximal-linindep-is-basis",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/maximal-linindep-is-basis.html"
 },
 {
-"type": "theorem",
-"title": "Unique linear combination of basis",
-"description": "Let B be a finite basis of vector space V. Then every vector in V can be expressed uniquely as a linear combination of vectors in B.",
-"uci": "/linear-algebra/vector-spaces/basis/unique-repr",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/unique-repr.html"
+"type": "theoremdef",
+"title": "Basis changer",
+"description": "A basis changer is a bijection which maps coordinates of one basis to coorindates of another basis.",
+"uci": "/linear-algebra/vector-spaces/basis/basis-change",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis-change.html"
 },
 {
-"type": "def",
+"type": "theoremdef",
 "title": "Basis of a vector space",
-"description": "If a set of vectors S is linearly independent and spans a vector space V, then S is a basis of V.",
+"description": "If a set of vectors B is linearly independent and spans a vector space V, then B is a basis of V. All bases of a vector space have the same size.",
 "uci": "/linear-algebra/vector-spaces/basis/basis",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html"
 },
@@ -1006,15 +1080,9 @@
 {
 "type": "theorem",
 "title": "Minimally spanning iff basis",
-"description": "A set of vectors S minimally spans V iff S is a basis.",
+"description": "A finite set of vectors S minimally spans V iff S is a basis.",
 "uci": "/linear-algebra/vector-spaces/basis/minimal-span-is-basis",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/minimal-span-is-basis.html"
-},
-{
-"type": "theorem",
-"title": "All bases of a vector space have the same size",
-"uci": "/linear-algebra/vector-spaces/basis/all-bases-have-same-size",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/all-bases-have-same-size.html"
 },
 {
 "type": "theorem",
@@ -1089,6 +1157,12 @@
 "description": "Let A be an n by n matrix. Then rank(A) = n iff A has an inverse.",
 "uci": "/linear-algebra/matrices/full-rank-inv",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-inv.html"
+},
+{
+"type": "theorem",
+"title": "Conjugation of matrices is homomorphic",
+"uci": "/linear-algebra/matrices/conjugation-is-homomorphic",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/conjugation-is-homomorphic.html"
 },
 {
 "type": "theoremdef",
@@ -1373,12 +1447,6 @@
 },
 {
 "type": "theorem",
-"title": "R is commutative iff R[x] is commutative",
-"uci": "/polynomials/commutative",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/commutative.html"
-},
-{
-"type": "theorem",
 "title": "Zero divisors of a polynomial",
 "description": "Ring R has no zero divisors iff the ring of polynomials R[x] has no zero divisors",
 "uci": "/polynomials/zero-divisors",
@@ -1476,6 +1544,13 @@
 "title": "p(x)F[x] = F[x] iff p is a non-zero constant",
 "uci": "/polynomials/principal-ideal-trivial",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/principal-ideal-trivial.html"
+},
+{
+"type": "theorem",
+"title": "Comparing coefficients of a polynomial with disjoint variables",
+"description": "Let there be a (possibly multi-variate) polynomial over an integral domain where each variable is present in at most one term. If the polynomial evaluates to 0 for all inputs, then all coefficients of the polynomial are zero.",
+"uci": "/polynomials/compare-coeff-disjoint-var",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/compare-coeff-disjoint-var.html"
 },
 {
 "type": "theorem",

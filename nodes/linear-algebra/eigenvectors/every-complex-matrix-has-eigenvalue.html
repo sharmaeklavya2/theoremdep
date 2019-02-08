@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Every complex matrix has an eigenvalue - TheoremDep</title>
+    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Every complex matrix has an eigenvalue</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+            <span class="deptitle">Matrix</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenvector.html">
+            <span class="deptitle">Eigenvalues and Eigenvectors</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/char-poly-degree-monic.html">
+            <span class="deptitle">Degree and monicness of a characteristic polynomial</span>
+        </a>
+        </li>
+        <li>
+        <span class="deptitleuci missing">/misc/fundamental-theorem-of-algebra</span>
+        </li>
+        <li>
+        <span class="deptitleuci missing">/linear-algebra/eigenvectors/cayley-hamilton-theorem</span>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/product.html">
+            <span class="deptitle">Determinant of product is product of determinants</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field-is-integral-domain.html">
+            <span class="deptitle">A field is an integral domain</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/rank.html">
+            <span class="deptitle">A matrix is full-rank iff its determinant is non-0</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/rank-homogenous.html">
+            <span class="deptitle">Rank of a homogenous system of linear equations</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Every matrix over $\mathbb{C}$ has at least one eigenvalue.</p>
+<h2>Proof</h2>
+<p>Let $A$ be an $n$ by $n$ matrix over $\mathbb{C}$.</p>
+<p>Let $p_A(x) = |xI - A|$ be the characteristic polynomial of $A$.
+$p_A$ is a monic polynomial of degree $n$.</p>
+<p>By the fundamental theorem of algebra,
+\[ p_A(x) = \prod_{i=1}^n (x - a_i) \]
+where $\forall i, a_i \in \mathbb{C}$.</p>
+<p>By the Cayley-Hamilton theorem, $p_A(A) = 0$.</p>
+<p>\[ p_A(A) = 0
+\implies \prod_{i=1}^n (A-a_iI) = 0
+\implies \left|\prod_{i=1}^n (A-a_iI)\right| = 0
+\implies \prod_{i=1}^n |A-a_iI| = 0
+\]</p>
+<p>$\exists i, |A-a_iI| = 0$, because $\mathbb{C}$ is a field
+and a field has no zero-divisors.</p>
+<p>Let $a_i = \lambda$.</p>
+<p>\begin{align}
+&amp; |A-\lambda I| = 0
+\\ &amp;\Rightarrow \operatorname{rank}(A-\lambda I) = 0
+\\ &amp;\Rightarrow \exists u \neq 0, (A - \lambda I)u = 0
+\\ &amp;\Rightarrow \exists u \neq 0, Au = (\lambda I)u = \lambda u
+\end{align}</p>
+<p>Therefore, $(\lambda, u)$ is an eigenvalue-eigenvector pair for $A$.</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-operator-has-n-ortho-eigenvectors.html">
+            <span class="deptitle">Symmetric operator on V has a basis of orthonormal eigenvectors</span>
+        </a>
+        </li>
+    </ul>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 21</li>
+<li>Number of transitive dependencies: 64</li>
+</ul>
+</div>
+</body>
+</html>

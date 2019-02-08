@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Coordinatization over a basis - TheoremDep</title>
+    <meta name="description" content="Let B be a basis of vector space V. Then every vector in V can be expressed uniquely as a finite linear combination of vectors in B. The coefficients of the linear combination are called the coordinates of that vector." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Coordinatization over a basis</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html">
+            <span class="deptitle">Basis of a vector space</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $B = [u_1, u_2, \ldots, u_n]$ be a sequence of vectors which form a finite basis
+on the vector space $V$ over a field $F$.
+Then every vector $v \in V$ can be expressed uniquely as a linear combination of vectors in $B$.</p>
+<p>The sequence of coefficients of the linear combination is denoted by $[v]_B$ and
+is called the coordinates of $v$ with respect to $B$.</p>
+<p>This means that the function $R: F^n \mapsto V$ where
+$R([a_1, a_2, \ldots, a_n]) = \sum_{i=1}^n a_iu_i$ is a bijection
+and $R^{-1}(v) = [v]_B$.</p>
+<p>If $B$ is infinite-sized, every vector $v \in V$ can be uniquely expressed as a linear combination
+of a finite subset of $B$ (uniqueness is up to the ordering of elements in $V$).</p>
+<p>In this case, coordinates can't be expressed as a sequence.
+The coordinates of $v$ are expressed by the coordinate function
+$f_{v, B}: B \mapsto F$.</p>
+<h2>Proof</h2>
+<p>Let $v \in V$.
+Since $B$ spans $V$, every v can be represented as a finite linear combination of vectors in $B$.</p>
+<p>Suppose there are 2 such linear combinations,
+\[ v = \sum_{i=1}^n a_iu_i = \sum_{i=1}^n b_iu_i \]
+\[ \Rightarrow 0 = v - v = \sum_{i=1}^n (a_i-b_i)u_i \]
+Since $B$ is linearly independent, $a_i - b_i = 0$ for all $i$.</p>
+<p>Therefore, $a_i = b_i$ for all $i$, which implies that there is a unique
+representation of $v$ as a linear combination of $B$.</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/canonical-decomposition.html">
+            <span class="deptitle">Canonical decomposition of a linear transformation</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/basis-change.html">
+            <span class="deptitle">Basis change is an isomorphic linear transformation</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/isomorphic-dimension.html">
+            <span class="deptitle">Vector spaces are isomorphic iff their dimensions are same</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis-change.html">
+            <span class="deptitle">Basis changer</span>
+        </a>
+        </li>
+    </ul>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 13</li>
+<li>Number of transitive dependencies: 35</li>
+</ul>
+</div>
+</body>
+</html>

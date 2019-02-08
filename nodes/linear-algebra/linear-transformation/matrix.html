@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Matrix of linear transformation - TheoremDep</title>
-    <meta name="description" content="Every linear transformation from F^m to F^n can be expressed as a matrix pre-multiplication." />
+    <meta name="description" content="Every linear transformation from F^m to F^n can be expressed as a matrix pre-multiplication. Conversely, a pre-multiplication by a matrix forms a linear transformation." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -38,6 +38,11 @@
             <span class="deptitle">Basis of F^n</span>
         </a>
         </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/compare-coeff-disjoint-var.html">
+            <span class="deptitle">Comparing coefficients of a polynomial with disjoint variables</span>
+        </a>
+        </li>
     </ul>
 <div class="horizontal-rule"></div>
 <p>Let $F$ be a field. Let $T: F^m \mapsto F^n$ be a linear transformation.
@@ -45,6 +50,8 @@ Then $T$ can be expressed as pre-multiplication by a unique $n$ by $m$ matrix.
 Formally,
 \[ \exists A \in \mathbb{M}_{m, n}(F), \forall u \in U, T(u) = A^Tu \]
 where $u$ is treated as a column vector of length $m$ and $A$ is unique.</p>
+<p>Conversely, if $A$ is an $m$ by $n$ matrix,
+$T(u) = Au$ is a linear transformation from $F^n$ to $F^m$.</p>
 <h2>Proof</h2>
 <p>Let $E = \{e_1 = (1, 0, \ldots, 0), e_2 = (0, 1, \ldots, 0), \ldots, e_m = (0, 0, \ldots, 1) \}$ be a basis of $F^m$.</p>
 <p>Let $u \in F^m$ where $u = (u_1, u_2, \ldots, u_m) = \sum_{i=1}^m u_ie_i$.</p>
@@ -63,19 +70,38 @@ where $u$ is treated as a column vector of length $m$ and $A$ is unique.</p>
 <p>Comparing the coefficient of $u_j$, we get $(A-B)^T[i, j] = 0$.
 This means $(A-B)^T = 0 \Rightarrow A = B$.</p>
 <p>Therefore, $T$ has a unique matrix associated with it.</p>
+<p>Conversely, let $A$ be an $m$ by $n$ matrix. Let $T(u) = Au$.</p>
+<p>\[ T(u + v) = A(u + v) = Au + Av = T(u) + T(v) \]
+\[ T(cv) = A(cv) = c(Av) = cT(v) \]</p>
+<p>Therefore, $T$ is a linear transformation.</p>
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
     <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix-of-orthonormal-basis-change.html">
+            <span class="deptitle">Matrix of orthonormal basis change</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/symmetric-operator-matrix.html">
+            <span class="deptitle">Symmetric operator iff hermitian</span>
+        </a>
+        </li>
         <li>
         <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenvector.html">
             <span class="deptitle">Eigenvalues and Eigenvectors</span>
         </a>
         </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-operator-has-n-ortho-eigenvectors.html">
+            <span class="deptitle">Symmetric operator on V has a basis of orthonormal eigenvectors</span>
+        </a>
+        </li>
     </ul>
 <h2> Info: </h2>
 <ul>
-<li>Depth: 7</li>
-<li>Number of transitive dependencies: 12</li>
+<li>Depth: 14</li>
+<li>Number of transitive dependencies: 38</li>
 </ul>
 </div>
 </body>

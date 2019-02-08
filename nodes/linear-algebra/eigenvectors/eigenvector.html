@@ -45,10 +45,10 @@ Let $T: V \mapsto V$ be a linear transformation.</p>
 <p>If $T(x) = \lambda x$ is true for some $\lambda \in F$ and some $x \neq 0 \in V$,
 then $\lambda$ is called an eigenvalue of $T$
 and $x$ is called an eigenvector of $T$.</p>
-<p>If $V$ is finite-dimensional,
+<p>If $V$ is finite-dimensional and $\dim(V) = n$,
 the eigenvalues and eigenvectors of $T$ can be found
-by finding the eigenvalues and eigenvectors of another transformation $T_2(x) = Ax$,
-where $A$ is a square matrix over $F$.</p>
+by finding the eigenvalues and eigenvectors of another transformation
+$T_2: F^n \mapsto F^n$ where $T_2(x) = Ax$ and $A$ is a square matrix over $F$.</p>
 <p>Consequently, the eigenvalues and eigenvectors of a matrix $A$
 are defined as solutions to $Ax = \lambda x$.</p>
 <h2>Proof</h2>
@@ -67,6 +67,11 @@ Therefore, the eigenvalue equation becomes $Ax = \lambda x$.</p>
 <h2> Dependency for: </h2>
     <ul class="deplist">
         <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/every-complex-matrix-has-eigenvalue.html">
+            <span class="deptitle">Every complex matrix has an eigenvalue</span>
+        </a>
+        </li>
+        <li>
         <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/diagonalization.html">
             <span class="deptitle">Diagonalization</span>
         </a>
@@ -82,15 +87,30 @@ Therefore, the eigenvalue equation becomes $Ax = \lambda x$.</p>
         </a>
         </li>
         <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/real-matrix-with-real-eigenvalue-has-real-eigenvectors.html">
+            <span class="deptitle">Real matrix with real eigenvalues has real eigenvectors</span>
+        </a>
+        </li>
+        <li>
         <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/char-poly.html">
             <span class="deptitle">Characteristic polynomial of a matrix</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-operator-has-n-ortho-eigenvectors.html">
+            <span class="deptitle">Symmetric operator on V has a basis of orthonormal eigenvectors</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-real.html">
+            <span class="deptitle">All eigenvalues of a symmetric operator are real</span>
         </a>
         </li>
     </ul>
 <h2> Info: </h2>
 <ul>
-<li>Depth: 16</li>
-<li>Number of transitive dependencies: 56</li>
+<li>Depth: 18</li>
+<li>Number of transitive dependencies: 47</li>
 </ul>
 </div>
 </body>

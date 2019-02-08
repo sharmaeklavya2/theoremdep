@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>A set of dim(V) linearly independent vectors is a basis - TheoremDep</title>
-    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <title>Symmetric operator - TheoremDep</title>
+    <meta name="description" content="A linear transformation L is a symmetric operator iff L(u)v = uL(v)." />
     <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
     <script type="text/javascript">
         window.MathJax = {
@@ -25,49 +25,46 @@
     </form>
 </nav>
 <div id="main">
-<h1>A set of dim(V) linearly independent vectors is a basis</h1>
+<h1>Symmetric operator</h1>
 <h2> Dependencies: </h2>
     <ul class="deplist">
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html">
-            <span class="deptitle">Basis of a vector space</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/linear-transformation.html">
+            <span class="deptitle">Linear transformation</span>
         </a>
         </li>
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-increment.html">
-            <span class="deptitle">Incrementing a linearly independent set</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-is-smaller-than-span.html">
-            <span class="deptitle">Linearly independent set is smaller than a span</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/inner-product-space.html">
+            <span class="deptitle">Inner product space</span>
         </a>
         </li>
     </ul>
 <div class="horizontal-rule"></div>
-<p>Let $B$ be a finite basis for vector space $V$.
-Let $S$ be a set of linearly independent vectors from $V$.
-If $|S| = |B|$, then $S$ is a basis of $V$.</p>
-<h2>Proof</h2>
-<p>Assume that $S$ doesn't span $V$.
-Therefore, there is a vector $w$ which cannot be represented as a linear combination of vectors in $S$.
-Therefore, $S \cup \{w\}$ is linearly independent.</p>
-<p>Since $S \cup \{w\}$ is linearly independent and $B$ spans $V$,
-$|S \cup \{w\}| \le |B| \Rightarrow |B| + 1 \le |B| \Rightarrow \bot$.
-Therefore, $S \cup \{w\}$ spans $V$, which makes it a basis.</p>
+<p>Let $L: V \mapsto V$ be a linear transformation over an inner product space.</p>
+<p>$L$ is a symmetric operator iff $(\forall u, v \in V, \langle L(u), v \rangle = \langle u, L(v) \rangle)$.</p>
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
     <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/symmetric-operator-matrix.html">
+            <span class="deptitle">Symmetric operator iff hermitian</span>
+        </a>
+        </li>
         <li>
         <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-operator-has-n-ortho-eigenvectors.html">
             <span class="deptitle">Symmetric operator on V has a basis of orthonormal eigenvectors</span>
         </a>
         </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-real.html">
+            <span class="deptitle">All eigenvalues of a symmetric operator are real</span>
+        </a>
+        </li>
     </ul>
 <h2> Info: </h2>
 <ul>
-<li>Depth: 13</li>
-<li>Number of transitive dependencies: 36</li>
+<li>Depth: 5</li>
+<li>Number of transitive dependencies: 6</li>
 </ul>
 </div>
 </body>

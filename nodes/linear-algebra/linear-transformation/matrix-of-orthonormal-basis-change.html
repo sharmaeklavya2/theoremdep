@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Matrix of orthonormal basis change - TheoremDep</title>
+    <meta name="description" content="Let P and Q be orthonormal bases of U and V respectively. Then the transformation matrix of the basis-changer from P to Q is orthogonal." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Matrix of orthonormal basis change</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inner-product-space.html">
+            <span class="deptitle">Matrices form an inner-product space</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/basis-change.html">
+            <span class="deptitle">Basis change is an isomorphic linear transformation</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix.html">
+            <span class="deptitle">Matrix of linear transformation</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/orthogonal.html">
+            <span class="deptitle">Orthogonal matrix</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis-of-fn.html">
+            <span class="deptitle">Basis of F^n</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/transpose-of-product.html">
+            <span class="deptitle">Transpose of product</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/conjugation-is-homomorphic.html">
+            <span class="deptitle">Conjugation of matrices is homomorphic</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $P$ and $Q$ be orthonormal bases of vector space $F^n$,
+where $F$ is a field. Inner-product of vectors is defined to be $\langle u, v \rangle = v^*u$.
+Let $T$ be a basis-change function from $P$ to $Q$.</p>
+<p>Since basis-change is a linear transformation and every linear transformation
+on finite-dimensional vector spaces can be expressed as matrix pre-multiplication,
+$T$ has an associated matrix $A$ such that $T(u) = Au$ ($u$ is treated as a column vector).</p>
+<p>We have to prove that $A$ is orthogonal.</p>
+<h2>Proof</h2>
+<p>Let $E = [e_1, e_2, \ldots, e_n]$ be the standard basis of $F^n$.
+Let $P = [p_1, p_2, \ldots, p_n]$ and $Q = [q_1, q_2, \ldots, q_n]$.</p>
+<p>Let $T_P$ be the basis change function from $E$ to $P$.
+Let $T_Q$ be the basis change function from $E$ to $Q$.</p>
+<p>\[ \left(T_QT_P^{-1}\right)\left(\sum_{i=1}^n a_ip_i \right)
+= T_Q\left(T_P^{-1}\left(\sum_{i=1}^n a_ip_i \right)\right)
+= T_Q\left(\sum_{i=1}^n a_ie_i\right)
+= \sum_{i=1}^n a_iq_i \]</p>
+<p>Therefore, $T_QT_P^{-1}$ is a basis change function from $P$ to $Q$.</p>
+<p>Let $B$ be the matrix whose columns are vectors of $P$.
+Let $C$ be the matrix whose columns are vectors of $Q$.
+Since $P$ has orthonormal vectors, $B$ is an orthogonal matrix.
+Since $Q$ has orthonormal vectors, $C$ is an orthogonal matrix.</p>
+<p>Let $a = [a_1, a_2, \ldots, a_n]$.
+\begin{align}
+&amp; T_P(a)_j
+\\ &amp;= \left(\sum_{i=1}^n a_i p_i \right)_j
+\\ &amp;= \sum_{i=1}^n a_i (p_i)_j
+\\ &amp;= \sum_{i=1}^n B[j, i] a_i
+\\ &amp;= (Ba)_j
+\end{align}</p>
+<p>Therefore, $T_P(a) = Ba$.
+Similarly, $T_Q(a) = Ca$.</p>
+<p>Let $d = T_P(a)$.
+\[ d = T_P(a) = Ba = B T_P^{-1}(d)
+\Rightarrow T_P^{-1}(d) = B^{-1}d = B^*d \]</p>
+<p>\[ T(u) = T_QT_P^{-1}(u) = CB^*u \]
+Therefore, the matrix of $T$ is $CB^*$.</p>
+<p>\[ (CB^*)^*(CB^*) = BC^*CB^* = BB^* = I \]
+Therefore, $CB^*$ is orthogonal.
+Therefore, the matrix of $T$ is orthogonal.</p>
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 16</li>
+<li>Number of transitive dependencies: 56</li>
+</ul>
+</div>
+</body>
+</html>

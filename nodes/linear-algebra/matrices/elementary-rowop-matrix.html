@@ -44,6 +44,11 @@
         </a>
         </li>
         <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/compare-coeff-disjoint-var.html">
+            <span class="deptitle">Comparing coefficients of a polynomial with disjoint variables</span>
+        </a>
+        </li>
+        <li>
         <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inverse.html">
             <span class="deptitle">Inverse of a matrix</span>
         </a>
@@ -98,12 +103,15 @@ On comparing coefficients of $A[*, j]$, we get
 </li>
 <li>
 <p>Invertibility:</p>
+<p>Every elementary row operation is its own inverse.</p>
 <p>Let $R$ be the matrix corresponding to an elementary row operation.
-Since every row operation has an inverse, let $S$ be the matrix of that inverse operation.</p>
-<p>Since $S$ represents the inverse operation of $R$, $S(RA) = A$ for all $A$.
-For $A = I_m$, we get $SR = I_m$.
-Since $R$ represents the inverse operation of $S$, $R(SA) = A$ for all $A$.
-For $A = I_m$, we get $RS = I_m$.</p>
+Let $S$ be the matrix of its inverse operation.</p>
+<ul>
+<li>Since $S$ represents the inverse operation of $R$, $S(RA) = A$ for all $A$.
+For $A = I_m$, we get $SR = I_m$.</li>
+<li>Since $R$ represents the inverse operation of $S$, $R(SA) = A$ for all $A$.
+For $A = I_m$, we get $RS = I_m$.</li>
+</ul>
 <p>Therefore, $R$ is invertible and its inverse is $S$.</p>
 </li>
 </ul>
@@ -123,8 +131,8 @@ For $A = I_m$, we get $RS = I_m$.</p>
     </ul>
 <h2> Info: </h2>
 <ul>
-<li>Depth: 5</li>
-<li>Number of transitive dependencies: 10</li>
+<li>Depth: 6</li>
+<li>Number of transitive dependencies: 13</li>
 </ul>
 </div>
 </body>

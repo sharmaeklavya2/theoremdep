@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Symmetric operator on V has a basis of orthonormal eigenvectors - TheoremDep</title>
+    <meta name="description" content="Let L be a symmetric operator on V, a vector space over the complex numbers. Then there is a basis of V consisting of orthonormal eigenvectors of L." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Symmetric operator on V has a basis of orthonormal eigenvectors</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/symmetric-operator.html">
+            <span class="deptitle">Symmetric operator</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html">
+            <span class="deptitle">Basis of a vector space</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenvector.html">
+            <span class="deptitle">Eigenvalues and Eigenvectors</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/orthogonality.html">
+            <span class="deptitle">Orthogonality and orthonormality</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix.html">
+            <span class="deptitle">Matrix of linear transformation</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/every-complex-matrix-has-eigenvalue.html">
+            <span class="deptitle">Every complex matrix has an eigenvalue</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-real.html">
+            <span class="deptitle">All eigenvalues of a symmetric operator are real</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/real-matrix-with-real-eigenvalue-has-real-eigenvectors.html">
+            <span class="deptitle">Real matrix with real eigenvalues has real eigenvectors</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/n-linindep-is-basis.html">
+            <span class="deptitle">A set of dim(V) linearly independent vectors is a basis</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/expand-linindep-to-basis.html">
+            <span class="deptitle">Linearly independent set can be expanded into a basis</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/gram-schmidt-process.html">
+            <span class="deptitle">Gram-Schmidt Process</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-increment.html">
+            <span class="deptitle">Incrementing a linearly independent set</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/antilin-in-2nd.html">
+            <span class="deptitle">Inner product is anti-linear in second argument</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/ortho-vectors-are-linindep.html">
+            <span class="deptitle">A set of mutually orthogonal vectors is linearly independent</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $V$ be an inner product space on field $F$ where $F$ is either $\mathbb{R}$ or $\mathbb{C}$.
+Let $L: V \mapsto V$ be a symmetric operator.</p>
+<p>Then there is a basis of $V$ consisting of orthonormal eigenvectors of $V$ with real eigenvalues.</p>
+<h2>Proof</h2>
+<p>We will prove by induction over $\dim(V)$.</p>
+<p>Let $P(n)$ be the predicate that a vector space of dimension $n$
+has an orthonormal basis of $n$ eigenvectors of $L$ over any symmetric operator $L$
+and the corresponding eigenvalues are real.</p>
+<h3>Base case</h3>
+<p>A vector space of dimension 0 is the vector space $\{0\}$.
+Its basis is $\{\}$. Therefore, $P(0)$ holds.</p>
+<h3>Inductive step</h3>
+<p>Let $\dim(V) = n \ge 1$ and assume $P(n-1)$ holds.</p>
+<p>Any finite-dimensional vector space with non-0 dimension has a matrix associated with it.
+Let the matrix of $L$ be $A$.
+The eigenvalue-eigenvector pairs of $A$ can be mapped to eigenvalue-eigenvector pairs of $L$.</p>
+<p>Since every complex matrix has an eigenvalue,
+$A$ has an eigenvalue-eigenvector pair.
+Therefore, $L$ has an eigenvalue-eigenvector pair $(\lambda, u)$.
+Since all eigenvectors of a symmetric operator are real,
+$\lambda \in \mathbb{R}$.</p>
+<p>If $F = \mathbb{R}$, $A$ is a real matrix.
+Since $\lambda$ is real, the corresponding eigenvector $x$ can be chosen to be real.
+Therefore, $x \in F^n$ and a corresponding eigenvector $u$ of $L$ exists in $V$.</p>
+<p>Since $u \neq 0$, and $\left(\lambda, \frac{u}{\|u\|}\right)$ is also an eigenvalue-eigenvector pair,
+we can assume without loss of generality that $\|u\|^2 = 1$.</p>
+<h3>Orthonormal basis of $V$</h3>
+<p>Since $u \neq 0$, $\{u\}$ is linearly independent.
+This means $\{u\}$ can be expanded into a basis of $V$.
+Let $S = [u, u_1, u_2, \ldots, u_{n-1}]$ be a basis of $V$.
+Therefore, $|S| = \dim(V)$.</p>
+<p>By applying the Gram-Schmidt process on $S$, we can find an orthonormal basis $B$ of $V$,
+where the first vector in $B$ is the same as the first vector in $S$.
+Therefore, without loss of generality, we can assume that
+$S$ is an orthonormal basis of $V$.</p>
+<h3>Dimension of orthogonal complement of $V$</h3>
+<p>Let $W = \{v \in V: \langle v, u \rangle = 0 \}$.</p>
+<p>Since $S$ is linearly independent, $S - \{u\}$ is also linearly independent.
+Since $S$ is orthogonal, all vectors in $S - \{u\}$ are orthogonal to $u$.
+Therefore, $S - \{u\} \in W$.</p>
+<p>Since $S - \{u\}$ is a linearly independent subset of $W$,
+it can be expanded to a basis of $W$.
+Therefore, $|S - \{u\}| \le \dim(W) \Rightarrow \dim(V)-1 \le \dim(W)$.</p>
+<p>Let $B$ be a basis of $W$. That means $|B| = \dim(W)$.
+$\langle u, u \rangle = 1 \Rightarrow u \not\in W = \operatorname{span}(B)$.
+Since $B$ is linearly independent and $u$ is not a linear combination of $B$,
+$B \cup \{u\}$ is linearly independent.
+Since $B \cup \{u\}$ is a linearly independent subset of $V$,
+it can be expanded into a basis for $V$.
+Therefore, $|B \cup \{u\}| \le \dim(V) \Rightarrow \dim(W) \le \dim(V)-1$.</p>
+<p>$\dim(V)-1 \le \dim(W)$ and $\dim(W) \le \dim(V) - 1$ implies $\dim(W) = \dim(V) - 1$.</p>
+<h3>Orthonormal basis of eigenvectors of $W$</h3>
+<p>\[ w \in W \iff \langle w, u \rangle = 0 \]</p>
+<p>\begin{align}
+&amp; \langle L(w), u \rangle
+\\ &amp;= \langle w, L(u) \rangle \tag{$L$ is symmetric}
+\\ &amp;= \langle w, \lambda u \rangle \tag{$u$ is an eigenvector for $L$}
+\\ &amp;= \overline{\lambda} \langle w, u \rangle \tag{by anti-linearity of second argument}
+\\ &amp;= \overline{\lambda} 0 = 0
+\\ &amp;\Rightarrow L(w) \in W
+\end{align}</p>
+<p>Theorefore, $L$ is a symmetric operator on $W$.</p>
+<p>Since $\dim(W) = n-1$ and $L: W \mapsto W$ is a symmetric operator,
+$P(n-1)$ implies that $W$ has an orthonormal basis of eigenvectors of $L$ where all eigenvalues are real.
+Let $B = [v_1, v_2, \ldots, v_{n-1}]$ be such a basis of $W$.</p>
+<h3>Conclusion</h3>
+<p>$v_i \in W \Rightarrow \langle v_i, u \rangle = 0$.
+Therefore, $B \cup \{u\}$ is an orthonormal set of eigenvectors of $L$.</p>
+<p>Since an orthogonal set is linearly independent,
+$B \cup \{u\}$ is linearly independent.
+Since a linearly independent set of size $\dim(V)$ is a basis of $V$,
+$B \cup \{u\}$ is a basis of $V$.</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/ortho-diag.html">
+            <span class="deptitle">Orthogonally diagonalizable iff hermitian</span>
+        </a>
+        </li>
+    </ul>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 22</li>
+<li>Number of transitive dependencies: 79</li>
+</ul>
+</div>
+</body>
+</html>

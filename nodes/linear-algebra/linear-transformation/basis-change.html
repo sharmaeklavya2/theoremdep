@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Basis change is an isomorphic linear transformation - TheoremDep</title>
+    <meta name="description" content="Track dependencies between theorems and definitions." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Basis change is an isomorphic linear transformation</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis-change.html">
+            <span class="deptitle">Basis changer</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/linear-transformation.html">
+            <span class="deptitle">Linear transformation</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/coordinatization.html">
+            <span class="deptitle">Coordinatization over a basis</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $P$ be a basis of vector space $U$
+and $Q$ be a basis of vector space $V$.
+Let $\phi$ be a bijection from $P$ to $Q$.</p>
+<p>Let $T$ be the basis changer from $P$ to $Q$:</p>
+<p>\[ T\left(\sum_{p \in P} a_p p \right) = \sum_{p \in P} a_p \phi(p) \]</p>
+<p>Then $T$ is an isomorphic linear transformation.</p>
+<h2>Proof</h2>
+<p>\begin{align}
+&amp; T\left(\left(\sum_{p \in P} a_p p\right) + \left(\sum_{p \in P} b_p p \right)\right)
+\\ &amp;= T\left( \sum_{p \in P} (a_p+b_p)p\right)
+\\ &amp;= \sum_{p \in P} (a_p+b_p)\phi(p)
+\\ &amp;= \sum_{p \in P} a_p \phi(p) + \sum_{p \in P} b_p \phi(p)
+\\ &amp;= T\left(\sum_{p \in P} a_p p\right) + T\left(\sum_{p \in P} b_p p\right)
+\end{align}
+\begin{align}
+&amp; T\left(c\left(\sum_{p \in P} a_p p\right)\right)
+\\ &amp;= T\left(\sum_{p \in P} (ca_p) p\right)
+\\ &amp;= \sum_{p \in P} (ca_p)\phi(p)
+\\ &amp;= c\left(\sum_{p \in P} a_p \phi(p)\right)
+\\ &amp;= cT\left(\sum_{p \in P} a_p p\right)
+\end{align}</p>
+<p>Therefore, $T$ is a linear transformation.
+Since $T$ is a bijection, it is an isomorphic linear transformation.</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix-of-orthonormal-basis-change.html">
+            <span class="deptitle">Matrix of orthonormal basis change</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/isomorphic-dimension.html">
+            <span class="deptitle">Vector spaces are isomorphic iff their dimensions are same</span>
+        </a>
+        </li>
+    </ul>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 15</li>
+<li>Number of transitive dependencies: 38</li>
+</ul>
+</div>
+</body>
+</html>

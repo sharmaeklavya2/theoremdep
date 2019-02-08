@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Symmetric operator iff hermitian - TheoremDep</title>
+    <meta name="description" content="Let L: V to V be a linear transformation and A be the square matrix associated with L. Then L is symmetric iff A is hermitian. Also, if T(u) = Au, then A is hermitian iff T is a symmetric operator." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Symmetric operator iff hermitian</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html">
+            <span class="deptitle">Basis of a vector space</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/gram-schmidt-process.html">
+            <span class="deptitle">Gram-Schmidt Process</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/symmetric-operator.html">
+            <span class="deptitle">Symmetric operator</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/canonical-decomposition.html">
+            <span class="deptitle">Canonical decomposition of a linear transformation</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix.html">
+            <span class="deptitle">Matrix of linear transformation</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inner-product-space.html">
+            <span class="deptitle">Matrices form an inner-product space</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/antilin-in-2nd.html">
+            <span class="deptitle">Inner product is anti-linear in second argument</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/transpose-of-product.html">
+            <span class="deptitle">Transpose of product</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $B = [v_1, v_2, \ldots, v_n]$ be an orthonormal basis of $V$,
+where $V$ is an inner product space of finite dimension $n$ on the field $F$.</p>
+<p>Let $L: V \mapsto V$ be a linear transformation.
+By the canonical decomposition theorem, $L = RTR^{-1}$, where
+$R: F^n \mapsto V$ and $R([a_1, a_2, \ldots, a_n]) = \sum_{i=1}^n a_iv_i$
+and $R$ is an isomorphic linear transformation.</p>
+<p>Since every linear transformation from $F^n$ to $F^n$ can be expressed as
+matrix pre-multiplication, $T(x) = Ax$.</p>
+<p>Then $L$ is symmetric iff $A = A^*$
+($A^*$ is the conjugate transpose of $A$).</p>
+<p>Conversely, let $A$ be a square matrix.
+Then $T(u) = Au$ is a symmetric linear operator iff $A = A^*$.</p>
+<h2>Proof</h2>
+<p>Define $\langle x, y \rangle = y^*x$ to be the inner product on $F^n$.</p>
+<h3>Lemma 1: $\langle R(a), R(b) \rangle = \langle a, b \rangle$</h3>
+<p>Let $a = [a_1, a_2, \ldots, a_n]$ and $b = [b_1, b_2, \ldots, b_n]$.</p>
+<p>\begin{align}
+\langle R(a),  R(b) \rangle
+&amp;= \left\langle \sum_{i=1}^n a_iv_i, \sum_{i=1}^n b_iv_i \right\rangle
+\\ &amp;= \sum_{i=1}^n \sum_{j=1}^n a_i \overline{b_j} \langle v_i, v_j \rangle \tag{by (anti-)linearity}
+\\ &amp;= \sum_{i=1}^n a_i \overline{b_i} \tag{$B$ is orthonormal}
+\\ &amp;= b^*a = \langle a, b \rangle
+\end{align}</p>
+<h3>Lemma 2</h3>
+<p>Let $R(x) = u$ and $R(y) = v$.</p>
+<p>\begin{align}
+&amp; \langle L(u), v \rangle
+\\ &amp;= \langle R(T(R^{-1}(u))), v \rangle
+\\ &amp;= \langle R(T(x)), R(y) \rangle
+\\ &amp;= \langle T(x), y \rangle \tag{by lemma 1}
+\\ &amp;= \langle Ax, y \rangle
+\\ &amp;= y^*Ax
+\end{align}</p>
+<p>\begin{align}
+&amp; \langle u, L(v) \rangle
+\\ &amp;= \langle u, R(T(R^{-1}(v))) \rangle
+\\ &amp;= \langle R(x), R(T(y)) \rangle
+\\ &amp;= \langle x, T(y) \rangle \tag{by lemma 1}
+\\ &amp;= \langle x, Ay \rangle
+\\ &amp;= (Ay)^*x = y^*A^*x
+\end{align}</p>
+<h3>Lemma 3</h3>
+<p>Suppose $\forall x, y \in F^n, y^*Ax = 0$.</p>
+<p>\[ y^*Ax
+= \sum_{i=1}^n \sum_{j=1}^n (y^*)[1, i] A[i, j] x[j, 1]
+= \sum_{i=1}^n \sum_{j=1}^n \overline{y_i} x_j A[i, j] \]</p>
+<p>Plugging in $x = e_j$ and $y = e_i$ in the above equation
+($e_k$ is a column vector with all entries 0 except the $k^{\textrm{th}}$ entry, which is 1),
+we get $y^*Ax = A[i, j]$.</p>
+<p>Therefore, $(\forall x, y \in F^n, y^*Ax = 0) \iff A = 0$.</p>
+<h3>Conclusion</h3>
+<p>\begin{align}
+&amp; \forall u, v \in V, \langle L(u), v \rangle = \langle u, L(v) \rangle
+\\ &amp;\iff \forall x, y \in F^n, y^*Ax = y^*A^*x \tag{by lemma 2 and $\because R$ is a bijection}
+\\ &amp;\iff \forall x, y \in F^n, y^*(A^*-A)x = 0
+\\ &amp;\iff A = A^* \tag{by lemma 3}
+\end{align}</p>
+<h3>Converse</h3>
+<p>Let $A$ be an $n$ by $n$ matrix. Then $T(u) = Au$ is a linear transformation.</p>
+<p>\[ \langle T(u), v \rangle - \langle u, T(v) \rangle
+= \langle Au, v \rangle - \langle u, Av \rangle
+= v^*(Au) - (Av)^*u
+= v^*Au - v^*A^*u
+= v^*(A - A^*)u \]</p>
+<p>\begin{align}
+&amp; T \textrm{ is symmetric}
+\\ &amp;\iff \forall u, v \in F^n, \langle T(u), v \rangle = \langle u, T(v) \rangle
+\\ &amp;\iff \forall u, v \in F^n, v^*(A - A^*)u = 0
+\\ &amp;\iff A = A^* \tag{by lemma 3}
+\end{align}</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/ortho-diag.html">
+            <span class="deptitle">Orthogonally diagonalizable iff hermitian</span>
+        </a>
+        </li>
+    </ul>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 18</li>
+<li>Number of transitive dependencies: 58</li>
+</ul>
+</div>
+</body>
+</html>

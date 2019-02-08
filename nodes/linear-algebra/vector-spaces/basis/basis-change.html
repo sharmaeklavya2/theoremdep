@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Basis changer - TheoremDep</title>
+    <meta name="description" content="A basis changer is a bijection which maps coordinates of one basis to coorindates of another basis." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Basis changer</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/coordinatization.html">
+            <span class="deptitle">Coordinatization over a basis</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $U$ and $V$ be vector spaces with bases $P$ and $Q$ respectively.
+Let $\phi$ be a bijection from $P$ to $Q$.
+If $P$ and $Q$ are finite, a bijection exists between them iff $|P| = |Q|$;
+the bijection maps the $i^{\textrm{th}}$ element of $P$ to the $i^{\textrm{th}}$ element of $Q$.</p>
+<p>A basis changer $T: U \mapsto V$ is a bijection of the form:</p>
+<p>\[ T\left(\sum_{p \in P} a_p p \right) = \sum_{p \in P} a_p \phi(p) \]</p>
+<h2>Proof</h2>
+<p>Since every vector in $U$ can be expressed as a unique linear combination of vectors in $P$,
+$T$ is well-defined.</p>
+<p>Since every vector in $Q$ can be expressed as a unique linear combination of vectors in $Q$,
+$T$ is onto.</p>
+<p>\begin{align}
+&amp; T\left(\sum_{p \in P} a_p p\right) = T\left(\sum_{p \in P} b_p p\right)
+\\ &amp;\Rightarrow \sum_{p \in P} a_p \phi(p) = \sum_{p \in P} b_p \phi(p)
+\\ &amp;\Rightarrow \forall p \in P, a_p = b_p \tag{$\because$ of unique representation in $V$}
+\\ &amp;\Rightarrow \sum_{p \in P} a_p p = \sum_{p \in P} b_p p
+\end{align}</p>
+<p>Therefore, $T$ is one-to-one. Therefore, $T$ is a bijection.</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/basis-change.html">
+            <span class="deptitle">Basis change is an isomorphic linear transformation</span>
+        </a>
+        </li>
+    </ul>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 14</li>
+<li>Number of transitive dependencies: 36</li>
+</ul>
+</div>
+</body>
+</html>
