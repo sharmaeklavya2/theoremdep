@@ -42,8 +42,8 @@
 <div class="horizontal-rule"></div>
 <p>Let $A$ be an $n$ by $n$ matrix over a ring with unity.</p>
 <p>The determinant of $A$, denoted as $\operatorname{det}(A)$ or $|A|$, is defined recursively:</p>
-<p>\[ \operatorname{det}(A) = \begin{cases} A[1, 1] &amp; n \neq 0
-\\ \sum_{i=1}^n (-1)^{n+i}A[n, i]\operatorname{det}(A[-n, -i]) &amp; n \neq 0
+<p>\[ \operatorname{det}(A) = \begin{cases} A[1, 1] &amp; n = 1
+\\ \sum_{i=1}^n (-1)^{n+i}A[n, i]\operatorname{det}(A[-n, -i]) &amp; n &gt; 1
 \end{cases} \]</p>
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
