@@ -34,8 +34,8 @@
         </a>
         </li>
         <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/size.html">
-            <span class="deptitle">Size of coset equals size of subset</span>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/inverse-is-unique.html">
+            <span class="deptitle">Inverse of a group element is unique</span>
         </a>
         </li>
     </ul>
@@ -43,8 +43,12 @@
 <p>Let $H$ be a subgroup of $G$ and $g \in G$.
 Then $gH = H \iff g \in H$.</p>
 <h2>Proof</h2>
-<p>$g \in H \Rightarrow gH \subseteq H$, because of closure in $H$.
-Since $|gH| = |H|$, $gH = H$.</p>
+<p>$g \in H \Rightarrow gH \subseteq H$, because of closure in $H$.</p>
+<p>Since inverse of $g$ is unique
+and $H$ is a group, $g^{-1} \in H$.
+Therefore, $\forall h \in H, g^{-1}h \in H$ by closure of $H$.</p>
+<p>$h \in H \Rightarrow h = g(g^{-1}h) \in gH \Rightarrow H \subseteq gH$.
+Therefore, $H = gH$.</p>
 <p>Let $H$ be a subset of $G$ such that $gH = H$.
 \begin{align}
 gH = H &amp;\Rightarrow gH \subseteq H
@@ -98,7 +102,7 @@ gH = H &amp;\Rightarrow gH \subseteq H
     </ul>
 <h2> Info: </h2>
 <ul>
-<li>Depth: 3</li>
+<li>Depth: 2</li>
 <li>Number of transitive dependencies: 3</li>
 </ul>
 </div>
