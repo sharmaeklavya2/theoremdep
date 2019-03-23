@@ -1,7 +1,8 @@
 {
 "fields": [
 "title",
-"description"
+"description",
+"keywords"
 ],
 "corpus": [
 {
@@ -37,7 +38,7 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/euclids-lemma.html"
 },
 {
-"type": "definition",
+"type": "def",
 "title": "Coprime",
 "description": "Two numbers are coprime iff 1 is the only positive number which divides both of them.",
 "uci": "/number-theory/coprime",
@@ -85,7 +86,7 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/mod-add.html"
 },
 {
-"type": "definition",
+"type": "def",
 "title": "Modular Equivalence",
 "description": "a is equivalent to b mod n iff n divides (a-b).",
 "uci": "/number-theory/modular-equivalence",
@@ -276,7 +277,7 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/order-of-element-in-external-direct-product.html"
 },
 {
-"type": "definition",
+"type": "def",
 "title": "Group",
 "description": "A group is a set along with a binary operator which satisfies certain properties.",
 "uci": "/abstract-algebra/groups/group",
@@ -350,7 +351,7 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/zm-cross-zn-isomorphic-to-zmn.html"
 },
 {
-"type": "deftheorem",
+"type": "theoremdef",
 "title": "Parity of a permutation",
 "description": "If a permutation can be written as a product of only an odd number of transpositions, it is called an odd permutation. If a permutation can be written as a product of only an even number of transpositions, it is called an even permutation. Every permutation is either an odd permutation or an even permutation.",
 "uci": "/abstract-algebra/groups/permutation-groups/parity",
@@ -387,6 +388,12 @@
 "type": "theoremdef",
 "title": "Permutation group",
 "description": "A permutation group on a finite set X is a group of bijections on X, where the group operator is function composition.",
+"keywords": [
+"permutation",
+"symmetric group",
+"cycle",
+"transposition"
+],
 "uci": "/abstract-algebra/groups/permutation-groups/permutation-group",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/permutation-group.html"
 },
@@ -418,7 +425,7 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/factor-groups/correspondence-theorem.html"
 },
 {
-"type": "deftheorem",
+"type": "theoremdef",
 "title": "Factor group",
 "description": "The group of all cosets of a normal subgroup is called the factor group or quotient group.",
 "uci": "/abstract-algebra/groups/factor-groups/factor-group",
@@ -568,7 +575,7 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html"
 },
 {
-"type": "deftheorem",
+"type": "theoremdef",
 "title": "Quotient Ring",
 "description": "Let I be an ideal of R. The quotient ring R/I is the set of all additive cosets of I.",
 "uci": "/abstract-algebra/rings/quotient-ring",
@@ -689,7 +696,7 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/size.html"
 },
 {
-"type": "definition",
+"type": "def",
 "title": "p-norm",
 "description": "The p-norm is a function which maps a vector to a number",
 "uci": "/linear-algebra/p-norm",
@@ -703,7 +710,7 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/dot.html"
 },
 {
-"type": "definition",
+"type": "def",
 "title": "Vector",
 "description": "A vector is a sequence of numbers with an element-wise addition operation and a scalar multiplication operation.",
 "uci": "/linear-algebra/vector",
@@ -1172,7 +1179,7 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/orthogonal.html"
 },
 {
-"theorem": "theorem",
+"type": "theorem",
 "title": "RREF is unique",
 "description": "Every matrix is row equivalent to a unique matrix in RREF.",
 "uci": "/linear-algebra/matrices/unique-rref",

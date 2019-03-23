@@ -68,12 +68,27 @@ search_index['local'] = function (index, query) {
     var docs = index['corpus'];
     var fields = index['fields'];
     var docs2 = [];
+    var lower_query = query.toLowerCase();
     for(var i=0; i<docs.length; ++i) {
         for(var j=0; j<fields.length; ++j) {
             var doc = docs[i];
             var s = doc[fields[j]];
-            if(s !== undefined && s !== null && s.toLowerCase().includes(query.toLowerCase())) {
-                docs2.push(doc);
+            if(s !== undefined && s !== null) {
+                var found = false;
+                if(Array.isArray(s)) {
+                    for(var k=0; k<s.length; ++k) {
+                        if(s[k].toLowerCase().includes(lower_query)) {
+                            found = true;
+                            break;
+                        }
+                    }
+                }
+                else if(s.toLowerCase().includes(lower_query)) {
+                    found = true;
+                }
+                if(found) {
+                    docs2.push(doc);
+                }
             }
         }
     }
