@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>|E| = |V| - 1 in trees - TheoremDep</title>
+    <meta name="description" content="Track dependencies between theorems." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>|E| = |V| - 1 in trees</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/deleting-edge-gives-2-trees.html">
+            <span class="deptitle">Deleting edge from tree gives 2 trees</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>For a tree $T = (V, E)$, $|E| = |V|-1$ ($|V| \ge 1$).</p>
+<h2>Proof</h2>
+<p>Proof is by strong induction on $|V|$.</p>
+<p>$P(n)$: For all trees $(V, E)$ with $|V| = n$, $|E| = n-1$.</p>
+<h3>Base case</h3>
+<p>For $|V| = 1$, $|E| = 0$ $\implies P(1)$.</p>
+<h3>Inductive step</h3>
+<p>Let $T = (V, E)$ be a tree where $|V| = n$ and $n \ge 2$
+Assume $P(k)$ holds for all $1 \le k \le n-1$ (induction hypothesis).</p>
+<p>Delete any edge from $T$ to get $T'$.
+$T'$ has 2 connected components $T_1$ and $T_2$ which are trees.
+Suppose $T_1$ has $k$ vertices and $T_2$ has $n-k$ vertices, where $1 \le k \le n-1$.
+By $P(k)$ and $P(n-k)$, $T_1$ and $T_2$ have $k-1$ and $n-k-1$ edges.
+Therefore, $T$ has $(k-1) + (n-k-1) + 1 = n-1$ edges.
+Therefore, $P(n)$ holds.</p>
+<p>Hence, by mathematical induction, $|E| = |V| - 1$ for all trees.</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/connected-and-e-is-v-minus-1.html">
+            <span class="deptitle">G = (V, E) is a tree iff G is connected and |E| = |V|-1</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/acyclic-and-e-is-v-minus-1.html">
+            <span class="deptitle">G = (V, E) is a tree iff G is acyclic and |E| = |V|-1</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/at-least-2-leaves.html">
+            <span class="deptitle">Tree has at least 2 leaves</span>
+        </a>
+        </li>
+    </ul>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 4</li>
+<li>Number of transitive dependencies: 6</li>
+</ul>
+</div>
+</body>
+</html>

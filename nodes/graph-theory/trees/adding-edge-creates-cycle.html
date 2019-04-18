@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tree iff acyclic and adding edge creates cycle - TheoremDep</title>
+    <meta name="description" content="A graph is a tree iff it is acyclic and adding an edge to it creates a cycle." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Tree iff acyclic and adding edge creates cycle</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/tree.html">
+            <span class="deptitle">Tree</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>An undirected graph $G = (V, E)$ is a tree iff it is acyclic and adding an edge to it creates a cycle.</p>
+<h2>Proof</h2>
+<p>If $G$ is a tree, it is acyclic. We will prove that adding an edge to it creates a cycle.</p>
+<p>Since $G$ is a tree, any 2 vertices have a unique simple path between them.
+Therefore, if an edge is added between 2 vertices, those vertices will now have multiple paths between them.
+This means the resulting graph cannot be a tree.
+Let $G'$ be the resulting graph.</p>
+<p>Since $G$ is connected and adding an edge cannot disconnect a graph,
+$G'$ is also connected. Since a tree is a connected acyclic graph
+and $G'$ is not a tree, it cannot be acyclic.
+Therefore, $G'$ has a cycle.</p>
+<p>Suppose $G$ is not a tree and it is acyclic.
+We will prove that we can add an edge which does not create a cycle.</p>
+<p>If $G$ is not a tree and it is acyclic, it must be disconnected.
+Suppose we add an edge between 2 disconnected vertices $u$ and $v$.
+Let $G'$ be the resulting graph. Assume that $G'$ contains a cycle.
+This cycle will contain $u$ and $v$.
+This means there are at least 2 paths in $G'$ from $u$ to $v$,
+one directly via the edge $(u, v)$ and at least one not through $(u, v)$.
+The path not through $(u, v)$ will also exist in $G$,
+which contradicts the fact that $u$ and $v$ are disconnected in $G$.
+Therefore, $G'$ does not contain a cycle.</p>
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 3</li>
+<li>Number of transitive dependencies: 5</li>
+</ul>
+</div>
+</body>
+</html>

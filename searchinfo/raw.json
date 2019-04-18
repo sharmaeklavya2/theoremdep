@@ -1420,6 +1420,144 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/more-variables-than-unknowns.html"
 },
 {
+"type": "def",
+"title": "Bridge in graph",
+"keywords": [
+"bridge",
+"cut-edge"
+],
+"description": "An edge in an undirected connected graph is called a bridge (or cut-edge) iff deleting that edge disconnects the graph.",
+"uci": "/graph-theory/bridge",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/bridge.html"
+},
+{
+"type": "theorem",
+"title": "In a connected graph (V, E), |E| \u2265 |V| - 1",
+"uci": "/graph-theory/number-of-edges-in-connected-graph",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/number-of-edges-in-connected-graph.html"
+},
+{
+"type": "def",
+"title": "Path in Graph",
+"description": "In a graph, a path is a sequence of vertices such that all pairs of consecutive vertices are edges.",
+"keywords": [
+"path",
+"simple path",
+"walk",
+"cycle",
+"circuit",
+"cyclic"
+],
+"uci": "/graph-theory/path",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/path.html"
+},
+{
+"type": "theorem",
+"title": "Adjacency matrix",
+"description": "The adjacency matrix of a graph is a boolean matrix whose (i, j)th entry is true iff there is an edge from the ith vertex to the jth vertex.",
+"uci": "/graph-theory/adj-matrix",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/adj-matrix.html"
+},
+{
+"type": "def",
+"title": "Graph",
+"description": "A graph G(V, E) is a pair of vertices V and a relation E from V to V.",
+"keywords": [
+"graph",
+"multigraph",
+"vertices",
+"edges",
+"adjacent",
+"loop",
+"simple graph",
+"subgraph",
+"source",
+"destination"
+],
+"uci": "/graph-theory/graph",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/graph.html"
+},
+{
+"type": "theorem",
+"title": "Degree sum and number of edges",
+"description": "In an undirected graph, the sum of degree of every vertex equals twice the number of edges. In a directed graph, the sum of in-degree of every vertex equals the sum of out-degree of every vertex which equals the number of edges.",
+"uci": "/graph-theory/degree-sum",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/degree-sum.html"
+},
+{
+"type": "def",
+"title": "DAG",
+"description": "A DAG is a Directed Acyclic Graph.",
+"uci": "/graph-theory/dag",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dag.html"
+},
+{
+"type": "def",
+"title": "Rooted tree",
+"description": "A directed graph is a rooted tree iff there is a vertex from which there is a unique simple path to every other vertex.",
+"uci": "/graph-theory/trees/rooted-tree",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/rooted-tree.html"
+},
+{
+"type": "theorem",
+"title": "|E| = |V| - 1 in trees",
+"uci": "/graph-theory/trees/e-is-v-minus-1",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/e-is-v-minus-1.html"
+},
+{
+"type": "theorem",
+"title": "Tree iff connected and deleting edge disconnects",
+"description": "A graph is a tree iff it is connected and deleting an edge from it disconnects it.",
+"uci": "/graph-theory/trees/deleting-edge-disconnects",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/deleting-edge-disconnects.html"
+},
+{
+"type": "theorem",
+"title": "Tree iff acyclic and adding edge creates cycle",
+"description": "A graph is a tree iff it is acyclic and adding an edge to it creates a cycle.",
+"uci": "/graph-theory/trees/adding-edge-creates-cycle",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/adding-edge-creates-cycle.html"
+},
+{
+"type": "theorem",
+"title": "G = (V, E) is a tree iff G is connected and |E| = |V|-1",
+"uci": "/graph-theory/trees/connected-and-e-is-v-minus-1",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/connected-and-e-is-v-minus-1.html"
+},
+{
+"type": "theorem",
+"title": "Deleting edge from tree gives 2 trees",
+"description": "If an edge is deleted from a tree, the resulting graph contains 2 connected components which are trees.",
+"uci": "/graph-theory/trees/deleting-edge-gives-2-trees",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/deleting-edge-gives-2-trees.html"
+},
+{
+"type": "theorem",
+"title": "The undirected version of a rooted tree is a free tree",
+"uci": "/graph-theory/trees/undirected-rooted-tree-is-free-tree",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/undirected-rooted-tree-is-free-tree.html"
+},
+{
+"type": "theorem",
+"title": "G = (V, E) is a tree iff G is acyclic and |E| = |V|-1",
+"uci": "/graph-theory/trees/acyclic-and-e-is-v-minus-1",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/acyclic-and-e-is-v-minus-1.html"
+},
+{
+"type": "theorem",
+"title": "Tree has at least 2 leaves",
+"description": "In a tree with at least 2 vertices, there are at least 2 leaves.",
+"uci": "/graph-theory/trees/at-least-2-leaves",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/at-least-2-leaves.html"
+},
+{
+"type": "theoremdef",
+"title": "Tree",
+"description": "A tree is an undirected acyclic connected graph. It can also be defined as a graph where any 2 vertices have a unique simple path between them.",
+"uci": "/graph-theory/trees/tree",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/tree.html"
+},
+{
 "type": "theorem",
 "title": "q(x)F[x] is in p(x)F[x] iff p(x) divides q(x)",
 "uci": "/polynomials/subideal-condition",

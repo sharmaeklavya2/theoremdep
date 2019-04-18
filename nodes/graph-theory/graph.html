@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Graph - TheoremDep</title>
+    <meta name="description" content="A graph G(V, E) is a pair of vertices V and a relation E from V to V." />
+    <meta name="keywords" content="graph,multigraph,vertices,edges,adjacent,loop,simple graph,subgraph,source,destination" />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Graph</h1>
+<h2 class="no-deps"> Dependencies: None </h2>
+<div class="horizontal-rule"></div>
+<p>A directed graph $G$ is the pair $(V, E)$, where $E$ contains some ordered pairs on $V$.
+I.e. $E \subseteq V \times V$.</p>
+<p>An undirected graph $G$ is the pair $(V, E)$, where $E$ contains some 2-element subsets of $V$.
+These subsets are often denoted as $(u, v)$ instead of $\{u, v\}$.</p>
+<p>When $E$ is allowed to be a multi-set (a set which can have repeated elements),
+we get directed multigraphs or undirected multigraphs.</p>
+<h3>Definitions</h3>
+<ul>
+<li>$V$ is called the set of <strong>vertices</strong>.</li>
+<li>$E$ is called the set of <strong>edges</strong>.</li>
+<li>If $(u, v) \in E$, then $u$ is <strong>adjacent to</strong> $v$ and $v$ is <strong>adjacent to</strong> $u$.
+$u$ and $v$ are said to be <strong>neighbors</strong>.</li>
+<li>The edge $(u, v)$ is called a <strong>loop</strong> iff $u = v$.
+A graph with no loops is called <strong>loop-free</strong> or <strong>simple</strong>.</li>
+<li>$G' = (V', E')$ is a <strong>subgraph</strong> of $G = (V, E)$ iff
+$G'$ is a graph and $V' \subseteq V$ and $E' \subseteq E$.</li>
+<li>If $G = (V, E)$ and $V' \subseteq V$, the <strong>subgraph of $G$ induced by $V'$</strong>
+is the subgraph $G' = (V', E \cap (V' \times V'))$.</li>
+</ul>
+<h4>Definitions for directed graphs</h4>
+<ul>
+<li>The edge $(u, v)$ is <strong>from $u$ to $v$</strong>.</li>
+<li>For $e = (u, v) \in E$, $u$ and $v$ are <strong>endpoints</strong> of $e$.
+  $u$ is the <strong>source</strong> of $e$ and $v$ is the <strong>destination</strong> or <strong>target</strong> of $v$.</li>
+<li>$e = (u, v) \in E$ means $e$ is<ul>
+<li><strong>incident from</strong> $u$.</li>
+<li><strong>incident to</strong> $v$.</li>
+<li><strong>incident on</strong> $u$ and $v$.</li>
+</ul>
+</li>
+<li>The number of edges incident to $v$ is the <strong>in-degree</strong> of $v$, denoted as $\operatorname{indeg}_G(v)$.</li>
+<li>The number of edges incident from $v$ is the <strong>out-degree</strong> of $v$, denoted as $\operatorname{outdeg}_G(v)$.</li>
+<li>The sum of in-degree and out-degree is called <strong>degree</strong>, denoted as $\deg_G(v)$.</li>
+<li>The <strong>undirected version</strong> of a directed graph is an undirected graph obtained
+by removing the direction of every edge in the directed graph.</li>
+</ul>
+<h4>Definitions for undirected graphs</h4>
+<ul>
+<li>The edge $(u, v)$ is <strong>between $u$ and $v$</strong>.</li>
+<li>For $e = (u, v) \in E$, $u$ and $v$ are <strong>endpoints</strong> of $e$.</li>
+<li>$e = (u, v) \in E$ means $e$ is <strong>incident on</strong> $u$ and $v$.</li>
+<li>The number of edges incident on $v$ is called the <strong>degree</strong> of $v$,
+denoted as $\operatorname{deg}_G(v)$.</li>
+</ul>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/path.html">
+            <span class="deptitle">Path in Graph</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/adj-matrix.html">
+            <span class="deptitle">Adjacency matrix</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/degree-sum.html">
+            <span class="deptitle">Degree sum and number of edges</span>
+        </a>
+        </li>
+    </ul>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 0</li>
+<li>Number of transitive dependencies: 0</li>
+</ul>
+</div>
+</body>
+</html>

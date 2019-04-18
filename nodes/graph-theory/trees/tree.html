@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tree - TheoremDep</title>
+    <meta name="description" content="A tree is an undirected acyclic connected graph. It can also be defined as a graph where any 2 vertices have a unique simple path between them." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Tree</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/path.html">
+            <span class="deptitle">Path in Graph</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>There are 2 ways of defining a <strong>free tree</strong> (sometimes simply called <strong>tree</strong>):</p>
+<ul>
+<li>An undirected acyclic connected graph.</li>
+<li>An undirected graph where there is exactly one simple path between any two vertices.</li>
+</ul>
+<p>In a tree, vertices of degree 1 are called <strong>leaves</strong>.</p>
+<h2>Proof of equivalence of definitions</h2>
+<p>Let $G$ be an undirected graph.
+We will prove the contrapositive, that if $G$ is cyclic or disconnected,
+then it is false that there is exactly one simple path between any 2 vertices.</p>
+<p>If $G$ is disconnected, there are 2 vertices which are not connected.
+There are 0 paths between these vertices.</p>
+<p>Let $G$ be cyclic. Let $u$ and $v$ be 2 vertices on a cycle in $G$.
+This means there are at least 2 simple paths from $u$ to $v$.</p>
+<p>If there are 0 paths from $u$ to $v$,
+then $u$ and $v$ are disconnected, which means $G$ is disconnected.</p>
+<p>Let there be multiple simple paths from $u$ to $v$.
+Let $p_1$ and $p_2$ be 2 such paths.
+Let $w_1$ and $w_2$ be the first and second vertices common to $p_1$ and $p_2$
+when going from $u$ to $v$.
+Then $w_1$ and $w_2$ form a cycle.
+Therefore, $G$ is cyclic.</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/deleting-edge-disconnects.html">
+            <span class="deptitle">Tree iff connected and deleting edge disconnects</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/adding-edge-creates-cycle.html">
+            <span class="deptitle">Tree iff acyclic and adding edge creates cycle</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/deleting-edge-gives-2-trees.html">
+            <span class="deptitle">Deleting edge from tree gives 2 trees</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/undirected-rooted-tree-is-free-tree.html">
+            <span class="deptitle">The undirected version of a rooted tree is a free tree</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/acyclic-and-e-is-v-minus-1.html">
+            <span class="deptitle">G = (V, E) is a tree iff G is acyclic and |E| = |V|-1</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/at-least-2-leaves.html">
+            <span class="deptitle">Tree has at least 2 leaves</span>
+        </a>
+        </li>
+    </ul>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 2</li>
+<li>Number of transitive dependencies: 4</li>
+</ul>
+</div>
+</body>
+</html>

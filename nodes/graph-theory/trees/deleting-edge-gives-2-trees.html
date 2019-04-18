@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Deleting edge from tree gives 2 trees - TheoremDep</title>
+    <meta name="description" content="If an edge is deleted from a tree, the resulting graph contains 2 connected components which are trees." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Deleting edge from tree gives 2 trees</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/tree.html">
+            <span class="deptitle">Tree</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $T = (V, E)$ be a tree. Suppose the edge $(u, v)$ is deleted from $T$ to get $T'$.
+Then $T'$ contains 2 connected components $T_1$ and $T_2$ which are trees.</p>
+<h2>Proof</h2>
+<p>Since $T$ is a tree, there is a unique simple path from $u$ to every other vertex.
+We can partition the set of vertices $V$ into 2 parts:</p>
+<ul>
+<li>$V_1$: Vertices whose simple path to $u$ does not contain $(u, v)$.</li>
+<li>$V_2$: Vertices whose simple path to $u$ contains $(u, v)$.</li>
+</ul>
+<p>It is easy to see that $u \in V_1$ and $v \in V_2$.</p>
+<p>For every vertex $w$ in $V_1$, there is a unique simple path to $u$ in $T$ which does not contain $(u, v)$.
+Therefore, there is a unique simple path from $w$ to $u$ in $T'$.
+Therefore, all vertices in $V_1$ are connected to each other in $T'$.</p>
+<p>Let $w$ be a vertex in $V_2$.
+Since the unique simple path from $w$ to $u$ contains $(u, v)$,
+there is a simple path from $w$ to $v$ which does not contain $(u, v)$.
+Therefore, $w$ is connected to $v$ in $T'$.
+Therefore, all vertices in $V_2$ are connected to each other in $T'$.</p>
+<p>Since $[(u, v)]$ is the unique simple path from $u$ to $v$,
+deleting $(u, v)$ ensures that there is no walk from $u$ to $v$ in $T'$.</p>
+<p>Let $p$ be a walk in $T'$ from a vertex $w_1$ in $V_1$ to a vertex $w_2$ in $V_2$.
+Since $w_1$ is connected to $u$ and $w_2$ is connected to $v$,
+we can construct a walk from $u$ to $v$ in $T'$ by going from $u$ to $w_1$,
+then going from $w_1$ to $w_2$ via $p$ and then going from $w_2$ to $v$.
+This is a contradiction, which means that there cannot be a walk from a vertex in $V_1$ to a vertex in $V_2$.</p>
+<p>Therefore, $T'$ has 2 connected components, corresponding to $V_1$ and $V_2$.</p>
+<p>Since $T$ is a tree, it is acyclic.
+Since removing an edge cannot create a cycle, $T'$ is also acyclic.
+Since each component in $T'$ is connected and acyclic,
+the connected components are trees.</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/e-is-v-minus-1.html">
+            <span class="deptitle">|E| = |V| - 1 in trees</span>
+        </a>
+        </li>
+    </ul>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 3</li>
+<li>Number of transitive dependencies: 5</li>
+</ul>
+</div>
+</body>
+</html>

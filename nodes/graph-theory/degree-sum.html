@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Degree sum and number of edges - TheoremDep</title>
+    <meta name="description" content="In an undirected graph, the sum of degree of every vertex equals twice the number of edges. In a directed graph, the sum of in-degree of every vertex equals the sum of out-degree of every vertex which equals the number of edges." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Degree sum and number of edges</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/graph.html">
+            <span class="deptitle">Graph</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>Let $G = (V, E)$ be a graph (directed or undirected). Then
+\[ \sum_{v \in V} \deg_G(v) = 2|E| \]</p>
+<p>Let $G = (V, E)$ be a directed graph. Then
+\[ \sum_{v \in V} \operatorname{indeg}_G(v) = \sum_{v \in V} \operatorname{outdeg}_G(v) = |E| \]</p>
+<h2>Proof</h2>
+<p>Let $S = \{(u, e): u \textrm{ is an endpoint of } e \}$.</p>
+<p>Since every edge has 2 endpoints, $|S| = 2|E|$.
+Since every vertex is the endpoint of $\deg(v)$ edges, $|S| = \sum_{v \in V} \deg(v)$.</p>
+<p>We can similarly prove the results for in-degree and out-degree by using the sets
+$P = \{(u, e): u \textrm{ is the source of } e \}$ and
+$Q = \{(u, e): u \textrm{ is the destination of } e \}$.</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/undirected-rooted-tree-is-free-tree.html">
+            <span class="deptitle">The undirected version of a rooted tree is a free tree</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/at-least-2-leaves.html">
+            <span class="deptitle">Tree has at least 2 leaves</span>
+        </a>
+        </li>
+    </ul>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 1</li>
+<li>Number of transitive dependencies: 1</li>
+</ul>
+</div>
+</body>
+</html>

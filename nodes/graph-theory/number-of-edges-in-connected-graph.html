@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>In a connected graph (V, E), |E| ≥ |V| - 1 - TheoremDep</title>
+    <meta name="description" content="Track dependencies between theorems." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>In a connected graph (V, E), |E| ≥ |V| - 1</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/path.html">
+            <span class="deptitle">Path in Graph</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>If $G = (V, E)$ is a connected undirected graph, then $|E| \ge |V|-1$.</p>
+<h2>Proof</h2>
+<p>Proof is by induction on $|V|$.
+Let $P(n): |V| = n \wedge |E| \ge n-1$.</p>
+<h3>Base case</h3>
+<p>$P(0)$ and $P(1)$ are trivially true.</p>
+<h3>Inductive step</h3>
+<p>Assume that $P(n-1)$ is true.
+So for any graph with $n-1$ vertices, $|E| \ge n-2$.</p>
+<p>For a graph $G = (V, E)$ with $n$ vertices, choose any vertex $v$.
+From $G$ delete $v$ and all edges indicent on $v$.
+Let $G' = (V', E')$ be the resulting graph, where $V' = V - \{v\}$.
+Since $G'$ has $n-1$ vertices, $|E'| \ge n-2$.</p>
+<p>Since $G$ is connected, there is at least one edge in $G$ from $v$ to some other vertex.
+Therefore, $|E'| \le |E| - 1$. So $P(n)$ holds.</p>
+<p>By induction, $P(n)$ is true for all $n \ge 0$.
+Therefore, $|E| \ge |V|-1$ for all connected graphs.</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/connected-and-e-is-v-minus-1.html">
+            <span class="deptitle">G = (V, E) is a tree iff G is connected and |E| = |V|-1</span>
+        </a>
+        </li>
+    </ul>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 2</li>
+<li>Number of transitive dependencies: 4</li>
+</ul>
+</div>
+</body>
+</html>

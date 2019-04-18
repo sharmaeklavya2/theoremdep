@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tree has at least 2 leaves - TheoremDep</title>
+    <meta name="description" content="In a tree with at least 2 vertices, there are at least 2 leaves." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Tree has at least 2 leaves</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/tree.html">
+            <span class="deptitle">Tree</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/degree-sum.html">
+            <span class="deptitle">Degree sum and number of edges</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/e-is-v-minus-1.html">
+            <span class="deptitle">|E| = |V| - 1 in trees</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>In a tree with at least 2 vertices, there are at least 2 leaves.</p>
+<h2>Proof</h2>
+<p>Let $T = (V, E)$ be a tree with $|V| \ge 2$.
+There cannot be a vertex with degree 0,
+otherwise it will be disconnected from the rest of the graph.</p>
+<p>Let $L$ be the set of leaves. All vertices in $|L|$ have degree 1.
+All vertices in $|V-L|$ have degree at least 2.</p>
+<p>\[ \sum_{v \in V} \deg(v)
+= \left(\sum_{v \in L} \deg(v)\right) + \left(\sum_{v \in V-L} \deg(v)\right)
+\ge |L| + 2(|V| - |L|) = 2|V| - |L| \]</p>
+<p>Since $T$ is a tree, $|E| = |V|-1$.
+For any graph, $\sum_{v \in V} \deg(v) = 2|E|$.
+Therefore,</p>
+<p>\[ 2|V| - 2 = 2|E| = \sum_{v \in V} \deg(v) \ge 2|V| - |L| \implies |L| \ge 2 \]</p>
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 5</li>
+<li>Number of transitive dependencies: 8</li>
+</ul>
+</div>
+</body>
+</html>

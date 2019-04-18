@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The undirected version of a rooted tree is a free tree - TheoremDep</title>
+    <meta name="description" content="Track dependencies between theorems." />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>The undirected version of a rooted tree is a free tree</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/tree.html">
+            <span class="deptitle">Tree</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/rooted-tree.html">
+            <span class="deptitle">Rooted tree</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/degree-sum.html">
+            <span class="deptitle">Degree sum and number of edges</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>The undirected version of a rooted tree is a free tree.</p>
+<h2>Proof that the undirected version of a rooted tree is a free tree</h2>
+<p>Let $T$ be a rooted tree.
+Since $T$ has a path from the root to every vertex, the undirected version of $T$ is connected.</p>
+<p>Assume that the undirected version of $T$ has a cycle $C$ of length $n$.
+($C$ may not be a cycle in the directed version of $T$).</p>
+<p>No vertex can have in-degree in $C$ greater than 1,
+otherwise there will be multiple paths from the root to that vertex.
+Since $C$ has $n$ edges, sum of in-degree of vertices is $n$
+and sum of out-degree of vertices is $n$.
+Therefore, every vertex has in-degree 1 and out-degree 1.
+This means $C$ is a directed cycle, which contradicts the fact that
+there is a unique simple path from the root to every vertex.</p>
+<p>Therefore, the undirected version of $T$ cannot have a cycle.
+Therefore, the undirected vertion of $T$ is connected and acyclic, which means it is a free tree.</p>
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 3</li>
+<li>Number of transitive dependencies: 7</li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Path in Graph - TheoremDep</title>
+    <meta name="description" content="In a graph, a path is a sequence of vertices such that all pairs of consecutive vertices are edges." />
+    <meta name="keywords" content="path,simple path,walk,cycle,circuit,cyclic" />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+<div id="main">
+<h1>Path in Graph</h1>
+<h2> Dependencies: </h2>
+    <ul class="deplist">
+        <li>
+        <span class="deptitleuci missing">/misc/relation-composition-is-associative</span>
+        </li>
+        <li>
+        <span class="deptitleuci missing">/misc/equivalence-classes</span>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/graph.html">
+            <span class="deptitle">Graph</span>
+        </a>
+        </li>
+    </ul>
+<div class="horizontal-rule"></div>
+<p>For a graph $G = (V, E)$, a <strong>walk</strong> of length $n$ is a sequence of vertices $[v_0, v_1, \ldots, v_n]$
+such that $\forall 1 \le i \le n, (v_{i-1}, v_i) \in E$.
+Such a walk is said to be 'from $v_0$ to $v_n$'.</p>
+<p>A <strong>simple path</strong> is a walk where $v_i \neq v_j$ for all $(i, j)$ except possibly $(0, n)$.</p>
+<p>A <strong>path</strong> can refer to either a walk or a simple path, depending on the author.</p>
+<p>A <strong>circuit</strong> is a walk of positive length where $v_0 = v_n$.
+A <strong>cycle</strong> is a simple path of positive length where $v_0 = v_n$.
+A graph with no cycles is called <strong>acyclic</strong>.</p>
+<p>If a walk exists from $u$ to $v$, $v$ is said to be <strong>reachable</strong> from $u$.
+If $u$ is reachable from $v$ and $v$ is reachable from $u$,
+then $u$ and $v$ are said to be <strong>strongly-connected</strong>.</p>
+<p>Theorems (proofs omitted, because they are easy to prove):</p>
+<ul>
+<li>If a walk exists from $u$ to $v$, then a simple path also exists from $u$ to $v$.</li>
+<li>Reachability is a reflexive and transitive relation.</li>
+<li>In an undirected graph, reachability is an equivalence relation.</li>
+<li>In a directed graph, strongly-connectedness is an equivalence relation.</li>
+<li>There is a walk of length $n$ from $u$ to $v$ iff $(u, v) \in E^n$
+($E^n$ is the $E$ relation composed with itself $n$ times).</li>
+<li>There is a walk from $u$ to $v$ iff $(u, v) \in E^*$
+($E^*$ is the reflexive and transitive closure of the relation $E$).</li>
+</ul>
+<p>In an undirected graph, if $u$ is reachable from $v$, then $u$ and $v$ are said to be connected.
+If all vertices in an undirected graph are reachable from each other, the graph is said to be <strong>connected</strong>.
+If all vertices in a directed graph are reachable from each other, the graph is said to be <strong>strongly-connected</strong>.
+The equivalence classes of the 'reachable' relation are called <strong>connected components</strong>.
+The equivalence classes of the 'strongly-connected' relation are called <strong>strongly-connected components</strong>.</p>
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+    <ul class="deplist">
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/bridge.html">
+            <span class="deptitle">Bridge in graph</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/number-of-edges-in-connected-graph.html">
+            <span class="deptitle">In a connected graph (V, E), |E| ≥ |V| - 1</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dag.html">
+            <span class="deptitle">DAG</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/rooted-tree.html">
+            <span class="deptitle">Rooted tree</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/acyclic-and-e-is-v-minus-1.html">
+            <span class="deptitle">G = (V, E) is a tree iff G is acyclic and |E| = |V|-1</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/tree.html">
+            <span class="deptitle">Tree</span>
+        </a>
+        </li>
+    </ul>
+<h2> Info: </h2>
+<ul>
+<li>Depth: 1</li>
+<li>Number of transitive dependencies: 3</li>
+</ul>
+</div>
+</body>
+</html>
