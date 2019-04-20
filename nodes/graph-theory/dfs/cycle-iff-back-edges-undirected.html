@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Undirected graph is cyclic iff DFS gives back edges - TheoremDep</title>
+<meta name="description" content="An undirected graph contains a cycle iff DFS on that graph classifies some edges as back edges." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Undirected graph is cyclic iff DFS gives back edges</h1>
+<h2> Dependencies: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/edge-classification.html">
+        <span class="deptitle">DFS: Edge classification</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/undirected-edge-classification.html">
+        <span class="deptitle">DFS: Edge classification in undirected graphs</span>
+    </a>
+    </li>
+</ul>
+
+<div class="horizontal-rule"></div>
+<p>An undirected graph contains a cycle iff DFS on that graph classifies some edges as back edges.
+Furthermore, every back belongs to a cycle and every cycle has a back edge.</p>
+<h2>Proof</h2>
+<p>Suppose $G$ has a back edge $(v, u)$.
+Then $v$ is a descendant of $u$ in the DFS forest.
+Therefore, a cycle from $u$ to $v$ in $G$ can be obtained by
+going from $u$ to $v$ via tree edges and then going from $v$ to $u$ via $(v, u)$.
+Therefore, $G$ has a cycle which the back edge $(v, u)$ is a part of.</p>
+<p>Suppose $G$ has a cycle $C$.
+Undirected graphs only contain tree edges and back edges.
+Since the DFS forest is acyclic, all edges of $C$ cannot be tree edges.
+Therefore, $C$ contains a back edge.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 7</li><li>Number of transitive dependencies: 12</li></ul>
+</div>
+</body>
+</html>

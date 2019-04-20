@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>A matrix is full-rank iff its determinant is non-0 - TheoremDep</title>
-    <meta name="description" content="Track dependencies between theorems." />
-    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
-    <script type="text/javascript">
-        window.MathJax = {
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                processEscapes: true
-            }
-        };
-    </script>
-    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A matrix is full-rank iff its determinant is non-0 - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
+
 <body>
 <nav>
     <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
@@ -24,41 +25,43 @@
         <button id="searchbutton" type="submit" >&#x1F50D;</button>
     </form>
 </nav>
+
 <div id="main">
 <h1>A matrix is full-rank iff its determinant is non-0</h1>
 <h2> Dependencies: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
-            <span class="deptitle">Field</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rank.html">
-            <span class="deptitle">Rank of a matrix</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/elementary-rowop.html">
-            <span class="deptitle">Determinant after elementary row operation</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field-is-integral-domain.html">
-            <span class="deptitle">A field is an integral domain</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-square-rref-is-identity.html">
-            <span class="deptitle">Full-rank square matrix in RREF is the identity matrix</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/upper-triangular.html">
-            <span class="deptitle">Determinant of upper triangular matrix</span>
-        </a>
-        </li>
-    </ul>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+        <span class="deptitle">Field</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rank.html">
+        <span class="deptitle">Rank of a matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/elementary-rowop.html">
+        <span class="deptitle">Determinant after elementary row operation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field-is-integral-domain.html">
+        <span class="deptitle">A field is an integral domain</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-square-rref-is-identity.html">
+        <span class="deptitle">Full-rank square matrix in RREF is the identity matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/upper-triangular.html">
+        <span class="deptitle">Determinant of upper triangular matrix</span>
+    </a>
+    </li>
+</ul>
+
 <div class="horizontal-rule"></div>
 <p>Let $A$ be an $n$ by $n$ matrix over a field.
 Then $\operatorname{rank}(A) = n \iff |A| \neq 0$.</p>
@@ -80,30 +83,28 @@ Therefore, $\operatorname{rank}(A) = n \iff B = I \Rightarrow |B| = 1 \Rightarro
 = 0 \]
 Therefore, $\operatorname{rank}(A) \neq n \Rightarrow |B| = 0$.</p>
 <p>Therefore, $\operatorname{rank}(A) = n \iff |B| \neq 0 \iff |A| \neq 0$.</p>
+
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/every-complex-matrix-has-eigenvalue.html">
-            <span class="deptitle">Every complex matrix has an eigenvalue</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/char-poly.html">
-            <span class="deptitle">Characteristic polynomial of a matrix</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/product.html">
-            <span class="deptitle">Determinant of product is product of determinants</span>
-        </a>
-        </li>
-    </ul>
-<h2> Info: </h2>
-<ul>
-<li>Depth: 9</li>
-<li>Number of transitive dependencies: 26</li>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/every-complex-matrix-has-eigenvalue.html">
+        <span class="deptitle">Every complex matrix has an eigenvalue</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/char-poly.html">
+        <span class="deptitle">Characteristic polynomial of a matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/product.html">
+        <span class="deptitle">Determinant of product is product of determinants</span>
+    </a>
+    </li>
 </ul>
+<h2> Info: </h2>
+<ul><li>Depth: 9</li><li>Number of transitive dependencies: 26</li></ul>
 </div>
 </body>
 </html>

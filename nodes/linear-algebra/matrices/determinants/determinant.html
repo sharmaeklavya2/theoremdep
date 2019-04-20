@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Determinant - TheoremDep</title>
-    <meta name="description" content="A determinant is a number associated with a square matrix." />
-    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
-    <script type="text/javascript">
-        window.MathJax = {
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                processEscapes: true
-            }
-        };
-    </script>
-    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Determinant - TheoremDep</title>
+<meta name="description" content="A determinant is a number associated with a square matrix." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
+
 <body>
 <nav>
     <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
@@ -24,51 +25,51 @@
         <button id="searchbutton" type="submit" >&#x1F50D;</button>
     </form>
 </nav>
+
 <div id="main">
 <h1>Determinant</h1>
 <h2> Dependencies: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
-            <span class="deptitle">Ring</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/submatrix.html">
-            <span class="deptitle">Submatrix</span>
-        </a>
-        </li>
-    </ul>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+        <span class="deptitle">Ring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/submatrix.html">
+        <span class="deptitle">Submatrix</span>
+    </a>
+    </li>
+</ul>
+
 <div class="horizontal-rule"></div>
 <p>Let $A$ be an $n$ by $n$ matrix over a ring with unity.</p>
 <p>The determinant of $A$, denoted as $\operatorname{det}(A)$ or $|A|$, is defined recursively:</p>
 <p>\[ \operatorname{det}(A) = \begin{cases} A[1, 1] &amp; n = 1
 \\ \sum_{i=1}^n (-1)^{n+i}A[n, i]\operatorname{det}(A[-n, -i]) &amp; n &gt; 1
 \end{cases} \]</p>
+
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/elementary-rowop.html">
-            <span class="deptitle">Determinant after elementary row operation</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/last-2-rows-swap.html">
-            <span class="deptitle">Swapping last 2 rows of a matrix negates its determinant</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/upper-triangular.html">
-            <span class="deptitle">Determinant of upper triangular matrix</span>
-        </a>
-        </li>
-    </ul>
-<h2> Info: </h2>
-<ul>
-<li>Depth: 4</li>
-<li>Number of transitive dependencies: 5</li>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/elementary-rowop.html">
+        <span class="deptitle">Determinant after elementary row operation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/last-2-rows-swap.html">
+        <span class="deptitle">Swapping last 2 rows of a matrix negates its determinant</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/upper-triangular.html">
+        <span class="deptitle">Determinant of upper triangular matrix</span>
+    </a>
+    </li>
 </ul>
+<h2> Info: </h2>
+<ul><li>Depth: 4</li><li>Number of transitive dependencies: 5</li></ul>
 </div>
 </body>
 </html>

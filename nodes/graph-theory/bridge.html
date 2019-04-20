@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bridge in graph - TheoremDep</title>
-    <meta name="description" content="An edge in an undirected connected graph is called a bridge (or cut-edge) iff deleting that edge disconnects the graph." />
-    <meta name="keywords" content="bridge,cut-edge" />
-    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
-    <script type="text/javascript">
-        window.MathJax = {
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                processEscapes: true
-            }
-        };
-    </script>
-    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bridge in graph - TheoremDep</title>
+<meta name="description" content="An edge in an undirected graph is called a bridge (or cut-edge) iff deleting that edge disconnects the connected component to which that edge belongs." />
+<meta name="keywords" content="bridge,cut-edge" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
+
 <body>
 <nav>
     <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
@@ -25,25 +26,42 @@
         <button id="searchbutton" type="submit" >&#x1F50D;</button>
     </form>
 </nav>
+
 <div id="main">
 <h1>Bridge in graph</h1>
 <h2> Dependencies: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/path.html">
-            <span class="deptitle">Path in Graph</span>
-        </a>
-        </li>
-    </ul>
-<div class="horizontal-rule"></div>
-<p>An edge in an undirected connected graph is called a bridge (or cut-edge) iff deleting that edge disconnects the graph.</p>
-<div class="horizontal-rule"></div>
-<h2 class="no-deps"> Dependency for: None </h2>
-<h2> Info: </h2>
-<ul>
-<li>Depth: 2</li>
-<li>Number of transitive dependencies: 4</li>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/path.html">
+        <span class="deptitle">Path in Graph</span>
+    </a>
+    </li>
 </ul>
+
+<div class="horizontal-rule"></div>
+<p>An edge in an undirected graph is called a bridge (or cut-edge) iff deleting that edge disconnects the connected component to which that edge belongs.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/deleting-bridge-gives-2-components.html">
+        <span class="deptitle">Deleting bridge from graph gives 2 components</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/spanning-tree-contains-all-bridges.html">
+        <span class="deptitle">Spanning tree contains all bridges</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/deleting-edge-gives-2-trees.html">
+        <span class="deptitle">Deleting edge from tree gives 2 trees</span>
+    </a>
+    </li>
+</ul>
+<h2> Info: </h2>
+<ul><li>Depth: 2</li><li>Number of transitive dependencies: 4</li></ul>
 </div>
 </body>
 </html>

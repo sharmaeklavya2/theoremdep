@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Being a field is preserved under isomorphism - TheoremDep</title>
-    <meta name="description" content="Track dependencies between theorems." />
-    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
-    <script type="text/javascript">
-        window.MathJax = {
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                processEscapes: true
-            }
-        };
-    </script>
-    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Being a field is preserved under isomorphism - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
+
 <body>
 <nav>
     <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
@@ -24,21 +25,23 @@
         <button id="searchbutton" type="submit" >&#x1F50D;</button>
     </form>
 </nav>
+
 <div id="main">
 <h1>Being a field is preserved under isomorphism</h1>
 <h2> Dependencies: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/isomorphism/isomorphism.html">
-            <span class="deptitle">Ring isomorphism</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
-            <span class="deptitle">Field</span>
-        </a>
-        </li>
-    </ul>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/isomorphism/isomorphism.html">
+        <span class="deptitle">Ring isomorphism</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+        <span class="deptitle">Field</span>
+    </a>
+    </li>
+</ul>
+
 <div class="horizontal-rule"></div>
 <p>Let $\phi: R \mapsto F$ be a ring isomorphism, where $F$ is a field.
 Then $R$ is also a field.</p>
@@ -58,11 +61,11 @@ Let $a, b \in R$. Therefore, $\phi(a), \phi(b) \in F$. Let $\phi(1)$ be the unit
 <p>Since $F$ is a field, $\phi(a)$ has an inverse. Let it be $\phi(x)$.</p>
 <p>\[ \phi(ax)
 = \phi(a)\phi(x)
-= \phi(1)
+= \phi(1) 
 \Rightarrow ax = 1 \]
 \[ \phi(xa)
 = \phi(x)\phi(a)
-= \phi(1)
+= \phi(1) 
 \Rightarrow xa = 1 \]</p>
 <p>Since $ax = xa = 1$, $x$ is $a$'s inverse.
 Therefore, every element in $R$ has an inverse.</p>
@@ -79,13 +82,11 @@ Therefore, $\phi(1)$ is a unity of $R$.</p>
 \[ \phi(a^{-1})\phi(a) = \phi(a^{-1}a) = \phi(1) \]
 Therefore, $\phi(a)^{-1} = \phi(a^{-1})$.</p>
 <p>Since $R$ is commutative, contains a unity and has an inverse for every element, $R$ is a field.</p>
+
 <div class="horizontal-rule"></div>
 <h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul>
-<li>Depth: 3</li>
-<li>Number of transitive dependencies: 4</li>
-</ul>
+<ul><li>Depth: 3</li><li>Number of transitive dependencies: 4</li></ul>
 </div>
 </body>
 </html>

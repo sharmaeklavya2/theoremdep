@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Canonical decomposition of a linear transformation - TheoremDep</title>
-    <meta name="description" content="Let T be a linear transformation from U to V. Then T = T3.T2.T1 where T1: U to F^dim(U), T2: F^dim(U) to F^dim(V), T3: F^dim(V) to V are linear transformations. This is called the canonical decomposition of T." />
-    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
-    <script type="text/javascript">
-        window.MathJax = {
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                processEscapes: true
-            }
-        };
-    </script>
-    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Canonical decomposition of a linear transformation - TheoremDep</title>
+<meta name="description" content="Let T be a linear transformation from U to V. Then T = T3.T2.T1 where T1: U to F^dim(U), T2: F^dim(U) to F^dim(V), T3: F^dim(V) to V are linear transformations. This is called the canonical decomposition of T." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
+
 <body>
 <nav>
     <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
@@ -24,36 +25,38 @@
         <button id="searchbutton" type="submit" >&#x1F50D;</button>
     </form>
 </nav>
+
 <div id="main">
 <h1>Canonical decomposition of a linear transformation</h1>
 <h2> Dependencies: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis-of-fn.html">
-            <span class="deptitle">Basis of F^n</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/coordinatization.html">
-            <span class="deptitle">Coordinatization over a basis</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/isomorphic-dimension.html">
-            <span class="deptitle">Vector spaces are isomorphic iff their dimensions are same</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/composition.html">
-            <span class="deptitle">Composition of linear transformations</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/isomorphism-equiv.html">
-            <span class="deptitle">Vector space isomorphism is an equivalence relation</span>
-        </a>
-        </li>
-    </ul>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis-of-fn.html">
+        <span class="deptitle">Basis of F^n</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/coordinatization.html">
+        <span class="deptitle">Coordinatization over a basis</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/isomorphic-dimension.html">
+        <span class="deptitle">Vector spaces are isomorphic iff their dimensions are same</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/composition.html">
+        <span class="deptitle">Composition of linear transformations</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/isomorphism-equiv.html">
+        <span class="deptitle">Vector space isomorphism is an equivalence relation</span>
+    </a>
+    </li>
+</ul>
+
 <div class="horizontal-rule"></div>
 <p>Let $T: U \mapsto V$ be a linear transformation.
 Let $P = [u_1, u_2, \ldots, u_m]$ be a basis of $U$ and $Q = [v_1, v_2, \ldots, v_n]$ be a basis of $V$.</p>
@@ -73,25 +76,23 @@ Since inverse of an isomorphism is also an isomorphism
 and since composition of linear transformations is a linear transformation,
 $T_2$ is a linear transformation from $F^m$ to $F^n$.</p>
 <p>$T_3T_2T_1 = T_3(T_3^{-1}TT_1^{-1})T_1 = T$. This gives us the canonical decomposition of $T$.</p>
+
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/symmetric-operator-matrix.html">
-            <span class="deptitle">Symmetric operator iff hermitian</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenvector.html">
-            <span class="deptitle">Eigenvalues and Eigenvectors</span>
-        </a>
-        </li>
-    </ul>
-<h2> Info: </h2>
-<ul>
-<li>Depth: 17</li>
-<li>Number of transitive dependencies: 45</li>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/symmetric-operator-matrix.html">
+        <span class="deptitle">Symmetric operator iff hermitian</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenvector.html">
+        <span class="deptitle">Eigenvalues and Eigenvectors</span>
+    </a>
+    </li>
 </ul>
+<h2> Info: </h2>
+<ul><li>Depth: 17</li><li>Number of transitive dependencies: 45</li></ul>
 </div>
 </body>
 </html>

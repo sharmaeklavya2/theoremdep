@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Coordinatization over orthogonal vectors - TheoremDep</title>
-    <meta name="description" content="Let (x1, x2, ..., xn) be orthogonal vectors. Coordinate of v along xi is (v.xi)/(xi.x)." />
-    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
-    <script type="text/javascript">
-        window.MathJax = {
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                processEscapes: true
-            }
-        };
-    </script>
-    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Coordinatization over orthogonal vectors - TheoremDep</title>
+<meta name="description" content="Let (x1, x2, ..., xn) be orthogonal vectors. Coordinate of v along xi is (v.xi)/(xi.x)." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
+
 <body>
 <nav>
     <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
@@ -24,21 +25,23 @@
         <button id="searchbutton" type="submit" >&#x1F50D;</button>
     </form>
 </nav>
+
 <div id="main">
 <h1>Coordinatization over orthogonal vectors</h1>
 <h2> Dependencies: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/inner-product-space.html">
-            <span class="deptitle">Inner product space</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/orthogonality.html">
-            <span class="deptitle">Orthogonality and orthonormality</span>
-        </a>
-        </li>
-    </ul>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/inner-product-space.html">
+        <span class="deptitle">Inner product space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/orthogonality.html">
+        <span class="deptitle">Orthogonality and orthonormality</span>
+    </a>
+    </li>
+</ul>
+
 <div class="horizontal-rule"></div>
 <p>Let $V$ be an inner product space.
 Let $X = \{x_1, x_2, \ldots, x_n\}$ be a set of orthogonal vectors in $V$.
@@ -52,13 +55,11 @@ v &amp;= \sum_{i=1}^n a_ix_i \tag{$\because v \in \operatorname{span}(X)$}
 \\ &amp;= a_k \langle x_k, x_k \rangle = a_k \|x_k\|^2 \tag{$\because \forall i \neq k, \langle x_i, x_k \rangle = 0$}
 \\ \Rightarrow a_k &amp;= \frac{\langle v, x_k \rangle}{\langle x_k, x_k \rangle} \tag{$x_k \neq 0 \Rightarrow \|x_k\|^2 \neq 0$}
 \end{align}</p>
+
 <div class="horizontal-rule"></div>
 <h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul>
-<li>Depth: 6</li>
-<li>Number of transitive dependencies: 6</li>
-</ul>
+<ul><li>Depth: 6</li><li>Number of transitive dependencies: 6</li></ul>
 </div>
 </body>
 </html>

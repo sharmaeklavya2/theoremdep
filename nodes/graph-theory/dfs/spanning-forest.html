@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DFS on undirected graph gives spanning forest - TheoremDep</title>
+<meta name="description" content="Running DFS on an undirected graph can be used to find a spanning forest of that graph." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>DFS on undirected graph gives spanning forest</h1>
+<h2> Dependencies: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-forest.html">
+        <span class="deptitle">Spanning forest</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/white-path-theorem.html">
+        <span class="deptitle">DFS: White-path theorem</span>
+    </a>
+    </li>
+</ul>
+
+<div class="horizontal-rule"></div>
+<p>Running DFS on an undirected graph $G$ can be used to find a spanning forest of $G$.
+This means that every graph has a spanning forest.</p>
+<h2>Proof</h2>
+<p>If a root vertex is chosen in a connected component where all vertices are white,
+then by the white path theorem, all those vertices will become descendants of the root vertex in a rooted tree.
+This rooted tree will be the spanning tree of that connected component.</p>
+<p>Initially all vertices are white, so the first root vertex will be chosen
+in a connected component where all vertices are white.
+When processing of that root is complete, all vertices in the first connected component will be black
+and the rest of the vertices will be white.</p>
+<p>Therefore, the next root will again be chosen in a connected component where all vertices are white.
+When that vertex is processed, the first 2 connected components will be black and the rest will be white.
+This way, every time a root is chosen, it will be in a connected component where all vertices are white.</p>
+<p>(This argument can be made more formal by using induction on the number of connected components processed,
+but we omit this treatment for now.)</p>
+<p>Therefore, when DFS terminates, we will get a spanning forest of the graph.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 6</li><li>Number of transitive dependencies: 13</li></ul>
+</div>
+</body>
+</html>

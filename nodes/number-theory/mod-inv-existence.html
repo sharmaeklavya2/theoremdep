@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Existence of Modular Inverse - TheoremDep</title>
-    <meta name="description" content="Modular inverse of a mod n exists iff gcd(a, n) = 1" />
-    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
-    <script type="text/javascript">
-        window.MathJax = {
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                processEscapes: true
-            }
-        };
-    </script>
-    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Existence of Modular Inverse - TheoremDep</title>
+<meta name="description" content="Modular inverse of a mod n exists iff gcd(a, n) = 1" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
+
 <body>
 <nav>
     <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
@@ -24,17 +25,19 @@
         <button id="searchbutton" type="submit" >&#x1F50D;</button>
     </form>
 </nav>
+
 <div id="main">
 <h1>Existence of Modular Inverse</h1>
 <h2> Dependencies: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-is-min-lincomb.html">
-            <span class="deptitle">GCD is the smallest Linear Combination</span>
-        </a>
-        <span class="reason">Used in proof</span>
-        </li>
-    </ul>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-is-min-lincomb.html">
+        <span class="deptitle">GCD is the smallest Linear Combination</span>
+    </a>
+    <span class="reason">Used in proof</span>
+    </li>
+</ul>
+
 <div class="horizontal-rule"></div>
 <p>$(\exists x, ax \equiv 1 \pmod{n}) \iff \gcd(a, n) = 1$</p>
 <h2>Proof</h2>
@@ -43,25 +46,23 @@
 \iff \exists x \exists y, ax + ny = 1
 \iff \exists x, ax \equiv 1 \pmod{n}
 $$</p>
+
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/znstar-is-a-group.html">
-            <span class="deptitle">Zn* is a group</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/zp-is-field.html">
-            <span class="deptitle">Zp is a field</span>
-        </a>
-        </li>
-    </ul>
-<h2> Info: </h2>
-<ul>
-<li>Depth: 2</li>
-<li>Number of transitive dependencies: 2</li>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/znstar-is-a-group.html">
+        <span class="deptitle">Zn* is a group</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/zp-is-field.html">
+        <span class="deptitle">Zp is a field</span>
+    </a>
+    </li>
 </ul>
+<h2> Info: </h2>
+<ul><li>Depth: 2</li><li>Number of transitive dependencies: 2</li></ul>
 </div>
 </body>
 </html>

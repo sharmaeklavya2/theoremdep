@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Eigenvalues and Eigenvectors - TheoremDep</title>
-    <meta name="description" content="Let T be a linear transformation. If T(x) = kx is satisfied for some k and some x, then k is an eigenvalue and x is an eigenvector." />
-    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
-    <script type="text/javascript">
-        window.MathJax = {
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                processEscapes: true
-            }
-        };
-    </script>
-    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Eigenvalues and Eigenvectors - TheoremDep</title>
+<meta name="description" content="Let T be a linear transformation. If T(x) = kx is satisfied for some k and some x, then k is an eigenvalue and x is an eigenvector." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
+
 <body>
 <nav>
     <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
@@ -24,21 +25,23 @@
         <button id="searchbutton" type="submit" >&#x1F50D;</button>
     </form>
 </nav>
+
 <div id="main">
 <h1>Eigenvalues and Eigenvectors</h1>
 <h2> Dependencies: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/canonical-decomposition.html">
-            <span class="deptitle">Canonical decomposition of a linear transformation</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix.html">
-            <span class="deptitle">Matrix of linear transformation</span>
-        </a>
-        </li>
-    </ul>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/canonical-decomposition.html">
+        <span class="deptitle">Canonical decomposition of a linear transformation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix.html">
+        <span class="deptitle">Matrix of linear transformation</span>
+    </a>
+    </li>
+</ul>
+
 <div class="horizontal-rule"></div>
 <p>Let $V$ be a vector space over a field F.
 Let $T: V \mapsto V$ be a linear transformation.</p>
@@ -63,55 +66,53 @@ Eigenvectors of $T$ can be found by applying $T_1^{-1}$ on eigenvectors of $T_2$
 <p>Every linear transformation from $F^n$ to $F^n$ can be expressed as matrix pre-multiplication.
 So $\exists A, T_2(x) = Ax$.
 Therefore, the eigenvalue equation becomes $Ax = \lambda x$.</p>
+
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/every-complex-matrix-has-eigenvalue.html">
-            <span class="deptitle">Every complex matrix has an eigenvalue</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/diagonalization.html">
-            <span class="deptitle">Diagonalization</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/distinct-eigenvalue-linindep.html">
-            <span class="deptitle">Eigenvectors of distinct eigenvalues are linearly independent</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenspace.html">
-            <span class="deptitle">Eigenspace</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/real-matrix-with-real-eigenvalue-has-real-eigenvectors.html">
-            <span class="deptitle">Real matrix with real eigenvalues has real eigenvectors</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/char-poly.html">
-            <span class="deptitle">Characteristic polynomial of a matrix</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-operator-has-n-ortho-eigenvectors.html">
-            <span class="deptitle">Symmetric operator on V has a basis of orthonormal eigenvectors</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-real.html">
-            <span class="deptitle">All eigenvalues of a symmetric operator are real</span>
-        </a>
-        </li>
-    </ul>
-<h2> Info: </h2>
-<ul>
-<li>Depth: 18</li>
-<li>Number of transitive dependencies: 47</li>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/every-complex-matrix-has-eigenvalue.html">
+        <span class="deptitle">Every complex matrix has an eigenvalue</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/diagonalization.html">
+        <span class="deptitle">Diagonalization</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/distinct-eigenvalue-linindep.html">
+        <span class="deptitle">Eigenvectors of distinct eigenvalues are linearly independent</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenspace.html">
+        <span class="deptitle">Eigenspace</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/real-matrix-with-real-eigenvalue-has-real-eigenvectors.html">
+        <span class="deptitle">Real matrix with real eigenvalues has real eigenvectors</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/char-poly.html">
+        <span class="deptitle">Characteristic polynomial of a matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-operator-has-n-ortho-eigenvectors.html">
+        <span class="deptitle">Symmetric operator on V has a basis of orthonormal eigenvectors</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-real.html">
+        <span class="deptitle">All eigenvalues of a symmetric operator are real</span>
+    </a>
+    </li>
 </ul>
+<h2> Info: </h2>
+<ul><li>Depth: 18</li><li>Number of transitive dependencies: 47</li></ul>
 </div>
 </body>
 </html>

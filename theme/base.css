@@ -82,11 +82,12 @@ blockquote footer {
 blockquote footer::before {
     content: "\2014 ";
 }
-.codehilite pre {
-    background-color: rgba(0, 0, 0, 0.02);
+pre > code {
+    display: block;
+    padding: 0.8em;
 }
-code {
-    background-color: rgba(0, 0, 0, 0.05);
+pre > code, code {
+    background-color: rgba(0, 0, 0, 0.02);
 }
 .horizontal-rule {
     margin: 1em 0;

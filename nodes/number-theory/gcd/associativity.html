@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>gcd is associative - TheoremDep</title>
-    <meta name="description" content="gcd(a1, a2, ..., am, b1, b2, ... bn) = gcd(gcd(a1, a2, ..., am), b1, b2, ..., bm)" />
-    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
-    <script type="text/javascript">
-        window.MathJax = {
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                processEscapes: true
-            }
-        };
-    </script>
-    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>gcd is associative - TheoremDep</title>
+<meta name="description" content="gcd(a1, a2, ..., am, b1, b2, ... bn) = gcd(gcd(a1, a2, ..., am), b1, b2, ..., bm)" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
+
 <body>
 <nav>
     <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
@@ -24,16 +25,18 @@
         <button id="searchbutton" type="submit" >&#x1F50D;</button>
     </form>
 </nav>
+
 <div id="main">
 <h1>gcd is associative</h1>
 <h2> Dependencies: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/common-divisor-divides-gcd.html">
-            <span class="deptitle">Common divisor divides GCD</span>
-        </a>
-        </li>
-    </ul>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/common-divisor-divides-gcd.html">
+        <span class="deptitle">Common divisor divides GCD</span>
+    </a>
+    </li>
+</ul>
+
 <div class="horizontal-rule"></div>
 <p>$\gcd(a_1, a_2, \ldots, a_m, b_1, b_2, \ldots, b_n) = \gcd(\gcd(a_1, a_2, \ldots, a_m), b_1, b_2, \ldots, b_m)$.</p>
 <h2>Proof</h2>
@@ -50,13 +53,11 @@ $g_a = \gcd(a_1, a_2, \ldots, a_m)$ and $g' = \gcd(g_a, b_1, b_2, \ldots, b_m)$.
 \\ &amp;\Rightarrow g' \mid g \tag{common divisor divides gcd}
 \end{align}</p>
 <p>Therefore, $g = g'$.</p>
+
 <div class="horizontal-rule"></div>
 <h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul>
-<li>Depth: 3</li>
-<li>Number of transitive dependencies: 3</li>
-</ul>
+<ul><li>Depth: 3</li><li>Number of transitive dependencies: 3</li></ul>
 </div>
 </body>
 </html>

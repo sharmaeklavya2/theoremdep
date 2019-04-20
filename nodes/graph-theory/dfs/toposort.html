@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DFS: Reverse sorting by finish time gives topological ordering - TheoremDep</title>
+<meta name="description" content="Performing DFS on a directed acyclic graph and sorting the vertices in descending order of finish times gives a topological ordering of vertices." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>DFS: Reverse sorting by finish time gives topological ordering</h1>
+<h2> Dependencies: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/toposort.html">
+        <span class="deptitle">Topological sort</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/edge-classification.html">
+        <span class="deptitle">DFS: Edge classification</span>
+    </a>
+    </li>
+</ul>
+
+<div class="horizontal-rule"></div>
+<p>Performing DFS on a directed acyclic graph and sorting the vertices in
+descending order of finish times gives a topological ordering of vertices.</p>
+<h2>Proof</h2>
+<p>Suppose $G$ has a back edge $(v, u)$.
+Then $v$ is a descendant of $u$ in the DFS forest $G_π^T$.
+Therefore, a cycle from $u$ to $v$ in $G$ can be obtained by
+going from $u$ to $v$ via tree edges and then going from $v$ to $u$ via $(v, u)$.
+Since we know that $G$ is acyclic, it cannot have a back edge.</p>
+<p>$(u, v)$ is a tree edge or a forward edge
+<br/>$\implies$ $v$ is a descendant of $u$
+<br/>$\implies$ <code>visit(v)</code> was called during <code>visit(u)</code>
+<br/>$\implies f(v) &lt; f(u)$.</p>
+<p>Let $(u, v)$ be a cross edge.
+If $v$ was white when $(u, v)$ was explored, $(u, v)$ would be a tree edge.
+If $v$ was gray when $(u, v)$ was explored, it would mean that <code>visit(u)</code> was called during <code>visit(v)</code>,
+which would make $u$ a descendant of $v$, which would make $(u, v)$ a back edge.
+Therefore, $v$ was black when $(u, v)$ was explored.
+Therefore, <code>visit(v)</code> finished before <code>visit(u)</code>.
+Therefore, $f(v) &lt; f(u)$.</p>
+<p>Therefore, $\forall (u, v) \in E, f(v) &lt; f(u)$.
+Therefore, sorting vertices in descending order of finish times gives a topological ordering of vertices.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 5</li><li>Number of transitive dependencies: 10</li></ul>
+</div>
+</body>
+</html>

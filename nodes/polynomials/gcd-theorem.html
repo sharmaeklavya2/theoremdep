@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Polynomial GCD theorem - TheoremDep</title>
-    <meta name="description" content="The GCD of polynomials is unique and equals their least degree monic linear combination." />
-    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
-    <script type="text/javascript">
-        window.MathJax = {
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                processEscapes: true
-            }
-        };
-    </script>
-    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Polynomial GCD theorem - TheoremDep</title>
+<meta name="description" content="The GCD of polynomials is unique and equals their least degree monic linear combination." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
+
 <body>
 <nav>
     <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
@@ -24,31 +25,33 @@
         <button id="searchbutton" type="submit" >&#x1F50D;</button>
     </form>
 </nav>
+
 <div id="main">
 <h1>Polynomial GCD theorem</h1>
 <h2> Dependencies: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
-            <span class="deptitle">Field</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/gcd.html">
-            <span class="deptitle">GCD of polynomials</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/division-theorem.html">
-            <span class="deptitle">Polynomial division theorem</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-product.html">
-            <span class="deptitle">Degree of product of polynomials</span>
-        </a>
-        </li>
-    </ul>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+        <span class="deptitle">Field</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/gcd.html">
+        <span class="deptitle">GCD of polynomials</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/division-theorem.html">
+        <span class="deptitle">Polynomial division theorem</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-product.html">
+        <span class="deptitle">Degree of product of polynomials</span>
+    </a>
+    </li>
+</ul>
+
 <div class="horizontal-rule"></div>
 <p>Let $F$ be a field. Let $L = \{f_1(x), f_2(x), \ldots, f_n(x)\} \subseteq F[x]$.
 Let $g$ be a GCD of $L$.
@@ -75,20 +78,18 @@ $\deg(d) \le \deg(g)$.</p>
 <p>Let $d = gh$. $\Rightarrow \deg(d) = \deg(g) + \deg(h) \Rightarrow \deg(h) = \deg(d) - \deg(g) \le 0$.</p>
 <p>Since $d \neq 0$ and $g \neq 0$, $h \neq 0 \Rightarrow \deg(h) = 0 \Rightarrow h \in F-\{0\}$.</p>
 <p>Since $d$ and $g$ are monic, $h = 1$. Therefore, $g = d$.</p>
+
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/modulo-field.html">
-            <span class="deptitle">The ring F[x]/p(x) is a field iff p is irreducible</span>
-        </a>
-        </li>
-    </ul>
-<h2> Info: </h2>
-<ul>
-<li>Depth: 6</li>
-<li>Number of transitive dependencies: 12</li>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/modulo-field.html">
+        <span class="deptitle">The ring F[x]/p(x) is a field iff p is irreducible</span>
+    </a>
+    </li>
 </ul>
+<h2> Info: </h2>
+<ul><li>Depth: 6</li><li>Number of transitive dependencies: 12</li></ul>
 </div>
 </body>
 </html>

@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Degree of sum of polynomials - TheoremDep</title>
-    <meta name="description" content="The degree of sum of 2 polynomials is at most the maximum of the degrees of those polynomials." />
-    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
-    <script type="text/javascript">
-        window.MathJax = {
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                processEscapes: true
-            }
-        };
-    </script>
-    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Degree of sum of polynomials - TheoremDep</title>
+<meta name="description" content="The degree of sum of 2 polynomials is at most the maximum of the degrees of those polynomials." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
+
 <body>
 <nav>
     <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
@@ -24,16 +25,18 @@
         <button id="searchbutton" type="submit" >&#x1F50D;</button>
     </form>
 </nav>
+
 <div id="main">
 <h1>Degree of sum of polynomials</h1>
 <h2> Dependencies: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/polynomial.html">
-            <span class="deptitle">Polynomial</span>
-        </a>
-        </li>
-    </ul>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/polynomial.html">
+        <span class="deptitle">Polynomial</span>
+    </a>
+    </li>
+</ul>
+
 <div class="horizontal-rule"></div>
 <p>Let $p, q \in R[x]$. Then $\deg(p+q) \le \max(\deg(p), \deg(q))$.</p>
 <h2>Proof</h2>
@@ -52,40 +55,38 @@
 \]</p>
 <p>$\forall i &gt; k, (p+q)_i = p_i + q_i = 0 + 0 = 0$.</p>
 <p>Therefore, $p+q \in R[x]$ and $\deg(p+q) \le k$.</p>
+
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/modulo-isomorphic.html">
-            <span class="deptitle">F[x]/p(x) is isomorphic to F[x]/p(x)F[x]</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/division-theorem.html">
-            <span class="deptitle">Polynomial division theorem</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/modulo-ring.html">
-            <span class="deptitle">F[x]/p(x): A ring</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/principal-ideal-trivial.html">
-            <span class="deptitle">p(x)F[x] = F[x] iff p is a non-zero constant</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/ring.html">
-            <span class="deptitle">Polynomials of a ring form a ring</span>
-        </a>
-        </li>
-    </ul>
-<h2> Info: </h2>
-<ul>
-<li>Depth: 3</li>
-<li>Number of transitive dependencies: 3</li>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/modulo-isomorphic.html">
+        <span class="deptitle">F[x]/p(x) is isomorphic to F[x]/p(x)F[x]</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/division-theorem.html">
+        <span class="deptitle">Polynomial division theorem</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/modulo-ring.html">
+        <span class="deptitle">F[x]/p(x): A ring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/principal-ideal-trivial.html">
+        <span class="deptitle">p(x)F[x] = F[x] iff p is a non-zero constant</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/ring.html">
+        <span class="deptitle">Polynomials of a ring form a ring</span>
+    </a>
+    </li>
 </ul>
+<h2> Info: </h2>
+<ul><li>Depth: 3</li><li>Number of transitive dependencies: 3</li></ul>
 </div>
 </body>
 </html>

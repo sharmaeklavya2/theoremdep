@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Gauss' Lemma - TheoremDep</title>
-    <meta name="description" content="If a polynomial in Z[x] has a factor in Q[x], it also has a factor in Z[x] of the same degree." />
-    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
-    <script type="text/javascript">
-        window.MathJax = {
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                processEscapes: true
-            }
-        };
-    </script>
-    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gauss' Lemma - TheoremDep</title>
+<meta name="description" content="If a polynomial in Z[x] has a factor in Q[x], it also has a factor in Z[x] of the same degree." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
+
 <body>
 <nav>
     <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
@@ -24,56 +25,58 @@
         <button id="searchbutton" type="submit" >&#x1F50D;</button>
     </form>
 </nav>
+
 <div id="main">
 <h1>Gauss' Lemma</h1>
 <h2> Dependencies: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/divisibility.html">
-            <span class="deptitle">Polynomial divisibility</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-factor.html">
-            <span class="deptitle">Degree of factor is less than degree of polynomial</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-product.html">
-            <span class="deptitle">Degree of product of polynomials</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/rational-to-int.html">
-            <span class="deptitle">A polynomial in rationals is a rational times a polynomial in integers</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/euclids-lemma.html">
-            <span class="deptitle">Euclid's lemma</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/modular-equivalence.html">
-            <span class="deptitle">Modular Equivalence</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/mod-mult.html">
-            <span class="deptitle">Modular multiplication</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/zp-is-intdom.html">
-            <span class="deptitle">Zp is an integral domain</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/zero-divisors.html">
-            <span class="deptitle">Zero divisors of a polynomial</span>
-        </a>
-        </li>
-    </ul>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/divisibility.html">
+        <span class="deptitle">Polynomial divisibility</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-factor.html">
+        <span class="deptitle">Degree of factor is less than degree of polynomial</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-product.html">
+        <span class="deptitle">Degree of product of polynomials</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/rational-to-int.html">
+        <span class="deptitle">A polynomial in rationals is a rational times a polynomial in integers</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/euclids-lemma.html">
+        <span class="deptitle">Euclid's lemma</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/modular-equivalence.html">
+        <span class="deptitle">Modular Equivalence</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/mod-mult.html">
+        <span class="deptitle">Modular multiplication</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/zp-is-intdom.html">
+        <span class="deptitle">Zp is an integral domain</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/zero-divisors.html">
+        <span class="deptitle">Zero divisors of a polynomial</span>
+    </a>
+    </li>
+</ul>
+
 <div class="horizontal-rule"></div>
 <p>Let $p(x)$ be a polynomial in $\mathbb{Z}[x]$
 and $\alpha(x) \in \mathbb{Q}[x]$ divides $p(x)$.</p>
@@ -132,20 +135,18 @@ Leading coefficient of $ca(x)b(x)$ is $ca_mb_n$.
 Therefore, $ca_mb_n = 1$.</p>
 <p>Since $a_m &gt; 0, b_n &gt; 0$, $a_m = b_n = c = 1$.
 Therefore, $a$ and $b$ are monic and $p(x) = a(x)b(x)$.</p>
+
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/eisensteins-criterion.html">
-            <span class="deptitle">Eisenstein's criterion</span>
-        </a>
-        </li>
-    </ul>
-<h2> Info: </h2>
-<ul>
-<li>Depth: 5</li>
-<li>Number of transitive dependencies: 19</li>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/eisensteins-criterion.html">
+        <span class="deptitle">Eisenstein's criterion</span>
+    </a>
+    </li>
 </ul>
+<h2> Info: </h2>
+<ul><li>Depth: 5</li><li>Number of transitive dependencies: 19</li></ul>
 </div>
 </body>
 </html>

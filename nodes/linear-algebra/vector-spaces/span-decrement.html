@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Decrementing a span - TheoremDep</title>
-    <meta name="description" content="If S has a linearly dependent element v, then span(S-{v}) = span(S)." />
-    <meta name="keywords" content="decrement,contract,reduce,shrink" />
-    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
-    <script type="text/javascript">
-        window.MathJax = {
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                processEscapes: true
-            }
-        };
-    </script>
-    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Decrementing a span - TheoremDep</title>
+<meta name="description" content="If S has a linearly dependent element v, then span(S-{v}) = span(S)." />
+<meta name="keywords" content="decrement,contract,reduce,shrink" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
+
 <body>
 <nav>
     <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
@@ -25,21 +26,23 @@
         <button id="searchbutton" type="submit" >&#x1F50D;</button>
     </form>
 </nav>
+
 <div id="main">
 <h1>Decrementing a span</h1>
 <h2> Dependencies: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep.html">
-            <span class="deptitle">Linear independence</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span.html">
-            <span class="deptitle">Span</span>
-        </a>
-        </li>
-    </ul>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep.html">
+        <span class="deptitle">Linear independence</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span.html">
+        <span class="deptitle">Span</span>
+    </a>
+    </li>
+</ul>
+
 <div class="horizontal-rule"></div>
 <p>Let $S = \{v_1, v_2, \ldots, v_n\}$ be a subset of vector space $V$ over a field $F$.
 Let $S$ be linearly dependent. Without loss of generality, assume $v_n$ is a linear combination of the rest of the elements of $S$.
@@ -56,25 +59,23 @@ Therefore, $\operatorname{span}(S - \{v_n\}) \subseteq \operatorname{span}(S)$.<
 \\ &amp;\Rightarrow u \in \operatorname{span}(S - \{v_n\})
 \end{align}</p>
 <p>Therefore, $\operatorname{span}(S) \subseteq \operatorname{span}(S - \{v_n\})$.</p>
+
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/minimal-span-is-basis.html">
-            <span class="deptitle">Minimally spanning iff basis</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/n-span-is-basis.html">
-            <span class="deptitle">Spanning set of size dim(V) is a basis</span>
-        </a>
-        </li>
-    </ul>
-<h2> Info: </h2>
-<ul>
-<li>Depth: 5</li>
-<li>Number of transitive dependencies: 6</li>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/minimal-span-is-basis.html">
+        <span class="deptitle">Minimally spanning iff basis</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/n-span-is-basis.html">
+        <span class="deptitle">Spanning set of size dim(V) is a basis</span>
+    </a>
+    </li>
 </ul>
+<h2> Info: </h2>
+<ul><li>Depth: 5</li><li>Number of transitive dependencies: 6</li></ul>
 </div>
 </body>
 </html>

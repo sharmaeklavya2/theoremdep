@@ -3,12 +3,12 @@
 // parse query
 
 let params = (new URL(document.location)).searchParams;
-let first_query = params.get('q');
-console.log('first_query:', first_query);
+let query = params.get('q');
+console.log('query:', query);
 
-if(first_query !== null && first_query !== '') {
+if(query !== null && query !== '') {
     let searchbox = document.getElementById('searchbox');
-    searchbox.value = first_query;
+    searchbox.value = query;
 }
 
 var persistence = {
@@ -35,18 +35,17 @@ var raw_url = siteurl + '/searchinfo/raw.json'
 
 // generic
 
-function apply_to_json(url, hook, fail_hook) {
-    console.log('apply_to_json');
+function apply_to_json_response(url, hook, fail_hook) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if(this.readyState == 4) {
             if(this.status >= 200 && this.status <= 299) {
-                console.log('received request for ' + url);
+                console.log('received response for ' + url);
                 var json = JSON.parse(this.responseText);
                 hook(json);
             }
             else {
-                console.warn('status code:', this.status);
+                console.error('status code for ' + url + ':', this.status);
                 fail_hook(this.status);
             }
         }
@@ -133,10 +132,10 @@ if (typeof elasticlunr !== 'undefined' && elasticlunr !== null) {
 }
 
 if (search_library === 'local') {
-    console.warn('No search library found. Falling back to naive implementation.')
+    console.warn('no search library found; falling back to naive implementation')
 }
 else {
-    console.log('Using ' + search_library + ' for search.');
+    console.log('using ' + search_library + ' for search');
 }
 persistence['search_library'] = search_library;
 
@@ -190,8 +189,8 @@ function fail_hook(status) {
 function ajax_hook(json) {
     var index = create_index[search_library](json);
     persistence['index'] = index;
-    if(first_query !== null && first_query !== '') {
-        var results = search_index[search_library](index, first_query);
+    if(query !== null && query !== '') {
+        var results = search_index[search_library](index, query);
     }
     else {
         var results = [];
@@ -199,6 +198,6 @@ function ajax_hook(json) {
     show_search_results(results);
 }
 
-if(first_query !== null && first_query !== '') {
-    apply_to_json(get_index_url[search_library](), ajax_hook, fail_hook);
+if(query !== null && query !== '') {
+    apply_to_json_response(get_index_url[search_library](), ajax_hook, fail_hook);
 }

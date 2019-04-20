@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Matrices form an inner-product space - TheoremDep</title>
-    <meta name="description" content="Let F be a subfield of complex numbers. Matrices over F form an inner-product space, where the inner product is given by tr(A*B)." />
-    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
-    <script type="text/javascript">
-        window.MathJax = {
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                processEscapes: true
-            }
-        };
-    </script>
-    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Matrices form an inner-product space - TheoremDep</title>
+<meta name="description" content="Let F be a subfield of complex numbers. Matrices over F form an inner-product space, where the inner product is given by tr(A*B)." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
+
 <body>
 <nav>
     <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
@@ -24,42 +25,44 @@
         <button id="searchbutton" type="submit" >&#x1F50D;</button>
     </form>
 </nav>
+
 <div id="main">
 <h1>Matrices form an inner-product space</h1>
 <h2> Dependencies: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/vector-space.html">
-            <span class="deptitle">Matrices over a field form a vector space</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/inner-product-space.html">
-            <span class="deptitle">Inner product space</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/dot.html">
-            <span class="deptitle">Dot-product of vectors</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/trace.html">
-            <span class="deptitle">Trace of a matrix</span>
-        </a>
-        </li>
-        <li>
-        <span class="deptitleuci missing">/complex-numbers/conjugation-is-homomorphic</span>
-        </li>
-        <li>
-        <span class="deptitleuci missing">/complex-numbers/conjugate-product-abs</span>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/transpose-of-product.html">
-            <span class="deptitle">Transpose of product</span>
-        </a>
-        </li>
-    </ul>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/vector-space.html">
+        <span class="deptitle">Matrices over a field form a vector space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/inner-product-space.html">
+        <span class="deptitle">Inner product space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/dot.html">
+        <span class="deptitle">Dot-product of vectors</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/trace.html">
+        <span class="deptitle">Trace of a matrix</span>
+    </a>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/complex-numbers/conjugation-is-homomorphic</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/complex-numbers/conjugate-product-abs</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/transpose-of-product.html">
+        <span class="deptitle">Transpose of product</span>
+    </a>
+    </li>
+</ul>
+
 <div class="horizontal-rule"></div>
 <p>Let $F$ be a subfield of $\mathbb{C}$ (complex numbers).
 Then $\mathbb{M}_{m, n}(F)$ is an inner product space.</p>
@@ -132,30 +135,28 @@ Therefore, $\langle A, A \rangle \ge 0$.
 \[ \langle A, B \rangle = \operatorname{tr}(B^*A)
 = \operatorname{tr}(B^TA) = \operatorname{tr}((A^TB)^T)
 = \operatorname{tr}(A^TB) \]</p>
+
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix-of-orthonormal-basis-change.html">
-            <span class="deptitle">Matrix of orthonormal basis change</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/symmetric-operator-matrix.html">
-            <span class="deptitle">Symmetric operator iff hermitian</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/orthogonal.html">
-            <span class="deptitle">Orthogonal matrix</span>
-        </a>
-        </li>
-    </ul>
-<h2> Info: </h2>
-<ul>
-<li>Depth: 5</li>
-<li>Number of transitive dependencies: 14</li>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix-of-orthonormal-basis-change.html">
+        <span class="deptitle">Matrix of orthonormal basis change</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/symmetric-operator-matrix.html">
+        <span class="deptitle">Symmetric operator iff hermitian</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/orthogonal.html">
+        <span class="deptitle">Orthogonal matrix</span>
+    </a>
+    </li>
 </ul>
+<h2> Info: </h2>
+<ul><li>Depth: 5</li><li>Number of transitive dependencies: 14</li></ul>
 </div>
 </body>
 </html>

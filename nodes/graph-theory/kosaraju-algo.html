@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kosaraju's Algorithm - TheoremDep</title>
+<meta name="description" content="Kosaraju's algorithm uses 2 depth first searches to find the strongly connected components of a graph in linear time." />
+<meta name="keywords" content="SCC,Kosaraju" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Kosaraju's Algorithm</h1>
+<h2> Dependencies: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/scc-graph-is-acyclic.html">
+        <span class="deptitle">SCC graph is acyclic</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/white-path-theorem.html">
+        <span class="deptitle">DFS: White-path theorem</span>
+    </a>
+    </li>
+</ul>
+
+<div class="horizontal-rule"></div>
+<p>Kosaraju's algorithm uses 2 depth first searches to find the strongly connected components of a graph in linear time.</p>
+<h2>The algorithm</h2>
+<p>Kosaraju's algorithm on graph $G$:</p>
+<ol>
+<li>DFS-1: Perform DFS on $G$ to find the finish time $\operatorname{f}(v)$ of each vertex $v$.</li>
+<li>Computer $G^T$.</li>
+<li>DFS-2: Perform DFS on $G^T$ where root vertices are considered in order of
+decreasing finish times $f$ (as computed in DFS-1).</li>
+<li>Output the vertices of each tree in the DFS forest of DFS-2 as an SCC.</li>
+</ol>
+<p>(In the following text, unless specified otherwise, start and finish times will always refer to those as per DFS-1.)</p>
+<h2>Time and space requirements of algorithm</h2>
+<ul>
+<li>DFS-1 and DFS-2: $O(|V|+|E|)$ time and $O(|V|)$ auxiliary space.</li>
+<li>Computing $G^T$: $O(|V|+|E|)$ time and $O(\lg |V|)$ auxiliary space.</li>
+<li>Sorting vertices by $f$: $O(|V|)$ time and $O(|V|)$ space,
+since finish times are evenly distributed between 1 and $2|V|$ so we can use bucket-sort.</li>
+</ul>
+<h2>Analysis</h2>
+<p>We can extend the notion of start time $s$ and finish time $f$ (as per DFS-1) to SCCs:
+$s(C) = \min_{v \in C} s(v)$ and $f(C) = \max_{v \in C} f(v)$.</p>
+<h3>Lemma 1</h3>
+<p>Let $u$ be the first vertex to be discovered in SCC $C$.
+Then $s(C) = s(u)$ and $f(C) = f(u)$.</p>
+<h3>Proof of lemma 1</h3>
+<p>When $u$ is discovered in $C$, all vertices in $C$ are white.
+By the white-path theorem, all vertices in $C$ will become descendants of $u$ during DFS-1.
+Therefore, for every vertex $v$, $s(u) &lt; s(v) &lt; f(v) &lt; f(u)$.
+Therefore, $s(C) = s(u)$ and $f(C) = f(u)$.</p>
+<h3>Lemma 2</h3>
+<p>\[ (C, D) \in E^{\textrm{SCC}} \implies f(C) &gt; f(D) \]</p>
+<h3>Proof of lemma 2</h3>
+<ul>
+<li>
+<p>Case 1: $s(D) &lt; s(C)$:</p>
+<p>Let $y$ be the first vertex to be discovered in $D$.
+Therefore, $s(D) = s(y)$ and $f(D) = f(y)$.
+No vertex in $C$ is reachable from a vertex in $D$, because otherwise $G^{\textrm{SCC}}$ will be cyclic.
+Therefore, <code>visit(y)</code> will finish before visiting any vertices in $C$.
+Therefore, $f(C) &gt; f(D)$.</p>
+</li>
+<li>
+<p>Case 2: $s(C) &lt; s(D)$.</p>
+<p>Let $x$ be the first vertex to be discovered in $C$.
+By the white path theorem, all vertices in $C$ and $D$ will becomes descendants of $x$ during DFS-1.
+Therefore, $s(C) = s(x)$ and $f(C) = f(x)$ and $s(C) &lt; s(D) &lt; f(D) &lt; f(C)$.</p>
+</li>
+</ul>
+<h3>Proof of correctness of Kosaraju's Algorithm</h3>
+<p>Proof is by induction on the number of trees found in the DFS forest during DFS-2.</p>
+<p>Let $u_i$ be the $i^{\textrm{th}}$ root vertex chosen during DFS-2.
+Let $C_i$ be the SCC which $u_i$ belongs to.
+Let $T_i$ be the tree rooted at $u_i$ obtained during DFS-2.</p>
+<p>$P(n):$ When the $n^{\textrm{th}}$ root vertex is chosen:</p>
+<ul>
+<li>$\forall 1 \le i &lt; n, T_i = C_i$.</li>
+<li>$\forall 1 \le i &lt; n, \forall v \in C_i, \operatorname{color}(v) = \textrm{black}$.</li>
+<li>$\forall i \ge n, \forall v \in C_i, \operatorname{color}(v) = \textrm{white}$.</li>
+</ul>
+<p>The base case, where $n = 0$, is trivially true.</p>
+<p>Assume that $P(n)$ is true.</p>
+<p>There is a path from $u_n$ to every vertex in $C_n$,
+so by the white path theorem, $C_n \subseteq T_n$.</p>
+<p>We will now try to see if there are vertices in SCCs other than $C_n$ which can become part of $T_n$.
+Let $(u, v)$ be the first edge explored during $\operatorname{visit}(u_n)$ during DFS-2
+such that $v \in C_i \neq C_n$. Therefore, $u \in C_n$.</p>
+<p>\begin{align}
+&amp; (u, v) \textrm{ was explored during DFS-2}
+\\ &amp;\Rightarrow (u, v) \in E^T
+\\ &amp;\Rightarrow (C_i, C_n) \in E^{SCC}
+\\ &amp;\Rightarrow f(C_i) &gt; f(C_n) \tag{by lemma 2}
+\\ &amp;\Rightarrow f(u_i) &gt; f(u_n) \tag{by lemma 1}
+\\ &amp;\Rightarrow i &lt; n \tag{roots are chosen in decreasing order of $f$}
+\\ &amp;\Rightarrow v \textrm{ was black when $(u, v)$ was explored}
+\end{align}</p>
+<p>Therefore, DFS-2 only stays within $C_n$ until $\operatorname{visit}(u_n)$ finishes.
+Therefore, $T_n \subseteq C_n$ and all vertices of $C_1, C_2, \ldots, C_n$ are black when $u_{n+1}$ is chosen.
+This implies $P(n+1)$.</p>
+<p>Therefore, by mathematical induction, $P(n)$ is true for all $n$.
+Therefore, $C_i = T_i$ for all $i$.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 6</li><li>Number of transitive dependencies: 11</li></ul>
+</div>
+</body>
+</html>

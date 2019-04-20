@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DFS: Parenthesis theorem - TheoremDep</title>
+<meta name="description" content="The DFS start and end times of vertices follow parenthesis structure." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>DFS: Parenthesis theorem</h1>
+<h2> Dependencies: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/dfs.html">
+        <span class="deptitle">Properties of DFS</span>
+    </a>
+    </li>
+</ul>
+
+<div class="horizontal-rule"></div>
+<p>When DFS is performed on a graph $G$, for any 2 vertices $u$ and $v$, there are 3 possibilities:</p>
+<ul>
+<li>Intervals $[s(u), f(u)]$ and $[s(v), f(v)]$ are disjoint and
+neither $u$ nor $v$ is the descendant of the other in the DFS forest.</li>
+<li>Interval $[s(u), f(u)]$ lies in $[s(v), f(v)]$ and
+$u$ is a descendant $v$ in the DFS forest.</li>
+<li>Interval $[s(v), f(v)]$ lies in $[s(u), f(u)]$ and
+$v$ is a descendant $u$ in the DFS forest.</li>
+</ul>
+<h2>Proof</h2>
+<p>We know that <code>visit(v)</code> was called during <code>visit(u)</code> iff $v$ is a descendant of $u$ in $G_π^T$.</p>
+<p><code>visit(v)</code> was called after <code>visit(u)</code> iff $s(u) &lt; s(v)$.
+<code>visit(v)</code> finished before <code>visit(u)</code> iff $f(v) &lt; f(u)$.
+Therefore, <code>visit(v)</code> was called during <code>visit(u)</code> iff $[s(v), f(v)]$ lies in $[s(u), f(u)]$.
+Therefore, $[s(v), f(v)]$ lies in $[s(u), f(u)]$ iff $v$ is a descendant of $u$ in $G_π^T$.</p>
+<p><code>visit(v)</code> was called after <code>visit(u)</code> finished iff $f(u) &lt; s(v)$.
+Therefore, the inverals are disjoint iff <code>visit(v)</code> was called after <code>visit(u)</code> finished
+or <code>visit(u)</code> was called after <code>visit(v)</code> finished.
+In these cases, neither of $u$ or $v$ is a descendant of the other in $G_π^T$.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/online-edge-classification.html">
+        <span class="deptitle">DFS: Online edge classification</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/white-path-theorem.html">
+        <span class="deptitle">DFS: White-path theorem</span>
+    </a>
+    </li>
+</ul>
+<h2> Info: </h2>
+<ul><li>Depth: 4</li><li>Number of transitive dependencies: 8</li></ul>
+</div>
+</body>
+</html>

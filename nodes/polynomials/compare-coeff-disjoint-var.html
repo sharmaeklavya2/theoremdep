@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Comparing coefficients of a polynomial with disjoint variables - TheoremDep</title>
-    <meta name="description" content="Let there be a (possibly multi-variate) polynomial over an integral domain where each variable is present in at most one term. If the polynomial evaluates to 0 for all inputs, then all coefficients of the polynomial are zero." />
-    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
-    <script type="text/javascript">
-        window.MathJax = {
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                processEscapes: true
-            }
-        };
-    </script>
-    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Comparing coefficients of a polynomial with disjoint variables - TheoremDep</title>
+<meta name="description" content="Let there be a (possibly multi-variate) polynomial over an integral domain where each variable is present in at most one term. If the polynomial evaluates to 0 for all inputs, then all coefficients of the polynomial are zero." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
+
 <body>
 <nav>
     <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
@@ -24,21 +25,23 @@
         <button id="searchbutton" type="submit" >&#x1F50D;</button>
     </form>
 </nav>
+
 <div id="main">
 <h1>Comparing coefficients of a polynomial with disjoint variables</h1>
 <h2> Dependencies: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/intdom.html">
-            <span class="deptitle">Integral Domain</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/polynomial.html">
-            <span class="deptitle">Polynomial</span>
-        </a>
-        </li>
-    </ul>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/intdom.html">
+        <span class="deptitle">Integral Domain</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/polynomial.html">
+        <span class="deptitle">Polynomial</span>
+    </a>
+    </li>
+</ul>
+
 <div class="horizontal-rule"></div>
 <p>Let $R$ be an integral domain. Let $p \in R[x_1, x_2, \ldots, x_n]$ be a polynomial
 such that for all $i$, $x_i$ is part of at most 1 term in $p$.
@@ -56,30 +59,28 @@ Let that term be of the form, $a \prod_{i \in S} x_i$.</p>
 $a \prod_{i \in S} x_i = 0$.
 Since $\forall i \in S, x_i \neq 0$ and $R$ is an integral domain, $a = 0$.</p>
 <p>Applying this process to all terms, we get that all coefficients must be 0.</p>
+
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix.html">
-            <span class="deptitle">Matrix of linear transformation</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity.html">
-            <span class="deptitle">Identity matrix</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop-matrix.html">
-            <span class="deptitle">Elementary row operation is matrix pre-multiplication</span>
-        </a>
-        </li>
-    </ul>
-<h2> Info: </h2>
-<ul>
-<li>Depth: 3</li>
-<li>Number of transitive dependencies: 4</li>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix.html">
+        <span class="deptitle">Matrix of linear transformation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity.html">
+        <span class="deptitle">Identity matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop-matrix.html">
+        <span class="deptitle">Elementary row operation is matrix pre-multiplication</span>
+    </a>
+    </li>
 </ul>
+<h2> Info: </h2>
+<ul><li>Depth: 3</li><li>Number of transitive dependencies: 4</li></ul>
 </div>
 </body>
 </html>

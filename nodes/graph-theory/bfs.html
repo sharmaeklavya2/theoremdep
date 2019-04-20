@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Properties of BFS - TheoremDep</title>
+<meta name="description" content="Properties of Breadth-first search in a graph." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Properties of BFS</h1>
+<h2> Dependencies: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/graph.html">
+        <span class="deptitle">Graph</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/rooted-tree.html">
+        <span class="deptitle">Rooted tree</span>
+    </a>
+    </li>
+</ul>
+
+<div class="horizontal-rule"></div>
+<p>Breadth-first search (BFS) is an algorithm which systematically explores an unweighted graph $G = (V, E)$
+from a source vertex $s$ and computes:</p>
+<ul>
+<li>A shortest-path tree rooted at $s$.</li>
+<li>$\delta_G(s, v)$.</li>
+</ul>
+<p>A shortest-path tree is a tree rooted as $s$ where the unique path from $s$ to $v$
+is a shortest path in $G$ from $s$ to $v$.</p>
+<h2>The algorithm</h2>
+<p>BFS maintains three attributes for every vertex:</p>
+<ul>
+<li>$\operatorname{d}: V \mapsto \mathbb{N}$</li>
+<li>$\operatorname{\pi}: V \mapsto V \cup \{\textrm{null}\}$</li>
+<li>$\operatorname{color}: V \mapsto \{\textrm{black}, \textrm{gray}, \textrm{white}\}$</li>
+</ul>
+<p>Initially:</p>
+<p>\[ \begin{array}{ccc}
+\operatorname{d}(v) = \begin{cases} 0 &amp; v = s \\ \infty &amp; v \neq s \end{cases}
+&amp; \operatorname{\pi}(v) = \textrm{null}
+&amp; \operatorname{color}(v) = \begin{cases} \textrm{gray} &amp; v = s \\ \textrm{white} &amp; v \neq s \end{cases}
+\end{array} \]</p>
+<p>BFS also maintains a queue $Q$ which initially contains only $s$.</p>
+<p>Let $\operatorname{adj}(u) = \{v \in V: (u, v) \in E\}$.</p>
+<p>BFS algorithm:</p>
+<pre><code>while(not Q.empty()):
+    u = Q.dequeue()
+    assert(color[u] == gray)
+    for v in adj[u]:
+        if color[v] == white:
+            color[v] = gray
+            d[v] = u[d] + 1
+            π(v) = u
+            Q.enqueue(v)
+    color[u] = black
+</code></pre>
+<h2>Properties of BFS</h2>
+<p>The following invariants are satisfied before and after each iteration of the <code>while</code> loop.</p>
+<ul>
+<li>Every vertex is enqueued at most once.</li>
+<li>Vertices which haven't yet been enqueued are white, vertices in $Q$ are gray
+and vertices which have been dequeued are black.</li>
+<li>$(\max_{v \in Q} d(v)) - (\min_{v \in Q} d(v)) = 1$.</li>
+<li>$d(u) &lt; d(v) \Rightarrow u$ was enqueued before $v$.
+$u$ was enqueued before $v \Rightarrow u.d \le v.d$.</li>
+<li>$\operatorname{d}(v) \ge \delta(s, v)$.</li>
+</ul>
+<p>The following are true when BFS terminates:</p>
+<ul>
+<li>$\operatorname{d}(v) = \delta(s, v)$.</li>
+<li>$\operatorname{\pi}$ represents the shortest-path tree rooted at $s$.</li>
+</ul>
+<p>BFS takes $O(|V| + |E|)$ time to run, because it processes each vertex at most once
+and reads its adjacency list to process it.</p>
+<p>The size of $Q$ can become as large as $|V|-1$. It also stores attributes for each vertex.
+Therefore, its auxiliary memory requirement is $O(|V|)$.</p>
+<h2>Proofs</h2>
+<p>Proofs of the invariants and properties of BFS listed above can be found in the
+<a href="https://en.wikipedia.org/wiki/Introduction_to_Algorithms">CLRS book</a>,
+22.2 - Breadth-first search (page 594 in third edition).</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 3</li><li>Number of transitive dependencies: 5</li></ul>
+</div>
+</body>
+</html>

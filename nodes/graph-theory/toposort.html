@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Topological sort - TheoremDep</title>
+<meta name="description" content="A topological ordering of a directed graph is an ordering of its vertices such that if (u, v) is an edge then u precedes v in the ordering. The process of finding such an ordering is called topological sorting." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Topological sort</h1>
+<h2> Dependencies: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/graph.html">
+        <span class="deptitle">Graph</span>
+    </a>
+    </li>
+</ul>
+
+<div class="horizontal-rule"></div>
+<p>Let $G = (V, E)$ be a directed graph.</p>
+<p>A topological ordering of $V$ in $G$ is an ordering of $V$ as $[v_1, v_2, \ldots, v_{|V|}]$
+such that $(v_i, v_j) \in E \Rightarrow i &lt; j$.
+Finding such an order is called topological sorting.</p>
+<p>It is easy to deduce that only directed acyclic graphs (DAGs) can have a topological ordering of their vertices.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/toposort.html">
+        <span class="deptitle">DFS: Reverse sorting by finish time gives topological ordering</span>
+    </a>
+    </li>
+</ul>
+<h2> Info: </h2>
+<ul><li>Depth: 1</li><li>Number of transitive dependencies: 1</li></ul>
+</div>
+</body>
+</html>

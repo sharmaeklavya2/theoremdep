@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Rooted tree - TheoremDep</title>
-    <meta name="description" content="A directed graph is a rooted tree iff there is a vertex from which there is a unique simple path to every other vertex." />
-    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
-    <script type="text/javascript">
-        window.MathJax = {
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                processEscapes: true
-            }
-        };
-    </script>
-    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rooted tree - TheoremDep</title>
+<meta name="description" content="A directed graph is a rooted tree iff there is a vertex from which there is a unique simple path to every other vertex." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
+
 <body>
 <nav>
     <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
@@ -24,52 +25,66 @@
         <button id="searchbutton" type="submit" >&#x1F50D;</button>
     </form>
 </nav>
+
 <div id="main">
 <h1>Rooted tree</h1>
 <h2> Dependencies: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/path.html">
-            <span class="deptitle">Path in Graph</span>
-        </a>
-        </li>
-    </ul>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/path.html">
+        <span class="deptitle">Path in Graph</span>
+    </a>
+    </li>
+</ul>
+
 <div class="horizontal-rule"></div>
 <p>A directed graph $G$ is a <strong>rooted tree</strong> iff there is a vertex $r$, called the <strong>root</strong>,
 such that there is a unique simple path from $r$ to every vertex in $G$.</p>
 <p>The root has in-degree 0. Every other vertex has in-degree 1,
-otherwise there would be multiple paths to it from the root.</p>
+otherwise there would be multiple paths to it from the root.
+Therefore, we can also represent a rooted tree as a function
+$\operatorname{parent}: V \mapsto V \cup \{\textrm{null}\}$
+where $\operatorname{parent}(r) = \textrm{null}$
+and $\operatorname{parent}(v) = u$ iff $(u, v) \in T$.</p>
 <h2>Terminology</h2>
 <p>Let $T$ be a rooted tree.</p>
 <ul>
 <li>If there is an edge $(u, v)$ in $T$,
 then $v$ is a <strong>child</strong> of $u$ and $u$ is the <strong>parent</strong> of $v$.</li>
 <li>If there is a path of positive length from $u$ to $v$ in $T$,
-then $v$ is a <strong>descendent</strong> of $u$ and $u$ is an <strong>ancestor</strong> of $v$.</li>
+then $v$ is a <strong>descendant</strong> of $u$ and $u$ is an <strong>ancestor</strong> of $v$.</li>
 <li>A vertex with out-degree 0 is called a <strong>leaf</strong>.
 A vertex that is not a leaf is called an <strong>internal vertex</strong>.</li>
 <li>If 2 vertices have the same parent, they are called <strong>siblings</strong>.</li>
-<li>The subgraph of $T$ containing $v$ and all its descendents
+<li>The subgraph of $T$ containing $v$ and all its descendants
 is a tree rooted at $v$. This is called the <strong>subtree of $T$ rooted at $v$</strong>.</li>
 <li>For a vertex $v$, let the length of the path from the root be $k$.
 Then the <strong>depth</strong> of $v$ is $k$.</li>
 <li>The <strong>height</strong> of a vertex is the length of the longest path from it to a leaf.
 The height of a rooted tree is the height of its root.</li>
 </ul>
+
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/undirected-rooted-tree-is-free-tree.html">
-            <span class="deptitle">The undirected version of a rooted tree is a free tree</span>
-        </a>
-        </li>
-    </ul>
-<h2> Info: </h2>
-<ul>
-<li>Depth: 2</li>
-<li>Number of transitive dependencies: 4</li>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/bfs.html">
+        <span class="deptitle">Properties of BFS</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/undirected-rooted-tree-is-free-tree.html">
+        <span class="deptitle">The undirected version of a rooted tree is a free tree</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/dfs.html">
+        <span class="deptitle">Properties of DFS</span>
+    </a>
+    </li>
 </ul>
+<h2> Info: </h2>
+<ul><li>Depth: 2</li><li>Number of transitive dependencies: 4</li></ul>
 </div>
 </body>
 </html>

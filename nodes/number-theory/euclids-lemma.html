@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Euclid's lemma - TheoremDep</title>
-    <meta name="description" content="If a prime divides the product of two numbers, it must divide at least one of those numbers." />
-    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
-    <script type="text/javascript">
-        window.MathJax = {
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                processEscapes: true
-            }
-        };
-    </script>
-    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Euclid's lemma - TheoremDep</title>
+<meta name="description" content="If a prime divides the product of two numbers, it must divide at least one of those numbers." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
+
 <body>
 <nav>
     <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
@@ -24,17 +25,19 @@
         <button id="searchbutton" type="submit" >&#x1F50D;</button>
     </form>
 </nav>
+
 <div id="main">
 <h1>Euclid's lemma</h1>
 <h2> Dependencies: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-is-min-lincomb.html">
-            <span class="deptitle">GCD is the smallest Linear Combination</span>
-        </a>
-        <span class="reason">Used in proof</span>
-        </li>
-    </ul>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-is-min-lincomb.html">
+        <span class="deptitle">GCD is the smallest Linear Combination</span>
+    </a>
+    <span class="reason">Used in proof</span>
+    </li>
+</ul>
+
 <div class="horizontal-rule"></div>
 <p>Let $p$ be a prime. If $p \mid ab$, then $p \mid a \vee p \mid b$.</p>
 <h2>Proof by contradiction</h2>
@@ -46,41 +49,39 @@
 \\ &amp;\Rightarrow p \mid b \Rightarrow \bot
 \end{align}</p>
 <p>This is a contradiction, which means $p \mid a \vee p \mid b$.</p>
+
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/ab-coprime-to-x-iff-a-and-b-coprime-to-x.html">
-            <span class="deptitle">ab is coprime to x iff a and b are coprime to x</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/fundamental-theorem-of-arithmetic.html">
-            <span class="deptitle">Fundamental Theorem of Arithmetic</span>
-        </a>
-        <span class="reason">Used in proof</span>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/zp-is-intdom.html">
-            <span class="deptitle">Zp is an integral domain</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/eisensteins-criterion.html">
-            <span class="deptitle">Eisenstein's criterion</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/gauss-lemma.html">
-            <span class="deptitle">Gauss' Lemma</span>
-        </a>
-        </li>
-    </ul>
-<h2> Info: </h2>
-<ul>
-<li>Depth: 2</li>
-<li>Number of transitive dependencies: 2</li>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/ab-coprime-to-x-iff-a-and-b-coprime-to-x.html">
+        <span class="deptitle">ab is coprime to x iff a and b are coprime to x</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/fundamental-theorem-of-arithmetic.html">
+        <span class="deptitle">Fundamental Theorem of Arithmetic</span>
+    </a>
+    <span class="reason">Used in proof</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/zp-is-intdom.html">
+        <span class="deptitle">Zp is an integral domain</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/eisensteins-criterion.html">
+        <span class="deptitle">Eisenstein's criterion</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/gauss-lemma.html">
+        <span class="deptitle">Gauss' Lemma</span>
+    </a>
+    </li>
 </ul>
+<h2> Info: </h2>
+<ul><li>Depth: 2</li><li>Number of transitive dependencies: 2</li></ul>
 </div>
 </body>
 </html>

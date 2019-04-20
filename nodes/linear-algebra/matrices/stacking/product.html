@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Product of stacked matrices - TheoremDep</title>
-    <meta name="description" content="Track dependencies between theorems." />
-    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
-    <script type="text/javascript">
-        window.MathJax = {
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                processEscapes: true
-            }
-        };
-    </script>
-    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Product of stacked matrices - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
+
 <body>
 <nav>
     <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
@@ -24,16 +25,18 @@
         <button id="searchbutton" type="submit" >&#x1F50D;</button>
     </form>
 </nav>
+
 <div id="main">
 <h1>Product of stacked matrices</h1>
 <h2> Dependencies: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/stacking.html">
-            <span class="deptitle">Stacking</span>
-        </a>
-        </li>
-    </ul>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/stacking.html">
+        <span class="deptitle">Stacking</span>
+    </a>
+    </li>
+</ul>
+
 <div class="horizontal-rule"></div>
 <p>Let $A_{i, j}$ be an $m_i$ by $p_j$ matrix for $1 \le i \le m$ and $1 \le j \le p$.
 Let $B_{i, j}$ be an $p_i$ by $n_j$ matrix for $1 \le i \le p$ and $1 \le j \le n$.</p>
@@ -84,35 +87,33 @@ where $C_{i, j}$ is an $m_i$ by $n_j$ matrix for $1 \le i \le m$ and $1 \le j \l
 \begin{bmatrix} B_{1, j} \\ B_{2, j} \\ \vdots \\ B_{p, j} \end{bmatrix}
 \\ &amp;= \sum_{k=1}^p A_{i, k}B_{k, j} \tag{by lemma 3}
 \end{align}</p>
+
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/diagonalization.html">
-            <span class="deptitle">Diagonalization</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rref-inv.html">
-            <span class="deptitle">RREF([A|I]) = [I|inv(A)] iff A is invertible</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/orthogonal.html">
-            <span class="deptitle">Orthogonal matrix</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/row-equiv-have-same-solutions.html">
-            <span class="deptitle">Equations with row equivalent matrices have the same solution set</span>
-        </a>
-        </li>
-    </ul>
-<h2> Info: </h2>
-<ul>
-<li>Depth: 4</li>
-<li>Number of transitive dependencies: 5</li>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/diagonalization.html">
+        <span class="deptitle">Diagonalization</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rref-inv.html">
+        <span class="deptitle">RREF([A|I]) = [I|inv(A)] iff A is invertible</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/orthogonal.html">
+        <span class="deptitle">Orthogonal matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/row-equiv-have-same-solutions.html">
+        <span class="deptitle">Equations with row equivalent matrices have the same solution set</span>
+    </a>
+    </li>
 </ul>
+<h2> Info: </h2>
+<ul><li>Depth: 4</li><li>Number of transitive dependencies: 5</li></ul>
 </div>
 </body>
 </html>

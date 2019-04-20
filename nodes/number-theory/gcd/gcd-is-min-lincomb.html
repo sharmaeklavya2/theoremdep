@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>GCD is the smallest Linear Combination - TheoremDep</title>
-    <meta name="description" content="The gcd of a set of numbers is their smallest positive linear combination." />
-    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
-    <script type="text/javascript">
-        window.MathJax = {
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                processEscapes: true
-            }
-        };
-    </script>
-    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GCD is the smallest Linear Combination - TheoremDep</title>
+<meta name="description" content="The gcd of a set of numbers is their smallest positive linear combination." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
+
 <body>
 <nav>
     <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
@@ -24,17 +25,19 @@
         <button id="searchbutton" type="submit" >&#x1F50D;</button>
     </form>
 </nav>
+
 <div id="main">
 <h1>GCD is the smallest Linear Combination</h1>
 <h2> Dependencies: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/integer-division-theorem.html">
-            <span class="deptitle">Integer Division Theorem</span>
-        </a>
-        <span class="reason">Used in proof</span>
-        </li>
-    </ul>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/integer-division-theorem.html">
+        <span class="deptitle">Integer Division Theorem</span>
+    </a>
+    <span class="reason">Used in proof</span>
+    </li>
+</ul>
+
 <div class="horizontal-rule"></div>
 <p>The GCD of a set of numbers is their smallest positive linear combination.</p>
 <p>\[ \gcd(a_1, a_2, \ldots, a_n) = \min^+\left( \sum_{i=1}^n a_i\mathbb{Z} \right) \]</p>
@@ -49,42 +52,40 @@ Therefore, $d$ divides $a_i$.</p>
 <p>Since $d$ divides all $a_i$, it is a common divisor of $[a_1, a_2, \ldots, a_n]$.
 Therefore, $d \le g$.</p>
 <p>Since $d \le g$ and $g \le d$, $d = g$.</p>
+
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/mod-inv-existence.html">
-            <span class="deptitle">Existence of Modular Inverse</span>
-        </a>
-        <span class="reason">Used in proof</span>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/euclids-lemma.html">
-            <span class="deptitle">Euclid's lemma</span>
-        </a>
-        <span class="reason">Used in proof</span>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/if-coprime-to-first-then-divides-second.html">
-            <span class="deptitle">If x divides ab and x is coprime to a, then x divides b</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/common-divisor-divides-gcd.html">
-            <span class="deptitle">Common divisor divides GCD</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/subgroups-of-cyclic-group.html">
-            <span class="deptitle">Subgroups of a cyclic group</span>
-        </a>
-        </li>
-    </ul>
-<h2> Info: </h2>
-<ul>
-<li>Depth: 1</li>
-<li>Number of transitive dependencies: 1</li>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/mod-inv-existence.html">
+        <span class="deptitle">Existence of Modular Inverse</span>
+    </a>
+    <span class="reason">Used in proof</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/euclids-lemma.html">
+        <span class="deptitle">Euclid's lemma</span>
+    </a>
+    <span class="reason">Used in proof</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/if-coprime-to-first-then-divides-second.html">
+        <span class="deptitle">If x divides ab and x is coprime to a, then x divides b</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/common-divisor-divides-gcd.html">
+        <span class="deptitle">Common divisor divides GCD</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/subgroups-of-cyclic-group.html">
+        <span class="deptitle">Subgroups of a cyclic group</span>
+    </a>
+    </li>
 </ul>
+<h2> Info: </h2>
+<ul><li>Depth: 1</li><li>Number of transitive dependencies: 1</li></ul>
 </div>
 </body>
 </html>

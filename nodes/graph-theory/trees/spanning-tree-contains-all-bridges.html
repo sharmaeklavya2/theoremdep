@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanning tree contains all bridges - TheoremDep</title>
+<meta name="description" content="Let G be an undirected connected graph. Every spanning tree of G contains all the bridges in G." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Spanning tree contains all bridges</h1>
+<h2> Dependencies: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/bridge.html">
+        <span class="deptitle">Bridge in graph</span>
+    </a>
+    </li>
+</ul>
+
+<div class="horizontal-rule"></div>
+<p>Let $G$ be an undirected connected graph. Every spanning tree of $G$ contains all the bridges in $G$.</p>
+<h2>Proof</h2>
+<p>Let $(u, v)$ be a bridge in $G$ and $T$ be a spanning tree of $G$ such that $(u, v) \not\in T$.</p>
+<p>Since there is a unique simple path between any 2 vertices in a tree,
+there is a path $p$ from $u$ to $v$ in $T$.</p>
+<p>Therefore, there are 2 paths from $u$ to $v$ in $G$: $[u, v]$ and $p$.
+Deleting $(u, v)$ will not disconnect any vertices in $G$,
+since any path through $(u, v)$ can be re-routed through $p$.
+This is a contradiction, since $(u, v)$ is a bridge,
+which means that deleting it disconnects $G$.</p>
+<p>Therefore, it is not possible for a bridge to not belong to a spanning tree.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 3</li><li>Number of transitive dependencies: 5</li></ul>
+</div>
+</body>
+</html>

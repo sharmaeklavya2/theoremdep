@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>G = (V, E) is a tree iff G is acyclic and |E| = |V|-1 - TheoremDep</title>
-    <meta name="description" content="Track dependencies between theorems." />
-    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
-    <script type="text/javascript">
-        window.MathJax = {
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                processEscapes: true
-            }
-        };
-    </script>
-    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>G = (V, E) is a tree iff G is acyclic and |E| = |V|-1 - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
+
 <body>
 <nav>
     <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
@@ -24,26 +25,28 @@
         <button id="searchbutton" type="submit" >&#x1F50D;</button>
     </form>
 </nav>
+
 <div id="main">
 <h1>G = (V, E) is a tree iff G is acyclic and |E| = |V|-1</h1>
 <h2> Dependencies: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/tree.html">
-            <span class="deptitle">Tree</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/path.html">
-            <span class="deptitle">Path in Graph</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/e-is-v-minus-1.html">
-            <span class="deptitle">|E| = |V| - 1 in trees</span>
-        </a>
-        </li>
-    </ul>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/tree.html">
+        <span class="deptitle">Tree</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/path.html">
+        <span class="deptitle">Path in Graph</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/e-is-v-minus-1.html">
+        <span class="deptitle">|E| = |V| - 1 in trees</span>
+    </a>
+    </li>
+</ul>
+
 <div class="horizontal-rule"></div>
 <p>An undirected graph $G = (V, E)$ is a tree iff $G$ is acyclic and $|E| = |V|-1$.</p>
 <h2>Proof</h2>
@@ -53,13 +56,11 @@ Let $G_1, G_2, \ldots, G_k$ be the connected components of $G$ and let $G_i = (V
 <p>Each component is connected and acyclic, which makes it a tree.
 \[ |E| = \sum_{i=1}^k |E_i| = \sum_{i=1}^k \left(|V_i| - 1\right) = |V| - k \]</p>
 <p>Therefore, $k = 1 \implies G = G_1 \implies G$ is a tree.</p>
+
 <div class="horizontal-rule"></div>
 <h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul>
-<li>Depth: 5</li>
-<li>Number of transitive dependencies: 7</li>
-</ul>
+<ul><li>Depth: 6</li><li>Number of transitive dependencies: 9</li></ul>
 </div>
 </body>
 </html>

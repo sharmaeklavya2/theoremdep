@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DFS: Online edge classification - TheoremDep</title>
+<meta name="description" content="When an edge is explored during DFS, it can be classified as a tree edge, back edge, forward edge or a cross edge in constant time." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>DFS: Online edge classification</h1>
+<h2> Dependencies: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/edge-classification.html">
+        <span class="deptitle">DFS: Edge classification</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/parens-theorem.html">
+        <span class="deptitle">DFS: Parenthesis theorem</span>
+    </a>
+    </li>
+</ul>
+
+<div class="horizontal-rule"></div>
+<p>When an edge $(u, v)$ is explored during DFS, it can be classified in constant time as as follows:</p>
+<ul>
+<li>If $v$ is white, it is a tree edge.</li>
+<li>If $v$ is gray, it is a back edge.</li>
+<li>If $v$ is black and $s(u) &lt; s(v)$, it is a forward edge.</li>
+<li>If $v$ is black and $s(v) &lt; s(u)$, it is a cross edge.</li>
+</ul>
+<h2>Proof</h2>
+<p>If $v$ is white, $π(v)$ will be set to $u$ and <code>visit(v)</code> will be called.
+This will make $(u, v)$ a tree edge.</p>
+<p>If $v$ is gray, it means <code>visit(v)</code> is on the call stack.
+Since <code>visit(u)</code> is the top entry on the call stack when $(u, v)$ is explored,
+<code>visit(u)</code> was called during <code>visit(v)</code>.
+This means $u$ is a descendant of $v$ in the DFS forest, so $(u, v)$ is a back edge.</p>
+<p>If $v$ is black, it means <code>visit(v)</code> finished before $(u, v)$ was explored.
+Therefore, $f(v) &lt; f(u)$.
+By the parenthesis theorem, there can be 2 cases:</p>
+<ul>
+<li>
+<p>$[s(v), f(v)]$ and $[s(u), f(u)]$ are disjoint intervals and
+none of them is a descendant of the other.
+This means $(u, v)$ is a cross edge.
+Since $f(v) &lt; f(u)$, this means $s(v) &lt; s(u)$.</p>
+</li>
+<li>
+<p>$[s(v), f(v)]$ lies in $[s(u), f(u)]$ and $v$ is a descendant of $u$.
+Therefore, $(u, v)$ is a forward edge.
+Also, this means $s(u) &lt; s(v)$.</p>
+</li>
+</ul>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/low.html">
+        <span class="deptitle">DFS: low</span>
+    </a>
+    </li>
+</ul>
+<h2> Info: </h2>
+<ul><li>Depth: 5</li><li>Number of transitive dependencies: 10</li></ul>
+</div>
+</body>
+</html>

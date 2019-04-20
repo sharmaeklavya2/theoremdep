@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Polynomial division theorem - TheoremDep</title>
-    <meta name="description" content="If a and b are polynomials, a can be uniquely expressed as bq + r where deg(r) < deg(b)." />
-    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
-    <script type="text/javascript">
-        window.MathJax = {
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                processEscapes: true
-            }
-        };
-    </script>
-    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Polynomial division theorem - TheoremDep</title>
+<meta name="description" content="If a and b are polynomials, a can be uniquely expressed as bq + r where deg(r) < deg(b)." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
+
 <body>
 <nav>
     <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
@@ -24,36 +25,38 @@
         <button id="searchbutton" type="submit" >&#x1F50D;</button>
     </form>
 </nav>
+
 <div id="main">
 <h1>Polynomial division theorem</h1>
 <h2> Dependencies: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
-            <span class="deptitle">Field</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-sum.html">
-            <span class="deptitle">Degree of sum of polynomials</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-product.html">
-            <span class="deptitle">Degree of product of polynomials</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/zero-divisors.html">
-            <span class="deptitle">Zero divisors of a polynomial</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field-is-integral-domain.html">
-            <span class="deptitle">A field is an integral domain</span>
-        </a>
-        </li>
-    </ul>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+        <span class="deptitle">Field</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-sum.html">
+        <span class="deptitle">Degree of sum of polynomials</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-product.html">
+        <span class="deptitle">Degree of product of polynomials</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/zero-divisors.html">
+        <span class="deptitle">Zero divisors of a polynomial</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field-is-integral-domain.html">
+        <span class="deptitle">A field is an integral domain</span>
+    </a>
+    </li>
+</ul>
+
 <div class="horizontal-rule"></div>
 <p>Let $a(x), b(x) \in F[x]$, where $F$ is a field and $b \neq 0$.
 Then $a$ can be uniquely expressed as $bq + r$, where
@@ -111,40 +114,38 @@ Therefore, $r_1 = r_2 \Rightarrow b(q_1 - q_2) = 0 \Rightarrow q_1 = q_2$.</p>
 <p>$\deg(r_1 - r_2) \le \max(\deg(r_1), \deg(-r_2)) \le \max(\deg(b) - 1, \deg(b) - 1) = \deg(b) - 1$</p>
 <p>This is a contradiction. Therefore, this case is not possible.</p>
 <p>Therefore, a unique solution $(q, r)$ exists to $a = bq + r$ such that $\deg(b) &lt; \deg(r)$.</p>
+
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/factor-theorem.html">
-            <span class="deptitle">Factor theorem</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/modulo-isomorphic.html">
-            <span class="deptitle">F[x]/p(x) is isomorphic to F[x]/p(x)F[x]</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/gcd-theorem.html">
-            <span class="deptitle">Polynomial GCD theorem</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/modulo-ring.html">
-            <span class="deptitle">F[x]/p(x): A ring</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/every-ideal-is-principal.html">
-            <span class="deptitle">Every ideal in F[x] is principal</span>
-        </a>
-        </li>
-    </ul>
-<h2> Info: </h2>
-<ul>
-<li>Depth: 5</li>
-<li>Number of transitive dependencies: 10</li>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/factor-theorem.html">
+        <span class="deptitle">Factor theorem</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/modulo-isomorphic.html">
+        <span class="deptitle">F[x]/p(x) is isomorphic to F[x]/p(x)F[x]</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/gcd-theorem.html">
+        <span class="deptitle">Polynomial GCD theorem</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/modulo-ring.html">
+        <span class="deptitle">F[x]/p(x): A ring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/every-ideal-is-principal.html">
+        <span class="deptitle">Every ideal in F[x] is principal</span>
+    </a>
+    </li>
 </ul>
+<h2> Info: </h2>
+<ul><li>Depth: 5</li><li>Number of transitive dependencies: 10</li></ul>
 </div>
 </body>
 </html>

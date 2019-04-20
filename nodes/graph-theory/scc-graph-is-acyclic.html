@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SCC graph is acyclic - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>SCC graph is acyclic</h1>
+<h2> Dependencies: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/path.html">
+        <span class="deptitle">Path in Graph</span>
+    </a>
+    </li>
+</ul>
+
+<div class="horizontal-rule"></div>
+<p>$G^{\textrm{SCC}} = (V^{\textrm{SCC}}, E^{\textrm{SCC}})$, the SCC graph of $G = (V, E)$, is acyclic.</p>
+<h2>Proof</h2>
+<p>Let there be a cycle $C = [C_1, C_2, \ldots, C_k]$ in $\operatorname{SCC}(G)$. Let $C_0 = C_k$.
+<br />$\implies \forall 1 \le i \le k, (C_{i-1}, C_i) \in E^{\textrm{SCC}}$.
+<br />$\implies \forall 1 \le i \le k, \exists t_{i-1} \in C_{i-1}, \exists s_i \in C_i, (t_{i-1}, s_i) \in E$
+where ($s_0 = s_k \wedge t_0 = t_k$).
+<br />$\implies G$ has a cycle going through every $s_i$ and $t_i$.
+<br />$\implies \forall (i, j), s_i$ is reachable from $s_j$ and $s_j$ is reachable from $s_i$.
+<br />$\implies \forall (i, j), s_i$ and $s_j$ should be in the same connected component.</p>
+<p>This is a contradiction, since $s_i$ and $s_j$ should be in different components when $1 \le i &lt; j$.
+Therefore, $G^{\textrm{SCC}}$ cannot contain a cycle.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/kosaraju-algo.html">
+        <span class="deptitle">Kosaraju's Algorithm</span>
+    </a>
+    </li>
+</ul>
+<h2> Info: </h2>
+<ul><li>Depth: 2</li><li>Number of transitive dependencies: 4</li></ul>
+</div>
+</body>
+</html>

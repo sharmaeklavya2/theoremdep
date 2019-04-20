@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DFS: Edge classification - TheoremDep</title>
+<meta name="description" content="After performing DFS on a graph, the edges of the graph can be partitioned into 4 classes: tree edges, back edges, forward edges and cross edges." />
+<meta name="keywords" content="tree edge,back edge,forward edge,cross edge" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>DFS: Edge classification</h1>
+<h2> Dependencies: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/dfs.html">
+        <span class="deptitle">Properties of DFS</span>
+    </a>
+    </li>
+</ul>
+
+<div class="horizontal-rule"></div>
+<p>Let $G_π$ be the DFS forest obtained by performing DFS on $G$.
+The edges of $G$ can be partitioned into 4 classes:</p>
+<ol>
+<li><strong>tree edges</strong> - $(u, v)$ is a tree edge iff $(v, u) \in G_π$.</li>
+<li><strong>back edges</strong> - edges connecting a vertex to itself or to one of its ancestors in $G_π^T$.</li>
+<li><strong>forward edges</strong> - edges connecting a vertex to one of its descendants in $G_π^T$.</li>
+<li><strong>cross edges</strong> - the rest of the edges.</li>
+</ol>
+<p>When $G$ is an undirected graph, we classify edges by running DFS on the directed version of $G$.
+If the classes of $(u, v)$ and $(v, u)$ are different, we choose the one which has more precedence.
+Precedence order, from highest to lowest: tree edge, back edge, forward edge, cross edge.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/online-edge-classification.html">
+        <span class="deptitle">DFS: Online edge classification</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/toposort.html">
+        <span class="deptitle">DFS: Reverse sorting by finish time gives topological ordering</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/undirected-edge-classification.html">
+        <span class="deptitle">DFS: Edge classification in undirected graphs</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/cycle-iff-back-edges-directed.html">
+        <span class="deptitle">Directed graph is cyclic iff DFS gives back edges</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/cycle-iff-back-edges-undirected.html">
+        <span class="deptitle">Undirected graph is cyclic iff DFS gives back edges</span>
+    </a>
+    </li>
+</ul>
+<h2> Info: </h2>
+<ul><li>Depth: 4</li><li>Number of transitive dependencies: 8</li></ul>
+</div>
+</body>
+</html>

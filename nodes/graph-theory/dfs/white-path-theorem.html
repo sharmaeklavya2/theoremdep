@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DFS: White-path theorem - TheoremDep</title>
+<meta name="description" content="In the depth-first forest of a graph, v is a descendant of u iff at the time when u is visited, there is a path from u to v consisting entirely of white vertices." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>DFS: White-path theorem</h1>
+<h2> Dependencies: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/dfs.html">
+        <span class="deptitle">Properties of DFS</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/parens-theorem.html">
+        <span class="deptitle">DFS: Parenthesis theorem</span>
+    </a>
+    </li>
+</ul>
+
+<div class="horizontal-rule"></div>
+<p>Let $G_π^T$ be the DFS forest of $G$.
+$v$ is a descendant of $u$ in $G_π^T$ when DFS terminates iff
+at the time when <code>visit(u)</code> is called, there is a white path from $u$ to $v$ in $G$.
+(i.e. a path consisting entirely of white vertices).</p>
+<h2>Proof</h2>
+<p>\begin{align}
+&amp; v \textrm{ is a descendant of } u \textrm{ in DFS forest}
+\\ &amp;\Rightarrow \operatorname{visit}(v) \textrm{ was called during visit}(u)
+\\ &amp;\Rightarrow \exists w_0, w_1, \ldots, w_k, \textrm{ such that }
+    (u = w_0 \wedge v = w_k \wedge (\forall 1 \le i &lt; k,
+        \operatorname{visit}(w_i) \textrm{ makes a direct call to visit}(w_{i+1})))
+\\ &amp;\Rightarrow (u = w_0 \wedge v = w_k \wedge (\forall 1 \le i &lt; k,
+        w_{i+1} \textrm{ is white when visit}(w_i) \textrm{ is called}))
+\\ &amp;\Rightarrow (u = w_0 \wedge v = w_k \wedge (\forall 1 \le i &lt; k,
+        w_{i+1} \textrm{ is white when visit}(u) \textrm{ is called}))
+\\ &amp;\Rightarrow \textrm{ there is a white path from } u \textrm{ to } v
+\end{align}</p>
+<p>Let there be a white path from $u$ to $v$ in $G$ when <code>visit(u)</code> was called.
+Consider the non-trivial case $u \neq v$, so the path has length ≥ 1.
+Let $w$ be the predecessor of $v$ in this path.
+Without loss of generality, assume all vertices in the path from $u$ to $w$
+become descendants of $u$ when DFS terminates.</p>
+<ul>
+<li>$v$ was white when <code>visit(u)</code> was called $\implies s(u) &lt; s(v)$.</li>
+<li>$w$ is a descendant of $u$ in $G_π^T$, so $[s(w), f(w)]$ lies within $[s(u), f(u)]$
+by the parenthesis theorem.</li>
+<li>$v$ is not a descendant of $u \implies u$ was already non-white when <code>visit(w)</code> was called.
+Therefore, $s(v) &lt; s(w)$.</li>
+</ul>
+<p>Combining the above facts, we get $s(u) &lt; s(v) &lt; s(w) &lt; f(u)$.
+This means $[s(v), f(v)]$ is not disjoint with $[s(u), f(u)]$.
+Therefore, $v$ is a descendant of $u$ by the parenthesis theorem.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/kosaraju-algo.html">
+        <span class="deptitle">Kosaraju's Algorithm</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/undirected-edge-classification.html">
+        <span class="deptitle">DFS: Edge classification in undirected graphs</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/cycle-iff-back-edges-directed.html">
+        <span class="deptitle">Directed graph is cyclic iff DFS gives back edges</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/spanning-forest.html">
+        <span class="deptitle">DFS on undirected graph gives spanning forest</span>
+    </a>
+    </li>
+</ul>
+<h2> Info: </h2>
+<ul><li>Depth: 5</li><li>Number of transitive dependencies: 9</li></ul>
+</div>
+</body>
+</html>

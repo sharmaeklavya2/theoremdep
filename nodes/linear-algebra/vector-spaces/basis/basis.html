@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Basis of a vector space - TheoremDep</title>
-    <meta name="description" content="If a set of vectors B is linearly independent and spans a vector space V, then B is a basis of V. All bases of a vector space have the same size." />
-    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
-    <script type="text/javascript">
-        window.MathJax = {
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                processEscapes: true
-            }
-        };
-    </script>
-    <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Basis of a vector space - TheoremDep</title>
+<meta name="description" content="If a set of vectors B is linearly independent and spans a vector space V, then B is a basis of V. All bases of a vector space have the same size." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
+
 <body>
 <nav>
     <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
@@ -24,16 +25,18 @@
         <button id="searchbutton" type="submit" >&#x1F50D;</button>
     </form>
 </nav>
+
 <div id="main">
 <h1>Basis of a vector space</h1>
 <h2> Dependencies: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-is-smaller-than-span.html">
-            <span class="deptitle">Linearly independent set is smaller than a span</span>
-        </a>
-        </li>
-    </ul>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-is-smaller-than-span.html">
+        <span class="deptitle">Linearly independent set is smaller than a span</span>
+    </a>
+    </li>
+</ul>
+
 <div class="horizontal-rule"></div>
 <p>Let $B$ be a subset of a vector space $V$.
 $B$ is a basis of $V$ iff $B$ is linearly independent and $V = \operatorname{span}(B)$.</p>
@@ -54,65 +57,63 @@ Therefore, $|B_2| \le |B_1|$.</p>
 Using a similar argument as above and interchanging the roles of $B_1$ and $B_2$,
 we can prove that $|B_1| \le |B_2|$.
 Therefore, $|B_1| = |B_2|$.</p>
+
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
-    <ul class="deplist">
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/symmetric-operator-matrix.html">
-            <span class="deptitle">Symmetric operator iff hermitian</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-operator-has-n-ortho-eigenvectors.html">
-            <span class="deptitle">Symmetric operator on V has a basis of orthonormal eigenvectors</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/coordinatization.html">
-            <span class="deptitle">Coordinatization over a basis</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/expand-linindep-to-basis.html">
-            <span class="deptitle">Linearly independent set can be expanded into a basis</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/maximal-linindep-is-basis.html">
-            <span class="deptitle">Maximally linearly independent iff basis</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis-of-fn.html">
-            <span class="deptitle">Basis of F^n</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/minimal-span-is-basis.html">
-            <span class="deptitle">Minimally spanning iff basis</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/n-span-is-basis.html">
-            <span class="deptitle">Spanning set of size dim(V) is a basis</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/n-linindep-is-basis.html">
-            <span class="deptitle">A set of dim(V) linearly independent vectors is a basis</span>
-        </a>
-        </li>
-        <li>
-        <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-linindep.html">
-            <span class="deptitle">A matrix is full-rank iff its rows are linearly independent</span>
-        </a>
-        </li>
-    </ul>
-<h2> Info: </h2>
-<ul>
-<li>Depth: 12</li>
-<li>Number of transitive dependencies: 34</li>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/symmetric-operator-matrix.html">
+        <span class="deptitle">Symmetric operator iff hermitian</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-operator-has-n-ortho-eigenvectors.html">
+        <span class="deptitle">Symmetric operator on V has a basis of orthonormal eigenvectors</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/coordinatization.html">
+        <span class="deptitle">Coordinatization over a basis</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/expand-linindep-to-basis.html">
+        <span class="deptitle">Linearly independent set can be expanded into a basis</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/maximal-linindep-is-basis.html">
+        <span class="deptitle">Maximally linearly independent iff basis</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis-of-fn.html">
+        <span class="deptitle">Basis of F^n</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/minimal-span-is-basis.html">
+        <span class="deptitle">Minimally spanning iff basis</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/n-span-is-basis.html">
+        <span class="deptitle">Spanning set of size dim(V) is a basis</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/n-linindep-is-basis.html">
+        <span class="deptitle">A set of dim(V) linearly independent vectors is a basis</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-linindep.html">
+        <span class="deptitle">A matrix is full-rank iff its rows are linearly independent</span>
+    </a>
+    </li>
 </ul>
+<h2> Info: </h2>
+<ul><li>Depth: 12</li><li>Number of transitive dependencies: 34</li></ul>
 </div>
 </body>
 </html>

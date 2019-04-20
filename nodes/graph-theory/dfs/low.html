@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DFS: low - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>DFS: low</h1>
+<h2> Dependencies: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/dfs.html">
+        <span class="deptitle">Properties of DFS</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/online-edge-classification.html">
+        <span class="deptitle">DFS: Online edge classification</span>
+    </a>
+    </li>
+</ul>
+
+<div class="horizontal-rule"></div>
+<p>Suppose DFS is performed on an undirected graph $G$. For every vertex $v$,</p>
+<p>\[ \operatorname{low}(u) = \min(\{s(u)\} \cup \{ s(w):
+(v, w) \textrm{ is a back edge for some descendant } v \textrm{ of } u \}) \]</p>
+<p>Here $u$ can be equal to $v$.</p>
+<p>This can also be defined recursively:</p>
+<p>\[ \operatorname{low}(u) = \min(\{s(u)\} \cup \{ s(w): (u, w) \textrm{ is a back edge} \}
+    \cup \{ \operatorname{low}(v): (u, v) \textrm{ is a tree edge} \}) \]</p>
+<h2>Proof of equivalence of definitions</h2>
+<p>(To be done).</p>
+<h2>Algorithm for computing low</h2>
+<p>In DFS during <code>visit(u)</code>,
+set $\operatorname{low}(u)$ to $s(u)$ before exploring any edges.
+When the edge $(u, v)$ is explored, if $(u, v)$ is a back edge,
+set $\operatorname{low}(u)$ to $\min(\operatorname{low}(u), s(v))$
+and if $(u, v)$ is a tree edge, visit $v$ and then
+set $\operatorname{low}(u)$ to $\min(\operatorname{low}(u), \operatorname{low}(v))$.</p>
+<p>This algorithm identifies whether $(u, v)$ is a tree edge or a back edge by looking at the color of $v$:
+if $v$ is white, $(u, v)$ is a tree edge, and if $v$ is gray, $(u, v)$ is a back edge.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 6</li><li>Number of transitive dependencies: 11</li></ul>
+</div>
+</body>
+</html>

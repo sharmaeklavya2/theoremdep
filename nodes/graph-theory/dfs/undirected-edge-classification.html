@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DFS: Edge classification in undirected graphs - TheoremDep</title>
+<meta name="description" content="In an undirected graph, one of (u, v) and (v, u) is a back edge and the other is either a tree edge or a forward edge." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>DFS: Edge classification in undirected graphs</h1>
+<h2> Dependencies: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/edge-classification.html">
+        <span class="deptitle">DFS: Edge classification</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/white-path-theorem.html">
+        <span class="deptitle">DFS: White-path theorem</span>
+    </a>
+    </li>
+</ul>
+
+<div class="horizontal-rule"></div>
+<p>When DFS is performed on an undirected graph $G$,
+all edges are either tree edges or back edges.</p>
+<h2>Proof</h2>
+<p>Without loss of generality, assume <code>visit(u)</code> is called before <code>visit(v)</code>.
+Therefore, $v$ was white when <code>visit(u)</code> was called.
+By the white path theorem $v$ will be a descendant of $u$ in $G_π^T$.
+Therefore, in the directed version of $G$,
+$(v, u)$ is a back edge and $(u, v)$ is either a tree edge or a forward edge.</p>
+<p>By using precedence rules, we get that in the undirected graph $G$,
+$(u, v)$ is either a tree edge or a back edge.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/cycle-iff-back-edges-undirected.html">
+        <span class="deptitle">Undirected graph is cyclic iff DFS gives back edges</span>
+    </a>
+    </li>
+</ul>
+<h2> Info: </h2>
+<ul><li>Depth: 6</li><li>Number of transitive dependencies: 11</li></ul>
+</div>
+</body>
+</html>
