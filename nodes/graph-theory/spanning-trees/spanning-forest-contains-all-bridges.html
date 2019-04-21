@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Spanning tree contains all bridges - TheoremDep</title>
-<meta name="description" content="Let G be an undirected connected graph. Every spanning tree of G contains all the bridges in G." />
+<title>Spanning forest contains all bridges - TheoremDep</title>
+<meta name="description" content="Let G be an undirected graph. Every spanning forest of G contains all the bridges in G." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/javascript">
 window.MathJax = {
@@ -27,7 +27,7 @@ window.MathJax = {
 </nav>
 
 <div id="main">
-<h1>Spanning tree contains all bridges</h1>
+<h1>Spanning forest contains all bridges</h1>
 <h2> Dependencies: </h2>
 <ul class="deplist">
     <li>
@@ -35,11 +35,18 @@ window.MathJax = {
         <span class="deptitle">Bridge in graph</span>
     </a>
     </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-trees/spanning-forest.html">
+        <span class="deptitle">Spanning forest</span>
+    </a>
+    </li>
 </ul>
 
 <div class="horizontal-rule"></div>
-<p>Let $G$ be an undirected connected graph. Every spanning tree of $G$ contains all the bridges in $G$.</p>
+<p>Let $G$ be an undirected graph. Every spanning forest of $G$ contains all the bridges in $G$.</p>
 <h2>Proof</h2>
+<p>We will prove this theorem for a special case, where $G$ is connected.
+Then applying this theorem to each connected component of $G$ will prove the general form of the theorem.</p>
 <p>Let $(u, v)$ be a bridge in $G$ and $T$ be a spanning tree of $G$ such that $(u, v) \not\in T$.</p>
 <p>Since there is a unique simple path between any 2 vertices in a tree,
 there is a path $p$ from $u$ to $v$ in $T$.</p>
@@ -53,7 +60,7 @@ which means that deleting it disconnects $G$.</p>
 <div class="horizontal-rule"></div>
 <h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul><li>Depth: 3</li><li>Number of transitive dependencies: 5</li></ul>
+<ul><li>Depth: 5</li><li>Number of transitive dependencies: 9</li></ul>
 </div>
 </body>
 </html>

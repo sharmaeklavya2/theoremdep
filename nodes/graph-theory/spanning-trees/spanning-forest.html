@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Spanning forest - TheoremDep</title>
-<meta name="description" content="The spanning forest of an undirected graph G is the union of the spanning trees of the connected components of G. This means that the spanning forest of a graph exists iff the spanning tree of every connected component exists." />
+<meta name="description" content="The spanning forest of an undirected graph G is the union of the spanning trees of the connected components of G." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/javascript">
 window.MathJax = {
@@ -36,14 +36,23 @@ window.MathJax = {
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/spanning-tree.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-trees/spanning-tree.html">
         <span class="deptitle">Spanning tree</span>
     </a>
     </li>
 </ul>
 
 <div class="horizontal-rule"></div>
-<p>The spanning forest of an undirected graph G is the union of the spanning trees of the connected components of G. This means that the spanning forest of a graph exists iff the spanning tree of every connected component exists.</p>
+<p>The spanning forest of an undirected graph $G$ is
+the union of the spanning trees of the connected components of $G$.
+(This means that the spanning forest of $G$ exists iff
+the spanning tree of every connected component exists.)</p>
+<p>Let $F$ be a spanning forest of a weighted graph $G$.
+The weight of $F$, denoted as $w(F)$, is the sum of weights of edges of $F$.</p>
+<p>A spanning forest of $G$ with minimal weight is called a minimum spanning forest of $G$.
+A spanning forest of $G$ with maximal weight is called a maximum spanning forest of $G$.
+The abbreviation MSF, which can mean either 'minimum spanning forest' or 'maximum spanning forest',
+is used when it is either clear from context which meaning is intended, or when it does not matter.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
@@ -51,6 +60,21 @@ window.MathJax = {
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/spanning-forest.html">
         <span class="deptitle">DFS on undirected graph gives spanning forest</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-trees/ggmsfga.html">
+        <span class="deptitle">Generic Greedy MSF Growth Algorithm (GGMSFGA)</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-trees/spanning-forest-contains-all-bridges.html">
+        <span class="deptitle">Spanning forest contains all bridges</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-trees/edge-replacement.html">
+        <span class="deptitle">Edge replacement in spanning forest using a cut</span>
     </a>
     </li>
 </ul>

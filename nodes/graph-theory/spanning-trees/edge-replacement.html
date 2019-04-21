@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Edge replacement in spanning forest using a cut - TheoremDep</title>
+<meta name="description" content="Let e be an edge crossing a cut of a graph G. Let F be a spanning forest of G which does not contain e. Then we can obtain a different spanning forest of G by replacing an edge in F which crosses the cut by e. Consequently, if e is a light edge of the cut, the weight of the new spanning forest either reduces or stays the same." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Edge replacement in spanning forest using a cut</h1>
+<h2> Dependencies: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-trees/spanning-forest.html">
+        <span class="deptitle">Spanning forest</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/cut.html">
+        <span class="deptitle">Cut in a graph</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/deleting-edge-gives-2-trees.html">
+        <span class="deptitle">Deleting edge from tree gives 2 trees</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/joining-2-trees-gives-tree.html">
+        <span class="deptitle">Adding edge between 2 trees gives a tree</span>
+    </a>
+    </li>
+</ul>
+
+<div class="horizontal-rule"></div>
+<p>Let $C = (S, V-S)$ be a non-trivial cut of an undirected graph $G = (V, E)$.
+Let $(u, v)$ be an edge that crosses $C$.
+Let $F$ be a spanning forest of $G$ which does not contain $(u, v)$.</p>
+<p>Then there exists an edge $(x, y) \in F$ that crosses $C$
+such that $F' = (F - \{(x, y)\}) \cup \{(u, v)\}$ is a spanning forest of $G$.</p>
+<p>$w(F') = w(F) - w(x, y) + w(u, v)$.
+So if $w(u, v) \le w(x, y)$ (which is guaranteed if $(u, v)$ is a light edge for $C$),
+then $w(F') \le w(F)$.</p>
+<h2>Proof</h2>
+<p>Let $C = (S, V-S)$ be a cut of a connected undirected graph $G$.
+Let $(u, v)$ be an edge crossing $C$.
+Without loss of generality, assume that $u \in S$ and $v \in V-S$.
+Let $F$ be a spanning forest of $G$ which does not contain $(u, v)$.</p>
+<p>Let $G'$ be the connected component of $G$ which $(u, v)$ belongs to.
+Let $T$ be the spanning tree of $G'$.
+Since every pair of vertices in a tree has a unique simple path between them,
+$u$ and $v$ are connected by a path $p$ in $T$.
+Since $u \in S$ and $v \in V-S$, there is an edge $(x, y)$ in $p$
+such that $x \in S$ and $y \in V-S$.
+Therefore, $(x, y) \in T \subseteq F$ and $(x, y)$ crosses $C$.</p>
+<p>Deleting $(x, y)$ from $T$ breaks $T$ into 2 trees $T_1$ and $T_2$.
+Adding $(u, v)$ to $T_1 \cup T_2$ results in another tree
+$T' = (T - \{(x, y)\}) \cup \{(u, v)\}$.
+Since $T'$ contains all the vertices in $V$, it is a spanning tree of $G'$.
+Therefore, $F' = (F - \{(x, y)\}) \cup \{(u, v)\} = (F - T) \cup T'$
+is a spanning forest of $G$.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-trees/ggmsfga.html">
+        <span class="deptitle">Generic Greedy MSF Growth Algorithm (GGMSFGA)</span>
+    </a>
+    </li>
+</ul>
+<h2> Info: </h2>
+<ul><li>Depth: 5</li><li>Number of transitive dependencies: 13</li></ul>
+</div>
+</body>
+</html>

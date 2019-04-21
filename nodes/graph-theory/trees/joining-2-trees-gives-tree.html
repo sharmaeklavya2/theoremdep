@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Adding edge between 2 trees gives a tree - TheoremDep</title>
+<meta name="description" content="Let T1 and T2 be 2 trees which are connected components of an undirected graph. If an edge is added whose one endpoint is in T1 and the other endpoint is in T2, the resulting graph is a tree." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Adding edge between 2 trees gives a tree</h1>
+<h2> Dependencies: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/tree.html">
+        <span class="deptitle">Tree</span>
+    </a>
+    </li>
+</ul>
+
+<div class="horizontal-rule"></div>
+<p>Let $G = (V, E)$ be an undirected graph which has 2 connected components,
+$T_1 = (V_1, E_1)$ and $T_2 = (V_2, E_2)$, which are trees.
+Let $u \in V_1$ and $v \in V_2$.
+Let $G'$ be the graph obtained by adding $(u, v)$ to $G$.
+Then $G'$ is a tree.</p>
+<h2>Proof</h2>
+<p>Since $T_1$ is a tree, all vertices in $V_1$ have a path to all other vertices in $V_1$.
+Since $T_2$ is a tree, all vertices in $V_2$ have a path to all other vertices in $V_2$.
+Adding the edge $(u, v)$ would create a path from all vertices in $V_1$ to all vertices in $V_2$
+(the path goes from a vertex in $V_1$ to $u$, from $u$ to $v$ and from $v$ to a vertex in $V_2$).
+Therefore, $G'$ is connected.</p>
+<p>Suppose adding $(u, v)$ created a cycle in $G'$.
+This cycle includes $(u, v)$. Therefore, there must exist multiple paths from $u$ to $v$.
+This is a contradiction, since $[u, v]$ is the only path from $u$ to $v$.
+Therefore, $G'$ is acyclic.</p>
+<p>Since $G'$ is connected and acyclic, it is a tree.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-trees/edge-replacement.html">
+        <span class="deptitle">Edge replacement in spanning forest using a cut</span>
+    </a>
+    </li>
+</ul>
+<h2> Info: </h2>
+<ul><li>Depth: 3</li><li>Number of transitive dependencies: 5</li></ul>
+</div>
+</body>
+</html>

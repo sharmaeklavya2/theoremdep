@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cut in a graph - TheoremDep</title>
+<meta name="description" content="In a graph, a cut is a partition of the vertices into 2 sets. A multiway cut is a partition of the vertices into 2 or more sets." />
+<meta name="keywords" content="cut,multiway cut,min-cut,max-cut,light edge" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Cut in a graph</h1>
+<h2> Dependencies: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/graph.html">
+        <span class="deptitle">Graph</span>
+    </a>
+    </li>
+</ul>
+
+<div class="horizontal-rule"></div>
+<p>In a graph $G = (V, E)$, a cut $(S, V-S)$ is a partition of $V$ into 2 sets.
+A multiway cut is a partition of $V$ into 2 or more sets.</p>
+<p>A cut <strong>separates</strong> vertices $u$ and $v$ if they lie in different partitions.</p>
+<p>An edge $(u, v)$ <strong>crosses</strong> a cut iff $u$ and $v$ lie in different partitions.</p>
+<p>A cut is <strong>non-trivial</strong> if both partitions are non-empty.</p>
+<p>The <strong>cut-set</strong> of a cut is the set of all edges which cross the cut.</p>
+<p>A cut <strong>respects</strong> a subset $S$ of $E$ iff no edge in $S$ crosses the cut.</p>
+<p>When $G$ is weighted, the minimal weight edges crossing the cut are called <strong>light edges</strong>.</p>
+<p>When $G$ is weighted and undirected, the weight of a cut is the sum of weights of the edges crossing the cut.
+The cut with minimal weight is called a <strong>min-cut</strong>.
+The cut with maximal weight is called a <strong>max-cut</strong>.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-trees/ggmsfga.html">
+        <span class="deptitle">Generic Greedy MSF Growth Algorithm (GGMSFGA)</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-trees/edge-replacement.html">
+        <span class="deptitle">Edge replacement in spanning forest using a cut</span>
+    </a>
+    </li>
+</ul>
+<h2> Info: </h2>
+<ul><li>Depth: 1</li><li>Number of transitive dependencies: 1</li></ul>
+</div>
+</body>
+</html>

@@ -1552,17 +1552,17 @@
 },
 {
 "type": "def",
-"title": "Spanning forest",
-"description": "The spanning forest of an undirected graph G is the union of the spanning trees of the connected components of G. This means that the spanning forest of a graph exists iff the spanning tree of every connected component exists.",
-"uci": "/graph-theory/spanning-forest",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-forest.html"
-},
-{
-"type": "theorem",
-"title": "Spanning tree contains all bridges",
-"description": "Let G be an undirected connected graph. Every spanning tree of G contains all the bridges in G.",
-"uci": "/graph-theory/trees/spanning-tree-contains-all-bridges",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/spanning-tree-contains-all-bridges.html"
+"title": "Cut in a graph",
+"description": "In a graph, a cut is a partition of the vertices into 2 sets. A multiway cut is a partition of the vertices into 2 or more sets.",
+"keywords": [
+"cut",
+"multiway cut",
+"min-cut",
+"max-cut",
+"light edge"
+],
+"uci": "/graph-theory/cut",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/cut.html"
 },
 {
 "type": "def",
@@ -1585,11 +1585,11 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/deleting-edge-disconnects.html"
 },
 {
-"type": "def",
-"title": "Spanning tree",
-"description": "The spanning tree of a graph G is a subgraph which is a tree and contains all the vertices of G.",
-"uci": "/graph-theory/trees/spanning-tree",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/spanning-tree.html"
+"type": "theorem",
+"title": "Adding edge between 2 trees gives a tree",
+"description": "Let T1 and T2 be 2 trees which are connected components of an undirected graph. If an edge is added whose one endpoint is in T1 and the other endpoint is in T2, the resulting graph is a tree.",
+"uci": "/graph-theory/trees/joining-2-trees-gives-tree",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/joining-2-trees-gives-tree.html"
 },
 {
 "type": "theorem",
@@ -1726,6 +1726,47 @@
 "title": "DFS: low",
 "uci": "/graph-theory/dfs/low",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/low.html"
+},
+{
+"type": "def",
+"title": "Spanning tree",
+"description": "The spanning tree of an undirected graph G is a subgraph which is a tree and contains all the vertices of G.",
+"keywords": [
+"spanning tree",
+"minimum spanning tree",
+"maximum spanning tree",
+"MST"
+],
+"uci": "/graph-theory/spanning-trees/spanning-tree",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-trees/spanning-tree.html"
+},
+{
+"type": "theorem",
+"title": "Generic Greedy MSF Growth Algorithm (GGMSFGA)",
+"description": "The Generic Greedy MSF Growth Algorithm (GGMSFGA) is a generic algorithm for finding the MSF of an undirected graph. GGMSFA maintains a forest F which is a subgraph of some MSF. In each iteration, it chooses a cut C which respects F and adds a light edge of C to F.",
+"uci": "/graph-theory/spanning-trees/ggmsfga",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-trees/ggmsfga.html"
+},
+{
+"type": "theorem",
+"title": "Spanning forest contains all bridges",
+"description": "Let G be an undirected graph. Every spanning forest of G contains all the bridges in G.",
+"uci": "/graph-theory/spanning-trees/spanning-forest-contains-all-bridges",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-trees/spanning-forest-contains-all-bridges.html"
+},
+{
+"type": "def",
+"title": "Spanning forest",
+"description": "The spanning forest of an undirected graph G is the union of the spanning trees of the connected components of G.",
+"uci": "/graph-theory/spanning-trees/spanning-forest",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-trees/spanning-forest.html"
+},
+{
+"type": "theorem",
+"title": "Edge replacement in spanning forest using a cut",
+"description": "Let e be an edge crossing a cut of a graph G. Let F be a spanning forest of G which does not contain e. Then we can obtain a different spanning forest of G by replacing an edge in F which crosses the cut by e. Consequently, if e is a light edge of the cut, the weight of the new spanning forest either reduces or stays the same.",
+"uci": "/graph-theory/spanning-trees/edge-replacement",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-trees/edge-replacement.html"
 },
 {
 "type": "theorem",
