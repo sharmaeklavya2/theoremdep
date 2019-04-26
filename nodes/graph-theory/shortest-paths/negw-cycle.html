@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shortest path weight is -∞ iff there is a negative-weight cycle - TheoremDep</title>
+<meta name="description" content="δ(u, v) = -∞ iff there is some path from u to v containing a negative-weight cycle." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Shortest path weight is -∞ iff there is a negative-weight cycle</h1>
+<h2> Dependencies: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/path.html">
+        <span class="deptitle">Path in Graph</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/simple-path-of-lower-weight.html">
+        <span class="deptitle">Removing cycles can make a path shorter</span>
+    </a>
+    </li>
+</ul>
+
+<div class="horizontal-rule"></div>
+<p>In a graph $G$, $\delta_G(u, v) = -\infty$ iff
+there is some path from $u$ to $v$ containing a negative-weight cycle.</p>
+<p>(In an undirected graph, a negative-weight edge forms a negative-weight cycle of length 2.)</p>
+<h2>Proof</h2>
+<p>Let $C$ be a negative weight cycle in path $p$ from $u$ to $v$.
+Let $p = p_1 + C + p_2$.
+Therefore, $w(p_1 + kC + p_2) = w(p) + (k-1)w(C)$.
+Since $w(C) &lt; 0$, increasing $k$ decreases the weight of $p_1 + kC + p_2$.
+Therefore, there is no lower bound on the weight of a path from $u$ to $v$.
+Therefore, $\delta_G(u, v) = -\infty$.</p>
+<p>Suppose no path from $u$ to $v$ contains a negative weight cycle.
+Let $p$ be a path from $u$ to $v$. Then a simple path $p'$ exists from $u$ to $v$ such that $w(p') \le w(p)$.
+A simple path can be of length at most $|V|-1$.
+Therefore, there are a finite number of simple paths.
+Since the weight of each path from $u$ to $v$ is lower bounded by the weight of a simple path,
+a shortest path exists and therefore, $\delta_G(u, v) \neq -\infty$.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 3</li><li>Number of transitive dependencies: 5</li></ul>
+</div>
+</body>
+</html>

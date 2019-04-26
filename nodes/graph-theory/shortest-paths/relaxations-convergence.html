@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shortest path: Convergence of edge relaxations - TheoremDep</title>
+<meta name="description" content="Intelligently choosing the order of relaxations can make the shortest-path-length estimate converge to the shortest-path-length." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Shortest path: Convergence of edge relaxations</h1>
+<h2> Dependencies: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations.html">
+        <span class="deptitle">Shortest path: Edge relaxations</span>
+    </a>
+    </li>
+</ul>
+
+<div class="horizontal-rule"></div>
+<p>Let $G = (V, E)$ be a weighted graph.
+Let $s$ be the source vertex from which we wish to find the shortest path to every vertex.</p>
+<p>While relaxations are iteratively applied to $G$, the following properties hold:</p>
+<ul>
+<li><strong>Convergence</strong>: If $π_{\delta}(v) = u$ and $d(u) = \delta(u)$, then after relaxing $(u, v)$,
+$d(v) = \delta(v)$. By the monotonocity and upper-bound properties, $d(v) = \delta(v)$ forever after.</li>
+<li><strong>Path-relaxation property</strong>: If $p = [v_0, v_1, \ldots, v_k]$ is a shortest path
+from $s = v_0$ to $v_k$, and we relax the edges of $p$ in the order
+$[(v_0, v_1), (v_1, v_2), \ldots, (v_{k-1}, v_k)]$, then $d(v_k) = \delta(v_k)$ forever after.
+This property holds regardless of any other relaxation steps that occur,
+even if they are intermixed with relaxations of the edges of p.</li>
+</ul>
+<p>The path relaxation property implies that if we intelligently choose the order of relaxations,
+we can make $d$ converge to $\delta$ if there is a shortest path to every vertex
+(A shortest path will not exist for every vertex if, for example,
+there is a cycle with only negative-weight edges).</p>
+<h2>Proof</h2>
+<h3>Convergence</h3>
+<p>$π_{\delta}(v) = u \implies \delta(v) = \delta(u) + w(u, v)$.</p>
+<p>After relaxing $(u, v)$,
+\[ d(v) \le d(u) + w(u, v) = \delta(u) + w(u, v) = \delta(v) \]</p>
+<p>By the upper-bound property, $d(v) \ge \delta(v)$. Therefore, $d(v) = \delta(v)$.</p>
+<h3>Path-relaxation property</h3>
+<p>Can be easily proved by using induction over length of $p$
+and using the convergence property.
+The base case $|p| = 0$ is true, since even before any relaxations, $\delta(s) = d(s) = 0$.
+By the upper-bound property and monotonicity of $d$, $\delta(s) = d(s)$ forever after.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 4</li><li>Number of transitive dependencies: 6</li></ul>
+</div>
+</body>
+</html>

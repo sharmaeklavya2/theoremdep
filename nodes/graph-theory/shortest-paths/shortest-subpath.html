@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Subpath of shortest path is shortest path - TheoremDep</title>
+<meta name="description" content="Let p be a shortest path from u to v. Let q be a subpath of p from x to y. Then q is a shortest path from x to y." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Subpath of shortest path is shortest path</h1>
+<h2> Dependencies: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/path.html">
+        <span class="deptitle">Path in Graph</span>
+    </a>
+    </li>
+</ul>
+
+<div class="horizontal-rule"></div>
+<p>Let $p$ be a shortest path from $u$ to $v$.
+Let $q$ be a subpath of $p$ from $x$ to $y$.
+Then $q$ is a shortest path from $x$ to $y$.</p>
+<h2>Proof</h2>
+<p>Let $p_1$ be the subpath of $p$ from $u$ to $x$.
+Let $p_2$ be the subpath of $p$ from $y$ to $v$.
+Therefore, $p = p_1 + q + p_2$.
+Therefore, $w(p) = w(p_1) + w(q) + w(p_2)$.</p>
+<p>Let $q'$ be a shortest path from $x$ to $y$.
+Therefore, $p' = p_1 + q' + p_2$ is a path from $u$ to $v$ and $w(q') \le w(q)$.
+$w(p') = w(p_1) + w(q') + w(p_2) \implies w(p') - w(p) = w(q') - w(q)$.
+Since $p$ is a shortest path from $u$ to $v$, $w(p) \le w(p') \implies w(q) \le w(q')$.</p>
+<p>Therefore, $w(q) = w(q')$, which means that $q$ is a shortest path from $x$ to $y$.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 2</li><li>Number of transitive dependencies: 4</li></ul>
+</div>
+</body>
+</html>

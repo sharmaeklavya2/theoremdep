@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Triangle inequality of shortest paths - TheoremDep</title>
+<meta name="description" content="δ(u, v) + δ(v, w) ≥ δ(u, w)" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Triangle inequality of shortest paths</h1>
+<h2> Dependencies: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/path.html">
+        <span class="deptitle">Path in Graph</span>
+    </a>
+    </li>
+</ul>
+
+<div class="horizontal-rule"></div>
+<p>Let $G = (V, E)$ be a graph and $u, v, w \in V$.
+Then $\delta(u, v) + \delta(v, w) \ge \delta(u, w)$.</p>
+<h2>Proof</h2>
+<ul>
+<li>
+<p>Case 1: $\delta(u, v)$ and $\delta(v, w)$ are both finite:</p>
+<p>Let $p_1$ be the shortest path from $u$ to $v$. Therefore, $\delta(u, v) = w(p_1)$.
+Let $p_2$ be the shortest path from $v$ to $w$. Therefore, $\delta(v, w) = w(p_2)$.
+Let $p$ be the shortest path from $u$ to $w$. Therefore, $\delta(u, w) = w(p)$.</p>
+<p>Since $p_1 + p_2$ is also a path from $u$ to $w$, $w(p) \le w(p_1 + p_2) = w(p_1) + w(p_2)$.
+Therefore, $\delta(u, w) \le \delta(u, v) + \delta(v, w)$.</p>
+</li>
+<li>
+<p>Case 2: Exactly one of $\delta(u, v)$ and $\delta(v, w)$ is $\infty$ and the other is $-\infty$:</p>
+<p>Addition isn't well-defined here, so we'll skip this case.</p>
+</li>
+<li>
+<p>Case 3: At least one of $\delta(u, v)$ and $\delta(v, w)$, is $\infty$:</p>
+<p>Therefore, $\delta(u, v) + \delta(v, w) = \infty \ge \delta(v, w)$.</p>
+</li>
+<li>
+<p>Case 4: At least one of $\delta(u, v)$ and $\delta(v, w)$ is $-\infty$:</p>
+<p>Therefore, $\delta(u, v) + \delta(v, w) = -\infty$.
+Since none of $\delta(u, v)$ or $\delta(v, w)$ is $\infty$,
+$u$ and $v$ are connected and $v$ and $w$ are connected.
+Without loss of generality, assume $\delta(u, v) = -\infty$.
+Therefore, there is no shortest path from $u$ to $w$,
+since any path from $u$ to $v$ can be concatenated with a path from $v$ to $w$,
+Therefore, $\delta(u, w) = -\infty$.</p>
+</li>
+</ul>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations.html">
+        <span class="deptitle">Shortest path: Edge relaxations</span>
+    </a>
+    </li>
+</ul>
+<h2> Info: </h2>
+<ul><li>Depth: 2</li><li>Number of transitive dependencies: 4</li></ul>
+</div>
+</body>
+</html>

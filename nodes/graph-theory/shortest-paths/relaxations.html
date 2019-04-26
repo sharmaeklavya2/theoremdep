@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shortest path: Edge relaxations - TheoremDep</title>
+<meta name="description" content="A generic algorithm for finding shortest paths from a single source involves keeping an upper bound on the shortest-path-length to each vertex and successively updating it using operations called edge-relaxations." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Shortest path: Edge relaxations</h1>
+<h2> Dependencies: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/triangle-inequality.html">
+        <span class="deptitle">Triangle inequality of shortest paths</span>
+    </a>
+    </li>
+</ul>
+
+<div class="horizontal-rule"></div>
+<p>Let $G = (V, E)$ be a weighted graph.
+Let $s$ be a source vertex from which we wish to find the shortest path to every vertex.
+Let $\delta(v)$ be the weight of the shortest path from $s$ to $v$.
+Let $π_{\delta}(v)$ be the predecessor of $v$ in the shortest path from $s$ to $v$
+($π_{\delta}(s) = \textrm{null}$).</p>
+<p>Let $d: V \mapsto \mathbb{R}$ and $π_d: V \mapsto V \cup \{\textrm{null}\}$
+be attributes that we will maintain for every vertex.
+Initially, $π_d(v) = \textrm{null}$ and $d(v) = \begin{cases} 0 &amp; v = s \\ \infty &amp; v \neq s \end{cases}$.</p>
+<p>Relaxation of the edge $(u, v)$ is the following operation:
+If $d(v) &gt; d(u) + w(u, v)$, set $d(v)$ to $d(u) + w(u, v)$ and $π_d(v)$ to $u$.
+It is easy to see that right after relaxing $(u, v)$, $d(v) \le d(u) + w(u, v)$.</p>
+<p>When $G$ is undirected, relaxation of $(u, v)$ means relaxing in both the $(u, v)$ and $(v, u)$ directions.</p>
+<p>While relaxations are iteratively applied to $G$, the following properties hold:</p>
+<ul>
+<li><strong>Monotonicity</strong>: $d$ never increases with time.</li>
+<li><strong>Upper-bound property</strong>: $d$ upper-bounds $\delta$.</li>
+</ul>
+<p>Since $d$ is an upper-bound on $\delta$,
+it is called the shortest-path-length estimate of $v$.</p>
+<p>If there is no path from $s$ to $v$, $\delta(v) = \infty$.
+By the upper-bound property, this means that $d(v) = \infty$.</p>
+<h2>Proof</h2>
+<h3>Monotonicity</h3>
+<p>On relaxing $(u, v)$, $v$ is the only vertex for which $d$ changes.
+In an operation of the form 'if $A &gt; B$, set $A$ to $B$', $A$ cannot increase.
+Therefore, $d(v)$ cannot increase.
+Therefore, for every vertex $v$, $d(v)$ cannot increase with time.</p>
+<h3>Upper-bound property</h3>
+<p>Initially, $d$ is an upper-bound on $\delta$,
+since $d(s) = \delta(s) = 0$ and $d(v) = \infty \ge \delta(v)$ for all $v \neq s$.</p>
+<p>We will prove that if the upper bound property holds before relaxing $(u, v)$,
+it also holds after relaxing $(u, v)$.</p>
+<p>After relaxing $(u, v)$, if $d(v)$ changed, then
+\begin{align}
+d(v) &amp;= d(u) + w(u, v)
+\\ &amp;\ge \delta(u) + \delta(u, v)
+\\ &amp;\ge \delta(v) \tag{triangle inequality of $\delta$}
+\end{align}
+This is true even if $\delta(u) = \infty$.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations-convergence.html">
+        <span class="deptitle">Shortest path: Convergence of edge relaxations</span>
+    </a>
+    </li>
+</ul>
+<h2> Info: </h2>
+<ul><li>Depth: 3</li><li>Number of transitive dependencies: 5</li></ul>
+</div>
+</body>
+</html>

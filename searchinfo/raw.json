@@ -1459,6 +1459,13 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/forest.html"
 },
 {
+"type": "theorem",
+"title": "Removing cycles can make a path shorter",
+"description": "Let p be a path from u to v which does not contain any negative cycles. Then there exists a simple path p' from u to v such that w(p') \u2264 w(p).",
+"uci": "/graph-theory/simple-path-of-lower-weight",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/simple-path-of-lower-weight.html"
+},
+{
 "type": "def",
 "title": "Topological sort",
 "description": "A topological ordering of a directed graph is an ordering of its vertices such that if (u, v) is an edge then u precedes v in the ordering. The process of finding such an ordering is called topological sorting.",
@@ -1767,6 +1774,41 @@
 "description": "Let e be an edge crossing a cut of a graph G. Let F be a spanning forest of G which does not contain e. Then we can obtain a different spanning forest of G by replacing an edge in F which crosses the cut by e. Consequently, if e is a light edge of the cut, the weight of the new spanning forest either reduces or stays the same.",
 "uci": "/graph-theory/spanning-trees/edge-replacement",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-trees/edge-replacement.html"
+},
+{
+"type": "theorem",
+"title": "Subpath of shortest path is shortest path",
+"description": "Let p be a shortest path from u to v. Let q be a subpath of p from x to y. Then q is a shortest path from x to y.",
+"uci": "/graph-theory/shortest-paths/shortest-subpath",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/shortest-subpath.html"
+},
+{
+"type": "theorem",
+"title": "Triangle inequality of shortest paths",
+"description": "\u03b4(u, v) + \u03b4(v, w) \u2265 \u03b4(u, w)",
+"uci": "/graph-theory/shortest-paths/triangle-inequality",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/triangle-inequality.html"
+},
+{
+"type": "deftheorem",
+"title": "Shortest path: Edge relaxations",
+"description": "A generic algorithm for finding shortest paths from a single source involves keeping an upper bound on the shortest-path-length to each vertex and successively updating it using operations called edge-relaxations.",
+"uci": "/graph-theory/shortest-paths/relaxations",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations.html"
+},
+{
+"type": "deftheorem",
+"title": "Shortest path: Convergence of edge relaxations",
+"description": "Intelligently choosing the order of relaxations can make the shortest-path-length estimate converge to the shortest-path-length.",
+"uci": "/graph-theory/shortest-paths/relaxations-convergence",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations-convergence.html"
+},
+{
+"type": "theorem",
+"title": "Shortest path weight is -\u221e iff there is a negative-weight cycle",
+"description": "\u03b4(u, v) = -\u221e iff there is some path from u to v containing a negative-weight cycle.",
+"uci": "/graph-theory/shortest-paths/negw-cycle",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/negw-cycle.html"
 },
 {
 "type": "theorem",
