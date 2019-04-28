@@ -1539,7 +1539,7 @@
 },
 {
 "type": "theorem",
-"title": "Properties of BFS",
+"title": "Breadth-first search",
 "description": "Properties of Breadth-first search in a graph.",
 "uci": "/graph-theory/bfs",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/bfs.html"
@@ -1590,6 +1590,12 @@
 "description": "A graph is a tree iff it is connected and deleting an edge from it disconnects it.",
 "uci": "/graph-theory/trees/deleting-edge-disconnects",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/deleting-edge-disconnects.html"
+},
+{
+"type": "theorem",
+"title": "Acyclic predecessor graph is union of rooted trees",
+"uci": "/graph-theory/trees/acyclic-predecessor-graph-is-union-of-rooted-trees",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/acyclic-predecessor-graph-is-union-of-rooted-trees.html"
 },
 {
 "type": "theorem",
@@ -1790,15 +1796,36 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/triangle-inequality.html"
 },
 {
+"type": "theorem",
+"title": "Dijkstra's algorithm",
+"description": "For a weighted graph without negative-weight edges, Dijkstra's algorithm finds a shortest-path tree.",
+"uci": "/graph-theory/shortest-paths/dijkstra",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/dijkstra.html"
+},
+{
 "type": "deftheorem",
-"title": "Shortest path: Edge relaxations",
+"title": "Edge relaxations",
 "description": "A generic algorithm for finding shortest paths from a single source involves keeping an upper bound on the shortest-path-length to each vertex and successively updating it using operations called edge-relaxations.",
 "uci": "/graph-theory/shortest-paths/relaxations",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations.html"
 },
 {
+"type": "theorem",
+"title": "Edge relaxations: Predecessor subgraph is a rooted tree",
+"description": "During relaxations from source s on a weighted graph, the predecessor subgraph is a rooted tree if there are no negative-weight cycles reachable from s.",
+"uci": "/graph-theory/shortest-paths/relaxations-tree",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations-tree.html"
+},
+{
+"type": "theorem",
+"title": "Edge relaxations: Predecessor subgraph is a shortest-path tree after convergence",
+"description": "After relaxations from source s on a weighted graph converge, the predecessor subgraph is a rooted tree.",
+"uci": "/graph-theory/shortest-paths/relaxations-sp-tree",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations-sp-tree.html"
+},
+{
 "type": "deftheorem",
-"title": "Shortest path: Convergence of edge relaxations",
+"title": "Convergence of edge relaxations",
 "description": "Intelligently choosing the order of relaxations can make the shortest-path-length estimate converge to the shortest-path-length.",
 "uci": "/graph-theory/shortest-paths/relaxations-convergence",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations-convergence.html"
@@ -1809,6 +1836,13 @@
 "description": "\u03b4(u, v) = -\u221e iff there is some path from u to v containing a negative-weight cycle.",
 "uci": "/graph-theory/shortest-paths/negw-cycle",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/negw-cycle.html"
+},
+{
+"type": "def",
+"title": "Shortest-path tree",
+"description": "For a graph G, a shortest-path tree T is a tree rooted at a vertex s such that the unique path from s to v in T is a shortest path from s to v in G.",
+"uci": "/graph-theory/shortest-paths/shortest-path-tree",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/shortest-path-tree.html"
 },
 {
 "type": "theorem",

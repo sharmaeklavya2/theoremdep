@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Properties of BFS - TheoremDep</title>
+<title>Breadth-first search - TheoremDep</title>
 <meta name="description" content="Properties of Breadth-first search in a graph." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/javascript">
@@ -27,7 +27,7 @@ window.MathJax = {
 </nav>
 
 <div id="main">
-<h1>Properties of BFS</h1>
+<h1>Breadth-first search</h1>
 <h2> Dependencies: </h2>
 <ul class="deplist">
     <li>
@@ -36,8 +36,13 @@ window.MathJax = {
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/rooted-tree.html">
-        <span class="deptitle">Rooted tree</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/shortest-path-tree.html">
+        <span class="deptitle">Shortest-path tree</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/acyclic-predecessor-graph-is-union-of-rooted-trees.html">
+        <span class="deptitle">Acyclic predecessor graph is union of rooted trees</span>
     </a>
     </li>
 </ul>
@@ -49,8 +54,6 @@ from a source vertex $s$ and computes:</p>
 <li>A shortest-path tree rooted at $s$.</li>
 <li>$\delta_G(s, v)$.</li>
 </ul>
-<p>A shortest-path tree is a tree rooted as $s$ where the unique path from $s$ to $v$
-is a shortest path in $G$ from $s$ to $v$.</p>
 <h2>The algorithm</h2>
 <p>BFS maintains three attributes for every vertex:</p>
 <ul>
@@ -106,7 +109,7 @@ Therefore, its auxiliary memory requirement is $O(|V|)$.</p>
 <div class="horizontal-rule"></div>
 <h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul><li>Depth: 3</li><li>Number of transitive dependencies: 5</li></ul>
+<ul><li>Depth: 4</li><li>Number of transitive dependencies: 8</li></ul>
 </div>
 </body>
 </html>

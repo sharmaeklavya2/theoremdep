@@ -42,9 +42,9 @@ window.MathJax = {
 <p>Let $G_π$ be the DFS forest obtained by performing DFS on $G$.
 The edges of $G$ can be partitioned into 4 classes:</p>
 <ol>
-<li><strong>tree edges</strong> - $(u, v)$ is a tree edge iff $(v, u) \in G_π$.</li>
-<li><strong>back edges</strong> - edges connecting a vertex to itself or to one of its ancestors in $G_π^T$.</li>
-<li><strong>forward edges</strong> - edges connecting a vertex to one of its descendants in $G_π^T$.</li>
+<li><strong>tree edges</strong> - $(u, v)$ is a tree edge iff $(u, v) \in G_π$.</li>
+<li><strong>back edges</strong> - edges connecting a vertex to itself or to one of its ancestors in $G_π$.</li>
+<li><strong>forward edges</strong> - edges connecting a vertex to one of its descendants in $G_π$.</li>
 <li><strong>cross edges</strong> - the rest of the edges.</li>
 </ol>
 <p>When $G$ is an undirected graph, we classify edges by running DFS on the directed version of $G$.

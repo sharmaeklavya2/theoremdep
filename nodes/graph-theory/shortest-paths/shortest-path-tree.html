@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Subpath of shortest path is shortest path - TheoremDep</title>
-<meta name="description" content="Let p be a shortest path from u to v. Let q be a subpath of p from x to y. Then q is a shortest path from x to y." />
+<title>Shortest-path tree - TheoremDep</title>
+<meta name="description" content="For a graph G, a shortest-path tree T is a tree rooted at a vertex s such that the unique path from s to v in T is a shortest path from s to v in G." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/javascript">
 window.MathJax = {
@@ -27,7 +27,7 @@ window.MathJax = {
 </nav>
 
 <div id="main">
-<h1>Subpath of shortest path is shortest path</h1>
+<h1>Shortest-path tree</h1>
 <h2> Dependencies: </h2>
 <ul class="deplist">
     <li>
@@ -35,34 +35,39 @@ window.MathJax = {
         <span class="deptitle">Path in Graph</span>
     </a>
     </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/rooted-tree.html">
+        <span class="deptitle">Rooted tree</span>
+    </a>
+    </li>
 </ul>
 
 <div class="horizontal-rule"></div>
-<p>Let $p$ be a shortest path from $u$ to $v$.
-Let $q$ be a subpath of $p$ from $x$ to $y$.
-Then $q$ is a shortest path from $x$ to $y$.</p>
-<h2>Proof</h2>
-<p>Let $p_1$ be the subpath of $p$ from $u$ to $x$.
-Let $p_2$ be the subpath of $p$ from $y$ to $v$.
-Therefore, $p = p_1 + q + p_2$.
-Therefore, $w(p) = w(p_1) + w(q) + w(p_2)$.</p>
-<p>Let $q'$ be a shortest path from $x$ to $y$.
-Therefore, $p' = p_1 + q' + p_2$ is a path from $u$ to $v$ and $w(q') \le w(q)$.
-$w(p') = w(p_1) + w(q') + w(p_2) \implies w(p') - w(p) = w(q') - w(q)$.
-Since $p$ is a shortest path from $u$ to $v$, $w(p) \le w(p') \implies w(q) \le w(q')$.</p>
-<p>Therefore, $w(q) = w(q')$, which means that $q$ is a shortest path from $x$ to $y$.</p>
+<p>For a graph $G = (V, E)$, a shortest-path tree $T = (V', E')$ with source $s \in V$
+is a directed subgraph of $G$ satisfying all these properties:</p>
+<ol>
+<li>$v \in V' \iff \delta(s, v) \neq \infty$</li>
+<li>$T$ a tree rooted at $s$.</li>
+<li>$\forall v \in V'$, the unique path from $s$ to $v$ in $T$
+is a shortest path from $s$ to $v$ in $G$.</li>
+</ol>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ul class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/dijkstra.html">
-        <span class="deptitle">Dijkstra's algorithm</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/bfs.html">
+        <span class="deptitle">Breadth-first search</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations-sp-tree.html">
+        <span class="deptitle">Edge relaxations: Predecessor subgraph is a shortest-path tree after convergence</span>
     </a>
     </li>
 </ul>
 <h2> Info: </h2>
-<ul><li>Depth: 2</li><li>Number of transitive dependencies: 4</li></ul>
+<ul><li>Depth: 3</li><li>Number of transitive dependencies: 5</li></ul>
 </div>
 </body>
 </html>

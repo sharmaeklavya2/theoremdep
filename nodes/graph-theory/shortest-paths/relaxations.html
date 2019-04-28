@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Shortest path: Edge relaxations - TheoremDep</title>
+<title>Edge relaxations - TheoremDep</title>
 <meta name="description" content="A generic algorithm for finding shortest paths from a single source involves keeping an upper bound on the shortest-path-length to each vertex and successively updating it using operations called edge-relaxations." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/javascript">
@@ -27,7 +27,7 @@ window.MathJax = {
 </nav>
 
 <div id="main">
-<h1>Shortest path: Edge relaxations</h1>
+<h1>Edge relaxations</h1>
 <h2> Dependencies: </h2>
 <ul class="deplist">
     <li>
@@ -38,27 +38,34 @@ window.MathJax = {
 </ul>
 
 <div class="horizontal-rule"></div>
-<p>Let $G = (V, E)$ be a weighted graph.
+<p>Let $G = (V, E)$ be a weighted graph. Also assume that $(u, v) \in E \implies w(u, v) \neq \infty$.
 Let $s$ be a source vertex from which we wish to find the shortest path to every vertex.
-Let $\delta(v)$ be the weight of the shortest path from $s$ to $v$.
-Let $π_{\delta}(v)$ be the predecessor of $v$ in the shortest path from $s$ to $v$
-($π_{\delta}(s) = \textrm{null}$).</p>
-<p>Let $d: V \mapsto \mathbb{R}$ and $π_d: V \mapsto V \cup \{\textrm{null}\}$
+Let $\delta(v)$ be the weight of the shortest path from $s$ to $v$.</p>
+<p>Let $d: V \mapsto \mathbb{R}$ and $π: V \mapsto V \cup \{\textrm{null}\}$
 be attributes that we will maintain for every vertex.
-Initially, $π_d(v) = \textrm{null}$ and $d(v) = \begin{cases} 0 &amp; v = s \\ \infty &amp; v \neq s \end{cases}$.</p>
+Initially, $π(v) = \textrm{null}$ and $d(v) = \begin{cases} 0 &amp; v = s \\ \infty &amp; v \neq s \end{cases}$.</p>
 <p>Relaxation of the edge $(u, v)$ is the following operation:
-If $d(v) &gt; d(u) + w(u, v)$, set $d(v)$ to $d(u) + w(u, v)$ and $π_d(v)$ to $u$.
+If $d(v) &gt; d(u) + w(u, v)$, set $d(v)$ to $d(u) + w(u, v)$ and $π(v)$ to $u$.
 It is easy to see that right after relaxing $(u, v)$, $d(v) \le d(u) + w(u, v)$.</p>
 <p>When $G$ is undirected, relaxation of $(u, v)$ means relaxing in both the $(u, v)$ and $(v, u)$ directions.</p>
+<p>Let $G_π = (V_π, E_π)$ where $V_π = \{v \in V: π(v) \neq \textrm{null}\} \cup \{s\}$
+and $E_π = \{(π(v), v): v \in V \wedge π(v) \neq \textrm{null} \}$.
+We will soon prove that $v \in V_π \implies π(v) \implies V_π$,
+which is necessary and sufficient for $G_π$ to be a valid graph.
+$G_π$ is a subgraph of $G$, since
+$(u, v) \in E_π$ $\implies π(v) = u$ $\implies (u, v)$ was relaxed $\implies (u, v) \in E$.
+Therefore, $G_π$ is called a <strong>predecessor subgraph</strong> of $G$ with source $s$.</p>
 <p>While relaxations are iteratively applied to $G$, the following properties hold:</p>
 <ul>
 <li><strong>Monotonicity</strong>: $d$ never increases with time.</li>
 <li><strong>Upper-bound property</strong>: $d$ upper-bounds $\delta$.</li>
+<li><strong>Reachability</strong>: $v$ is not reachable from $s$ $\implies \delta(v) = \infty$
+$\implies d(v) = \infty$ by the upper-bound property.</li>
+<li>$v \in V_π \iff d(v) \neq \infty$.</li>
+<li>$v \in V_π \implies π(v) \implies V_π$,</li>
 </ul>
 <p>Since $d$ is an upper-bound on $\delta$,
 it is called the shortest-path-length estimate of $v$.</p>
-<p>If there is no path from $s$ to $v$, $\delta(v) = \infty$.
-By the upper-bound property, this means that $d(v) = \infty$.</p>
 <h2>Proof</h2>
 <h3>Monotonicity</h3>
 <p>On relaxing $(u, v)$, $v$ is the only vertex for which $d$ changes.
@@ -75,15 +82,48 @@ it also holds after relaxing $(u, v)$.</p>
 d(v) &amp;= d(u) + w(u, v)
 \\ &amp;\ge \delta(u) + \delta(u, v)
 \\ &amp;\ge \delta(v) \tag{triangle inequality of $\delta$}
-\end{align}
-This is true even if $\delta(u) = \infty$.</p>
+\end{align}</p>
+<h3>Membership in $V_π$</h3>
+<p>$v \in V_π \iff (v = s \vee π(v) \neq \textrm{null})$.</p>
+<p>$v = s \implies d(v) = 0 \neq \infty$.
+<br/>$π(v) \neq \textrm{null} \implies (u, v)$ was relaxed for some $u$.
+This can only happen if $d(u) + w(u, v) \neq \infty$.
+Therefore, after $(u, v)$ is relaxed, $d(v) \le d(u) + w(u, v) \neq \infty$.
+<br/>Therefore, $v \in V_π \implies d(v) \neq \infty$.</p>
+<p>$v \not\in V_π$
+<br/>$\implies (v \neq s \wedge π(v) = \textrm{null})$
+<br/>$\implies (u, v)$ was never relaxed for any $u$ and $v \neq s$.
+<br/>$\implies d(v) = \infty$.</p>
+<p>Therefore, $v \in V_π \iff d(v) \neq \infty$.</p>
+<h3>$v \in V_π \implies π(v) \in V_π$</h3>
+<p>Let $π(v) = u \neq \textrm{null}$. This means $(u, v)$ was relaxed.
+This could have only happened if $d(u) \neq \infty$.
+This is only possible if $(w, u)$ was relaxed for some $w \in V$,
+which means
+We know that $\forall v \in V, v \in V_π \iff d(v) \neq \infty$.
+Therefore, $v \in V_π \implies π(v) \in V_π$.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ul class="deplist">
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/dijkstra.html">
+        <span class="deptitle">Dijkstra's algorithm</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations-tree.html">
+        <span class="deptitle">Edge relaxations: Predecessor subgraph is a rooted tree</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations-sp-tree.html">
+        <span class="deptitle">Edge relaxations: Predecessor subgraph is a shortest-path tree after convergence</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations-convergence.html">
-        <span class="deptitle">Shortest path: Convergence of edge relaxations</span>
+        <span class="deptitle">Convergence of edge relaxations</span>
     </a>
     </li>
 </ul>

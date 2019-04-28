@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dijkstra's algorithm - TheoremDep</title>
+<meta name="description" content="For a weighted graph without negative-weight edges, Dijkstra's algorithm finds a shortest-path tree." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Dijkstra's algorithm</h1>
+<h2> Dependencies: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations.html">
+        <span class="deptitle">Edge relaxations</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations-convergence.html">
+        <span class="deptitle">Convergence of edge relaxations</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations-sp-tree.html">
+        <span class="deptitle">Edge relaxations: Predecessor subgraph is a shortest-path tree after convergence</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/shortest-subpath.html">
+        <span class="deptitle">Subpath of shortest path is shortest path</span>
+    </a>
+    </li>
+</ul>
+
+<div class="horizontal-rule"></div>
+<p>Let $G = (V, E)$ be a weighted graph.
+Dijkstra's algorithm is an algorithm which relaxes edges of $G$ to find $\delta(s, v)$ for every $v \in V$.</p>
+<p>Dijkstra's algorithm also finds a shortest paths tree, since in any relaxations-based algorithm,
+after relaxations converge $d$ to $\delta$, the predecessor graph is a shortest paths tree.</p>
+<p>Dijkstra's algorithm:</p>
+<pre><code>for v in G.V:
+    d(v) = ∞
+    π(v) = null
+d(s) = 0
+S = {}
+Q = min_heap({s})
+
+def relax(u, v):
+    if d[v] &gt; d[u] + w(u, v):
+        d[v] = d[u] + w(u, v)
+        π(v) = u
+        if v in Q:
+            Q.decrease_priority(v)
+        else:
+            assert v not in S
+            Q.insert(v)
+
+while not Q.empty():
+    u = Q.extract_min()
+    S.add(u)
+    for v in G.adj[u]:
+        relax(u, v)
+</code></pre>
+
+<p>Here $Q$ is a priority queue on $V$ with key function $d$.</p>
+<h2>Time taken</h2>
+<p>Only those vertices are added to $Q$ which are not in $S$
+(according to the assert statement, whose truth will be proven later).
+Therefore, the vertex extracted from $Q$ is not in $S$.
+So, in every iteration of the while loop, a new vertex is added to $S$.
+Therefore, the while loop runs at most $|V|$ times.</p>
+<p>Time taken by Dijkstra's algorithm is $O(|V|g(|V|) + |E|h(|V|))$,
+where $g(|V|)$ is the time taken by <code>Q.extract_min</code> and $h(|V|)$ is the time taken by <code>Q.decrease_priority</code>.
+If $Q$ is implemented using binary heaps, time taken is $O(|E|\lg|V|)$,
+since <code>extract_min</code> and <code>decrease_priority</code> taken $O(\lg|V|)$ time.
+If $Q$ is implemented using fibonacci heaps, time taken is $O(|E| + |V|\lg|V|)$,
+since <code>extract_min</code> takes amortized $O(\lg|V|)$ time and
+<code>decrease_priority</code> takes amortized $O(1)$ time.</p>
+<h2>Invariant</h2>
+<p>We will prove that this invariant is maintained by Dijkstra's algorithm
+at the beginning of each iteration of the <code>while</code> loop:
+\[ \forall v \in S, d(v) = \delta(v) \]</p>
+<p>This means that when Dijkstra's algorithm terminates,
+$d(v) = \delta(v)$ for all $v \in V$.</p>
+<h2>Monotonicity theorem</h2>
+<p>Elements are added to $S$ in non-decreasing order of $\delta$.</p>
+<h2>Proof of invariant</h2>
+<p>Initially, $S = \{\}$, so the invariant is trivially true.
+After the first iteration of the <code>while</code> loop, $S = \{s\}$.
+Here too, the invariant is maintained, since $d(s) = \delta(s) = 0$.</p>
+<p>We will use proof by contradiction to show that the invariant is always true.
+Suppose that the invariant isn't always true.
+Let $u$ be the first vertex inserted to $S$ for which $d(u) \neq \delta(u)$.
+Since $d$ is an upper-bound on $\delta$, this means $\delta(u) &lt; d(u)$.
+Also, $u \neq s$, because $s$ was the first vertex to be inserted in $S$ and $d(s) = \delta(s) = 0$.</p>
+<p>The value of $d$ and $S$ change with time.
+Unless mentioned otherwise, values of $d$ and $S$ will be taken to be
+at the instant just before $u$ is inserted into $S$.
+At that instant, the invariant was true, so $\forall v \in S, d(v) = \delta(v)$.
+We also have that $s \in S$ and $u \not\in S$.</p>
+<p>Let $p$ be a shortest path from $s$ to $u$. $(u \not\in S \wedge s \in S)$
+$\implies \exists (x, y) \in p, (x \in S \wedge y \not\in S)$.
+Let $p_1$ be the subpath of $p$ from $s$ to $y$ and $p_2$ be the subpath of $p$ from $y$ to $u$.
+Therefore, $\delta(u) = w(p) = w(p_1) + w(p_2)$.
+Since a subpath of a shortest path is a shortest path, $w(p_1) = \delta(y)$.
+Therefore, $\delta(u) = \delta(y) + w(p_2)$.
+Since there are no negative-weight edges in $G$, $w(p_2) \ge 0$.
+Therefore, $\delta(y) \le \delta(u)$.</p>
+<p>$x \in S \implies$ $x$ was chosen before $u$ and $d(x) = \delta(x)$.
+After $x$ was added to $S$, $(x, y)$ was relaxed.
+By the convergence property of relaxations, $d(y) = \delta(y) \le \delta(u) &lt; d(u)$.
+Since $d(y) &lt; d(u)$, $y \neq u$.
+Since $y \not\in S$ just before $u$ was inserted into $S$,
+$d(u) \le d(y)$. This is a contradiction.
+This contradiction arose because we assumed that $\delta(u) \neq d(u)$.
+Therefore, there is no smallest vertex $u$ for which $d(u) \neq \delta(u)$ just before adding it to $S$.
+Therefore, the invariant $\forall v \in S, d(v) = \delta(v)$ is maintained.</p>
+<h2>Proof of the truth of the <code>assert</code> statement.</h2>
+<p>Suppose $(u, v)$ is being relaxed. This can only happen if $u \in S$.
+Suppose $v \in S$. Then $d(v) = \delta(v)$ and $d(u) = \delta(u)$.
+By the triangle inquality, $\delta(v) \le \delta(u) + \delta(u, v) \le \delta(u) + w(u, v)$.
+Therefore, $v \in S \implies d(v) \le d(u) + w(u, v)$.
+The contrapositive of this statement says that
+$d(v) &gt; d(u) + w(u, v) \implies v \not\in S$, which proves the assert statement.</p>
+<h2>Proof of monotonicity theorem</h2>
+<p>The monotonicity theorem states that just before $u$ is added to $S$,
+\[ \forall u \in V, \forall v \in S, \delta(v) \le \delta(u) \]
+We will prove this by contradiction.
+Let $u$ be the first vertex to be added to $S$ which does not satisfy the above property.</p>
+<p>Consider the instant just before $u$ is added to $S$.
+If $S = \{\}$, this is trivially true. So let $S \neq \{\}$.
+The first vertex to be inserted to $S$ is $s$. Therefore, $u \neq s$.
+This means $u$ was added to $Q$ during a relaxation,
+so $π(u) \neq \textrm{null}$ after that relaxation.</p>
+<p>Consider the instant just before $u$ is added to $S$.
+By the invariant proven above, $d(u) = \delta(u)$ at that time.
+Let $π(u) = x$ at that time.
+Consider the instant just after $(x, u)$ was relaxed.
+Since $(x, u)$ was relaxed, $x \in S$.
+At that time $d(u) = d(x) + w(x, u)$.
+By the invariant proven above, $d(x) = \delta(x)$, since $x \in S$.
+This means $\delta(x) = d(x) \le d(x) + w(x, u) = d(u) = \delta(u)$.</p>
+<p>Let $v$ be a vertex added to $S$ before $u$.
+If $v$ was added before $x$, $\delta(v) \le \delta(x)$,
+since $u$ is the first vertex to not satisfy the monotonicity property.
+Therefore $\delta(v) \le \delta(x) \le \delta(u)$.</p>
+<p>If $v$ was added after $x$, $\delta(x) \le \delta(x)$.
+Consider the time just before $v$ is added to $S$.
+By that time $(x, u)$ was relaxed, so $\delta(u) = d(u)$.
+Since $v$ was chosen instead of $u$, $d(v) \le d(u)$.
+By the invariant proven above, $d(v) = \delta(v)$.
+Therefore, $\delta(v) \le \delta(u)$.</p>
+<p>Therefore, for every vertex $v$ added to $S$ before $u$, $\delta(v) \le \delta(u)$.
+This is a contradiction, since $u$ is the first vertex to be added to $S$
+which does not satisfy this property.
+This means that our assumption that such a vertex exists was wrong.
+Therefore, vertices get inserted into $S$ in non-decreasing order of $\delta$.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 6</li><li>Number of transitive dependencies: 14</li></ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Edge relaxations: Predecessor subgraph is a rooted tree - TheoremDep</title>
+<meta name="description" content="During relaxations from source s on a weighted graph, the predecessor subgraph is a rooted tree if there are no negative-weight cycles reachable from s." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Edge relaxations: Predecessor subgraph is a rooted tree</h1>
+<h2> Dependencies: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/path.html">
+        <span class="deptitle">Path in Graph</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations.html">
+        <span class="deptitle">Edge relaxations</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/rooted-tree.html">
+        <span class="deptitle">Rooted tree</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/acyclic-predecessor-graph-is-union-of-rooted-trees.html">
+        <span class="deptitle">Acyclic predecessor graph is union of rooted trees</span>
+    </a>
+    </li>
+</ul>
+
+<div class="horizontal-rule"></div>
+<p>Let $G$ be a weighted graph where no negative-weight cycles are reachable from $s \in V$.
+Let $G_π = (V_π, E_π)$ be the predecessor subgraph of $G$ with source $s$ obtained via relaxations.
+Then $G_π$ is a tree rooted at $s$.</p>
+<h2>Proof</h2>
+<p>$G_π$ is acyclic.
+See CLRS lemma 24.16, Section 24.5, page 674, third edition for a proof.</p>
+<p>Since $G_π$ is an acyclic predecessor graph, it is a union of rooted trees.</p>
+<p>Since roots of these trees have in-degree 0,
+and $s$ is the only element in $V_π$ with in-degree 0
+(the others have in-degree 1), only $s$ can be a root.
+Therefore, $G_π$ is a rooted tree.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations-sp-tree.html">
+        <span class="deptitle">Edge relaxations: Predecessor subgraph is a shortest-path tree after convergence</span>
+    </a>
+    </li>
+</ul>
+<h2> Info: </h2>
+<ul><li>Depth: 4</li><li>Number of transitive dependencies: 9</li></ul>
+</div>
+</body>
+</html>

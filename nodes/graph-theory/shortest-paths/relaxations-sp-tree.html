@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Edge relaxations: Predecessor subgraph is a shortest-path tree after convergence - TheoremDep</title>
+<meta name="description" content="After relaxations from source s on a weighted graph converge, the predecessor subgraph is a rooted tree." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Edge relaxations: Predecessor subgraph is a shortest-path tree after convergence</h1>
+<h2> Dependencies: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/shortest-path-tree.html">
+        <span class="deptitle">Shortest-path tree</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations.html">
+        <span class="deptitle">Edge relaxations</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations-tree.html">
+        <span class="deptitle">Edge relaxations: Predecessor subgraph is a rooted tree</span>
+    </a>
+    </li>
+</ul>
+
+<div class="horizontal-rule"></div>
+<p>Let $G = (V, E)$ be a weighted graph. Let $s \in V$.
+Suppose there is a shortest path from $s$ to every vertex reachable from $s$.
+Suppose after relaxations, $d(v) = \delta(v)$ for every $v \in V$.</p>
+<p>Then $G_π$, the predecessor subgraph of $G$ for source $s$, is a shortest-path tree.</p>
+<h2>Proof</h2>
+<p>Since $v \in V_π \iff d(v) \neq \infty$,
+all vertices in $V_π$ are reachable from $s$.</p>
+<p>The predecessor subgraph for relaxations is a rooted tree.</p>
+<p>We'll prove that $d(v) \ge d(π(v)) + w(π(v), v)$ across relaxations whenever $π(v) \neq \textrm{null}$.
+The truth of $d(v) \ge d(π(v)) + w(π(v), v)$ can only be affected by
+relaxations of the form $(u, v)$ or $(u, π(v))$.
+Whenever $(u, v)$ gets relaxed for some $u$, $d(v) = d(π(v)) + w(π(v), v)$.
+Whenever $(u, π(v))$ gets relaxed for some $u$, $d(π(v))$ decreases.
+In both cases, the truth of $d(v) \ge d(π(v)) + w(π(v), v)$ is preserved.
+When $π(v)$ first becomes non-null, it is because of relaxation of $(u, v)$ for some $u$.
+Therefore, $d(v) \ge d(π(v)) + w(π(v), v)$ is always true.</p>
+<p>$d(v) \ge d(π(v)) + w(π(v), v) \implies w(π(v), v) \le d(v) - d(π(v))$.</p>
+<p>Let $p = [v_0, v_1, \ldots, v_k]$ be a path in $G_π$ from $s$ to $v$.
+Therefore, $v_0 = s$, $v_k = v$ and $π(v_i) = v_{i-1}$.
+\begin{align}
+w(p) &amp;= \sum_{i=1}^k w(v_{i-1}, v_i)
+\\ &amp;\le \sum_{i=1}^k (d(v) - d(v_i))
+\\ &amp;= d(v_k) - d(v_0)
+\\ &amp;= \delta(v)
+\end{align}</p>
+<p>$w(p) \le \delta(v) \implies w(p) = \delta(v)$.
+Therefore, $p$ is a shortest path from $s$ to $v$ in $G$.
+Therefore, $G_π$ is a shortest path tree.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ul class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/dijkstra.html">
+        <span class="deptitle">Dijkstra's algorithm</span>
+    </a>
+    </li>
+</ul>
+<h2> Info: </h2>
+<ul><li>Depth: 5</li><li>Number of transitive dependencies: 11</li></ul>
+</div>
+</body>
+</html>

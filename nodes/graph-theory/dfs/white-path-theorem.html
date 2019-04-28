@@ -43,8 +43,8 @@ window.MathJax = {
 </ul>
 
 <div class="horizontal-rule"></div>
-<p>Let $G_π^T$ be the DFS forest of $G$.
-$v$ is a descendant of $u$ in $G_π^T$ when DFS terminates iff
+<p>Let $G_π$ be the DFS forest of $G$.
+$v$ is a descendant of $u$ in $G_π$ when DFS terminates iff
 at the time when <code>visit(u)</code> is called, there is a white path from $u$ to $v$ in $G$.
 (i.e. a path consisting entirely of white vertices).</p>
 <h2>Proof</h2>
@@ -67,7 +67,7 @@ Without loss of generality, assume all vertices in the path from $u$ to $w$
 become descendants of $u$ when DFS terminates.</p>
 <ul>
 <li>$v$ was white when <code>visit(u)</code> was called $\implies s(u) &lt; s(v)$.</li>
-<li>$w$ is a descendant of $u$ in $G_π^T$, so $[s(w), f(w)]$ lies within $[s(u), f(u)]$
+<li>$w$ is a descendant of $u$ in $G_π$, so $[s(w), f(w)]$ lies within $[s(u), f(u)]$
 by the parenthesis theorem.</li>
 <li>$v$ is not a descendant of $u \implies u$ was already non-white when <code>visit(w)</code> was called.
 Therefore, $s(v) &lt; s(w)$.</li>
