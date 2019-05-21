@@ -60,8 +60,9 @@ window.MathJax = {
 <div class="horizontal-rule"></div>
 <p>Let $A$ be a $m$ by $n$ matrix over a field.
 Let $f$ be an elementary row operation.
-Then there exists a unique invertible $m$ by $m$ matrix $R$
-such that $f(A) = RA$.</p>
+Then there exists a unique $m$ by $m$ matrix $R$
+such that $f(A) = RA$.
+$R$ is also invertible.</p>
 <p>By plugging in $A = I_m$ (identity matrix), we get $R = f(I_m)$.
 Therefore, the maxtrix associated with a row operation is the one obtained
 by applying that operation on the identity matrix.</p>
@@ -106,9 +107,9 @@ On comparing coefficients of $A[*, j]$, we get
 </li>
 <li>
 <p>Invertibility:</p>
-<p>Every elementary row operation is its own inverse.</p>
-<p>Let $R$ be the matrix corresponding to an elementary row operation.
-Let $S$ be the matrix of its inverse operation.</p>
+<p>We know that every elementary row operation has a unique inverse.
+Let $R$ be the matrix corresponding to an elementary row operation
+and let $S$ be the matrix of its inverse operation.</p>
 <ul>
 <li>Since $S$ represents the inverse operation of $R$, $S(RA) = A$ for all $A$.
 For $A = I_m$, we get $SR = I_m$.</li>

@@ -1541,6 +1541,12 @@
 "type": "theorem",
 "title": "Breadth-first search",
 "description": "Properties of Breadth-first search in a graph.",
+"keywords": [
+"breadth-first",
+"search",
+"shortest path",
+"bfs"
+],
 "uci": "/graph-theory/bfs",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/bfs.html"
 },

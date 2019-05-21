@@ -50,9 +50,9 @@ It is easy to see that right after relaxing $(u, v)$, $d(v) \le d(u) + w(u, v)$.
 <p>When $G$ is undirected, relaxation of $(u, v)$ means relaxing in both the $(u, v)$ and $(v, u)$ directions.</p>
 <p>Let $G_π = (V_π, E_π)$ where $V_π = \{v \in V: π(v) \neq \textrm{null}\} \cup \{s\}$
 and $E_π = \{(π(v), v): v \in V \wedge π(v) \neq \textrm{null} \}$.
-We will soon prove that $v \in V_π \implies π(v) \implies V_π$,
-which is necessary and sufficient for $G_π$ to be a valid graph.
-$G_π$ is a subgraph of $G$, since
+We will soon prove that $(v \in V \wedge π(v) \neq \textrm{null}) \implies π(v) \in V_π$,
+which is necessary and sufficient for $G_π$ to be a valid graph.</p>
+<p>$G_π$ is a subgraph of $G$, since
 $(u, v) \in E_π$ $\implies π(v) = u$ $\implies (u, v)$ was relaxed $\implies (u, v) \in E$.
 Therefore, $G_π$ is called a <strong>predecessor subgraph</strong> of $G$ with source $s$.</p>
 <p>While relaxations are iteratively applied to $G$, the following properties hold:</p>
@@ -62,7 +62,7 @@ Therefore, $G_π$ is called a <strong>predecessor subgraph</strong> of $G$ with 
 <li><strong>Reachability</strong>: $v$ is not reachable from $s$ $\implies \delta(v) = \infty$
 $\implies d(v) = \infty$ by the upper-bound property.</li>
 <li>$v \in V_π \iff d(v) \neq \infty$.</li>
-<li>$v \in V_π \implies π(v) \implies V_π$,</li>
+<li>$(v \in V \wedge π(v) \neq \textrm{null}) \implies π(v) \in V_π$.</li>
 </ul>
 <p>Since $d$ is an upper-bound on $\delta$,
 it is called the shortest-path-length estimate of $v$.</p>
@@ -95,13 +95,10 @@ Therefore, after $(u, v)$ is relaxed, $d(v) \le d(u) + w(u, v) \neq \infty$.
 <br/>$\implies (u, v)$ was never relaxed for any $u$ and $v \neq s$.
 <br/>$\implies d(v) = \infty$.</p>
 <p>Therefore, $v \in V_π \iff d(v) \neq \infty$.</p>
-<h3>$v \in V_π \implies π(v) \in V_π$</h3>
+<h3>Proof of $(v \in V \wedge π(v) \neq \textrm{null}) \implies π(v) \in V_π$</h3>
 <p>Let $π(v) = u \neq \textrm{null}$. This means $(u, v)$ was relaxed.
 This could have only happened if $d(u) \neq \infty$.
-This is only possible if $(w, u)$ was relaxed for some $w \in V$,
-which means
-We know that $\forall v \in V, v \in V_π \iff d(v) \neq \infty$.
-Therefore, $v \in V_π \implies π(v) \in V_π$.</p>
+Therefore, $u \in V_π$.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
