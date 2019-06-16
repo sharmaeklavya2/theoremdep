@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GCD partitioning of Zn - TheoremDep</title>
+<meta name="description" content="Zn equals union of dZ(n/d)* for all divisors d of n." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>GCD partitioning of Zn</h1>
+<h2> Dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-divide.html">
+        <span class="deptitle">gcd(a1/d, a2/d, ..., an/d) = gcd(a1, a_2, ..., an)/d</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $\mathbb{Z}_n = \{0, 1, \ldots, n-1\}$.
+Let $S_{n,d} = \{x \in \mathbb{Z}_n: \gcd(x, n) = d \}$.
+Let $\mathbb{Z}_n^* = S_{n,1}$.</p>
+<p>Then $\mathbb{Z}_n$ can be partitioned into the sets $\{S_{n,d}: d \mid n\}$,
+i.e. $S_{n,x} \cap S_{n,y} = \{\}$ for all $x \neq y$ and $\mathbb{Z}_n = \bigcup_{d \mid n} S_{n,d}$.</p>
+<p>Also,
+\[ S_{n,d} = \begin{cases}d \mathbb{Z}_{\frac{n}{d}}^* &amp; \textrm{if } d \mid n \\ \{\} &amp; \textrm{otherwise} \end{cases} \]</p>
+<h2>Proof</h2>
+<p>It is trivial to see that the sets $S_{n,1}, S_{n,2}, \ldots$ partition $\mathbb{Z}_n$ completely
+and $S_{n,d}$ is non-empty iff $d \mid n$.</p>
+<p>The only thing left to prove is $S_{n,d} = d \mathbb{Z}_{\frac{n}{d}}^*$ when $d \mid n$.</p>
+<p>\begin{align}
+&amp; x \in S_{n,d}
+\\ &amp;\iff \gcd(x, n) = d \wedge 0 \le x &lt; n
+\\ &amp;\iff \gcd\left(\frac{x}{d}, \frac{n}{d}\right) = 1 \wedge 0 \le \frac{x}{d} &lt; \frac{n}{d}
+\\ &amp;\iff \frac{x}{d} \in \mathbb{Z}_{\frac{n}{d}}^*
+\\ &amp;\iff x \in d \mathbb{Z}_{\frac{n}{d}}^*
+\end{align}</p>
+<p>Therefore, $S_{n,d} = d \mathbb{Z}_{\frac{n}{d}}^*$.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/sum-of-phi-of-divisors.html">
+        <span class="deptitle">Sum of ϕ of divisors</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 4</li><li>Number of transitive dependencies: 4</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/integer-division-theorem.html">
+        <span class="deptitle">Integer Division Theorem</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-is-min-lincomb.html">
+        <span class="deptitle">GCD is the smallest Linear Combination</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/common-divisor-divides-gcd.html">
+        <span class="deptitle">Common divisor divides GCD</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-divide.html">
+        <span class="deptitle">gcd(a1/d, a2/d, ..., an/d) = gcd(a1, a_2, ..., an)/d</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd-partitioning-of-zn.html">
+        <span class="deptitle">GCD partitioning of Zn</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sum of ϕ of divisors - TheoremDep</title>
+<meta name="description" content="The sum of ϕ(d) for all divisors d of n equals n." />
+<meta name="keywords" content="phi,totient,ETF" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+};
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Sum of ϕ of divisors</h1>
+<h2> Dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/eulers-totient-function.html">
+        <span class="deptitle">Euler's Totient Function</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd-partitioning-of-zn.html">
+        <span class="deptitle">GCD partitioning of Zn</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $\phi$ be Euler's totient function (which means $|\mathbb{Z}_n^*| = \phi(n)$). Then,</p>
+<p>\[ n = \sum_{d \mid n} \phi(d) \]</p>
+<h2>Proof</h2>
+<p>$\mathbb{Z}_n$ can be partitioned into $\left\{ d \mathbb{Z}_{\frac{n}{d}}^* : d \mid n\right\}$.</p>
+<p>Therefore,
+\[ n = |\mathbb{Z}_n|
+= \sum_{d \mid n} \left|d \mathbb{Z}_{\frac{n}{d}}^*\right|
+= \sum_{d \mid n} \phi\left(\frac{n}{d}\right)
+= \sum_{d \mid n} \phi(d) \]</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 5</li><li>Number of transitive dependencies: 6</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/eulers-totient-function.html">
+        <span class="deptitle">Euler's Totient Function</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/integer-division-theorem.html">
+        <span class="deptitle">Integer Division Theorem</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-is-min-lincomb.html">
+        <span class="deptitle">GCD is the smallest Linear Combination</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/common-divisor-divides-gcd.html">
+        <span class="deptitle">Common divisor divides GCD</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-divide.html">
+        <span class="deptitle">gcd(a1/d, a2/d, ..., an/d) = gcd(a1, a_2, ..., an)/d</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd-partitioning-of-zn.html">
+        <span class="deptitle">GCD partitioning of Zn</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/sum-of-phi-of-divisors.html">
+        <span class="deptitle">Sum of ϕ of divisors</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

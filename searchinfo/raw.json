@@ -6,275 +6,435 @@
 ],
 "corpus": [
 {
-"type": "theorem",
-"title": "Existence of Modular Inverse",
-"description": "Modular inverse of a mod n exists iff gcd(a, n) = 1",
-"uci": "/number-theory/mod-inv-existence",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/mod-inv-existence.html"
-},
-{
-"type": "theorem",
-"title": "Integer Division Theorem",
+"type": "def",
+"title": "Graph",
+"description": "A graph G(V, E) is a pair of vertices V and a relation E from V to V.",
 "keywords": [
-"euclid",
-"division"
+"graph",
+"multigraph",
+"vertices",
+"edges",
+"adjacent",
+"loop",
+"simple graph",
+"subgraph",
+"source",
+"destination"
 ],
-"description": "Let a and b be integers, with b > 0. Then there exist unique integers q and r such that a = b*q + r and 0 \u2264 r < b.",
-"uci": "/number-theory/integer-division-theorem",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/integer-division-theorem.html"
+"uci": "/graph-theory/graph",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/graph.html"
 },
 {
 "type": "def",
-"title": "Euler's Totient Function",
-"description": "Euler's totient function \u03d5(n) is the number of numbers smaller than n and coprime to it.",
-"uci": "/number-theory/eulers-totient-function",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/eulers-totient-function.html"
-},
-{
-"type": "theorem",
-"title": "Euclid's lemma",
-"description": "If a prime divides the product of two numbers, it must divide at least one of those numbers.",
-"uci": "/number-theory/euclids-lemma",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/euclids-lemma.html"
-},
-{
-"type": "def",
-"title": "Coprime",
-"description": "Two numbers are coprime iff 1 is the only positive number which divides both of them.",
-"uci": "/number-theory/coprime",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/coprime.html"
-},
-{
-"type": "theorem",
-"title": "Euler's Theorem",
-"description": "If a and n are coprime, then a^phi(n) \u2261 1 (mod n), where phi is Euler's Totient Function.",
-"uci": "/number-theory/eulers-theorem",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/eulers-theorem.html"
-},
-{
-"type": "theorem",
-"title": "ab is coprime to x iff a and b are coprime to x",
-"uci": "/number-theory/ab-coprime-to-x-iff-a-and-b-coprime-to-x",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/ab-coprime-to-x-iff-a-and-b-coprime-to-x.html"
-},
-{
-"type": "theorem",
-"title": "If x divides ab and x is coprime to a, then x divides b",
-"description": "If a number divides the product of two numbers and is coprime to the first number in the product, then it must divide the second number in the product.",
-"uci": "/number-theory/if-coprime-to-first-then-divides-second",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/if-coprime-to-first-then-divides-second.html"
-},
-{
-"type": "theorem",
-"title": "Multiplication permutes Zn*",
-"description": "Multiplying all elements of Zn* by a number coprime to n returns a permutation of Zn*",
-"uci": "/number-theory/multiplication-permutes-znstar",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/multiplication-permutes-znstar.html"
-},
-{
-"type": "theorem",
-"title": "GCD times LCM equals product",
-"description": "gcd(a, b) * lcm(a, b) = a * b",
-"uci": "/number-theory/gcd-times-lcm-equals-product",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd-times-lcm-equals-product.html"
-},
-{
-"type": "theorem",
-"title": "Modular addition",
-"description": "a1 \u2261 b1 and a2 \u2261 b2 implies a1+a2 \u2261 b1+b2",
-"uci": "/number-theory/mod-add",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/mod-add.html"
-},
-{
-"type": "def",
-"title": "Modular Equivalence",
-"description": "a is equivalent to b mod n iff n divides (a-b).",
-"uci": "/number-theory/modular-equivalence",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/modular-equivalence.html"
-},
-{
-"type": "theorem",
-"title": "Modular multiplication",
-"description": "a1 \u2261 b1 and a2 \u2261 b2 implies a1a2 \u2261 b1b2",
-"uci": "/number-theory/mod-mult",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/mod-mult.html"
-},
-{
-"type": "theorem",
-"title": "Divisible iff PFEL is less than or equal",
-"description": "a divides b iff PFEL(a) \u2264 PFEL(b).",
-"uci": "/number-theory/prime-factorization/divisible-iff-pfel-less-than",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/divisible-iff-pfel-less-than.html"
-},
-{
-"type": "theorem",
-"title": "Every number has a prime factorization",
-"uci": "/number-theory/prime-factorization/every-number-has-prime-factorization",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/every-number-has-prime-factorization.html"
-},
-{
-"type": "theorem",
-"title": "PFEL of product is sum of PFEL",
-"uci": "/number-theory/prime-factorization/pfel-of-product-is-sum-of-pfel",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/pfel-of-product-is-sum-of-pfel.html"
-},
-{
-"type": "theorem",
-"title": "Fundamental Theorem of Arithmetic",
+"title": "Cut in a graph",
+"description": "In a graph, a cut is a partition of the vertices into 2 sets. A multiway cut is a partition of the vertices into 2 or more sets.",
 "keywords": [
-"prime",
-"factor",
-"factorize",
-"factorization"
+"cut",
+"multiway cut",
+"min-cut",
+"max-cut",
+"light edge"
 ],
-"description": "An integer can be written as a product of primes in a unique way.",
-"uci": "/number-theory/prime-factorization/fundamental-theorem-of-arithmetic",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/fundamental-theorem-of-arithmetic.html"
+"uci": "/graph-theory/cut",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/cut.html"
 },
 {
 "type": "theorem",
-"title": "PFEL of gcd is min of PFEL",
-"uci": "/number-theory/prime-factorization/pfel-of-gcd-is-min-of-pfel",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/pfel-of-gcd-is-min-of-pfel.html"
+"title": "Degree sum and number of edges",
+"description": "In an undirected graph, the sum of degree of every vertex equals twice the number of edges. In a directed graph, the sum of in-degree of every vertex equals the sum of out-degree of every vertex which equals the number of edges.",
+"uci": "/graph-theory/degree-sum",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/degree-sum.html"
+},
+{
+"type": "theorem",
+"title": "Adjacency matrix",
+"description": "The adjacency matrix of a graph is a boolean matrix whose (i, j)th entry is true iff there is an edge from the ith vertex to the jth vertex.",
+"uci": "/graph-theory/adj-matrix",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/adj-matrix.html"
 },
 {
 "type": "def",
-"title": "Prime Factorization Exponent List (PFEL)",
-"description": "PFEL of a number is the list of exponents in the prime factorization of that number.",
-"uci": "/number-theory/prime-factorization/pfel",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/pfel.html"
+"title": "Transpose of a graph",
+"description": "The transpose of a directed graph is the graph obtained by flipping the direction of every edge.",
+"uci": "/graph-theory/transpose",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/transpose.html"
 },
 {
-"type": "theorem",
-"title": "PFEL of lcm is max of PFEL",
-"uci": "/number-theory/prime-factorization/pfel-of-lcm-is-max-of-pfel",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/pfel-of-lcm-is-max-of-pfel.html"
+"type": "def",
+"title": "Topological sort",
+"description": "A topological ordering of a directed graph is an ordering of its vertices such that if (u, v) is an edge then u precedes v in the ordering. The process of finding such an ordering is called topological sorting.",
+"uci": "/graph-theory/toposort",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/toposort.html"
 },
 {
-"type": "theorem",
-"title": "PFEL of ratio is difference of PFEL",
-"uci": "/number-theory/prime-factorization/pfel-of-ratio-is-difference-of-pfel",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/pfel-of-ratio-is-difference-of-pfel.html"
-},
-{
-"type": "theorem",
-"title": "gcd is associative",
-"description": "gcd(a1, a2, ..., am, b1, b2, ... bn) = gcd(gcd(a1, a2, ..., am), b1, b2, ..., bm)",
-"uci": "/number-theory/gcd/associativity",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/associativity.html"
-},
-{
-"type": "theorem",
-"title": "GCD is the smallest Linear Combination",
-"description": "The gcd of a set of numbers is their smallest positive linear combination.",
-"uci": "/number-theory/gcd/gcd-is-min-lincomb",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-is-min-lincomb.html"
-},
-{
-"type": "theorem",
-"title": "Common divisor divides GCD",
-"description": "Commmon divisor of a set of numbers divides their GCD.",
-"uci": "/number-theory/gcd/common-divisor-divides-gcd",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/common-divisor-divides-gcd.html"
-},
-{
-"type": "theorem",
-"title": "gcd(a1/d, a2/d, ..., an/d) = gcd(a1, a_2, ..., an)/d",
-"uci": "/number-theory/gcd/gcd-divide",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-divide.html"
-},
-{
-"type": "theorem",
-"title": "gcd(a, b) = gcd(a-b, b)",
+"type": "def",
+"title": "Path in Graph",
+"description": "In a graph, a path is a sequence of vertices such that all pairs of consecutive vertices are edges.",
 "keywords": [
-"gcd",
-"subtraction"
+"path",
+"simple path",
+"walk",
+"cycle",
+"circuit",
+"cyclic"
 ],
-"uci": "/number-theory/gcd/gcd-subtraction",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-subtraction.html"
+"uci": "/graph-theory/path",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/path.html"
+},
+{
+"type": "theorem",
+"title": "Triangle inequality of shortest paths",
+"description": "\u03b4(u, v) + \u03b4(v, w) \u2265 \u03b4(u, w)",
+"uci": "/graph-theory/shortest-paths/triangle-inequality",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/triangle-inequality.html"
+},
+{
+"type": "deftheorem",
+"title": "Edge relaxations",
+"description": "A generic algorithm for finding shortest paths from a single source involves keeping an upper bound on the shortest-path-length to each vertex and successively updating it using operations called edge-relaxations.",
+"uci": "/graph-theory/shortest-paths/relaxations",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations.html"
+},
+{
+"type": "deftheorem",
+"title": "Convergence of edge relaxations",
+"description": "Intelligently choosing the order of relaxations can make the shortest-path-length estimate converge to the shortest-path-length.",
+"uci": "/graph-theory/shortest-paths/relaxations-convergence",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations-convergence.html"
+},
+{
+"type": "theorem",
+"title": "Subpath of shortest path is shortest path",
+"description": "Let p be a shortest path from u to v. Let q be a subpath of p from x to y. Then q is a shortest path from x to y.",
+"uci": "/graph-theory/shortest-paths/shortest-subpath",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/shortest-subpath.html"
+},
+{
+"type": "theoremdef",
+"title": "Tree",
+"description": "A tree is an undirected acyclic connected graph. It can also be defined as a graph where any 2 vertices have a unique simple path between them.",
+"uci": "/graph-theory/trees/tree",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/tree.html"
 },
 {
 "type": "def",
-"title": "Semiring",
-"description": "A semiring is an algebraic structure similar to a ring, but without the requirement that each element must have an additive inverse.",
-"uci": "/abstract-algebra/semiring",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html"
+"title": "Spanning tree",
+"description": "The spanning tree of an undirected graph G is a subgraph which is a tree and contains all the vertices of G.",
+"keywords": [
+"spanning tree",
+"minimum spanning tree",
+"maximum spanning tree",
+"MST"
+],
+"uci": "/graph-theory/spanning-trees/spanning-tree",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-trees/spanning-tree.html"
 },
 {
 "type": "theorem",
-"title": "Inverse of a group element is unique",
-"description": "Inverse of a group element is unique.",
-"uci": "/abstract-algebra/groups/inverse-is-unique",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/inverse-is-unique.html"
+"title": "Tree iff acyclic and adding edge creates cycle",
+"description": "A graph is a tree iff it is acyclic and adding an edge to it creates a cycle.",
+"uci": "/graph-theory/trees/adding-edge-creates-cycle",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/adding-edge-creates-cycle.html"
 },
 {
 "type": "theorem",
-"title": "Third isomorphism theorem",
-"description": "(G/N)/(K/N) is isomorphic to G/K.",
-"uci": "/abstract-algebra/groups/third-isomorphism-theorem",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/third-isomorphism-theorem.html"
+"title": "Adding edge between 2 trees gives a tree",
+"description": "Let T1 and T2 be 2 trees which are connected components of an undirected graph. If an edge is added whose one endpoint is in T1 and the other endpoint is in T2, the resulting graph is a tree.",
+"uci": "/graph-theory/trees/joining-2-trees-gives-tree",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/joining-2-trees-gives-tree.html"
 },
 {
 "type": "theorem",
-"title": "Condition for a subset to be a subgroup",
-"description": "Condition for a subset to be a subgroup.",
-"uci": "/abstract-algebra/groups/subgroup-condition-2",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/subgroup-condition-2.html"
+"title": "Tree iff connected and deleting edge disconnects",
+"description": "A graph is a tree iff it is connected and deleting an edge from it disconnects it.",
+"uci": "/graph-theory/trees/deleting-edge-disconnects",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/deleting-edge-disconnects.html"
+},
+{
+"type": "def",
+"title": "Rooted tree",
+"description": "A directed graph is a rooted tree iff there is a vertex from which there is a unique simple path to every other vertex.",
+"uci": "/graph-theory/trees/rooted-tree",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/rooted-tree.html"
+},
+{
+"type": "def",
+"title": "Shortest-path tree",
+"description": "For a graph G, a shortest-path tree T is a tree rooted at a vertex s such that the unique path from s to v in T is a shortest path from s to v in G.",
+"uci": "/graph-theory/shortest-paths/shortest-path-tree",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/shortest-path-tree.html"
 },
 {
 "type": "theorem",
-"title": "External direct product is a group",
-"description": "For groups G and H, G \u00d7 H is a group",
-"uci": "/abstract-algebra/groups/external-direct-product-is-group",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/external-direct-product-is-group.html"
+"title": "The undirected version of a rooted tree is a free tree",
+"uci": "/graph-theory/trees/undirected-rooted-tree-is-free-tree",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/undirected-rooted-tree-is-free-tree.html"
 },
 {
 "type": "theorem",
-"title": "Conditions for a subset to be a subgroup",
-"description": "Conditions for a subset to be a subgroup.",
-"uci": "/abstract-algebra/groups/subgroup-condition",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/subgroup-condition.html"
+"title": "Acyclic predecessor graph is union of rooted trees",
+"uci": "/graph-theory/trees/acyclic-predecessor-graph-is-union-of-rooted-trees",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/acyclic-predecessor-graph-is-union-of-rooted-trees.html"
 },
 {
 "type": "theorem",
-"title": "Second isomorphism theorem",
-"description": "Let S be a subgroup of G and N be a normal subgroup of G. Then SN/N is isomorphic to S/(S\u2229N).",
-"uci": "/abstract-algebra/groups/second-isomorphism-theorem",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/second-isomorphism-theorem.html"
+"title": "Edge relaxations: Predecessor subgraph is a rooted tree",
+"description": "During relaxations from source s on a weighted graph, the predecessor subgraph is a rooted tree if there are no negative-weight cycles reachable from s.",
+"uci": "/graph-theory/shortest-paths/relaxations-tree",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations-tree.html"
 },
 {
 "type": "theorem",
-"title": "Zn* is a group",
-"description": "The set of integers coprime to n is a group under multiplication mod n",
-"uci": "/abstract-algebra/groups/znstar-is-a-group",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/znstar-is-a-group.html"
+"title": "Edge relaxations: Predecessor subgraph is a shortest-path tree after convergence",
+"description": "After relaxations from source s on a weighted graph converge, the predecessor subgraph is a rooted tree.",
+"uci": "/graph-theory/shortest-paths/relaxations-sp-tree",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations-sp-tree.html"
 },
 {
 "type": "theorem",
-"title": "Order of element divides order of group",
-"uci": "/abstract-algebra/groups/order-of-element-divides-order-of-group",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/order-of-element-divides-order-of-group.html"
+"title": "Dijkstra's algorithm",
+"description": "For a weighted graph without negative-weight edges, Dijkstra's algorithm finds a shortest-path tree.",
+"uci": "/graph-theory/shortest-paths/dijkstra",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/dijkstra.html"
 },
 {
 "type": "theorem",
-"title": "First isomorphism theorem",
-"description": "Image of homomorphism \u03d5 from G to H is isomorphic to quotient group G/ker(\u03d5).",
-"uci": "/abstract-algebra/groups/first-isomorphism-theorem",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/first-isomorphism-theorem.html"
+"title": "Breadth-first search",
+"description": "Properties of Breadth-first search in a graph.",
+"keywords": [
+"breadth-first",
+"search",
+"shortest path",
+"bfs"
+],
+"uci": "/graph-theory/bfs",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/bfs.html"
+},
+{
+"type": "def",
+"title": "DAG",
+"description": "A DAG is a Directed Acyclic Graph.",
+"uci": "/graph-theory/dag",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dag.html"
 },
 {
 "type": "theorem",
-"title": "Identity of a group is unique",
-"description": "Identity of a group is unique.",
-"uci": "/abstract-algebra/groups/identity-is-unique",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/identity-is-unique.html"
+"title": "SCC graph is acyclic",
+"uci": "/graph-theory/scc-graph-is-acyclic",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/scc-graph-is-acyclic.html"
+},
+{
+"type": "def",
+"title": "SCC graph",
+"description": "Let G be a directed graph. The SCC graph of G, denoted as SCC(G), is a directed graph whose vertices correspond to strongly connected components of G. Let C1 and C2 be two SCCs of G. C1 and C2 will have an edge in SCC(G) iff there is an edge in G from some vertex in C1 to some vertex in C2.",
+"uci": "/graph-theory/scc-graph",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/scc-graph.html"
 },
 {
 "type": "theorem",
-"title": "Order of element in external direct product",
-"description": "order of (g, h) in G \u00d7 H = lcm(order(g), order(h))",
-"uci": "/abstract-algebra/groups/order-of-element-in-external-direct-product",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/order-of-element-in-external-direct-product.html"
+"title": "Removing cycles can make a path shorter",
+"description": "Let p be a path from u to v which does not contain any negative cycles. Then there exists a simple path p' from u to v such that w(p') \u2264 w(p).",
+"uci": "/graph-theory/simple-path-of-lower-weight",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/simple-path-of-lower-weight.html"
+},
+{
+"type": "theorem",
+"title": "Shortest path weight is -\u221e iff there is a negative-weight cycle",
+"description": "\u03b4(u, v) = -\u221e iff there is some path from u to v containing a negative-weight cycle.",
+"uci": "/graph-theory/shortest-paths/negw-cycle",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/negw-cycle.html"
+},
+{
+"type": "def",
+"title": "Forest",
+"description": "A forest is an undirected acyclic graph.",
+"uci": "/graph-theory/forest",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/forest.html"
+},
+{
+"type": "def",
+"title": "Spanning forest",
+"description": "The spanning forest of an undirected graph G is the union of the spanning trees of the connected components of G.",
+"uci": "/graph-theory/spanning-trees/spanning-forest",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-trees/spanning-forest.html"
+},
+{
+"type": "theorem",
+"title": "Properties of DFS",
+"description": "Properties of Depth-first search in a graph.",
+"keywords": [
+"DFS",
+"depth-first search",
+"parenthesis theorem",
+"depth-first forest",
+"start time",
+"finish time"
+],
+"uci": "/graph-theory/dfs/dfs",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/dfs.html"
+},
+{
+"type": "def",
+"title": "DFS: Edge classification",
+"description": "After performing DFS on a graph, the edges of the graph can be partitioned into 4 classes: tree edges, back edges, forward edges and cross edges.",
+"keywords": [
+"tree edge",
+"back edge",
+"forward edge",
+"cross edge"
+],
+"uci": "/graph-theory/dfs/edge-classification",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/edge-classification.html"
+},
+{
+"type": "theorem",
+"title": "DFS: Reverse sorting by finish time gives topological ordering",
+"description": "Performing DFS on a directed acyclic graph and sorting the vertices in descending order of finish times gives a topological ordering of vertices.",
+"uci": "/graph-theory/dfs/toposort",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/toposort.html"
+},
+{
+"type": "theorem",
+"title": "DFS: Parenthesis theorem",
+"description": "The DFS start and end times of vertices follow parenthesis structure.",
+"uci": "/graph-theory/dfs/parens-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/parens-theorem.html"
+},
+{
+"type": "theorem",
+"title": "DFS: White-path theorem",
+"description": "In the depth-first forest of a graph, v is a descendant of u iff at the time when u is visited, there is a path from u to v consisting entirely of white vertices.",
+"uci": "/graph-theory/dfs/white-path-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/white-path-theorem.html"
+},
+{
+"type": "theorem",
+"title": "DFS on undirected graph gives spanning forest",
+"description": "Running DFS on an undirected graph can be used to find a spanning forest of that graph.",
+"uci": "/graph-theory/dfs/spanning-forest",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/spanning-forest.html"
+},
+{
+"type": "theorem",
+"title": "Directed graph is cyclic iff DFS gives back edges",
+"description": "A directed graph contains a cycle iff DFS on that graph classifies some edges as back edges.",
+"uci": "/graph-theory/dfs/cycle-iff-back-edges-directed",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/cycle-iff-back-edges-directed.html"
+},
+{
+"type": "theorem",
+"title": "DFS: Edge classification in undirected graphs",
+"description": "In an undirected graph, one of (u, v) and (v, u) is a back edge and the other is either a tree edge or a forward edge.",
+"uci": "/graph-theory/dfs/undirected-edge-classification",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/undirected-edge-classification.html"
+},
+{
+"type": "theorem",
+"title": "Undirected graph is cyclic iff DFS gives back edges",
+"description": "An undirected graph contains a cycle iff DFS on that graph classifies some edges as back edges.",
+"uci": "/graph-theory/dfs/cycle-iff-back-edges-undirected",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/cycle-iff-back-edges-undirected.html"
+},
+{
+"type": "theorem",
+"title": "Kosaraju's Algorithm",
+"description": "Kosaraju's algorithm uses 2 depth first searches to find the strongly connected components of a graph in linear time.",
+"keywords": [
+"SCC",
+"Kosaraju"
+],
+"uci": "/graph-theory/kosaraju-algo",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/kosaraju-algo.html"
+},
+{
+"type": "theorem",
+"title": "DFS: Online edge classification",
+"description": "When an edge is explored during DFS, it can be classified as a tree edge, back edge, forward edge or a cross edge in constant time.",
+"uci": "/graph-theory/dfs/online-edge-classification",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/online-edge-classification.html"
+},
+{
+"type": "theoremdef",
+"title": "DFS: low",
+"uci": "/graph-theory/dfs/low",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/low.html"
+},
+{
+"type": "theorem",
+"title": "In a connected graph (V, E), |E| \u2265 |V| - 1",
+"uci": "/graph-theory/number-of-edges-in-connected-graph",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/number-of-edges-in-connected-graph.html"
+},
+{
+"type": "def",
+"title": "Bridge in graph",
+"keywords": [
+"bridge",
+"cut-edge"
+],
+"description": "An edge in an undirected graph is called a bridge (or cut-edge) iff deleting that edge disconnects the connected component to which that edge belongs.",
+"uci": "/graph-theory/bridge",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/bridge.html"
+},
+{
+"type": "theorem",
+"title": "Spanning forest contains all bridges",
+"description": "Let G be an undirected graph. Every spanning forest of G contains all the bridges in G.",
+"uci": "/graph-theory/spanning-trees/spanning-forest-contains-all-bridges",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-trees/spanning-forest-contains-all-bridges.html"
+},
+{
+"type": "theorem",
+"title": "Deleting bridge from graph gives 2 components",
+"description": "If a bridge is deleted from a connected graph, the resulting graph contains 2 connected components.",
+"uci": "/graph-theory/deleting-bridge-gives-2-components",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/deleting-bridge-gives-2-components.html"
+},
+{
+"type": "theorem",
+"title": "Deleting edge from tree gives 2 trees",
+"description": "If an edge is deleted from a tree, the resulting graph contains 2 connected components which are trees.",
+"uci": "/graph-theory/trees/deleting-edge-gives-2-trees",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/deleting-edge-gives-2-trees.html"
+},
+{
+"type": "theorem",
+"title": "Edge replacement in spanning forest using a cut",
+"description": "Let e be an edge crossing a cut of a graph G. Let F be a spanning forest of G which does not contain e. Then we can obtain a different spanning forest of G by replacing an edge in F which crosses the cut by e. Consequently, if e is a light edge of the cut, the weight of the new spanning forest either reduces or stays the same.",
+"uci": "/graph-theory/spanning-trees/edge-replacement",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-trees/edge-replacement.html"
+},
+{
+"type": "theorem",
+"title": "Generic Greedy MSF Growth Algorithm (GGMSFGA)",
+"description": "The Generic Greedy MSF Growth Algorithm (GGMSFGA) is a generic algorithm for finding the MSF of an undirected graph. GGMSFA maintains a forest F which is a subgraph of some MSF. In each iteration, it chooses a cut C which respects F and adds a light edge of C to F.",
+"uci": "/graph-theory/spanning-trees/ggmsfga",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-trees/ggmsfga.html"
+},
+{
+"type": "theorem",
+"title": "|E| = |V| - 1 in trees",
+"uci": "/graph-theory/trees/e-is-v-minus-1",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/e-is-v-minus-1.html"
+},
+{
+"type": "theorem",
+"title": "Tree has at least 2 leaves",
+"description": "In a tree with at least 2 vertices, there are at least 2 leaves.",
+"uci": "/graph-theory/trees/at-least-2-leaves",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/at-least-2-leaves.html"
+},
+{
+"type": "theorem",
+"title": "G = (V, E) is a tree iff G is acyclic and |E| = |V|-1",
+"uci": "/graph-theory/trees/acyclic-and-e-is-v-minus-1",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/acyclic-and-e-is-v-minus-1.html"
+},
+{
+"type": "theorem",
+"title": "G = (V, E) is a tree iff G is connected and |E| = |V|-1",
+"uci": "/graph-theory/trees/connected-and-e-is-v-minus-1",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/connected-and-e-is-v-minus-1.html"
 },
 {
 "type": "def",
@@ -282,362 +442,6 @@
 "description": "A group is a set along with a binary operator which satisfies certain properties.",
 "uci": "/abstract-algebra/groups/group",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html"
-},
-{
-"type": "theorem",
-"title": "Group element to the power group size equals identity",
-"description": "a^|G| = e",
-"uci": "/abstract-algebra/groups/group-elem-to-the-power-group-size-equals-identity",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group-elem-to-the-power-group-size-equals-identity.html"
-},
-{
-"type": "theorem",
-"title": "Inverse of product of two elements of a group",
-"description": "(a*b)^(-1) = (b^(-1)) * (a^(-1))",
-"uci": "/abstract-algebra/groups/inverse-of-product",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/inverse-of-product.html"
-},
-{
-"type": "def",
-"title": "Isomorphism on Groups",
-"description": "Two groups are isomorphic iff they are related via a bijection \u03d5 such that \u03d5(ab) = \u03d5(a)\u03d5(b).",
-"uci": "/abstract-algebra/groups/isomorphism/group-isomorphism",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/group-isomorphism.html"
-},
-{
-"type": "theorem",
-"title": "Order of elements is invariant under isomorphism",
-"description": "If G is isomorphic to H, then G and H have the same frequencies of orders of elements.",
-"uci": "/abstract-algebra/groups/isomorphism/order-of-elements",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/order-of-elements.html"
-},
-{
-"type": "theorem",
-"title": "Cyclicness is invariant under isomorphism",
-"description": "If < a > is isomorphic to G via \u03d5, then G = < \u03d5(a) >.",
-"uci": "/abstract-algebra/groups/isomorphism/cyclicness-is-invariant-under-isomorphism",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/cyclicness-is-invariant-under-isomorphism.html"
-},
-{
-"type": "theorem",
-"title": "Cayley's Theorem",
-"description": "Every group is isomorphic to a permutation group",
-"uci": "/abstract-algebra/groups/isomorphism/cayleys-theorem",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/cayleys-theorem.html"
-},
-{
-"type": "theorem",
-"title": "Isomorphism of groups is an equivalence relation",
-"uci": "/abstract-algebra/groups/isomorphism/equivalence-relation",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/equivalence-relation.html"
-},
-{
-"type": "theorem",
-"title": "Abelianness is invariant under isomorphism",
-"description": "If G is isomorphic to H and G is abelian, then H is abelian.",
-"uci": "/abstract-algebra/groups/isomorphism/abelianness",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/abelianness.html"
-},
-{
-"type": "theorem",
-"title": "Inverse of a group isomorphism is a group isomorphism",
-"uci": "/abstract-algebra/groups/isomorphism/inverse",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/inverse.html"
-},
-{
-"type": "theorem",
-"title": "Zm \u00d7 Zn is isomorphic to Zmn iff m and n are coprime",
-"uci": "/abstract-algebra/groups/isomorphism/zm-cross-zn-isomorphic-to-zmn",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/zm-cross-zn-isomorphic-to-zmn.html"
-},
-{
-"type": "theoremdef",
-"title": "Parity of a permutation",
-"description": "If a permutation can be written as a product of only an odd number of transpositions, it is called an odd permutation. If a permutation can be written as a product of only an even number of transpositions, it is called an even permutation. Every permutation is either an odd permutation or an even permutation.",
-"uci": "/abstract-algebra/groups/permutation-groups/parity",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/parity.html"
-},
-{
-"type": "def",
-"title": "Canonical cycle notation of a permutation",
-"description": "Canonical cycle notation is a unique way of writing a permutation as a product of disjoint cycles.",
-"uci": "/abstract-algebra/groups/permutation-groups/canonical-cycle-notation",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/canonical-cycle-notation.html"
-},
-{
-"type": "theorem",
-"title": "Product of disjoint cycles is commutative",
-"uci": "/abstract-algebra/groups/permutation-groups/product-of-disjoint-cycles-is-commutative",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/product-of-disjoint-cycles-is-commutative.html"
-},
-{
-"type": "def",
-"title": "Alternating Group",
-"description": "The set of all even permutations is called the alternating group",
-"uci": "/abstract-algebra/groups/permutation-groups/alternating-group",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/alternating-group.html"
-},
-{
-"type": "theorem",
-"title": "Permutation is transposition product",
-"description": "Every finite permutation can be written as a product of transpositions.",
-"uci": "/abstract-algebra/groups/permutation-groups/permutation-is-transposition-product",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/permutation-is-transposition-product.html"
-},
-{
-"type": "theoremdef",
-"title": "Permutation group",
-"description": "A permutation group on a finite set X is a group of bijections on X, where the group operator is function composition.",
-"keywords": [
-"permutation",
-"symmetric group",
-"cycle",
-"transposition"
-],
-"uci": "/abstract-algebra/groups/permutation-groups/permutation-group",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/permutation-group.html"
-},
-{
-"type": "theorem",
-"title": "Transposition bijects even and odd permutations",
-"description": "There is a bijection between even and odd permutations. The bijective function multiplies a permutation by a transposition.",
-"uci": "/abstract-algebra/groups/permutation-groups/transposition-bijects-even-and-odd-permutations",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/transposition-bijects-even-and-odd-permutations.html"
-},
-{
-"type": "theorem",
-"title": "Permutation is disjoint cycle product",
-"description": "Every permutation can be written as the product of a unique set of disjoint cycles.",
-"uci": "/abstract-algebra/groups/permutation-groups/permutation-is-disjoint-cycle-product",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/permutation-is-disjoint-cycle-product.html"
-},
-{
-"type": "theorem",
-"title": "Product of cycles and a transposition",
-"uci": "/abstract-algebra/groups/permutation-groups/product-of-cycles-and-transposition",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/product-of-cycles-and-transposition.html"
-},
-{
-"type": "theorem",
-"title": "Correspondence theorem",
-"description": "A subgroup of G/N is of the form K/N, where K is a subgroup of G. If K is a subgroup of G, then K/N is a subgroup of G/N.",
-"uci": "/abstract-algebra/groups/factor-groups/correspondence-theorem",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/factor-groups/correspondence-theorem.html"
-},
-{
-"type": "theoremdef",
-"title": "Factor group",
-"description": "The group of all cosets of a normal subgroup is called the factor group or quotient group.",
-"uci": "/abstract-algebra/groups/factor-groups/factor-group",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/factor-groups/factor-group.html"
-},
-{
-"type": "theorem",
-"title": "Normal correspondence theorem",
-"description": "A normal subgroup of G/N is of the form K/N, where K is a normal subgroup of G. If K is a normal subgroup of G, then K/N is a normal subgroup of G/N.",
-"uci": "/abstract-algebra/groups/factor-groups/normal-correspondence-theorem",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/factor-groups/normal-correspondence-theorem.html"
-},
-{
-"type": "theorem",
-"title": "Subgroups of a cyclic group",
-"description": "For an infinite-order cyclic group <a>, subgroups are <a^k> for all k. For a cyclic group <a> of order n, subgroups are <a^k> for all divisors k of n.",
-"uci": "/abstract-algebra/groups/cyclic-groups/subgroups-of-cyclic-group",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/subgroups-of-cyclic-group.html"
-},
-{
-"type": "theorem",
-"title": "Group of prime order is cyclic",
-"uci": "/abstract-algebra/groups/cyclic-groups/group-of-prime-order-is-cyclic",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/group-of-prime-order-is-cyclic.html"
-},
-{
-"type": "theorem",
-"title": "Order of elements in cyclic group",
-"description": "Order of elements in a cyclic group.",
-"uci": "/abstract-algebra/groups/cyclic-groups/order-of-elements-in-cyclic-group",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/order-of-elements-in-cyclic-group.html"
-},
-{
-"type": "theorem",
-"title": "A cyclic group of order n has \u03d5(n) generators",
-"uci": "/abstract-algebra/groups/cyclic-groups/cyclic-group-has-phi-generators",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/cyclic-group-has-phi-generators.html"
-},
-{
-"type": "theorem",
-"title": "Cyclic groups are isomorphic to Z or Zn",
-"description": "A cyclic group of infinite order is isomorphic to Z. A cyclic group of order n is isomorphic to Zn.",
-"uci": "/abstract-algebra/groups/cyclic-groups/isomorphic-to-z",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/isomorphic-to-z.html"
-},
-{
-"type": "theorem",
-"title": "Mapping of power is power of mapping",
-"description": "\u03d5(g^k) = \u03d5(g)^k",
-"uci": "/abstract-algebra/groups/homomorphism/mapping-of-power-is-power-of-mapping",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/homomorphism/mapping-of-power-is-power-of-mapping.html"
-},
-{
-"type": "theorem",
-"title": "Homomorphic mapping of subgroup of domain is subgroup of codomain",
-"description": "Homomorphic mapping of subgroup of domain is subgroup of codomain. Inverse mapping of subgroup of codomain is subgroup of domain.",
-"uci": "/abstract-algebra/groups/homomorphism/subgroup",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/homomorphism/subgroup.html"
-},
-{
-"type": "theorem",
-"title": "Homomorphic mapping and inverse mapping of normal subgroup is normal",
-"description": "Homomorphic mapping of normal subgroup is normal in homomorphic mapping of group. Homomorphic inverse mapping of normal subgroup of codomain is normal in domain.",
-"uci": "/abstract-algebra/groups/homomorphism/normal-subgroup",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/homomorphism/normal-subgroup.html"
-},
-{
-"type": "def",
-"title": "Homomorphism on groups",
-"description": "A homomorphism \u03d5 is a function from one group to another such that \u03d5(ab) = \u03d5(a)\u03d5(b).",
-"uci": "/abstract-algebra/groups/homomorphism/homomorphism",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/homomorphism/homomorphism.html"
-},
-{
-"type": "def",
-"title": "Ideal",
-"description": "An ideal I is a subring of R with the absorption property, i.e. aI = I for all a in R.",
-"uci": "/abstract-algebra/rings/ideal",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ideal.html"
-},
-{
-"type": "theorem",
-"title": "0x = 0 = x0",
-"description": "Let R be a ring. For all elements x in R, 0x = 0 = x0.",
-"uci": "/abstract-algebra/rings/0x-is-0",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/0x-is-0.html"
-},
-{
-"type": "theorem",
-"title": "I is a prime ideal iff R/I is an integral domain",
-"description": "Let I be an ideal of R, a commutative ring with unity. Then I is prime in R iff R/I is an integral domain.",
-"uci": "/abstract-algebra/rings/prime-ideal-intdom",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/prime-ideal-intdom.html"
-},
-{
-"type": "def",
-"title": "Field",
-"description": "(R, +, *) is a field iff (R, +) and (R, *) are abelian groups and the distributive property holds.",
-"uci": "/abstract-algebra/rings/field",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html"
-},
-{
-"type": "theorem",
-"title": "Zn is a ring",
-"description": "The set of integers modulo n is a ring.",
-"uci": "/abstract-algebra/rings/zn-is-ring",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/zn-is-ring.html"
-},
-{
-"type": "theorem",
-"title": "I is a maximal ideal iff R/I is a field",
-"description": "Let I be an ideal of R, a commutative ring with unity. Then I is maximal in R iff R/I is a field.",
-"uci": "/abstract-algebra/rings/maximal-ideal-field",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/maximal-ideal-field.html"
-},
-{
-"type": "theorem",
-"title": "(-a)b = a(-b) = -ab",
-"uci": "/abstract-algebra/rings/minus-outside",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/minus-outside.html"
-},
-{
-"type": "theorem",
-"title": "Conditions for a subset of a ring to be a subring",
-"uci": "/abstract-algebra/rings/subring-condition",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/subring-condition.html"
-},
-{
-"type": "theorem",
-"title": "Zp is an integral domain",
-"description": "If p is prime, Zp is an integral domain",
-"uci": "/abstract-algebra/rings/zp-is-intdom",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/zp-is-intdom.html"
-},
-{
-"type": "theorem",
-"title": "Zp is a field",
-"description": "If p is prime, Zp is a field",
-"uci": "/abstract-algebra/rings/zp-is-field",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/zp-is-field.html"
-},
-{
-"type": "def",
-"title": "Ring",
-"description": "A ring is a set with 2 operations (addition and multiplication) which satisfies certain properties.",
-"uci": "/abstract-algebra/rings/ring",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html"
-},
-{
-"type": "theoremdef",
-"title": "Quotient Ring",
-"description": "Let I be an ideal of R. The quotient ring R/I is the set of all additive cosets of I.",
-"uci": "/abstract-algebra/rings/quotient-ring",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/quotient-ring.html"
-},
-{
-"type": "theorem",
-"title": "Characteristic of ring equals additive order of unity",
-"uci": "/abstract-algebra/rings/char-equals-additive-order-of-unity",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/char-equals-additive-order-of-unity.html"
-},
-{
-"type": "def",
-"title": "Integral Domain",
-"description": "R is an integral domain iff R is a commutative ring with unity and R has no zero-divisors.",
-"uci": "/abstract-algebra/rings/intdom",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/intdom.html"
-},
-{
-"type": "theoremdef",
-"title": "Principal ideal",
-"description": "A principal ideal is a multiplicative coset",
-"uci": "/abstract-algebra/rings/principal-ideal",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/principal-ideal.html"
-},
-{
-"type": "theorem",
-"title": "Every ideal of Z is a principal ideal",
-"uci": "/abstract-algebra/rings/ideal-of-z-is-principal",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ideal-of-z-is-principal.html"
-},
-{
-"type": "theorem",
-"title": "A field is an integral domain",
-"uci": "/abstract-algebra/rings/field-is-integral-domain",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field-is-integral-domain.html"
-},
-{
-"type": "theorem",
-"title": "A finite integral domain is a field",
-"uci": "/abstract-algebra/rings/finite-integral-domain-is-field",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/finite-integral-domain-is-field.html"
-},
-{
-"type": "theorem",
-"title": "Being a field is preserved under isomorphism",
-"uci": "/abstract-algebra/rings/isomorphism/field",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/isomorphism/field.html"
-},
-{
-"type": "def",
-"title": "Ring isomorphism",
-"description": "A ring isomorphism is a bijective function \u03d5 such that \u03d5(a+b) = \u03d5(a) + \u03d5(b) and \u03d5(ab) = \u03d5(a)\u03d5(b).",
-"uci": "/abstract-algebra/rings/isomorphism/isomorphism",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/isomorphism/isomorphism.html"
-},
-{
-"type": "theorem",
-"title": "For subset H of a group, a(bH) = (ab)H and (aH)b = a(Hb)",
-"description": "Multiplication of a coset by a group element is associative. For subset H of a group, a(bH) = (ab)H and (aH)b = a(Hb).",
-"uci": "/abstract-algebra/cosets/associativity",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/associativity.html"
 },
 {
 "type": "def",
@@ -648,31 +452,10 @@
 },
 {
 "type": "theorem",
-"title": "Two cosets are either identical or disjoint",
-"description": "Two cosets are either identical or disjoint.",
-"uci": "/abstract-algebra/cosets/cosets-are-either-identical-or-disjoint",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/cosets-are-either-identical-or-disjoint.html"
-},
-{
-"type": "theorem",
-"title": "gH = H iff g in H",
-"description": "Coset of a subgroup equals the subgroup iff the representative is in the subgroup.",
-"uci": "/abstract-algebra/cosets/coset-equals-subgroup-iff-elem-in-subgroup",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/coset-equals-subgroup-iff-elem-in-subgroup.html"
-},
-{
-"type": "theorem",
-"title": "Lagrange's Theorem",
-"description": "Order of subgroup divides order of group. Furthermore, number of cosets equals ratio of orders of group and subgroup.",
-"uci": "/abstract-algebra/cosets/lagranges-theorem",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/lagranges-theorem.html"
-},
-{
-"type": "theorem",
-"title": "Product of ideal cosets is well-defined",
-"description": "Let I be an ideal. The product of cosets (a+I)(b+I) = ab+I is well-defined.",
-"uci": "/abstract-algebra/cosets/product-of-ideal-cosets",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/product-of-ideal-cosets.html"
+"title": "Size of coset equals size of subset",
+"description": "Size of a coset of a subset equals the size of the subset",
+"uci": "/abstract-algebra/cosets/size",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/size.html"
 },
 {
 "type": "theorem",
@@ -683,24 +466,106 @@
 },
 {
 "type": "theorem",
+"title": "For subset H of a group, a(bH) = (ab)H and (aH)b = a(Hb)",
+"description": "Multiplication of a coset by a group element is associative. For subset H of a group, a(bH) = (ab)H and (aH)b = a(Hb).",
+"uci": "/abstract-algebra/cosets/associativity",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/associativity.html"
+},
+{
+"type": "theorem",
 "title": "Product of normal cosets is well-defined",
 "description": "Let N be a normal subgroup. Then the product (aN)(bN) = (ab)N is well-defined.",
 "uci": "/abstract-algebra/cosets/product-of-normal-cosets",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/product-of-normal-cosets.html"
 },
 {
-"type": "theorem",
-"title": "Size of coset equals size of subset",
-"description": "Size of a coset of a subset equals the size of the subset",
-"uci": "/abstract-algebra/cosets/size",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/size.html"
+"type": "theoremdef",
+"title": "Factor group",
+"description": "The group of all cosets of a normal subgroup is called the factor group or quotient group.",
+"uci": "/abstract-algebra/groups/factor-groups/factor-group",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/factor-groups/factor-group.html"
 },
 {
 "type": "def",
-"title": "p-norm",
-"description": "The p-norm is a function which maps a vector to a number",
-"uci": "/linear-algebra/p-norm",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/p-norm.html"
+"title": "Ring",
+"description": "A ring is a set with 2 operations (addition and multiplication) which satisfies certain properties.",
+"uci": "/abstract-algebra/rings/ring",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html"
+},
+{
+"type": "def",
+"title": "Polynomial",
+"uci": "/polynomials/polynomial",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/polynomial.html"
+},
+{
+"type": "def",
+"title": "GCD of polynomials",
+"description": "The GCD of a set of polynomials over a ring with unity is a largest degree monic polynomial which divides all polynomials in that set. Since 1 divides all polynomials, every set of polynomials has a GCD.",
+"uci": "/polynomials/gcd",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/gcd.html"
+},
+{
+"type": "def",
+"title": "Irreducible polynomial",
+"description": "A polynomial is irreducible iff it cannot be expressed as a product of polynomials of lower degree.",
+"uci": "/polynomials/irreducible",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/irreducible.html"
+},
+{
+"type": "theorem",
+"title": "Degree of product of polynomials",
+"description": "deg(pq) \u2264 deg(p) + deg(q). If coefficients of p and q are from an integral domain, deg(pq) = deg(p) + deg(q).",
+"uci": "/polynomials/degree-of-product",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-product.html"
+},
+{
+"type": "theorem",
+"title": "Zero divisors of a polynomial",
+"description": "Ring R has no zero divisors iff the ring of polynomials R[x] has no zero divisors",
+"uci": "/polynomials/zero-divisors",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/zero-divisors.html"
+},
+{
+"type": "theorem",
+"title": "Degree of factor is less than degree of polynomial",
+"description": "If a(x) divides p(x), degree of a(x) lies between 0 and deg(p).",
+"uci": "/polynomials/degree-of-factor",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-factor.html"
+},
+{
+"type": "def",
+"title": "Polynomial divisibility",
+"description": "A polynomial p(x) is divisible in F[x] by q(x) iff there exists a polynomial r(x) such that p(x), q(x), r(x) are in F[x] and p(x) = q(x)r(x).",
+"uci": "/polynomials/divisibility",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/divisibility.html"
+},
+{
+"type": "theorem",
+"title": "q(x)F[x] is in p(x)F[x] iff p(x) divides q(x)",
+"uci": "/polynomials/subideal-condition",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/subideal-condition.html"
+},
+{
+"type": "theorem",
+"title": "Degree of sum of polynomials",
+"description": "The degree of sum of 2 polynomials is at most the maximum of the degrees of those polynomials.",
+"uci": "/polynomials/degree-of-sum",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-sum.html"
+},
+{
+"type": "theorem",
+"title": "Polynomials of a ring form a ring",
+"description": "The set of all polynomials is a ring if the coefficients are from a ring.",
+"uci": "/polynomials/ring",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/ring.html"
+},
+{
+"type": "def",
+"title": "Vector",
+"description": "A vector is a sequence of numbers with an element-wise addition operation and a scalar multiplication operation.",
+"uci": "/linear-algebra/vector",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector.html"
 },
 {
 "type": "def",
@@ -711,179 +576,105 @@
 },
 {
 "type": "def",
-"title": "Vector",
-"description": "A vector is a sequence of numbers with an element-wise addition operation and a scalar multiplication operation.",
-"uci": "/linear-algebra/vector",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector.html"
-},
-{
-"type": "theorem",
-"title": "Kernel of linear transformation is subspace of domain",
-"uci": "/linear-algebra/linear-transformation/kernel-is-subspace",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/kernel-is-subspace.html"
-},
-{
-"type": "theorem",
-"title": "Canonical decomposition of a linear transformation",
-"description": "Let T be a linear transformation from U to V. Then T = T3.T2.T1 where T1: U to F^dim(U), T2: F^dim(U) to F^dim(V), T3: F^dim(V) to V are linear transformations. This is called the canonical decomposition of T.",
-"uci": "/linear-algebra/linear-transformation/canonical-decomposition",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/canonical-decomposition.html"
-},
-{
-"type": "theorem",
-"title": "Vector space isomorphism is an equivalence relation",
-"uci": "/linear-algebra/linear-transformation/isomorphism-equiv",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/isomorphism-equiv.html"
-},
-{
-"type": "theorem",
-"title": "Basis change is an isomorphic linear transformation",
-"uci": "/linear-algebra/linear-transformation/basis-change",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/basis-change.html"
-},
-{
-"type": "theorem",
-"title": "Matrix of orthonormal basis change",
-"description": "Let P and Q be orthonormal bases of U and V respectively. Then the transformation matrix of the basis-changer from P to Q is orthogonal.",
-"uci": "/linear-algebra/linear-transformation/matrix-of-orthonormal-basis-change",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix-of-orthonormal-basis-change.html"
+"title": "p-norm",
+"description": "The p-norm is a function which maps a vector to a number",
+"uci": "/linear-algebra/p-norm",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/p-norm.html"
 },
 {
 "type": "def",
-"title": "Linear transformation",
-"description": "A linear transformation is a linear function mapping one vector space to another.",
-"uci": "/linear-algebra/linear-transformation/linear-transformation",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/linear-transformation.html"
-},
-{
-"type": "theorem",
-"title": "Vector spaces are isomorphic iff their dimensions are same",
-"description": "Two vector spaces are isomorphic iff they have the same dimension.",
-"uci": "/linear-algebra/linear-transformation/isomorphic-dimension",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/isomorphic-dimension.html"
-},
-{
-"type": "theorem",
-"title": "Basis of range of linear transformation",
-"description": "If P is a basis of the kernel and P union Q is a basis of U, then T(Q) is a basis of T(U).",
-"uci": "/linear-algebra/linear-transformation/basis-of-range",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/basis-of-range.html"
-},
-{
-"type": "theorem",
-"title": "Matrix of linear transformation",
-"description": "Every linear transformation from F^m to F^n can be expressed as a matrix pre-multiplication. Conversely, a pre-multiplication by a matrix forms a linear transformation.",
-"uci": "/linear-algebra/linear-transformation/matrix",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix.html"
-},
-{
-"type": "theorem",
-"title": "Composition of linear transformations",
-"description": "Composition of linear transformations is a linear transformation.",
-"uci": "/linear-algebra/linear-transformation/composition",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/composition.html"
+"title": "Ring isomorphism",
+"description": "A ring isomorphism is a bijective function \u03d5 such that \u03d5(a+b) = \u03d5(a) + \u03d5(b) and \u03d5(ab) = \u03d5(a)\u03d5(b).",
+"uci": "/abstract-algebra/rings/isomorphism/isomorphism",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/isomorphism/isomorphism.html"
 },
 {
 "type": "def",
-"title": "Symmetric operator",
-"description": "A linear transformation L is a symmetric operator iff L(u)v = uL(v).",
-"uci": "/linear-algebra/linear-transformation/symmetric-operator",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/symmetric-operator.html"
+"title": "Integral Domain",
+"description": "R is an integral domain iff R is a commutative ring with unity and R has no zero-divisors.",
+"uci": "/abstract-algebra/rings/intdom",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/intdom.html"
 },
 {
 "type": "theorem",
-"title": "Symmetric operator iff hermitian",
-"description": "Let L: V to V be a linear transformation and A be the square matrix associated with L. Then L is symmetric iff A is hermitian. Also, if T(u) = Au, then A is hermitian iff T is a symmetric operator.",
-"uci": "/linear-algebra/linear-transformation/symmetric-operator-matrix",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/symmetric-operator-matrix.html"
+"title": "Comparing coefficients of a polynomial with disjoint variables",
+"description": "Let there be a (possibly multi-variate) polynomial over an integral domain where each variable is present in at most one term. If the polynomial evaluates to 0 for all inputs, then all coefficients of the polynomial are zero.",
+"uci": "/polynomials/compare-coeff-disjoint-var",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/compare-coeff-disjoint-var.html"
 },
 {
 "type": "theorem",
-"title": "Range of linear transformation is subspace of codomain",
-"uci": "/linear-algebra/linear-transformation/range-is-subspace",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/range-is-subspace.html"
+"title": "Characteristic of ring equals additive order of unity",
+"uci": "/abstract-algebra/rings/char-equals-additive-order-of-unity",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/char-equals-additive-order-of-unity.html"
 },
 {
-"type": "theorem",
-"title": "Every complex matrix has an eigenvalue",
-"uci": "/linear-algebra/eigenvectors/every-complex-matrix-has-eigenvalue",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/every-complex-matrix-has-eigenvalue.html"
+"type": "def",
+"title": "Field",
+"description": "(R, +, *) is a field iff (R, +) and (R, *) are abelian groups and the distributive property holds.",
+"uci": "/abstract-algebra/rings/field",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html"
+},
+{
+"type": "def",
+"title": "Vector Space",
+"description": "A vector space is a set of vectors along with a scalar multiplication operation.",
+"uci": "/linear-algebra/vector-spaces/vector-space",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html"
 },
 {
 "type": "theoremdef",
-"title": "Eigenvalues and Eigenvectors",
-"description": "Let T be a linear transformation. If T(x) = kx is satisfied for some k and some x, then k is an eigenvalue and x is an eigenvector.",
-"uci": "/linear-algebra/eigenvectors/eigenvector",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenvector.html"
+"title": "Linear independence",
+"description": "A set of vectors are linearly independent iff no finite linear combination of them with some positive coefficients is 0.",
+"uci": "/linear-algebra/vector-spaces/linindep",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep.html"
 },
 {
 "type": "theorem",
-"title": "Degree and monicness of a characteristic polynomial",
-"description": "Let A be an n by n matrix. The characteristic polynomial of A is a monic polynomial of degree n.",
-"uci": "/linear-algebra/eigenvectors/char-poly-degree-monic",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/char-poly-degree-monic.html"
+"title": "Incrementing a linearly independent set",
+"keywords": [
+"increment",
+"expand",
+"increase",
+"grow"
+],
+"description": "If S is linearly independent and v is not a linear combination of S, then S+{v} is linearly independent.",
+"uci": "/linear-algebra/vector-spaces/linindep-increment",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-increment.html"
 },
 {
 "type": "theorem",
-"title": "Diagonalization",
-"description": "Let A be a square matrix. Let P be the matrix whose columns are eigenvectors of A. Then AP = PD, where D is a diagonal matrix.",
-"uci": "/linear-algebra/eigenvectors/diagonalization",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/diagonalization.html"
+"title": "Zeros in vector space",
+"description": "0v = 0, a0 = 0, (av = 0 iff a=0 or v=0).",
+"uci": "/linear-algebra/vector-spaces/zero",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/zero.html"
 },
 {
 "type": "theorem",
-"title": "Eigenvectors of distinct eigenvalues are linearly independent",
-"description": "In all vectors in a set of eigenvectors correspond to different eigenvalues, then the set is linearly independent.",
-"uci": "/linear-algebra/eigenvectors/distinct-eigenvalue-linindep",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/distinct-eigenvalue-linindep.html"
+"title": "Negation in vector space",
+"description": "-v = (-1)v. -(av) = (-a)v = a(-v).",
+"uci": "/linear-algebra/vector-spaces/negation",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/negation.html"
 },
 {
-"type": "theoremdef",
-"title": "Eigenspace",
-"description": "Let A be a matrix and \u03bb be an eigenvalue of A. Then E(\u03bb) is the vector space of all solutions to Ax = \u03bbx.",
-"uci": "/linear-algebra/eigenvectors/eigenspace",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenspace.html"
-},
-{
-"type": "theorem",
-"title": "Real matrix with real eigenvalues has real eigenvectors",
-"description": "If a matrix A has only real entries and \u03bb is a real eigenvalue of A, then A has real eigenvectors corresponding to \u03bb.",
-"uci": "/linear-algebra/eigenvectors/real-matrix-with-real-eigenvalue-has-real-eigenvectors",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/real-matrix-with-real-eigenvalue-has-real-eigenvectors.html"
+"type": "def",
+"title": "Span",
+"description": "The span of a set of vectors is the set of all finite linear combinations of those vectors.",
+"uci": "/linear-algebra/vector-spaces/span",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span.html"
 },
 {
 "type": "theorem",
-"title": "Orthogonally diagonalizable iff hermitian",
-"description": "A matrix A is said to be orthogonally diagonalizable iff it can be expressed as PDP*, where P is orthogonal. Then A is orthogonally diagonalizable iff A = A*.",
-"uci": "/linear-algebra/eigenvectors/ortho-diag",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/ortho-diag.html"
-},
-{
-"type": "theoremdef",
-"title": "Characteristic polynomial of a matrix",
-"description": "The characteristic polynomial of a matrix A is |xI - A|. Its roots are the eigenvalues of A.",
-"uci": "/linear-algebra/eigenvectors/char-poly",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/char-poly.html"
-},
-{
-"type": "theorem",
-"title": "Symmetric operator on V has a basis of orthonormal eigenvectors",
-"description": "Let L be a symmetric operator on V, a vector space over the complex numbers. Then there is a basis of V consisting of orthonormal eigenvectors of L.",
-"uci": "/linear-algebra/eigenvectors/symmetric-operator-has-n-ortho-eigenvectors",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-operator-has-n-ortho-eigenvectors.html"
-},
-{
-"type": "theorem",
-"title": "A is diagonalizable iff there are n linearly independent eigenvectors",
-"description": "Let A be an n by n matrix. Then A is diagonalizable iff A has n linearly independent eigenvectors.",
-"uci": "/linear-algebra/eigenvectors/diag-linindep",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/diag-linindep.html"
-},
-{
-"type": "theorem",
-"title": "All eigenvalues of a symmetric operator are real",
-"uci": "/linear-algebra/eigenvectors/symmetric-real",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-real.html"
+"title": "Decrementing a span",
+"keywords": [
+"decrement",
+"contract",
+"reduce",
+"shrink"
+],
+"description": "If S has a linearly dependent element v, then span(S-{v}) = span(S).",
+"uci": "/linear-algebra/vector-spaces/span-decrement",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span-decrement.html"
 },
 {
 "type": "def",
@@ -891,6 +682,61 @@
 "description": "An inner product space is a vector space equipped with an inner product operator, which is an abstract generalization of the dot product.",
 "uci": "/linear-algebra/inner-product-spaces/inner-product-space",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/inner-product-space.html"
+},
+{
+"type": "theorem",
+"title": "Inner product is anti-linear in second argument",
+"description": "< u, av > = conj(a) < u, v > and < u, v1+v2 > = < u, v1 > + < u, v2 >",
+"uci": "/linear-algebra/inner-product-spaces/antilin-in-2nd",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/antilin-in-2nd.html"
+},
+{
+"type": "theorem",
+"title": "Pythagorean theorem",
+"description": "If < u, v > = 0, < u, u > + < v, v > = < u+v, u+v >.",
+"uci": "/linear-algebra/inner-product-spaces/pythagorean-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/pythagorean-theorem.html"
+},
+{
+"type": "def",
+"title": "Norm",
+"description": "norm(x) = sqrt(< x, x >)",
+"uci": "/linear-algebra/inner-product-spaces/norm",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/norm.html"
+},
+{
+"type": "def",
+"title": "Orthogonality and orthonormality",
+"description": "A set of vectors is orthogonal iff all the vectors are non-zero and the inner product of any 2 different vectors is 0. A set of vectors is orthonormal if they are orthogonal and the norm of each vector is 1.",
+"uci": "/linear-algebra/inner-product-spaces/orthogonality",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/orthogonality.html"
+},
+{
+"type": "theoremdef",
+"title": "Gram-Schmidt Process",
+"description": "The Gram-Schmidt process takes a set of n linearly independent vectors as input and outputs a set of n orthogonal vectors which have the same span.",
+"uci": "/linear-algebra/inner-product-spaces/gram-schmidt-process",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/gram-schmidt-process.html"
+},
+{
+"type": "theorem",
+"title": "A set of mutually orthogonal vectors is linearly independent",
+"uci": "/linear-algebra/inner-product-spaces/ortho-vectors-are-linindep",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/ortho-vectors-are-linindep.html"
+},
+{
+"type": "theorem",
+"title": "Zero in inner product",
+"description": "< 0, v > = < v, 0 > = 0.",
+"uci": "/linear-algebra/inner-product-spaces/zero",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/zero.html"
+},
+{
+"type": "theorem",
+"title": "Cauchy-Schwarz Inequality",
+"description": "< u, v >\u00b2 \u2264 < u, u > < v, v >",
+"uci": "/linear-algebra/inner-product-spaces/cauchy-schwarz-inequality",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/cauchy-schwarz-inequality.html"
 },
 {
 "type": "theorem",
@@ -914,100 +760,374 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/coordinatization.html"
 },
 {
-"type": "theorem",
-"title": "Pythagorean theorem",
-"description": "If < u, v > = 0, < u, u > + < v, v > = < u+v, u+v >.",
-"uci": "/linear-algebra/inner-product-spaces/pythagorean-theorem",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/pythagorean-theorem.html"
+"type": "def",
+"title": "Linear transformation",
+"description": "A linear transformation is a linear function mapping one vector space to another.",
+"uci": "/linear-algebra/linear-transformation/linear-transformation",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/linear-transformation.html"
+},
+{
+"type": "def",
+"title": "Symmetric operator",
+"description": "A linear transformation L is a symmetric operator iff L(u)v = uL(v).",
+"uci": "/linear-algebra/linear-transformation/symmetric-operator",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/symmetric-operator.html"
 },
 {
 "type": "theorem",
-"title": "Zero in inner product",
-"description": "< 0, v > = < v, 0 > = 0.",
-"uci": "/linear-algebra/inner-product-spaces/zero",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/zero.html"
+"title": "Composition of linear transformations",
+"description": "Composition of linear transformations is a linear transformation.",
+"uci": "/linear-algebra/linear-transformation/composition",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/composition.html"
 },
 {
 "type": "theorem",
-"title": "Cauchy-Schwarz Inequality",
-"description": "< u, v >\u00b2 \u2264 < u, u > < v, v >",
-"uci": "/linear-algebra/inner-product-spaces/cauchy-schwarz-inequality",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/cauchy-schwarz-inequality.html"
+"title": "Vector space isomorphism is an equivalence relation",
+"uci": "/linear-algebra/linear-transformation/isomorphism-equiv",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/isomorphism-equiv.html"
 },
 {
 "type": "theorem",
-"title": "A set of mutually orthogonal vectors is linearly independent",
-"uci": "/linear-algebra/inner-product-spaces/ortho-vectors-are-linindep",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/ortho-vectors-are-linindep.html"
+"title": "Being a field is preserved under isomorphism",
+"uci": "/abstract-algebra/rings/isomorphism/field",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/isomorphism/field.html"
+},
+{
+"type": "theorem",
+"title": "A finite integral domain is a field",
+"uci": "/abstract-algebra/rings/finite-integral-domain-is-field",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/finite-integral-domain-is-field.html"
+},
+{
+"type": "theorem",
+"title": "0x = 0 = x0",
+"description": "Let R be a ring. For all elements x in R, 0x = 0 = x0.",
+"uci": "/abstract-algebra/rings/0x-is-0",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/0x-is-0.html"
+},
+{
+"type": "theorem",
+"title": "A field is an integral domain",
+"uci": "/abstract-algebra/rings/field-is-integral-domain",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field-is-integral-domain.html"
+},
+{
+"type": "theorem",
+"title": "Polynomial division theorem",
+"description": "If a and b are polynomials, a can be uniquely expressed as bq + r where deg(r) < deg(b).",
+"uci": "/polynomials/division-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/division-theorem.html"
+},
+{
+"type": "theorem",
+"title": "Polynomial GCD theorem",
+"description": "The GCD of polynomials is unique and equals their least degree monic linear combination.",
+"uci": "/polynomials/gcd-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/gcd-theorem.html"
+},
+{
+"type": "theorem",
+"title": "Factor theorem",
+"description": "(x-a) is a factor of p(x) iff p(a) = 0",
+"uci": "/polynomials/factor-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/factor-theorem.html"
+},
+{
+"type": "theorem",
+"title": "Product of linear factors is a factor",
+"description": "If (x-a1), (x-a2), ..., (x-an) are factors of p(x), then (x-a1)(x-a2)...(x-an) is a factor of p(x).",
+"uci": "/polynomials/product-of-linear-factors-is-factor",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/product-of-linear-factors-is-factor.html"
+},
+{
+"type": "theorem",
+"title": "A polynomial of degree n has at most n zeros",
+"description": "A polynomial over a field with degree n has at most n zeros",
+"uci": "/polynomials/at-most-degree-zeros",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/at-most-degree-zeros.html"
+},
+{
+"type": "theorem",
+"title": "(-a)b = a(-b) = -ab",
+"uci": "/abstract-algebra/rings/minus-outside",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/minus-outside.html"
+},
+{
+"type": "def",
+"title": "Ideal",
+"description": "An ideal I is a subring of R with the absorption property, i.e. aI = I for all a in R.",
+"uci": "/abstract-algebra/rings/ideal",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ideal.html"
+},
+{
+"type": "theorem",
+"title": "p(x)F[x] = F[x] iff p is a non-zero constant",
+"uci": "/polynomials/principal-ideal-trivial",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/principal-ideal-trivial.html"
+},
+{
+"type": "theorem",
+"title": "The ideal generated by an irreducible polynomial is maximal",
+"uci": "/polynomials/irred-ideal-is-maximal",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/irred-ideal-is-maximal.html"
+},
+{
+"type": "def",
+"title": "Homomorphism on groups",
+"description": "A homomorphism \u03d5 is a function from one group to another such that \u03d5(ab) = \u03d5(a)\u03d5(b).",
+"uci": "/abstract-algebra/groups/homomorphism/homomorphism",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/homomorphism/homomorphism.html"
+},
+{
+"type": "theorem",
+"title": "Mapping of power is power of mapping",
+"description": "\u03d5(g^k) = \u03d5(g)^k",
+"uci": "/abstract-algebra/groups/homomorphism/mapping-of-power-is-power-of-mapping",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/homomorphism/mapping-of-power-is-power-of-mapping.html"
 },
 {
 "type": "theoremdef",
-"title": "Gram-Schmidt Process",
-"description": "The Gram-Schmidt process takes a set of n linearly independent vectors as input and outputs a set of n orthogonal vectors which have the same span.",
-"uci": "/linear-algebra/inner-product-spaces/gram-schmidt-process",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/gram-schmidt-process.html"
-},
-{
-"type": "def",
-"title": "Orthogonality and orthonormality",
-"description": "A set of vectors is orthogonal iff all the vectors are non-zero and the inner product of any 2 different vectors is 0. A set of vectors is orthonormal if they are orthogonal and the norm of each vector is 1.",
-"uci": "/linear-algebra/inner-product-spaces/orthogonality",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/orthogonality.html"
-},
-{
-"type": "def",
-"title": "Norm",
-"description": "norm(x) = sqrt(< x, x >)",
-"uci": "/linear-algebra/inner-product-spaces/norm",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/norm.html"
-},
-{
-"type": "theorem",
-"title": "Inner product is anti-linear in second argument",
-"description": "< u, av > = conj(a) < u, v > and < u, v1+v2 > = < u, v1 > + < u, v2 >",
-"uci": "/linear-algebra/inner-product-spaces/antilin-in-2nd",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/antilin-in-2nd.html"
-},
-{
-"type": "theorem",
-"title": "Incrementing a linearly independent set",
+"title": "Permutation group",
+"description": "A permutation group on a finite set X is a group of bijections on X, where the group operator is function composition.",
 "keywords": [
-"increment",
-"expand",
-"increase",
-"grow"
+"permutation",
+"symmetric group",
+"cycle",
+"transposition"
 ],
-"description": "If S is linearly independent and v is not a linear combination of S, then S+{v} is linearly independent.",
-"uci": "/linear-algebra/vector-spaces/linindep-increment",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-increment.html"
-},
-{
-"type": "def",
-"title": "Vector Space",
-"description": "A vector space is a set of vectors along with a scalar multiplication operation.",
-"uci": "/linear-algebra/vector-spaces/vector-space",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html"
-},
-{
-"type": "def",
-"title": "Span",
-"description": "The span of a set of vectors is the set of all finite linear combinations of those vectors.",
-"uci": "/linear-algebra/vector-spaces/span",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span.html"
+"uci": "/abstract-algebra/groups/permutation-groups/permutation-group",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/permutation-group.html"
 },
 {
 "type": "theorem",
-"title": "Linearly independent set is smaller than a span",
-"description": "The size of every finite linearly independent subset of a vector space is less than or equal to the size of every spanning set of that vector space.",
-"uci": "/linear-algebra/vector-spaces/linindep-is-smaller-than-span",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-is-smaller-than-span.html"
+"title": "Product of cycles and a transposition",
+"uci": "/abstract-algebra/groups/permutation-groups/product-of-cycles-and-transposition",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/product-of-cycles-and-transposition.html"
 },
 {
 "type": "theorem",
-"title": "Negation in vector space",
-"description": "-v = (-1)v. -(av) = (-a)v = a(-v).",
-"uci": "/linear-algebra/vector-spaces/negation",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/negation.html"
+"title": "Permutation is disjoint cycle product",
+"description": "Every permutation can be written as the product of a unique set of disjoint cycles.",
+"uci": "/abstract-algebra/groups/permutation-groups/permutation-is-disjoint-cycle-product",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/permutation-is-disjoint-cycle-product.html"
+},
+{
+"type": "theorem",
+"title": "Permutation is transposition product",
+"description": "Every finite permutation can be written as a product of transpositions.",
+"uci": "/abstract-algebra/groups/permutation-groups/permutation-is-transposition-product",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/permutation-is-transposition-product.html"
+},
+{
+"type": "theorem",
+"title": "Product of disjoint cycles is commutative",
+"uci": "/abstract-algebra/groups/permutation-groups/product-of-disjoint-cycles-is-commutative",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/product-of-disjoint-cycles-is-commutative.html"
+},
+{
+"type": "def",
+"title": "Canonical cycle notation of a permutation",
+"description": "Canonical cycle notation is a unique way of writing a permutation as a product of disjoint cycles.",
+"uci": "/abstract-algebra/groups/permutation-groups/canonical-cycle-notation",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/canonical-cycle-notation.html"
+},
+{
+"type": "theoremdef",
+"title": "Parity of a permutation",
+"description": "If a permutation can be written as a product of only an odd number of transpositions, it is called an odd permutation. If a permutation can be written as a product of only an even number of transpositions, it is called an even permutation. Every permutation is either an odd permutation or an even permutation.",
+"uci": "/abstract-algebra/groups/permutation-groups/parity",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/parity.html"
+},
+{
+"type": "theorem",
+"title": "Transposition bijects even and odd permutations",
+"description": "There is a bijection between even and odd permutations. The bijective function multiplies a permutation by a transposition.",
+"uci": "/abstract-algebra/groups/permutation-groups/transposition-bijects-even-and-odd-permutations",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/transposition-bijects-even-and-odd-permutations.html"
+},
+{
+"type": "def",
+"title": "Isomorphism on Groups",
+"description": "Two groups are isomorphic iff they are related via a bijection \u03d5 such that \u03d5(ab) = \u03d5(a)\u03d5(b).",
+"uci": "/abstract-algebra/groups/isomorphism/group-isomorphism",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/group-isomorphism.html"
+},
+{
+"type": "theorem",
+"title": "Cyclic groups are isomorphic to Z or Zn",
+"description": "A cyclic group of infinite order is isomorphic to Z. A cyclic group of order n is isomorphic to Zn.",
+"uci": "/abstract-algebra/groups/cyclic-groups/isomorphic-to-z",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/isomorphic-to-z.html"
+},
+{
+"type": "theorem",
+"title": "Inverse of a group isomorphism is a group isomorphism",
+"uci": "/abstract-algebra/groups/isomorphism/inverse",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/inverse.html"
+},
+{
+"type": "theorem",
+"title": "Abelianness is invariant under isomorphism",
+"description": "If G is isomorphic to H and G is abelian, then H is abelian.",
+"uci": "/abstract-algebra/groups/isomorphism/abelianness",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/abelianness.html"
+},
+{
+"type": "theorem",
+"title": "Isomorphism of groups is an equivalence relation",
+"uci": "/abstract-algebra/groups/isomorphism/equivalence-relation",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/equivalence-relation.html"
+},
+{
+"type": "theorem",
+"title": "Cayley's Theorem",
+"description": "Every group is isomorphic to a permutation group",
+"uci": "/abstract-algebra/groups/isomorphism/cayleys-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/cayleys-theorem.html"
+},
+{
+"type": "theorem",
+"title": "Cyclicness is invariant under isomorphism",
+"description": "If < a > is isomorphic to G via \u03d5, then G = < \u03d5(a) >.",
+"uci": "/abstract-algebra/groups/isomorphism/cyclicness-is-invariant-under-isomorphism",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/cyclicness-is-invariant-under-isomorphism.html"
+},
+{
+"type": "theorem",
+"title": "Order of elements is invariant under isomorphism",
+"description": "If G is isomorphic to H, then G and H have the same frequencies of orders of elements.",
+"uci": "/abstract-algebra/groups/isomorphism/order-of-elements",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/order-of-elements.html"
+},
+{
+"type": "theorem",
+"title": "Inverse of product of two elements of a group",
+"description": "(a*b)^(-1) = (b^(-1)) * (a^(-1))",
+"uci": "/abstract-algebra/groups/inverse-of-product",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/inverse-of-product.html"
+},
+{
+"type": "theorem",
+"title": "Identity of a group is unique",
+"description": "Identity of a group is unique.",
+"uci": "/abstract-algebra/groups/identity-is-unique",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/identity-is-unique.html"
+},
+{
+"type": "theorem",
+"title": "External direct product is a group",
+"description": "For groups G and H, G \u00d7 H is a group",
+"uci": "/abstract-algebra/groups/external-direct-product-is-group",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/external-direct-product-is-group.html"
+},
+{
+"type": "theorem",
+"title": "Order of element in external direct product",
+"description": "order of (g, h) in G \u00d7 H = lcm(order(g), order(h))",
+"uci": "/abstract-algebra/groups/order-of-element-in-external-direct-product",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/order-of-element-in-external-direct-product.html"
+},
+{
+"type": "theorem",
+"title": "Inverse of a group element is unique",
+"description": "Inverse of a group element is unique.",
+"uci": "/abstract-algebra/groups/inverse-is-unique",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/inverse-is-unique.html"
+},
+{
+"type": "theorem",
+"title": "gH = H iff g in H",
+"description": "Coset of a subgroup equals the subgroup iff the representative is in the subgroup.",
+"uci": "/abstract-algebra/cosets/coset-equals-subgroup-iff-elem-in-subgroup",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/coset-equals-subgroup-iff-elem-in-subgroup.html"
+},
+{
+"type": "theorem",
+"title": "Product of ideal cosets is well-defined",
+"description": "Let I be an ideal. The product of cosets (a+I)(b+I) = ab+I is well-defined.",
+"uci": "/abstract-algebra/cosets/product-of-ideal-cosets",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/product-of-ideal-cosets.html"
+},
+{
+"type": "theoremdef",
+"title": "Quotient Ring",
+"description": "Let I be an ideal of R. The quotient ring R/I is the set of all additive cosets of I.",
+"uci": "/abstract-algebra/rings/quotient-ring",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/quotient-ring.html"
+},
+{
+"type": "theorem",
+"title": "Two cosets are either identical or disjoint",
+"description": "Two cosets are either identical or disjoint.",
+"uci": "/abstract-algebra/cosets/cosets-are-either-identical-or-disjoint",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/cosets-are-either-identical-or-disjoint.html"
+},
+{
+"type": "theorem",
+"title": "Lagrange's Theorem",
+"description": "Order of subgroup divides order of group. Furthermore, number of cosets equals ratio of orders of group and subgroup.",
+"uci": "/abstract-algebra/cosets/lagranges-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/lagranges-theorem.html"
+},
+{
+"type": "theorem",
+"title": "Order of element divides order of group",
+"uci": "/abstract-algebra/groups/order-of-element-divides-order-of-group",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/order-of-element-divides-order-of-group.html"
+},
+{
+"type": "theorem",
+"title": "Group of prime order is cyclic",
+"uci": "/abstract-algebra/groups/cyclic-groups/group-of-prime-order-is-cyclic",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/group-of-prime-order-is-cyclic.html"
+},
+{
+"type": "theorem",
+"title": "Group element to the power group size equals identity",
+"description": "a^|G| = e",
+"uci": "/abstract-algebra/groups/group-elem-to-the-power-group-size-equals-identity",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group-elem-to-the-power-group-size-equals-identity.html"
+},
+{
+"type": "theorem",
+"title": "I is a maximal ideal iff R/I is a field",
+"description": "Let I be an ideal of R, a commutative ring with unity. Then I is maximal in R iff R/I is a field.",
+"uci": "/abstract-algebra/rings/maximal-ideal-field",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/maximal-ideal-field.html"
+},
+{
+"type": "theorem",
+"title": "I is a prime ideal iff R/I is an integral domain",
+"description": "Let I be an ideal of R, a commutative ring with unity. Then I is prime in R iff R/I is an integral domain.",
+"uci": "/abstract-algebra/rings/prime-ideal-intdom",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/prime-ideal-intdom.html"
+},
+{
+"type": "theorem",
+"title": "Conditions for a subset to be a subgroup",
+"description": "Conditions for a subset to be a subgroup.",
+"uci": "/abstract-algebra/groups/subgroup-condition",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/subgroup-condition.html"
+},
+{
+"type": "theorem",
+"title": "Condition for a subset to be a subgroup",
+"description": "Condition for a subset to be a subgroup.",
+"uci": "/abstract-algebra/groups/subgroup-condition-2",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/subgroup-condition-2.html"
+},
+{
+"type": "theoremdef",
+"title": "F[x]/p(x): A ring",
+"description": "F[x]/p(x) is the ring of all polynomials modulo p(x).",
+"uci": "/polynomials/modulo-ring",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/modulo-ring.html"
+},
+{
+"type": "theorem",
+"title": "The ring F[x]/p(x) is a field iff p is irreducible",
+"uci": "/polynomials/modulo-field",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/modulo-field.html"
 },
 {
 "type": "theorem",
@@ -1018,219 +1138,156 @@
 },
 {
 "type": "theorem",
-"title": "Zeros in vector space",
-"description": "0v = 0, a0 = 0, (av = 0 iff a=0 or v=0).",
-"uci": "/linear-algebra/vector-spaces/zero",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/zero.html"
+"title": "Range of linear transformation is subspace of codomain",
+"uci": "/linear-algebra/linear-transformation/range-is-subspace",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/range-is-subspace.html"
+},
+{
+"type": "theorem",
+"title": "Kernel of linear transformation is subspace of domain",
+"uci": "/linear-algebra/linear-transformation/kernel-is-subspace",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/kernel-is-subspace.html"
+},
+{
+"type": "theorem",
+"title": "Conditions for a subset of a ring to be a subring",
+"uci": "/abstract-algebra/rings/subring-condition",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/subring-condition.html"
 },
 {
 "type": "theoremdef",
-"title": "Linear independence",
-"description": "A set of vectors are linearly independent iff no finite linear combination of them with some positive coefficients is 0.",
-"uci": "/linear-algebra/vector-spaces/linindep",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep.html"
+"title": "Principal ideal",
+"description": "A principal ideal is a multiplicative coset",
+"uci": "/abstract-algebra/rings/principal-ideal",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/principal-ideal.html"
 },
 {
 "type": "theorem",
-"title": "Decrementing a span",
-"keywords": [
-"decrement",
-"contract",
-"reduce",
-"shrink"
-],
-"description": "If S has a linearly dependent element v, then span(S-{v}) = span(S).",
-"uci": "/linear-algebra/vector-spaces/span-decrement",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span-decrement.html"
-},
-{
-"type": "theoremdef",
-"title": "Coordinatization over a basis",
-"description": "Let B be a basis of vector space V. Then every vector in V can be expressed uniquely as a finite linear combination of vectors in B. The coefficients of the linear combination are called the coordinates of that vector.",
-"uci": "/linear-algebra/vector-spaces/basis/coordinatization",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/coordinatization.html"
+"title": "Every ideal in F[x] is principal",
+"description": "Every ideal the ring of polynomials of a field is a principal ideal",
+"uci": "/polynomials/every-ideal-is-principal",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/every-ideal-is-principal.html"
 },
 {
 "type": "theorem",
-"title": "Linearly independent set can be expanded into a basis",
-"description": "If a set of vectors is linearly independent, a finite number of vectors can be added to it to make it a basis if the vector space has a finite-sized basis.",
-"uci": "/linear-algebra/vector-spaces/basis/expand-linindep-to-basis",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/expand-linindep-to-basis.html"
+"title": "F[x]/p(x) is isomorphic to F[x]/p(x)F[x]",
+"uci": "/polynomials/modulo-isomorphic",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/modulo-isomorphic.html"
 },
 {
 "type": "theorem",
-"title": "Maximally linearly independent iff basis",
-"description": "A finite set is maximally linearly independent iff it is a basis.",
-"uci": "/linear-algebra/vector-spaces/basis/maximal-linindep-is-basis",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/maximal-linindep-is-basis.html"
-},
-{
-"type": "theoremdef",
-"title": "Basis changer",
-"description": "A basis changer is a bijection which maps coordinates of one basis to coorindates of another basis.",
-"uci": "/linear-algebra/vector-spaces/basis/basis-change",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis-change.html"
-},
-{
-"type": "theoremdef",
-"title": "Basis of a vector space",
-"description": "If a set of vectors B is linearly independent and spans a vector space V, then B is a basis of V. All bases of a vector space have the same size.",
-"uci": "/linear-algebra/vector-spaces/basis/basis",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html"
+"title": "Homomorphic mapping of subgroup of domain is subgroup of codomain",
+"description": "Homomorphic mapping of subgroup of domain is subgroup of codomain. Inverse mapping of subgroup of codomain is subgroup of domain.",
+"uci": "/abstract-algebra/groups/homomorphism/subgroup",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/homomorphism/subgroup.html"
 },
 {
 "type": "theorem",
-"title": "Basis of F^n",
-"uci": "/linear-algebra/vector-spaces/basis/basis-of-fn",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis-of-fn.html"
+"title": "Homomorphic mapping and inverse mapping of normal subgroup is normal",
+"description": "Homomorphic mapping of normal subgroup is normal in homomorphic mapping of group. Homomorphic inverse mapping of normal subgroup of codomain is normal in domain.",
+"uci": "/abstract-algebra/groups/homomorphism/normal-subgroup",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/homomorphism/normal-subgroup.html"
 },
 {
 "type": "theorem",
-"title": "Minimally spanning iff basis",
-"description": "A finite set of vectors S minimally spans V iff S is a basis.",
-"uci": "/linear-algebra/vector-spaces/basis/minimal-span-is-basis",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/minimal-span-is-basis.html"
+"title": "First isomorphism theorem",
+"description": "Image of homomorphism \u03d5 from G to H is isomorphic to quotient group G/ker(\u03d5).",
+"uci": "/abstract-algebra/groups/first-isomorphism-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/first-isomorphism-theorem.html"
 },
 {
 "type": "theorem",
-"title": "Spanning set of size dim(V) is a basis",
-"uci": "/linear-algebra/vector-spaces/basis/n-span-is-basis",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/n-span-is-basis.html"
+"title": "Correspondence theorem",
+"description": "A subgroup of G/N is of the form K/N, where K is a subgroup of G. If K is a subgroup of G, then K/N is a subgroup of G/N.",
+"uci": "/abstract-algebra/groups/factor-groups/correspondence-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/factor-groups/correspondence-theorem.html"
 },
 {
 "type": "theorem",
-"title": "A set of dim(V) linearly independent vectors is a basis",
-"uci": "/linear-algebra/vector-spaces/basis/n-linindep-is-basis",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/n-linindep-is-basis.html"
+"title": "Normal correspondence theorem",
+"description": "A normal subgroup of G/N is of the form K/N, where K is a normal subgroup of G. If K is a normal subgroup of G, then K/N is a normal subgroup of G/N.",
+"uci": "/abstract-algebra/groups/factor-groups/normal-correspondence-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/factor-groups/normal-correspondence-theorem.html"
 },
 {
 "type": "theorem",
-"title": "Matrices form an inner-product space",
-"description": "Let F be a subfield of complex numbers. Matrices over F form an inner-product space, where the inner product is given by tr(A*B).",
-"uci": "/linear-algebra/matrices/inner-product-space",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inner-product-space.html"
+"title": "Third isomorphism theorem",
+"description": "(G/N)/(K/N) is isomorphic to G/K.",
+"uci": "/abstract-algebra/groups/third-isomorphism-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/third-isomorphism-theorem.html"
 },
 {
 "type": "def",
-"title": "Elementary row operation",
-"description": "An elementary row operation on a matrix either adds a multiple of a row to another row, multiplies a row by a scalar or swaps two rows.",
-"uci": "/linear-algebra/matrices/elementary-rowop",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop.html"
+"title": "Alternating Group",
+"description": "The set of all even permutations is called the alternating group",
+"uci": "/abstract-algebra/groups/permutation-groups/alternating-group",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/alternating-group.html"
 },
 {
 "type": "theorem",
-"title": "Matrices over a field form a vector space",
+"title": "Second isomorphism theorem",
+"description": "Let S be a subgroup of G and N be a normal subgroup of G. Then SN/N is isomorphic to S/(S\u2229N).",
+"uci": "/abstract-algebra/groups/second-isomorphism-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/second-isomorphism-theorem.html"
+},
+{
+"type": "def",
+"title": "Semiring",
+"description": "A semiring is an algebraic structure similar to a ring, but without the requirement that each element must have an additive inverse.",
+"uci": "/abstract-algebra/semiring",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html"
+},
+{
+"type": "theoremdef",
+"title": "Matrix",
+"description": "A matrix is set of numbers arranged in rows and columns.",
+"uci": "/linear-algebra/matrices/matrix",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html"
+},
+{
+"type": "def",
+"title": "Stacking",
+"description": "[A|B] is the horizontal stacking of matrices. [A/B] is the vertical stacking of matrices.",
+"uci": "/linear-algebra/matrices/stacking/stacking",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/stacking.html"
+},
+{
+"type": "theorem",
+"title": "System of linear equations",
+"description": "A system of linear equations is a set of equations which equate linear combinations of variables to a value.",
+"uci": "/linear-algebra/system-of-linear-equations/system-of-linear-equations",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/system-of-linear-equations.html"
+},
+{
+"type": "theorem",
+"title": "Product of stacked matrices",
 "description": "",
-"uci": "/linear-algebra/matrices/vector-space",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/vector-space.html"
+"uci": "/linear-algebra/matrices/stacking/product",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/product.html"
+},
+{
+"type": "theorem",
+"title": "Sum of stacked matrices",
+"uci": "/linear-algebra/matrices/stacking/sum",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/sum.html"
+},
+{
+"type": "theorem",
+"title": "Transpose of stacked matrix",
+"uci": "/linear-algebra/matrices/stacking/transpose",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/transpose.html"
+},
+{
+"type": "theorem",
+"title": "Matrix multiplication is associative",
+"uci": "/linear-algebra/matrices/mult-assoc",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/mult-assoc.html"
 },
 {
 "type": "def",
-"title": "Trace of a matrix",
-"description": "The trace of a square matrix is the sum of its diagonal entries.",
-"uci": "/linear-algebra/matrices/trace",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/trace.html"
-},
-{
-"type": "theorem",
-"title": "Square matrices form a (semi)ring",
-"uci": "/linear-algebra/matrices/semiring",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/semiring.html"
-},
-{
-"type": "theorem",
-"title": "Full-rank square matrix in RREF is the identity matrix",
-"description": "Let A be an n by n matrix. If A is in RREF and all rows of A are non-zero, then A is the identity matrix.",
-"uci": "/linear-algebra/matrices/full-rank-square-rref-is-identity",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-square-rref-is-identity.html"
-},
-{
-"type": "def",
-"title": "Submatrix",
-"description": "A submatrix of a matrix M is a matrix obtained by removing a few rows and/or columns of M.",
-"uci": "/linear-algebra/matrices/submatrix",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/submatrix.html"
-},
-{
-"type": "theorem",
-"title": "RREF([A|I]) = [I|inv(A)] iff A is invertible",
-"description": "This is an algorithm for finding the inverse of a matrix by calculating RREF.",
-"uci": "/linear-algebra/matrices/rref-inv",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rref-inv.html"
-},
-{
-"type": "theorem",
-"title": "Full-rank square matrix is invertible",
-"description": "Let A be an n by n matrix. Then rank(A) = n iff A has an inverse.",
-"uci": "/linear-algebra/matrices/full-rank-inv",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-inv.html"
-},
-{
-"type": "theorem",
-"title": "Conjugation of matrices is homomorphic",
-"uci": "/linear-algebra/matrices/conjugation-is-homomorphic",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/conjugation-is-homomorphic.html"
-},
-{
-"type": "theoremdef",
-"title": "Orthogonal matrix",
-"description": "A matrix A is orthogonal iff A'A = I. Equivalently, A is orthogonal iff rows of A are orthonormal.",
-"uci": "/linear-algebra/matrices/orthogonal",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/orthogonal.html"
-},
-{
-"type": "theorem",
-"title": "RREF is unique",
-"description": "Every matrix is row equivalent to a unique matrix in RREF.",
-"uci": "/linear-algebra/matrices/unique-rref",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/unique-rref.html"
-},
-{
-"type": "theorem",
-"title": "Transpose of product",
-"description": "(AB)' = B'A'",
-"uci": "/linear-algebra/matrices/transpose-of-product",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/transpose-of-product.html"
-},
-{
-"type": "def",
-"title": "Row space",
-"description": "The row space of a matrix is the set of all linear combinations of the rows of the matrix.",
-"uci": "/linear-algebra/matrices/row-space",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-space.html"
-},
-{
-"type": "theorem",
-"title": "c(AB) = (cA)B and (AB)c = A(Bc)",
-"uci": "/linear-algebra/matrices/scalar-mult-assoc",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/scalar-mult-assoc.html"
-},
-{
-"type": "theorem",
-"title": "Matrix multiplication distributes over addition",
-"description": "A(B+C) = AB + AC.",
-"uci": "/linear-algebra/matrices/distributive",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/distributive.html"
-},
-{
-"type": "theoremdef",
-"title": "Row equivalence of matrices",
-"description": "Matrices A and B are row equivalent iff B can be obtained from A by applying a finite number of elementary row operations to A.",
-"uci": "/linear-algebra/matrices/row-equiv",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv.html"
-},
-{
-"type": "theorem",
-"title": "A matrix is full-rank iff its rows are linearly independent",
-"uci": "/linear-algebra/matrices/full-rank-linindep",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-linindep.html"
-},
-{
-"type": "theorem",
-"title": "Row equivalence matrix",
-"description": "If A and B are row equivalent, then there exists an invertible matrix R such that B = RA.",
-"uci": "/linear-algebra/matrices/row-equiv-matrix",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv-matrix.html"
+"title": "Reduced Row Echelon Form (RREF)",
+"uci": "/linear-algebra/matrices/rref",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rref.html"
 },
 {
 "type": "theorem",
@@ -1248,43 +1305,10 @@
 },
 {
 "type": "theoremdef",
-"title": "Matrix",
-"description": "A matrix is set of numbers arranged in rows and columns.",
-"uci": "/linear-algebra/matrices/matrix",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html"
-},
-{
-"type": "theoremdef",
 "title": "Inverse of a matrix",
 "description": "The inverse of matrix A is a matrix B such that AB = BA = I.",
 "uci": "/linear-algebra/matrices/inverse",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inverse.html"
-},
-{
-"type": "def",
-"title": "Reduced Row Echelon Form (RREF)",
-"uci": "/linear-algebra/matrices/rref",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rref.html"
-},
-{
-"type": "def",
-"title": "Rank of a matrix",
-"description": "The rank of a matrix is the number of non-zero rows in the RREF of the matrix.",
-"uci": "/linear-algebra/matrices/rank",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rank.html"
-},
-{
-"type": "theorem",
-"title": "Row equivalent matrices have the same row space",
-"uci": "/linear-algebra/matrices/row-equiv-matrices-have-same-row-space",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv-matrices-have-same-row-space.html"
-},
-{
-"type": "theorem",
-"title": "Elementary row operation is matrix pre-multiplication",
-"description": "Every elementary row operation has a corresponding invertible matrix R such that the result of applying the operation on a matrix A is RA.",
-"uci": "/linear-algebra/matrices/elementary-rowop-matrix",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop-matrix.html"
 },
 {
 "type": "theorem",
@@ -1295,67 +1319,50 @@
 },
 {
 "type": "theorem",
-"title": "Every elementary row operation has a unique inverse",
-"uci": "/linear-algebra/matrices/elementary-rowop-inv",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop-inv.html"
+"title": "Full-rank square matrix in RREF is the identity matrix",
+"description": "Let A be an n by n matrix. If A is in RREF and all rows of A are non-zero, then A is the identity matrix.",
+"uci": "/linear-algebra/matrices/full-rank-square-rref-is-identity",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-square-rref-is-identity.html"
 },
 {
 "type": "theorem",
-"title": "Matrix multiplication is associative",
-"uci": "/linear-algebra/matrices/mult-assoc",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/mult-assoc.html"
+"title": "Matrix multiplication distributes over addition",
+"description": "A(B+C) = AB + AC.",
+"uci": "/linear-algebra/matrices/distributive",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/distributive.html"
 },
 {
 "type": "theorem",
-"title": "AB = I implies BA = I",
-"uci": "/linear-algebra/matrices/product-equals-identity-implies-invertible",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/product-equals-identity-implies-invertible.html"
-},
-{
-"type": "theorem",
-"title": "Elementary row operation on stacked matrix",
-"description": "Let f be an elementary row operation. Then f([A|B]) = [f(A)|f(B)].",
-"uci": "/linear-algebra/matrices/stacking/elementary-rowop",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/elementary-rowop.html"
-},
-{
-"type": "theorem",
-"title": "Transpose of stacked matrix",
-"uci": "/linear-algebra/matrices/stacking/transpose",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/transpose.html"
-},
-{
-"type": "theorem",
-"title": "Sum of stacked matrices",
-"uci": "/linear-algebra/matrices/stacking/sum",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/sum.html"
-},
-{
-"type": "theorem",
-"title": "Product of stacked matrices",
-"description": "",
-"uci": "/linear-algebra/matrices/stacking/product",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/product.html"
+"title": "c(AB) = (cA)B and (AB)c = A(Bc)",
+"uci": "/linear-algebra/matrices/scalar-mult-assoc",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/scalar-mult-assoc.html"
 },
 {
 "type": "def",
-"title": "Stacking",
-"description": "[A|B] is the horizontal stacking of matrices. [A/B] is the vertical stacking of matrices.",
-"uci": "/linear-algebra/matrices/stacking/stacking",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/stacking.html"
+"title": "Row space",
+"description": "The row space of a matrix is the set of all linear combinations of the rows of the matrix.",
+"uci": "/linear-algebra/matrices/row-space",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-space.html"
 },
 {
 "type": "theorem",
-"title": "Determinant after elementary row operation",
-"description": "Applying an elementary row operation on a matrix multiplies its determinant by a number which depends only on the type of the operation, not on the matrix.",
-"uci": "/linear-algebra/matrices/determinants/elementary-rowop",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/elementary-rowop.html"
+"title": "Transpose of product",
+"description": "(AB)' = B'A'",
+"uci": "/linear-algebra/matrices/transpose-of-product",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/transpose-of-product.html"
 },
 {
 "type": "theorem",
-"title": "Swapping last 2 rows of a matrix negates its determinant",
-"uci": "/linear-algebra/matrices/determinants/last-2-rows-swap",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/last-2-rows-swap.html"
+"title": "Conjugation of matrices is homomorphic",
+"uci": "/linear-algebra/matrices/conjugation-is-homomorphic",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/conjugation-is-homomorphic.html"
+},
+{
+"type": "def",
+"title": "Submatrix",
+"description": "A submatrix of a matrix M is a matrix obtained by removing a few rows and/or columns of M.",
+"uci": "/linear-algebra/matrices/submatrix",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/submatrix.html"
 },
 {
 "type": "def",
@@ -1366,10 +1373,105 @@
 },
 {
 "type": "theorem",
+"title": "Determinant of upper triangular matrix",
+"description": "The determinant of an upper triangular matrix is the product of diagonal elements.",
+"uci": "/linear-algebra/matrices/determinants/upper-triangular",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/upper-triangular.html"
+},
+{
+"type": "theorem",
+"title": "Swapping last 2 rows of a matrix negates its determinant",
+"uci": "/linear-algebra/matrices/determinants/last-2-rows-swap",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/last-2-rows-swap.html"
+},
+{
+"type": "def",
+"title": "Trace of a matrix",
+"description": "The trace of a square matrix is the sum of its diagonal entries.",
+"uci": "/linear-algebra/matrices/trace",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/trace.html"
+},
+{
+"type": "theorem",
+"title": "Matrices over a field form a vector space",
+"description": "",
+"uci": "/linear-algebra/matrices/vector-space",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/vector-space.html"
+},
+{
+"type": "theorem",
+"title": "Matrices form an inner-product space",
+"description": "Let F be a subfield of complex numbers. Matrices over F form an inner-product space, where the inner product is given by tr(A*B).",
+"uci": "/linear-algebra/matrices/inner-product-space",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inner-product-space.html"
+},
+{
+"type": "def",
+"title": "Elementary row operation",
+"description": "An elementary row operation on a matrix either adds a multiple of a row to another row, multiplies a row by a scalar or swaps two rows.",
+"uci": "/linear-algebra/matrices/elementary-rowop",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop.html"
+},
+{
+"type": "theorem",
+"title": "Determinant after elementary row operation",
+"description": "Applying an elementary row operation on a matrix multiplies its determinant by a number which depends only on the type of the operation, not on the matrix.",
+"uci": "/linear-algebra/matrices/determinants/elementary-rowop",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/elementary-rowop.html"
+},
+{
+"type": "theorem",
 "title": "Determinant of scalar product of matrix",
 "description": "|cA| = c^n|A|",
 "uci": "/linear-algebra/matrices/determinants/scalar-mult",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/scalar-mult.html"
+},
+{
+"type": "theorem",
+"title": "Elementary row operation on stacked matrix",
+"description": "Let f be an elementary row operation. Then f([A|B]) = [f(A)|f(B)].",
+"uci": "/linear-algebra/matrices/stacking/elementary-rowop",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/elementary-rowop.html"
+},
+{
+"type": "theorem",
+"title": "Every elementary row operation has a unique inverse",
+"uci": "/linear-algebra/matrices/elementary-rowop-inv",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop-inv.html"
+},
+{
+"type": "theorem",
+"title": "Elementary row operation is matrix pre-multiplication",
+"description": "Every elementary row operation has a corresponding invertible matrix R such that the result of applying the operation on a matrix A is RA.",
+"uci": "/linear-algebra/matrices/elementary-rowop-matrix",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop-matrix.html"
+},
+{
+"type": "theoremdef",
+"title": "Row equivalence of matrices",
+"description": "Matrices A and B are row equivalent iff B can be obtained from A by applying a finite number of elementary row operations to A.",
+"uci": "/linear-algebra/matrices/row-equiv",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv.html"
+},
+{
+"type": "theorem",
+"title": "Row equivalent matrices have the same row space",
+"uci": "/linear-algebra/matrices/row-equiv-matrices-have-same-row-space",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv-matrices-have-same-row-space.html"
+},
+{
+"type": "theorem",
+"title": "RREF is unique",
+"description": "Every matrix is row equivalent to a unique matrix in RREF.",
+"uci": "/linear-algebra/matrices/unique-rref",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/unique-rref.html"
+},
+{
+"type": "def",
+"title": "Rank of a matrix",
+"description": "The rank of a matrix is the number of non-zero rows in the RREF of the matrix.",
+"uci": "/linear-algebra/matrices/rank",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rank.html"
 },
 {
 "type": "theorem",
@@ -1379,24 +1481,10 @@
 },
 {
 "type": "theorem",
-"title": "Determinant of product is product of determinants",
-"description": "|AB| = |A||B|",
-"uci": "/linear-algebra/matrices/determinants/product",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/product.html"
-},
-{
-"type": "theorem",
-"title": "Determinant of upper triangular matrix",
-"description": "The determinant of an upper triangular matrix is the product of diagonal elements.",
-"uci": "/linear-algebra/matrices/determinants/upper-triangular",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/upper-triangular.html"
-},
-{
-"type": "theorem",
-"title": "System of linear equations",
-"description": "A system of linear equations is a set of equations which equate linear combinations of variables to a value.",
-"uci": "/linear-algebra/system-of-linear-equations/system-of-linear-equations",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/system-of-linear-equations.html"
+"title": "Row equivalence matrix",
+"description": "If A and B are row equivalent, then there exists an invertible matrix R such that B = RA.",
+"uci": "/linear-algebra/matrices/row-equiv-matrix",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv-matrix.html"
 },
 {
 "type": "theorem",
@@ -1420,461 +1508,410 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/more-variables-than-unknowns.html"
 },
 {
-"type": "def",
-"title": "Bridge in graph",
-"keywords": [
-"bridge",
-"cut-edge"
-],
-"description": "An edge in an undirected graph is called a bridge (or cut-edge) iff deleting that edge disconnects the connected component to which that edge belongs.",
-"uci": "/graph-theory/bridge",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/bridge.html"
-},
-{
 "type": "theorem",
-"title": "In a connected graph (V, E), |E| \u2265 |V| - 1",
-"uci": "/graph-theory/number-of-edges-in-connected-graph",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/number-of-edges-in-connected-graph.html"
-},
-{
-"type": "def",
-"title": "Path in Graph",
-"description": "In a graph, a path is a sequence of vertices such that all pairs of consecutive vertices are edges.",
-"keywords": [
-"path",
-"simple path",
-"walk",
-"cycle",
-"circuit",
-"cyclic"
-],
-"uci": "/graph-theory/path",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/path.html"
-},
-{
-"type": "def",
-"title": "Forest",
-"description": "A forest is an undirected acyclic graph.",
-"uci": "/graph-theory/forest",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/forest.html"
-},
-{
-"type": "theorem",
-"title": "Removing cycles can make a path shorter",
-"description": "Let p be a path from u to v which does not contain any negative cycles. Then there exists a simple path p' from u to v such that w(p') \u2264 w(p).",
-"uci": "/graph-theory/simple-path-of-lower-weight",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/simple-path-of-lower-weight.html"
-},
-{
-"type": "def",
-"title": "Topological sort",
-"description": "A topological ordering of a directed graph is an ordering of its vertices such that if (u, v) is an edge then u precedes v in the ordering. The process of finding such an ordering is called topological sorting.",
-"uci": "/graph-theory/toposort",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/toposort.html"
-},
-{
-"type": "def",
-"title": "Transpose of a graph",
-"description": "The transpose of a directed graph is the graph obtained by flipping the direction of every edge.",
-"uci": "/graph-theory/transpose",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/transpose.html"
-},
-{
-"type": "theorem",
-"title": "Kosaraju's Algorithm",
-"description": "Kosaraju's algorithm uses 2 depth first searches to find the strongly connected components of a graph in linear time.",
-"keywords": [
-"SCC",
-"Kosaraju"
-],
-"uci": "/graph-theory/kosaraju-algo",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/kosaraju-algo.html"
-},
-{
-"type": "theorem",
-"title": "Adjacency matrix",
-"description": "The adjacency matrix of a graph is a boolean matrix whose (i, j)th entry is true iff there is an edge from the ith vertex to the jth vertex.",
-"uci": "/graph-theory/adj-matrix",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/adj-matrix.html"
-},
-{
-"type": "def",
-"title": "SCC graph",
-"description": "Let G be a directed graph. The SCC graph of G, denoted as SCC(G), is a directed graph whose vertices correspond to strongly connected components of G. Let C1 and C2 be two SCCs of G. C1 and C2 will have an edge in SCC(G) iff there is an edge in G from some vertex in C1 to some vertex in C2.",
-"uci": "/graph-theory/scc-graph",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/scc-graph.html"
-},
-{
-"type": "def",
-"title": "Graph",
-"description": "A graph G(V, E) is a pair of vertices V and a relation E from V to V.",
-"keywords": [
-"graph",
-"multigraph",
-"vertices",
-"edges",
-"adjacent",
-"loop",
-"simple graph",
-"subgraph",
-"source",
-"destination"
-],
-"uci": "/graph-theory/graph",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/graph.html"
-},
-{
-"type": "theorem",
-"title": "Deleting bridge from graph gives 2 components",
-"description": "If a bridge is deleted from a connected graph, the resulting graph contains 2 connected components.",
-"uci": "/graph-theory/deleting-bridge-gives-2-components",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/deleting-bridge-gives-2-components.html"
-},
-{
-"type": "theorem",
-"title": "Degree sum and number of edges",
-"description": "In an undirected graph, the sum of degree of every vertex equals twice the number of edges. In a directed graph, the sum of in-degree of every vertex equals the sum of out-degree of every vertex which equals the number of edges.",
-"uci": "/graph-theory/degree-sum",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/degree-sum.html"
-},
-{
-"type": "theorem",
-"title": "Breadth-first search",
-"description": "Properties of Breadth-first search in a graph.",
-"keywords": [
-"breadth-first",
-"search",
-"shortest path",
-"bfs"
-],
-"uci": "/graph-theory/bfs",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/bfs.html"
-},
-{
-"type": "theorem",
-"title": "SCC graph is acyclic",
-"uci": "/graph-theory/scc-graph-is-acyclic",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/scc-graph-is-acyclic.html"
-},
-{
-"type": "def",
-"title": "DAG",
-"description": "A DAG is a Directed Acyclic Graph.",
-"uci": "/graph-theory/dag",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dag.html"
-},
-{
-"type": "def",
-"title": "Cut in a graph",
-"description": "In a graph, a cut is a partition of the vertices into 2 sets. A multiway cut is a partition of the vertices into 2 or more sets.",
-"keywords": [
-"cut",
-"multiway cut",
-"min-cut",
-"max-cut",
-"light edge"
-],
-"uci": "/graph-theory/cut",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/cut.html"
-},
-{
-"type": "def",
-"title": "Rooted tree",
-"description": "A directed graph is a rooted tree iff there is a vertex from which there is a unique simple path to every other vertex.",
-"uci": "/graph-theory/trees/rooted-tree",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/rooted-tree.html"
-},
-{
-"type": "theorem",
-"title": "|E| = |V| - 1 in trees",
-"uci": "/graph-theory/trees/e-is-v-minus-1",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/e-is-v-minus-1.html"
-},
-{
-"type": "theorem",
-"title": "Tree iff connected and deleting edge disconnects",
-"description": "A graph is a tree iff it is connected and deleting an edge from it disconnects it.",
-"uci": "/graph-theory/trees/deleting-edge-disconnects",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/deleting-edge-disconnects.html"
-},
-{
-"type": "theorem",
-"title": "Acyclic predecessor graph is union of rooted trees",
-"uci": "/graph-theory/trees/acyclic-predecessor-graph-is-union-of-rooted-trees",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/acyclic-predecessor-graph-is-union-of-rooted-trees.html"
-},
-{
-"type": "theorem",
-"title": "Adding edge between 2 trees gives a tree",
-"description": "Let T1 and T2 be 2 trees which are connected components of an undirected graph. If an edge is added whose one endpoint is in T1 and the other endpoint is in T2, the resulting graph is a tree.",
-"uci": "/graph-theory/trees/joining-2-trees-gives-tree",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/joining-2-trees-gives-tree.html"
-},
-{
-"type": "theorem",
-"title": "Tree iff acyclic and adding edge creates cycle",
-"description": "A graph is a tree iff it is acyclic and adding an edge to it creates a cycle.",
-"uci": "/graph-theory/trees/adding-edge-creates-cycle",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/adding-edge-creates-cycle.html"
-},
-{
-"type": "theorem",
-"title": "G = (V, E) is a tree iff G is connected and |E| = |V|-1",
-"uci": "/graph-theory/trees/connected-and-e-is-v-minus-1",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/connected-and-e-is-v-minus-1.html"
-},
-{
-"type": "theorem",
-"title": "Deleting edge from tree gives 2 trees",
-"description": "If an edge is deleted from a tree, the resulting graph contains 2 connected components which are trees.",
-"uci": "/graph-theory/trees/deleting-edge-gives-2-trees",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/deleting-edge-gives-2-trees.html"
-},
-{
-"type": "theorem",
-"title": "The undirected version of a rooted tree is a free tree",
-"uci": "/graph-theory/trees/undirected-rooted-tree-is-free-tree",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/undirected-rooted-tree-is-free-tree.html"
-},
-{
-"type": "theorem",
-"title": "G = (V, E) is a tree iff G is acyclic and |E| = |V|-1",
-"uci": "/graph-theory/trees/acyclic-and-e-is-v-minus-1",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/acyclic-and-e-is-v-minus-1.html"
-},
-{
-"type": "theorem",
-"title": "Tree has at least 2 leaves",
-"description": "In a tree with at least 2 vertices, there are at least 2 leaves.",
-"uci": "/graph-theory/trees/at-least-2-leaves",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/at-least-2-leaves.html"
+"title": "Linearly independent set is smaller than a span",
+"description": "The size of every finite linearly independent subset of a vector space is less than or equal to the size of every spanning set of that vector space.",
+"uci": "/linear-algebra/vector-spaces/linindep-is-smaller-than-span",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-is-smaller-than-span.html"
 },
 {
 "type": "theoremdef",
-"title": "Tree",
-"description": "A tree is an undirected acyclic connected graph. It can also be defined as a graph where any 2 vertices have a unique simple path between them.",
-"uci": "/graph-theory/trees/tree",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/tree.html"
+"title": "Basis of a vector space",
+"description": "If a set of vectors B is linearly independent and spans a vector space V, then B is a basis of V. All bases of a vector space have the same size.",
+"uci": "/linear-algebra/vector-spaces/basis/basis",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html"
 },
 {
 "type": "theorem",
-"title": "DFS: Parenthesis theorem",
-"description": "The DFS start and end times of vertices follow parenthesis structure.",
-"uci": "/graph-theory/dfs/parens-theorem",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/parens-theorem.html"
+"title": "A set of dim(V) linearly independent vectors is a basis",
+"uci": "/linear-algebra/vector-spaces/basis/n-linindep-is-basis",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/n-linindep-is-basis.html"
 },
 {
 "type": "theorem",
-"title": "DFS: Online edge classification",
-"description": "When an edge is explored during DFS, it can be classified as a tree edge, back edge, forward edge or a cross edge in constant time.",
-"uci": "/graph-theory/dfs/online-edge-classification",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/online-edge-classification.html"
+"title": "Spanning set of size dim(V) is a basis",
+"uci": "/linear-algebra/vector-spaces/basis/n-span-is-basis",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/n-span-is-basis.html"
 },
 {
 "type": "theorem",
-"title": "DFS: Reverse sorting by finish time gives topological ordering",
-"description": "Performing DFS on a directed acyclic graph and sorting the vertices in descending order of finish times gives a topological ordering of vertices.",
-"uci": "/graph-theory/dfs/toposort",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/toposort.html"
+"title": "A matrix is full-rank iff its rows are linearly independent",
+"uci": "/linear-algebra/matrices/full-rank-linindep",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-linindep.html"
 },
 {
 "type": "theorem",
-"title": "DFS: Edge classification in undirected graphs",
-"description": "In an undirected graph, one of (u, v) and (v, u) is a back edge and the other is either a tree edge or a forward edge.",
-"uci": "/graph-theory/dfs/undirected-edge-classification",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/undirected-edge-classification.html"
-},
-{
-"type": "def",
-"title": "DFS: Edge classification",
-"description": "After performing DFS on a graph, the edges of the graph can be partitioned into 4 classes: tree edges, back edges, forward edges and cross edges.",
-"keywords": [
-"tree edge",
-"back edge",
-"forward edge",
-"cross edge"
-],
-"uci": "/graph-theory/dfs/edge-classification",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/edge-classification.html"
+"title": "Minimally spanning iff basis",
+"description": "A finite set of vectors S minimally spans V iff S is a basis.",
+"uci": "/linear-algebra/vector-spaces/basis/minimal-span-is-basis",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/minimal-span-is-basis.html"
 },
 {
 "type": "theorem",
-"title": "Properties of DFS",
-"description": "Properties of Depth-first search in a graph.",
-"keywords": [
-"DFS",
-"depth-first search",
-"parenthesis theorem",
-"depth-first forest",
-"start time",
-"finish time"
-],
-"uci": "/graph-theory/dfs/dfs",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/dfs.html"
+"title": "Basis of F^n",
+"uci": "/linear-algebra/vector-spaces/basis/basis-of-fn",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis-of-fn.html"
 },
 {
 "type": "theorem",
-"title": "Directed graph is cyclic iff DFS gives back edges",
-"description": "A directed graph contains a cycle iff DFS on that graph classifies some edges as back edges.",
-"uci": "/graph-theory/dfs/cycle-iff-back-edges-directed",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/cycle-iff-back-edges-directed.html"
-},
-{
-"type": "theorem",
-"title": "Undirected graph is cyclic iff DFS gives back edges",
-"description": "An undirected graph contains a cycle iff DFS on that graph classifies some edges as back edges.",
-"uci": "/graph-theory/dfs/cycle-iff-back-edges-undirected",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/cycle-iff-back-edges-undirected.html"
-},
-{
-"type": "theorem",
-"title": "DFS on undirected graph gives spanning forest",
-"description": "Running DFS on an undirected graph can be used to find a spanning forest of that graph.",
-"uci": "/graph-theory/dfs/spanning-forest",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/spanning-forest.html"
-},
-{
-"type": "theorem",
-"title": "DFS: White-path theorem",
-"description": "In the depth-first forest of a graph, v is a descendant of u iff at the time when u is visited, there is a path from u to v consisting entirely of white vertices.",
-"uci": "/graph-theory/dfs/white-path-theorem",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/white-path-theorem.html"
+"title": "Matrix of linear transformation",
+"description": "Every linear transformation from F^m to F^n can be expressed as a matrix pre-multiplication. Conversely, a pre-multiplication by a matrix forms a linear transformation.",
+"uci": "/linear-algebra/linear-transformation/matrix",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix.html"
 },
 {
 "type": "theoremdef",
-"title": "DFS: low",
-"uci": "/graph-theory/dfs/low",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/dfs/low.html"
+"title": "Coordinatization over a basis",
+"description": "Let B be a basis of vector space V. Then every vector in V can be expressed uniquely as a finite linear combination of vectors in B. The coefficients of the linear combination are called the coordinates of that vector.",
+"uci": "/linear-algebra/vector-spaces/basis/coordinatization",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/coordinatization.html"
 },
 {
-"type": "def",
-"title": "Spanning tree",
-"description": "The spanning tree of an undirected graph G is a subgraph which is a tree and contains all the vertices of G.",
+"type": "theoremdef",
+"title": "Basis changer",
+"description": "A basis changer is a bijection which maps coordinates of one basis to coorindates of another basis.",
+"uci": "/linear-algebra/vector-spaces/basis/basis-change",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis-change.html"
+},
+{
+"type": "theorem",
+"title": "Basis change is an isomorphic linear transformation",
+"uci": "/linear-algebra/linear-transformation/basis-change",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/basis-change.html"
+},
+{
+"type": "theorem",
+"title": "Vector spaces are isomorphic iff their dimensions are same",
+"description": "Two vector spaces are isomorphic iff they have the same dimension.",
+"uci": "/linear-algebra/linear-transformation/isomorphic-dimension",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/isomorphic-dimension.html"
+},
+{
+"type": "theorem",
+"title": "Canonical decomposition of a linear transformation",
+"description": "Let T be a linear transformation from U to V. Then T = T3.T2.T1 where T1: U to F^dim(U), T2: F^dim(U) to F^dim(V), T3: F^dim(V) to V are linear transformations. This is called the canonical decomposition of T.",
+"uci": "/linear-algebra/linear-transformation/canonical-decomposition",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/canonical-decomposition.html"
+},
+{
+"type": "theoremdef",
+"title": "Eigenvalues and Eigenvectors",
+"description": "Let T be a linear transformation. If T(x) = kx is satisfied for some k and some x, then k is an eigenvalue and x is an eigenvector.",
+"uci": "/linear-algebra/eigenvectors/eigenvector",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenvector.html"
+},
+{
+"type": "theorem",
+"title": "All eigenvalues of a symmetric operator are real",
+"uci": "/linear-algebra/eigenvectors/symmetric-real",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-real.html"
+},
+{
+"type": "theorem",
+"title": "Real matrix with real eigenvalues has real eigenvectors",
+"description": "If a matrix A has only real entries and \u03bb is a real eigenvalue of A, then A has real eigenvectors corresponding to \u03bb.",
+"uci": "/linear-algebra/eigenvectors/real-matrix-with-real-eigenvalue-has-real-eigenvectors",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/real-matrix-with-real-eigenvalue-has-real-eigenvectors.html"
+},
+{
+"type": "theoremdef",
+"title": "Eigenspace",
+"description": "Let A be a matrix and \u03bb be an eigenvalue of A. Then E(\u03bb) is the vector space of all solutions to Ax = \u03bbx.",
+"uci": "/linear-algebra/eigenvectors/eigenspace",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenspace.html"
+},
+{
+"type": "theorem",
+"title": "Eigenvectors of distinct eigenvalues are linearly independent",
+"description": "In all vectors in a set of eigenvectors correspond to different eigenvalues, then the set is linearly independent.",
+"uci": "/linear-algebra/eigenvectors/distinct-eigenvalue-linindep",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/distinct-eigenvalue-linindep.html"
+},
+{
+"type": "theorem",
+"title": "Diagonalization",
+"description": "Let A be a square matrix. Let P be the matrix whose columns are eigenvectors of A. Then AP = PD, where D is a diagonal matrix.",
+"uci": "/linear-algebra/eigenvectors/diagonalization",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/diagonalization.html"
+},
+{
+"type": "theorem",
+"title": "Symmetric operator iff hermitian",
+"description": "Let L: V to V be a linear transformation and A be the square matrix associated with L. Then L is symmetric iff A is hermitian. Also, if T(u) = Au, then A is hermitian iff T is a symmetric operator.",
+"uci": "/linear-algebra/linear-transformation/symmetric-operator-matrix",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/symmetric-operator-matrix.html"
+},
+{
+"type": "theorem",
+"title": "Maximally linearly independent iff basis",
+"description": "A finite set is maximally linearly independent iff it is a basis.",
+"uci": "/linear-algebra/vector-spaces/basis/maximal-linindep-is-basis",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/maximal-linindep-is-basis.html"
+},
+{
+"type": "theorem",
+"title": "Linearly independent set can be expanded into a basis",
+"description": "If a set of vectors is linearly independent, a finite number of vectors can be added to it to make it a basis if the vector space has a finite-sized basis.",
+"uci": "/linear-algebra/vector-spaces/basis/expand-linindep-to-basis",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/expand-linindep-to-basis.html"
+},
+{
+"type": "theorem",
+"title": "Basis of range of linear transformation",
+"description": "If P is a basis of the kernel and P union Q is a basis of U, then T(Q) is a basis of T(U).",
+"uci": "/linear-algebra/linear-transformation/basis-of-range",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/basis-of-range.html"
+},
+{
+"type": "theoremdef",
+"title": "Characteristic polynomial of a matrix",
+"description": "The characteristic polynomial of a matrix A is |xI - A|. Its roots are the eigenvalues of A.",
+"uci": "/linear-algebra/eigenvectors/char-poly",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/char-poly.html"
+},
+{
+"type": "theorem",
+"title": "Degree and monicness of a characteristic polynomial",
+"description": "Let A be an n by n matrix. The characteristic polynomial of A is a monic polynomial of degree n.",
+"uci": "/linear-algebra/eigenvectors/char-poly-degree-monic",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/char-poly-degree-monic.html"
+},
+{
+"type": "theorem",
+"title": "Full-rank square matrix is invertible",
+"description": "Let A be an n by n matrix. Then rank(A) = n iff A has an inverse.",
+"uci": "/linear-algebra/matrices/full-rank-inv",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-inv.html"
+},
+{
+"type": "theorem",
+"title": "AB = I implies BA = I",
+"uci": "/linear-algebra/matrices/product-equals-identity-implies-invertible",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/product-equals-identity-implies-invertible.html"
+},
+{
+"type": "theorem",
+"title": "Determinant of product is product of determinants",
+"description": "|AB| = |A||B|",
+"uci": "/linear-algebra/matrices/determinants/product",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/product.html"
+},
+{
+"type": "theoremdef",
+"title": "Orthogonal matrix",
+"description": "A matrix A is orthogonal iff A'A = I. Equivalently, A is orthogonal iff rows of A are orthonormal.",
+"uci": "/linear-algebra/matrices/orthogonal",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/orthogonal.html"
+},
+{
+"type": "theorem",
+"title": "Matrix of orthonormal basis change",
+"description": "Let P and Q be orthonormal bases of U and V respectively. Then the transformation matrix of the basis-changer from P to Q is orthogonal.",
+"uci": "/linear-algebra/linear-transformation/matrix-of-orthonormal-basis-change",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix-of-orthonormal-basis-change.html"
+},
+{
+"type": "theorem",
+"title": "A is diagonalizable iff there are n linearly independent eigenvectors",
+"description": "Let A be an n by n matrix. Then A is diagonalizable iff A has n linearly independent eigenvectors.",
+"uci": "/linear-algebra/eigenvectors/diag-linindep",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/diag-linindep.html"
+},
+{
+"type": "theorem",
+"title": "RREF([A|I]) = [I|inv(A)] iff A is invertible",
+"description": "This is an algorithm for finding the inverse of a matrix by calculating RREF.",
+"uci": "/linear-algebra/matrices/rref-inv",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rref-inv.html"
+},
+{
+"type": "theorem",
+"title": "Every complex matrix has an eigenvalue",
+"uci": "/linear-algebra/eigenvectors/every-complex-matrix-has-eigenvalue",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/every-complex-matrix-has-eigenvalue.html"
+},
+{
+"type": "theorem",
+"title": "Symmetric operator on V has a basis of orthonormal eigenvectors",
+"description": "Let L be a symmetric operator on V, a vector space over the complex numbers. Then there is a basis of V consisting of orthonormal eigenvectors of L.",
+"uci": "/linear-algebra/eigenvectors/symmetric-operator-has-n-ortho-eigenvectors",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-operator-has-n-ortho-eigenvectors.html"
+},
+{
+"type": "theorem",
+"title": "Orthogonally diagonalizable iff hermitian",
+"description": "A matrix A is said to be orthogonally diagonalizable iff it can be expressed as PDP*, where P is orthogonal. Then A is orthogonally diagonalizable iff A = A*.",
+"uci": "/linear-algebra/eigenvectors/ortho-diag",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/ortho-diag.html"
+},
+{
+"type": "theorem",
+"title": "Square matrices form a (semi)ring",
+"uci": "/linear-algebra/matrices/semiring",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/semiring.html"
+},
+{
+"type": "theorem",
+"title": "gcd(a, b) = gcd(a-b, b)",
 "keywords": [
-"spanning tree",
-"minimum spanning tree",
-"maximum spanning tree",
-"MST"
+"gcd",
+"subtraction"
 ],
-"uci": "/graph-theory/spanning-trees/spanning-tree",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-trees/spanning-tree.html"
+"uci": "/number-theory/gcd/gcd-subtraction",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-subtraction.html"
 },
 {
 "type": "theorem",
-"title": "Generic Greedy MSF Growth Algorithm (GGMSFGA)",
-"description": "The Generic Greedy MSF Growth Algorithm (GGMSFGA) is a generic algorithm for finding the MSF of an undirected graph. GGMSFA maintains a forest F which is a subgraph of some MSF. In each iteration, it chooses a cut C which respects F and adds a light edge of C to F.",
-"uci": "/graph-theory/spanning-trees/ggmsfga",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-trees/ggmsfga.html"
-},
-{
-"type": "theorem",
-"title": "Spanning forest contains all bridges",
-"description": "Let G be an undirected graph. Every spanning forest of G contains all the bridges in G.",
-"uci": "/graph-theory/spanning-trees/spanning-forest-contains-all-bridges",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-trees/spanning-forest-contains-all-bridges.html"
+"title": "Every number has a prime factorization",
+"uci": "/number-theory/prime-factorization/every-number-has-prime-factorization",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/every-number-has-prime-factorization.html"
 },
 {
 "type": "def",
-"title": "Spanning forest",
-"description": "The spanning forest of an undirected graph G is the union of the spanning trees of the connected components of G.",
-"uci": "/graph-theory/spanning-trees/spanning-forest",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-trees/spanning-forest.html"
+"title": "Modular Equivalence",
+"description": "a is equivalent to b mod n iff n divides (a-b).",
+"uci": "/number-theory/modular-equivalence",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/modular-equivalence.html"
 },
 {
 "type": "theorem",
-"title": "Edge replacement in spanning forest using a cut",
-"description": "Let e be an edge crossing a cut of a graph G. Let F be a spanning forest of G which does not contain e. Then we can obtain a different spanning forest of G by replacing an edge in F which crosses the cut by e. Consequently, if e is a light edge of the cut, the weight of the new spanning forest either reduces or stays the same.",
-"uci": "/graph-theory/spanning-trees/edge-replacement",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/spanning-trees/edge-replacement.html"
+"title": "Modular multiplication",
+"description": "a1 \u2261 b1 and a2 \u2261 b2 implies a1a2 \u2261 b1b2",
+"uci": "/number-theory/mod-mult",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/mod-mult.html"
 },
 {
 "type": "theorem",
-"title": "Subpath of shortest path is shortest path",
-"description": "Let p be a shortest path from u to v. Let q be a subpath of p from x to y. Then q is a shortest path from x to y.",
-"uci": "/graph-theory/shortest-paths/shortest-subpath",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/shortest-subpath.html"
-},
-{
-"type": "theorem",
-"title": "Triangle inequality of shortest paths",
-"description": "\u03b4(u, v) + \u03b4(v, w) \u2265 \u03b4(u, w)",
-"uci": "/graph-theory/shortest-paths/triangle-inequality",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/triangle-inequality.html"
-},
-{
-"type": "theorem",
-"title": "Dijkstra's algorithm",
-"description": "For a weighted graph without negative-weight edges, Dijkstra's algorithm finds a shortest-path tree.",
-"uci": "/graph-theory/shortest-paths/dijkstra",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/dijkstra.html"
-},
-{
-"type": "deftheorem",
-"title": "Edge relaxations",
-"description": "A generic algorithm for finding shortest paths from a single source involves keeping an upper bound on the shortest-path-length to each vertex and successively updating it using operations called edge-relaxations.",
-"uci": "/graph-theory/shortest-paths/relaxations",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations.html"
-},
-{
-"type": "theorem",
-"title": "Edge relaxations: Predecessor subgraph is a rooted tree",
-"description": "During relaxations from source s on a weighted graph, the predecessor subgraph is a rooted tree if there are no negative-weight cycles reachable from s.",
-"uci": "/graph-theory/shortest-paths/relaxations-tree",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations-tree.html"
-},
-{
-"type": "theorem",
-"title": "Edge relaxations: Predecessor subgraph is a shortest-path tree after convergence",
-"description": "After relaxations from source s on a weighted graph converge, the predecessor subgraph is a rooted tree.",
-"uci": "/graph-theory/shortest-paths/relaxations-sp-tree",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations-sp-tree.html"
-},
-{
-"type": "deftheorem",
-"title": "Convergence of edge relaxations",
-"description": "Intelligently choosing the order of relaxations can make the shortest-path-length estimate converge to the shortest-path-length.",
-"uci": "/graph-theory/shortest-paths/relaxations-convergence",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/relaxations-convergence.html"
-},
-{
-"type": "theorem",
-"title": "Shortest path weight is -\u221e iff there is a negative-weight cycle",
-"description": "\u03b4(u, v) = -\u221e iff there is some path from u to v containing a negative-weight cycle.",
-"uci": "/graph-theory/shortest-paths/negw-cycle",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/negw-cycle.html"
+"title": "Modular addition",
+"description": "a1 \u2261 b1 and a2 \u2261 b2 implies a1+a2 \u2261 b1+b2",
+"uci": "/number-theory/mod-add",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/mod-add.html"
 },
 {
 "type": "def",
-"title": "Shortest-path tree",
-"description": "For a graph G, a shortest-path tree T is a tree rooted at a vertex s such that the unique path from s to v in T is a shortest path from s to v in G.",
-"uci": "/graph-theory/shortest-paths/shortest-path-tree",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/shortest-paths/shortest-path-tree.html"
+"title": "Coprime",
+"description": "Two numbers are coprime iff 1 is the only positive number which divides both of them.",
+"uci": "/number-theory/coprime",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/coprime.html"
+},
+{
+"type": "def",
+"title": "Euler's Totient Function",
+"description": "Euler's totient function \u03d5(n) is the number of numbers smaller than n and coprime to it.",
+"uci": "/number-theory/eulers-totient-function",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/eulers-totient-function.html"
 },
 {
 "type": "theorem",
-"title": "q(x)F[x] is in p(x)F[x] iff p(x) divides q(x)",
-"uci": "/polynomials/subideal-condition",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/subideal-condition.html"
+"title": "Integer Division Theorem",
+"keywords": [
+"euclid",
+"division"
+],
+"description": "Let a and b be integers, with b > 0. Then there exist unique integers q and r such that a = b*q + r and 0 \u2264 r < b.",
+"uci": "/number-theory/integer-division-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/integer-division-theorem.html"
 },
 {
 "type": "theorem",
-"title": "Factor theorem",
-"description": "(x-a) is a factor of p(x) iff p(a) = 0",
-"uci": "/polynomials/factor-theorem",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/factor-theorem.html"
+"title": "Every ideal of Z is a principal ideal",
+"uci": "/abstract-algebra/rings/ideal-of-z-is-principal",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ideal-of-z-is-principal.html"
 },
 {
 "type": "theorem",
-"title": "Degree of factor is less than degree of polynomial",
-"description": "If a(x) divides p(x), degree of a(x) lies between 0 and deg(p).",
-"uci": "/polynomials/degree-of-factor",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-factor.html"
+"title": "Zn is a ring",
+"description": "The set of integers modulo n is a ring.",
+"uci": "/abstract-algebra/rings/zn-is-ring",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/zn-is-ring.html"
 },
 {
 "type": "theorem",
-"title": "F[x]/p(x) is isomorphic to F[x]/p(x)F[x]",
-"uci": "/polynomials/modulo-isomorphic",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/modulo-isomorphic.html"
+"title": "GCD is the smallest Linear Combination",
+"description": "The gcd of a set of numbers is their smallest positive linear combination.",
+"uci": "/number-theory/gcd/gcd-is-min-lincomb",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-is-min-lincomb.html"
+},
+{
+"type": "theorem",
+"title": "Subgroups of a cyclic group",
+"description": "For an infinite-order cyclic group <a>, subgroups are <a^k> for all k. For a cyclic group <a> of order n, subgroups are <a^k> for all divisors k of n.",
+"uci": "/abstract-algebra/groups/cyclic-groups/subgroups-of-cyclic-group",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/subgroups-of-cyclic-group.html"
+},
+{
+"type": "theorem",
+"title": "Common divisor divides GCD",
+"description": "Commmon divisor of a set of numbers divides their GCD.",
+"uci": "/number-theory/gcd/common-divisor-divides-gcd",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/common-divisor-divides-gcd.html"
+},
+{
+"type": "theorem",
+"title": "gcd(a1/d, a2/d, ..., an/d) = gcd(a1, a_2, ..., an)/d",
+"uci": "/number-theory/gcd/gcd-divide",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-divide.html"
+},
+{
+"type": "theorem",
+"title": "A polynomial in rationals is a rational times a polynomial in integers",
+"uci": "/polynomials/rational-to-int",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/rational-to-int.html"
+},
+{
+"type": "theorem",
+"title": "GCD partitioning of Zn",
+"description": "Zn equals union of dZ(n/d)* for all divisors d of n.",
+"uci": "/number-theory/gcd-partitioning-of-zn",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd-partitioning-of-zn.html"
+},
+{
+"type": "theorem",
+"title": "gcd is associative",
+"description": "gcd(a1, a2, ..., am, b1, b2, ... bn) = gcd(gcd(a1, a2, ..., am), b1, b2, ..., bm)",
+"uci": "/number-theory/gcd/associativity",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/associativity.html"
+},
+{
+"type": "theorem",
+"title": "If x divides ab and x is coprime to a, then x divides b",
+"description": "If a number divides the product of two numbers and is coprime to the first number in the product, then it must divide the second number in the product.",
+"uci": "/number-theory/if-coprime-to-first-then-divides-second",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/if-coprime-to-first-then-divides-second.html"
+},
+{
+"type": "theorem",
+"title": "Order of elements in cyclic group",
+"description": "Order of elements in a cyclic group.",
+"uci": "/abstract-algebra/groups/cyclic-groups/order-of-elements-in-cyclic-group",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/order-of-elements-in-cyclic-group.html"
+},
+{
+"type": "theorem",
+"title": "A cyclic group of order n has \u03d5(n) generators",
+"uci": "/abstract-algebra/groups/cyclic-groups/cyclic-group-has-phi-generators",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/cyclic-group-has-phi-generators.html"
+},
+{
+"type": "theorem",
+"title": "Euclid's lemma",
+"description": "If a prime divides the product of two numbers, it must divide at least one of those numbers.",
+"uci": "/number-theory/euclids-lemma",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/euclids-lemma.html"
+},
+{
+"type": "theorem",
+"title": "Zp is an integral domain",
+"description": "If p is prime, Zp is an integral domain",
+"uci": "/abstract-algebra/rings/zp-is-intdom",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/zp-is-intdom.html"
+},
+{
+"type": "theorem",
+"title": "Gauss' Lemma",
+"description": "If a polynomial in Z[x] has a factor in Q[x], it also has a factor in Z[x] of the same degree.",
+"uci": "/polynomials/gauss-lemma",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/gauss-lemma.html"
 },
 {
 "type": "theorem",
@@ -1885,124 +1922,120 @@
 },
 {
 "type": "theorem",
-"title": "Zero divisors of a polynomial",
-"description": "Ring R has no zero divisors iff the ring of polynomials R[x] has no zero divisors",
-"uci": "/polynomials/zero-divisors",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/zero-divisors.html"
-},
-{
-"type": "theorem",
-"title": "Polynomial GCD theorem",
-"description": "The GCD of polynomials is unique and equals their least degree monic linear combination.",
-"uci": "/polynomials/gcd-theorem",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/gcd-theorem.html"
-},
-{
-"type": "theorem",
-"title": "Degree of sum of polynomials",
-"description": "The degree of sum of 2 polynomials is at most the maximum of the degrees of those polynomials.",
-"uci": "/polynomials/degree-of-sum",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-sum.html"
+"title": "Fundamental Theorem of Arithmetic",
+"keywords": [
+"prime",
+"factor",
+"factorize",
+"factorization"
+],
+"description": "An integer can be written as a product of primes in a unique way.",
+"uci": "/number-theory/prime-factorization/fundamental-theorem-of-arithmetic",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/fundamental-theorem-of-arithmetic.html"
 },
 {
 "type": "def",
-"title": "Polynomial divisibility",
-"description": "A polynomial p(x) is divisible in F[x] by q(x) iff there exists a polynomial r(x) such that p(x), q(x), r(x) are in F[x] and p(x) = q(x)r(x).",
-"uci": "/polynomials/divisibility",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/divisibility.html"
+"title": "Prime Factorization Exponent List (PFEL)",
+"description": "PFEL of a number is the list of exponents in the prime factorization of that number.",
+"uci": "/number-theory/prime-factorization/pfel",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/pfel.html"
 },
 {
 "type": "theorem",
-"title": "Degree of product of polynomials",
-"description": "deg(pq) \u2264 deg(p) + deg(q). If coefficients of p and q are from an integral domain, deg(pq) = deg(p) + deg(q).",
-"uci": "/polynomials/degree-of-product",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/degree-of-product.html"
-},
-{
-"type": "def",
-"title": "Irreducible polynomial",
-"description": "A polynomial is irreducible iff it cannot be expressed as a product of polynomials of lower degree.",
-"uci": "/polynomials/irreducible",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/irreducible.html"
-},
-{
-"type": "def",
-"title": "Polynomial",
-"uci": "/polynomials/polynomial",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/polynomial.html"
+"title": "PFEL of ratio is difference of PFEL",
+"uci": "/number-theory/prime-factorization/pfel-of-ratio-is-difference-of-pfel",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/pfel-of-ratio-is-difference-of-pfel.html"
 },
 {
 "type": "theorem",
-"title": "A polynomial in rationals is a rational times a polynomial in integers",
-"uci": "/polynomials/rational-to-int",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/rational-to-int.html"
+"title": "PFEL of product is sum of PFEL",
+"uci": "/number-theory/prime-factorization/pfel-of-product-is-sum-of-pfel",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/pfel-of-product-is-sum-of-pfel.html"
 },
 {
 "type": "theorem",
-"title": "The ideal generated by an irreducible polynomial is maximal",
-"uci": "/polynomials/irred-ideal-is-maximal",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/irred-ideal-is-maximal.html"
+"title": "Divisible iff PFEL is less than or equal",
+"description": "a divides b iff PFEL(a) \u2264 PFEL(b).",
+"uci": "/number-theory/prime-factorization/divisible-iff-pfel-less-than",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/divisible-iff-pfel-less-than.html"
 },
 {
 "type": "theorem",
-"title": "Polynomial division theorem",
-"description": "If a and b are polynomials, a can be uniquely expressed as bq + r where deg(r) < deg(b).",
-"uci": "/polynomials/division-theorem",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/division-theorem.html"
-},
-{
-"type": "theoremdef",
-"title": "F[x]/p(x): A ring",
-"description": "F[x]/p(x) is the ring of all polynomials modulo p(x).",
-"uci": "/polynomials/modulo-ring",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/modulo-ring.html"
-},
-{
-"type": "def",
-"title": "GCD of polynomials",
-"description": "The GCD of a set of polynomials over a ring with unity is a largest degree monic polynomial which divides all polynomials in that set. Since 1 divides all polynomials, every set of polynomials has a GCD.",
-"uci": "/polynomials/gcd",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/gcd.html"
+"title": "PFEL of lcm is max of PFEL",
+"uci": "/number-theory/prime-factorization/pfel-of-lcm-is-max-of-pfel",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/pfel-of-lcm-is-max-of-pfel.html"
 },
 {
 "type": "theorem",
-"title": "Every ideal in F[x] is principal",
-"description": "Every ideal the ring of polynomials of a field is a principal ideal",
-"uci": "/polynomials/every-ideal-is-principal",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/every-ideal-is-principal.html"
+"title": "PFEL of gcd is min of PFEL",
+"uci": "/number-theory/prime-factorization/pfel-of-gcd-is-min-of-pfel",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/pfel-of-gcd-is-min-of-pfel.html"
 },
 {
 "type": "theorem",
-"title": "The ring F[x]/p(x) is a field iff p is irreducible",
-"uci": "/polynomials/modulo-field",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/modulo-field.html"
+"title": "GCD times LCM equals product",
+"description": "gcd(a, b) * lcm(a, b) = a * b",
+"uci": "/number-theory/gcd-times-lcm-equals-product",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd-times-lcm-equals-product.html"
 },
 {
 "type": "theorem",
-"title": "p(x)F[x] = F[x] iff p is a non-zero constant",
-"uci": "/polynomials/principal-ideal-trivial",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/principal-ideal-trivial.html"
+"title": "Zm \u00d7 Zn is isomorphic to Zmn iff m and n are coprime",
+"uci": "/abstract-algebra/groups/isomorphism/zm-cross-zn-isomorphic-to-zmn",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/zm-cross-zn-isomorphic-to-zmn.html"
 },
 {
 "type": "theorem",
-"title": "Comparing coefficients of a polynomial with disjoint variables",
-"description": "Let there be a (possibly multi-variate) polynomial over an integral domain where each variable is present in at most one term. If the polynomial evaluates to 0 for all inputs, then all coefficients of the polynomial are zero.",
-"uci": "/polynomials/compare-coeff-disjoint-var",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/compare-coeff-disjoint-var.html"
+"title": "ab is coprime to x iff a and b are coprime to x",
+"uci": "/number-theory/ab-coprime-to-x-iff-a-and-b-coprime-to-x",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/ab-coprime-to-x-iff-a-and-b-coprime-to-x.html"
 },
 {
 "type": "theorem",
-"title": "Polynomials of a ring form a ring",
-"description": "The set of all polynomials is a ring if the coefficients are from a ring.",
-"uci": "/polynomials/ring",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/ring.html"
+"title": "Multiplication permutes Zn*",
+"description": "Multiplying all elements of Zn* by a number coprime to n returns a permutation of Zn*",
+"uci": "/number-theory/multiplication-permutes-znstar",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/multiplication-permutes-znstar.html"
 },
 {
 "type": "theorem",
-"title": "Gauss' Lemma",
-"description": "If a polynomial in Z[x] has a factor in Q[x], it also has a factor in Z[x] of the same degree.",
-"uci": "/polynomials/gauss-lemma",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/gauss-lemma.html"
+"title": "Sum of \u03d5 of divisors",
+"description": "The sum of \u03d5(d) for all divisors d of n equals n.",
+"keywords": [
+"phi",
+"totient",
+"ETF"
+],
+"uci": "/number-theory/sum-of-phi-of-divisors",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/sum-of-phi-of-divisors.html"
+},
+{
+"type": "theorem",
+"title": "Existence of Modular Inverse",
+"description": "Modular inverse of a mod n exists iff gcd(a, n) = 1",
+"uci": "/number-theory/mod-inv-existence",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/mod-inv-existence.html"
+},
+{
+"type": "theorem",
+"title": "Zp is a field",
+"description": "If p is prime, Zp is a field",
+"uci": "/abstract-algebra/rings/zp-is-field",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/zp-is-field.html"
+},
+{
+"type": "theorem",
+"title": "Zn* is a group",
+"description": "The set of integers coprime to n is a group under multiplication mod n",
+"uci": "/abstract-algebra/groups/znstar-is-a-group",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/znstar-is-a-group.html"
+},
+{
+"type": "theorem",
+"title": "Euler's Theorem",
+"description": "If a and n are coprime, then a^phi(n) \u2261 1 (mod n), where phi is Euler's Totient Function.",
+"uci": "/number-theory/eulers-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/eulers-theorem.html"
 }
 ]
 }

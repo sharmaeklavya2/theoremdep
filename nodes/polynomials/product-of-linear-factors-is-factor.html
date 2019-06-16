@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Factor theorem - TheoremDep</title>
-<meta name="description" content="(x-a) is a factor of p(x) iff p(a) = 0" />
+<title>Product of linear factors is a factor - TheoremDep</title>
+<meta name="description" content="If (x-a1), (x-a2), ..., (x-an) are factors of p(x), then (x-a1)(x-a2)...(x-an) is a factor of p(x)." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/javascript">
 window.MathJax = {
@@ -27,38 +27,55 @@ window.MathJax = {
 </nav>
 
 <div id="main">
-<h1>Factor theorem</h1>
+<h1>Product of linear factors is a factor</h1>
 <h2> Dependencies: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/division-theorem.html">
-        <span class="deptitle">Polynomial division theorem</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field-is-integral-domain.html">
+        <span class="deptitle">A field is an integral domain</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/divisibility.html">
+        <span class="deptitle">Polynomial divisibility</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/factor-theorem.html">
+        <span class="deptitle">Factor theorem</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/zero-divisors.html">
+        <span class="deptitle">Zero divisors of a polynomial</span>
     </a>
     </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $F$ be a field. Let $p(x) \in F[x]$ and $a \in F$.</p>
-<p>$p(a) = 0 \iff (x-a) \mid p(x)$</p>
-<h2>Proof of 'only if' part</h2>
-<p>Let $p(a) = 0$.</p>
-<p>By the division theorem, there is a unique $(q, r)$ such that $p(x) = (x-a)q(x) + r(x)$
-such that $\deg(r) &lt; \deg(x-a) = 1$.</p>
-<p>$\deg(r) &lt; 1 \Rightarrow r \in F$. Therefore, $p(x) = (x-a)q(x) + r$.</p>
-<p>$ 0 = p(a) = (a-a)q(a) + r = r$.</p>
-<p>Therefore, $p(x) = (x-a)q(x) \Rightarrow (x-a) \mid \mid p(x)$.</p>
-<h2>Proof of 'if' part</h2>
-<p>$(x-a) \mid p(x) \Rightarrow p(x) = (x-a)q(x)$ for some $q(x) \in F[x]$.</p>
-<p>Therefore, $p(a) = (a-a)q(a) = 0$.</p>
+<p>Let $F$ be a field and $p(x) \in F[x]$.
+Let $x-a_i$ be a factor of $p(x)$ for $1 \le i \le n$, where $i \neq j \iff a_i \neq a_j$.
+Then $\prod_{i=1}^n (x-a_i)$ is also a factor of $p(x)$.</p>
+<h2>Proof by induction</h2>
+<p>Let $P(n): (\forall 0 \le i &lt; n, (x-a_i) \mid p(x)) \implies \left(\prod_{i=1}^n (x-a_i)\right) \mid p(x)$.</p>
+<p>Base case: $P(0)$ and $P(1)$ are trivially true.</p>
+<p><strong>Inductive step:</strong></p>
+<p>Assume $P(n-1)$ is true.
+Let $r(x) = \prod_{i=1}^{n-1} (x-a_i)$.
+Then $p(x) = r(x)q(x)$.</p>
+<p>Since $(x-a_n) \mid p(x)$, $p(a_n) = 0$ by factor theorem.
+$r(a_n) = \prod_{i=1}^{n-1} (a_n - a_i) \neq 0$, since all $a_i$ are different from $a_n$
+and products of non-zero elements in a field is non-zero.</p>
+<p>Since $0 = p(a_n) = r(a_n)q(a_n)$ and $r(a_n) \neq 0$, $q(a_n)$ must be 0, because $F$ has no zero-divisors.
+Therefore, $(x-a_n) \mid q(x)$ by factor theorem.</p>
+<p>Let $q(x) = (x-a_n)s(x)$. $p(x) = r(x)q(x) = r(x)(x-a_n)s(x)$.
+Therefore, $r(x)(x-a_n) \mid p(x)$. Therefore, $P(n)$ is true.</p>
+<p>Since $P(0)$ and $P(1)$ are true and $P(n-1) \Rightarrow P(n)$,
+$P(n)$ is true for all $n \ge 0$ by mathematical induction.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/product-of-linear-factors-is-factor.html">
-        <span class="deptitle">Product of linear factors is a factor</span>
-    </a>
-    </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/at-most-degree-zeros.html">
         <span class="deptitle">A polynomial of degree n has at most n zeros</span>
@@ -66,7 +83,7 @@ such that $\deg(r) &lt; \deg(x-a) = 1$.</p>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 6</li><li>Number of transitive dependencies: 11</li></ul>
+<ul><li>Depth: 7</li><li>Number of transitive dependencies: 13</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -94,6 +111,11 @@ such that $\deg(r) &lt; \deg(x-a) = 1$.</p>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/zero-divisors.html">
         <span class="deptitle">Zero divisors of a polynomial</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/divisibility.html">
+        <span class="deptitle">Polynomial divisibility</span>
     </a>
     </li>
     <li>
@@ -129,6 +151,11 @@ such that $\deg(r) &lt; \deg(x-a) = 1$.</p>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/factor-theorem.html">
         <span class="deptitle">Factor theorem</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/product-of-linear-factors-is-factor.html">
+        <span class="deptitle">Product of linear factors is a factor</span>
     </a>
     </li>
 </ol>
