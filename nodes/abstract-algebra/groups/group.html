@@ -31,7 +31,7 @@ window.MathJax = {
 <h2 class="no-deps"> Dependencies: None </h2>
 
 <div class="horizontal-rule"></div>
-<p>A group G is a set S along with a binary operator $*$ which satisfies certain properties:</p>
+<p>A group $G$ is a set $S$ along with a binary operator $*$ which satisfies certain properties:</p>
 <ul>
 <li><strong>Closure</strong>: $\forall a \in S, \forall b \in S, a * b \in S$.</li>
 <li><strong>Associativity</strong>: $\forall a,b,c \in S, (a*b)*c = a*(b*c)$.</li>
@@ -41,6 +41,15 @@ window.MathJax = {
 <li><strong>Existence of Inverses</strong>: $\forall a \in S, (\exists l \in S, l*a = e) \wedge (\exists r \in S, a*r = e)$.
   It can be proven that $l$ is unique, $r$ is unique and $l = r$.</li>
 </ul>
+<p>The order of $G$, denoted as $|G|$, is the number of elements in $G$.</p>
+<p>For $g \in G$ and $k \in \mathbb{Z}$,
+\[ g^k = \begin{cases}
+g*g*\ldots*g \; (k \textrm{ times}) &amp; \textrm{if } k &gt; 0
+\\ e &amp; \textrm{if } k = 0
+\\ g^{-1}*g^{-1}*\ldots*g^{-1} \; (k \textrm{ times}) &amp; \textrm{if } k &lt; 0
+\end{cases} \]</p>
+<p>$\operatorname{order}(g)$ is the smallest positive integer $k$ such that $g^k = e$.
+If such a $k$ does not exist, $\operatorname{order}(g) = \infty$.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
@@ -62,8 +71,18 @@ window.MathJax = {
     </a>
     </li>
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/subgroup.html">
+        <span class="deptitle">Subgroup</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/subgroup-condition.html">
         <span class="deptitle">Conditions for a subset to be a subgroup</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/order-of-element-in-finite-group-is-finite.html">
+        <span class="deptitle">Order of element in finite group is finite</span>
     </a>
     </li>
     <li>
@@ -95,11 +114,6 @@ window.MathJax = {
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/permutation-group.html">
         <span class="deptitle">Permutation group</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/subgroups-of-cyclic-group.html">
-        <span class="deptitle">Subgroups of a cyclic group</span>
     </a>
     </li>
     <li>

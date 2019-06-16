@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Condition for a subset to be a subgroup - TheoremDep</title>
-<meta name="description" content="Condition for a subset to be a subgroup." />
+<title>Cyclic Group - TheoremDep</title>
+<meta name="description" content="A cyclic group with generator g is the group of all powers of g." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/javascript">
 window.MathJax = {
@@ -27,14 +27,9 @@ window.MathJax = {
 </nav>
 
 <div id="main">
-<h1>Condition for a subset to be a subgroup</h1>
+<h1>Cyclic Group</h1>
 <h2> Dependencies: </h2>
 <ol class="deplist">
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
-        <span class="deptitle">Group</span>
-    </a>
-    </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/subgroup.html">
         <span class="deptitle">Subgroup</span>
@@ -48,59 +43,47 @@ window.MathJax = {
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>$H$ is a subgroup of $G$ iff $H \neq \phi$ and $(h_1, h_2 \in H \Rightarrow h_1 h_2^{-1} \in H)$.</p>
-<h2>Proof</h2>
-<p>We will prove both sides of the implication.</p>
-<h3>Part 1</h3>
-<p>Let $H$ be a group. Then $H \neq \phi$.</p>
-<p>$h_1, h_2 \in H \Rightarrow h_1, h_2^{-1} \in H \Rightarrow h_1 h_2^{-1} \in H$.</p>
-<p>Therefore, if $H$ is a subgroup of $G$, then $H \neq \phi$ and $(h_1, h_2 \in H \Rightarrow h_1 h_2^{-1} \in H)$.</p>
-<h3>Part 2</h3>
-<p>$H \neq \phi \Rightarrow \exists h \in H$.</p>
-<p>In $(h_1, h_2 \in H \Rightarrow h_1 h_2^{-1} \in H)$:</p>
+<p>Let $G$ be a group and $g \in G$.
+Then the cyclic subgroup with generator $g$, denoted as $\langle g \rangle$, is $\{g^k: k \in \mathbb{Z}\}$.</p>
+<p>A group $G$ is said to be cyclic if $\exists g \in G, \langle g \rangle = G$.</p>
+<h2>Proof that $\langle g \rangle$ is a subgroup of $G$</h2>
 <ul>
-<li>Substitute $(h_1=h, h_2=h)$ to get $\operatorname{id}(G) \in H$.</li>
-<li>Substitute $(h_1=\operatorname{id}(G), h_2=h)$ to get $h^{-1} \in H$.</li>
-<li>$(h_1=h_1, h_2=h_2^{-1})$ to get $h_1 h_2 \in H$.</li>
+<li>Closure: $g^i * g^j = g^{i+j} \in \langle g \rangle$.</li>
+<li>Identity of $G$ is $e = g^0 \in \langle g \rangle$.</li>
+<li>Inverse of $g^k$ is $g^{-k}$, because $g^k * g^{-k} = g^{k + (-k)} = g^0 = e$.</li>
 </ul>
-<p>By the above 3 properties, $H$ is a subgroup of $G$.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/second-isomorphism-theorem.html">
-        <span class="deptitle">Second isomorphism theorem</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/subgroups-of-cyclic-group.html">
+        <span class="deptitle">Subgroups of a cyclic group</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/alternating-group.html">
-        <span class="deptitle">Alternating Group</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/order-of-cyclic-group.html">
+        <span class="deptitle">Order of cyclic subgroup is order of generator</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/factor-groups/correspondence-theorem.html">
-        <span class="deptitle">Correspondence theorem</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/group-of-prime-order-is-cyclic.html">
+        <span class="deptitle">Group of prime order is cyclic</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/homomorphism/subgroup.html">
-        <span class="deptitle">Homomorphic mapping of subgroup of domain is subgroup of codomain</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/order-of-elements-in-cyclic-group.html">
+        <span class="deptitle">Order of elements in cyclic group</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/subring-condition.html">
-        <span class="deptitle">Conditions for a subset of a ring to be a subring</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/cyclic-group-has-phi-generators.html">
+        <span class="deptitle">A cyclic group of order n has ϕ(n) generators</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/subspace-condition.html">
-        <span class="deptitle">Condition for being a subspace</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/modulo-ring.html">
-        <span class="deptitle">F[x]/p(x): A ring</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/isomorphic-to-z.html">
+        <span class="deptitle">Cyclic groups are isomorphic to Z or Zn</span>
     </a>
     </li>
 </ol>
@@ -136,8 +119,8 @@ window.MathJax = {
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/subgroup-condition-2.html">
-        <span class="deptitle">Condition for a subset to be a subgroup</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/cyclic-group.html">
+        <span class="deptitle">Cyclic Group</span>
     </a>
     </li>
 </ol>

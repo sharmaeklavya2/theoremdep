@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Homomorphism on groups - TheoremDep</title>
-<meta name="description" content="A homomorphism ϕ is a function from one group to another such that ϕ(ab) = ϕ(a)ϕ(b)." />
+<title>Order of element in finite group is finite - TheoremDep</title>
+<meta name="description" content="Let g be an element of the group G. If G is finite, then order(g) is finite." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/javascript">
 window.MathJax = {
@@ -27,7 +27,7 @@ window.MathJax = {
 </nav>
 
 <div id="main">
-<h1>Homomorphism on groups</h1>
+<h1>Order of element in finite group is finite</h1>
 <h2> Dependencies: </h2>
 <ol class="deplist">
     <li>
@@ -38,26 +38,27 @@ window.MathJax = {
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $G$ be a group.
-Let $\phi: G \mapsto G$ be a function.
-Then $\phi$ is a homomorphism iff $\forall a, b \in G, \phi(ab) = \phi(a)\phi(b)$.</p>
+<p>Let $G$ be a group and $g \in G$.
+If $G$ is finite then $\operatorname{order}(g)$ is finite.</p>
+<h2>Proof</h2>
+<p>Consider the infinite sequence $[g^0, g^1, g^2, g^3, \ldots]$.
+By closure of $G$, $g^i \in G$ for all $i$.
+Since $G$ is finite but this sequence is infinite, there must be repetition in this sequence.</p>
+<p>Let $i$ be the first index with a repeated element,
+i.e. the smallest integer for which $\exists j &lt; i$ such that $g^j = g^i$.
+$ g^i = g^j \implies g^{i-j} = e = g^0 $.
+$j &lt; i \Rightarrow i - j &gt; 0$, so $i - j$ is an index with a repeated element, the element being $e$.
+For $i$ to be the smallest index with a repeated element, $i \le i - j \Rightarrow j = 0$.
+Therefore, the first element to be repeated is $e$.</p>
+<p>Therefore, there exists a positive integer $i$ such that $g^i = e$.
+Therefore, $\operatorname{order}(g) = i$, which is finite.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/homomorphism/mapping-of-power-is-power-of-mapping.html">
-        <span class="deptitle">Mapping of power is power of mapping</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/homomorphism/subgroup.html">
-        <span class="deptitle">Homomorphic mapping of subgroup of domain is subgroup of codomain</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/homomorphism/normal-subgroup.html">
-        <span class="deptitle">Homomorphic mapping and inverse mapping of normal subgroup is normal</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/order-of-cyclic-group.html">
+        <span class="deptitle">Order of cyclic subgroup is order of generator</span>
     </a>
     </li>
 </ol>
@@ -73,8 +74,8 @@ Then $\phi$ is a homomorphism iff $\forall a, b \in G, \phi(ab) = \phi(a)\phi(b)
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/homomorphism/homomorphism.html">
-        <span class="deptitle">Homomorphism on groups</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/order-of-element-in-finite-group-is-finite.html">
+        <span class="deptitle">Order of element in finite group is finite</span>
     </a>
     </li>
 </ol>

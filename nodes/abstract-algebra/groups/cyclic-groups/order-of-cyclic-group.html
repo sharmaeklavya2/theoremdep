@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Order of element divides order of group - TheoremDep</title>
-<meta name="description" content="Track dependencies between theorems." />
+<title>Order of cyclic subgroup is order of generator - TheoremDep</title>
+<meta name="description" content="Let g be an element of the group G. Then |<g>| = order(g)." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/javascript">
 window.MathJax = {
@@ -27,52 +27,56 @@ window.MathJax = {
 </nav>
 
 <div id="main">
-<h1>Order of element divides order of group</h1>
+<h1>Order of cyclic subgroup is order of generator</h1>
 <h2> Dependencies: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
-        <span class="deptitle">Group</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/cyclic-group.html">
+        <span class="deptitle">Cyclic Group</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/order-of-cyclic-group.html">
-        <span class="deptitle">Order of cyclic subgroup is order of generator</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/order-of-element-in-finite-group-is-finite.html">
+        <span class="deptitle">Order of element in finite group is finite</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/lagranges-theorem.html">
-        <span class="deptitle">Lagrange's Theorem</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/integer-division-theorem.html">
+        <span class="deptitle">Integer Division Theorem</span>
     </a>
     </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $G$ be a finite group and $g \in G$. Then $\operatorname{order}(g) \mid |G|$.</p>
+<p>Let $G$ be a finite group and $g \in G$.
+Then $|\langle g \rangle| = \operatorname{order}(g)$.</p>
 <h2>Proof</h2>
-<p>$$
-g \in G
-\Rightarrow \langle g \rangle \subseteq G
-\Rightarrow |\langle g \rangle| \mid |G|
-\Rightarrow \operatorname{order}(g) \mid |G|
-$$</p>
+<p>Let $k = \operatorname{order}(g)$. Therefore, $k \ge 1$.</p>
+<h3>Case 1: $k = \infty$</h3>
+<p>Order of an element of a finite group is finite.
+Therefore, $|\langle g \rangle|$ is finite implies $k$ is finite.
+The contrapositive is that $k = \infty \implies |\langle g \rangle| = \infty$.
+Therefore, $|\langle g \rangle| = k$.</p>
+<h3>Case 2: $k$ is finite</h3>
+<p>Let $H = \{g^0, g^1, \ldots, g^{k-1}\}$.
+Therefore, $|H| = k$ and $H \subseteq \langle g \rangle$.</p>
+<p>Let $i \in \mathbb{Z}$. By the integer division theorem,
+$\exists q \exists r$ such that $i = qk + r$ where $0 \le r &lt; k$.
+\[ g^i = g^{qk+r} = (g^{k})^q * g^r = g^r \in H \]</p>
+<p>Therefore, $\langle g \rangle \subseteq H \implies \langle g \rangle = H$.
+Therefore, $|\langle g \rangle| = k$.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group-elem-to-the-power-group-size-equals-identity.html">
-        <span class="deptitle">Group element to the power group size equals identity</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/group-of-prime-order-is-cyclic.html">
-        <span class="deptitle">Group of prime order is cyclic</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/order-of-element-divides-order-of-group.html">
+        <span class="deptitle">Order of element divides order of group</span>
     </a>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 5</li><li>Number of transitive dependencies: 14</li></ul>
+<ul><li>Depth: 4</li><li>Number of transitive dependencies: 8</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -80,16 +84,6 @@ $$</p>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
         <span class="deptitle">Group</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/coset.html">
-        <span class="deptitle">Coset</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/size.html">
-        <span class="deptitle">Size of coset equals size of subset</span>
     </a>
     </li>
     <li>
@@ -113,21 +107,6 @@ $$</p>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/coset-equals-subgroup-iff-elem-in-subgroup.html">
-        <span class="deptitle">gH = H iff g in H</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/cosets-are-either-identical-or-disjoint.html">
-        <span class="deptitle">Two cosets are either identical or disjoint</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/lagranges-theorem.html">
-        <span class="deptitle">Lagrange's Theorem</span>
-    </a>
-    </li>
-    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/subgroup-condition.html">
         <span class="deptitle">Conditions for a subset to be a subgroup</span>
     </a>
@@ -145,11 +124,6 @@ $$</p>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/order-of-cyclic-group.html">
         <span class="deptitle">Order of cyclic subgroup is order of generator</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/order-of-element-divides-order-of-group.html">
-        <span class="deptitle">Order of element divides order of group</span>
     </a>
     </li>
 </ol>

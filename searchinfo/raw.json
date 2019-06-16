@@ -472,20 +472,6 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/associativity.html"
 },
 {
-"type": "theorem",
-"title": "Product of normal cosets is well-defined",
-"description": "Let N be a normal subgroup. Then the product (aN)(bN) = (ab)N is well-defined.",
-"uci": "/abstract-algebra/cosets/product-of-normal-cosets",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/product-of-normal-cosets.html"
-},
-{
-"type": "theoremdef",
-"title": "Factor group",
-"description": "The group of all cosets of a normal subgroup is called the factor group or quotient group.",
-"uci": "/abstract-algebra/groups/factor-groups/factor-group",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/factor-groups/factor-group.html"
-},
-{
 "type": "def",
 "title": "Ring",
 "description": "A ring is a set with 2 operations (addition and multiplication) which satisfies certain properties.",
@@ -886,6 +872,81 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/homomorphism/mapping-of-power-is-power-of-mapping.html"
 },
 {
+"type": "def",
+"title": "Isomorphism on Groups",
+"description": "Two groups are isomorphic iff they are related via a bijection \u03d5 such that \u03d5(ab) = \u03d5(a)\u03d5(b).",
+"uci": "/abstract-algebra/groups/isomorphism/group-isomorphism",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/group-isomorphism.html"
+},
+{
+"type": "theorem",
+"title": "Inverse of a group isomorphism is a group isomorphism",
+"uci": "/abstract-algebra/groups/isomorphism/inverse",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/inverse.html"
+},
+{
+"type": "theorem",
+"title": "Abelianness is invariant under isomorphism",
+"description": "If G is isomorphic to H and G is abelian, then H is abelian.",
+"uci": "/abstract-algebra/groups/isomorphism/abelianness",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/abelianness.html"
+},
+{
+"type": "theorem",
+"title": "Isomorphism of groups is an equivalence relation",
+"uci": "/abstract-algebra/groups/isomorphism/equivalence-relation",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/equivalence-relation.html"
+},
+{
+"type": "theorem",
+"title": "Cayley's Theorem",
+"description": "Every group is isomorphic to a permutation group",
+"uci": "/abstract-algebra/groups/isomorphism/cayleys-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/cayleys-theorem.html"
+},
+{
+"type": "theorem",
+"title": "Cyclicness is invariant under isomorphism",
+"description": "If < a > is isomorphic to G via \u03d5, then G = < \u03d5(a) >.",
+"uci": "/abstract-algebra/groups/isomorphism/cyclicness-is-invariant-under-isomorphism",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/cyclicness-is-invariant-under-isomorphism.html"
+},
+{
+"type": "theorem",
+"title": "Order of elements is invariant under isomorphism",
+"description": "If G is isomorphic to H, then G and H have the same frequencies of orders of elements.",
+"uci": "/abstract-algebra/groups/isomorphism/order-of-elements",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/order-of-elements.html"
+},
+{
+"type": "theorem",
+"title": "Inverse of product of two elements of a group",
+"description": "(a*b)^(-1) = (b^(-1)) * (a^(-1))",
+"uci": "/abstract-algebra/groups/inverse-of-product",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/inverse-of-product.html"
+},
+{
+"type": "theorem",
+"title": "Identity of a group is unique",
+"description": "Identity of a group is unique.",
+"uci": "/abstract-algebra/groups/identity-is-unique",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/identity-is-unique.html"
+},
+{
+"type": "theorem",
+"title": "Order of element in finite group is finite",
+"description": "Let g be an element of the group G. If G is finite, then order(g) is finite.",
+"uci": "/abstract-algebra/groups/order-of-element-in-finite-group-is-finite",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/order-of-element-in-finite-group-is-finite.html"
+},
+{
+"type": "definition",
+"title": "Subgroup",
+"description": "If H is a subset of a group G and H is also a group, then H is said to be a subgroup of G.",
+"uci": "/abstract-algebra/groups/subgroup",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/subgroup.html"
+},
+{
 "type": "theoremdef",
 "title": "Permutation group",
 "description": "A permutation group on a finite set X is a group of bijections on X, where the group operator is function composition.",
@@ -946,72 +1007,25 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/transposition-bijects-even-and-odd-permutations.html"
 },
 {
-"type": "def",
-"title": "Isomorphism on Groups",
-"description": "Two groups are isomorphic iff they are related via a bijection \u03d5 such that \u03d5(ab) = \u03d5(a)\u03d5(b).",
-"uci": "/abstract-algebra/groups/isomorphism/group-isomorphism",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/group-isomorphism.html"
+"type": "definition",
+"title": "Normal Subgroup",
+"description": "H is a normal subgroup of G iff gH = Hg for all g in G.",
+"uci": "/abstract-algebra/groups/normal-subgroup",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/normal-subgroup.html"
 },
 {
 "type": "theorem",
-"title": "Cyclic groups are isomorphic to Z or Zn",
-"description": "A cyclic group of infinite order is isomorphic to Z. A cyclic group of order n is isomorphic to Zn.",
-"uci": "/abstract-algebra/groups/cyclic-groups/isomorphic-to-z",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/isomorphic-to-z.html"
+"title": "Product of normal cosets is well-defined",
+"description": "Let N be a normal subgroup. Then the product (aN)(bN) = (ab)N is well-defined.",
+"uci": "/abstract-algebra/cosets/product-of-normal-cosets",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/cosets/product-of-normal-cosets.html"
 },
 {
-"type": "theorem",
-"title": "Inverse of a group isomorphism is a group isomorphism",
-"uci": "/abstract-algebra/groups/isomorphism/inverse",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/inverse.html"
-},
-{
-"type": "theorem",
-"title": "Abelianness is invariant under isomorphism",
-"description": "If G is isomorphic to H and G is abelian, then H is abelian.",
-"uci": "/abstract-algebra/groups/isomorphism/abelianness",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/abelianness.html"
-},
-{
-"type": "theorem",
-"title": "Isomorphism of groups is an equivalence relation",
-"uci": "/abstract-algebra/groups/isomorphism/equivalence-relation",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/equivalence-relation.html"
-},
-{
-"type": "theorem",
-"title": "Cayley's Theorem",
-"description": "Every group is isomorphic to a permutation group",
-"uci": "/abstract-algebra/groups/isomorphism/cayleys-theorem",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/cayleys-theorem.html"
-},
-{
-"type": "theorem",
-"title": "Cyclicness is invariant under isomorphism",
-"description": "If < a > is isomorphic to G via \u03d5, then G = < \u03d5(a) >.",
-"uci": "/abstract-algebra/groups/isomorphism/cyclicness-is-invariant-under-isomorphism",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/cyclicness-is-invariant-under-isomorphism.html"
-},
-{
-"type": "theorem",
-"title": "Order of elements is invariant under isomorphism",
-"description": "If G is isomorphic to H, then G and H have the same frequencies of orders of elements.",
-"uci": "/abstract-algebra/groups/isomorphism/order-of-elements",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/order-of-elements.html"
-},
-{
-"type": "theorem",
-"title": "Inverse of product of two elements of a group",
-"description": "(a*b)^(-1) = (b^(-1)) * (a^(-1))",
-"uci": "/abstract-algebra/groups/inverse-of-product",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/inverse-of-product.html"
-},
-{
-"type": "theorem",
-"title": "Identity of a group is unique",
-"description": "Identity of a group is unique.",
-"uci": "/abstract-algebra/groups/identity-is-unique",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/identity-is-unique.html"
+"type": "theoremdef",
+"title": "Factor group",
+"description": "The group of all cosets of a normal subgroup is called the factor group or quotient group.",
+"uci": "/abstract-algebra/groups/factor-groups/factor-group",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/factor-groups/factor-group.html"
 },
 {
 "type": "theorem",
@@ -1071,25 +1085,6 @@
 },
 {
 "type": "theorem",
-"title": "Order of element divides order of group",
-"uci": "/abstract-algebra/groups/order-of-element-divides-order-of-group",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/order-of-element-divides-order-of-group.html"
-},
-{
-"type": "theorem",
-"title": "Group of prime order is cyclic",
-"uci": "/abstract-algebra/groups/cyclic-groups/group-of-prime-order-is-cyclic",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/group-of-prime-order-is-cyclic.html"
-},
-{
-"type": "theorem",
-"title": "Group element to the power group size equals identity",
-"description": "a^|G| = e",
-"uci": "/abstract-algebra/groups/group-elem-to-the-power-group-size-equals-identity",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group-elem-to-the-power-group-size-equals-identity.html"
-},
-{
-"type": "theorem",
 "title": "I is a maximal ideal iff R/I is a field",
 "description": "Let I be an ideal of R, a commutative ring with unity. Then I is maximal in R iff R/I is a field.",
 "uci": "/abstract-algebra/rings/maximal-ideal-field",
@@ -1108,6 +1103,20 @@
 "description": "Conditions for a subset to be a subgroup.",
 "uci": "/abstract-algebra/groups/subgroup-condition",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/subgroup-condition.html"
+},
+{
+"type": "definition",
+"title": "Cyclic Group",
+"description": "A cyclic group with generator g is the group of all powers of g.",
+"uci": "/abstract-algebra/groups/cyclic-groups/cyclic-group",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/cyclic-group.html"
+},
+{
+"type": "theorem",
+"title": "Cyclic groups are isomorphic to Z or Zn",
+"description": "A cyclic group of infinite order is isomorphic to Z. A cyclic group of order n is isomorphic to Zn.",
+"uci": "/abstract-algebra/groups/cyclic-groups/isomorphic-to-z",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/isomorphic-to-z.html"
 },
 {
 "type": "theorem",
@@ -1824,6 +1833,32 @@
 "description": "The set of integers modulo n is a ring.",
 "uci": "/abstract-algebra/rings/zn-is-ring",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/zn-is-ring.html"
+},
+{
+"type": "theorem",
+"title": "Order of cyclic subgroup is order of generator",
+"description": "Let g be an element of the group G. Then |<g>| = order(g).",
+"uci": "/abstract-algebra/groups/cyclic-groups/order-of-cyclic-group",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/order-of-cyclic-group.html"
+},
+{
+"type": "theorem",
+"title": "Order of element divides order of group",
+"uci": "/abstract-algebra/groups/order-of-element-divides-order-of-group",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/order-of-element-divides-order-of-group.html"
+},
+{
+"type": "theorem",
+"title": "Group of prime order is cyclic",
+"uci": "/abstract-algebra/groups/cyclic-groups/group-of-prime-order-is-cyclic",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/cyclic-groups/group-of-prime-order-is-cyclic.html"
+},
+{
+"type": "theorem",
+"title": "Group element to the power group size equals identity",
+"description": "a^|G| = e",
+"uci": "/abstract-algebra/groups/group-elem-to-the-power-group-size-equals-identity",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group-elem-to-the-power-group-size-equals-identity.html"
 },
 {
 "type": "theorem",
