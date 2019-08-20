@@ -1511,10 +1511,10 @@
 },
 {
 "type": "theorem",
-"title": "Homogeneous linear equations with more variables than unknowns",
-"description": "If AX = 0 is a system of linear equations with more variables than unknowns, then there exists a non-trivial solution.",
-"uci": "/linear-algebra/system-of-linear-equations/more-variables-than-unknowns",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/more-variables-than-unknowns.html"
+"title": "Homogeneous linear equations with more variables than equations",
+"description": "If AX = 0 is a system of linear equations with more variables than equations, then there exists a non-trivial solution.",
+"uci": "/linear-algebra/system-of-linear-equations/more-variables-than-equations",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/more-variables-than-equations.html"
 },
 {
 "type": "theorem",

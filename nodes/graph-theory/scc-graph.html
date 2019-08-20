@@ -6,15 +6,13 @@
 <title>SCC graph - TheoremDep</title>
 <meta name="description" content="Let G be a directed graph. The SCC graph of G, denoted as SCC(G), is a directed graph whose vertices correspond to strongly connected components of G. Let C1 and C2 be two SCCs of G. C1 and C2 will have an edge in SCC(G) iff there is an edge in G from some vertex in C1 to some vertex in C2." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
-<script type="text/javascript">
-window.MathJax = {
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        processEscapes: true
-    }
-};
-</script>
-<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 </head>
 
 <body>
