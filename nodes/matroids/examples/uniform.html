@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Uniform matroid - TheoremDep</title>
+<meta name="description" content="Matroid where a set is independent iff its cardinality is less than a threshold." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Uniform matroid</h1>
+<h2> Dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/matroid.html">
+        <span class="deptitle">Matroid</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $M = (S, I)$ where $I = \{ X \subseteq S: |X| \le k \}$.
+Then $M$ is a matroid, called the $k$-uniform matroid.</p>
+<h2>Proof</h2>
+<p>Hereditary property:
+\[ (X \subseteq Y \wedge Y \in I) \implies (|X| \le |Y| \wedge |Y| \le k) \implies |X| \le k \implies X \in I \]</p>
+<p>Exchange property:
+Let $X, Y \in I$ and $|X| &lt; |Y|$. Let $e \in Y - X$.
+\[ |X + e| = |X| + 1 \le |Y| \le k \implies X + e \in I \]</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 1</li><li>Number of transitive dependencies: 1</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/matroid.html">
+        <span class="deptitle">Matroid</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/examples/uniform.html">
+        <span class="deptitle">Uniform matroid</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Matroid: rank of set increment - TheoremDep</title>
+<meta name="description" content="rank(X) ≤ rank(X + e) ≤ rank(X) + 1" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Matroid: rank of set increment</h1>
+<h2> Dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/rank.html">
+        <span class="deptitle">Matroid: rank</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/basis.html">
+        <span class="deptitle">Matroid: basis</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/basis-iff-size-is-rank.html">
+        <span class="deptitle">Matroid: basis iff size is rank</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $M = (S, I)$ be a matroid and $X \subseteq S$.
+Then $\forall e \in S, r(X) \le r(X + e) \le r(X) + 1$.</p>
+<h2>Proof</h2>
+<p>If $e \in X$, then $X + e = X$, so $r(X) = r(X + e)$.
+So let's assume $e \not\in X$.</p>
+<p>Let $A$ be a basis of $X$.
+Then $A \in I$ and $A \subseteq X + e$.
+Therefore, $r(X) = |A| \le r(X + e)$.</p>
+<p>Let $B$ be a basis of $X + e$.
+Then $B-e \in I$ and $B-e \subseteq X$, so $|B-e| \le r(X)$.</p>
+<p>If $e \not\in B$, then $r(X+e) = |B| = |B-e| \le r(X) \le r(X) + 1$.
+If $e \in B$, then $r(X+e) = |B| = |B-e| + 1 \le r(X) + 1$.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/weights/incremental.html">
+        <span class="deptitle">Incremental max-weight basis</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 3</li><li>Number of transitive dependencies: 4</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/matroid.html">
+        <span class="deptitle">Matroid</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/rank.html">
+        <span class="deptitle">Matroid: rank</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/basis.html">
+        <span class="deptitle">Matroid: basis</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/basis-iff-size-is-rank.html">
+        <span class="deptitle">Matroid: basis iff size is rank</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/rank-of-set-increment.html">
+        <span class="deptitle">Matroid: rank of set increment</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

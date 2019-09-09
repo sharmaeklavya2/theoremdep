@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Matroid: greedy algorithm - TheoremDep</title>
+<meta name="description" content="A greedy algorithm can compute the max-weight independent set of X." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Matroid: greedy algorithm</h1>
+<h2> Dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/weights/weight-function.html">
+        <span class="deptitle">Matroid: weight function</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/basis-iff-size-is-rank.html">
+        <span class="deptitle">Matroid: basis iff size is rank</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $M = (S, I)$ be a matroid and $X \subseteq S$.
+Let $w$ be a weight function.
+Then there is a greedy algorithm which can compute
+a max-weight basis of $X$.</p>
+<h2>Algorithm</h2>
+<p>Algorithm in python-pseudocode:</p>
+<pre><code>A = {}
+for x in sorted(X, key=w, reverse=True):
+    if A + x ∈ I:
+        A.add(x)
+return A
+</code></pre>
+<h2>Proof of correctness</h2>
+<p>Let $A$ be the output of the greedy algorithm
+and $B$ be max-weight basis.</p>
+<p>Since $x$ is added to $A$ only when $A+x \in I$, $A$ is an independent set.
+Since $B$ is a basis, $|A| \le |B|$.</p>
+<p>Suppose $|B| &gt; |A|$. By exchange axiom, $\exists x \in B-A, A + x \in I$.
+Let $D = \{ y \in A: w(y) \ge w(x) \}$.
+Since $x$ was not added to $A$, $D + x \not\in I$.
+Therefore, $A + x \not\in I$ (by contrapositive of hereditary property).
+This is a contradiction. Therefore, $A$ is a basis.
+Therefore, $|A| = |B|$.</p>
+<p>Let $A = [a_1, a_2, \ldots, a_n]$ and $B = [b_1, b_2, \ldots, b_n]$.
+Assume that $w(A) \neq w(B)$. Then $\exists i, w(a_i) \neq w(b_i)$.
+Let $i = \min_j (w(a_j) \neq w(b_j))$.
+Since $A$ is greedy, $w(a_i) &gt; w(b_i)$.</p>
+<p>As per the exchange axiom, repeatedly add elements from $B$ to $[a_1, a_2, \ldots, a_i]$ to get a basis $C$.
+These newly added elements will have a total weight at least $\sum_{j=i+1}^n w(b_j)$.
+Therefore, $w(C) - w(B) \ge w(a_i) - w(b_i) &gt; 0$.
+Therefore, $w(C) &gt; w(B)$.
+This contradicts the fact that $B$ is a max-weight basis.
+Therefore, $w(A) = w(B)$, so $A$ is a max-weight basis.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/weights/incremental.html">
+        <span class="deptitle">Incremental max-weight basis</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 3</li><li>Number of transitive dependencies: 5</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/matroid.html">
+        <span class="deptitle">Matroid</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/weights/weight-function.html">
+        <span class="deptitle">Matroid: weight function</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/rank.html">
+        <span class="deptitle">Matroid: rank</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/basis.html">
+        <span class="deptitle">Matroid: basis</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/basis-iff-size-is-rank.html">
+        <span class="deptitle">Matroid: basis iff size is rank</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/weights/greedy.html">
+        <span class="deptitle">Matroid: greedy algorithm</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

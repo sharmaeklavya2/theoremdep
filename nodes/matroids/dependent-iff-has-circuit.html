@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Matroid: dependent iff has circuit - TheoremDep</title>
+<meta name="description" content="In a matroid, a set is dependent iff it contains a circuit." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Matroid: dependent iff has circuit</h1>
+<h2> Dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/circuit.html">
+        <span class="deptitle">Matroid: circuit</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $M = (S, I)$ be a matroid.
+Then $X$ is a dependent set in $M$ iff $X$ contains a circuit $C$.</p>
+<h2>Proof</h2>
+<p>Suppose $X$ contains a circuit $C$.
+Since $C \not\in I$, by contrapositive of hereditary property, $X \not\in I$.</p>
+<p>Suppose $X$ is dependent but doesn't contain a circuit.
+Therefore, $X$ is not a circuit.
+Therefore, if $|X| &gt; 0$, we can remove an element from $X$ to get a smaller dependent set $Y$.
+$Y$ doesn't have a circuit too because if $Y$ contained a circuit
+then $X$ would also contain it since $Y \subseteq X$.</p>
+<p>Therefore, we can keep repeating this process and after each step we will get a dependent set.
+But the process will stop when we reach the empty set
+and the empty set is independent.
+This is a contradiction. Therefore, if $X$ is dependent, it contains a circuit.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/non-disjoint-circuits.html">
+        <span class="deptitle">Matroid: non-disjoint circuits</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/unique-circuit.html">
+        <span class="deptitle">Matroid: unique circuit</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 2</li><li>Number of transitive dependencies: 2</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/matroid.html">
+        <span class="deptitle">Matroid</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/circuit.html">
+        <span class="deptitle">Matroid: circuit</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/dependent-iff-has-circuit.html">
+        <span class="deptitle">Matroid: dependent iff has circuit</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>|E| = |V| - 1 in trees - TheoremDep</title>
-<meta name="description" content="Track dependencies between theorems." />
+<title>Graphic matroid - TheoremDep</title>
+<meta name="description" content="The edges of a graph form a matroid where the independent sets are acyclic subsets." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -25,60 +25,64 @@
 </nav>
 
 <div id="main">
-<h1>|E| = |V| - 1 in trees</h1>
+<h1>Graphic matroid</h1>
 <h2> Dependencies: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/deleting-edge-gives-2-trees.html">
-        <span class="deptitle">Deleting edge from tree gives 2 trees</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/matroid.html">
+        <span class="deptitle">Matroid</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/path.html">
+        <span class="deptitle">Path in Graph</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/tree.html">
+        <span class="deptitle">Tree</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/e-is-v-minus-1.html">
+        <span class="deptitle">|E| = |V| - 1 in trees</span>
     </a>
     </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>For a tree $T = (V, E)$, $|E| = |V|-1$ ($|V| \ge 1$).</p>
+<p>Let $G = (V, E)$ be an undirected graph.
+Let $I = \{X \subseteq E: (V, X) \textrm{ is acyclic} \}$.
+Then $(E, I)$ is a matroid, called the graphic matroid.</p>
 <h2>Proof</h2>
-<p>Proof is by strong induction on $|V|$.</p>
-<p>$P(n)$: For all trees $(V, E)$ with $|V| = n$, $|E| = n-1$.</p>
-<h3>Base case</h3>
-<p>For $|V| = 1$, $|E| = 0$ $\implies P(1)$.</p>
-<h3>Inductive step</h3>
-<p>Let $T = (V, E)$ be a tree where $|V| = n$ and $n \ge 2$
-Assume $P(k)$ holds for all $1 \le k \le n-1$ (induction hypothesis).</p>
-<p>Delete any edge from $T$ to get $T'$.
-$T'$ has 2 connected components $T_1$ and $T_2$ which are trees.
-Suppose $T_1$ has $k$ vertices and $T_2$ has $n-k$ vertices, where $1 \le k \le n-1$.
-By $P(k)$ and $P(n-k)$, $T_1$ and $T_2$ have $k-1$ and $n-k-1$ edges.
-Therefore, $T$ has $(k-1) + (n-k-1) + 1 = n-1$ edges.
-Therefore, $P(n)$ holds.</p>
-<p>Hence, by mathematical induction, $|E| = |V| - 1$ for all trees.</p>
+<p>The subset of an acyclic subgraph is acyclic,
+because removing edges cannot introduce a cycle.
+Therefore, the hereditary property holds.</p>
+<p>Suppose $(V, X)$ and $(V, Y)$ be 2 graphs where $|X| &lt; |Y|$ and $X, Y \in I$.</p>
+<p>Let $(U_1, X_1), (U_2, X_2), \ldots, (U_{k_1}, X_{k_1})$ be connected components of $(V, X)$
+and $(W_1, Y_1), (W_2, Y_2), \ldots, (W_{k_2}, Y_{k_2})$ be connected components of $(V, Y)$.
+Since $X, Y \in I$, they are acyclic.
+Therefore, every $X_i$ and $Y_i$ is a tree.</p>
+<p>For a tree $T = (V, E)$, $|E| = |V|-1$. Therefore,
+\[ |X| = \sum_{i=1}^{k_1} |X_i| = \sum_{i=1}^{k_1} (|U_i| - 1) = |V| - k_1 \]
+Similarly, $|Y| = |V| - k_2$.</p>
+<p>Since $|X| &lt; |Y|$, $k_1 &gt; k_2$.</p>
+<p>Suppose every connected component of $Y$ lies in a connected component of $X$.
+Then $k_2 \ge k_1$, which we know is false.
+Therefore, some component of $Y$ intersects with multiple components of $X$.
+Let $(W_k, Y_k)$ be such a component which intersects with $(U_i, X_i)$ and $(U_j, X_j)$.
+Then $Y_k$ contains an edge $e = (u, v)$ between $U_i$ and $U_j$.
+Since $U_i$ and $U_j$ are disconnected in $(V, X)$, $e \not\in X$.</p>
+<p>If $e = (u, v)$ is added to $(V, X)$, a cycle will not be created
+because $u$ and $v$ are disconnected in $(V, X)$.
+Therefore, $(V, X+e)$ is also acyclic.
+Therefore, $\exists e \in Y - X, X + e \in I$.
+This proves the exchange property.</p>
 
 <div class="horizontal-rule"></div>
-<h2> Dependency for: </h2>
-<ol class="deplist">
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/examples/graphic.html">
-        <span class="deptitle">Graphic matroid</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/connected-and-e-is-v-minus-1.html">
-        <span class="deptitle">G = (V, E) is a tree iff G is connected and |E| = |V|-1</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/acyclic-and-e-is-v-minus-1.html">
-        <span class="deptitle">G = (V, E) is a tree iff G is acyclic and |E| = |V|-1</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/at-least-2-leaves.html">
-        <span class="deptitle">Tree has at least 2 leaves</span>
-    </a>
-    </li>
-</ol>
+<h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul><li>Depth: 5</li><li>Number of transitive dependencies: 8</li></ul>
+<ul><li>Depth: 6</li><li>Number of transitive dependencies: 10</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -122,6 +126,16 @@ Therefore, $P(n)$ holds.</p>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/graph-theory/trees/e-is-v-minus-1.html">
         <span class="deptitle">|E| = |V| - 1 in trees</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/matroid.html">
+        <span class="deptitle">Matroid</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/examples/graphic.html">
+        <span class="deptitle">Graphic matroid</span>
     </a>
     </li>
 </ol>

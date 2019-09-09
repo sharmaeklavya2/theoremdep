@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Matroid: basis iff size is rank - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<meta name="keywords" content="all bases have same size" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Matroid: basis iff size is rank</h1>
+<h2> Dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/basis.html">
+        <span class="deptitle">Matroid: basis</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/rank.html">
+        <span class="deptitle">Matroid: rank</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $M = (S, I)$ be a matroid. Let $A$ be an independent set of $X \subseteq S$.
+Then $A$ is a basis of $X \iff |A| = \operatorname{rank}(X)$.</p>
+<h2>Proof</h2>
+<p>Let $B_1$ and $B_2$ be 2 bases of $X$.
+Assume $|B_1| \neq |B_2|$. Without loss of generality, let $|B_1| &lt; |B_2|$.
+By the exchange property, $\exists e \in B_2 - B_1, B_1 + e \in I$.
+But this contradicts the maximality of $B_1$.
+Therefore, $|B_1| = |B_2|$.
+This means that all bases of $X$ have the same size.</p>
+<p>$A \in I$ and $|A| = r(X)$<br/>
+$\iff A$ is a maximum-size independent set in $X$<br/>
+$\implies A$ is a maximal independent set in $X$<br/>
+$\iff A$ is a basis of $X$.</p>
+<p>Since all bases have the same size, they all have size $r(X)$.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/rank-of-set-increment.html">
+        <span class="deptitle">Matroid: rank of set increment</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/basis-of-set-increment.html">
+        <span class="deptitle">Matroid: basis of set increment</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/expand-to-basis.html">
+        <span class="deptitle">Matroid: expanding to basis</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/weights/greedy.html">
+        <span class="deptitle">Matroid: greedy algorithm</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 2</li><li>Number of transitive dependencies: 3</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/matroid.html">
+        <span class="deptitle">Matroid</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/rank.html">
+        <span class="deptitle">Matroid: rank</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/basis.html">
+        <span class="deptitle">Matroid: basis</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/basis-iff-size-is-rank.html">
+        <span class="deptitle">Matroid: basis iff size is rank</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

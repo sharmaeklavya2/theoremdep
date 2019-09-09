@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Incremental max-weight basis - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Incremental max-weight basis</h1>
+<h2> Dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/weights/weight-function.html">
+        <span class="deptitle">Matroid: weight function</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/weights/greedy.html">
+        <span class="deptitle">Matroid: greedy algorithm</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/unique-circuit.html">
+        <span class="deptitle">Matroid: unique circuit</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/rank-of-set-increment.html">
+        <span class="deptitle">Matroid: rank of set increment</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/basis-of-set-increment.html">
+        <span class="deptitle">Matroid: basis of set increment</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $M = (S, I)$ be a matroid.
+Let $X \subset S$ and $e \not\in X$.
+Let $w$ be a weight function over $M$.
+Let $B$ be a max-weight basis of $X$.</p>
+<p>If $B + e \in I$, then $B + e$ is a max-weight basis of $X + e$.</p>
+<p>If $B + e \not\in I$, $B + e$ contains a circuit $C$.
+Let $\widehat{e}$ be the min-weight element of $C$.
+Then $g(X+e) = B + e - \widehat{e}$.</p>
+<h2>Proof</h2>
+<p>$|B + e| = |B| + 1 = r(X) + 1$.</p>
+<h3>Case 1: $B + e \in I$</h3>
+<p>If $B + e \in I$, then $B + e$ is a basis of $X + e$, so $r(X+e) = r(X) + 1$.
+Therefore, $B + e$ is a max-weight basis of $X + e$.</p>
+<h3>Case 2: $B + e \not\in I$</h3>
+<p>$B + e \not\in I \implies r(X+e) = r(X)$.</p>
+<p>$C$ contains $e$, otherwise $B$ would be dependent.</p>
+<p>Order the elements of $X+e$ in descending order of weight.
+If there are some elements with the same weight, order them arbitrarily.
+Since $\widehat{e}$ is the min-weight element of $C$,
+$w(e) \ge w(\widehat{e})$.
+Let $W$ be the elements of $X$ before $e$ in this order.</p>
+<p>The greedy algorithm for computing max-weight basis can be visualized as a streaming algorithm
+to which we can feed elements one-by-one and it keeps track of the selected elements so far.
+Create 2 instances of this algorithm, $A_1$ and $A_2$.
+We intend to feed $X$ to $A_1$ and $X+e$ to $A_2$.</p>
+<p>Feed $W$ to both instances. Both of them will select the same set of elements, $P$.
+Since $W \subseteq X$, $P \subseteq B$.</p>
+<p>Now feed $e$ to $A_2$.
+Suppose $A_2$ doesn't select $e$. It means that $P+e$ contains a circuit $C'$.
+Since $C' \subseteq P+e \subseteq B+e$ and $B+e$ contains a unique circuit $C$, $C' = C$.
+Therefore, all other elements of $C$ are in $P$, so $\widehat{e} = e$.</p>
+<p>Since $A_2$ didn't select $e$, it will select the same elements as $A_1$
+when we feed the remaining elements $X - W$ to both of them.
+Therefore, both of them select $B$.
+Since the greedy algorithm selects the max-weight basis,
+$B$ is a max-weight basis for $X + e$.
+Since $\widehat{e} = e$, $B + e - \widehat{e}$ is a max-weight basis of $X + e$.</p>
+<p>Now suppose $A_2$ selects $e$.
+Now feed elements of $X - W$ (in decreasing order) one-by-one to both $A_1$ and $A_2$
+and pause when they select different elements.
+They will eventually select different elements, because if they don't,
+then $A_2$ would select $B+e$, which is not a basis.</p>
+<p>If $A_2$ selects an element $x$, then $A_1$ will also select $x$ in the corresponding step.
+This is because if $A_1$'s selection at some step is $L$,
+then $A_2$'s selection at that step is $L + e$,
+and if $L+e+x$ is independent then $L+x$ is also independent.</p>
+<p>Let $x$ be the first element which $A_1$ selects but $A_2$ doesn't.
+Let $A_1$'s selection before this be $Q$. So $Q \subset B$.
+$Q + e$ is independent but $Q + e + x$ is not.
+Since, $Q + e + x \subseteq B + e$, $Q + e + x$ contains the circuit $C$ and $x \in C$.
+Therefore, all elements of $C$ other than $x$ are in $Q + e$.
+Therefore, $x = \widehat{e}$.</p>
+<p>Till now $A_1$ has selected $B_1 = P + Q + \widehat{e}$ and $A_2$ has selected $B_2 = P + e + Q$.
+Now feed the remaining elements of $X$ to both $A_1$ and $A_2$.
+Out of these newly fed elements, suppose $A_1$ selects $R_1$ and $A_2$ selects $R_2$.
+Since the greedy algorithm always returns a basis, $|R_1| = |R_2|$.</p>
+<p>$B_2 + \widehat{e} = B_1 + e = P + Q + e + \widehat{e} \supset C \not\in I$.
+So when we use the exchange axiom to transfer elements from $B_1 + R_1$ to $B_2$,
+we get $B_2 + R_1$ as the basis.
+When we use the exchange axiom to transfer elements from $B_2 + R_2$ to $B_1$,
+we get $B_1 + R_2$ as the basis.
+Since the greedy algorithm selected $B_1 + R_1$ instead of $B_1 + R_2$, $w(R_1) \ge w(R_2)$.
+Since the greedy algorithm selected $B_2 + R_2$ instead of $B_2 + R_1$, $w(R_2) \ge w(R_1)$.
+Therefore, $w(R_1) = w(R_2)$. So $B_2 + R_1 = B + e - \widehat{e}$ is also a max-weight basis.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 6</li><li>Number of transitive dependencies: 13</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/matroid.html">
+        <span class="deptitle">Matroid</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/weights/weight-function.html">
+        <span class="deptitle">Matroid: weight function</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/circuit.html">
+        <span class="deptitle">Matroid: circuit</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/rank.html">
+        <span class="deptitle">Matroid: rank</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/basis.html">
+        <span class="deptitle">Matroid: basis</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/basis-iff-size-is-rank.html">
+        <span class="deptitle">Matroid: basis iff size is rank</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/weights/greedy.html">
+        <span class="deptitle">Matroid: greedy algorithm</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/expand-to-basis.html">
+        <span class="deptitle">Matroid: expanding to basis</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/basis-of-set-increment.html">
+        <span class="deptitle">Matroid: basis of set increment</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/rank-of-set-increment.html">
+        <span class="deptitle">Matroid: rank of set increment</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/dependent-iff-has-circuit.html">
+        <span class="deptitle">Matroid: dependent iff has circuit</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/non-disjoint-circuits.html">
+        <span class="deptitle">Matroid: non-disjoint circuits</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/unique-circuit.html">
+        <span class="deptitle">Matroid: unique circuit</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/weights/incremental.html">
+        <span class="deptitle">Incremental max-weight basis</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

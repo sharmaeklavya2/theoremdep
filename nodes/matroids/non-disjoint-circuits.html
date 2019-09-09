@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Matroid: non-disjoint circuits - TheoremDep</title>
+<meta name="description" content="If C1 and C2 are distinct non-disjoint circuits in a matroid and x ∈ C1 ∩ C2, then C1 ∪ C2 - x is dependent." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Matroid: non-disjoint circuits</h1>
+<h2> Dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/circuit.html">
+        <span class="deptitle">Matroid: circuit</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/expand-to-basis.html">
+        <span class="deptitle">Matroid: expanding to basis</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/dependent-iff-has-circuit.html">
+        <span class="deptitle">Matroid: dependent iff has circuit</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $M = (S, I)$ be a matroid.
+Let $C_1$ and $C_2$ be circuits such that $C_1 \neq C_2$ and $C_1 \cap C_2 \neq \{\}$.
+Then $\forall x \in C_1 \cap C_2, C_1 \cup C_2 - x \not\in I$.</p>
+<h2>Proof</h2>
+<p>Since all proper subsets of $C_2$ are dependent, $C_1$ cannot be a subset of $C_2$.
+Similarly $C_2$ cannot be a subset of $C_1$.
+Therefore, $C_1 - C_2$ and $C_2 - C_1$ are non-empty.</p>
+<p>Since $C_1 \subset C_1 \cup C_2$, $C_1 \cup C_2 \not\in I$.
+Assume $C_1 \cup C_2 - x \in I$.
+Therefore, $C_1 \cup C_2 - x$ is a basis of $C_1 \cup C_2$.</p>
+<p>$C_1 \cap C_2 \subsetneq C_1 \implies C_1 \cap C_2 \in I$<br/>
+Since $C_1 \cap C_2 \in I \wedge C_1 \cap C_2 \subset C_1 \cup C_2$,
+there is a basis $B$ of $C_1 \cup C_2$ which contains $C_1 \cap C_2$.</p>
+<p>Since $|B| = |C_1 \cup C_2| - 1$ and $C_1 \cap C_2 \subseteq B$,
+either $C_1 \subseteq B$ or $C_2 \subseteq B$.
+But that is not possible since $B$ is independent and $C_1$ and $C_2$ are not.
+This is a contradiction which arose because we assumed that $C_1 \cup C_2 - x \in I$.
+Therefore, $C_1 \cup C_2 - x \not\in I$.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/unique-circuit.html">
+        <span class="deptitle">Matroid: unique circuit</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 4</li><li>Number of transitive dependencies: 7</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/matroid.html">
+        <span class="deptitle">Matroid</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/circuit.html">
+        <span class="deptitle">Matroid: circuit</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/rank.html">
+        <span class="deptitle">Matroid: rank</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/basis.html">
+        <span class="deptitle">Matroid: basis</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/basis-iff-size-is-rank.html">
+        <span class="deptitle">Matroid: basis iff size is rank</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/expand-to-basis.html">
+        <span class="deptitle">Matroid: expanding to basis</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/dependent-iff-has-circuit.html">
+        <span class="deptitle">Matroid: dependent iff has circuit</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/non-disjoint-circuits.html">
+        <span class="deptitle">Matroid: non-disjoint circuits</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

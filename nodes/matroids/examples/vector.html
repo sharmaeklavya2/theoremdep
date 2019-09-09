@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Linearly independent set is smaller than a span - TheoremDep</title>
-<meta name="description" content="The size of every finite linearly independent subset of a vector space is less than or equal to the size of every spanning set of that vector space." />
+<title>Vector matroid - TheoremDep</title>
+<meta name="description" content="A finite set of vectors from a vector space form a matroid under linear independence." />
+<meta name="keywords" content="vector matroid,matric matroid" />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -25,9 +26,19 @@
 </nav>
 
 <div id="main">
-<h1>Linearly independent set is smaller than a span</h1>
+<h1>Vector matroid</h1>
 <h2> Dependencies: </h2>
 <ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/matroid.html">
+        <span class="deptitle">Matroid</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+        <span class="deptitle">Vector Space</span>
+    </a>
+    </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep.html">
         <span class="deptitle">Linear independence</span>
@@ -39,90 +50,52 @@
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/mult-assoc.html">
-        <span class="deptitle">Matrix multiplication is associative</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/more-variables-than-equations.html">
-        <span class="deptitle">Homogeneous linear equations with more variables than equations</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/transpose-of-product.html">
-        <span class="deptitle">Transpose of product</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-is-smaller-than-span.html">
+        <span class="deptitle">Linearly independent set is smaller than a span</span>
     </a>
     </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $U = [u_1, u_2, \ldots, u_m]$ and $V = [v_1, v_2, \ldots, v_n]$ be sequences of vectors from the vector space $W$.
-If $W = \operatorname{span}(V)$ and $m &gt; n$, then $U$ is linearly dependent.</p>
+<p>Let $V$ be a vector space.
+Let $S = \{v_1, v_2, \ldots, v_n\} \subseteq V$.
+Let $I = \{X \subseteq S: X \textrm{ is linearly independent} \}$.
+Then $(S, I)$ is a matroid, called the vector matroid.</p>
 <h2>Proof</h2>
-<p>Since $W = \operatorname{span}(V)$, $U \subset \operatorname{span}(V)$.
-So let $u_i = \sum_{j=1}^n a_{i, j}v_j$.</p>
-<p>Let $A$ be an $m$-by-$n$ matrix where $A_{i, j} = a_{i, j}$.
-If we treat $U$ and $V$ as column vectors, $U = AV$.</p>
-<p>$U$ is linearly dependent iff $\exists$ a column vector $B \neq 0$ such that $B^TU = 0$.</p>
-<p>Consider the system of equations $A^TX = 0$.
-This is a system of $n$ equations in $m$ variables.
-Since the number of equations is less than the number of unknows, there exists a non-trivial solution.
-Let $X = B$ be such a solution. $\Rightarrow B \neq 0 \wedge A^TB = 0$.</p>
-<p>\[ B^TU = B^T(AV) = (B^TA)V = (A^TB)^TV = 0V = 0 \]</p>
-<p>Therefore, $U$ is linearly dependent.</p>
+<p>Let $A \subseteq B$ and $B \in I$.</p>
+<p>\begin{align}
+&amp; B \in I
+\\ &amp;\Rightarrow B \textrm{ is linearly independent}
+\\ &amp;\Rightarrow \textrm{Every non-trivial linear combination of } B \textrm{ is non-0}
+\\ &amp;\Rightarrow \textrm{Every non-trivial linear combination of } A \textrm{ is non-0}
+\\ &amp;\Rightarrow A \textrm{ is linearly independent}
+\\ &amp;\Rightarrow A \in I
+\end{align}</p>
+<p>Therefore, $(S, I)$ satisfies the hereditary property.</p>
+<p>Suppose $A, B \in I$ and $|A| &lt; |B|$.
+Assume that $\forall v \in B, A + v$ is linearly dependent.
+Since $A$ is linearly independent, $v$ is a linear combination of $A$.
+Therefore, $B \subseteq \operatorname{span}(A)$.</p>
+<p>Since $B \subseteq \operatorname{span}(A)$ and $|B| &gt; |A|$, $B$ is linearly dependent,
+which is a contradiction.
+Therefore, $\exists v \in B, A + v$ is linearly independent.</p>
+<p>Therefore, $(S, I)$ satisfies the exchange property.</p>
 
 <div class="horizontal-rule"></div>
-<h2> Dependency for: </h2>
-<ol class="deplist">
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/expand-linindep-to-basis.html">
-        <span class="deptitle">Linearly independent set can be expanded into a basis</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/maximal-linindep-is-basis.html">
-        <span class="deptitle">Maximally linearly independent iff basis</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html">
-        <span class="deptitle">Basis of a vector space</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/minimal-span-is-basis.html">
-        <span class="deptitle">Minimally spanning iff basis</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/n-span-is-basis.html">
-        <span class="deptitle">Spanning set of size dim(V) is a basis</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/n-linindep-is-basis.html">
-        <span class="deptitle">A set of dim(V) linearly independent vectors is a basis</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-linindep.html">
-        <span class="deptitle">A matrix is full-rank iff its rows are linearly independent</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/examples/vector.html">
-        <span class="deptitle">Vector matroid</span>
-    </a>
-    </li>
-</ol>
+<h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul><li>Depth: 11</li><li>Number of transitive dependencies: 33</li></ul>
+<ul><li>Depth: 12</li><li>Number of transitive dependencies: 35</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
 <ol class="deplist">
     <li>
     <span class="deptitleuci missing">/linear-algebra/matrices/gauss-jordan-algo</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/matroid.html">
+        <span class="deptitle">Matroid</span>
+    </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
@@ -287,6 +260,11 @@ Let $X = B$ be such a solution. $\Rightarrow B \neq 0 \wedge A^TB = 0$.</p>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-is-smaller-than-span.html">
         <span class="deptitle">Linearly independent set is smaller than a span</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/examples/vector.html">
+        <span class="deptitle">Vector matroid</span>
     </a>
     </li>
 </ol>
