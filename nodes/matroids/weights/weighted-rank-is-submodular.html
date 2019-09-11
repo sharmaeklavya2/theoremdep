@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Matroid: weighted rank is submodular - TheoremDep</title>
+<meta name="description" content="The weighted rank of X is the weight of the max-weight basis of X. The weighted rank function is submodular." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Matroid: weighted rank is submodular</h1>
+<h2> Dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/matroid.html">
+        <span class="deptitle">Matroid</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/weights/weight-function.html">
+        <span class="deptitle">Matroid: weight function</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/misc/submodular-func.html">
+        <span class="deptitle">Submodular function</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/restricted-rank-is-submodular.html">
+        <span class="deptitle">Matroid: restricted rank is submodular</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/weights/greedy.html">
+        <span class="deptitle">Matroid: greedy algorithm</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/misc/sum-of-submodular-funcs-is-submodular.html">
+        <span class="deptitle">Sum of submodular functions is submodular</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $M = (S, I)$ be a matroid.
+Let $w$ be a weight function over $M$.</p>
+<p>Let $g(X)$ be the max-weight basis of $X$.
+Let $f(X) = w(g(X))$. Then $f$ is submodular.</p>
+<h2>Proof</h2>
+<p>Let $S = \{s_1, s_2, \ldots, s_m\}$ and $S_i = \{s_1, s_2, \ldots, s_i\}$.
+Let $X = \{x_1, x_2, \ldots, x_n\}$ and $X_i = \{x_1, x_2, \ldots, x_i\}$.
+Without loss of generality, assume that
+$i &lt; j \implies (w(x_i) \ge w(x_j) \wedge w(s_i) \ge s(s_j))$.</p>
+<p>For $Y \in S$, let $r_i(Y) = r(Y \cap S_i)$.
+Therefore, $r_i$ is the $S_i$-restricted rank of $Y$.
+Therefore, $r_i$ is submodular.</p>
+<p>The greedy algorithm for max-weight basis operates in a streaming fashion
+and maintains the max-weight basis of the elements seen so far.
+The algorithm adds the element $x_i$ iff adding it doesn't make the answer dependent.
+Therefore, the algorithm includes $x_i$ in $g(X_i)$ iff $g(X_{i-1}) + x_i \in I$.</p>
+<p>If $g(X_i) = g(X_{i-1}) + x_i$, then $r(X_i) = r(X_{i-1}) + 1$.
+Otherwise, $r(X_i) = r(X_{i-1})$.
+Therefore,
+\[ g(X_i) = g(X_{i-1}) + \begin{cases} x_i &amp; \textrm{ if } r(X_i) - r(X_{i-1}) = 1
+\\ \{\} &amp; \textrm{ if } r(X_i) - r(X_{i-1}) = 0 \end{cases} \]
+Therefore, $f(X_i) = f(X_{i-1}) + w(x_i)(r(X_i) - r(X_{i-1}))$.</p>
+<p>Let $x_j = s_{i_j}$. Then $\forall j, i_j \le i_{j+1}$ and $X_j = X \cap S_{i_j}$.
+Let $i_0 = 0$ and $i_{n+1} = m+1$ and $w(s_{m+1}) = w(x_{n+1}) = 0$.</p>
+<p>When $i_j &lt; k &lt; i_{j+1}$,
+$r_k(X) = r(X \cap S_k) = r(X_j)$
+and $r_{k-1}(X) = r(X \cap S_{k-1}) = r(X_j)$.
+Therefore, $r_k(X) - r_{k-1}(X) = 0$.</p>
+<p>\begin{align}
+&amp; \sum_{i=1}^m (w(s_i) - w(s_{i+1}))r_i(X)
+\\ &amp;= \sum_{i=1}^m w(s_i)(r_i(X) - r_{i-1}(X))
+\\ &amp;= \sum_{k=1}^{i_1-1} w(s_k)(r_k(X) - r_{k-1}(X))
++ \sum_{j=1}^n \sum_{k=i_j}^{i_{j+1}-1} w(s_k)(r_k(X) - r_{k-1}(X))
+\\ &amp;= 0 + \sum_{j=1}^n w(s_{i_j})(r_{i_j}(X) - r_{i_j-1}(X))
+\\ &amp;= \sum_{j=1}^n w(x_j)(r(X_j) - r(X_{j-1}))
+\\ &amp;= \sum_{j=1}^n f(X_j) - f(X_{j-1})
+\\ &amp;= f(X)
+\end{align}</p>
+<p>Therefore, $f(X)$ is a positive linear combination of $r_1(X), r_2(X), \ldots, r_m(X)$.
+Since each $r_i$ is submodular, $f$ is also submodular.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 6</li><li>Number of transitive dependencies: 13</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/matroid.html">
+        <span class="deptitle">Matroid</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/weights/weight-function.html">
+        <span class="deptitle">Matroid: weight function</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/rank.html">
+        <span class="deptitle">Matroid: rank</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/basis.html">
+        <span class="deptitle">Matroid: basis</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/basis-iff-size-is-rank.html">
+        <span class="deptitle">Matroid: basis iff size is rank</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/weights/greedy.html">
+        <span class="deptitle">Matroid: greedy algorithm</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/expand-to-basis.html">
+        <span class="deptitle">Matroid: expanding to basis</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/basis-of-set-increment.html">
+        <span class="deptitle">Matroid: basis of set increment</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/rank-of-set-increment.html">
+        <span class="deptitle">Matroid: rank of set increment</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/misc/submodular-func.html">
+        <span class="deptitle">Submodular function</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/rank-is-submodular.html">
+        <span class="deptitle">Matroid: rank is submodular</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/restricted-rank-is-submodular.html">
+        <span class="deptitle">Matroid: restricted rank is submodular</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/misc/sum-of-submodular-funcs-is-submodular.html">
+        <span class="deptitle">Sum of submodular functions is submodular</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/weights/weighted-rank-is-submodular.html">
+        <span class="deptitle">Matroid: weighted rank is submodular</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

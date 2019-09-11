@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Matroid: rank is submodular - TheoremDep</title>
+<title>Matroid: restricted rank is submodular - TheoremDep</title>
 <meta name="description" content="Track dependencies between theorems." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
@@ -25,63 +25,48 @@
 </nav>
 
 <div id="main">
-<h1>Matroid: rank is submodular</h1>
+<h1>Matroid: restricted rank is submodular</h1>
 <h2> Dependencies: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/rank.html">
-        <span class="deptitle">Matroid: rank</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/misc/submodular-func.html">
-        <span class="deptitle">Submodular function</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/rank-of-set-increment.html">
-        <span class="deptitle">Matroid: rank of set increment</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/basis-of-set-increment.html">
-        <span class="deptitle">Matroid: basis of set increment</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/expand-to-basis.html">
-        <span class="deptitle">Matroid: expanding to basis</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/rank-is-submodular.html">
+        <span class="deptitle">Matroid: rank is submodular</span>
     </a>
     </li>
 </ol>
 
 <div class="horizontal-rule"></div>
 <p>Let $M = (S, I)$ be a matroid.
-Then the rank function $r_M$ is submodular.</p>
+Let $T \subseteq S$.
+Let $r_T(X) = r(X \cap T)$. $r_T(X)$ is called the $T$-restricted rank of $X$.
+Then $r_T$ is submodular.</p>
 <h2>Proof</h2>
-<p>Let $X \subseteq Y \subseteq S$.
-Let $e \not\in Y$.</p>
-<p>To prove that rank is submodular, we have to prove that $r(Y+e) - r(Y) \le r(X+e) - r(X)$.
-By the rank-of-increment theorem, $r(Y+e) - r(Y) \in \{0, 1\}$ and $r(X+e) - r(X) \in \{0, 1\}$.
-Therefore, it is sufficient to prove that if $r(Y+e) - r(Y) = 1$, then $r(X+e) - r(X) = 1$.</p>
-<p>Let $B_X$ be a basis of $X$.
-Since $B_X$ is an independent set in $Y$, it can be expanded to a basis $B_Y$ of $Y$.</p>
-<p>Since $r(Y+e) = r(Y) + 1$, $B_Y + e$ is a basis of $Y+e$.
-Since $B_X + e \subseteq B_Y + e$, $B_X + e \in I$ by the hierarchy axiom.
-Since $B_X + e \subseteq X + e$, $r(X+e) \ge |B_X + e| = r(X) + 1$.
-Therefore, $r(X+e) = r(X) + 1$.</p>
+<p>We have to prove that for $X \subseteq Y \subseteq S$,
+$r_T(X+e) - r_T(X) \ge r_T(Y+e) - r_T(Y)$.</p>
+<h2>Case 1: $e \not\in T$</h2>
+<p>$r_T(X+e) = r((X+e) \cap T) = r(X \cap T) = r_T(X)$.
+Therefore, $r_T(X+e) - r_T(X) = 0$. Similarly, $r_T(Y+e) - r_T(Y) = 0$.</p>
+<h2>Case 2: $e \in T$</h2>
+<p>$r_T(X+e) = r((X+e) \cap T) = r((X \cap T) + e)$.
+Similarly, $r_T(Y+e) = r((Y \cap T) + e)$.</p>
+<p>\begin{align}
+&amp; r_T(X+e) - r_T(X)
+\\ &amp;= r((X \cap T)+e) - r(X \cap T)
+\\ &amp;\ge r((Y \cap T)+e) - r(Y \cap T)  \tag{$X \cap T \subseteq Y \cap T$ and $r$ is submodular}
+\\ &amp;= r_T(Y+e) - r_T(Y)
+\end{align}</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/restricted-rank-is-submodular.html">
-        <span class="deptitle">Matroid: restricted rank is submodular</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/weights/weighted-rank-is-submodular.html">
+        <span class="deptitle">Matroid: weighted rank is submodular</span>
     </a>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 4</li><li>Number of transitive dependencies: 8</li></ul>
+<ul><li>Depth: 5</li><li>Number of transitive dependencies: 9</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -129,6 +114,11 @@ Therefore, $r(X+e) = r(X) + 1$.</p>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/rank-is-submodular.html">
         <span class="deptitle">Matroid: rank is submodular</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/restricted-rank-is-submodular.html">
+        <span class="deptitle">Matroid: restricted rank is submodular</span>
     </a>
     </li>
 </ol>

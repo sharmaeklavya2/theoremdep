@@ -2228,9 +2228,22 @@
 },
 {
 "type": "theorem",
+"title": "Matroid: restricted rank is submodular",
+"uci": "/matroids/restricted-rank-is-submodular",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/restricted-rank-is-submodular.html"
+},
+{
+"type": "theorem",
 "title": "Sum of submodular functions is submodular",
 "uci": "/misc/sum-of-submodular-funcs-is-submodular",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/sum-of-submodular-funcs-is-submodular.html"
+},
+{
+"type": "theorem",
+"title": "Matroid: weighted rank is submodular",
+"description": "The weighted rank of X is the weight of the max-weight basis of X. The weighted rank function is submodular.",
+"uci": "/matroids/weights/weighted-rank-is-submodular",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/weights/weighted-rank-is-submodular.html"
 }
 ]
 }
