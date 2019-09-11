@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Submodular function - TheoremDep</title>
+<meta name="description" content="A function is submodular iff its marginal decreases with the size of the set." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Submodular function</h1>
+<h2 class="no-deps"> Dependencies: None </h2>
+
+<div class="horizontal-rule"></div>
+<p>Let $S$ be a set and $f: 2^S \mapsto \mathbb{R}$ be a function.
+Then $f$ is submodular iff it satisfies one of the following equivalent conditions:</p>
+<ol>
+<li>$\forall R \subseteq S, \forall s_1 \not\in R, \forall s_2 \not\in R \cup \{s_1\},$
+$f(R \cup \{s_1\}) + f(R \cup \{s_2\}) \ge f(R \cup \{s_1, s_2\}) + f(R)$.</li>
+<li>$\forall Y \subseteq S, \forall X \subseteq Y, \forall Z \in S-Y,$
+$f(X \cup Z) - f(X) \ge f(Y \cup Z) - f(Y)$.</li>
+<li>$\forall P \subseteq S, \forall Q \subseteq S,$
+$f(P) + f(Q) \ge f(P \cup Q) + f(P \cap Q)$.</li>
+</ol>
+<p>For any $X, Y \subseteq S$, the value of $f(X \cup Y) - f(X)$ is called the <strong>marginal</strong> of $Y$ over $X$
+and is denoted by $f_X(Y)$.</p>
+<h2>Proof of equivalence of definitions</h2>
+<p>Definition 2 implies definition 3 if we let
+$Y = P$, $X = P \cap Q$ and $Z = Q - P$.</p>
+<p>Definition 3 implies definition 1 if we let $P = R \cup \{s_1\}$ and $Q = R \cup \{s_2\}$.</p>
+<p>To prove equivalence of all definitions, we just have to prove that definition 1 implies definition 2.</p>
+<p>Let $Y-X = \{y_1, y_2, \ldots, y_m\}$ and $Z = \{z_1, z_2, \ldots, z_n\}$.
+Let $Y_i = \{y_1, y_2, \ldots, y_i\}$ and $Z_j = \{z_1, z_2, \ldots, z_j\}$.</p>
+<p>Let $R = X \cup Y_i \cup Z_j$ where $0 \le i &lt; m$ and $0 \le j &lt; n$.
+Let $s_1 = y_{i+1}$ and $s_2 = z_{j+1}$.</p>
+<p>\begin{align}
+&amp; f(R \cup \{s_1\}) + f(R \cup \{s_2\}) \ge f(R \cup \{s_1, s_2\}) + f(R)
+\\ &amp;\Rightarrow f(R \cup \{s_1, s_2\}) - f(R \cup \{s_1\}) \le f(R \cup \{s_2\}) - f(R)
+\\ &amp;\Rightarrow f(X \cup Y_i \cup Z_j \cup \{y_{i+1}, z_{j+1}\}) - f(X \cup Y_i \cup Z_j \cup \{y_{i+1}\})
+\le f(X \cup Y_i \cup Z_j \cup \{z_{j+1}\}) - f(X \cup Y_i \cup Z_j)
+\\ &amp;\Rightarrow f(X \cup Y_{i+1} \cup Z_{j+1}) - f(X \cup Y_{i+1} \cup Z_j)
+\le f(X \cup Y_i \cup Z_{j+1}) - f(X \cup Y_i \cup Z_j)
+\\ &amp;\Rightarrow \sum_{j=0}^{n-1} (f(X \cup Y_{i+1} \cup Z_{j+1}) - f(X \cup Y_{i+1} \cup Z_j))
+\le \sum_{j=0}^{n-1} (f(X \cup Y_i \cup Z_{j+1}) - f(X \cup Y_i \cup Z_j))
+\\ &amp;\Rightarrow f(X \cup Y_{i+1} \cup Z) - f(X \cup Y_{i+1})
+\le f(X \cup Y_i \cup Z) - f(X \cup Y_i)
+\\ &amp;\Rightarrow f(X \cup Y_{i+1} \cup Z) - f(X \cup Y_i \cup Z)
+\le f(X \cup Y_{i+1}) - f(X \cup Y_i)
+\\ &amp;\Rightarrow \sum_{i=0}^{m-1} (f(X \cup Y_{i+1} \cup Z) - f(X \cup Y_i \cup Z))
+\le \sum_{m-1} (f(X \cup Y_{i+1}) - f(X \cup Y_i))
+\\ &amp;\Rightarrow f(X \cup (Y-X) \cup Z) - f(X \cup Z) \le f(X \cup (Y-X)) - f(X)
+\\ &amp;\Rightarrow f(Y \cup Z) - f(X \cup Z) \le f(Y) - f(X)
+\\ &amp;\Rightarrow f(Y \cup Z) - f(Y) \le f(X \cup Z) - f(X)
+\end{align}</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/misc/sum-of-submodular-funcs-is-submodular.html">
+        <span class="deptitle">Sum of submodular functions is submodular</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/rank-is-submodular.html">
+        <span class="deptitle">Matroid: rank is submodular</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 0</li><li>Number of transitive dependencies: 0</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/misc/submodular-func.html">
+        <span class="deptitle">Submodular function</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

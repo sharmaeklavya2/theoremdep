@@ -2212,6 +2212,25 @@
 "description": "If a and n are coprime, then a^phi(n) \u2261 1 (mod n), where phi is Euler's Totient Function.",
 "uci": "/number-theory/eulers-theorem",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/eulers-theorem.html"
+},
+{
+"type": "theoremdef",
+"title": "Submodular function",
+"description": "A function is submodular iff its marginal decreases with the size of the set.",
+"uci": "/misc/submodular-func",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/submodular-func.html"
+},
+{
+"type": "theorem",
+"title": "Matroid: rank is submodular",
+"uci": "/matroids/rank-is-submodular",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/rank-is-submodular.html"
+},
+{
+"type": "theorem",
+"title": "Sum of submodular functions is submodular",
+"uci": "/misc/sum-of-submodular-funcs-is-submodular",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/sum-of-submodular-funcs-is-submodular.html"
 }
 ]
 }
