@@ -58,6 +58,12 @@ nav #searchbox, nav #searchbutton {
     #main {
         padding: 0 1rem 1rem 1rem;
     }
+    ul {
+        padding-left: 1em;
+    }
+    ol {
+        padding-left: 1.2em;
+    }
 }
 
 a:not(:hover) {
