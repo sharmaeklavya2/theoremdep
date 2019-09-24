@@ -29,6 +29,11 @@
 <h2> Dependencies: </h2>
 <ol class="deplist">
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/hermitian.html">
+        <span class="deptitle">Conjugate Transpose and Hermitian</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/orthogonal.html">
         <span class="deptitle">Orthogonal matrix</span>
     </a>
@@ -69,8 +74,15 @@
 <p>Let $A$ be an $n$ by $n$ matrix over $\mathbb{C}$.</p>
 <p>$A$ is said to be orthogonally diagonalizable iff $A = PDP^*$,
 where $P$ is an orthogonal matrix and $D$ is a diagonal matrix with real entries.</p>
-<p>We have to prove that $A$ is orthogonally diagonalizable iff $A = A^*$.</p>
-<p>Also, if $A$ is real, $P$ is real.</p>
+<p>We'll prove 2 things:</p>
+<ul>
+<li>$A$ is orthogonally diagonalizable iff $A = A^*$.</li>
+<li>Let $A = A^*$. Let $[v_1, v_2, \ldots, v_n]$ be eigenvectors of $A$
+with $[\lambda_1, \lambda_2, \ldots, \lambda_n]$ as the corresponding eigenvalues.
+Let $P$ be a matrix where the $i^{\textrm{th}}$ column is $v_i$.
+Then $P$ is orthogonal and $A = PDP^*$.
+Also, if $A$ is real, then $P$ is real.</li>
+</ul>
 <h2>Proof of 'only-if' part</h2>
 <p>Let $A$ be orthogonally diagonalizable.</p>
 <p>\[ A = P^*DP \implies A^* = (P^*DP)^* = P^*D^*P = P^*DP = A \]</p>
@@ -87,16 +99,22 @@ $\forall i, \lambda_i \in \mathbb{R}$, since all eigenvalues of a symmetric
 operator are real.
 If $A$ is real, $[v_1, v_2, \ldots, v_n]$ are real.</p>
 <p>Let $P$ be the matrix whose columns are $[v_1, v_2, \ldots, v_n]$.
-Then $P$ is orthogonal by definition.
-If $A$ is real, $P$ is real.
+Then $P$ is orthogonal and $P$ is real if $A$ is real.
 Let $D$ be a diagonal matrix where $D[i, i] = \lambda_i$.
 Therefore, $AP = PD$, which implies that $A = APP^* = PDP^*$.
 Therefore, $A$ is orthgonally diagonalizable.</p>
 
 <div class="horizontal-rule"></div>
-<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/bounding-quadratic-form-using-eigenvalues.html">
+        <span class="deptitle">Bounding matrix quadratic form using eigenvalues</span>
+    </a>
+    </li>
+</ol>
 <h2> Info: </h2>
-<ul><li>Depth: 23</li><li>Number of transitive dependencies: 89</li></ul>
+<ul><li>Depth: 23</li><li>Number of transitive dependencies: 90</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -298,6 +316,11 @@ Therefore, $A$ is orthgonally diagonalizable.</p>
     </a>
     </li>
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/hermitian.html">
+        <span class="deptitle">Conjugate Transpose and Hermitian</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-space.html">
         <span class="deptitle">Row space</span>
     </a>
@@ -433,11 +456,6 @@ Therefore, $A$ is orthgonally diagonalizable.</p>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix.html">
-        <span class="deptitle">Matrix of linear transformation</span>
-    </a>
-    </li>
-    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/coordinatization.html">
         <span class="deptitle">Coordinatization over a basis</span>
     </a>
@@ -463,43 +481,8 @@ Therefore, $A$ is orthgonally diagonalizable.</p>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenvector.html">
-        <span class="deptitle">Eigenvalues and Eigenvectors</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-real.html">
-        <span class="deptitle">All eigenvalues of a symmetric operator are real</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/real-matrix-with-real-eigenvalue-has-real-eigenvectors.html">
-        <span class="deptitle">Real matrix with real eigenvalues has real eigenvectors</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/diagonalization.html">
-        <span class="deptitle">Diagonalization</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/symmetric-operator-matrix.html">
-        <span class="deptitle">Symmetric operator iff hermitian</span>
-    </a>
-    </li>
-    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/expand-linindep-to-basis.html">
         <span class="deptitle">Linearly independent set can be expanded into a basis</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/char-poly.html">
-        <span class="deptitle">Characteristic polynomial of a matrix</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/char-poly-degree-monic.html">
-        <span class="deptitle">Degree and monicness of a characteristic polynomial</span>
     </a>
     </li>
     <li>
@@ -523,6 +506,41 @@ Therefore, $A$ is orthgonally diagonalizable.</p>
     </a>
     </li>
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix.html">
+        <span class="deptitle">Matrix of linear transformation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenvector.html">
+        <span class="deptitle">Eigenvalues and Eigenvectors</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-real.html">
+        <span class="deptitle">All eigenvalues of a symmetric operator are real</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/char-poly.html">
+        <span class="deptitle">Characteristic polynomial of a matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/char-poly-degree-monic.html">
+        <span class="deptitle">Degree and monicness of a characteristic polynomial</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/real-matrix-with-real-eigenvalue-has-real-eigenvectors.html">
+        <span class="deptitle">Real matrix with real eigenvalues has real eigenvectors</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/diagonalization.html">
+        <span class="deptitle">Diagonalization</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/every-complex-matrix-has-eigenvalue.html">
         <span class="deptitle">Every complex matrix has an eigenvalue</span>
     </a>
@@ -530,6 +548,11 @@ Therefore, $A$ is orthgonally diagonalizable.</p>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-operator-has-n-ortho-eigenvectors.html">
         <span class="deptitle">Symmetric operator on V has a basis of orthonormal eigenvectors</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/symmetric-operator-matrix.html">
+        <span class="deptitle">Symmetric operator iff hermitian</span>
     </a>
     </li>
     <li>

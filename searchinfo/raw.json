@@ -1424,6 +1424,20 @@
 },
 {
 "type": "def",
+"title": "Positive semidefiniteness",
+"description": "A real square matrix A is positive semidefinite iff for every row vector u, u^TAu \u2265 0.",
+"uci": "/linear-algebra/matrices/positive-semidefinite",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/positive-semidefinite.html"
+},
+{
+"type": "def",
+"title": "Positive definite",
+"description": "A real square matrix A is positive definite iff for all non-0 u, u^TAu > 0.",
+"uci": "/linear-algebra/matrices/positive-definite",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/positive-definite.html"
+},
+{
+"type": "def",
 "title": "Reduced Row Echelon Form (RREF)",
 "uci": "/linear-algebra/matrices/rref",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rref.html"
@@ -1475,6 +1489,13 @@
 "title": "c(AB) = (cA)B and (AB)c = A(Bc)",
 "uci": "/linear-algebra/matrices/scalar-mult-assoc",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/scalar-mult-assoc.html"
+},
+{
+"type": "def",
+"title": "Conjugate Transpose and Hermitian",
+"description": "The conjugate transpose of a matrix is the complex conjugate of its transpose. A matrix is defined to be hermitian iff it equals its conjugate transpose.",
+"uci": "/linear-algebra/matrices/hermitian",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/hermitian.html"
 },
 {
 "type": "def",
@@ -1703,13 +1724,6 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis-of-fn.html"
 },
 {
-"type": "theorem",
-"title": "Matrix of linear transformation",
-"description": "Every linear transformation from F^m to F^n can be expressed as a matrix pre-multiplication. Conversely, a pre-multiplication by a matrix forms a linear transformation.",
-"uci": "/linear-algebra/linear-transformation/matrix",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix.html"
-},
-{
 "type": "theoremdef",
 "title": "Coordinatization over a basis",
 "description": "Let B be a basis of vector space V. Then every vector in V can be expressed uniquely as a finite linear combination of vectors in B. The coefficients of the linear combination are called the coordinates of that vector.",
@@ -1744,6 +1758,68 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/canonical-decomposition.html"
 },
 {
+"type": "theorem",
+"title": "Maximally linearly independent iff basis",
+"description": "A finite set is maximally linearly independent iff it is a basis.",
+"uci": "/linear-algebra/vector-spaces/basis/maximal-linindep-is-basis",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/maximal-linindep-is-basis.html"
+},
+{
+"type": "theorem",
+"title": "Linearly independent set can be expanded into a basis",
+"description": "If a set of vectors is linearly independent, a finite number of vectors can be added to it to make it a basis if the vector space has a finite-sized basis.",
+"uci": "/linear-algebra/vector-spaces/basis/expand-linindep-to-basis",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/expand-linindep-to-basis.html"
+},
+{
+"type": "theorem",
+"title": "Basis of range of linear transformation",
+"description": "If P is a basis of the kernel and P union Q is a basis of U, then T(Q) is a basis of T(U).",
+"uci": "/linear-algebra/linear-transformation/basis-of-range",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/basis-of-range.html"
+},
+{
+"type": "theorem",
+"title": "Full-rank square matrix is invertible",
+"description": "Let A be an n by n matrix. Then rank(A) = n iff A has an inverse.",
+"uci": "/linear-algebra/matrices/full-rank-inv",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-inv.html"
+},
+{
+"type": "theorem",
+"title": "AB = I implies BA = I",
+"uci": "/linear-algebra/matrices/product-equals-identity-implies-invertible",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/product-equals-identity-implies-invertible.html"
+},
+{
+"type": "theorem",
+"title": "Determinant of product is product of determinants",
+"description": "|AB| = |A||B|",
+"uci": "/linear-algebra/matrices/determinants/product",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/product.html"
+},
+{
+"type": "theoremdef",
+"title": "Orthogonal matrix",
+"description": "A matrix A is orthogonal iff A'A = I. Equivalently, A is orthogonal iff rows of A are orthonormal.",
+"uci": "/linear-algebra/matrices/orthogonal",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/orthogonal.html"
+},
+{
+"type": "theorem",
+"title": "RREF([A|I]) = [I|inv(A)] iff A is invertible",
+"description": "This is an algorithm for finding the inverse of a matrix by calculating RREF.",
+"uci": "/linear-algebra/matrices/rref-inv",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rref-inv.html"
+},
+{
+"type": "theorem",
+"title": "Matrix of linear transformation",
+"description": "Every linear transformation from F^m to F^n can be expressed as a matrix pre-multiplication. Conversely, a pre-multiplication by a matrix forms a linear transformation.",
+"uci": "/linear-algebra/linear-transformation/matrix",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix.html"
+},
+{
 "type": "theoremdef",
 "title": "Eigenvalues and Eigenvectors",
 "description": "Let T be a linear transformation. If T(x) = kx is satisfied for some k and some x, then k is an eigenvalue and x is an eigenvector.",
@@ -1752,9 +1828,29 @@
 },
 {
 "type": "theorem",
+"title": "All eigenvalues of a hermitian matrix are real",
+"uci": "/linear-algebra/eigenvectors/hermitian-real",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/hermitian-real.html"
+},
+{
+"type": "theorem",
 "title": "All eigenvalues of a symmetric operator are real",
 "uci": "/linear-algebra/eigenvectors/symmetric-real",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-real.html"
+},
+{
+"type": "theoremdef",
+"title": "Characteristic polynomial of a matrix",
+"description": "The characteristic polynomial of a matrix A is |xI - A|. Its roots are the eigenvalues of A.",
+"uci": "/linear-algebra/eigenvectors/char-poly",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/char-poly.html"
+},
+{
+"type": "theorem",
+"title": "Degree and monicness of a characteristic polynomial",
+"description": "Let A be an n by n matrix. The characteristic polynomial of A is a monic polynomial of degree n.",
+"uci": "/linear-algebra/eigenvectors/char-poly-degree-monic",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/char-poly-degree-monic.html"
 },
 {
 "type": "theorem",
@@ -1786,93 +1882,10 @@
 },
 {
 "type": "theorem",
-"title": "Symmetric operator iff hermitian",
-"description": "Let L: V to V be a linear transformation and A be the square matrix associated with L. Then L is symmetric iff A is hermitian. Also, if T(u) = Au, then A is hermitian iff T is a symmetric operator.",
-"uci": "/linear-algebra/linear-transformation/symmetric-operator-matrix",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/symmetric-operator-matrix.html"
-},
-{
-"type": "theorem",
-"title": "Maximally linearly independent iff basis",
-"description": "A finite set is maximally linearly independent iff it is a basis.",
-"uci": "/linear-algebra/vector-spaces/basis/maximal-linindep-is-basis",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/maximal-linindep-is-basis.html"
-},
-{
-"type": "theorem",
-"title": "Linearly independent set can be expanded into a basis",
-"description": "If a set of vectors is linearly independent, a finite number of vectors can be added to it to make it a basis if the vector space has a finite-sized basis.",
-"uci": "/linear-algebra/vector-spaces/basis/expand-linindep-to-basis",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/expand-linindep-to-basis.html"
-},
-{
-"type": "theorem",
-"title": "Basis of range of linear transformation",
-"description": "If P is a basis of the kernel and P union Q is a basis of U, then T(Q) is a basis of T(U).",
-"uci": "/linear-algebra/linear-transformation/basis-of-range",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/basis-of-range.html"
-},
-{
-"type": "theoremdef",
-"title": "Characteristic polynomial of a matrix",
-"description": "The characteristic polynomial of a matrix A is |xI - A|. Its roots are the eigenvalues of A.",
-"uci": "/linear-algebra/eigenvectors/char-poly",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/char-poly.html"
-},
-{
-"type": "theorem",
-"title": "Degree and monicness of a characteristic polynomial",
-"description": "Let A be an n by n matrix. The characteristic polynomial of A is a monic polynomial of degree n.",
-"uci": "/linear-algebra/eigenvectors/char-poly-degree-monic",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/char-poly-degree-monic.html"
-},
-{
-"type": "theorem",
-"title": "Full-rank square matrix is invertible",
-"description": "Let A be an n by n matrix. Then rank(A) = n iff A has an inverse.",
-"uci": "/linear-algebra/matrices/full-rank-inv",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-inv.html"
-},
-{
-"type": "theorem",
-"title": "AB = I implies BA = I",
-"uci": "/linear-algebra/matrices/product-equals-identity-implies-invertible",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/product-equals-identity-implies-invertible.html"
-},
-{
-"type": "theorem",
-"title": "Determinant of product is product of determinants",
-"description": "|AB| = |A||B|",
-"uci": "/linear-algebra/matrices/determinants/product",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/product.html"
-},
-{
-"type": "theoremdef",
-"title": "Orthogonal matrix",
-"description": "A matrix A is orthogonal iff A'A = I. Equivalently, A is orthogonal iff rows of A are orthonormal.",
-"uci": "/linear-algebra/matrices/orthogonal",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/orthogonal.html"
-},
-{
-"type": "theorem",
-"title": "Matrix of orthonormal basis change",
-"description": "Let P and Q be orthonormal bases of U and V respectively. Then the transformation matrix of the basis-changer from P to Q is orthogonal.",
-"uci": "/linear-algebra/linear-transformation/matrix-of-orthonormal-basis-change",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix-of-orthonormal-basis-change.html"
-},
-{
-"type": "theorem",
 "title": "A is diagonalizable iff there are n linearly independent eigenvectors",
 "description": "Let A be an n by n matrix. Then A is diagonalizable iff A has n linearly independent eigenvectors.",
 "uci": "/linear-algebra/eigenvectors/diag-linindep",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/diag-linindep.html"
-},
-{
-"type": "theorem",
-"title": "RREF([A|I]) = [I|inv(A)] iff A is invertible",
-"description": "This is an algorithm for finding the inverse of a matrix by calculating RREF.",
-"uci": "/linear-algebra/matrices/rref-inv",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rref-inv.html"
 },
 {
 "type": "theorem",
@@ -1889,10 +1902,31 @@
 },
 {
 "type": "theorem",
+"title": "Symmetric operator iff hermitian",
+"description": "Let L: V to V be a linear transformation and A be the square matrix associated with L. Then L is symmetric iff A is hermitian. Also, if T(u) = Au, then A is hermitian iff T is a symmetric operator.",
+"uci": "/linear-algebra/linear-transformation/symmetric-operator-matrix",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/symmetric-operator-matrix.html"
+},
+{
+"type": "theorem",
 "title": "Orthogonally diagonalizable iff hermitian",
 "description": "A matrix A is said to be orthogonally diagonalizable iff it can be expressed as PDP*, where P is orthogonal. Then A is orthogonally diagonalizable iff A = A*.",
 "uci": "/linear-algebra/eigenvectors/ortho-diag",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/ortho-diag.html"
+},
+{
+"type": "theorem",
+"title": "Bounding matrix quadratic form using eigenvalues",
+"description": "Let A be a real symmetric matrix. Then u^TAu/\u2225u\u2225^2 lies between the minimum and maximum eigenvalues",
+"uci": "/linear-algebra/matrices/bounding-quadratic-form-using-eigenvalues",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/bounding-quadratic-form-using-eigenvalues.html"
+},
+{
+"type": "theorem",
+"title": "Matrix of orthonormal basis change",
+"description": "Let P and Q be orthonormal bases of U and V respectively. Then the transformation matrix of the basis-changer from P to Q is orthogonal.",
+"uci": "/linear-algebra/linear-transformation/matrix-of-orthonormal-basis-change",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix-of-orthonormal-basis-change.html"
 },
 {
 "type": "theorem",

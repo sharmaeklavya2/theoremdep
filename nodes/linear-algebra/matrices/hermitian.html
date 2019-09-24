@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Transpose of product - TheoremDep</title>
-<meta name="description" content="(AB)' = B'A'" />
+<title>Conjugate Transpose and Hermitian - TheoremDep</title>
+<meta name="description" content="The conjugate transpose of a matrix is the complex conjugate of its transpose. A matrix is defined to be hermitian iff it equals its conjugate transpose." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -25,7 +25,7 @@
 </nav>
 
 <div id="main">
-<h1>Transpose of product</h1>
+<h1>Conjugate Transpose and Hermitian</h1>
 <h2> Dependencies: </h2>
 <ol class="deplist">
     <li>
@@ -36,27 +36,15 @@
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $R$ be a commutative semiring. Let $A$ and $B$ be matrices on $R$.
-Then $(AB)^T = B^TA^T$.</p>
-<h2>Proof</h2>
-<p>\begin{align}
-&amp; (AB)^T[i, j]
-\\ &amp;= (AB)[j, i]
-\\ &amp;= \sum_k A[j, k] B[k, i]
-\\ &amp;= \sum_k A^T[k, j] B^T[i, k]
-\\ &amp;= \sum_k B^T[i, k] A^T[k, j] \tag{$R$ is commutative semiring}
-\\ &amp;= (B^TA^T)[i, j]
-\end{align}</p>
-<p>Therefore, $(AB)^T = B^TA^T$.</p>
+<p>The conjugate transpose of a matrix $A$ over $\mathbb{C}$
+is defined to be the complex conjugate of $A^T$.
+The conjugate transpose is denoted by $A^*$.</p>
+<p>\[ (A^*)[i, j] = \overline{A[j, i]} \]</p>
+<p>$A$ is said to be hermitian iff $A = A^*$.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix-of-orthonormal-basis-change.html">
-        <span class="deptitle">Matrix of orthonormal basis change</span>
-    </a>
-    </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/symmetric-operator-matrix.html">
         <span class="deptitle">Symmetric operator iff hermitian</span>
@@ -65,31 +53,6 @@ Then $(AB)^T = B^TA^T$.</p>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/ortho-diag.html">
         <span class="deptitle">Orthogonally diagonalizable iff hermitian</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/diag-linindep.html">
-        <span class="deptitle">A is diagonalizable iff there are n linearly independent eigenvectors</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/hermitian-real.html">
-        <span class="deptitle">All eigenvalues of a hermitian matrix are real</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-is-smaller-than-span.html">
-        <span class="deptitle">Linearly independent set is smaller than a span</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inner-product-space.html">
-        <span class="deptitle">Matrices form an inner-product space</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/bounding-quadratic-form-using-eigenvalues.html">
-        <span class="deptitle">Bounding matrix quadratic form using eigenvalues</span>
     </a>
     </li>
 </ol>
@@ -120,8 +83,8 @@ Then $(AB)^T = B^TA^T$.</p>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/transpose-of-product.html">
-        <span class="deptitle">Transpose of product</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/hermitian.html">
+        <span class="deptitle">Conjugate Transpose and Hermitian</span>
     </a>
     </li>
 </ol>
