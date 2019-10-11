@@ -567,13 +567,6 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/weights/incremental.html"
 },
 {
-"type": "theorem",
-"title": "",
-"description": "",
-"uci": "/linear-algebra/matrices/psd-eigen",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/psd-eigen.html"
-},
-{
 "type": "def",
 "title": "Group",
 "description": "A group is a set along with a binary operator which satisfies certain properties.",
