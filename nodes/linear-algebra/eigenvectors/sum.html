@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Bounding matrix quadratic form using eigenvalues - TheoremDep</title>
-<meta name="description" content="Let A be a real symmetric matrix. Then u^TAu/∥u∥^2 lies between the minimum and maximum eigenvalues" />
+<title>Bound on eigenvalues of sum of matrices - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -25,17 +25,22 @@
 </nav>
 
 <div id="main">
-<h1>Bounding matrix quadratic form using eigenvalues</h1>
+<h1>Bound on eigenvalues of sum of matrices</h1>
 <h2> Dependencies: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
-        <span class="deptitle">Matrix</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenvector.html">
+        <span class="deptitle">Eigenvalues and Eigenvectors</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenvector.html">
-        <span class="deptitle">Eigenvalues and Eigenvectors</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/affine.html">
+        <span class="deptitle">Eigenpair of affine transformation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/pd-iff-pos-eigens.html">
+        <span class="deptitle">Positive definite iff eigenvalues are positive</span>
     </a>
     </li>
     <li>
@@ -44,67 +49,55 @@
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/ortho-diag.html">
-        <span class="deptitle">Orthogonally diagonalizable iff hermitian</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity.html">
+        <span class="deptitle">Identity matrix</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/mult-assoc.html">
-        <span class="deptitle">Matrix multiplication is associative</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/transpose-of-product.html">
-        <span class="deptitle">Transpose of product</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/pd-sum-is-pd.html">
+        <span class="deptitle">Sum of positive definite matrices is positive definite</span>
     </a>
     </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $A$ be a $n$ by $n$ real symmetric matrix.
-Let $\lambda_{\textrm{min}}$ and $\lambda_{\textrm{max}}$
-be the minimum and maximum eigenvalues of $A$
-and $v_{\textrm{min}}$ and $v_{\textrm{max}}$ be the corresponding eigenvectors. Then
-\[ \forall u \in \mathbb{R}^n, \lambda_{\textrm{min}}u^Tu \le u^TAu \le \lambda_{\textrm{max}}u^Tu \]
-Also,
-\[ v_{\textrm{min}}^TAv_{\textrm{min}} = \lambda_{\textrm{min}}v_{\textrm{min}}^Tv_{\textrm{min}}
-\bigwedge v_{\textrm{max}}^TAv_{\textrm{max}} = \lambda_{\textrm{max}}v_{\textrm{max}}^Tv_{\textrm{max}} \]
-so the above bound is tight.</p>
+<p>Let $A$ and $B$ be real $n$ by $n$ symmetric matrices.
+Then $A$, $B$ and $A+B$ have real eigenvalues.</p>
+<ul>
+<li>Let $\lambda^-$ and $\lambda^+$ be the minimum and maximum eigenvalues of $A$.</li>
+<li>Let $\mu^-$ and $\mu^+$ be the minimum and maximum eigenvalues of $B$.</li>
+<li>Let $\gamma^-$ and $\gamma^+$ be the minimum and maximum eigenvalues of $A+B$.</li>
+</ul>
+<p>Then
+\[ \lambda^- + \mu^- \le \gamma^- \le \gamma^+ \le \lambda^+ + \mu^+ \]</p>
 <h2>Proof</h2>
-<p>\[ v_{\textrm{min}}^TAv_{\textrm{min}}
-= v_{\textrm{min}}^T(\lambda_{\textrm{min}}v_{\textrm{min}})
-= \lambda_{\textrm{min}}v_{\textrm{min}}^Tv_{\textrm{min}} \]
-\[ v_{\textrm{max}}^TAv_{\textrm{max}}
-= v_{\textrm{max}}^T(\lambda_{\textrm{max}}v_{\textrm{max}})
-= \lambda_{\textrm{max}}v_{\textrm{max}}^Tv_{\textrm{max}} \]</p>
-<p>Since $A$ is real and symmetric, it is orthogonally diagonalizable.
-Specifically, let $[v_1, v_2, \ldots, v_n]$ be $n$ orthonormal eigenvectors of $A$
-and let $[\lambda_1, \lambda_2, \ldots, \lambda_n]$ be the corresponding eigenvalues.
-Let $P$ be the matrix whose $i^{\textrm{th}}$ column is $v_i$
-and let $D$ be a diagonal matrix whose $i^{\textrm{th}}$ diagonal entry is $\lambda_i$.
-Then $P$ and $D$ are real and $A = PDP^T$ and $P^TP = I$.</p>
-<p>Let $v = P^Tu$. Then
-\[ v^Tv = (P^Tu)^T(P^Tu) = u^T(PP^T)u = u^Tu \]
-\[ u^TAu = u^T(PDP^T)u = (P^Tu)^TD(P^Tu) = v^TDv = \sum_{i=1}^n \lambda_i v_i^2 \]</p>
-<p>Without loss of generality, assume that $\lambda_1 \ge \lambda_2 \ge \ldots \ge \lambda_n$.
-\begin{align}
-&amp; \forall i, \lambda_n \le \lambda_i \le \lambda_1
-\\ &amp;\Rightarrow \sum_{i=1}^n \lambda_n v_i^2 \le \sum_{i=1}^n \lambda_i v_i^2 \le \sum_{i=1}^n \lambda_1 v_i^2
-\\ &amp;\Rightarrow \lambda_n v^Tv \le \sum_{i=1}^n \lambda_i v_i^2 \le \lambda_1 v^Tv
-\\ &amp;\Rightarrow \lambda_n u^Tu \le u^TAu \le \lambda_1 u^Tu
+<p>Let $\lambda(X)$ be the set of eigenvalues of matrix $X$.</p>
+<p>\begin{align}
+&amp; \lambda(A) \in [\lambda^-, \lambda^+] \wedge \lambda(B) \in [\mu^-, \mu^+]
+\\ &amp;\Rightarrow \lambda(A-\lambda^-I) \subseteq [0, \lambda^+ - \lambda^-]
+\wedge \lambda(B-\mu^-I) \subseteq [0, \mu^+ - \mu^-] \tag{affine transformation}
+\\ &amp;\Rightarrow (A-\lambda^-I) \textrm{ is PSD } \wedge (B-\mu^-I) \textrm{ is PSD}
+\\ &amp;\Rightarrow (A-\lambda^-I) + (B - \mu^-I) \textrm{ is PSD}
+\\ &amp;\Rightarrow (A + B) - (\lambda^- + \mu^-)I \textrm{ is PSD}
+\\ &amp;\Rightarrow \lambda((A + B) - (\lambda^- + \mu^-)I) \subseteq [0, \infty)
+\\ &amp;\Rightarrow \lambda(A + B) \subseteq [\lambda^- + \mu^-, \infty)
 \end{align}</p>
+<p>\begin{align}
+&amp; \lambda(A) \in [\lambda^-, \lambda^+] \wedge \lambda(B) \in [\mu^-, \mu^+]
+\\ &amp;\Rightarrow \lambda(A-\lambda^+I) \subseteq [\lambda^- - \lambda^+, 0]
+\wedge \lambda(B-\mu^+I) \subseteq [\mu^- - \mu^+, 0] \tag{affine transformation}
+\\ &amp;\Rightarrow (A-\lambda^+I) \textrm{ is NSD } \wedge (B-\mu^-I) \textrm{ is NSD}
+\\ &amp;\Rightarrow (A-\lambda^+I) + (B - \mu^+I) \textrm{ is NSD}
+\\ &amp;\Rightarrow (A + B) - (\lambda^+ + \mu^+)I \textrm{ is NSD}
+\\ &amp;\Rightarrow \lambda((A + B) - (\lambda^+ + \mu^+)I) \subseteq (-\infty, 0]
+\\ &amp;\Rightarrow \lambda(A + B) \subseteq (-\infty, \lambda^+ + \mu^+]
+\end{align}</p>
+<p>Therefore, $\lambda(A+B) \subseteq [\lambda^- + \mu^-, \lambda^+ + \mu^+]$.</p>
 
 <div class="horizontal-rule"></div>
-<h2> Dependency for: </h2>
-<ol class="deplist">
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/pd-iff-pos-eigens.html">
-        <span class="deptitle">Positive definite iff eigenvalues are positive</span>
-    </a>
-    </li>
-</ol>
+<h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul><li>Depth: 24</li><li>Number of transitive dependencies: 92</li></ul>
+<ul><li>Depth: 26</li><li>Number of transitive dependencies: 97</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -278,6 +271,16 @@ Then $P$ and $D$ are real and $A = PDP^T$ and $P^TP = I$.</p>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/mult-assoc.html">
         <span class="deptitle">Matrix multiplication is associative</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/positive-definite.html">
+        <span class="deptitle">Positive definite</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/pd-sum-is-pd.html">
+        <span class="deptitle">Sum of positive definite matrices is positive definite</span>
     </a>
     </li>
     <li>
@@ -536,6 +539,11 @@ Then $P$ and $D$ are real and $A = PDP^T$ and $P^TP = I$.</p>
     </a>
     </li>
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/affine.html">
+        <span class="deptitle">Eigenpair of affine transformation</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/every-complex-matrix-has-eigenvalue.html">
         <span class="deptitle">Every complex matrix has an eigenvalue</span>
     </a>
@@ -558,6 +566,16 @@ Then $P$ and $D$ are real and $A = PDP^T$ and $P^TP = I$.</p>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/bounding-quadratic-form-using-eigenvalues.html">
         <span class="deptitle">Bounding matrix quadratic form using eigenvalues</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/pd-iff-pos-eigens.html">
+        <span class="deptitle">Positive definite iff eigenvalues are positive</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/sum.html">
+        <span class="deptitle">Bound on eigenvalues of sum of matrices</span>
     </a>
     </li>
 </ol>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Positive semidefiniteness - TheoremDep</title>
-<meta name="description" content="A real square matrix A is positive semidefinite iff for every row vector u, u^TAu ≥ 0." />
+<title>Sum of positive definite matrices is positive definite - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -25,25 +25,45 @@
 </nav>
 
 <div id="main">
-<h1>Positive semidefiniteness</h1>
+<h1>Sum of positive definite matrices is positive definite</h1>
 <h2> Dependencies: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
-        <span class="deptitle">Matrix</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/positive-definite.html">
+        <span class="deptitle">Positive definite</span>
     </a>
     </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $A$ be an $n$ by $n$ matrix over $\mathbb{R}$.
-Then $A$ is positive semidefinite iff
-\[ \forall u \in \mathbb{R}^n, u^TAu \ge 0 \]</p>
+<p>Let $A$ and $B$ be real $n$ by $n$ matrices. Then</p>
+<ul>
+<li>If $A$ and $B$ are positive definite, then $A+B$ is positive definite.</li>
+<li>If $A$ and $B$ are positive semidefinite, then $A+B$ is positive semidefinite.</li>
+<li>If $A$ and $B$ are negative definite, then $A+B$ is negative definite.</li>
+<li>If $A$ and $B$ are negative semidefinite, then $A+B$ is negative semidefinite.</li>
+</ul>
+<h2>Proof</h2>
+<p>If $A$ and $B$ are positive definite,
+\[ \forall u \in \mathbb{R}^n - \{0\}, u^T(A+B)u = u^TAu + u^TBu &gt; 0 + 0 = 0 \]
+If $A$ and $B$ are positive semidefinite,
+\[ \forall u \in \mathbb{R}^n, u^T(A+B)u = u^TAu + u^TBu \ge 0 + 0 = 0 \]
+If $A$ and $B$ are negative definite,
+\[ \forall u \in \mathbb{R}^n - \{0\}, u^T(A+B)u = u^TAu + u^TBu &lt; 0 + 0 = 0 \]
+If $A$ and $B$ are negative semidefinite,
+\[ \forall u \in \mathbb{R}^n, u^T(A+B)u = u^TAu + u^TBu \le 0 + 0 = 0 \]</p>
 
 <div class="horizontal-rule"></div>
-<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/sum.html">
+        <span class="deptitle">Bound on eigenvalues of sum of matrices</span>
+    </a>
+    </li>
+</ol>
 <h2> Info: </h2>
-<ul><li>Depth: 3</li><li>Number of transitive dependencies: 4</li></ul>
+<ul><li>Depth: 4</li><li>Number of transitive dependencies: 5</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -69,8 +89,13 @@ Then $A$ is positive semidefinite iff
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/positive-semidefinite.html">
-        <span class="deptitle">Positive semidefiniteness</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/positive-definite.html">
+        <span class="deptitle">Positive definite</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/pd-sum-is-pd.html">
+        <span class="deptitle">Sum of positive definite matrices is positive definite</span>
     </a>
     </li>
 </ol>

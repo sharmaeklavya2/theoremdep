@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Canonical decomposition of a linear transformation - TheoremDep</title>
-<meta name="description" content="Let T be a linear transformation from U to V. Then T = T3.T2.T1 where T1: U to F^dim(U), T2: F^dim(U) to F^dim(V), T3: F^dim(V) to V are linear transformations. This is called the canonical decomposition of T." />
+<title>Eigenpair of power of a matrix - TheoremDep</title>
+<meta name="description" content="If (λ, v) is an eigenpair of matrix A, then (λ^k, v) is an eigenpair of A^k." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -25,67 +25,12 @@
 </nav>
 
 <div id="main">
-<h1>Canonical decomposition of a linear transformation</h1>
+<h1>Eigenpair of power of a matrix</h1>
 <h2> Dependencies: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis-of-fn.html">
-        <span class="deptitle">Basis of F^n</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/coordinatization.html">
-        <span class="deptitle">Coordinatization over a basis</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/basis-change.html">
-        <span class="deptitle">Basis change is an isomorphic linear transformation</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/isomorphic-dimension.html">
-        <span class="deptitle">Vector spaces are isomorphic iff their dimensions are same</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/composition.html">
-        <span class="deptitle">Composition of linear transformations</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/isomorphism-equiv.html">
-        <span class="deptitle">Vector space isomorphism is an equivalence relation</span>
-    </a>
-    </li>
-</ol>
-
-<div class="horizontal-rule"></div>
-<p>Let $T: U \mapsto V$ be a linear transformation.
-Let $P = [u_1, u_2, \ldots, u_m]$ be a basis of $U$ and $Q = [v_1, v_2, \ldots, v_n]$ be a basis of $V$.</p>
-<p>Then $T = T_3T_2T_1$ where $T_1, T_2, T_3$ are linear transformations such that:</p>
-<ul>
-<li>$T_1: U \mapsto F^m$ where $T_1(u) = [u]_P$.</li>
-<li>$T_2: F^m \mapsto F^n$</li>
-<li>$T_3: F^n \mapsto V$ where $T_3([a_1, a_2, \ldots, a_n]) = \sum_{i=1}^n a_iv_i$.</li>
-</ul>
-<p>If $U = V$ and $P = Q$, then $T_1 = T_3^{-1}$.</p>
-<h2>Proof</h2>
-<p>Since $T_1$ and $T_3$ are basis-changers over vector spaces with the same dimension,
-they are isomorphic linear transformations.</p>
-<p>When $U = V$ and $u_i = v_i$, $T_1$ is an inverse of $T_3$.</p>
-<p>Define $T_2 = T_3^{-1}TT_1^{-1}$.
-Since inverse of an isomorphism is also an isomorphism
-and since composition of linear transformations is a linear transformation,
-$T_2$ is a linear transformation from $F^m$ to $F^n$.</p>
-<p>$T_3T_2T_1 = T_3(T_3^{-1}TT_1^{-1})T_1 = T$. This gives us the canonical decomposition of $T$.</p>
-
-<div class="horizontal-rule"></div>
-<h2> Dependency for: </h2>
-<ol class="deplist">
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/symmetric-operator-matrix.html">
-        <span class="deptitle">Symmetric operator iff hermitian</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+        <span class="deptitle">Matrix</span>
     </a>
     </li>
     <li>
@@ -93,9 +38,50 @@ $T_2$ is a linear transformation from $F^m$ to $F^n$.</p>
         <span class="deptitle">Eigenvalues and Eigenvectors</span>
     </a>
     </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity.html">
+        <span class="deptitle">Identity matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/mult-assoc.html">
+        <span class="deptitle">Matrix multiplication is associative</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inverse-of-product.html">
+        <span class="deptitle">Inverse of product</span>
+    </a>
+    </li>
 </ol>
+
+<div class="horizontal-rule"></div>
+<p>If $(\lambda, v)$ is an eigenpair of matrix $A$, then
+$(\lambda^k, v)$ is an eigenpair of $A^k$, where $k \in \mathbb{Z}$.</p>
+<h2>Proof</h2>
+<p>Let $P(k)$ be the claim that $(\lambda^k, v)$ is an eigenpair of $A^k$.
+We'll prove $P(k)$ for all $k \ge 0$ by mathematical induction.</p>
+<p><strong>Base case</strong>:
+$P(1)$ is trivially true.
+When $k = 0$, $A^k = I$ and $Iv = v = \lambda^0 v$.
+So $(\lambda^k, v)$ is an eigenpair of $A^k$. Hence $P(0)$.</p>
+<p><strong>Inductive step</strong>:
+Assume $P(k)$ is true for $k \ge 1$.
+\begin{align}
+&amp; A^{k+1}v = (AA^k)v = A(A^kv) = A(\lambda^k v)
+\\ &amp;= \lambda^k (Av) = \lambda^k (\lambda v) = \lambda^{k+1}v
+\end{align}
+Hence, $P(k+1)$ is true. By mathematical induction, $P(k)$ is true $\forall k \ge 0$.</p>
+<p>If $A$ is invertible, then
+\[ Av = \lambda v
+\implies v = A^{-1}(\lambda v) = \lambda (A^{-1}v)
+\implies A^{-1}v = \lambda^{-1}v \]</p>
+<p>Since $A^{-k} = (A^k)^{-1}$, $((\lambda^{k})^{-1}, v) = (\lambda^{-k}, v)$ is an eigenpair of $A$.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul><li>Depth: 17</li><li>Number of transitive dependencies: 45</li></ul>
+<ul><li>Depth: 19</li><li>Number of transitive dependencies: 48</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -324,6 +310,21 @@ $T_2$ is a linear transformation from $F^m$ to $F^n$.</p>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/canonical-decomposition.html">
         <span class="deptitle">Canonical decomposition of a linear transformation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix.html">
+        <span class="deptitle">Matrix of linear transformation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenvector.html">
+        <span class="deptitle">Eigenvalues and Eigenvectors</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/power.html">
+        <span class="deptitle">Eigenpair of power of a matrix</span>
     </a>
     </li>
 </ol>

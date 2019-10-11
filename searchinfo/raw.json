@@ -567,6 +567,13 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/weights/incremental.html"
 },
 {
+"type": "theorem",
+"title": "",
+"description": "",
+"uci": "/linear-algebra/matrices/psd-eigen",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/psd-eigen.html"
+},
+{
 "type": "def",
 "title": "Group",
 "description": "A group is a set along with a binary operator which satisfies certain properties.",
@@ -1424,17 +1431,26 @@
 },
 {
 "type": "def",
-"title": "Positive semidefiniteness",
-"description": "A real square matrix A is positive semidefinite iff for every row vector u, u^TAu \u2265 0.",
-"uci": "/linear-algebra/matrices/positive-semidefinite",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/positive-semidefinite.html"
-},
-{
-"type": "def",
 "title": "Positive definite",
-"description": "A real square matrix A is positive definite iff for all non-0 u, u^TAu > 0.",
+"description": "A real square matrix A is positive definite iff for all non-0 u, u^TAu > 0. A is positive semidefinite iff for all u, u^TAu \u2265 0.",
+"keywords": [
+"positive",
+"negative",
+"definite",
+"semidefinite",
+"PSD",
+"PD",
+"NSD",
+"ND"
+],
 "uci": "/linear-algebra/matrices/positive-definite",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/positive-definite.html"
+},
+{
+"type": "theorem",
+"title": "Sum of positive definite matrices is positive definite",
+"uci": "/linear-algebra/matrices/pd-sum-is-pd",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/pd-sum-is-pd.html"
 },
 {
 "type": "def",
@@ -1823,6 +1839,11 @@
 "type": "theoremdef",
 "title": "Eigenvalues and Eigenvectors",
 "description": "Let T be a linear transformation. If T(x) = kx is satisfied for some k and some x, then k is an eigenvalue and x is an eigenvector.",
+"keywords": [
+"eigenvalue",
+"eigenvector",
+"eigenpair"
+],
 "uci": "/linear-algebra/eigenvectors/eigenvector",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenvector.html"
 },
@@ -1889,6 +1910,20 @@
 },
 {
 "type": "theorem",
+"title": "Eigenpair of affine transformation",
+"description": "If (\u03bb, v) is an eigenpair of matrix A, then (a\u03bb+b, v) is an eigenpair of aA+bI.",
+"uci": "/linear-algebra/eigenvectors/affine",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/affine.html"
+},
+{
+"type": "theorem",
+"title": "Eigenpair of power of a matrix",
+"description": "If (\u03bb, v) is an eigenpair of matrix A, then (\u03bb^k, v) is an eigenpair of A^k.",
+"uci": "/linear-algebra/eigenvectors/power",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/power.html"
+},
+{
+"type": "theorem",
 "title": "Every complex matrix has an eigenvalue",
 "uci": "/linear-algebra/eigenvectors/every-complex-matrix-has-eigenvalue",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/every-complex-matrix-has-eigenvalue.html"
@@ -1920,6 +1955,19 @@
 "description": "Let A be a real symmetric matrix. Then u^TAu/\u2225u\u2225^2 lies between the minimum and maximum eigenvalues",
 "uci": "/linear-algebra/matrices/bounding-quadratic-form-using-eigenvalues",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/bounding-quadratic-form-using-eigenvalues.html"
+},
+{
+"type": "theorem",
+"title": "Positive definite iff eigenvalues are positive",
+"description": "A matrix A is positive definite iff all its eigenvalues are positive. It is positive semidefinite iff all its eigenvalues are non-negative.",
+"uci": "/linear-algebra/matrices/pd-iff-pos-eigens",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/pd-iff-pos-eigens.html"
+},
+{
+"type": "theorem",
+"title": "Bound on eigenvalues of sum of matrices",
+"uci": "/linear-algebra/eigenvectors/sum",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/sum.html"
 },
 {
 "type": "theorem",

@@ -4,7 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Positive definite - TheoremDep</title>
-<meta name="description" content="A real square matrix A is positive definite iff for all non-0 u, u^TAu > 0." />
+<meta name="description" content="A real square matrix A is positive definite iff for all non-0 u, u^TAu > 0. A is positive semidefinite iff for all u, u^TAu ≥ 0." />
+<meta name="keywords" content="positive,negative,definite,semidefinite,PSD,PD,NSD,ND" />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -36,12 +37,30 @@
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $A$ be a real $n$ by $n$ matrix.
-Then $A$ is positive definite iff
-\[ \forall u \in \mathbb{R}^n - \{0\}, u^TAu &gt; 0 \]</p>
+<p>Let $A$ be a real $n$ by $n$ matrix.</p>
+<p>Then $A$ is positive definite (PD) iff
+\[ \forall u \in \mathbb{R}^n - \{0\}, u^TAu &gt; 0 \]
+Then $A$ is positive semidefinite (PSD) iff
+\[ \forall u \in \mathbb{R}^n, u^TAu \ge 0 \]
+Then $A$ is negative definite (ND) iff
+\[ \forall u \in \mathbb{R}^n - \{0\}, u^TAu &lt; 0 \]
+Then $A$ is negative semidefinite (NSD) iff
+\[ \forall u \in \mathbb{R}^n, u^TAu \le 0 \]</p>
 
 <div class="horizontal-rule"></div>
-<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/pd-sum-is-pd.html">
+        <span class="deptitle">Sum of positive definite matrices is positive definite</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/pd-iff-pos-eigens.html">
+        <span class="deptitle">Positive definite iff eigenvalues are positive</span>
+    </a>
+    </li>
+</ol>
 <h2> Info: </h2>
 <ul><li>Depth: 3</li><li>Number of transitive dependencies: 4</li></ul>
 

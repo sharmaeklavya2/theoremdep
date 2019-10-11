@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Eigenvalues and Eigenvectors - TheoremDep</title>
 <meta name="description" content="Let T be a linear transformation. If T(x) = kx is satisfied for some k and some x, then k is an eigenvalue and x is an eigenvector." />
+<meta name="keywords" content="eigenvalue,eigenvector,eigenpair" />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -45,13 +46,15 @@
 Let $T: V \mapsto V$ be a linear transformation.</p>
 <p>If $T(x) = \lambda x$ is true for some $\lambda \in F$ and some $x \neq 0 \in V$,
 then $\lambda$ is called an eigenvalue of $T$
-and $x$ is called an eigenvector of $T$.</p>
+and $x$ is called an eigenvector of $T$.
+$(\lambda, x)$ is called an eigenpair of $T$.</p>
 <p>If $V$ is finite-dimensional and $\dim(V) = n$,
 the eigenvalues and eigenvectors of $T$ can be found
 by finding the eigenvalues and eigenvectors of another transformation
 $T_2: F^n \mapsto F^n$ where $T_2(x) = Ax$ and $A$ is a square matrix over $F$.</p>
 <p>Consequently, the eigenvalues and eigenvectors of a matrix $A$
 are defined as solutions to $Ax = \lambda x$.</p>
+<p>Note that for a given eigenvector, there can be exactly one eigenvalue.</p>
 <h2>Proof</h2>
 <p>Let $\dim(V) = n$.
 Let $T = T_1^{-1}T_2T_1$ be the canonical decomposition of $T$,
@@ -64,6 +67,10 @@ Eigenvectors of $T$ can be found by applying $T_1^{-1}$ on eigenvectors of $T_2$
 <p>Every linear transformation from $F^n$ to $F^n$ can be expressed as matrix pre-multiplication.
 So $\exists A, T_2(x) = Ax$.
 Therefore, the eigenvalue equation becomes $Ax = \lambda x$.</p>
+<p>Suppose the eigenvector $v$ has at least 2 eigenvalues $\lambda_1$ and $\lambda_2$ where $\lambda_1 \neq \lambda_2$.
+\[ T(v) = \lambda_1 v = \lambda_2 v
+\implies (\lambda_1 - \lambda_2) v = 0
+\implies v = 0 \implies \bot \]</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
@@ -71,6 +78,16 @@ Therefore, the eigenvalue equation becomes $Ax = \lambda x$.</p>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/every-complex-matrix-has-eigenvalue.html">
         <span class="deptitle">Every complex matrix has an eigenvalue</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/power.html">
+        <span class="deptitle">Eigenpair of power of a matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/affine.html">
+        <span class="deptitle">Eigenpair of affine transformation</span>
     </a>
     </li>
     <li>
@@ -86,6 +103,11 @@ Therefore, the eigenvalue equation becomes $Ax = \lambda x$.</p>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/eigenspace.html">
         <span class="deptitle">Eigenspace</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/sum.html">
+        <span class="deptitle">Bound on eigenvalues of sum of matrices</span>
     </a>
     </li>
     <li>
@@ -116,6 +138,11 @@ Therefore, the eigenvalue equation becomes $Ax = \lambda x$.</p>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/bounding-quadratic-form-using-eigenvalues.html">
         <span class="deptitle">Bounding matrix quadratic form using eigenvalues</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/pd-iff-pos-eigens.html">
+        <span class="deptitle">Positive definite iff eigenvalues are positive</span>
     </a>
     </li>
 </ol>
