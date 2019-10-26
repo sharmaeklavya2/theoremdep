@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Exponentiation of log of floor and ceil - TheoremDep</title>
+<meta name="description" content="(a+1)/b ≤ b^floor(log_b(a)) ≤ a" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Exponentiation of log of floor and ceil</h1>
+<h2> Dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/misc/floor-ceil/log.html">
+        <span class="deptitle">Floor and ceil of log</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $a, b \in \mathbb{Z}$ where $b \ge 2$ and $a \ge 1$. Then
+\[ \frac{a+1}{b} \le b^{\left\lfloor \log_b a \right\rfloor} \le a \]
+If $a \ge 2$, then
+\[ a \le b^{\left\lceil \log_b a \right\rceil} \le b(a-1) \]</p>
+<h2>Proof</h2>
+<p>\begin{align}
+&amp; \log_b(a+1) - 1 \le \left\lceil \log_b (a+1) \right\rceil - 1
+= \left\lfloor \log_b a \right\rfloor \le \log_b a
+\\ &amp;\implies \frac{a+1}{b} \le b^{\left\lfloor \log_b a \right\rfloor} \le a
+\end{align}</p>
+<p>When $a \ge 2$,
+\begin{align}
+&amp; \log_b a \le \left\lfloor \log_b a \right\rfloor
+= \left\lceil \log_b (a-1) \right\rceil + 1 \le \log_b (a-1) + 1
+\\ &amp;\implies a \le b^{\left\lceil \log_b a \right\rceil} \le b(a-1)
+\end{align}</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 1</li><li>Number of transitive dependencies: 1</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/misc/floor-ceil/log.html">
+        <span class="deptitle">Floor and ceil of log</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/misc/floor-ceil/rounded-power.html">
+        <span class="deptitle">Exponentiation of log of floor and ceil</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

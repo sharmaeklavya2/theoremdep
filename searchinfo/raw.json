@@ -2289,6 +2289,55 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/eulers-theorem.html"
 },
 {
+"type": "theorem",
+"title": "Floor and ceil of fraction",
+"description": "Let a and b be integers. Then ceil(a/b) = floor((a-1)/b) + 1. Equivalently, floor(a/b) = ceil((a+1)/b) - 1.",
+"uci": "/misc/floor-ceil/fraction",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/floor-ceil/fraction.html"
+},
+{
+"type": "theorem",
+"title": "Negation of floor",
+"description": "floor(-x) = -ceil(x)",
+"uci": "/misc/floor-ceil/neg",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/floor-ceil/neg.html"
+},
+{
+"type": "theorem",
+"title": "Floor and ceil of log",
+"description": "floor(log_b(a)) = ceil(log_b(a+1)) - 1 and ceil(log_b(a)) = floor(log_b(a-1)) + 1.",
+"uci": "/misc/floor-ceil/log",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/floor-ceil/log.html"
+},
+{
+"type": "theorem",
+"title": "Exponentiation of log of floor and ceil",
+"description": "(a+1)/b \u2264 b^floor(log_b(a)) \u2264 a",
+"uci": "/misc/floor-ceil/rounded-power",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/floor-ceil/rounded-power.html"
+},
+{
+"type": "theorem",
+"title": "Integration bound",
+"description": "Bounding a sum using integration.",
+"uci": "/misc/integration-bound",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/integration-bound.html"
+},
+{
+"type": "theorem",
+"title": "Bound on log",
+"description": "(x-1)/x \u2264 ln(x) \u2264 x-1.",
+"uci": "/misc/log-bound",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/log-bound.html"
+},
+{
+"type": "theorem",
+"title": "Bound on harmonic sum",
+"description": "H(n) = ln n + \ud835\udefe + [0, 1/n].",
+"uci": "/misc/harmonic-bound",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/harmonic-bound.html"
+},
+{
 "type": "theoremdef",
 "title": "Submodular function",
 "description": "A function is submodular iff its marginal decreases with the size of the set.",

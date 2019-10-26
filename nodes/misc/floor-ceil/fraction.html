@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Floor and ceil of fraction - TheoremDep</title>
+<meta name="description" content="Let a and b be integers. Then ceil(a/b) = floor((a-1)/b) + 1. Equivalently, floor(a/b) = ceil((a+1)/b) - 1." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Floor and ceil of fraction</h1>
+<h2 class="no-deps"> Dependencies: None </h2>
+
+<div class="horizontal-rule"></div>
+<p>Let $a, b \in \mathbb{Z}$ and $b &gt; 0$. Then
+\[ \left\lceil \frac{a}{b} \right\rceil = \left\lfloor \frac{a-1}{b} \right\rfloor + 1 \]
+Equivalently,
+\[ \left\lfloor \frac{a}{b} \right\rfloor = \left\lceil \frac{a+1}{b} \right\rceil - 1 \]</p>
+<h2>Proof</h2>
+<p>\begin{align}
+&amp; t = \left\lfloor \frac{a}{b} \right\rfloor
+\\ &amp;\implies t \le \frac{a}{b} &lt; t+1
+\\ &amp;\implies bt \le a &lt; bt+b \tag{$b &gt; 0$}
+\\ &amp;\implies bt \le a \le bt+b-1 \tag{$a, b \in \mathbb{Z}$}
+\\ &amp;\implies bt+1 \le a+1 \le bt+b
+\\ &amp;\implies bt &lt; a+1 \le bt+b
+\\ &amp;\implies t &lt; \frac{a+1}{b} \le t+1
+\\ &amp;\implies \left\lceil \frac{a+1}{b} \right\rceil = t+1 = \left\lfloor \frac{a}{b} \right\rfloor + 1
+\end{align}
+This gives us
+\[ \left\lfloor \frac{a}{b} \right\rfloor = \left\lceil \frac{a+1}{b} \right\rceil - 1 \]
+Replace $a$ by $a-1$ to get
+\[ \left\lceil \frac{a}{b} \right\rceil = \left\lfloor \frac{a-1}{b} \right\rfloor + 1 \]</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 0</li><li>Number of transitive dependencies: 0</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/misc/floor-ceil/fraction.html">
+        <span class="deptitle">Floor and ceil of fraction</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>
