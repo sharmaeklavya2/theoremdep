@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ϕ is multiplicative - TheoremDep</title>
+<meta name="description" content="Euler's totient function is multiplicative. This means that if a and b are coprime, then ϕ(ab) = ϕ(a)ϕ(b)." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>ϕ is multiplicative</h1>
+<h2> Dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/eulers-totient-function.html">
+        <span class="deptitle">Euler's Totient Function</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/integer-division-theorem.html">
+        <span class="deptitle">Integer Division Theorem</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/ab-coprime-to-x-iff-a-and-b-coprime-to-x.html">
+        <span class="deptitle">ab is coprime to x iff a and b are coprime to x</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/euclids-lemma.html">
+        <span class="deptitle">Euclid's lemma</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $a$ and $b$ be positive integers where $\gcd(a, b) = 1$.
+Let $\phi$ be Euler's totient function.
+Then $\phi$ is multiplicative, i.e. $\phi(ab) = \phi(a)\phi(b)$.</p>
+<h2>Proof</h2>
+<p>Let $x \in \mathbb{Z}_{ab}$.
+By the integer division theorem, there is a unique pair $(q, r)$ such that
+$x = aq + r$, where $0 \le r &lt; a$.
+If $q \ge b$, then $x = aq + r \ge ab$. Therefore, $q &lt; b$.
+Also, if $q \le -1$, then $x = aq + r &lt; -a + a = 0$. Therefore, $q \ge 0$.
+Therefore, $r \in \mathbb{Z}_a$ and $q \in \mathbb{Z}_b$.</p>
+<p>\[ \gcd(ab, x) = 1 \iff (\gcd(a, x) = 1 \wedge \gcd(b, x) = 1) \]</p>
+<p>\[ \gcd(a, x) = 1 \iff \gcd(a, r) = 1 \iff r \in \mathbb{Z}_a^* \]</p>
+<p>Let $f_r: \mathbb{Z}_b \mapsto \mathbb{Z}_b$ be a function where $f_r(y) = (ay + r) \% b$.
+\begin{align}
+&amp; f_r(y_1) = f_r(y_2)
+\\ &amp;\implies ay_1 + r \equiv ay_2 + r \pmod{b}
+\\ &amp;\implies b \mid a(y_1 - y_2)
+\\ &amp;\implies b \mid y_1 - y_2  \tag{by Euclid's lemma}
+\\ &amp;\implies y_1 = y_2  \tag{$y_1, y_2 \in \mathbb{Z}_b$}
+\end{align}
+Therefore, $f_r$ is one-to-one. Since the domain and codomain of $f_r$ are
+finite and of the same size, $f_r$ is a bijection.</p>
+<p>\[ \gcd(b, x) = 1 \iff \gcd(b, f_r(q)) = 1 \iff f_r(q) \in \mathbb{Z}_b^*
+\iff q \in f_r^{-1}(\mathbb{Z}_b^*) \]</p>
+<p>Therefore,
+\[ \gcd(x, ab) = 1 \iff (r \in \mathbb{Z}_a^*) \wedge (q \in f_r^{-1}(\mathbb{Z}_b^*)) \]
+$r$ can take $|\mathbb{Z}_a^*| = \phi(a)$ values,
+$q$ can take $|f_r^{-1}(\mathbb{Z}_b^*)| = |\mathbb{Z}_b^*| = \phi(b)$ values
+and $x$ can take $|\mathbb{Z}_{ab}^*| = \phi(ab)$ values.
+Therefore, $\phi(ab) = \phi(a)\phi(b)$.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 4</li><li>Number of transitive dependencies: 6</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/every-number-has-prime-factorization.html">
+        <span class="deptitle">Every number has a prime factorization</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/eulers-totient-function.html">
+        <span class="deptitle">Euler's Totient Function</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/integer-division-theorem.html">
+        <span class="deptitle">Integer Division Theorem</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-is-min-lincomb.html">
+        <span class="deptitle">GCD is the smallest Linear Combination</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/euclids-lemma.html">
+        <span class="deptitle">Euclid's lemma</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/ab-coprime-to-x-iff-a-and-b-coprime-to-x.html">
+        <span class="deptitle">ab is coprime to x iff a and b are coprime to x</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/phi-is-multiplicative.html">
+        <span class="deptitle">ϕ is multiplicative</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

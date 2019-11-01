@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Chinese remainder theorem - TheoremDep</title>
+<meta name="description" content="Helps find x such that x % m = a and x % n = b." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Chinese remainder theorem</h1>
+<h2> Dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/mod-inv-existence.html">
+        <span class="deptitle">Existence of Modular Inverse</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/ab-coprime-to-x-iff-a-and-b-coprime-to-x.html">
+        <span class="deptitle">ab is coprime to x iff a and b are coprime to x</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/product-of-coprime-divisors-is-divisor.html">
+        <span class="deptitle">Product of coprime divisors is divisor</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<ul>
+<li>Let $M = [m_1, m_2, \ldots, m_k]$ be pairwise-coprime numbers.</li>
+<li>Let $A = [a_1, a_2, \ldots, a_k]$ be $k$ integers.</li>
+<li>$N = \prod_{i=1}^k m_i$.</li>
+<li>$N_i = N/m_i$.</li>
+<li>$y_i = N_i^{-1} \pmod{m_i}$.</li>
+</ul>
+<p>Define the function $\textrm{crt}$ as
+\[ \operatorname{crt}(A, M) = \left( \sum_{i=1}^k a_iN_iy_i \right) \% N \]</p>
+<p>Then
+\[ (\forall i, x \equiv a_i \pmod{m_i}) \iff x \equiv \operatorname{crt}(A, M) \pmod{N} \]</p>
+<h2>Proof</h2>
+<p>\[ (\forall j \neq i, \gcd(m_j, m_i) = 1)
+\implies \gcd\left( \prod_{j \neq i} m_j, m_i \right) = 1
+\implies \gcd(N_i, m_i) = 1 \]
+Therefore, $y_i$ exists.</p>
+<p>Suppose
+\[ x \equiv \sum_{i=1}^k a_iN_iy_i \pmod{N} \]
+Since $\forall j \neq i, m_i \mid N_j$, $x \equiv a_iN_iy_i \pmod{m_i}$.
+Since $y_i = N_i^{-1} \pmod{m_i}$, $x \equiv a_iN_iy_i \equiv a_i \pmod{m_i}$.</p>
+<p>Let $S = \{x \in \mathbb{Z}_N: \forall i, x \equiv a_i \pmod{m_i} \}$.
+By the above result, we know that $\operatorname{crt}(A, M) \in S$, so $|S| \ge 1$.</p>
+<p>Suppose $x, y \in S$ and $x \neq y$.
+\[ (\forall i, x \equiv a_i \wedge y \equiv a_i \pmod{m_i})
+\implies (\forall i, m_i \mid (y-x))
+\implies N \mid (y-x)
+\implies y = x \]
+This is a contradiction. Therefore, there cannot be 2 distinct elements in $S$.
+Therefore, $S = \{ \operatorname{crt}(A, M) \}$.
+Therefore,
+\[ (\forall i, x \equiv a_i \pmod{m_i}) \implies x \equiv \operatorname{crt}(A, M) \pmod{N} \]</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 4</li><li>Number of transitive dependencies: 7</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/every-number-has-prime-factorization.html">
+        <span class="deptitle">Every number has a prime factorization</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/integer-division-theorem.html">
+        <span class="deptitle">Integer Division Theorem</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-is-min-lincomb.html">
+        <span class="deptitle">GCD is the smallest Linear Combination</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/euclids-lemma.html">
+        <span class="deptitle">Euclid's lemma</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/ab-coprime-to-x-iff-a-and-b-coprime-to-x.html">
+        <span class="deptitle">ab is coprime to x iff a and b are coprime to x</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/product-of-coprime-divisors-is-divisor.html">
+        <span class="deptitle">Product of coprime divisors is divisor</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/mod-inv-existence.html">
+        <span class="deptitle">Existence of Modular Inverse</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/chinese-remainder-theorem.html">
+        <span class="deptitle">Chinese remainder theorem</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>
