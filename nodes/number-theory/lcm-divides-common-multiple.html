@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LCM divides common multiple - TheoremDep</title>
+<meta name="description" content="lcm(a, b) divides every common multiple of a and b." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>LCM divides common multiple</h1>
+<h2> Dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/integer-division-theorem.html">
+        <span class="deptitle">Integer Division Theorem</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $A = \{a_1, a_2, \ldots, a_n\}$ be $n$ positive integers.
+Let $x$ be a common multiple of numbers in $A$.
+Let $l$ be the smallest positive common multiple of all numbers in $A$.
+Then $l \mid x$.</p>
+<h2>Proof</h2>
+<p>Suppose $l \not\mid x$.
+By the integer division theorem, $x = lq + r$, where $0 &lt; r &lt; l$.
+\[ (a_i \mid x \wedge a_i \mid l) \implies a_i \mid (x - lq) \implies a_i \mid r \]
+Since all $a_i$ divide $r$, $r$ is a positive common multiple of $A$.
+Therefore, $l \le r$.
+This is a contradiction. Therefore, $l \mid x$.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd-times-lcm-equals-product.html">
+        <span class="deptitle">GCD times LCM equals product</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 1</li><li>Number of transitive dependencies: 1</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/integer-division-theorem.html">
+        <span class="deptitle">Integer Division Theorem</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/lcm-divides-common-multiple.html">
+        <span class="deptitle">LCM divides common multiple</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

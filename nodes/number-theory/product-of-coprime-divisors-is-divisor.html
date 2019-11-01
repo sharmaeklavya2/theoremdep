@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Product of coprime divisors is divisor - TheoremDep</title>
+<meta name="description" content="If a|x and b|x and gcd(a, b) = 1, then ab|x." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Product of coprime divisors is divisor</h1>
+<h2> Dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/integer-division-theorem.html">
+        <span class="deptitle">Integer Division Theorem</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-is-min-lincomb.html">
+        <span class="deptitle">GCD is the smallest Linear Combination</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $a \mid x$ and $b \mid x$ and $\gcd(a, b) = 1$. Then $ab \mid x$.</p>
+<h2>Proof</h2>
+<p>Assume $ab \not\mid x$. By the integer division theorem, $x = abq + r$, where $0 &lt; r &lt; ab$.
+\[ a \mid x \implies a \mid (x - abq) \implies a \mid r \]
+Similarly, $b \mid r$.</p>
+<p>Since $\gcd(a, b) = 1$, $\exists x \exists y, ax + by = 1$.
+\begin{align}
+&amp; a \mid r \wedge b \mid r
+\\ &amp;\implies ab \mid rb \wedge ab \mid ra
+\\ &amp;\implies ab \mid rax + rby = r
+\end{align}
+This is a contradiction, since $0 &lt; r &lt; ab$.
+Therefore, $ab \mid x$.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd-times-lcm-equals-product.html">
+        <span class="deptitle">GCD times LCM equals product</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 2</li><li>Number of transitive dependencies: 2</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/integer-division-theorem.html">
+        <span class="deptitle">Integer Division Theorem</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-is-min-lincomb.html">
+        <span class="deptitle">GCD is the smallest Linear Combination</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/product-of-coprime-divisors-is-divisor.html">
+        <span class="deptitle">Product of coprime divisors is divisor</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

@@ -2224,19 +2224,6 @@
 },
 {
 "type": "theorem",
-"title": "GCD times LCM equals product",
-"description": "gcd(a, b) * lcm(a, b) = a * b",
-"uci": "/number-theory/gcd-times-lcm-equals-product",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd-times-lcm-equals-product.html"
-},
-{
-"type": "theorem",
-"title": "Zm \u00d7 Zn is isomorphic to Zmn iff m and n are coprime",
-"uci": "/abstract-algebra/groups/isomorphism/zm-cross-zn-isomorphic-to-zmn",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/zm-cross-zn-isomorphic-to-zmn.html"
-},
-{
-"type": "theorem",
 "title": "ab is coprime to x iff a and b are coprime to x",
 "uci": "/number-theory/ab-coprime-to-x-iff-a-and-b-coprime-to-x",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/ab-coprime-to-x-iff-a-and-b-coprime-to-x.html"
@@ -2247,6 +2234,33 @@
 "description": "Multiplying all elements of Zn* by a number coprime to n returns a permutation of Zn*",
 "uci": "/number-theory/multiplication-permutes-znstar",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/multiplication-permutes-znstar.html"
+},
+{
+"type": "theorem",
+"title": "LCM divides common multiple",
+"description": "lcm(a, b) divides every common multiple of a and b.",
+"uci": "/number-theory/lcm-divides-common-multiple",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/lcm-divides-common-multiple.html"
+},
+{
+"type": "theorem",
+"title": "Product of coprime divisors is divisor",
+"description": "If a|x and b|x and gcd(a, b) = 1, then ab|x.",
+"uci": "/number-theory/product-of-coprime-divisors-is-divisor",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/product-of-coprime-divisors-is-divisor.html"
+},
+{
+"type": "theorem",
+"title": "GCD times LCM equals product",
+"description": "gcd(a, b) * lcm(a, b) = a * b",
+"uci": "/number-theory/gcd-times-lcm-equals-product",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd-times-lcm-equals-product.html"
+},
+{
+"type": "theorem",
+"title": "Zm \u00d7 Zn is isomorphic to Zmn iff m and n are coprime",
+"uci": "/abstract-algebra/groups/isomorphism/zm-cross-zn-isomorphic-to-zmn",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/isomorphism/zm-cross-zn-isomorphic-to-zmn.html"
 },
 {
 "type": "theorem",

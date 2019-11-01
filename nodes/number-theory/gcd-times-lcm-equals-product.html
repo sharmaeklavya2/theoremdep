@@ -44,9 +44,27 @@
     </a>
     </li>
 </ol>
+<h2> Dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-divide.html">
+        <span class="deptitle">gcd(a1/d, a2/d, ..., an/d) = gcd(a1, a_2, ..., an)/d</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/product-of-coprime-divisors-is-divisor.html">
+        <span class="deptitle">Product of coprime divisors is divisor</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/lcm-divides-common-multiple.html">
+        <span class="deptitle">LCM divides common multiple</span>
+    </a>
+    </li>
+</ol>
 
 <div class="horizontal-rule"></div>
-<p>$\gcd(a, b)\operatorname{lcm}(a, b) = ab$.</p>
+<p>Let $a$ and $b$ be positive numbers. Then $\gcd(a, b)\operatorname{lcm}(a, b) = ab$.</p>
 <h2>Proof</h2>
 <p>\begin{align}
 &amp; \operatorname{PFEL}(\gcd(a, b)\operatorname{lcm}(a, b))
@@ -56,6 +74,19 @@
 \\ &amp;= \operatorname{PFEL}(ab)
 \end{align}</p>
 <p>Therefore, $\gcd(a, b)\operatorname{lcm}(a, b) = ab$.</p>
+<h2>Alternate Proof</h2>
+<p>Let $g = \gcd(a, b)$ and $l = \operatorname{lcm}(a, b)$.</p>
+<p>\[ (a \mid l \wedge b \mid l)
+\implies \left( \frac{a}{g} \mid \frac{l}{g} \wedge \frac{b}{g} \mid \frac{l}{g} \right) \]
+\[ \gcd\left( \frac{a}{g}, \frac{b}{g} \right) = \frac{\gcd(a, b)}{g} = 1 \]
+Since product of coprime divisors is also a divisor,
+\[ \frac{a}{g}\frac{b}{g} \mid \frac{l}{g} \implies ab \mid lg \]</p>
+<p>\[ \frac{ab}{g} = a\left(\frac{b}{g}\right) = \left(\frac{a}{g}\right)b \]
+Therefore, $\frac{ab}{g}$ is a common multiple of $a$ and $b$.
+Therefore,
+\[ l \mid \frac{ab}{g} \implies lg \mid ab \]</p>
+<p>Since $ab \mid lg$ and  $lg \mid ab$, $lg = ab$.
+Therefore, $\gcd(a, b)\operatorname{lcm}(a, b) = ab$.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
@@ -67,7 +98,7 @@
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 8</li><li>Number of transitive dependencies: 11</li></ul>
+<ul><li>Depth: 8</li><li>Number of transitive dependencies: 15</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -85,6 +116,16 @@
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-is-min-lincomb.html">
         <span class="deptitle">GCD is the smallest Linear Combination</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/common-divisor-divides-gcd.html">
+        <span class="deptitle">Common divisor divides GCD</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/gcd/gcd-divide.html">
+        <span class="deptitle">gcd(a1/d, a2/d, ..., an/d) = gcd(a1, a_2, ..., an)/d</span>
     </a>
     </li>
     <li>
@@ -125,6 +166,16 @@
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/prime-factorization/pfel-of-gcd-is-min-of-pfel.html">
         <span class="deptitle">PFEL of gcd is min of PFEL</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/lcm-divides-common-multiple.html">
+        <span class="deptitle">LCM divides common multiple</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/product-of-coprime-divisors-is-divisor.html">
+        <span class="deptitle">Product of coprime divisors is divisor</span>
     </a>
     </li>
     <li>
