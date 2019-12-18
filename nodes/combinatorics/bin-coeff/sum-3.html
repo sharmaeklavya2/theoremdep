@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Binomial coefficient: Sum 3 - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Binomial coefficient: Sum 3</h1>
+<h2> Dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/bin-coeff.html">
+        <span class="deptitle">Binomial Coefficient</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/add-recursion.html">
+        <span class="deptitle">Binomial coefficient: Additive recursion</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $m, n, p$ be non-negative integers.
+\[ \sum_{i=0}^p \binom{m}{i} \binom{n}{p-i} = \binom{m+n}{p} \]</p>
+<h2>Proof</h2>
+<p>Define $f$ as
+\[ f(m, n, p) = \sum_{i=0}^p \binom{m}{i} \binom{n}{p-i} \]</p>
+<p>\begin{align}
+f(m, 0, p) &amp;= \binom{m}{p}
+&amp; f(0, n, p) &amp;= \binom{n}{p}
+&amp; f(m, n, 0) &amp;= 1
+\end{align}</p>
+<p>Now assume $m \ge 1$, $n \ge 1$ and $p \ge 1$.
+\begin{align}
+&amp; f(m, n, p) = \sum_{i=0}^p \binom{m}{i} \binom{n}{p-i}
+\\ &amp;= \sum_{i=0}^p \left(\binom{m-1}{i} + \binom{m-1}{i-1}\right) \binom{n}{p-i}
+\\ &amp;= \sum_{i=0}^p \binom{m-1}{i}\binom{n}{p-i} + \sum_{i=1}^p \binom{m-1}{i-1}\binom{n}{(p-1)-(i-1)}
+\\ &amp;= f(m-1, n, p) + f(m-1, n, p-1)
+\end{align}</p>
+<p>This gives us a recurrence relation for $f$.
+It is easy to see that $f(m, n, p) = \binom{m+n}{p}$ satisfies the base cases.
+It also satisfies the recursive part because
+\[ f(m-1, n, p) + f(m-1, n, p-1)
+= \binom{m+n-1}{p} + \binom{m+n-1}{p-1}
+= \binom{m+n}{p} = f(m, n, p) \]</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 2</li><li>Number of transitive dependencies: 2</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/bin-coeff.html">
+        <span class="deptitle">Binomial Coefficient</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/add-recursion.html">
+        <span class="deptitle">Binomial coefficient: Additive recursion</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/sum-3.html">
+        <span class="deptitle">Binomial coefficient: Sum 3</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

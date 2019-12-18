@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Binomial coefficient: Sum 2 - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Binomial coefficient: Sum 2</h1>
+<h2> Dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/bin-coeff.html">
+        <span class="deptitle">Binomial Coefficient</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/add-recursion.html">
+        <span class="deptitle">Binomial coefficient: Additive recursion</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>\[ \sum_{i=k}^n \binom{i}{k} = \binom{n+1}{k+1} \]</p>
+<h2>Proof</h2>
+<p>\begin{align}
+&amp; \sum_{i=k}^n \binom{i}{k}
+\\ &amp;= \sum_{i=k} \left( \binom{i+1}{k+1} - \binom{i}{k+1} \right)  \tag{additive recursion formula}
+\\ &amp;= \binom{n+1}{k+1} - \binom{k}{k+1}  \tag{telescoping series}
+\\ &amp;= \binom{n+1}{k+1}
+\end{align}</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/sum-4.html">
+        <span class="deptitle">Binomial coefficient: Sum 4</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 2</li><li>Number of transitive dependencies: 2</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/bin-coeff.html">
+        <span class="deptitle">Binomial Coefficient</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/add-recursion.html">
+        <span class="deptitle">Binomial coefficient: Additive recursion</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/sum-2.html">
+        <span class="deptitle">Binomial coefficient: Sum 2</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

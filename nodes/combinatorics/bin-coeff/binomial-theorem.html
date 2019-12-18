@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Binomial theorem - TheoremDep</title>
+<meta name="description" content="(a+b)^n = sum(i from 0 to n, C(n,i)*a^(n-i)*b^i)." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Binomial theorem</h1>
+<h2> Dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html">
+        <span class="deptitle">Semiring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/bin-coeff.html">
+        <span class="deptitle">Binomial Coefficient</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $a$ and $b$ be elements of a commutative semiring $R$.
+For a non-negative integer $n$
+\[ (a+b)^n = \sum_{i=0}^n \binom{n}{i} a^{n-i} b^i \]</p>
+<h2>Proof</h2>
+<p>Expanding the product of the $n$ linear forms, we get $2^n$ product forms.
+Product forms of the type $a^{n-i}b^i$ are those which took $b$ from $i$ of the linear terms
+and $a$ from the rest of the linear terms.
+Since there are $\binom{n}{i}$ ways of choosing $i$ linear forms out of $n$,
+there are $\binom{n}{i}$ product terms of the form $a^{n-i}b^i$.
+Therefore, the coefficient of $a^{n-i}b^i$ is $\binom{n}{i}$.</p>
+<p>An alternative proof is possible using mathematical induction over $n$
+and the additive-recursive form of the binomial coefficient.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/sum.html">
+        <span class="deptitle">Binomial coefficient: Sum</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 1</li><li>Number of transitive dependencies: 2</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/bin-coeff.html">
+        <span class="deptitle">Binomial Coefficient</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html">
+        <span class="deptitle">Semiring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/binomial-theorem.html">
+        <span class="deptitle">Binomial theorem</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Binomial coefficient: Bulk decrement - TheoremDep</title>
+<meta name="description" content="C(n, i) * C(i, k) = C(n, k) * C(n-k, i-k)" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Binomial coefficient: Bulk decrement</h1>
+<h2> Dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/bin-coeff.html">
+        <span class="deptitle">Binomial Coefficient</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/decrement.html">
+        <span class="deptitle">Binomial coefficient: Decrement identities</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>\[ \binom{n}{i} = \frac{\binom{n}{k}}{\binom{i}{k}} \binom{n-k}{i-k} \]</p>
+<h2>Proof</h2>
+<p>Repeatedly apply the decrement identity to get</p>
+<p>\[ \binom{n}{i} = \frac{n(n-1)\ldots(n-k+1)}{i(i-1)\ldots(i-k+1)} \binom{n-k}{i-k} \]</p>
+<p>\begin{align}
+n(n-1)\ldots(n-k+1) &amp;= k!\binom{n}{k}
+&amp; i(i-1)\ldots(i-k+1) &amp;= k!\binom{i}{k}
+\end{align}</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/sum-1.html">
+        <span class="deptitle">Binomial coefficient: Sum 1</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 2</li><li>Number of transitive dependencies: 2</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/bin-coeff.html">
+        <span class="deptitle">Binomial Coefficient</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/decrement.html">
+        <span class="deptitle">Binomial coefficient: Decrement identities</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/bulk-decrement.html">
+        <span class="deptitle">Binomial coefficient: Bulk decrement</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

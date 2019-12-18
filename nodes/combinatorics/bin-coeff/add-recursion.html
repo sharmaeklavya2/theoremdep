@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Binomial coefficient: Additive recursion - TheoremDep</title>
+<meta name="description" content="C(n, k) = C(n-1, k) + C(n-1, k-1)" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Binomial coefficient: Additive recursion</h1>
+<h2> Dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/bin-coeff.html">
+        <span class="deptitle">Binomial Coefficient</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>For $n \ge 1$,
+\[ \binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1} \]</p>
+<p>On rearranging terms and replacing $n$ by $n+1$, we get
+\[ \binom{n}{k} = \binom{n+1}{k} - \binom{n}{k-1} \]
+On rearranging terms and replacing $n$ by $n+1$ and $k$ by $k+1$, we get
+\[ \binom{n}{k} = \binom{n+1}{k+1} - \binom{n}{k+1} \]</p>
+<h2>Combinatorial proof</h2>
+<p>When $k &lt; 0$ or $k &gt; n$, all 3 terms are 0, so the identity holds.
+For $k = 0$, $\binom{n}{k} = 1$ and $\binom{n-1}{k} + \binom{n-1}{k-1} = 1 + 0 = 1$.</p>
+<p>For the case when $1 \le k \le n$, we have a combinatorial proof.
+Suppose we have a set $S$ of $n$ distinct elements. Let $a \in S$.</p>
+<ul>
+<li>The number of subsets of $S$ of size $k$ is $\binom{n}{k}$.</li>
+<li>The number of subsets of $S$ of size $k$ which don't contain $a$
+is the number of subsets of $S-\{a\}$ of size $k$ which is $\binom{n-1}{k}$.</li>
+<li>The number of subsets of $S$ of size $k$ which contain $a$
+is the number of subsets of $S-\{a\}$ of size $k-1$ which is $\binom{n-1}{k-1}$.</li>
+</ul>
+<p>Therefore, $\binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}$.</p>
+<h2>Alternative proof outline</h2>
+<p>An algebraic proof is also possible by using the decrement identities
+to express $\binom{n-1}{k}$ and $\binom{n-1}{k-1}$ in terms of $\binom{n}{k}$.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/sum-3.html">
+        <span class="deptitle">Binomial coefficient: Sum 3</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/sum-2.html">
+        <span class="deptitle">Binomial coefficient: Sum 2</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/sum-4.html">
+        <span class="deptitle">Binomial coefficient: Sum 4</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 1</li><li>Number of transitive dependencies: 1</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/bin-coeff.html">
+        <span class="deptitle">Binomial Coefficient</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/add-recursion.html">
+        <span class="deptitle">Binomial coefficient: Additive recursion</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

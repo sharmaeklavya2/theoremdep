@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Binomial coefficient: Sum 4 - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Binomial coefficient: Sum 4</h1>
+<h2> Dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/bin-coeff.html">
+        <span class="deptitle">Binomial Coefficient</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/add-recursion.html">
+        <span class="deptitle">Binomial coefficient: Additive recursion</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/sum-2.html">
+        <span class="deptitle">Binomial coefficient: Sum 2</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $a, b, n$ be non-negative integers.</p>
+<p>\[ \sum_{i=a}^{n-b} \binom{i}{a}\binom{n-i}{b} = \binom{n+1}{a+b+1} \]</p>
+<h2>Proof</h2>
+<p>Define $f$ as
+\[ f(a, b, n) = \sum_{i=a}^{n-b} \binom{i}{a}\binom{n-i}{b} \]</p>
+<p>\begin{align}
+f(a, 0, n) &amp;= \sum_{i=0}^n \binom{i}{a} = \binom{n+1}{a+1}
+&amp; f(0, b, n) &amp;= \sum_{i=0}^n \binom{n-i}{b} = \sum_{j=0}^n \binom{j}{b} = \binom{n+1}{b+1}
+\end{align}
+When $n &lt; a+b$, then $f(a, b, n) = 0$.
+For $n = a+b$, $f(a, b, n) = \binom{a}{a}\binom{b}{b} = 1$.</p>
+<p>Let $a \ge 1$, $b \ge 1$ and $n &gt; a+b$.</p>
+<p>\begin{align}
+&amp; f(a, b, n)
+\\ &amp;= \sum_{i=a}^{n-b} \binom{i}{a}\binom{n-i}{b}
+\\ &amp;= \sum_{i=a}^{n-b} \left( \binom{i-1}{a} + \binom{i-1}{a-1} \right) \binom{n-i}{b}
+\\ &amp;= \sum_{i=a+1}^{n-b} \binom{i-1}{a}\binom{n-i}{b} + \sum_{i=a}^{n-b} \binom{i-1}{a-1}\binom{n-i}{b}
+\\ &amp;= \sum_{j=a}^{(n-1)-b} \binom{j}{a}\binom{(n-1)-j}{b} + \sum_{j=a-1}^{(n-1)-b} \binom{j}{a-1}\binom{(n-1)-j}{b}
+\\ &amp;= f(a, b, n-1) + f(a-1, b, n-1)
+\end{align}</p>
+<p>This gives us a recurrence relation for $f$.
+It can be proven that $f(a, b, n) = \binom{n+1}{a+b+1}$ satisfies this recurrence relation.
+\[ f(a, b, n-1) + f(a-1, b, n-1)
+= \binom{n}{a+b+1} + \binom{n}{a+b} = \binom{n+1}{a+b+1} = f(a, b, n) \]
+The base cases are easy to check.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 3</li><li>Number of transitive dependencies: 3</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/bin-coeff.html">
+        <span class="deptitle">Binomial Coefficient</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/add-recursion.html">
+        <span class="deptitle">Binomial coefficient: Additive recursion</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/sum-2.html">
+        <span class="deptitle">Binomial coefficient: Sum 2</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/sum-4.html">
+        <span class="deptitle">Binomial coefficient: Sum 4</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

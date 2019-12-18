@@ -567,6 +567,56 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/weights/incremental.html"
 },
 {
+"type": "theoremdef",
+"title": "Binomial Coefficient",
+"keywords": [
+"binom",
+"choose"
+],
+"description": "A binomial coefficient, denoted by C(n, k), is the number of ways to choose k elements out of n distinct elements.",
+"uci": "/combinatorics/bin-coeff/bin-coeff",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/bin-coeff.html"
+},
+{
+"type": "theorem",
+"title": "Binomial coefficient: Decrement identities",
+"description": "We can compute C(n, k) in 1 step if we know one of C(n-1, k), C(n, k-1) or C(n-1, k-1).",
+"uci": "/combinatorics/bin-coeff/decrement",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/decrement.html"
+},
+{
+"type": "theorem",
+"title": "Binomial coefficient: Bulk decrement",
+"description": "C(n, i) * C(i, k) = C(n, k) * C(n-k, i-k)",
+"uci": "/combinatorics/bin-coeff/bulk-decrement",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/bulk-decrement.html"
+},
+{
+"type": "theorem",
+"title": "Binomial coefficient: Additive recursion",
+"description": "C(n, k) = C(n-1, k) + C(n-1, k-1)",
+"uci": "/combinatorics/bin-coeff/add-recursion",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/add-recursion.html"
+},
+{
+"type": "theorem",
+"title": "Binomial coefficient: Sum 2",
+"uci": "/combinatorics/bin-coeff/sum-2",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/sum-2.html"
+},
+{
+"type": "theorem",
+"title": "Binomial coefficient: Sum 4",
+"uci": "/combinatorics/bin-coeff/sum-4",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/sum-4.html"
+},
+{
+"type": "theorem",
+"title": "Binomial coefficient: Sum 3",
+"uci": "/combinatorics/bin-coeff/sum-3",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/sum-3.html"
+},
+{
 "type": "def",
 "title": "Group",
 "description": "A group is a set along with a binary operator which satisfies certain properties.",
@@ -1974,6 +2024,26 @@
 "title": "Square matrices form a (semi)ring",
 "uci": "/linear-algebra/matrices/semiring",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/semiring.html"
+},
+{
+"type": "theorem",
+"title": "Binomial theorem",
+"description": "(a+b)^n = sum(i from 0 to n, C(n,i)*a^(n-i)*b^i).",
+"uci": "/combinatorics/bin-coeff/binomial-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/binomial-theorem.html"
+},
+{
+"type": "theorem",
+"title": "Binomial coefficient: Sum",
+"description": "sum(i from 0 to n, C(n, i)) = 2^n",
+"uci": "/combinatorics/bin-coeff/sum",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/sum.html"
+},
+{
+"type": "theorem",
+"title": "Binomial coefficient: Sum 1",
+"uci": "/combinatorics/bin-coeff/sum-1",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/sum-1.html"
 },
 {
 "type": "theorem",

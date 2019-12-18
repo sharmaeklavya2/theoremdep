@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Binomial Coefficient - TheoremDep</title>
+<meta name="description" content="A binomial coefficient, denoted by C(n, k), is the number of ways to choose k elements out of n distinct elements." />
+<meta name="keywords" content="binom,choose" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Binomial Coefficient</h1>
+<h2 class="no-deps"> Dependencies: None </h2>
+
+<div class="horizontal-rule"></div>
+<p>A binomial coefficient, denoted as $\binom{n}{k}$ or $C(n, k)$ or ${^n}C_k$,
+is the number of ways to choose a subset of $k$ elements out of a set of $n$ distinct elements.
+Here $n \ge 0$.</p>
+<p>It can be proven that
+\[ \binom{n}{k} = \frac{n!}{k!(n-k)!} = \prod_{i=1}^k \frac{n-i+1}{i} \]</p>
+<p>This immediately implies that $\binom{n}{k} = \binom{n}{n-k}$.</p>
+<p>When $k &lt; 0$ or $k &gt; n$, $\binom{n}{k} = 0$.</p>
+<h2>Proof</h2>
+<p>Let $S$ be a set of $n$ distinct elements.
+Let $P(n, k)$ be the number of ways to choose a subsequence $L$ of length $k$
+such that $L \subseteq S$ and all elements in $L$ are distinct.</p>
+<p>We'll first choose $L_1$, then $L_2$, and so on.
+$L_i$ can be any element of $S$ except $L_1, L_2, \ldots, L_{i-1}$,
+so $L_i$ can be chosen in $n-i+1$ ways.
+Therefore,
+\[ P(n, k) = \prod_{i=1}^k (n-i+1) = \frac{n!}{(n-k)!} \]</p>
+<p>We can also choose $L$ by choosing a subset of size $k$ from $S$ and then permuting its elements.
+Therefore,
+\[ P(n, k) = \binom{n}{k}k! \implies \binom{n}{k} = \frac{n!}{k!(n-k)!} \]</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/sum-3.html">
+        <span class="deptitle">Binomial coefficient: Sum 3</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/sum-2.html">
+        <span class="deptitle">Binomial coefficient: Sum 2</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/sum-4.html">
+        <span class="deptitle">Binomial coefficient: Sum 4</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/binomial-theorem.html">
+        <span class="deptitle">Binomial theorem</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/sum.html">
+        <span class="deptitle">Binomial coefficient: Sum</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/add-recursion.html">
+        <span class="deptitle">Binomial coefficient: Additive recursion</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/bulk-decrement.html">
+        <span class="deptitle">Binomial coefficient: Bulk decrement</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/decrement.html">
+        <span class="deptitle">Binomial coefficient: Decrement identities</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/sum-1.html">
+        <span class="deptitle">Binomial coefficient: Sum 1</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 0</li><li>Number of transitive dependencies: 0</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/bin-coeff.html">
+        <span class="deptitle">Binomial Coefficient</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>
