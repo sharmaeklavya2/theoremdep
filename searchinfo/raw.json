@@ -2466,6 +2466,13 @@
 "description": "The weighted rank of X is the weight of the max-weight basis of X. The weighted rank function is submodular.",
 "uci": "/matroids/weights/weighted-rank-is-submodular",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/weights/weighted-rank-is-submodular.html"
+},
+{
+"type": "theorem",
+"title": "Harmonic bound for fraction",
+"description": "H(a+b-1) - H(b-1) \u2264 a/b \u2264 H(b) - H(b-a)",
+"uci": "/misc/harmonic-bound-for-fraction",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/harmonic-bound-for-fraction.html"
 }
 ]
 }
