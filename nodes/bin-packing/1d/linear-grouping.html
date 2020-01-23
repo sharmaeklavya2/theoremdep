@@ -45,7 +45,8 @@
 <p>The linear grouping scheme is an algorithm parametrized by an integer $k$.
 It first splits $I$ into disjoint instances $I'$ and $I_2$
 such that $I_2$ has at most $k$ items.
-It then increases the item sizes in $I'$ to get $I_1$.
+It then increases the item sizes in $I'$ to get $I_1$
+such that $I_1$ has at most $\lceil \frac{n}{k} \rceil - 1$ distinct item-sizes.
 The algorithm outputs $(I_1, I_2)$.</p>
 <p>It can be proven that $I_1 \preceq I \preceq I_1 + I_2$.</p>
 <p>This algorithm runs in $O(n\lg n)$ time.</p>
@@ -55,7 +56,8 @@ $I_1 \preceq I \preceq I_2$ is trivially true.</p>
 <p>The linear grouping scheme first orders the items in non-increasing order of size.
 It then splits them into groups:
 the group $G_1$ consists of the first $k$ items, $G_2$ consists of the next $k$ items and so on.
-The last group, $G_t$ may contain less than $k$ items.</p>
+The last group, $G_t$ may contain less than $k$ items.
+Here $t = \lceil \frac{n}{k} \rceil$.</p>
 <p>For all $i \ge 2$, the instance $G_i'$ is obtained by transforming $G_i$:
 each item's size is increased to $\max(G_i)$.</p>
 <p>Since each item in $G_i'$ is at least as large as the corresponding item in $G_i$, $G_i' \succeq G_i$.
@@ -74,9 +76,17 @@ I_1 + I_2 &amp;= G_1 + G_2' + G_3' + \ldots + G_t'
 \\ &amp;= I
 \end{align}
 Therefore, $I_1 \preceq I \preceq I_1 + I_2$.</p>
+<p>Because all items in $G_i'$ have the same size, $I_1$ has $t-1$ distinct item-sizes.</p>
 
 <div class="horizontal-rule"></div>
-<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/aptas.html">
+        <span class="deptitle">1D bin-packing: APTAS</span>
+    </a>
+    </li>
+</ol>
 <h2> Info: </h2>
 <ul><li>Depth: 1</li><li>Number of transitive dependencies: 2</li></ul>
 

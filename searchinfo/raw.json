@@ -2488,6 +2488,12 @@
 },
 {
 "type": "theorem",
+"title": "1D bin-packing: APTAS",
+"uci": "/bin-packing/1d/aptas",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/aptas.html"
+},
+{
+"type": "theorem",
 "title": "Floor and ceil of fraction",
 "description": "Let a and b be integers. Then ceil(a/b) = floor((a-1)/b) + 1. Equivalently, floor(a/b) = ceil((a+1)/b) - 1.",
 "uci": "/misc/floor-ceil/fraction",
