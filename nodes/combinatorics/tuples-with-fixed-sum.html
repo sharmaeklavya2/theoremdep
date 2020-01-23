@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Binomial coefficient: Sum 2 - TheoremDep</title>
-<meta name="description" content="Track dependencies between theorems." />
+<title>Number of tuples with fixed sum - TheoremDep</title>
+<meta name="description" content="The number of tuples of length n of non-negative numbers whose sum is s is C(s+n-1, n-1)." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -25,52 +25,36 @@
 </nav>
 
 <div id="main">
-<h1>Binomial coefficient: Sum 2</h1>
+<h1>Number of tuples with fixed sum</h1>
 <h2> Dependencies: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/bin-coeff.html">
-        <span class="deptitle">Binomial Coefficient</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/add-recursion.html">
-        <span class="deptitle">Binomial coefficient: Additive recursion</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/sum-2.html">
+        <span class="deptitle">Binomial coefficient: Sum 2</span>
     </a>
     </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>\[ \sum_{i=k}^n \binom{i}{k} = \binom{n+1}{k+1} \]</p>
+<p>Let $f(n, s)$ be the number of $n$-tuples of non-negative integers that sum to $s$. Then
+\[ f(n, s) = \binom{s+n-1}{n-1} \]</p>
 <h2>Proof</h2>
-<p>\begin{align}
-&amp; \sum_{i=k}^n \binom{i}{k}
-\\ &amp;= \sum_{i=k} \left( \binom{i+1}{k+1} - \binom{i}{k+1} \right)  \tag{additive recursion formula}
-\\ &amp;= \binom{n+1}{k+1} - \binom{k}{k+1}  \tag{telescoping series}
-\\ &amp;= \binom{n+1}{k+1}
-\end{align}</p>
+<p>We'll find a recurrence relation for $f$ and then find a solution to that recurrence.</p>
+<p>Base case: $f(1, s) = 1$.</p>
+<p>\[ f(n, s) = \sum_{i=0}^s \begin{pmatrix}
+\textrm{number of } n\textrm{-tuples that sum to } s \\
+\textrm{ and have the } n^{\textrm{th}} \textrm{ element as } i \end{pmatrix}
+= \sum_{i=0}^s f(n-1, s-i) \]</p>
+<p>This recurrence is satisfied by
+\[ f(n, s) = \binom{s+n-1}{n-1} \]
+because
+\[ \sum_{i=0}^s f(n-1, s-i) = \sum_{i=0}^s \binom{s-i+n-2}{n-2}
+= \sum_{j=n-2}^{s+n-2} \binom{j}{n-2} = \binom{s+n-1}{n-1} \]</p>
 
 <div class="horizontal-rule"></div>
-<h2> Dependency for: </h2>
-<ol class="deplist">
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/tuples-with-bounded-sum.html">
-        <span class="deptitle">Number of tuples with bounded sum</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/tuples-with-fixed-sum.html">
-        <span class="deptitle">Number of tuples with fixed sum</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/sum-4.html">
-        <span class="deptitle">Binomial coefficient: Sum 4</span>
-    </a>
-    </li>
-</ol>
+<h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul><li>Depth: 2</li><li>Number of transitive dependencies: 2</li></ul>
+<ul><li>Depth: 3</li><li>Number of transitive dependencies: 3</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -88,6 +72,11 @@
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/sum-2.html">
         <span class="deptitle">Binomial coefficient: Sum 2</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/tuples-with-fixed-sum.html">
+        <span class="deptitle">Number of tuples with fixed sum</span>
     </a>
     </li>
 </ol>

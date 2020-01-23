@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Subset-sum is NP-complete - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>Subset-sum is NP-complete</h1>
+<h2> Dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/complexity/np-completeness/3-sat</span>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>The subset-sum problem is in NP because we can use
+the subset of items which sum to the target as the certificate.
+To verify the certificate, just check that each element is in the original (multi-)set,
+has not been repeated (more times than in the original set) and that they sum to the target.</p>
+<p>Subset-sum is NP-hard because it can be reduced in polynomial-time to 3-sat.
+See CLRS ed3, Theorem 34.15, page 1097 for proof.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/complexity/np-completeness/partition.html">
+        <span class="deptitle">Partition problem is NP-complete</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 1</li><li>Number of transitive dependencies: 1</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/complexity/np-completeness/3-sat</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/complexity/np-completeness/subset-sum.html">
+        <span class="deptitle">Subset-sum is NP-complete</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

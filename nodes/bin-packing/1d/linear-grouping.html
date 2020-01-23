@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>1D bin-packing: linear grouping - TheoremDep</title>
+<meta name="description" content="Linear grouping is a transformation on an input instance that gives us a predecessor and a successor." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>1D bin-packing: linear grouping</h1>
+<h2> Dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/predecessor.html">
+        <span class="deptitle">Bin-packing: predecessor of an input instance</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/union.html">
+        <span class="deptitle">Bin-packing: union of input instances</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $I$ be an input instance for 1D bin-packing.</p>
+<p>The linear grouping scheme is an algorithm parametrized by an integer $k$.
+It first splits $I$ into disjoint instances $I'$ and $I_2$
+such that $I_2$ has at most $k$ items.
+It then increases the item sizes in $I'$ to get $I_1$.
+The algorithm outputs $(I_1, I_2)$.</p>
+<p>It can be proven that $I_1 \preceq I \preceq I_1 + I_2$.</p>
+<p>This algorithm runs in $O(n\lg n)$ time.</p>
+<h2>Algorithm and proof of correctness</h2>
+<p>If $I$ is empty, $I_1$ and $I_2$ are defined to be empty.
+$I_1 \preceq I \preceq I_2$ is trivially true.</p>
+<p>The linear grouping scheme first orders the items in non-increasing order of size.
+It then splits them into groups:
+the group $G_1$ consists of the first $k$ items, $G_2$ consists of the next $k$ items and so on.
+The last group, $G_t$ may contain less than $k$ items.</p>
+<p>For all $i \ge 2$, the instance $G_i'$ is obtained by transforming $G_i$:
+each item's size is increased to $\max(G_i)$.</p>
+<p>Since each item in $G_i'$ is at least as large as the corresponding item in $G_i$, $G_i' \succeq G_i$.
+Since $\max(G_i) \le j$ for every $j \in G_{i-1}$ and $|G_i| \le |G_{i-1}|$, $G_{i-1} \succeq G_i'$.
+Therefore, $G_1 \succeq G_2' \succeq G_2 \succeq G_3' \succeq \ldots \succeq G_t' \succeq G_t$.</p>
+<p>Let $I' = G_2 + G_3 + \ldots + G_t$, $I_2 = G_1$ and $I_1 = G_2' + G_3' + \ldots + G_t'$.</p>
+<p>\begin{align}
+I_1 &amp;= G_2' + G_3' + \ldots + G_t'
+\\ &amp;\preceq G_1 + G_2 + \ldots + G_{t-1}
+\\ &amp;\preceq G_1 + G_2 + \ldots + G_{t-1} + G_t
+\\ &amp;= I
+\end{align}
+\begin{align}
+I_1 + I_2 &amp;= G_1 + G_2' + G_3' + \ldots + G_t'
+\\ &amp;\succeq G_1 + G_2 + G_3 + \ldots + G_t
+\\ &amp;= I
+\end{align}
+Therefore, $I_1 \preceq I \preceq I_1 + I_2$.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 1</li><li>Number of transitive dependencies: 2</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/union.html">
+        <span class="deptitle">Bin-packing: union of input instances</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/predecessor.html">
+        <span class="deptitle">Bin-packing: predecessor of an input instance</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/linear-grouping.html">
+        <span class="deptitle">1D bin-packing: linear grouping</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

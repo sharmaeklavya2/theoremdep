@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>1D bin-packing is (1.5-ε)-inapprox - TheoremDep</title>
+<meta name="description" content="There is no (1.5-ε)-approx algorithm for 1D bin-packing unless P=NP." />
+<meta name="keywords" content="inapproximability,hardness" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1>1D bin-packing is (1.5-ε)-inapprox</h1>
+<h2> Dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/complexity/np-completeness/partition.html">
+        <span class="deptitle">Partition problem is NP-complete</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>There is no (1.5-ε)-approx algorithm for 1D bin-packing unless P=NP.</p>
+<h2>Proof</h2>
+<p>Let $A = \{a_1, a_2, \ldots, a_n\}$ be a partition instance.
+Let $B = \left\{\frac{2a_i}{\operatorname{sum}(A)}: a_i \in A\right\}$.</p>
+<p>Then $B$ can be packed in 2 bins iff $A$ can be partitioned into equi-sum sets.
+This is because a partitioning of $A$ can be used to get a packing of $B$ into 2 bins
+and a packing of $B$ into 2 bins can be used to get a partition of $A$.</p>
+<p>If there is a $(1.5-\epsilon)$-approx algorithm for bin-packing,
+we can use it to decide if $B$ can be packed into 2 bins:
+the algorithm will output 2 iff $B$ can be packed into 2 bins.</p>
+<p>This would give us a polynomial-time algorithm for solving the partition problem,
+which we know is NP-complete. Therefore, we cannot have a $(1.5-\epsilon)$-approx
+algorithm for bin-packing unless P=NP.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 3</li><li>Number of transitive dependencies: 3</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/complexity/np-completeness/3-sat</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/complexity/np-completeness/subset-sum.html">
+        <span class="deptitle">Subset-sum is NP-complete</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/complexity/np-completeness/partition.html">
+        <span class="deptitle">Partition problem is NP-complete</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/1.5-inapprox.html">
+        <span class="deptitle">1D bin-packing is (1.5-ε)-inapprox</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

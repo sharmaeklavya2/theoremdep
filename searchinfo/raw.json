@@ -617,6 +617,20 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/sum-3.html"
 },
 {
+"type": "theorem",
+"title": "Number of tuples with fixed sum",
+"description": "The number of tuples of length n of non-negative numbers whose sum is s is C(s+n-1, n-1).",
+"uci": "/combinatorics/tuples-with-fixed-sum",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/tuples-with-fixed-sum.html"
+},
+{
+"type": "theorem",
+"title": "Number of tuples with bounded sum",
+"description": "The number of tuples of length n of non-negative numbers whose sum is at most s is C(s+n, n).",
+"uci": "/combinatorics/tuples-with-bounded-sum",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/tuples-with-bounded-sum.html"
+},
+{
 "type": "def",
 "title": "Group",
 "description": "A group is a set along with a binary operator which satisfies certain properties.",
@@ -1120,7 +1134,7 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/order-of-element-in-finite-group-is-finite.html"
 },
 {
-"type": "definition",
+"type": "def",
 "title": "Subgroup",
 "description": "If H is a subset of a group G and H is also a group, then H is said to be a subgroup of G.",
 "uci": "/abstract-algebra/groups/subgroup",
@@ -1187,7 +1201,7 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/permutation-groups/transposition-bijects-even-and-odd-permutations.html"
 },
 {
-"type": "definition",
+"type": "def",
 "title": "Normal Subgroup",
 "description": "H is a normal subgroup of G iff gH = Hg for all g in G.",
 "uci": "/abstract-algebra/groups/normal-subgroup",
@@ -1285,7 +1299,7 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/subgroup-condition.html"
 },
 {
-"type": "definition",
+"type": "def",
 "title": "Cyclic Group",
 "description": "A cyclic group with generator g is the group of all powers of g.",
 "uci": "/abstract-algebra/groups/cyclic-groups/cyclic-group",
@@ -2385,6 +2399,92 @@
 "description": "Helps find x such that x % m = a and x % n = b.",
 "uci": "/number-theory/chinese-remainder-theorem",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/number-theory/chinese-remainder-theorem.html"
+},
+{
+"type": "theorem",
+"title": "Subset-sum is NP-complete",
+"uci": "/complexity/np-completeness/subset-sum",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/complexity/np-completeness/subset-sum.html"
+},
+{
+"type": "theorem",
+"title": "Partition problem is NP-complete",
+"uci": "/complexity/np-completeness/partition",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/complexity/np-completeness/partition.html"
+},
+{
+"type": "def",
+"title": "Dual of a linear program",
+"description": "The dual of a linear program is another linear program obtained by applying a transformation to the original linear program.",
+"uci": "/optimization/linear-prog/dual",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/dual.html"
+},
+{
+"type": "theorem",
+"title": "Quasi-polynomial time algorithm for knapsack",
+"description": "Quasi-polynomial time exact algorithm for knapsack using dynamic programming.",
+"uci": "/knapsack/dp-algo",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/knapsack/dp-algo.html"
+},
+{
+"type": "theorem",
+"title": "FPTAS for knapsack",
+"description": "FPTAS for knapsack which rounds down profits and uses the exact DP algorithm as subroutine.",
+"uci": "/knapsack/fptas",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/knapsack/fptas.html"
+},
+{
+"type": "theorem",
+"title": "1D bin-packing: next-fit(S) < 2size(S)+1",
+"description": "The next-fit algorithm's output is at most twice the sum of sizes of items plus 1. This gives us an asymptotic 2-approx algorithm for 1D bin-packing.",
+"uci": "/bin-packing/1d/next-fit",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/next-fit.html"
+},
+{
+"type": "theorem",
+"title": "1D bin-packing: extending by small items",
+"description": "Packing of items of size > \u03b5 into m bins can be extended to a packing for the entire input with at most max(l, size(I)/(1-\u03b5)+1) bins.",
+"uci": "/bin-packing/1d/extend-by-small",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/extend-by-small.html"
+},
+{
+"type": "theorem",
+"title": "1D bin-packing is (1.5-\u03b5)-inapprox",
+"description": "There is no (1.5-\u03b5)-approx algorithm for 1D bin-packing unless P=NP.",
+"keywords": [
+"inapproximability",
+"hardness"
+],
+"uci": "/bin-packing/1d/1.5-inapprox",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/1.5-inapprox.html"
+},
+{
+"type": "def",
+"title": "Bin-packing: union of input instances",
+"description": "The union of I and J, denoted as I+J, is the input instance which contains items from both I and J (with duplication).",
+"uci": "/bin-packing/union",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/union.html"
+},
+{
+"type": "theorem",
+"title": "Bin-packing: config-enum algorithm",
+"description": "An algorithm for bin-packing that enumerates all bin configurations and then considers all combinations of those combinations.",
+"uci": "/bin-packing/brute-algo",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/brute-algo.html"
+},
+{
+"type": "def",
+"title": "Bin-packing: predecessor of an input instance",
+"description": "Input instance I is said to be a predecessor of input instance J iff each item in I has a corresponding item in J which is at least as large in every dimension.",
+"uci": "/bin-packing/predecessor",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/predecessor.html"
+},
+{
+"type": "theoremdef",
+"title": "1D bin-packing: linear grouping",
+"description": "Linear grouping is a transformation on an input instance that gives us a predecessor and a successor.",
+"uci": "/bin-packing/1d/linear-grouping",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/linear-grouping.html"
 },
 {
 "type": "theorem",
