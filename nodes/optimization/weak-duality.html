@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Optimization: weak duality - TheoremDep</title>
+<meta name="description" content="The optimal objective value of a maximization problem at most the optimal objective value of its dual." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Optimization: weak duality </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/dual.html">
+        <span class="deptitle">
+        Optimization: Dual and Lagrangian </span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Consider the optimization problem $P$:
+\[ \min_{x \in \mathbb{R}^d} f(x) \textrm{ where } \forall i \in I, c_i(x) \ge 0 \wedge \forall j \in J, h_j(x) = 0 \]
+The corresponding Lagrangian is
+\[ L(x, \lambda, \mu) = f(x) - \lambda^Tc(x) - \mu^Th(x) \]
+Let $D$ be the dual of $P$:
+\[ \max_{\lambda, \mu} g(\lambda, \mu) \textrm{ where } g(\lambda, \mu) \neq -\infty \wedge \lambda \ge 0 \]
+where
+\[ g(\lambda, \mu) = \min_{x \in \mathbb{R}^d} L(x, \lambda, \mu) \]</p>
+<p>Let $x_0$ be a feasible solution to $P$ and $(\lambda_0, \mu_0)$ be feasible solution to $D$. Then
+\[ g(\lambda_0, \mu_0) \le L(x_0, \lambda_0, \mu_0) \le f(x_0) \]</p>
+<h2>Proof</h2>
+<p>\begin{align}
+&amp; g(\lambda_0, \mu_0)
+\\ &amp;= \min_{x \in \mathbb{R}^d} L(x, \lambda_0, \mu_0)
+\\ &amp;\le L(x_0, \lambda_0, \mu_0)
+\\ &amp;= f(x_0) - \lambda_0^Tc(x_0) - \mu^Th(x_0)
+\\ &amp;\le f(x_0) \tag{$\lambda_0 \ge 0 \wedge c(x_0) \ge 0 \wedge h(x_0) = 0$ by feasibility}
+\end{align}</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/weak-duality.html">
+        <span class="deptitle">
+        Linear programming: weak duality</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 1</li><li>Number of transitive dependencies: 1</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/dual.html">
+        <span class="deptitle">
+        Optimization: Dual and Lagrangian </span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/weak-duality.html">
+        <span class="deptitle">
+        Optimization: weak duality</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

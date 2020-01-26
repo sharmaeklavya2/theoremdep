@@ -124,3 +124,7 @@ pre > code, code {
 .collapsed-tree-node {
     display: none;
 }
+.deps-status, .doc-status {
+    font-size: 80%;
+    color: rgba(0, 0, 0, 0.5);
+}

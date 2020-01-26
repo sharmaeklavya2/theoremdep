@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bin-packing: Solving fractional config LP using FPTAS for knapsack - TheoremDep</title>
+<meta name="description" content="The fractional bin-packing problem can be approximately solved in polynomial time if a FPTAS is available for the corresponding knapsack problem." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Bin-packing: Solving fractional config LP using FPTAS for knapsack <span class="doc-status">(incomplete)</span> </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/config-lp.html">
+        <span class="deptitle">
+        Bin-packing: configuration LP</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/sep-for-dual.html">
+        <span class="deptitle">
+        Linear programming: Solving dual using separation oracle for primal</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/rank-lemma.html">
+        <span class="deptitle">
+        Linear programming: rank lemma</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $I$ be a bin-packing instance with $n$ items and $m$ distinct items.
+Let $b_i$ be the number of items of type $i$.
+Let $P$ be the config LP and $T$ be the configuration matrix.</p>
+<p>Define the corresponding knapsack problem as follows:
+Given a vector $y \in \mathbb{R}^m$, find a configuration $j$ such that
+$\sum_{i=1}^m T[i, j]y_i$ is maximized.
+Here $y$ is said to be the profit of an item of type $i$.</p>
+<p>If we have an FPTAS for this knapsack problem, then the fractional bin-packing problem
+can be solved to an additive error of $\epsilon$,
+where the running time is polynomial in $n$ and $\frac{1}{\epsilon}$.</p>
+<p>Furthermore, we can obtain a solution with at most $m$ non-zero entries.</p>
+<h2>Proof (incomplete)</h2>
+<ul>
+<li>Prove that the dual LP's separation problem is the knapsack problem.</li>
+<li>Prove that an FPTAS for knapsack problem can be used to construct a weak separation oracle.
+Specifically, a $(1+\frac{\epsilon}{\sqrt{m}})$-approx algorithm for knapsack gives us
+an $\epsilon$-weak separation oracle.</li>
+</ul>
+<p>A $\frac{\epsilon}{1+\|b\|}$-weak separation oracle gives us a solution
+of objective value at most $\epsilon$ more than the optimum.</p>
+<p>Since this solution is obtained by solving the polynomial-sized restricted primal exactly,
+we can compute an extreme-point solution to it.
+By the rank lemma, this solution will have at most $m$ non-zero entries,
+since the number of constraints is $m$.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/karmarkar-karp.html">
+        <span class="deptitle">
+        1D bin-packing: Karmarkar-Karp algorithm</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 9</li><li>Number of transitive dependencies: 17</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/complex-numbers/conjugation-is-homomorphic</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+        <span class="deptitle">
+        Group</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+        <span class="deptitle">
+        Ring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+        <span class="deptitle">
+        Field</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+        <span class="deptitle">
+        Vector Space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/inner-product-space.html">
+        <span class="deptitle">
+        Inner product space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/antilin-in-2nd.html">
+        <span class="deptitle">
+        Inner product is anti-linear in second argument</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/zero.html">
+        <span class="deptitle">
+        Zero in inner product</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/cauchy-schwarz-inequality.html">
+        <span class="deptitle">
+        Cauchy-Schwarz Inequality</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/ellipsoid.html">
+        <span class="deptitle">
+        Linear programming: Ellipsoid method</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/ellipsoid-run-program.html">
+        <span class="deptitle">
+        Linear programming: linear program of ellipsoid run</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/rank-lemma.html">
+        <span class="deptitle">
+        Linear programming: rank lemma</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/dual.html">
+        <span class="deptitle">
+        Optimization: Dual and Lagrangian </span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/dual.html">
+        <span class="deptitle">
+        Dual of a linear program</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/strong-duality.html">
+        <span class="deptitle">
+        Linear programming: strong duality</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/sep-for-dual.html">
+        <span class="deptitle">
+        Linear programming: Solving dual using separation oracle for primal</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/config-lp.html">
+        <span class="deptitle">
+        Bin-packing: configuration LP</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/config-lp-kp-fptas.html">
+        <span class="deptitle">
+        Bin-packing: Solving fractional config LP using FPTAS for knapsack</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

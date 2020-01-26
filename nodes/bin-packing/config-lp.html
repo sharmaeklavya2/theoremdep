@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bin-packing: configuration LP - TheoremDep</title>
+<meta name="description" content="Representation of the bin-packing problem as an integer linear program. Each variable corresponds to a configuration, which is a feasible packing of a subset of items in 1 bin." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Bin-packing: configuration LP </h1>
+<h2 class="no-deps"> Dependencies:
+None </h2>
+
+<div class="horizontal-rule"></div>
+<p>Let $I$ be a bin-packing instance with $n$ items such that there are $m$ distinct items
+(we may either treat items of different sizes as distinct
+or we may treat all items as distinct, as per convenience).
+Let $b_i$ be the number of items of type $i$.</p>
+<p>Define a configuration as a subset of items of $I$ that can fit in 1 bin.
+A configuration can be represented as a $m$-tuple $(t_1, \ldots, t_m)$.
+Here $t_i$ is the number of items of type $i$ in the bin.</p>
+<p>Let $\mathcal{C}$ be the set of all configurations. Let $N = |\mathcal{C}|$.
+Number the configurations from 1 to $N$.
+Let $T$ be a $m$ by $N$ matrix such that $T[i, j]$ is the number of items
+of type $i$ in the $j^{\textrm{th}}$ configuration.
+$T$ is called the configuration matrix.</p>
+<p>Then the linear program
+\[ \min_{x \in \mathbb{R}^N} \operatorname{sum}(x) \textrm{ where } Tx \ge b, x \ge 0 \]
+is called the configuration LP of $I$.
+Here the constraint $Tx \ge b$ implies that each item should be covered.
+The integer configuration LP's optimal solution gives us the best bin packing.
+The real-valued relaxation of this LP is called the fractional bin-packing problem.
+The optimal value of the relaxed LP is denoted by $\operatorname{lin}(I)$.</p>
+<p>When all items are considered distinct ($m = n, b_i = 1$), we get this LP:
+\begin{align}
+\min_x &amp; \sum_{C \in \mathcal{C}} x_C
+\\ \textrm{ where } &amp; \sum_{C \ni i} x_C \ge 1, \forall i \in [n]
+\\ &amp; x \ge 0
+\end{align}</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/config-lp-prec.html">
+        <span class="deptitle">
+        Bin-packing: config LP of predecessor</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/config-lp-kp-fptas.html">
+        <span class="deptitle">
+        Bin-packing: Solving fractional config LP using FPTAS for knapsack</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/config-lp-union.html">
+        <span class="deptitle">
+        Bin-packing: config LP of union</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/d-geom/size-lb-config-lp.html">
+        <span class="deptitle">
+        Geometric bin-packing: size(I) lower-bounds lin(I)</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/karmarkar-karp.html">
+        <span class="deptitle">
+        1D bin-packing: Karmarkar-Karp algorithm</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 0</li><li>Number of transitive dependencies: 0</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/config-lp.html">
+        <span class="deptitle">
+        Bin-packing: configuration LP</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

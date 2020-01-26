@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>1D bin-packing: harmonic grouping - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> 1D bin-packing: harmonic grouping </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/predecessor.html">
+        <span class="deptitle">
+        Bin-packing: predecessor of an input instance</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/union.html">
+        <span class="deptitle">
+        Bin-packing: union of input instances</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/misc/harmonic-bound-for-fraction.html">
+        <span class="deptitle">
+        Harmonic bound for fraction</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/misc/simple-harmonic-bound.html">
+        <span class="deptitle">
+        Simple bound on harmonic sum</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/misc/k-extreme-sum.html">
+        <span class="deptitle">
+        Bound on k extreme values</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $I$ be an input instance for 1D bin-packing
+$\newcommand{\Size}{\operatorname{size}}$
+such that $\Size(I) - \min(I) \ge 2$.</p>
+<p>The harmonic grouping scheme is an algorithm
+that first splits $I$ into disjoint instances $I'$ and $I_2$
+such that $\Size(I_2) \le 3\ln(\frac{3}{\min(I)}) + \frac{9}{2}$.
+It then increases the item sizes in $I'$ to get $I_1$
+such that $I_1$ has at most $\Size(I)/2-1$ distinct item-sizes.
+The algorithm outputs $(I_1, I_2)$.</p>
+<p>It can be proven that $I_1 \preceq I \preceq I_1 + I_2$.</p>
+<p>This algorithm runs in $O(n\lg n)$ time.</p>
+<h2>Algorithm and proof of correctness</h2>
+<p>The harmonic grouping scheme first orders the items in non-increasing order of size.
+It iteratively puts items into a group till the size of the group exceeds 2.
+Then it closes that group and opens a new group for the next pieces.
+Suppose $t$ such groups are created.
+Let $G_i$ be the $i^{\textrm{th}}$ group.
+Let $n_i$ be the number of items in $G_i$.</p>
+<p>Let $H_1 = G_1$ and $H_t = G_t$.
+For $i \in \{2, 3, \ldots, t-1\}$, let $H_i$ be the last $n_i - n_{i-1}$ items in $G_i$
+and let $G_i'$ be the first $n_{i-1}$ items from $G_i$ with sizes raised to $\max(G_i)$.
+Then $G_{i+1}' \preceq G_i \preceq G_i' + H_i$.</p>
+<p>Let $I_2 = \sum_{i=1}^t H_i$ and $I_1 = \sum_{i=2}^{t-1} G_i'$.
+\[ I_1 = \sum_{i=2}^{t-1} G_i' \preceq \sum_{i=1}^{t-2} G_i \preceq I \]
+\[ I_1 + I_2 = G_1 + \sum_{i=2}^{t-1} (G_i' + H_i) + G_t \succeq I \]
+Therefore, $I_1 \preceq I \preceq I_1 + I_2$.</p>
+<p>All items in $G_i'$ have the same size so $I_1$ has $t-2$ distinct items.
+\[ \Size(I) = \sum_{i=1}^{t} \Size(G_i) \ge 2(t-1)
+\implies t-2 \le \Size(I)/2 -1 \]</p>
+<p>\[ n_{t-1} \le \frac{\Size(G_{t-1})}{\min(G_{t-1})} \le \frac{3}{\min(I)} \]
+For $2 \le i \le t-1$,
+\[ \Size(H_i) \le 3\frac{n_i - n_{i-1}}{n_i} \tag{$H_i$ has $n_i - n_{i-1}$ smallest items} \]
+\begin{align}
+\Size(I_2) &amp;= \sum_{i=1}^t \Size(H_i)
+\\ &amp;\le 6 + 3\sum_{i=2}^{t-2} \frac{n_i - n_{i-1}}{n_i}
+\\ &amp;\le 6 + 3\sum_{i=2}^{t-2} (H(n_i) - H(n_{i-1}))  \tag{harmonic bound on fraction}
+\\ &amp;= 6 + 3(H(n_{t-1}) - H(n_1))
+\\ &amp;\le 3H(n_{t-1}) + \frac{3}{2}  \tag{$n_1 \ge 2$}
+\\ &amp;\le 3\ln(n_{t-1}) + \frac{9}{2}  \tag{$H(n) \le \ln(n) + 1$}
+\\ &amp;\le 3\ln\left(\frac{3}{\min(I)}\right) + \frac{9}{2}
+\end{align}</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 2</li><li>Number of transitive dependencies: 6</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/union.html">
+        <span class="deptitle">
+        Bin-packing: union of input instances</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/predecessor.html">
+        <span class="deptitle">
+        Bin-packing: predecessor of an input instance</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/misc/integration-bound.html">
+        <span class="deptitle">
+        Integration bound</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/misc/simple-harmonic-bound.html">
+        <span class="deptitle">
+        Simple bound on harmonic sum</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/misc/harmonic-bound-for-fraction.html">
+        <span class="deptitle">
+        Harmonic bound for fraction</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/misc/k-extreme-sum.html">
+        <span class="deptitle">
+        Bound on k extreme values</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/harmonic-grouping.html">
+        <span class="deptitle">
+        1D bin-packing: harmonic grouping</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

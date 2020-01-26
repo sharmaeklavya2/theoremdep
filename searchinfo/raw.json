@@ -2413,11 +2413,72 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/complexity/np-completeness/partition.html"
 },
 {
+"type": "theorem",
+"title": "Linear programming: Ellipsoid method",
+"description": "In linear programming, the optimization problem is to find a point with optimal value that satisfies a set of constraints. In the separation problem, given a point, we have to find out if it satisfies all the constraints, and if it doesn't, find a violated constraint. It can be proven that a polynomial time algorithm for the separation problem can be used to solve the optimization problem in polynomial time via the Ellipsoid algorithm.",
+"keywords": [
+"ellipsoid",
+"khachiyan"
+],
+"uci": "/optimization/linear-prog/ellipsoid",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/ellipsoid.html",
+"status": "incomplete"
+},
+{
+"type": "theorem",
+"title": "Linear programming: linear program of ellipsoid run",
+"uci": "/optimization/linear-prog/ellipsoid-run-program",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/ellipsoid-run-program.html"
+},
+{
+"type": "theorem",
+"title": "Linear programming: rank lemma",
+"description": "For an extreme-point solution, the maximum number of linearly independent tight constraints equals the number of non-zero variables.",
+"uci": "/optimization/linear-prog/rank-lemma",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/rank-lemma.html",
+"status": "incomplete"
+},
+{
 "type": "def",
+"title": "Optimization: Dual and Lagrangian ",
+"uci": "/optimization/dual",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/dual.html"
+},
+{
+"type": "theorem",
 "title": "Dual of a linear program",
 "description": "The dual of a linear program is another linear program obtained by applying a transformation to the original linear program.",
 "uci": "/optimization/linear-prog/dual",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/dual.html"
+},
+{
+"type": "theorem",
+"title": "Linear programming: strong duality",
+"description": "The optimal objective value of a linear program and its dual are equal.",
+"uci": "/optimization/linear-prog/strong-duality",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/strong-duality.html",
+"status": "incomplete"
+},
+{
+"type": "theorem",
+"title": "Linear programming: Solving dual using separation oracle for primal",
+"description": "How to solve a dual linear program using a separation oracle for the primal.",
+"uci": "/optimization/linear-prog/sep-for-dual",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/sep-for-dual.html"
+},
+{
+"type": "theorem",
+"title": "Optimization: weak duality",
+"description": "The optimal objective value of a maximization problem at most the optimal objective value of its dual.",
+"uci": "/optimization/weak-duality",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/weak-duality.html"
+},
+{
+"type": "theorem",
+"title": "Linear programming: weak duality",
+"description": "The optimal objective value of a maximization linear program is at most the optimal objective value of its dual.",
+"uci": "/optimization/linear-prog/weak-duality",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/weak-duality.html"
 },
 {
 "type": "theorem",
@@ -2432,13 +2493,6 @@
 "description": "FPTAS for knapsack which rounds down profits and uses the exact DP algorithm as subroutine.",
 "uci": "/knapsack/fptas",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/knapsack/fptas.html"
-},
-{
-"type": "theorem",
-"title": "1D bin-packing: next-fit(S) < 2size(S)+1",
-"description": "The next-fit algorithm's output is at most twice the sum of sizes of items plus 1. This gives us an asymptotic 2-approx algorithm for 1D bin-packing.",
-"uci": "/bin-packing/1d/next-fit",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/next-fit.html"
 },
 {
 "type": "theorem",
@@ -2459,6 +2513,20 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/1.5-inapprox.html"
 },
 {
+"type": "theoremdef",
+"title": "Geometric bin-packing: size",
+"description": "In a d-dimensional geometric bin-packing instance, size of an item is the product of all dimensions of the item. Size of an instance is the sum of sizes of items. Size lower-bounds the minimum number of bins.",
+"uci": "/bin-packing/d-geom/size",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/d-geom/size.html"
+},
+{
+"type": "theorem",
+"title": "1D bin-packing: next-fit(S) < 2size(S)+1",
+"description": "The next-fit algorithm's output is at most twice the sum of sizes of items plus 1. This gives us an asymptotic 2-approx algorithm for 1D bin-packing.",
+"uci": "/bin-packing/1d/next-fit",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/next-fit.html"
+},
+{
 "type": "def",
 "title": "Bin-packing: union of input instances",
 "description": "The union of I and J, denoted as I+J, is the input instance which contains items from both I and J (with duplication).",
@@ -2471,6 +2539,34 @@
 "description": "An algorithm for bin-packing that enumerates all bin configurations and then considers all combinations of those combinations.",
 "uci": "/bin-packing/brute-algo",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/brute-algo.html"
+},
+{
+"type": "def",
+"title": "Bin-packing: configuration LP",
+"description": "Representation of the bin-packing problem as an integer linear program. Each variable corresponds to a configuration, which is a feasible packing of a subset of items in 1 bin.",
+"uci": "/bin-packing/config-lp",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/config-lp.html"
+},
+{
+"type": "theorem",
+"title": "Geometric bin-packing: size(I) lower-bounds lin(I)",
+"uci": "/bin-packing/d-geom/size-lb-config-lp",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/d-geom/size-lb-config-lp.html"
+},
+{
+"type": "theorem",
+"title": "Bin-packing: config LP of union",
+"description": "Let I and J be bin-packing input instances. Then lin(I+J) \u2264 lin(I) + lin(J).",
+"uci": "/bin-packing/config-lp-union",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/config-lp-union.html"
+},
+{
+"type": "theorem",
+"title": "Bin-packing: Solving fractional config LP using FPTAS for knapsack",
+"description": "The fractional bin-packing problem can be approximately solved in polynomial time if a FPTAS is available for the corresponding knapsack problem.",
+"uci": "/bin-packing/config-lp-kp-fptas",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/config-lp-kp-fptas.html",
+"status": "incomplete"
 },
 {
 "type": "def",
@@ -2491,6 +2587,20 @@
 "title": "1D bin-packing: APTAS",
 "uci": "/bin-packing/1d/aptas",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/aptas.html"
+},
+{
+"type": "theorem",
+"title": "Bin-packing: config LP of predecessor",
+"description": "Let I be the predecessor of J. Then lin(I) \u2264 lin(J).",
+"uci": "/bin-packing/config-lp-prec",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/config-lp-prec.html"
+},
+{
+"type": "theorem",
+"title": "1D bin-packing: Karmarkar-Karp algorithm",
+"description": "The Karmarkar-Karp algorithm is an algorithm for 1D bin-packing that achieves an additive approximation of O(log(I)^2).",
+"uci": "/bin-packing/1d/karmarkar-karp",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/karmarkar-karp.html"
 },
 {
 "type": "theorem",
@@ -2533,6 +2643,13 @@
 "description": "(x-1)/x \u2264 ln(x) \u2264 x-1.",
 "uci": "/misc/log-bound",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/log-bound.html"
+},
+{
+"type": "theorem",
+"title": "Simple bound on harmonic sum",
+"description": "ln(n) + 1/n \u2264 H(n) \u2264 ln(n) + 1",
+"uci": "/misc/simple-harmonic-bound",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/simple-harmonic-bound.html"
 },
 {
 "type": "theorem",
@@ -2579,6 +2696,19 @@
 "description": "H(a+b-1) - H(b-1) \u2264 a/b \u2264 H(b) - H(b-a)",
 "uci": "/misc/harmonic-bound-for-fraction",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/harmonic-bound-for-fraction.html"
+},
+{
+"type": "theorem",
+"title": "Bound on k extreme values",
+"description": "Let s be the sum of n values. The sum of the smallest k values is at most sk/n.",
+"uci": "/misc/k-extreme-sum",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/k-extreme-sum.html"
+},
+{
+"type": "theoremdef",
+"title": "1D bin-packing: harmonic grouping",
+"uci": "/bin-packing/1d/harmonic-grouping",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/harmonic-grouping.html"
 }
 ]
 }

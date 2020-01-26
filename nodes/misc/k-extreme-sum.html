@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bound on k extreme values - TheoremDep</title>
+<meta name="description" content="Let s be the sum of n values. The sum of the smallest k values is at most sk/n." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Bound on k extreme values </h1>
+<h2 class="no-deps"> Dependencies:
+None </h2>
+
+<div class="horizontal-rule"></div>
+<p>Let $A = [a_1, a_2, \ldots, a_n]$ be $n$ numbers
+where $i &lt; j \implies a_i \le a_j$.</p>
+<p>Let $s = \sum_{i=1}^n a_i$, $x = \sum_{i=1}^k a_i$, $y = \sum_{i=n-k+1}^n a_i$.
+Then $x \le \frac{sk}{n}$ and $y \ge \frac{sk}{n}$.</p>
+<h2>Proof</h2>
+<p>\begin{align}
+&amp; a_k \ge \frac{x}{k}
+\\ &amp;\implies s = x + \sum_{i=k+1}^n a_i \ge x + (n-k)\frac{x}{k} = \frac{xn}{k}
+\\ &amp;\implies x \le \frac{sk}{n}
+\end{align}</p>
+<p>The proof of $y \ge \frac{sk}{n}$ is similar.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/harmonic-grouping.html">
+        <span class="deptitle">
+        1D bin-packing: harmonic grouping</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 0</li><li>Number of transitive dependencies: 0</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/misc/k-extreme-sum.html">
+        <span class="deptitle">
+        Bound on k extreme values</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bin-packing: config LP of union - TheoremDep</title>
+<meta name="description" content="Let I and J be bin-packing input instances. Then lin(I+J) ≤ lin(I) + lin(J)." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Bin-packing: config LP of union </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/config-lp.html">
+        <span class="deptitle">
+        Bin-packing: configuration LP</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/union.html">
+        <span class="deptitle">
+        Bin-packing: union of input instances</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $I$ and $J$ be bin-packing input instances.
+$\newcommand{\lin}{\operatorname{lin}}$
+Then $\lin(I+J) ≤ \lin(I) + \lin(J)$.</p>
+<h2>Proof</h2>
+<p>Let there be $m$ distinct items in $I+J$.
+Let $b_i$ and $c_i$ be the number of items of type $i$ in $I$ and $J$ respectively.
+Let $T$ be the configuration matrix
+(the configuration matrix only depends on the set of possible configurations.
+Because we chose the set of items from $I+J$, the configuration matrix is the same for $I$ and $J$).</p>
+<p>\[ \operatorname{LP}(I): \min_x \operatorname{sum}(x) \textrm{ where } x \ge 0, Tx \ge b \]
+\[ \operatorname{LP}(J): \min_x \operatorname{sum}(x) \textrm{ where } x \ge 0, Tx \ge c \]
+\[ \operatorname{LP}(I+J): \min_x \operatorname{sum}(x) \textrm{ where } x \ge 0, Tx \ge b+c \]</p>
+<p>Let $x^*$ and $y^*$ be optimal solutions to $\operatorname{LP}(I)$ and $\operatorname{LP}(J)$.
+$T(x^*+y^*) = Tx^* + Ty^* \ge b + c$. Therefore, $x^* + y^*$ is a feasible solution to $I+J$.
+Therefore, $\lin(I+J) \le \operatorname{sum}(x^* + y^*) \le \lin(I) + \lin(J)$.</p>
+<p>This method of taking distinct items from $I+J$ to create a config LP for $I$ is a relaxation
+because we have added more variables and the new constraints are redudant ($b_i = 0$ for them).
+But this relaxation will not reduce the optimum because there is an optimal solution
+where all these new variables have value 0.</p>
+<p>More formally, if $b_i = 0$, then there exists an optimal solution $x^*$ such that
+$x_j^* = 0$ for all $\operatorname{config}(j) \ni i$.
+This is because if $x_j^* &gt; 0$ for some $j$ such that $\operatorname{config}(j) \ni i$,
+then we can set $x_j^*$ to 0 and add $x_j^*$ to $x_{j'}^*$ where $j'$ is the same config
+as $j$ with items of type $i$ removed.
+This gives us a new feasible solution with the same objective value.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 1</li><li>Number of transitive dependencies: 2</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/union.html">
+        <span class="deptitle">
+        Bin-packing: union of input instances</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/config-lp.html">
+        <span class="deptitle">
+        Bin-packing: configuration LP</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/config-lp-union.html">
+        <span class="deptitle">
+        Bin-packing: config LP of union</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>
