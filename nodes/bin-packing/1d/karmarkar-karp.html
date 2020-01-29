@@ -80,7 +80,8 @@ $\newcommand{\Size}{\operatorname{size}}$
 $\newcommand{\floor}[1]{\left\lfloor{#1}\right\rfloor}$
 $\newcommand{\lin}{\operatorname{lin}}$
 $\newcommand{\LP}{\operatorname{LP}}$
-$\newcommand{\Opt}{\operatorname{opt}}$</p>
+$\newcommand{\Opt}{\operatorname{opt}}$
+$\newcommand{\Sum}{\operatorname{sum}}$</p>
 <h2>Algorithm</h2>
 <p>Let $I$ be a bin-packing instance with $m$ distinct items.
 Let there be $b_i$ items of type $I$.
@@ -117,18 +118,21 @@ where $\Size(I) \ge 10$.</p>
 <h3>Cost of integral packing</h3>
 <p>Items of type $i$ that we want to pack as per $\floor{x}$ is
 \[ \sum_{j=1}^N T[i, j]\floor{x_j} = (T\floor{x})_i \]
-Since $T\floor{x} \le Tx \le b$, we can actually pack items as per $\floor{x}$.
-So the item frequency vector of $I_1$ is $T\floor{x}$.
-It can be easily seen that $\floor{x}$ is a feasible solution to $\LP(I_1)$.</p>
-<p>Let $d$ be the item frequency vector of $I_2$.
-$d = b - T\floor{x} \le T(x - \floor{x})$.
+Since there are only $b_i$ items of type $i$, we will pack $\min((T\floor{x})_i, b_i)$ items.
+Since $(T\floor{x})_i \ge \min((T\floor{x})_i, b_i)$,
+$\floor{x}$ is a feasible solution to $\LP(I_1)$.</p>
+<p>When $(T\floor{x})_i \ge b_i$, $I_2$ has 0 items of type $i$.
+So $x - \floor{x}$ satisfies the $i^{\textrm{th}}$ constraint of $\LP(I_2)$.
+When $(T\floor{x})_i \le b_i$, $I_2$ has $b_i - (T\floor{x})_i$ items.
+\[ (T(x-\floor{x}))_i = (Tx)_i - (T\floor{x})_i \ge b_i - (T\floor{x})_i \]
+So $x - \floor{x}$ satisfies the $i^{\textrm{th}}$ constraint of $\LP(I_2)$.
 Therefore, $x - \floor{x}$ is a feasible solution to $\LP(I_2)$.</p>
-<p>Since $x$ is an approx optimal of $\LP(I')$, $\operatorname{sum}(x) \le \lin(I') + \delta$.
-Since $\floor{x}$ is feasible for $\LP(I_1)$, $\lin(I_1) \le \operatorname{sum}(\floor{x})$.
-Since $x - \floor{x}$ is feasible for $\LP(I_2)$,
-\[ \lin(I_2) \le \operatorname{sum}(x - \floor{x}) \le (\lin(I') + \delta) - \lin(I_1) \]
-So, $\lin(I_1) + \lin(I_2) \le \lin(I') + \delta$.</p>
-<p>Since $I' \preceq I$, $\lin(I_1) + \lin(I_2) \le \lin(I') + \delta \le \lin(I) + \delta$.
+<p>\begin{align}
+\Sum(\floor{x}) &amp;\le \Sum(x) - \lin(I_2)  \tag{$x - \floor{x}$ is feasible for $\LP(I_2)$}
+\\ &amp;\le (\lin(I') + \delta) - \lin(I_2)  \tag{$x$ is approx optimal for $\LP(I')$}
+\\ &amp;\le \lin(I) - \lin(I_2) + \delta  \tag{$I' \preceq I$}
+\end{align}</p>
+<p>$I_2$ in a certain invocation of large-bin-pack becomes $I$ in the next invocation.
 This implies that the cost of packing items as per $\floor{x}$
 over all invocations of large-bin-pack is at most $\lin(I) + t\delta \le \Opt(I) + t\delta$.</p>
 <h3>Cost of packing discards</h3>
@@ -142,7 +146,7 @@ By the properties of harmonic grouping, $m(I') \le \Size(I')/2 - 1$.
 Since the config LP for $I'$ has $m(I')$ constraints,
 $x$ has at most $m(I')$ non-zero entries.</p>
 <p>\begin{align}
-&amp; \Size(I_2) \le \lin(I_2) \le \operatorname{sum}(x - \floor{x}) \le |\{j: x_j &gt; 0\}|
+&amp; \Size(I_2) \le \lin(I_2) \le \Sum(x - \floor{x}) \le |\{j: x_j &gt; 0\}|
 \\ &amp;\le m(I') \le \Size(I') / 2 - 1 \le \Size(I) / 2
 \end{align}
 Since $\Size(I)$ reduces by at least half in each invocation,
