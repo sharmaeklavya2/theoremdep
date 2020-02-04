@@ -2482,6 +2482,13 @@
 },
 {
 "type": "theorem",
+"title": "2D knapsack: PTAS for density-restricted knapsack",
+"description": "When the profit-to-area ratio is upper-bounded and lower-bounded by a constant, then there is a PTAS for the knapsack problem.",
+"uci": "/knapsack/2D/ptas-for-density-restr",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/knapsack/2D/ptas-for-density-restr.html"
+},
+{
+"type": "theorem",
 "title": "Quasi-polynomial time algorithm for knapsack",
 "description": "Quasi-polynomial time exact algorithm for knapsack using dynamic programming.",
 "uci": "/knapsack/dp-algo",
@@ -2527,6 +2534,20 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/next-fit.html"
 },
 {
+"type": "theorem",
+"title": "2D bin-packing: NFDH",
+"description": "Next-fit decreasing height algorithm for 2D bin-packing.",
+"uci": "/bin-packing/2D/nfdh",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/2D/nfdh.html"
+},
+{
+"type": "def",
+"title": "Geometric bin-packing: density-restricted config LP",
+"description": "The density-restricted config LP is one where in the dual the profits have an upper-limit that is proportional to density.",
+"uci": "/bin-packing/d-geom/density-restr-config-lp",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/d-geom/density-restr-config-lp.html"
+},
+{
 "type": "def",
 "title": "Bin-packing: union of input instances",
 "description": "The union of I and J, denoted as I+J, is the input instance which contains items from both I and J (with duplication).",
@@ -2552,6 +2573,21 @@
 "title": "Geometric bin-packing: size(I) lower-bounds lin(I)",
 "uci": "/bin-packing/d-geom/size-lb-config-lp",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/d-geom/size-lb-config-lp.html"
+},
+{
+"type": "theorem",
+"title": "Geometric bin-packing: removing density restriction",
+"description": "Assuming the presence of a suitable primitive bin-packing algorithm, we can solve the config LP almost optimally by solving the density-restricted config LP almost optimally.",
+"uci": "/bin-packing/d-geom/config-lp-density-unrestr",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/d-geom/config-lp-density-unrestr.html"
+},
+{
+"type": "theorem",
+"title": "2D bin-packing: APTAS for config LP",
+"description": "An APTAS exists for solving the fractional 2D bin-packing problem, i.e. obtaining a fractional solution to the 2D configuration LP.",
+"uci": "/bin-packing/2D/aptas-for-config-lp",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/2D/aptas-for-config-lp.html",
+"status": "incomplete"
 },
 {
 "type": "theorem",

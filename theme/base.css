@@ -97,8 +97,11 @@ pre > code, code {
 }
 .horizontal-rule {
     margin: 1em 0;
-    border: 1px solid rgba(0, 0, 0, 0.1);;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
+.text-danger { color: #dc3545; }
+.text-warning { color: #ffc107; }
+.text-success { color: #28a745; }
 
 .deplist .missing {
     font-family: monospace;
@@ -127,4 +130,18 @@ pre > code, code {
 .deps-status, .doc-status {
     font-size: 80%;
     color: rgba(0, 0, 0, 0.5);
+}
+.citation {
+    margin: 0.5em 0 0.5em 0;
+}
+.citation:target {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.citation .cite-name {
+    color: darkgreen;
+    font-family: monospace;
+    font-size: 0.8em;
+}
+.cite-ref{
+    font-family: monospace;
 }
