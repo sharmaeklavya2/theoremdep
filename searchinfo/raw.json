@@ -2598,6 +2598,12 @@
 },
 {
 "type": "theorem",
+"title": "Bin-packing: dual of config LP",
+"uci": "/bin-packing/config-lp-dual",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/config-lp-dual.html"
+},
+{
+"type": "theorem",
 "title": "Bin-packing: Solving fractional config LP using FPTAS for knapsack",
 "description": "The fractional bin-packing problem can be approximately solved in polynomial time if a FPTAS is available for the corresponding knapsack problem.",
 "uci": "/bin-packing/config-lp-kp-fptas",
