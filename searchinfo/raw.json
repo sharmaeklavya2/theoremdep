@@ -2646,13 +2646,6 @@
 },
 {
 "type": "theorem",
-"title": "1D bin-packing: Karmarkar-Karp algorithm",
-"description": "The Karmarkar-Karp algorithm is an algorithm for 1D bin-packing that achieves an additive approximation of O(log(I)^2).",
-"uci": "/bin-packing/1d/karmarkar-karp",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/karmarkar-karp.html"
-},
-{
-"type": "theorem",
 "title": "Floor and ceil of fraction",
 "description": "Let a and b be integers. Then ceil(a/b) = floor((a-1)/b) + 1. Equivalently, floor(a/b) = ceil((a+1)/b) - 1.",
 "uci": "/misc/floor-ceil/fraction",
@@ -2685,6 +2678,27 @@
 "description": "Bounding a sum using integration.",
 "uci": "/misc/integration-bound",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/integration-bound.html"
+},
+{
+"type": "def",
+"title": "Dual-feasible function",
+"description": "A function f from (0, 1] to (0, 1] is a dual-feasible function (DFF) iff for every vector x \u2208 (0, 1]^*, sum(x) \u2264 1 implies sum(f(x)) \u2264 1.",
+"uci": "/misc/dual-feasible-func",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/dual-feasible-func.html"
+},
+{
+"type": "theorem",
+"title": "1D bin-packing: config LP's dual gives a DFF",
+"uci": "/bin-packing/1d/config-lp-dual-gives-dff",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/config-lp-dual-gives-dff.html"
+},
+{
+"type": "theoremdef",
+"title": "Geometric bin-packing: DFF transform",
+"description": "Let I be a d-dimensional geometric bin-packing instance. Let f1, f2, ..., fd be DFFs. Let J be the instance where for each item, ith dimension x is replaced by fi(x). J is called the DFF transform of I. If I can fit in 1 bin, then so can J.",
+"uci": "/bin-packing/d-geom/dff-transform",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/d-geom/dff-transform.html",
+"status": "incomplete"
 },
 {
 "type": "theorem",
@@ -2758,6 +2772,13 @@
 "title": "1D bin-packing: harmonic grouping",
 "uci": "/bin-packing/1d/harmonic-grouping",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/harmonic-grouping.html"
+},
+{
+"type": "theorem",
+"title": "1D bin-packing: Karmarkar-Karp algorithm",
+"description": "The Karmarkar-Karp algorithm is an algorithm for 1D bin-packing that achieves an additive approximation of O(log(I)^2).",
+"uci": "/bin-packing/1d/karmarkar-karp",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/karmarkar-karp.html"
 }
 ]
 }
