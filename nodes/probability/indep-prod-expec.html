@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Expectation of product of independent random variables - TheoremDep</title>
+<meta name="description" content="Let X and Y be independent random variables. Then E(XY) = E(X)E(Y)." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Expectation of product of independent random variables <span class="doc-status">(incomplete)</span> </h1>
+<h2 class="no-deps"> Dependencies:
+Unspecified </h2>
+
+<div class="horizontal-rule"></div>
+<p>Let $X_1, X_2, \ldots, X_n$ be independent random variables. Then
+$\newcommand{\E}{\operatorname{E}}$
+\[ \E\left( \prod_{i=1}^n X_i \right) = \prod_{i=1}^n \E(X_i) \]</p>
+<h2>Proof</h2>
+<p>For $n=0$ and $n=1$, this is trivially true.</p>
+<p>The theorem can also be proven for $n=2$ <span class="text-danger">(proof pending)</span>.</p>
+<p>For $n \ge 3$, we can prove the theorem by induction.
+Suppose the theorem is true for up to $n-1$ random variables.
+If all $X_i$ are independent, then $X_n$ and $X_1X_2\ldots X_{n-1}$ are independent.
+\begin{align}
+&amp; \E\left(\prod_{i=1}^n X_i\right)
+\\ &amp;= \E\left(\prod_{i=1}^{n-1} X_i\right)\E(X_n)  \tag{induction hypothesis for 2 variables}
+\\ &amp;= \left(\prod_{i=1}^{n-1} \E(X_i)\right) \E(X_n)  \tag{induction hypothesis for $n-1$ variables}
+\\ &amp;= \prod_{i=1}^n \E(X_i)
+\end{align}</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/chernoff-bound.html">
+        <span class="deptitle">
+        Chernoff bound</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 0</li><li>Number of transitive dependencies: 0</li></ul>
+
+<h2 class="no-deps"> Transitive dependencies: None </h2>
+
+</div>
+</body>
+</html>

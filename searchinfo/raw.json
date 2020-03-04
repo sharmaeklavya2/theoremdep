@@ -2646,6 +2646,29 @@
 },
 {
 "type": "theorem",
+"title": "Expectation of product of independent random variables",
+"description": "Let X and Y be independent random variables. Then E(XY) = E(X)E(Y).",
+"uci": "/probability/indep-prod-expec",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/indep-prod-expec.html",
+"status": "incomplete"
+},
+{
+"type": "theorem",
+"title": "Markov's bound",
+"description": "Let X be a non-negative random variable. Then P(X \u2265 a) \u2264 E(X)/a.",
+"uci": "/probability/markov-bound",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-bound.html"
+},
+{
+"type": "theorem",
+"title": "Linearity of expectation",
+"description": "Expectation of sum of random variables is sum of expectation of those random variables.",
+"uci": "/probability/linearity-of-expec",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/linearity-of-expec.html",
+"status": "incomplete"
+},
+{
+"type": "theorem",
 "title": "Floor and ceil of fraction",
 "description": "Let a and b be integers. Then ceil(a/b) = floor((a-1)/b) + 1. Equivalently, floor(a/b) = ceil((a+1)/b) - 1.",
 "uci": "/misc/floor-ceil/fraction",
@@ -2702,6 +2725,13 @@
 },
 {
 "type": "theorem",
+"title": "Bound on log 2",
+"description": "ln(1+x) \u2265 2x/(2+x) for x \u2265 0.",
+"uci": "/misc/log-bound-2",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/log-bound-2.html"
+},
+{
+"type": "theorem",
 "title": "Bound on log",
 "description": "(x-1)/x \u2264 ln(x) \u2264 x-1.",
 "uci": "/misc/log-bound",
@@ -2713,6 +2743,14 @@
 "description": "ln(n) + 1/n \u2264 H(n) \u2264 ln(n) + 1",
 "uci": "/misc/simple-harmonic-bound",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/simple-harmonic-bound.html"
+},
+{
+"type": "theorem",
+"title": "Stirling's approximation",
+"description": "Upper and lower bounds for factorial.",
+"uci": "/misc/stirlings-approx",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/stirlings-approx.html",
+"status": "incomplete"
 },
 {
 "type": "theorem",
@@ -2762,6 +2800,20 @@
 },
 {
 "type": "theorem",
+"title": "Bound on exponential",
+"description": "e^x \u2265 1+x",
+"uci": "/misc/exp-bound",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/exp-bound.html"
+},
+{
+"type": "theorem",
+"title": "Chernoff bound",
+"description": "Chernoff bound gives concentration result for the sum of independent bernouilli random variables.",
+"uci": "/probability/chernoff-bound",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/chernoff-bound.html"
+},
+{
+"type": "theorem",
 "title": "Bound on k extreme values",
 "description": "Let s be the sum of n values. The sum of the smallest k values is at most sk/n.",
 "uci": "/misc/k-extreme-sum",
@@ -2779,6 +2831,13 @@
 "description": "The Karmarkar-Karp algorithm is an algorithm for 1D bin-packing that achieves an additive approximation of O(log(I)^2).",
 "uci": "/bin-packing/1d/karmarkar-karp",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/karmarkar-karp.html"
+},
+{
+"type": "theorem",
+"title": "Bound on binomial coefficient",
+"description": "(n/k)^k \u2264 C(n,k) \u2264 (ne/k)^k",
+"uci": "/misc/binomial-bound",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/binomial-bound.html"
 }
 ]
 }
