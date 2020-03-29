@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Min-weight gap interval - TheoremDep</title>
+<meta name="description" content="Let X be a set of vectors, each with a weight. There is a polynomial-time algorithm to find a non-negligible interval such that the weight of vectors with a component in that interval is small." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Min-weight gap interval </h1>
+<h2 class="no-deps"> Dependencies:
+None </h2>
+
+<div class="horizontal-rule"></div>
+<p>Let $f: [a, b] \mapsto [a, b]$ be a (strictly) decreasing function.
+Let $\epsilon \in (0, 1)$. Let $k = \lceil d/\epsilon \rceil$.
+Let $\epsilon_0 \in [a, b]$ and define $\epsilon_j = f(\epsilon_{j-1})$
+and $I_j = [\epsilon_j, \epsilon_{j-1}]$ for $1 \le j \le k$.</p>
+<p>Let $X \subset \mathbb{R}^d$ be a set of vectors.
+Let $Y_j$ be the set of vectors in $X$ that have some coordinate in $I_j$.</p>
+<p>Let $w: X \mapsto \mathbb{R}$ be a weight function.
+For $Y \subseteq X$, define $w(Y) = \sum_{x \in Y} w(x)$.
+Then
+\[ \min_{j=1}^k w(Y_j) \le \epsilon w(X) \]</p>
+<p>Let $|X| = n$. Then such a $Y_j$ can be found in $O(k + nd\lg k)$ time and $O(k)$ extra space
+(assuming constant time for arithmetic operations and constant space for numbers).</p>
+<p>Intuitively, this means that we can remove a subset $Y$ from $X$
+such that the weight doesn't decrease much and there is a gap
+in each coordinate of each $x \in X-Y$.</p>
+<h2>Proof</h2>
+<p>Let $X = \{x_1, x_2, \ldots, x_n\}$.
+Let $A$ be an $n \times k$ matrix where
+$A[i, j] = \begin{cases} 1 &amp; x_i \in Y_j \\ 0 &amp; x_i \not\in Y_j \end{cases}$.
+Since for each $i$, there are at most $d$ subsets $Y_j$ that it can belong to,
+each row sum is at most $d$.</p>
+<p>\begin{align}
+\sum_{j=1}^k w(Y_j) &amp;=
+\sum_{j=1}^k \sum_{i=1}^n A[i, j] w(x_i)
+\\ &amp;= \sum_{i=1}^n \left( w(x_i) \sum_{j=1}^k A[i, j] \right)
+\\ &amp;\le \sum_{i=1}^n w(x_i)d  \tag{row sum $\le d$}
+\\ &amp;= dw(X)
+\end{align}
+\[ \min_{j=1}^k w(Y_j) \le \frac{1}{k} \sum_{j=1}^k w(Y_j) \le \frac{dw(X)}{k}
+= \frac{dw(X)}{\lceil d/\epsilon \rceil} \le \epsilon w(X) \]</p>
+<p>To find such a $Y_j$, first compute all $\epsilon_j$.
+Then for each coordinate of each vector, identify the interval that it belongs to using binary search.
+For each interval $I_j$, maintain $w(Y_j)$ as vectors are added.
+Then find the interval with the maximum weight and the vectors belonging to it.
+This takes $\Theta(nd\lg k)$ time and $O(k)$ space.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 0</li><li>Number of transitive dependencies: 0</li></ul>
+
+<h2 class="no-deps"> Transitive dependencies: None </h2>
+
+</div>
+</body>
+</html>

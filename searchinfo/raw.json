@@ -2725,6 +2725,13 @@
 },
 {
 "type": "theorem",
+"title": "Min-weight gap interval",
+"description": "Let X be a set of vectors, each with a weight. There is a polynomial-time algorithm to find a non-negligible interval such that the weight of vectors with a component in that interval is small.",
+"uci": "/misc/min-weight-gap",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/min-weight-gap.html"
+},
+{
+"type": "theorem",
 "title": "Bound on log 2",
 "description": "ln(1+x) \u2265 2x/(2+x) for x \u2265 0.",
 "uci": "/misc/log-bound-2",
