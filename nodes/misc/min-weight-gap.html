@@ -30,7 +30,7 @@
 None </h2>
 
 <div class="horizontal-rule"></div>
-<p>Let $f: [a, b] \mapsto [a, b]$ be a (strictly) decreasing function.
+<p>Let $f: [a, b] \mapsto [a, b]$ be a function such that $\forall x, f(x) &lt; x$.
 Let $\epsilon \in (0, 1)$. Let $k = \lceil d/\epsilon \rceil$.
 Let $\epsilon_0 \in [a, b]$ and define $\epsilon_j = f(\epsilon_{j-1})$
 and $I_j = [\epsilon_j, \epsilon_{j-1}]$ for $1 \le j \le k$.</p>
@@ -40,11 +40,12 @@ Let $Y_j$ be the set of vectors in $X$ that have some coordinate in $I_j$.</p>
 For $Y \subseteq X$, define $w(Y) = \sum_{x \in Y} w(x)$.
 Then
 \[ \min_{j=1}^k w(Y_j) \le \epsilon w(X) \]</p>
-<p>Let $|X| = n$. Then such a $Y_j$ can be found in $O(k + nd\lg k)$ time and $O(k)$ extra space
+<p>Let $|X| = n$. Then such a $Y_j$ can be found in $\Theta(k + nd\lg k)$ time and $\Theta(k)$ extra space
 (assuming constant time for arithmetic operations and constant space for numbers).</p>
 <p>Intuitively, this means that we can remove a subset $Y$ from $X$
 such that the weight doesn't decrease much and there is a gap
 in each coordinate of each $x \in X-Y$.</p>
+<p>Function signature: <code>min_gap(f, X, w, &epsilon;, &epsilon;0)</code>.</p>
 <h2>Proof</h2>
 <p>Let $X = \{x_1, x_2, \ldots, x_n\}$.
 Let $A$ be an $n \times k$ matrix where
@@ -64,7 +65,7 @@ each row sum is at most $d$.</p>
 Then for each coordinate of each vector, identify the interval that it belongs to using binary search.
 For each interval $I_j$, maintain $w(Y_j)$ as vectors are added.
 Then find the interval with the maximum weight and the vectors belonging to it.
-This takes $\Theta(nd\lg k)$ time and $O(k)$ space.</p>
+This takes $\Theta(nd\lg k)$ time and $\Theta(k)$ space.</p>
 
 <div class="horizontal-rule"></div>
 <h2 class="no-deps"> Dependency for: None </h2>
