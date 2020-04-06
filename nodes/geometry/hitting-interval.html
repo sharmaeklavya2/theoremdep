@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hitting interval problem - TheoremDep</title>
+<meta name="description" content="Given several input intervals with costs and a value δ, find x that minimizes the cost of the input intervals that intersect the interval (x, x+δ)." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Hitting interval problem </h1>
+<h2 class="no-deps"> Dependencies:
+None </h2>
+
+<div class="horizontal-rule"></div>
+<p>An instance of the hitting interval problem is defined by the tuple $(I, c, J_1, J_2, \delta)$,
+where $I$ is a set of closed intervals,
+$c: I \mapsto \mathbb{R}_{&gt;0}$ is a cost function,
+$J_1$ and $J_2$ are closed intervals such that $J_2 \subseteq J_1$
+and $\delta \in \mathbb{R}_{&gt;0}$.
+Here $J_1$ is called the outer window, $J_2$ is called the inner window
+and $\delta$ is called the hitting interval length.
+Let $S \subseteq I$ be the set of intervals that lie completely inside $J_1$.</p>
+<p>In the open version of the problem, we have to find $x \in \mathbb{R}$
+which minimizes the cost of the intervals in $S$ that intersect the interval $(x, x+\delta)$
+(called the target interval), $(x, x+\delta) \subseteq J_2$
+and $(x, x+\delta)$ does not intersect any interval in $I-S$.
+The closed version of the problem is the same except that the target interval
+is $[x, x+\delta]$ instead of $(x, x+\delta)$.</p>
+<p>Note that if $x$ is a feasible solution for the closed version,
+then it is also a feasible solution for the open version
+and the cost for the open version is less than or equal to the cost for the closed version.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/geometry/hitting-interval-ub-for-small-intervals.html">
+        <span class="deptitle">
+        Hitting interval problem: upper bound for small intervals</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 0</li><li>Number of transitive dependencies: 0</li></ul>
+
+<h2 class="no-deps"> Transitive dependencies: None </h2>
+
+</div>
+</body>
+</html>

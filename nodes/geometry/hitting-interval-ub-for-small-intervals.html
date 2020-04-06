@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hitting interval problem: upper bound for small intervals - TheoremDep</title>
+<meta name="description" content="For the hitting interval problem, if all input intervals are small, then it is possible to find a solution with bounded cost." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Hitting interval problem: upper bound for small intervals </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/geometry/hitting-interval.html">
+        <span class="deptitle">
+        Hitting interval problem</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $(I, c, J, J, \delta)$ be a hitting interval problem, where $J = [0, L]$.
+It is given that $|I| = n$ and all intervals have length at most $\ell$,
+i.e. $\forall [s, f] \in I, f-s \le \ell$.
+Let $S \subseteq I$ be the intervals lying completely in $J$.</p>
+<p>Then it is possible to find a feasible solution $x$ to the problem
+of cost at most
+\[ \frac{c(S)}{\left\lfloor \frac{L-\ell}{\ell+\delta} \right\rfloor} \]</p>
+<h2>Proof</h2>
+<p>Let $x_i = \ell i + \delta(i-1)$ for $i \ge 1$.
+Let $k$ be the largest value of $i$ such that $x_i \le L-\ell$.
+Any interval in $I-S$ cannot intersect $(x_i, x_i + \delta)$
+because $x_0 = \ell$ and $x_k \le L-\ell$.
+Therefore, all $x_i$ are feasible solutions.</p>
+<p>\[ x_k = \ell k + \delta(k-1) \le L-\ell
+\implies k = \left\lfloor \frac{L-\ell}{\ell + \delta} \right\rfloor \]</p>
+<p>Since $x_{i+1} - x_i = \ell + \delta$, any input interval
+can only at most one of $(x_i, x_i + \delta)$ and $(x_{i+1}, x_{i+1} + \delta)$.
+Let $S_i$ be the set of intervals that intersect $(x_i, x_i + \delta)$.
+So all $S_i$ are disjoint.</p>
+<p>The cost of the solution $x_i$ is $c(S_i)$. Therefore,
+\[ \min_{i=1}^k c(S_i)
+\le \frac{1}{k} \sum_{i=1}^k c(S_i)
+\le \frac{c(S)}{k}
+= \frac{c(S)}{\left\lfloor \frac{L-\ell}{\ell + \delta} \right\rfloor}
+\]</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 1</li><li>Number of transitive dependencies: 1</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/geometry/hitting-interval.html">
+        <span class="deptitle">
+        Hitting interval problem</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

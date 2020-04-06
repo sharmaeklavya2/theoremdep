@@ -438,6 +438,20 @@
 },
 {
 "type": "def",
+"title": "Hitting interval problem",
+"description": "Given several input intervals with costs and a value \u03b4, find x that minimizes the cost of the input intervals that intersect the interval (x, x+\u03b4).",
+"uci": "/geometry/hitting-interval",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/geometry/hitting-interval.html"
+},
+{
+"type": "theorem",
+"title": "Hitting interval problem: upper bound for small intervals",
+"description": "For the hitting interval problem, if all input intervals are small, then it is possible to find a solution with bounded cost.",
+"uci": "/geometry/hitting-interval-ub-for-small-intervals",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/geometry/hitting-interval-ub-for-small-intervals.html"
+},
+{
+"type": "def",
 "title": "Matroid",
 "description": "A matroid is the generalization of linear independence from linear algebra.",
 "keywords": [
@@ -2479,6 +2493,13 @@
 "description": "The optimal objective value of a maximization linear program is at most the optimal objective value of its dual.",
 "uci": "/optimization/linear-prog/weak-duality",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/weak-duality.html"
+},
+{
+"type": "theorem",
+"title": "Minimize maximum coordinate over hyperplane",
+"description": "Consider the problem of minimizing max(x) where a^Tx = b. Here a is a vector with non-negative coordinates and max(x) is the maximum coordinate of x. Then the optimal solution is where each coordinate is b/sum(a).",
+"uci": "/optimization/min-max-coord",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/min-max-coord.html"
 },
 {
 "type": "theorem",

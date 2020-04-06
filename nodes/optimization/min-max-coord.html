@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Minimize maximum coordinate over hyperplane - TheoremDep</title>
+<meta name="description" content="Consider the problem of minimizing max(x) where a^Tx = b. Here a is a vector with non-negative coordinates and max(x) is the maximum coordinate of x. Then the optimal solution is where each coordinate is b/sum(a)." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Minimize maximum coordinate over hyperplane </h1>
+<h2 class="no-deps"> Dependencies:
+None </h2>
+
+<div class="horizontal-rule"></div>
+<p>Let $a \in \mathbb{R}^d_{\ge 0} - \{0\}$, $b \in \mathbb{R}$,
+and for any $x \in \mathbb{R}^d, \max(x) = \max_{i=1}^d x_i$
+$\newcommand{\vecone}{\mathbf{1}}$
+$\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}$.
+Let $\vecone$ be a $d$-dimensional vector whose each component is 1.</p>
+<p>Then the solution to these optimization problems
+\[ \min_{x \in \mathbb{R}^d} \max(x) \textrm{ where } a^Tx = b  \tag{Problem $P_1$} \]
+\[ \max_{x \in \mathbb{R}^d} \min(x) \textrm{ where } a^Tx = b  \tag{Problem $Q_1$} \]
+is $\frac{b}{a^T\vecone} \vecone$.</p>
+<h2>Proof</h2>
+<p>For a problem $P$, we say that $x \in P$ iff $x$ is a feasible solution to $P$.</p>
+<p>$\frac{b}{a^T\vecone}\vecone \in P_1$.</p>
+<p>For $c \in \mathbb{R}$, define problems $P_2(c)$ and $Q_2(c)$ as
+\[ \textrm{Find } x \in \mathbb{R}^d \textrm{ such that }
+a^Tx = b \wedge \max(x) \le c  \tag{Problem $P_2(c)$} \]
+\[ \textrm{Find } x \in \mathbb{R}^d \textrm{ such that }
+a^Tx = b \wedge \min(x) \ge c  \tag{Problem $Q_2(c)$} \]</p>
+<p><strong>Lemma 1</strong>: Let $c^* = \frac{b}{a^T\vecone}$. Then</p>
+<ul>
+<li>$\forall c &lt; c^*, P_2(c)$ is infeasible and $\forall c \ge c^*, P_2(c)$ is feasible.</li>
+<li>$\forall c &gt; c^*, Q_2(c)$ is infeasible and $\forall c \le c^*, Q_2(c)$ is feasible.</li>
+</ul>
+<p><strong>Proof</strong>:
+Let $c &lt; c^*$. Assume that $P_2(c)$ is feasible. Let $x \in P_2(c)$.
+\begin{align}
+a^Tx &amp;= \sum_{i=1}^d a_ix_i
+\\ &amp;\le \sum_{i=1}^d a_i\max(x)  \tag{$a_i \ge 0$}
+\\ &amp;= \max(x)a^T\vecone
+\\ &amp;\le ca^T\vecone  \tag{$x$ is feasible, so $\max(x) \le c$}
+\\ &amp;&lt; c^*a^T\vecone = b  \tag{$a^T\vecone &gt; 0$}
+\end{align}
+Since $a^Tx &lt; b$, $x$ cannot be a feasible solution, which is a contradiction.
+Hence, $P_2(c)$ is infeasible.</p>
+<p>Now let $c \ge c^*$. Let $x = c^*\vecone$.
+Then $a^Tx = c^*a^T\vecone = b$ and $\max(x) = c^* \le c$.
+Therefore, $x$ is feasible for $P_2(c)$.</p>
+<p>The fact about $Q_2$ can be proven similarly.
+\[ \tag*{$\square$} \]</p>
+<p><strong>Lemma 2</strong>:
+Let $x^*$ be an optimal solution to $P_1$. Then $\max(x^*) = c^*$</p>
+<p><strong>Proof</strong>:
+By lemma 1, $P_2(c^*)$ is feasible. Let $\widehat{x} \in P_2(c^*)$.
+Therefore, $\max(\widehat{x}) \le c^*$ and $\widehat{x} \in P_1$.
+The objective value of $\widehat{x}$ for $P_1$ is $\max(\widehat{x})$.
+Since $x^*$ is an optimal solution, $\max(x^*) \le \max(\widehat{x}) \le c^*$.</p>
+<p>$x^* \in P_2(\max(x^*))$, so $P_2(\max(x^*))$ is feasible.
+By lemma 1, we know that $\max(x^*) \ge c^*$.
+Therefore, $\max(x^*) = c^*$.
+\[ \tag*{$\square$} \]</p>
+<p>$\frac{b}{a^T\vecone}\vecone$ is feasible for $P_1$ and has objective value $c^*$,
+so it is an optimal solution to $P_1$ as per lemma 2.</p>
+<p>We can similary prove that $\frac{b}{a^T\vecone}\vecone$ is an optimal solution to $Q_1$.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 0</li><li>Number of transitive dependencies: 0</li></ul>
+
+<h2 class="no-deps"> Transitive dependencies: None </h2>
+
+</div>
+</body>
+</html>
