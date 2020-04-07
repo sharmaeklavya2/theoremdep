@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Stirling's approximation - TheoremDep</title>
-<meta name="description" content="Upper and lower bounds for factorial." />
+<title>Simple bound on harmonic sum - TheoremDep</title>
+<meta name="description" content="ln(n) + 1/n ≤ H(n) ≤ ln(n) + 1" />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -25,28 +25,46 @@
 </nav>
 
 <div id="main">
-<h1> Stirling's approximation <span class="doc-status">(incomplete)</span> </h1>
-<h2 class="no-deps"> Dependencies:
-Unspecified </h2>
+<h1> Simple bound on harmonic sum </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/integration-bound.html">
+        <span class="deptitle">
+        Integration bound</span>
+    </a>
+    </li>
+</ol>
 
 <div class="horizontal-rule"></div>
-<p>For $n \ge 1$,
-\[ \sqrt{2\pi}n^{n+\frac{1}{2}}e^{-n} \le n! \le en^{n+\frac{1}{2}}e^{-n} \]</p>
+<p>Let $H(n) = \sum_{i=1}^n \frac{1}{i}$.
+Then $\ln n + \frac{1}{n} \le H(n) \le \ln n + 1$.</p>
+<p>This is a direct application of the integration bound.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/misc/binomial-bound.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/harmonic-grouping.html">
         <span class="deptitle">
-        Bound on binomial coefficient</span>
+        1D bin-packing: harmonic grouping</span>
     </a>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 0</li><li>Number of transitive dependencies: 0</li></ul>
+<ul><li>Depth: 1</li><li>Number of transitive dependencies: 1</li></ul>
 
-<h2 class="no-deps"> Transitive dependencies: None </h2>
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/integration-bound.html">
+        <span class="deptitle">
+        Integration bound</span>
+    </a>
+    </li>
+</ol>
 
 </div>
 </body>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Integration bound - TheoremDep</title>
-<meta name="description" content="Bounding a sum using integration." />
+<title>Stirling's approximation - TheoremDep</title>
+<meta name="description" content="Upper and lower bounds for factorial." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -25,38 +25,21 @@
 </nav>
 
 <div id="main">
-<h1> Integration bound </h1>
+<h1> Stirling's approximation <span class="doc-status">(incomplete)</span> </h1>
 <h2 class="no-deps"> Dependencies:
-None </h2>
+Unspecified </h2>
 
 <div class="horizontal-rule"></div>
-<p>Let $f: \mathbb{R} \mapsto \mathbb{R}$ be a non-increasing function,
-i.e. $x &lt; y \implies f(x) \ge f(y)$. Then
-\[ \int\limits_a^{b+1} f(x)dx \,\le\, f(b) + \int\limits_a^b f(x)dx
-\,\le\, \sum_{i=a}^b f(i) \,\le\, f(a) + \int\limits_a^b f(x)dx \,\le\, \int\limits_{a-1}^b f(x)dx \]</p>
-<h2>Proof</h2>
-<p>\begin{align}
-&amp; \int_a^b f(x)dx
-\\ &amp;= \sum_{i=a}^{b-1} \int_i^{i+1} f(x)dx
-\\ &amp;= \sum_{i=a}^{b-1} \int_i^{i+1} [f(i+1), f(i)] dx
-\\ &amp;= \sum_{i=a}^{b-1} [f(i+1), f(i)]
-\\ &amp;= \left[ \sum_{i=a}^{b-1} f(i+1), \sum_{i=a}^{b-1} f(i) \right]
-\\ &amp;= \left[ \sum_{i=a+1}^b f(i), \sum_{i=a}^{b-1} f(i) \right]
-\\ &amp;= \left[ \left( \sum_{i=a}^b f(i) \right) - f(a), \left( \sum_{i=a}^b f(i) \right) - f(b) \right]
-\\ &amp;= \left( \sum_{i=a}^b f(i) \right) - \left[ f(b), f(a) \right]
-\end{align}
-\[ \int_a^{b+1} f(x)dx - \int_a^b f(x)dx = \int_b^{b+1} f(x)dx
-\le \int_b^{b+1} f(b)dx = f(b) \]
-\[ \int_{a-1}^b f(x)dx - \int_a^b f(x)dx = \int_{a-1}^a f(x)dx
-\ge \int_{a-1}^a f(a)dx = f(a) \]</p>
+<p>For $n \ge 1$,
+\[ \sqrt{2\pi}n^{n+\frac{1}{2}}e^{-n} \le n! \le en^{n+\frac{1}{2}}e^{-n} \]</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/misc/simple-harmonic-bound.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/binomial-bound.html">
         <span class="deptitle">
-        Simple bound on harmonic sum</span>
+        Bound on binomial coefficient</span>
     </a>
     </li>
 </ol>

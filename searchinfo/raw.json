@@ -2690,6 +2690,97 @@
 },
 {
 "type": "theorem",
+"title": "Integration bound",
+"description": "Bounding a sum using integration.",
+"uci": "/bounds/integration-bound",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/integration-bound.html"
+},
+{
+"type": "theorem",
+"title": "Bound on log 2",
+"description": "ln(1+x) \u2265 2x/(2+x) for x \u2265 0.",
+"uci": "/bounds/log-bound-2",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/log-bound-2.html"
+},
+{
+"type": "theorem",
+"title": "Bound on log",
+"description": "(x-1)/x \u2264 ln(x) \u2264 x-1.",
+"uci": "/bounds/log-bound",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/log-bound.html"
+},
+{
+"type": "theorem",
+"title": "Simple bound on harmonic sum",
+"description": "ln(n) + 1/n \u2264 H(n) \u2264 ln(n) + 1",
+"uci": "/bounds/simple-harmonic-bound",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/simple-harmonic-bound.html"
+},
+{
+"type": "theorem",
+"title": "Stirling's approximation",
+"description": "Upper and lower bounds for factorial.",
+"uci": "/bounds/stirlings-approx",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/stirlings-approx.html",
+"status": "incomplete"
+},
+{
+"type": "theorem",
+"title": "Bound on harmonic sum",
+"description": "H(n) = ln n + \ud835\udefe + [0, 1/n].",
+"uci": "/bounds/harmonic-bound",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/harmonic-bound.html"
+},
+{
+"type": "theorem",
+"title": "Harmonic bound for fraction",
+"description": "H(a+b-1) - H(b-1) \u2264 a/b \u2264 H(b) - H(b-a)",
+"uci": "/bounds/harmonic-bound-for-fraction",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/harmonic-bound-for-fraction.html"
+},
+{
+"type": "theorem",
+"title": "Bound on exponential",
+"description": "e^x \u2265 1+x",
+"uci": "/bounds/exp-bound",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/exp-bound.html"
+},
+{
+"type": "theorem",
+"title": "Chernoff bound",
+"description": "Chernoff bound gives concentration result for the sum of independent bernouilli random variables.",
+"uci": "/probability/chernoff-bound",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/chernoff-bound.html"
+},
+{
+"type": "theorem",
+"title": "Bound on k extreme values",
+"description": "Let s be the sum of n values. The sum of the smallest k values is at most sk/n.",
+"uci": "/bounds/k-extreme-sum",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/k-extreme-sum.html"
+},
+{
+"type": "theoremdef",
+"title": "1D bin-packing: harmonic grouping",
+"uci": "/bin-packing/1d/harmonic-grouping",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/harmonic-grouping.html"
+},
+{
+"type": "theorem",
+"title": "1D bin-packing: Karmarkar-Karp algorithm",
+"description": "The Karmarkar-Karp algorithm is an algorithm for 1D bin-packing that achieves an additive approximation of O(log(I)^2).",
+"uci": "/bin-packing/1d/karmarkar-karp",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/karmarkar-karp.html"
+},
+{
+"type": "theorem",
+"title": "Bound on binomial coefficient",
+"description": "(n/k)^k \u2264 C(n,k) \u2264 (ne/k)^k",
+"uci": "/bounds/binomial-bound",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/binomial-bound.html"
+},
+{
+"type": "theorem",
 "title": "Floor and ceil of fraction",
 "description": "Let a and b be integers. Then ceil(a/b) = floor((a-1)/b) + 1. Equivalently, floor(a/b) = ceil((a+1)/b) - 1.",
 "uci": "/misc/floor-ceil/fraction",
@@ -2715,13 +2806,6 @@
 "description": "(a+1)/b \u2264 b^floor(log_b(a)) \u2264 a",
 "uci": "/misc/floor-ceil/rounded-power",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/floor-ceil/rounded-power.html"
-},
-{
-"type": "theorem",
-"title": "Integration bound",
-"description": "Bounding a sum using integration.",
-"uci": "/misc/integration-bound",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/integration-bound.html"
 },
 {
 "type": "def",
@@ -2750,42 +2834,6 @@
 "description": "Let X be a set of vectors, each with a weight. There is a polynomial-time algorithm to find a non-negligible interval such that the weight of vectors with a component in that interval is small.",
 "uci": "/misc/min-weight-gap",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/min-weight-gap.html"
-},
-{
-"type": "theorem",
-"title": "Bound on log 2",
-"description": "ln(1+x) \u2265 2x/(2+x) for x \u2265 0.",
-"uci": "/misc/log-bound-2",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/log-bound-2.html"
-},
-{
-"type": "theorem",
-"title": "Bound on log",
-"description": "(x-1)/x \u2264 ln(x) \u2264 x-1.",
-"uci": "/misc/log-bound",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/log-bound.html"
-},
-{
-"type": "theorem",
-"title": "Simple bound on harmonic sum",
-"description": "ln(n) + 1/n \u2264 H(n) \u2264 ln(n) + 1",
-"uci": "/misc/simple-harmonic-bound",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/simple-harmonic-bound.html"
-},
-{
-"type": "theorem",
-"title": "Stirling's approximation",
-"description": "Upper and lower bounds for factorial.",
-"uci": "/misc/stirlings-approx",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/stirlings-approx.html",
-"status": "incomplete"
-},
-{
-"type": "theorem",
-"title": "Bound on harmonic sum",
-"description": "H(n) = ln n + \ud835\udefe + [0, 1/n].",
-"uci": "/misc/harmonic-bound",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/harmonic-bound.html"
 },
 {
 "type": "theoremdef",
@@ -2818,54 +2866,6 @@
 "description": "The weighted rank of X is the weight of the max-weight basis of X. The weighted rank function is submodular.",
 "uci": "/matroids/weights/weighted-rank-is-submodular",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/weights/weighted-rank-is-submodular.html"
-},
-{
-"type": "theorem",
-"title": "Harmonic bound for fraction",
-"description": "H(a+b-1) - H(b-1) \u2264 a/b \u2264 H(b) - H(b-a)",
-"uci": "/misc/harmonic-bound-for-fraction",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/harmonic-bound-for-fraction.html"
-},
-{
-"type": "theorem",
-"title": "Bound on exponential",
-"description": "e^x \u2265 1+x",
-"uci": "/misc/exp-bound",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/exp-bound.html"
-},
-{
-"type": "theorem",
-"title": "Chernoff bound",
-"description": "Chernoff bound gives concentration result for the sum of independent bernouilli random variables.",
-"uci": "/probability/chernoff-bound",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/chernoff-bound.html"
-},
-{
-"type": "theorem",
-"title": "Bound on k extreme values",
-"description": "Let s be the sum of n values. The sum of the smallest k values is at most sk/n.",
-"uci": "/misc/k-extreme-sum",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/k-extreme-sum.html"
-},
-{
-"type": "theoremdef",
-"title": "1D bin-packing: harmonic grouping",
-"uci": "/bin-packing/1d/harmonic-grouping",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/harmonic-grouping.html"
-},
-{
-"type": "theorem",
-"title": "1D bin-packing: Karmarkar-Karp algorithm",
-"description": "The Karmarkar-Karp algorithm is an algorithm for 1D bin-packing that achieves an additive approximation of O(log(I)^2).",
-"uci": "/bin-packing/1d/karmarkar-karp",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/karmarkar-karp.html"
-},
-{
-"type": "theorem",
-"title": "Bound on binomial coefficient",
-"description": "(n/k)^k \u2264 C(n,k) \u2264 (ne/k)^k",
-"uci": "/misc/binomial-bound",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/binomial-bound.html"
 }
 ]
 }

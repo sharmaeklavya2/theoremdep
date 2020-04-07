@@ -39,6 +39,10 @@ Let $\vecone$ be a $d$-dimensional vector whose each component is 1.</p>
 \[ \min_{x \in \mathbb{R}^d} \max(x) \textrm{ where } a^Tx = b  \tag{Problem $P_1$} \]
 \[ \max_{x \in \mathbb{R}^d} \min(x) \textrm{ where } a^Tx = b  \tag{Problem $Q_1$} \]
 is $\frac{b}{a^T\vecone} \vecone$.</p>
+<p>Equivalently, the solution to these optimization problems
+\[ \min_{y \in \mathbb{R}^d} \max_{i=1}^d \frac{y_i}{a_i} \textrm{ where } \vecone^Ty = b \]
+\[ \max_{y \in \mathbb{R}^d} \min_{i=1}^d \frac{y_i}{a_i} \textrm{ where } \vecone^Ty = b \]
+is $\frac{b}{a^T\vecone} a$ and the optimal objective value is $\frac{b}{a^T\vecone}$.</p>
 <h2>Proof</h2>
 <p>For a problem $P$, we say that $x \in P$ iff $x$ is a feasible solution to $P$.</p>
 <p>$\frac{b}{a^T\vecone}\vecone \in P_1$.</p>
@@ -82,6 +86,10 @@ Therefore, $\max(x^*) = c^*$.
 <p>$\frac{b}{a^T\vecone}\vecone$ is feasible for $P_1$ and has objective value $c^*$,
 so it is an optimal solution to $P_1$ as per lemma 2.</p>
 <p>We can similary prove that $\frac{b}{a^T\vecone}\vecone$ is an optimal solution to $Q_1$.</p>
+<p>It is also easy to prove that the problems
+\[ \min_{y \in \mathbb{R}^d} \max_{i=1}^d \frac{y_i}{a_i} \textrm{ where } \vecone^Ty = b \]
+\[ \max_{y \in \mathbb{R}^d} \min_{i=1}^d \frac{y_i}{a_i} \textrm{ where } \vecone^Ty = b \]
+are equivalent to $P_1$ and $Q_1$ respectively via the transformation $y_i = a_ix_i$.</p>
 
 <div class="horizontal-rule"></div>
 <h2 class="no-deps"> Dependency for: None </h2>
