@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Convex function - TheoremDep</title>
+<meta name="description" content="A function f is convex iff the line segment joining (x, f(x)) and (y, f(y)) lies completely above the function surface." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Convex function </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+        <span class="deptitle">
+        Vector Space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/analysis/convex-set.html">
+        <span class="deptitle">
+        Convex set</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $V$ be a vector space over $\mathbb{R}$. Let $S \subseteq V$ be a convex set.
+Let $f: S \mapsto \mathbb{R}$ be a function.</p>
+<p>Then $f$ is defined to be convex iff
+\[ \forall x \in S, \forall y \in S, \forall \alpha \in [0, 1],
+f((1-\alpha)x + \alpha y) \le (1-\alpha)f(x) + \alpha f(y) \]</p>
+<p>Intuitively, this means that a function $f$ is convex iff
+the line segment joining $(x, f(x))$ and $(y, f(y))$ lies completely above the function surface.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 5</li><li>Number of transitive dependencies: 5</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+        <span class="deptitle">
+        Group</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+        <span class="deptitle">
+        Ring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+        <span class="deptitle">
+        Field</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+        <span class="deptitle">
+        Vector Space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/analysis/convex-set.html">
+        <span class="deptitle">
+        Convex set</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

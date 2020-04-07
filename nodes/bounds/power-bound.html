@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bounds on (1+x)^a for 0 ≤ a ≤ 1 - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Bounds on (1+x)^a for 0 ≤ a ≤ 1 </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/log-bound.html">
+        <span class="deptitle">
+        Bound on log</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/exp-bound.html">
+        <span class="deptitle">
+        Bound on exponential</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/analysis/nonneg-dd-func-with-2-zeros.html">
+        <span class="deptitle">
+        Function with non-negative second derivative and 2 zeros</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $0 \le a \le 1$.
+\begin{align}
+\forall x \ge -1, &amp;\quad (1+x)^a \le 1+ax
+\\ \forall 0 \le x \le k, &amp;\quad 1 + \frac{ax}{k+1} \le 1 + \frac{\ln(1+k)}{k}ax \le (1+x)^a
+\end{align}</p>
+<h2>Proof</h2>
+<h3>Upper bound</h3>
+<p>Let $f(x) = (1+ax) - (1+x)^a$.
+We would like to prove that $f(x) \ge 0$ for all $x$.</p>
+<p>\[ f'(x) = a - a(1+x)^{a-1} = a\left(1 - (1+x)^{-(1-a)}\right) \]
+\[ x \ge 0 \implies 1+x \ge 1 \implies (1+x)^{-(1-a)} \le 1
+\implies f'(x) \ge 0 \]
+\[ -1 \le x \le 0 \implies 0 \le 1+x \le 1 \implies (1+x)^{-(1-a)} \ge 1
+\implies f'(x) \le 0 \]
+Since $f(0) = 0$ and $f(x)$ increases as we go away from 0,
+$\forall x, f(x) \ge 0$.</p>
+<h3>Lower bound</h3>
+<p>Let $\gamma = \frac{1}{k}\ln(1+k)$.
+We'll prove that $\forall 0 \le x \le k, \; e^{\gamma x} \le 1+x$.
+That would imply (using the bound on exponential) that
+\[ 1+\gamma ax \le e^{\gamma ax} \le \left(e^{\gamma x}\right)^a \le (1+x)^a \]</p>
+<p>Let $g(x) = e^{\gamma x} - (1+x)$. $g(0) = 0$. $g(k) = e^{\gamma k} - (1+k) = 0$.</p>
+<p>$g''(x) = \gamma^2 e^{\gamma x} &gt; 0$ and $g(0) = g(k) = 0$.
+Therefore, $g(x) \le 0$ for $x \in [0, k]$.
+Therefore, $e^{\gamma x} \le 1+x$ for $x \in [0, k]$.</p>
+<p>By the bound on log, we get $\frac{k}{k+1} \le \ln(1+k)$.
+Therefore,
+\[ 1 + \frac{ax}{k+1} \le 1 + \frac{\ln(1+k)}{k}ax \]</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 1</li><li>Number of transitive dependencies: 3</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/analysis/nonneg-dd-func-with-2-zeros.html">
+        <span class="deptitle">
+        Function with non-negative second derivative and 2 zeros</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/log-bound.html">
+        <span class="deptitle">
+        Bound on log</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/exp-bound.html">
+        <span class="deptitle">
+        Bound on exponential</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

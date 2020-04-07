@@ -2690,6 +2690,28 @@
 },
 {
 "type": "theorem",
+"title": "Function with non-negative second derivative and 2 zeros",
+"description": "Let f be a function with f''(x) \u2265 0 and f(a) = f(b) = 0. Then for x \u2208 [a, b], f(x) \u2264 0.",
+"uci": "/analysis/nonneg-dd-func-with-2-zeros",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/analysis/nonneg-dd-func-with-2-zeros.html",
+"status": "incomplete"
+},
+{
+"type": "def",
+"title": "Convex set",
+"description": "A set S in the vector space V is convex iff (x \u2208 S and y \u2208 S and t \u2208 [0, 1]) implies (1-t)x + ty \u2208 S.",
+"uci": "/analysis/convex-set",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/analysis/convex-set.html"
+},
+{
+"type": "def",
+"title": "Convex function",
+"description": "A function f is convex iff the line segment joining (x, f(x)) and (y, f(y)) lies completely above the function surface.",
+"uci": "/analysis/convex-function",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/analysis/convex-function.html"
+},
+{
+"type": "theorem",
 "title": "Integration bound",
 "description": "Bounding a sum using integration.",
 "uci": "/bounds/integration-bound",
@@ -2751,6 +2773,12 @@
 "description": "Chernoff bound gives concentration result for the sum of independent bernouilli random variables.",
 "uci": "/probability/chernoff-bound",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/chernoff-bound.html"
+},
+{
+"type": "theorem",
+"title": "Bounds on (1+x)^a for 0 \u2264 a \u2264 1",
+"uci": "/bounds/power-bound",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/power-bound.html"
 },
 {
 "type": "theorem",

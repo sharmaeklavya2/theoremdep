@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Bound on log - TheoremDep</title>
-<meta name="description" content="(x-1)/x ≤ ln(x) ≤ x-1." />
+<title>Function with non-negative second derivative and 2 zeros - TheoremDep</title>
+<meta name="description" content="Let f be a function with f''(x) ≥ 0 and f(a) = f(b) = 0. Then for x ∈ [a, b], f(x) ≤ 0." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -25,23 +25,25 @@
 </nav>
 
 <div id="main">
-<h1> Bound on log </h1>
+<h1> Function with non-negative second derivative and 2 zeros <span class="doc-status">(incomplete)</span> </h1>
 <h2 class="no-deps"> Dependencies:
-None </h2>
+Unspecified </h2>
 
 <div class="horizontal-rule"></div>
-<p>\[ \forall x \in \mathbb{R}, \frac{x-1}{x} \le \ln x \le x-1 \]</p>
-<h2>Proof</h2>
-<p>You can plot a graph of $y = \ln x$ and $y = x - 1$ to see that $\ln x \le x-1$.</p>
-<p>Alternatively, let $f(x) = x - 1 - \ln x$.
-Prove that $f(x)$ attains a minimum value of $0$ at $x = 1$.
-Therefore, $f(x) \ge 0$, which means that $\ln x \le x-1$.</p>
-<p>\begin{align}
-&amp; \forall x \in \mathbb{R}, \ln x \le x-1
-\\ &amp;\implies \forall x \in \mathbb{R}, \ln \left(\frac{1}{x}\right) \le \frac{1}{x} - 1
-\\ &amp;\implies \forall x \in \mathbb{R}, -\ln x \le \frac{1-x}{x}
-\\ &amp;\implies \forall x \in \mathbb{R}, \ln x \ge \frac{x-1}{x}
-\end{align}</p>
+<p>Let $f: \mathbb{R} \mapsto \mathbb{R}$ be a function such that</p>
+<ul>
+<li>$f$ is differentiable in $[a, b]$.</li>
+<li>$\forall x \in [a, b], f''(x) \ge 0$.</li>
+<li>$f(a) = f(b) = 0$.</li>
+</ul>
+<p>Then $\forall x \in [a, b], f(x) \le 0$.</p>
+<h2>Proof idea</h2>
+<p><span class="text-danger">(Rigorous proof needed)</span></p>
+<p>Assume that $\exists t \in (a, b)$ such that $f(t) &gt; 0$.
+Then by mean value theorem, $\exists x_1 \in (0, t)$ such that $f'(x_1) &gt; 0$
+and $\exists x_2 \in (t, 1)$ such that $f'(x_2) &lt; 0$.
+But this contradicts the fact that $f''(x) \ge 0$.
+Therefore, such a $t$ doesn't exist.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
@@ -50,12 +52,6 @@ Therefore, $f(x) \ge 0$, which means that $\ln x \le x-1$.</p>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/power-bound.html">
         <span class="deptitle">
         Bounds on (1+x)^a for 0 ≤ a ≤ 1</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/harmonic-bound.html">
-        <span class="deptitle">
-        Bound on harmonic sum</span>
     </a>
     </li>
 </ol>
