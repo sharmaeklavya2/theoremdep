@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>2D geometric bin-packing: nfdh(I) < 4rsize(I) + 3 - TheoremDep</title>
+<meta name="description" content="NFDH is an asymptotic 4-approx algorithm for 2D geometric bin-packing." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> 2D geometric bin-packing: nfdh(I) < 4rsize(I) + 3 </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/size.html">
+        <span class="deptitle">
+        Geometric packing: size and rsize</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/nfdh/algo.html">
+        <span class="deptitle">
+        2D geometric packing: NFDH algorithm</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/nfdh/strip-perf.html">
+        <span class="deptitle">
+        2D geometric strip packing: nfdh(I) < 2rsize(I) + hmax</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/next-fit.html">
+        <span class="deptitle">
+        1D bin-packing: next-fit(S) < 2size(S)+1</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $I$ be a 2D geometric bin-packing instance.
+Assume without loss of generality that bins have width and height 1.
+$\newcommand{\size}{\operatorname{size}}$
+$\newcommand{\ceil}[1]{\left\lceil{#1}\right\rceil}$
+$\newcommand{\th}{^{\textrm{th}}}$</p>
+<p>The number of bins used by the NFDH algorithm to pack $I$
+is at most $\ceil{4\size(I)} + 2 &lt; 4\size(I) + 3$.</p>
+<h2>Proof</h2>
+<p>Using NFDH for bin-packing is equivalent to using NFDH
+for packing items into shelves and then packing the shelves
+into 1D bins via the next-fit algorithm.</p>
+<p>Let there be $p$ shelves and let $V_i$ be the $i\th$ shelf.
+Let $H_i$ be the height of the first item in $V_i$.</p>
+<p>Define $I' = \{H_i: 1 \le i \le p\}$. Then $I'$ is a 1D bin-packing instance.
+The height of the strip-packing is $\size(I')$,
+so $\size(I') &lt; 2\size(I) + 1$.</p>
+<p>Let $m$ be the number of bins used by next-fit. Then
+\[ m &lt; 2\size(I') + 1 &lt; 4\size(I) + 3 \]
+Since $m \in \mathbb{Z}$, $m \le \ceil{4\size(I)} + 2$.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 2</li><li>Number of transitive dependencies: 4</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/nfdh/algo.html">
+        <span class="deptitle">
+        2D geometric packing: NFDH algorithm</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/next-fit.html">
+        <span class="deptitle">
+        1D bin-packing: next-fit(S) < 2size(S)+1</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/size.html">
+        <span class="deptitle">
+        Geometric packing: size and rsize</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/nfdh/strip-perf.html">
+        <span class="deptitle">
+        2D geometric strip packing: nfdh(I) < 2rsize(I) + hmax</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

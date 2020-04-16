@@ -58,39 +58,23 @@ $\newcommand{\Size}{\operatorname{size}}$
 $\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}$
 $\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}$</p>
 <ul>
-<li>
-<p>$m \le \ceil{8\Size(I)}+1$. When $m \ge 3$,
-$\forall j \le m-2, \max(\Size(S_j), \Size(S_{j+1})) &gt; 1/4$.</p>
-</li>
-<li>
-<p>Let $w_{\max} = \max_{i \in I} w_i$ and $h_{\max} = \max_{i \in I} h_i$.
-Then $m \le \ceil{\frac{\Size(I)}{(1-w_{\max})(1-h_{\max})}}$.
-Additionally, when $m \ge 2$,
-$\forall j \le m-1, \Size(S_j) &gt; (1 - w_{\max})(1 - h_{\max})$.</p>
-</li>
+<li>$m \le \ceil{8\Size(I)}+1$.</li>
+<li>When $m \ge 3$,
+$\forall j \le m-2, \max(\Size(S_j), \Size(S_{j+1})) &gt; 1/4$.</li>
 </ul>
 <h2>Proof</h2>
-<p>The following 2 facts are proved in the appendix of
-<a href="#cite-bansal2009structural" class="cite-ref">[bansal2009structural]</a> (Proof of Lemma 2):</p>
-<ul>
-<li>$m &gt; 2 \implies \max(\Size(S_1), \Size(S_2)) &gt; 1/4$.</li>
-<li>$m &gt; 1 \implies \Size(S_1) &gt; (1 - w_{\max})(1 - h_{\max})$.</li>
-</ul>
+<p>The following lemma is proved in the appendix of
+<a href="#cite-bansal2009structural" class="cite-ref">[bansal2009structural]</a> (Proof of Lemma 2):
+\[ m &gt; 2 \implies \max(\Size(S_1), \Size(S_2)) &gt; 1/4 \]</p>
 <p>They prove the version with non-strict inequalities
-(i.e. $\Size(S_1) \ge 1/4$ instead of $\Size(S_1) &gt; 1/4$),
+(i.e. $\max(\Size(S_1), \Size(S_2)) \ge 1/4$ instead of $\max(\Size(S_1), \Size(S_2)) &gt; 1/4$),
 but we can prove the theorem with strict inequalities by a simple modification of their proof.</p>
 <p>Consider the NFDH packing of $I' = I - \sum_{j=1}^{i-1} S_j$.
 In this packing, $S_i$ is the first bin.
-Applying the above 2 facts gives us:</p>
-<ul>
-<li>$m \ge 3 \implies (\forall j \le m-2, \max(\Size(S_j), \Size(S_{j+1})) &gt; 1/4$.</li>
-<li>$m \ge 2 \implies (\forall j \le m-1, \Size(S_j) &gt; (1 - w_{\max})(1 - h_{\max})$.</li>
-</ul>
+Applying the above lemma gives us:</p>
+<p>\[ m \ge 3 \implies (\forall j \le m-2, \max(\Size(S_j), \Size(S_{j+1})) &gt; 1/4 \]</p>
 <p>When $m \ge 3$, at least $\floor{\frac{m-1}{2}} \ge \frac{m}{2} - 1$ bins are more than $1/4$-filled.
 So, $m &lt; 8\Size(I) + 2$. Since $m \in \mathbb{Z}$, $m \le \ceil{8\Size(I)}+1$.</p>
-<p>When $m \ge 2$, every bin, except possibly the last, is more than $(1-w_{\max})(1-h_{\max})$-filled.
-So, $m &lt; \frac{\Size(I)}{(1-w_{\max})(1-h_{\max})} + 1$. Since $m \in \mathbb{Z}$,
-$m \le \ceil{\frac{\Size(I)}{(1-w_{\max})(1-h_{\max})}}$.</p>
 <div class="citation" id="cite-bansal2009structural">
 <span class="cite-name">bansal2009structural</span><br/>
 <span class="cite-authors">Bansal N, Caprara A, Jansen K, Prädel L, Sviridenko M.</span><br/>
