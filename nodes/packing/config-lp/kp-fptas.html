@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Linear programming: Solving dual using separation oracle for primal - TheoremDep</title>
-<meta name="description" content="How to solve a dual linear program using a separation oracle for the primal." />
+<title>Bin-packing: Solving fractional config LP using FPTAS for knapsack - TheoremDep</title>
+<meta name="description" content="The fractional bin-packing problem can be approximately solved in polynomial time if a FPTAS is available for the corresponding knapsack problem." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -25,75 +25,88 @@
 </nav>
 
 <div id="main">
-<h1> Linear programming: Solving dual using separation oracle for primal </h1>
+<h1> Bin-packing: Solving fractional config LP using FPTAS for knapsack <span class="doc-status">(incomplete)</span> </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/dual.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/config-lp.html">
         <span class="deptitle">
-        Dual of a linear program</span>
+        Bin-packing: configuration LP</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/strong-duality.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/dual.html">
         <span class="deptitle">
-        Linear programming: strong duality</span>
+        Bin-packing: dual of config LP</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/sep-for-dual.html">
+        <span class="deptitle">
+        Linear programming: Solving dual using separation oracle for primal</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/rank-lemma.html">
+        <span class="deptitle">
+        Linear programming: rank lemma</span>
 <span class="doc-status">(incomplete)</span>    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/ellipsoid-run-program.html">
-        <span class="deptitle">
-        Linear programming: linear program of ellipsoid run</span>
-    </a>
     </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $L$ be the linear program $\newcommand{\Opt}{\operatorname{opt}}$
-\[ \max \left\{ c^Tx: Ax \le h, Bx \le g, x \ge 0 \right\} \]
-and let $L'$ be the ellipsoid run program of $L$ which looks like
-\[ \max \left\{ c^Tx: Ax \le h, x \ge 0 \right\} \]</p>
-<p>Let $D$ and $D'$ be the duals of $L$ and $L'$ respectively.
-It can be proven that $D'$ and $D$ have the same number of constraints.
-Since the ellipsoid algorithm runs in polynomial-time,
-$L'$ and $D'$ have polynomial size.</p>
-<p>If there is a polynomial-time $\epsilon$-weak separation oracle for $L$,
-then we can use it to compute $L'$ and $D'$.
-We can then solve $D'$ exactly. It can be proven that the objective value of that solution
-is at most $\Opt(D) + \epsilon(\|c\|+1)$.
-This solution can be used to find a solution to $D$ of the same objective value
-and with the same number of non-zero entries.</p>
-<h2>Proof</h2>
-<p>Let $\delta = \epsilon(\|c\|+1)$.
-We know that $\Opt(L) \le \Opt(L') \le \Opt(L) + \delta$.
-By strong duality of linear programming, $\Opt(D) = \Opt(L)$ and $\Opt(D') = \Opt(L')$.
-Therefore, $\Opt(D) \le \Opt(D') \le \Opt(D) + \delta$.</p>
-<p>$D$ looks like this:
-\[ \min \left\{ h^Ty + g^Tz: A^Ty + B^Tz \ge c, y \ge 0 \right\} \]
-$D'$ looks like this:
-\[ \min \left\{ h^Ty: A^Ty \ge c, y \ge 0 \right\} \]
-Let $y^*$ be the optimal minimizer of $D'$, so $\Opt(D') = h^Ty^*$.
-$(y^*, 0)$ is a feasible solution to $D$ and $h^Ty^* + g^T0 = \Opt(D') \le \Opt(D) + \delta$.</p>
+<p>Let $I$ be a bin-packing instance with $n$ items and $m$ distinct items.
+Let $b_i$ be the number of items of type $i$.
+Let $P$ be the config LP and $T$ be the configuration matrix.</p>
+<p>Define the corresponding knapsack problem as follows:
+Given a vector $y \in \mathbb{R}^m$, find a configuration $j$ such that
+$\sum_{i=1}^m T[i, j]y_i$ is maximized.
+Here $y$ is said to be the profit of an item of type $i$.</p>
+<p>If we have an FPTAS for this knapsack problem, then the fractional bin-packing problem
+can be solved to an additive error of $\epsilon$,
+where the running time is polynomial in $n$ and $\frac{1}{\epsilon}$.</p>
+<p>Furthermore, we can obtain a solution with at most $m$ non-zero entries.</p>
+<h2>Proof (incomplete)</h2>
+<ul>
+<li>Prove that the dual LP's separation problem is the knapsack problem.</li>
+<li>Prove that an FPTAS for knapsack problem can be used to construct a weak separation oracle.
+Specifically, a $(1+\frac{\epsilon}{\sqrt{m}})$-approx algorithm for knapsack gives us
+an $\epsilon$-weak separation oracle.</li>
+<li>Find out how a weakly-feasible weak-minimizer for the primal can be used to construct
+a feasible weak-minimizer for the primal.</li>
+</ul>
+<p>A $\frac{\epsilon}{1+\|b\|}$-weak separation oracle gives us a solution
+of objective value at most $\epsilon$ more than the optimum.</p>
+<p>Since this solution is obtained by solving the polynomial-sized restricted primal exactly,
+we can compute an extreme-point solution to it.
+By the rank lemma, this solution will have at most $m$ non-zero entries,
+since the number of constraints is $m$.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/kp-fptas.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/karmarkar-karp.html">
         <span class="deptitle">
-        Bin-packing: Solving fractional config LP using FPTAS for knapsack</span>
-<span class="doc-status">(incomplete)</span>    </a>
+        1D bin-packing: Karmarkar-Karp algorithm</span>
+    </a>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 8</li><li>Number of transitive dependencies: 14</li></ul>
+<ul><li>Depth: 9</li><li>Number of transitive dependencies: 18</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
 <ol class="deplist">
     <li>
     <span class="deptitleuci missing">/complex-numbers/conjugation-is-homomorphic</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/config-lp.html">
+        <span class="deptitle">
+        Bin-packing: configuration LP</span>
+    </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
@@ -156,6 +169,12 @@ $(y^*, 0)$ is a feasible solution to $D$ and $h^Ty^* + g^T0 = \Opt(D') \le \Opt(
     </a>
     </li>
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/rank-lemma.html">
+        <span class="deptitle">
+        Linear programming: rank lemma</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/dual.html">
         <span class="deptitle">
         Optimization: Dual and Lagrangian </span>
@@ -168,10 +187,22 @@ $(y^*, 0)$ is a feasible solution to $D$ and $h^Ty^* + g^T0 = \Opt(D') \le \Opt(
     </a>
     </li>
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/dual.html">
+        <span class="deptitle">
+        Bin-packing: dual of config LP</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/strong-duality.html">
         <span class="deptitle">
         Linear programming: strong duality</span>
 <span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/sep-for-dual.html">
+        <span class="deptitle">
+        Linear programming: Solving dual using separation oracle for primal</span>
+    </a>
     </li>
 </ol>
 

@@ -7,6 +7,117 @@
 "corpus": [
 {
 "type": "def",
+"title": "2D geometric packing: NFDH algorithm",
+"description": "Next-fit decreasing height (NFDH) is an algorithm for 2D geometric bin-packing and strip packing. It sorts items by height in descending order and packs them into shelves.",
+"uci": "/packing/2d-geom/nfdh/algo",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/nfdh/algo.html"
+},
+{
+"type": "theorem",
+"title": "PTAS for 2D geometric density-restricted knapsack",
+"description": "When the profit-to-area ratio is upper-bounded and lower-bounded by a constant, then there is a PTAS for the knapsack problem.",
+"uci": "/packing/2d-geom/ptas-for-density-restr-ks",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/ptas-for-density-restr-ks.html"
+},
+{
+"type": "theorem",
+"title": "1D bin-packing: next-fit(S) < 2size(S)+1",
+"description": "The next-fit algorithm's output is at most twice the sum of sizes of items plus 1. This gives us an asymptotic 2-approx algorithm for 1D bin-packing.",
+"uci": "/packing/1d/next-fit",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/next-fit.html"
+},
+{
+"type": "theorem",
+"title": "Quasi-polynomial time algorithm for 1D knapsack",
+"description": "Quasi-polynomial time exact algorithm for knapsack using dynamic programming.",
+"uci": "/packing/1d/ks-dp-algo",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/ks-dp-algo.html"
+},
+{
+"type": "theorem",
+"title": "FPTAS for 1D knapsack",
+"description": "FPTAS for knapsack which rounds down profits and uses the exact DP algorithm as subroutine.",
+"uci": "/packing/1d/ks-fptas",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/ks-fptas.html"
+},
+{
+"type": "theorem",
+"title": "1D bin-packing: extending by small items",
+"description": "Packing of items of size > \u03b5 into m bins can be extended to a packing for the entire input with at most max(l, size(I)/(1-\u03b5)+1) bins.",
+"uci": "/packing/1d/extend-by-small",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/extend-by-small.html"
+},
+{
+"type": "theoremdef",
+"title": "Geometric packing: size and rsize",
+"description": "In a d-dimensional geometric packing problem, size of an item is the product of all dimensions of the item. Size of an instance is the sum of sizes of items. Size of an item item i relative to a bin, denoted as rsize(i), is the ratio of size(i) to the size of the bin.",
+"uci": "/packing/d-geom/size",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/size.html"
+},
+{
+"type": "theorem",
+"title": "2D geometric strip packing: nfdh(I) < 2rsize(I) + hmax",
+"description": "NFDH is an asymptotic 2-approx algorithm for strip packing.",
+"uci": "/packing/2d-geom/nfdh/strip-perf",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/nfdh/strip-perf.html"
+},
+{
+"type": "theorem",
+"title": "2D geometric bin-packing: NFDH for wide items",
+"description": "Analysis of performance of NFDH for bin-packing when each item's width is larger than or equal to its height.",
+"uci": "/packing/2d-geom/nfdh/wide-bp-perf",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/nfdh/wide-bp-perf.html"
+},
+{
+"type": "def",
+"title": "Bin-packing: configuration LP",
+"description": "Representation of the bin-packing problem as an integer linear program. Each variable corresponds to a configuration, which is a feasible packing of a subset of items in 1 bin.",
+"uci": "/packing/config-lp/config-lp",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/config-lp.html"
+},
+{
+"type": "theorem",
+"title": "Geometric bin-packing: rsize(I) lower-bounds lin(I)",
+"uci": "/packing/d-geom/size-lb-config-lp",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/size-lb-config-lp.html"
+},
+{
+"type": "def",
+"title": "Bin-packing: union of input instances",
+"description": "The union of I and J, denoted as I+J, is the input instance which contains items from both I and J (with duplication).",
+"uci": "/packing/union",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/union.html"
+},
+{
+"type": "theorem",
+"title": "Bin-packing: config LP of union",
+"description": "Let I and J be bin-packing input instances. Then lin(I+J) \u2264 lin(I) + lin(J).",
+"uci": "/packing/config-lp/union",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/union.html"
+},
+{
+"type": "def",
+"title": "Bin-packing: predecessor of an input instance",
+"description": "Input instance I is said to be a predecessor of input instance J iff each item in I has a corresponding item in J which is at least as large in every dimension.",
+"uci": "/packing/predecessor",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/predecessor.html"
+},
+{
+"type": "theoremdef",
+"title": "1D bin-packing: linear grouping",
+"description": "Linear grouping is a transformation on an input instance that gives us a predecessor and a successor.",
+"uci": "/packing/1d/linear-grouping",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/linear-grouping.html"
+},
+{
+"type": "theorem",
+"title": "Bin-packing: config LP of predecessor",
+"description": "Let I be the predecessor of J. Then lin(I) \u2264 lin(J).",
+"uci": "/packing/config-lp/prec",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/prec.html"
+},
+{
+"type": "def",
 "title": "Graph",
 "description": "A graph G(V, E) is a pair of vertices V and a relation E from V to V.",
 "keywords": [
@@ -643,6 +754,19 @@
 "description": "The number of tuples of length n of non-negative numbers whose sum is at most s is C(s+n, n).",
 "uci": "/combinatorics/tuples-with-bounded-sum",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/tuples-with-bounded-sum.html"
+},
+{
+"type": "theorem",
+"title": "Bin-packing: config-enum algorithm",
+"description": "An algorithm for bin-packing that enumerates all bin configurations and then considers all combinations of those combinations.",
+"uci": "/packing/bp-brute-algo",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-brute-algo.html"
+},
+{
+"type": "theorem",
+"title": "1D bin-packing: APTAS",
+"uci": "/packing/1d/aptas",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/aptas.html"
 },
 {
 "type": "def",
@@ -2428,6 +2552,17 @@
 },
 {
 "type": "theorem",
+"title": "1D bin-packing is (1.5-\u03b5)-inapprox",
+"description": "There is no (1.5-\u03b5)-approx algorithm for 1D bin-packing unless P=NP.",
+"keywords": [
+"inapproximability",
+"hardness"
+],
+"uci": "/packing/1d/1.5-inapprox",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/1.5-inapprox.html"
+},
+{
+"type": "theorem",
 "title": "Linear programming: Ellipsoid method",
 "description": "In linear programming, the optimization problem is to find a point with optimal value that satisfies a set of constraints. In the separation problem, given a point, we have to find out if it satisfies all the constraints, and if it doesn't, find a violated constraint. It can be proven that a polynomial time algorithm for the separation problem can be used to solve the optimization problem in polynomial time via the Ellipsoid algorithm.",
 "keywords": [
@@ -2466,6 +2601,33 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/dual.html"
 },
 {
+"type": "def",
+"title": "Geometric bin-packing: density-restricted config LP",
+"description": "The density-restricted config LP is one where in the dual the profits have an upper-limit that is proportional to density.",
+"uci": "/packing/d-geom/density-restr-config-lp",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/density-restr-config-lp.html"
+},
+{
+"type": "theorem",
+"title": "Geometric bin-packing: removing density restriction",
+"description": "Assuming the presence of a suitable primitive bin-packing algorithm, we can solve the config LP almost optimally by solving the density-restricted config LP almost optimally.",
+"uci": "/packing/d-geom/config-lp-density-unrestr",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/config-lp-density-unrestr.html"
+},
+{
+"type": "theorem",
+"title": "Bin-packing: dual of config LP",
+"uci": "/packing/config-lp/dual",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/dual.html"
+},
+{
+"type": "theorem",
+"title": "Bin-packing: config LP dual solution increases with size",
+"description": "Let y be the optimal solution to the dual of the config LP of a bin-packing instance. If item i is at least as large as item j then y_i is at least as large as y_j.",
+"uci": "/packing/config-lp/sol-prop-size",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/sol-prop-size.html"
+},
+{
 "type": "theorem",
 "title": "Linear programming: strong duality",
 "description": "The optimal objective value of a linear program and its dual are equal.",
@@ -2479,6 +2641,14 @@
 "description": "How to solve a dual linear program using a separation oracle for the primal.",
 "uci": "/optimization/linear-prog/sep-for-dual",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/sep-for-dual.html"
+},
+{
+"type": "theorem",
+"title": "Bin-packing: Solving fractional config LP using FPTAS for knapsack",
+"description": "The fractional bin-packing problem can be approximately solved in polynomial time if a FPTAS is available for the corresponding knapsack problem.",
+"uci": "/packing/config-lp/kp-fptas",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/kp-fptas.html",
+"status": "incomplete"
 },
 {
 "type": "theorem",
@@ -2500,170 +2670,6 @@
 "description": "Consider the problem of minimizing max(x) where a^Tx = b. Here a is a vector with non-negative coordinates and max(x) is the maximum coordinate of x. Then the optimal solution is where each coordinate is b/sum(a).",
 "uci": "/optimization/min-max-coord",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/min-max-coord.html"
-},
-{
-"type": "theorem",
-"title": "2D knapsack: PTAS for density-restricted knapsack",
-"description": "When the profit-to-area ratio is upper-bounded and lower-bounded by a constant, then there is a PTAS for the knapsack problem.",
-"uci": "/knapsack/2D/ptas-for-density-restr",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/knapsack/2D/ptas-for-density-restr.html"
-},
-{
-"type": "theorem",
-"title": "Quasi-polynomial time algorithm for knapsack",
-"description": "Quasi-polynomial time exact algorithm for knapsack using dynamic programming.",
-"uci": "/knapsack/dp-algo",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/knapsack/dp-algo.html"
-},
-{
-"type": "theorem",
-"title": "FPTAS for knapsack",
-"description": "FPTAS for knapsack which rounds down profits and uses the exact DP algorithm as subroutine.",
-"uci": "/knapsack/fptas",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/knapsack/fptas.html"
-},
-{
-"type": "theorem",
-"title": "1D bin-packing: extending by small items",
-"description": "Packing of items of size > \u03b5 into m bins can be extended to a packing for the entire input with at most max(l, size(I)/(1-\u03b5)+1) bins.",
-"uci": "/bin-packing/1d/extend-by-small",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/extend-by-small.html"
-},
-{
-"type": "theorem",
-"title": "1D bin-packing is (1.5-\u03b5)-inapprox",
-"description": "There is no (1.5-\u03b5)-approx algorithm for 1D bin-packing unless P=NP.",
-"keywords": [
-"inapproximability",
-"hardness"
-],
-"uci": "/bin-packing/1d/1.5-inapprox",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/1.5-inapprox.html"
-},
-{
-"type": "theoremdef",
-"title": "Geometric bin-packing: size",
-"description": "In a d-dimensional geometric bin-packing instance, size of an item is the product of all dimensions of the item. Size of an instance is the sum of sizes of items. Size lower-bounds the minimum number of bins.",
-"uci": "/bin-packing/d-geom/size",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/d-geom/size.html"
-},
-{
-"type": "theorem",
-"title": "1D bin-packing: next-fit(S) < 2size(S)+1",
-"description": "The next-fit algorithm's output is at most twice the sum of sizes of items plus 1. This gives us an asymptotic 2-approx algorithm for 1D bin-packing.",
-"uci": "/bin-packing/1d/next-fit",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/next-fit.html"
-},
-{
-"type": "theorem",
-"title": "2D bin-packing: NFDH",
-"description": "Next-fit decreasing height algorithm for 2D bin-packing.",
-"uci": "/bin-packing/2D/nfdh",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/2D/nfdh.html"
-},
-{
-"type": "def",
-"title": "Geometric bin-packing: density-restricted config LP",
-"description": "The density-restricted config LP is one where in the dual the profits have an upper-limit that is proportional to density.",
-"uci": "/bin-packing/d-geom/density-restr-config-lp",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/d-geom/density-restr-config-lp.html"
-},
-{
-"type": "def",
-"title": "Bin-packing: union of input instances",
-"description": "The union of I and J, denoted as I+J, is the input instance which contains items from both I and J (with duplication).",
-"uci": "/bin-packing/union",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/union.html"
-},
-{
-"type": "theorem",
-"title": "Bin-packing: config-enum algorithm",
-"description": "An algorithm for bin-packing that enumerates all bin configurations and then considers all combinations of those combinations.",
-"uci": "/bin-packing/brute-algo",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/brute-algo.html"
-},
-{
-"type": "def",
-"title": "Bin-packing: configuration LP",
-"description": "Representation of the bin-packing problem as an integer linear program. Each variable corresponds to a configuration, which is a feasible packing of a subset of items in 1 bin.",
-"uci": "/bin-packing/config-lp",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/config-lp.html"
-},
-{
-"type": "theorem",
-"title": "Geometric bin-packing: size(I) lower-bounds lin(I)",
-"uci": "/bin-packing/d-geom/size-lb-config-lp",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/d-geom/size-lb-config-lp.html"
-},
-{
-"type": "theorem",
-"title": "Geometric bin-packing: removing density restriction",
-"description": "Assuming the presence of a suitable primitive bin-packing algorithm, we can solve the config LP almost optimally by solving the density-restricted config LP almost optimally.",
-"uci": "/bin-packing/d-geom/config-lp-density-unrestr",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/d-geom/config-lp-density-unrestr.html"
-},
-{
-"type": "theorem",
-"title": "2D bin-packing: APTAS for config LP",
-"description": "An APTAS exists for solving the fractional 2D bin-packing problem, i.e. obtaining a fractional solution to the 2D configuration LP.",
-"uci": "/bin-packing/2D/aptas-for-config-lp",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/2D/aptas-for-config-lp.html",
-"status": "incomplete"
-},
-{
-"type": "theorem",
-"title": "Bin-packing: config LP of union",
-"description": "Let I and J be bin-packing input instances. Then lin(I+J) \u2264 lin(I) + lin(J).",
-"uci": "/bin-packing/config-lp-union",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/config-lp-union.html"
-},
-{
-"type": "theorem",
-"title": "Bin-packing: dual of config LP",
-"uci": "/bin-packing/config-lp-dual",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/config-lp-dual.html"
-},
-{
-"type": "theorem",
-"title": "Bin-packing: config LP dual solution increases with size",
-"description": "Let y be the optimal solution to the dual of the config LP of a bin-packing instance. If item i is at least as large as item j then y_i is at least as large as y_j.",
-"uci": "/bin-packing/config-lp-sol-prop-size",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/config-lp-sol-prop-size.html"
-},
-{
-"type": "theorem",
-"title": "Bin-packing: Solving fractional config LP using FPTAS for knapsack",
-"description": "The fractional bin-packing problem can be approximately solved in polynomial time if a FPTAS is available for the corresponding knapsack problem.",
-"uci": "/bin-packing/config-lp-kp-fptas",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/config-lp-kp-fptas.html",
-"status": "incomplete"
-},
-{
-"type": "def",
-"title": "Bin-packing: predecessor of an input instance",
-"description": "Input instance I is said to be a predecessor of input instance J iff each item in I has a corresponding item in J which is at least as large in every dimension.",
-"uci": "/bin-packing/predecessor",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/predecessor.html"
-},
-{
-"type": "theoremdef",
-"title": "1D bin-packing: linear grouping",
-"description": "Linear grouping is a transformation on an input instance that gives us a predecessor and a successor.",
-"uci": "/bin-packing/1d/linear-grouping",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/linear-grouping.html"
-},
-{
-"type": "theorem",
-"title": "1D bin-packing: APTAS",
-"uci": "/bin-packing/1d/aptas",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/aptas.html"
-},
-{
-"type": "theorem",
-"title": "Bin-packing: config LP of predecessor",
-"description": "Let I be the predecessor of J. Then lin(I) \u2264 lin(J).",
-"uci": "/bin-packing/config-lp-prec",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/config-lp-prec.html"
 },
 {
 "type": "theorem",
@@ -2790,15 +2796,15 @@
 {
 "type": "theoremdef",
 "title": "1D bin-packing: harmonic grouping",
-"uci": "/bin-packing/1d/harmonic-grouping",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/harmonic-grouping.html"
+"uci": "/packing/1d/harmonic-grouping",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/harmonic-grouping.html"
 },
 {
 "type": "theorem",
 "title": "1D bin-packing: Karmarkar-Karp algorithm",
 "description": "The Karmarkar-Karp algorithm is an algorithm for 1D bin-packing that achieves an additive approximation of O(log(I)^2).",
-"uci": "/bin-packing/1d/karmarkar-karp",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/karmarkar-karp.html"
+"uci": "/packing/1d/karmarkar-karp",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/karmarkar-karp.html"
 },
 {
 "type": "theorem",
@@ -2813,6 +2819,21 @@
 "description": "Let a and b be integers. Then ceil(a/b) = floor((a-1)/b) + 1. Equivalently, floor(a/b) = ceil((a+1)/b) - 1.",
 "uci": "/misc/floor-ceil/fraction",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/misc/floor-ceil/fraction.html"
+},
+{
+"type": "theorem",
+"title": "2D geometric bin-packing: NFDH performance",
+"description": "Analysis of performance of NFDH for bin-packing.",
+"uci": "/packing/2d-geom/nfdh/bp-perf",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/nfdh/bp-perf.html"
+},
+{
+"type": "theorem",
+"title": "2D geometric bin-packing: APTAS for config LP",
+"description": "An APTAS exists for solving the fractional 2D geometric bin-packing problem, i.e. obtaining a fractional solution to the 2D geometric configuration LP.",
+"uci": "/packing/2d-geom/aptas-for-config-lp",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/aptas-for-config-lp.html",
+"status": "incomplete"
 },
 {
 "type": "theorem",
@@ -2845,15 +2866,15 @@
 {
 "type": "theorem",
 "title": "1D bin-packing: config LP's dual gives a DFF",
-"uci": "/bin-packing/1d/config-lp-dual-gives-dff",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/1d/config-lp-dual-gives-dff.html"
+"uci": "/packing/1d/config-lp-dual-gives-dff",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/config-lp-dual-gives-dff.html"
 },
 {
 "type": "theoremdef",
 "title": "Geometric bin-packing: DFF transform",
 "description": "Let I be a d-dimensional geometric bin-packing instance. Let f1, f2, ..., fd be DFFs. Let J be the instance where for each item, ith dimension x is replaced by fi(x). J is called the DFF transform of I. If I can fit in 1 bin, then so can J.",
-"uci": "/bin-packing/d-geom/dff-transform",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bin-packing/d-geom/dff-transform.html",
+"uci": "/packing/d-geom/dff-transform",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/dff-transform.html",
 "status": "incomplete"
 },
 {

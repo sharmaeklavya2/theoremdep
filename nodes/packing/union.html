@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Harmonic bound for fraction - TheoremDep</title>
-<meta name="description" content="H(a+b-1) - H(b-1) ≤ a/b ≤ H(b) - H(b-a)" />
+<title>Bin-packing: union of input instances - TheoremDep</title>
+<meta name="description" content="The union of I and J, denoted as I+J, is the input instance which contains items from both I and J (with duplication)." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -25,28 +25,43 @@
 </nav>
 
 <div id="main">
-<h1> Harmonic bound for fraction </h1>
+<h1> Bin-packing: union of input instances </h1>
 <h2 class="no-deps"> Dependencies:
 None </h2>
 
 <div class="horizontal-rule"></div>
-<p>Let $a$ and $b$ be integers such that $0 \le a \le b$ and $b \neq 0$. Then
-\[ H(a+b-1) - H(b-1) \le \frac{a}{b} \le H(b) - H(b-a) \]</p>
-<p>Here $H(n) = \sum_{i=1}^n \frac{1}{i}$.</p>
-<h2>Proof</h2>
-<p>\begin{align}
-&amp; \forall 0 \le i \le a-1, \frac{1}{b+i} \le \frac{1}{b} \le \frac{1}{b-i}
-\\ &amp;\implies \sum_{i=0}^{a-1} \frac{1}{b+i} \le \sum_{i=0}^{a-1} \frac{1}{b} \le \sum_{i=0}^{a-1} \frac{1}{b-i}
-\\ &amp;\implies H(a+b-1) - H(b-1) \le \frac{a}{b} \le H(b) - H(b-a)
-\end{align}</p>
+<p>Let $I$ and $J$ be bin-packing instances.
+Then $I + J$, called the union of $I$ and $J$ is the instance
+which contains all items of $I$ and $J$.</p>
+<p>Note that all items here are considered to be distinct from each other.
+So if $I$ contains $n_I$ items and $J$ contains $n_J$ items,
+then $I+J$ contains $n_I + n_J$ items.</p>
+<p>Let $\operatorname{opt}(I)$ be the minimum number of bins required to pack $I$.
+Then it is trivial to see that $\operatorname{opt}(I+J) \le \operatorname{opt}(I) + \operatorname{opt}(J)$
+because to pack $I+J$ we can first optimally pack $I$ in $\operatorname{opt}(I)$ bins
+and then optimally pack $J$ in $\operatorname{opt}(J)$ bins.</p>
+<p>It is also trivial to see that for 1D instances,
+$\operatorname{size}(I+J) = \operatorname{size}(I) + \operatorname{size}(J)$.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/union.html">
+        <span class="deptitle">
+        Bin-packing: config LP of union</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/harmonic-grouping.html">
         <span class="deptitle">
         1D bin-packing: harmonic grouping</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/linear-grouping.html">
+        <span class="deptitle">
+        1D bin-packing: linear grouping</span>
     </a>
     </li>
 </ol>

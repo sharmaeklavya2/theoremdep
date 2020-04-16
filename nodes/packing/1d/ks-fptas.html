@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Simple bound on harmonic sum - TheoremDep</title>
-<meta name="description" content="ln(n) + 1/n ≤ H(n) ≤ ln(n) + 1" />
+<title>FPTAS for 1D knapsack - TheoremDep</title>
+<meta name="description" content="FPTAS for knapsack which rounds down profits and uses the exact DP algorithm as subroutine." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -25,30 +25,32 @@
 </nav>
 
 <div id="main">
-<h1> Simple bound on harmonic sum </h1>
+<h1> FPTAS for 1D knapsack </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/integration-bound.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/ks-dp-algo.html">
         <span class="deptitle">
-        Integration bound</span>
+        Quasi-polynomial time algorithm for 1D knapsack</span>
     </a>
     </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $H(n) = \sum_{i=1}^n \frac{1}{i}$.
-Then $\ln n + \frac{1}{n} \le H(n) \le \ln n + 1$.</p>
-<p>This is a direct application of the integration bound.</p>
+<p>There is an FPTAS for the knapsack problem.
+See Algorithm 3.2 in the book
+<a href="http://www.designofapproxalgs.com/book.pdf">'The Design of Approximation Algorithms'</a>
+by Williamson and Shmoys.</p>
+<p>The running time is $O(n^3/\epsilon)$.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/harmonic-grouping.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/karmarkar-karp.html">
         <span class="deptitle">
-        1D bin-packing: harmonic grouping</span>
+        1D bin-packing: Karmarkar-Karp algorithm</span>
     </a>
     </li>
 </ol>
@@ -59,9 +61,9 @@ Then $\ln n + \frac{1}{n} \le H(n) \le \ln n + 1$.</p>
 <h2> Transitive dependencies: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/integration-bound.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/ks-dp-algo.html">
         <span class="deptitle">
-        Integration bound</span>
+        Quasi-polynomial time algorithm for 1D knapsack</span>
     </a>
     </li>
 </ol>

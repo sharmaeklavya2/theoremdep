@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Geometric bin-packing: density-restricted config LP - TheoremDep</title>
+<meta name="description" content="The density-restricted config LP is one where in the dual the profits have an upper-limit that is proportional to density." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Geometric bin-packing: density-restricted config LP </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/size.html">
+        <span class="deptitle">
+        Geometric packing: size and rsize</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/dual.html">
+        <span class="deptitle">
+        Dual of a linear program</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $I$ be a $d$-dimensional geometric bin-packing instance.
+Let $s_i$ be the size of item $i$ (relative to the bin).
+Then the density-restricted configuration LP parametrized by $\lambda$ is given by</p>
+<p>\[ \min\left\{ \sum_{C \in \mathcal{C}} x_C + \lambda \sum_{i \in I} s_iy_i:
+\left( \forall i \in I, \sum_{C \ni i} x_C + y_i \ge 1 \right)
+\wedge x \ge 0 \wedge y \ge 0 \right\} \]</p>
+<p>Its dual is</p>
+<p>\[ \max\left\{ \sum_{i \in I} \pi_i: \left( \forall C \in \mathcal{C}, \sum_{i \in C} \pi_i \le 1 \right)
+\wedge \left( \forall i \in I, 0 \le \pi_i \le \lambda s_i \right) \right\} \]</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/config-lp-density-unrestr.html">
+        <span class="deptitle">
+        Geometric bin-packing: removing density restriction</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 2</li><li>Number of transitive dependencies: 3</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/size.html">
+        <span class="deptitle">
+        Geometric packing: size and rsize</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/dual.html">
+        <span class="deptitle">
+        Optimization: Dual and Lagrangian </span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/dual.html">
+        <span class="deptitle">
+        Dual of a linear program</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

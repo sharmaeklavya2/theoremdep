@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Linear programming: rank lemma - TheoremDep</title>
-<meta name="description" content="For an extreme-point solution, the maximum number of linearly independent tight constraints equals the number of non-zero variables." />
+<title>Quasi-polynomial time algorithm for 1D knapsack - TheoremDep</title>
+<meta name="description" content="Quasi-polynomial time exact algorithm for knapsack using dynamic programming." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -25,35 +25,27 @@
 </nav>
 
 <div id="main">
-<h1> Linear programming: rank lemma <span class="doc-status">(incomplete)</span> </h1>
+<h1> Quasi-polynomial time algorithm for 1D knapsack </h1>
 <h2 class="no-deps"> Dependencies:
-Unspecified </h2>
+None </h2>
 
 <div class="horizontal-rule"></div>
-<p>For an extreme-point solution, the maximum number of linearly independent tight constraints
-equals the number of non-zero variables.</p>
-<p>A useful corollary is that the number of non-zero variables
-in an extreme-point solution is at most the number of constraints.</p>
-<p>Proof can be found in the book
-<a class="cite-ref" href="#cite-iterative-methods">[iterative-methods]</a>,
-Lemma 2.1.4, page 14.</p>
-<div class="citation" id="cite-iterative-methods">
-<span class="cite-name">iterative-methods</span><br/>
-<span class="cite-authors">Lau LC, Ravi R, Singh M.</span><br/>
-<cite class="cite-title"><a href="https://cs.uwaterloo.ca/~lapchi/papers/iterative.pdf">
-Iterative methods in combinatorial optimization</a></cite><br/>
-<span class="cite-source">Cambridge University Press; 2011 Apr 18.</span>
-</div>
-
+<p>There is a dynamic-programming algorithm for the knapsack problem.
+See Algorithm 3.1 in the book
+<a href="http://www.designofapproxalgs.com/book.pdf">'The Design of Approximation Algorithms'</a>
+by Williamson and Shmoys.</p>
+<p>When the item sizes and item profits are integers,
+the running time is $O(\min(nB, nV, 2^n))$,
+where $B$ is the knapsack capacity and $V$ is the sum of profits of all items.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/kp-fptas.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/ks-fptas.html">
         <span class="deptitle">
-        Bin-packing: Solving fractional config LP using FPTAS for knapsack</span>
-<span class="doc-status">(incomplete)</span>    </a>
+        FPTAS for 1D knapsack</span>
+    </a>
     </li>
 </ol>
 <h2> Info: </h2>

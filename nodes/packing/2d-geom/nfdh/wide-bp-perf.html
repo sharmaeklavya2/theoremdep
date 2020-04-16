@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>2D geometric bin-packing: NFDH for wide items - TheoremDep</title>
+<meta name="description" content="Analysis of performance of NFDH for bin-packing when each item's width is larger than or equal to its height." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> 2D geometric bin-packing: NFDH for wide items </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/nfdh/algo.html">
+        <span class="deptitle">
+        2D geometric packing: NFDH algorithm</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/size.html">
+        <span class="deptitle">
+        Geometric packing: size and rsize</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $I$ be a 2D geometric bin-packing instance.
+Item $i$ has width $w_i$ and height $h_i$.
+It is given that all items are wide, i.e. $w_i \ge h_i$ for each item $i$.
+$\newcommand{\Size}{\operatorname{size}}$
+$\newcommand{\Rsize}{\operatorname{rsize}}$
+$\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}$
+$\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}$
+$\newcommand{\th}{^{\textrm{th}}}$</p>
+<p>Suppose NFDH packs into $m$ bins of width $W$ and height $H$.
+Without loss of generality, assume $H = 1$.
+Let $S_i$ be (the set of items in) the $i\th$ bin.
+For any set $S \subseteq I$, let $a(S)$ denote the sum of areas of all items in $S$.</p>
+<ul>
+<li><strong>Theorem 1</strong>: If $m \ge 2$, then $\forall i \le m-1$,
+\[ \Rsize(S_i) = \frac{a(S_i)}{W} &gt; \rho(W) = \begin{cases}
+\frac{1}{3}\left(1 - \frac{W}{4}\right) &amp; 0 &lt; W \le 1
+\\ \frac{1}{4W} &amp; W \ge 1 \end{cases} \]</li>
+<li><strong>Theorem 2</strong>:
+\[ m \le \ceil{\frac{\Rsize(I)}{\rho(W)}} \]</li>
+</ul>
+<h2>Proof of theorem 2 using theorem 1</h2>
+<p>Since $m-1$ bins are more than $\rho(W)$-filled,
+\[ \Rsize(I) &gt; (m-1)\rho(W)
+\implies m &lt; \frac{\Rsize(I)}{\rho(W)} + 1 \]
+Since $m \in \mathbb{Z}$, $m \le \ceil{\frac{\Rsize(I)}{\rho(W)}}$.</p>
+<h2>Proof of theorem 1</h2>
+<p>We'll prove the result only for $S_1$.
+The result for bin $S_i$ ($2 \le i \le m-1$) can be proved by considering the
+NFDH packing of $I' = I - \sum_{j=1}^{i-1} S_j$ because in the NFDH packing of $I'$,
+$S_i$ is the first bin.</p>
+<p>Let there be $p$ shelves in $S_1$. Let $V_j$ be the $j\th$ shelf in $S_1$.
+Denote the first shelf of $S_2$ as $V_{p+1}$.</p>
+<p>Let $H_i$ be the height of the first item in $V_i$.
+Let $W_i$ be the sum of widths of items in $V_i$.
+Let $F_i$ be the width of the first item in $V_i$.
+Since $w_i \ge h_i$ for each item, $F_i \ge H_i$.
+Let $A_i = a(V_i)$.</p>
+<p>Since the first item in $V_{j+1}$ didn't fit in $V_j$, $W_j + F_{j+1} &gt; W$.
+Since the last shelf didn't fit in $S_1$, $\sum_{i=1}^{p+1} H_i &gt; 1$.</p>
+<p>\[ A_j + A_{j+1} \ge H_{j+1}W_j + F_{j+1}H_{j+1} &gt; H_{j+1}W \]</p>
+<h3>Case 1: $H_1 &gt; 1/2$</h3>
+<p>\[ a(S_1) \ge A_1 \ge F_1H_1 \ge H_1^2 &gt; \frac{1}{4} \]
+Therefore, $\frac{a(S_1)}{W} &gt; \frac{1}{4W}$.</p>
+<h3>Case 2: $H_1 \le 1/2$</h3>
+<p>$H_1 \le 1/2 \implies p \ge 2$.</p>
+<p>\[ a(S_1) \ge A_1 + A_2 &gt; H_2W \ge H_{p+1}W \]
+Therefore, $\frac{a(S_1)}{W} &gt; H_{p+1}$.</p>
+<p>\begin{align}
+2a(S_1) &amp;= A_1 + \sum_{j=1}^{p-1} (A_j + A_{j+1}) + A_p
+\\ &amp;&gt; H_1^2 + W \sum_{j=1}^{p-1} H_{j+1}
+\\ &amp;&gt; H_1^2 + W(1 - H_1 - H_{p+1})
+\\ &amp;= \left( H_1 - \frac{W}{2} \right)^2 + W\left(1 - H_{p+1} - \frac{W}{4}\right)
+\\ &amp;\ge W\left(1 - H_{p+1} - \frac{W}{4}\right)
+\end{align}</p>
+<p>\[ \frac{a(S_1)}{W} &gt;
+\min_{H_{p+1}} \max\left( H_{p+1}, \frac{1}{2}\left(1 - H_{p+1} - \frac{W}{4}\right)\right) \]
+Since the first term of $\max$ is increasing and the second term is decreasing,
+the $\max$ expression is minimized at the value of $H_{p+1}$ for which both these terms are equal.
+\[ H_{p+1} = \frac{1}{2}\left(1 - H_{p+1} - \frac{W}{4}\right)
+\iff H_{p+1} = \frac{1}{3}\left( 1 - \frac{W}{4} \right) \]</p>
+<h3>Combining case 1 and case 2</h3>
+<p>\[ \frac{a(S_1)}{W} &gt; \min\left( \frac{1}{4W}, \frac{1}{3}\left( 1 - \frac{W}{4} \right) \right) \]
+When $W \le 1$, the second term is smaller and when $1 \le W \le 2$, the first term is smaller.
+Therefore,
+\[ \frac{a(S_1)}{W} &gt; \begin{cases}
+\frac{1}{3}\left(1 - \frac{W}{4}\right) &amp; 0 &lt; W \le 1
+\\ \frac{1}{4W} &amp; 1 \le W \le 2
+\end{cases} \]</p>
+<h3>Case 2 ($H_1 \le 1/2$) when $W \ge 2$</h3>
+<p>When $W \ge 2$, $(H_1 - \frac{W}{2})^2$ is minimized at $H_1 = 1$.
+Therefore, for case 2, \begin{align}
+&amp; 2a(S_1) &gt; H_1^2 + W(1 - H_1 - H_{p+1}) \ge 1 - WH_{p+1}
+\\ &amp;\implies \frac{a(S_1)}{W} &gt; \frac{1}{2W} - \frac{H_{p+1}}{2}
+\\ &amp;\implies \frac{a(S_1)}{W} &gt; \min_{H_{p+1}} \max\left(H_{p+1},
+\frac{1}{2W} - \frac{H_{p+1}}{2} \right)
+\end{align}
+Again, setting $H_{p+1}$ to equate these terms, we get $H_{p+1} = \frac{1}{3W}$.
+Therefore, $a(S_1)/W &gt; \frac{1}{3W}$.</p>
+<h3>Combining case 1 and 2 when $W \ge 2$</h3>
+<p>Combining case 1 and 2, we get that for $W \ge 2$,
+\[ \frac{a(S_1)}{W} &gt; \min\left( \frac{1}{4W}, \frac{1}{3W} \right) = \frac{1}{4W} \]</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 1</li><li>Number of transitive dependencies: 2</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/nfdh/algo.html">
+        <span class="deptitle">
+        2D geometric packing: NFDH algorithm</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/size.html">
+        <span class="deptitle">
+        Geometric packing: size and rsize</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

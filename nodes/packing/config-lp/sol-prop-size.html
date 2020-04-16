@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bin-packing: config LP dual solution increases with size - TheoremDep</title>
+<meta name="description" content="Let y be the optimal solution to the dual of the config LP of a bin-packing instance. If item i is at least as large as item j then y_i is at least as large as y_j." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Bin-packing: config LP dual solution increases with size </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/dual.html">
+        <span class="deptitle">
+        Bin-packing: dual of config LP</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $I$ be a bin-packing instance with $m$ distinct items.
+Let $b_i$ be the number of items of type $i$.</p>
+<p>Let $y$ be an optimal solution to the dual of the config LP of a bin-packing instance.
+If item $i$ is at least as large as item $j$ then $y_i^* \ge y_j^*$ (given $b_i &gt; 0$).</p>
+<h2>Proof</h2>
+<p>Let $y^*$ be an optimal solution where item $i$ is at least as large as item $j$ but $y_i^* &lt; y_j^*$.
+Let $\widehat{y}$ be defined as
+\[ \widehat{y}_k = \begin{cases} y_k^* &amp; k \neq i \\ y_j^* &amp; k = i \end{cases} \]</p>
+<p>Let $T$ be the configuration matrix, i.e. $T[k, C]$ is the number of items of type $k$ in configuration $C$.
+Assume $\widehat{y}$ is not a feasible solution to the dual of the config LP.
+Then there is a configuration $C$ for which $\sum_{k=1}^m T[k, C]\widehat{y}_k &gt; 1$.
+Consider configuration $C'$ where all items of type $i$ are replaced by items of type $j$.
+Such a configuration is valid because item $i$ is at least as large as item $j$.
+\[ \sum_{k=1}^m T[k, C]\widehat{y}_k
+= \sum_{k=1}^m T[k, C']\widehat{y}_k
+= \sum_{k=1}^m T[k, C']y_k^*
+\le 1 \]
+This is a contradiction. Therefore, $\widehat{y}$ is a feasible solution.
+$\widehat{y}_i &gt; y_i^* \implies b^T\widehat{y} &gt; b^Ty^*$.
+This contradicts the fact that $y^*$ is an optimal solution.
+Therefore, $y_i^* \ge y_j^*$.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 3</li><li>Number of transitive dependencies: 4</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/config-lp.html">
+        <span class="deptitle">
+        Bin-packing: configuration LP</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/dual.html">
+        <span class="deptitle">
+        Optimization: Dual and Lagrangian </span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/dual.html">
+        <span class="deptitle">
+        Dual of a linear program</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/dual.html">
+        <span class="deptitle">
+        Bin-packing: dual of config LP</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

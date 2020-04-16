@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bin-packing: predecessor of an input instance - TheoremDep</title>
+<meta name="description" content="Input instance I is said to be a predecessor of input instance J iff each item in I has a corresponding item in J which is at least as large in every dimension." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Bin-packing: predecessor of an input instance </h1>
+<h2 class="no-deps"> Dependencies:
+None </h2>
+
+<div class="horizontal-rule"></div>
+<p>Let $I$ and $J$ be bin-packing instances.</p>
+<p>$I$ is said to be a predecessor of $J$ (written as $I \preceq J$)
+or equivalently $J$ is said to be a successor of $I$
+iff there is a mapping $\sigma: I \mapsto J$ such that</p>
+<ul>
+<li>$\forall i_1 \neq i_2, \sigma(i_1) \neq \sigma(i_2)$.</li>
+<li>$\sigma(i)$ is at least as large as $i$.
+When an item is represented as a $d$-dimensional object, this means that
+$\forall 1 \le k \le d, \sigma(i)_k \ge i_k$.</li>
+</ul>
+<p>It is trivial to see that for 1D instances,
+$I \preceq J \implies \operatorname{size}(I) \le \operatorname{size}(J)$.</p>
+<p>Also, any packing of $J$ gives a packing of $I$,
+just pack every $i \in I$ wherever $\sigma(i)$ is packed in the packing of $J$.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/prec.html">
+        <span class="deptitle">
+        Bin-packing: config LP of predecessor</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/aptas.html">
+        <span class="deptitle">
+        1D bin-packing: APTAS</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/harmonic-grouping.html">
+        <span class="deptitle">
+        1D bin-packing: harmonic grouping</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/linear-grouping.html">
+        <span class="deptitle">
+        1D bin-packing: linear grouping</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 0</li><li>Number of transitive dependencies: 0</li></ul>
+
+<h2 class="no-deps"> Transitive dependencies: None </h2>
+
+</div>
+</body>
+</html>

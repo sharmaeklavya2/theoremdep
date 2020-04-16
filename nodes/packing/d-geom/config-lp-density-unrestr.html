@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Geometric bin-packing: removing density restriction - TheoremDep</title>
+<meta name="description" content="Assuming the presence of a suitable primitive bin-packing algorithm, we can solve the config LP almost optimally by solving the density-restricted config LP almost optimally." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Geometric bin-packing: removing density restriction </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/size.html">
+        <span class="deptitle">
+        Geometric packing: size and rsize</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/config-lp.html">
+        <span class="deptitle">
+        Bin-packing: configuration LP</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/density-restr-config-lp.html">
+        <span class="deptitle">
+        Geometric bin-packing: density-restricted config LP</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let there be a polynomial-time $d$-dimensional geometric bin-packing algorithm $A$
+whose output satisfies one of these conditions:</p>
+<ul>
+<li>There is some bin for which total rsize of items is at least $\frac{1}{\lambda}$.</li>
+<li>The number of bins is at most a constant $c$.</li>
+</ul>
+<p>Let $I$ be a $d$-dimensional geometric bin-packing instance.
+Given a feasible solution $(\widehat{x}, \widehat{y})$ of objective value $v$
+to the $\lambda$-density-restricted config LP, we can get in polynomial time
+a feasible solution to the config LP of objective value at most $v + c$.</p>
+<h2>Proof outline</h2>
+<p>Let $\widehat{Y} = \{i \in I: \widehat{y}_i &gt; 0\}$.
+If $\widehat{Y}$ is empty, then $\widehat{x}$ is a solution to the config LP.
+Otherwise, run $A$ on $Y$.</p>
+<p>Suppose a bin has items $S$ and $\Rsize(S) \ge \frac{1}{\lambda}$.
+Let $\beta = \min_{i \in S} \widehat{y}_i$.
+Define $\widetilde{x}$ and $\widetilde{y}$ as
+\begin{align}
+\widetilde{x}_C &amp;= \begin{cases}
+\widehat{x}_C &amp; C \neq S
+\\ \widehat{x}_C + \beta &amp; C = S
+\end{cases}
+&amp; \widetilde{y}_i &amp;= \begin{cases}
+\widehat{y}_i &amp; i \not\in S
+\\ \widehat{y}_i - \beta &amp; i \in S
+\end{cases}
+\end{align}
+Then $(\widetilde{x}, \widetilde{y})$ is a feasible solution to the
+density-restricted config LP and has a lower or equal objective value.
+Let $\widetilde{Y} = \{i \in I: \widetilde{y}_i &gt; 0\}$.
+Then $|\widetilde{Y}| \le |\widehat{Y}| - 1$.</p>
+<p>Let $S_i$ be the set of items in the $i^{\textrm{th}}$ bin.
+Repeat this transformation till $\Rsize(S_i) &lt; \frac{1}{\lambda}$ for all $i$ or $\widetilde{Y} = \{\}$.
+This will eventually happen since $|\widetilde{Y}| \le |\widehat{Y}| - 1$.
+This means that the number of bins used is at most $c$. Let $H$ be the set of configurations of these bins.
+With slight abuse/overload of notation, let $(\widehat{x}, \widehat{y})$ be this solution.
+Define $\widetilde{x}$ as
+\[ \widetilde{x}_C = \begin{cases}
+1 &amp; C \in H
+\\ \widehat{x}_C &amp; C \not\in H
+\end{cases} \]
+$\widetilde{x}$ is a feasible solution to the config LP and has objective value at most $v + c$.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/aptas-for-config-lp.html">
+        <span class="deptitle">
+        2D geometric bin-packing: APTAS for config LP</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 3</li><li>Number of transitive dependencies: 5</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/size.html">
+        <span class="deptitle">
+        Geometric packing: size and rsize</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/config-lp.html">
+        <span class="deptitle">
+        Bin-packing: configuration LP</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/dual.html">
+        <span class="deptitle">
+        Optimization: Dual and Lagrangian </span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/dual.html">
+        <span class="deptitle">
+        Dual of a linear program</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/density-restr-config-lp.html">
+        <span class="deptitle">
+        Geometric bin-packing: density-restricted config LP</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

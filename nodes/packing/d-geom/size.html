@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Geometric packing: size and rsize - TheoremDep</title>
+<meta name="description" content="In a d-dimensional geometric packing problem, size of an item is the product of all dimensions of the item. Size of an instance is the sum of sizes of items. Size of an item item i relative to a bin, denoted as rsize(i), is the ratio of size(i) to the size of the bin." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Geometric packing: size and rsize </h1>
+<h2 class="no-deps"> Dependencies:
+None </h2>
+
+<div class="horizontal-rule"></div>
+<p>In a $d$-dimensional geometric packing problem,
+$\newcommand{\Size}{\operatorname{size}}\newcommand{\Rsize}{\operatorname{rsize}}\newcommand{\ceil}[1]{\left\lceil{#1}\right\rceil}$
+size of an item $i$, denoted as $\Size(i)$, is the product of all dimensions of the item.</p>
+<p>Size of an item $i$ relative to a bin, denoted as $\Rsize(i)$,
+is the ratio of $\Size(i)$ and the product of all dimensions of the bin.
+In a strip packing problem, size of an item $i$ relative to a strip, denoted as $\Rsize(i)$,
+is the ratio of $\Size(i)$ and the product of all dimensions of the base of the strip.</p>
+<p>Size of an instance $I$, denoted as $\Size(I)$, equals $\sum_{i \in I} \Size(i)$.
+Relative size of an instance $I$, denoted as $\Rsize(I)$, equals $\sum_{i \in I} \Rsize(i)$.</p>
+<p>In most cases, all dimensions of a bin are 1, so rsize and size will usually be the same.</p>
+<p>For a set $S$ of items that can fit in a bin, $\Rsize(S) \le 1$.
+For 1D items, $S$ can fit in a bin iff $\Rsize(S) \le 1$.
+For a set $S$ of items that can fit in a strip of height $h$,
+$\Rsize(S) \le h$.</p>
+<p>$\ceil{\Size(I)}$ lower-bounds the minimum number of bins needed to pack $I$.</p>
+<h2>Proof</h2>
+<p>Let the optimal packing have $m$ bins.
+Let $J_k$ be the items in the $k^{\textrm{th}}$ bin.
+\[ \ceil{\Size(I)} = \ceil{\sum_{k=1}^m \Size(J_k)} \le \ceil{\sum_{k=1}^m 1} = m \]</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/density-restr-config-lp.html">
+        <span class="deptitle">
+        Geometric bin-packing: density-restricted config LP</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/config-lp-density-unrestr.html">
+        <span class="deptitle">
+        Geometric bin-packing: removing density restriction</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/size-lb-config-lp.html">
+        <span class="deptitle">
+        Geometric bin-packing: rsize(I) lower-bounds lin(I)</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/aptas.html">
+        <span class="deptitle">
+        1D bin-packing: APTAS</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/nfdh/wide-bp-perf.html">
+        <span class="deptitle">
+        2D geometric bin-packing: NFDH for wide items</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/nfdh/bp-perf.html">
+        <span class="deptitle">
+        2D geometric bin-packing: NFDH performance</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/nfdh/strip-perf.html">
+        <span class="deptitle">
+        2D geometric strip packing: nfdh(I) < 2rsize(I) + hmax</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 0</li><li>Number of transitive dependencies: 0</li></ul>
+
+<h2 class="no-deps"> Transitive dependencies: None </h2>
+
+</div>
+</body>
+</html>
