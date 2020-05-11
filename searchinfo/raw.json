@@ -76,7 +76,7 @@
 },
 {
 "type": "theorem",
-"title": "2D geometric bin-packing: nfdh(I) < 4rsize(I) + 3",
+"title": "2D geometric bin-packing: nfdh(I) < 4rsize(I) + 2",
 "description": "NFDH is an asymptotic 4-approx algorithm for 2D geometric bin-packing.",
 "uci": "/packing/2d-geom/nfdh/bp-perf2",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/nfdh/bp-perf2.html"

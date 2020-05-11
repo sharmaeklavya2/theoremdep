@@ -44,11 +44,11 @@ Relative size of an instance $I$, denoted as $\Rsize(I)$, equals $\sum_{i \in I}
 For 1D items, $S$ can fit in a bin iff $\Rsize(S) \le 1$.
 For a set $S$ of items that can fit in a strip of height $h$,
 $\Rsize(S) \le h$.</p>
-<p>$\ceil{\Size(I)}$ lower-bounds the minimum number of bins needed to pack $I$.</p>
+<p>$\ceil{\Rsize(I)}$ lower-bounds the minimum number of bins needed to pack $I$.</p>
 <h2>Proof</h2>
 <p>Let the optimal packing have $m$ bins.
 Let $J_k$ be the items in the $k^{\textrm{th}}$ bin.
-\[ \ceil{\Size(I)} = \ceil{\sum_{k=1}^m \Size(J_k)} \le \ceil{\sum_{k=1}^m 1} = m \]</p>
+\[ \ceil{\Rsize(I)} = \ceil{\sum_{k=1}^m \Rsize(J_k)} \le \ceil{\sum_{k=1}^m 1} = m \]</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
@@ -80,7 +80,7 @@ Let $J_k$ be the items in the $k^{\textrm{th}}$ bin.
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/nfdh/bp-perf2.html">
         <span class="deptitle">
-        2D geometric bin-packing: nfdh(I) < 4rsize(I) + 3</span>
+        2D geometric bin-packing: nfdh(I) < 4rsize(I) + 2</span>
     </a>
     </li>
     <li>
