@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Conditional decomposition of expectation - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Conditional decomposition of expectation <span class="doc-status">(incomplete)</span> </h1>
+<h2> Dependencies:
+<span class="deps-status">(incomplete)</span> </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
+        <span class="deptitle">
+        Random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cond-expec.html">
+        <span class="deptitle">
+        Conditional expectation</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $S$ be a countable set of pairwise-disjoint events
+such that $\bigcup_{A \in S} A = \Omega$
+and $\Pr(\cdot \mid A)$ is defined $\forall A \in S$.
+Let $X$ be a random variable. Then $\newcommand{\E}{\operatorname{E}}$
+\[ \E(X) = \sum_{A \in S} \E(X \mid A)\Pr(A) \]</p>
+<p><span class="text-danger">(proof pending)</span></p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-bound.html">
+        <span class="deptitle">
+        Markov's bound</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 8</li><li>Number of transitive dependencies: 20</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/analysis/topological-space</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/countable-set</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/measure-theory/lebesgue-integral</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra.html">
+        <span class="deptitle">
+        σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/generated-sigma-algebra.html">
+        <span class="deptitle">
+        Generated σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/borel-algebra.html">
+        <span class="deptitle">
+        Borel algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measurable-func.html">
+        <span class="deptitle">
+        Measurable function</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/real-borel-algebra-generators.html">
+        <span class="deptitle">
+        Generators of the real Borel algebra</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measure.html">
+        <span class="deptitle">
+        Measure</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra-closed-under-intersection.html">
+        <span class="deptitle">
+        σ-algebra is closed under countable intersections</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+        <span class="deptitle">
+        Group</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+        <span class="deptitle">
+        Ring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+        <span class="deptitle">
+        Field</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+        <span class="deptitle">
+        Vector Space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/probability.html">
+        <span class="deptitle">
+        Probability</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cond-prob.html">
+        <span class="deptitle">
+        Conditional probability</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
+        <span class="deptitle">
+        Random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/expected-value.html">
+        <span class="deptitle">
+        Expected value of a random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cond-expec.html">
+        <span class="deptitle">
+        Conditional expectation</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

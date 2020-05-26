@@ -26,16 +26,39 @@
 
 <div id="main">
 <h1> Expectation of product of independent random variables <span class="doc-status">(incomplete)</span> </h1>
-<h2 class="no-deps"> Dependencies:
-Unspecified </h2>
+<h2> Dependencies:
+<span class="deps-status">(incomplete)</span> </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
+        <span class="deptitle">
+        Random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/expected-value.html">
+        <span class="deptitle">
+        Expected value of a random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var-ind.html">
+        <span class="deptitle">
+        Independence of random variables</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+</ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $X_1, X_2, \ldots, X_n$ be independent random variables. Then
-$\newcommand{\E}{\operatorname{E}}$
+<p>Let $X_1, X_2, \ldots, X_n$ be independent random variables from a set
+where the product of elements is defined (i.e. X_iX_j is valid).
+Then $\newcommand{\E}{\operatorname{E}}$
 \[ \E\left( \prod_{i=1}^n X_i \right) = \prod_{i=1}^n \E(X_i) \]</p>
 <h2>Proof</h2>
 <p>For $n=0$ and $n=1$, this is trivially true.</p>
-<p>The theorem can also be proven for $n=2$ <span class="text-danger">(proof pending)</span>.</p>
+<p>The theorem can also be proven for $n=2$ <span class="text-danger">(proof pending)</span>.
+We can maybe prove this using Fubini's theorem in the general case.
+For discrete random variables, the proof isn't hard.</p>
 <p>For $n \ge 3$, we can prove the theorem by induction.
 Suppose the theorem is true for up to $n-1$ random variables.
 If all $X_i$ are independent, then $X_n$ and $X_1X_2\ldots X_{n-1}$ are independent.
@@ -57,9 +80,132 @@ If all $X_i$ are independent, then $X_n$ and $X_1X_2\ldots X_{n-1}$ are independ
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 0</li><li>Number of transitive dependencies: 0</li></ul>
+<ul><li>Depth: 8</li><li>Number of transitive dependencies: 22</li></ul>
 
-<h2 class="no-deps"> Transitive dependencies: None </h2>
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/analysis/topological-space</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/countable-set</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/measure-theory/lebesgue-integral</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra.html">
+        <span class="deptitle">
+        σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/generated-sigma-algebra.html">
+        <span class="deptitle">
+        Generated σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/borel-algebra.html">
+        <span class="deptitle">
+        Borel algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measurable-func.html">
+        <span class="deptitle">
+        Measurable function</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/real-borel-algebra-generators.html">
+        <span class="deptitle">
+        Generators of the real Borel algebra</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measure.html">
+        <span class="deptitle">
+        Measure</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra-closed-under-intersection.html">
+        <span class="deptitle">
+        σ-algebra is closed under countable intersections</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+        <span class="deptitle">
+        Group</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+        <span class="deptitle">
+        Ring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+        <span class="deptitle">
+        Field</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+        <span class="deptitle">
+        Vector Space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/probability.html">
+        <span class="deptitle">
+        Probability</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cond-prob.html">
+        <span class="deptitle">
+        Conditional probability</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
+        <span class="deptitle">
+        Random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/expected-value.html">
+        <span class="deptitle">
+        Expected value of a random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/ind-events.html">
+        <span class="deptitle">
+        Independence of events</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/ind-of-comp-events.html">
+        <span class="deptitle">
+        Independence of composite events</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var-ind.html">
+        <span class="deptitle">
+        Independence of random variables</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+</ol>
 
 </div>
 </body>

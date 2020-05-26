@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Random variable - TheoremDep</title>
+<meta name="description" content="A random variable is a measurable function that maps each element of the sample space to an element in some set." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Random variable </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/probability.html">
+        <span class="deptitle">
+        Probability</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measurable-func.html">
+        <span class="deptitle">
+        Measurable function</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measure.html">
+        <span class="deptitle">
+        Measure</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/generated-sigma-algebra.html">
+        <span class="deptitle">
+        Generated σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/borel-algebra.html">
+        <span class="deptitle">
+        Borel algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/real-borel-algebra-generators.html">
+        <span class="deptitle">
+        Generators of the real Borel algebra</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $(\Omega, \mathcal{F}, \Pr)$ be a probability space.
+Let $E$ be a $\sigma$-algebra over a set $D$.
+Then any measurable function $X: \Omega \mapsto D$
+is said to be a random variable with support $D$.</p>
+<p>For $S \in E$, define $X^{-1}(E) = \{\omega \in \Omega: X(\omega) \in S\}$
+and define $\Pr(X \in S) = \Pr(X^{-1}(S))$.
+Define $\Pr_X: E \mapsto [0, 1]$ as $\Pr_X(S) = \Pr(X \in S)$.
+$\Pr_X$ is called the probability distribution of $X$.</p>
+<h2>Probability space of probability distribution</h2>
+<p><strong>Theorem</strong>: $(D, E, \Pr_X)$ is a probability space.</p>
+<p><strong>Proof</strong>:</p>
+<ul>
+<li>Non-negativity is trivial to prove.</li>
+<li>$X^{-1}(D) = \Omega$, so $\Pr_X(D) = 1$.</li>
+<li>$\Pr_X(\{\}) = \Pr(\{\omega \in \Omega: X(\omega) \in \{\}\}) = P(\{\}) = 0$.</li>
+<li>$\sigma$-additivity:
+Let $S$ be a countable set of pairwise-disjoint sets from $D$.
+Since $X$ is a function, $S' = \{X^{-1}(A): A \in S\}$ is also a countable set of pairwise-disjoint sets.
+Also, $S' \subseteq \mathcal{F}$.
+\begin{align}
+\Pr_X\left(\bigcup_{A \in S} A\right)
+&amp;= \Pr\left(X^{-1}\left(\bigcup_{A \in S} A\right)\right)
+\\ &amp;= \Pr\left(\bigcup_{A \in S} X^{-1}(A)\right)
+\\ &amp;= \sum_{A \in S} \Pr(X^{-1}(A))
+\\ &amp;= \sum_{A \in S} \Pr_X(A) \tag*{$\square$}
+\end{align}
+Therefore, $\Pr_X$ is a probability measure over $(D, E)$.</li>
+</ul>
+<h2>Totally-ordered random variables</h2>
+<p>If $D$ is totally-ordered, then the cumulative distribution function (CDF)
+$F_X: D \mapsto [0, 1]$ of a random variable $X$ is defined as
+$F_X(x) = \Pr(X \le x) = \Pr(\{\omega \in \Omega: X(\omega) \le x\})$.
+Therefore, $F_X$ is a non-decreasing function.
+It is easy to see that $\Pr(X &gt; x) = 1 - F_X(x)$.</p>
+<p>When $D$ is totally ordered, for a sequence $X = [X_1, X_2, \ldots, X_n]$ of random variables,
+the joint CDF of $X$ is defined as
+\[ F_X(x_1, x_2, \ldots, x_n) = \Pr(X_1 \le x_1 \cap X_2 \le x_2 \cap \ldots \cap X_n \le x_n) \]</p>
+<p>When $E = \sigma(\{\{y \in D: y \le x\}: x \in D\})$,
+$F_X$ completely characterizes $\Pr_X$.</p>
+<h2>Discrete random variables</h2>
+<p>When $D$ is countable, $X$ is called a discrete random variable.</p>
+<p>The probability mass function $f_X: D \mapsto [0, 1]$
+of a discrete random variable $X$ is defined as
+$f_X(x) = \Pr(X = x) = \Pr(\{\omega \in \Omega: X(\omega) = x\})$.
+The probability mass function is sometimes also called the distribution function.</p>
+<p>For a sequence $X = [X_1, X_2, \ldots, X_n]$ of random variables,
+the joint probability mass function of $X$ is defined as
+\[ f_X(x_1, x_2, \ldots, x_n) = \Pr(X_1 = x_1 \cap X_2 = x_2 \cap \ldots \cap X_n = x_n) \]</p>
+<p>When $E$ is the power-set of $D$, $f_X$ completely characterizes $\Pr_X$.</p>
+<h2>Continuous random variables</h2>
+<p>Let $X$ be a random variable with support $\mathbb{R}$.</p>
+<p>Suppose there exists a function $f_X: \mathbb{R} \mapsto \mathbb{R}_{\ge 0}$ such that
+\[ F_X(x) = \int_{-\infty}^x f_X(x) dx \]
+Then $f_X(x)$ is called the probability density function (PDF) of $X$
+and $X$ is said to be a continuous random variable.</p>
+<p>$f_X(x)$ is sometimes denoted as $\mathrm{d}\Pr(x \le X \le x+\mathrm{d}x)/\mathrm{d}x$.</p>
+<p>Since the $\sigma$-algebra generated by sets of the form $(-\infty, a]$
+is $\mathcal{B}(\mathbb{R})$, $E$ is often chosen to be $\mathcal{B}(\mathbb{R})$
+so that $F_X$ completely characterizes $\Pr_X$.
+If $X$ is a continuous random variable, this would mean that $f_X$
+completely characterizes $\Pr_X$.</p>
+<p>Let $X = [X_1, X_2, \ldots, X_n]$ be a sequence of random variables.
+Suppose there exists a function $f_X: \mathbb{R}^n \mapsto \mathbb{R}_{\ge 0}$ such that
+\[ F_X(x_1, x_2, \ldots, x_n)
+= \int_{-\infty}^{x_1} \int_{-\infty}^{x_2} \ldots \int_{-\infty}^{x_n}
+f_X(x_1, x_2, \ldots, x_n) dx_1 dx_2 \ldots dx_n \]
+Then $f_X$ is called the probability density function (PDF) of $X$
+and $X$ is said to be a multivariate continuous random variable.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/linearity-of-expec.html">
+        <span class="deptitle">
+        Linearity of expectation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cond-expec-decomp.html">
+        <span class="deptitle">
+        Conditional decomposition of expectation</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var-ind.html">
+        <span class="deptitle">
+        Independence of random variables</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cond-expec.html">
+        <span class="deptitle">
+        Conditional expectation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-bound.html">
+        <span class="deptitle">
+        Markov's bound</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/chernoff-bound.html">
+        <span class="deptitle">
+        Chernoff bound</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/bernoulli.html">
+        <span class="deptitle">
+        Bernoulli random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/distr-of-sum-of-rand-vars.html">
+        <span class="deptitle">
+        Distribution of sum of random variables</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/variance.html">
+        <span class="deptitle">
+        Variance of a random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/indep-prod-expec.html">
+        <span class="deptitle">
+        Expectation of product of independent random variables</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cdf-limit.html">
+        <span class="deptitle">
+        Probability: limit of CDF</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/expected-value.html">
+        <span class="deptitle">
+        Expected value of a random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/normal-distr.html">
+        <span class="deptitle">
+        Normal distribution</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 5</li><li>Number of transitive dependencies: 11</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/analysis/topological-space</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/countable-set</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra.html">
+        <span class="deptitle">
+        σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/generated-sigma-algebra.html">
+        <span class="deptitle">
+        Generated σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/borel-algebra.html">
+        <span class="deptitle">
+        Borel algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measurable-func.html">
+        <span class="deptitle">
+        Measurable function</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/real-borel-algebra-generators.html">
+        <span class="deptitle">
+        Generators of the real Borel algebra</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measure.html">
+        <span class="deptitle">
+        Measure</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra-closed-under-intersection.html">
+        <span class="deptitle">
+        σ-algebra is closed under countable intersections</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/probability.html">
+        <span class="deptitle">
+        Probability</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

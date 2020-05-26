@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Probability - TheoremDep</title>
+<meta name="description" content="Definition of some basic concents in probability theory: events, sample space, probability space, probability measure." />
+<meta name="keywords" content="event,sample space,sigma algebra,σ-algebra,probability,probability measure,probability space" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Probability </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra.html">
+        <span class="deptitle">
+        σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measure.html">
+        <span class="deptitle">
+        Measure</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra-closed-under-intersection.html">
+        <span class="deptitle">
+        σ-algebra is closed under countable intersections</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Read sections 1.1, 1.2, 1.3 and 1.4 from
+<a class="cite-ref" href="#cite-prob-and-rand-proc">[prob-and-rand-proc]</a>
+for an intuitive understanding and to know the definitions
+of 'event', 'sample space', 'probability' and 'probability measure'.
+You may optionally read chapter 0 too.</p>
+<p>A probability space is a triple $(\Omega, \mathcal{F}, P)$, where:</p>
+<ul>
+<li>$\Omega$ is the sample space, also called the set of all outcomes.</li>
+<li>$\mathcal{F}$ is a $\sigma$-algebra over $\Omega$.
+$\mathcal{F}$ is called the set of all events.</li>
+<li>$P: \mathcal{F} \mapsto [0, 1]$ is a measure over $(\Omega, \mathcal{F})$ such that $P(\Omega) = 1$.
+$P$ is called a probability measure.</li>
+</ul>
+<p>One can usually let $\mathcal{F}$ be equal to the power-set of $\Omega$.
+But for certain infinite-sized $\Omega$, certain probability measures cannot be defined
+over the power-set of $\Omega$
+(see the <a href="https://en.wikipedia.org/wiki/Banach%E2%80%93Tarski_paradox">Banach-Tarski paradox</a>
+or <a href="https://en.wikipedia.org/wiki/Vitali_set">Vitali set</a>).</p>
+<h2>Additional properties</h2>
+<p>These simple properties can be proven using the definition of probability space above:</p>
+<ul>
+<li>Let $S = \{A_1, A_2, \ldots\}$ be a countable set of events.
+Then $\bigcap_{A \in S} A \in \mathcal{F}$.</li>
+<li>Let $A$ be an event. Define $\overline{A} = \Omega - A$. Then
+$P(\overline{A}) = 1 - P(A)$ (since $A$ and $\overline{A}$ are disjoint and $A \cup \overline{A} = \Omega$).</li>
+<li>$A \subseteq B \implies P(A) \le P(B)$.</li>
+<li>$A \subseteq B \implies P(B-A) = P(B) - P(A)$ (because $A$ and $B-A$ are disjoint).</li>
+<li>$P(A \cup B) = P(A) + P(B) - P(A \cap B)$.</li>
+</ul>
+<h2>References</h2>
+<div class="citation" id="cite-prob-and-rand-proc">
+<span class="cite-name">prob-and-rand-proc</span><br/>
+<span class="cite-authors">Ramon van Handel</span><br/>
+<cite class="cite-title"><a href="https://web.math.princeton.edu/~rvan/ORF309.pdf">
+Probability and Random Processes</a></cite><br/>
+<span class="cite-source">ORF 309 / MAT 380 Lecture Notes, Princeton University, 2016-02-22</span>
+</div>
+
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/linearity-of-expec.html">
+        <span class="deptitle">
+        Linearity of expectation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
+        <span class="deptitle">
+        Random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var-ind.html">
+        <span class="deptitle">
+        Independence of random variables</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cond-expec.html">
+        <span class="deptitle">
+        Conditional expectation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cond-prob.html">
+        <span class="deptitle">
+        Conditional probability</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/ind-of-comp-events.html">
+        <span class="deptitle">
+        Independence of composite events</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/expected-value.html">
+        <span class="deptitle">
+        Expected value of a random variable</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 3</li><li>Number of transitive dependencies: 5</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/countable-set</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra.html">
+        <span class="deptitle">
+        σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measure.html">
+        <span class="deptitle">
+        Measure</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra-closed-under-intersection.html">
+        <span class="deptitle">
+        σ-algebra is closed under countable intersections</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

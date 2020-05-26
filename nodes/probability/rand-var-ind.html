@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Independence of random variables - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Independence of random variables <span class="doc-status">(incomplete)</span> </h1>
+<h2> Dependencies:
+<span class="deps-status">(incomplete)</span> </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/probability.html">
+        <span class="deptitle">
+        Probability</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra.html">
+        <span class="deptitle">
+        σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
+        <span class="deptitle">
+        Random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/ind-events.html">
+        <span class="deptitle">
+        Independence of events</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/ind-of-comp-events.html">
+        <span class="deptitle">
+        Independence of composite events</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/generated-sigma-algebra.html">
+        <span class="deptitle">
+        Generated σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/real-borel-algebra-generators.html">
+        <span class="deptitle">
+        Generators of the real Borel algebra</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $(\Omega, F, \Pr)$ be a probability space.
+Let $(D, E)$ and $(D', E')$ be $\sigma$-algebras.
+Let $X$ and $Y$ be random variables from $(\Omega, F, \Pr)$ to
+$(D, E)$ and $(D', E')$ respectively.</p>
+<p>Let $T \subseteq E$ and $T' \subseteq E'$.</p>
+<p>$X$ is said to be $T$-independent of $A \in F$ iff $\forall B \in T$,
+the events $X \in B$ and $A$ are independent.
+$X$ is said to be independent of $A$ iff $X$ is $E$-independent of $A$.</p>
+<p>$X$ is said to be $(T, T')$-independent of $Y$
+iff $\forall B \in T$ and $\forall B' \in T'$,
+the events $X \in T$ and $Y \in T'$ are independent.
+$X$ is said to be independent of $Y$ iff $X$ is $(E, E')$-independent of $Y$.</p>
+<p>We say that $A \in F$ is $T$-independent of $X$ iff $X$ is $T$-independent of $A$.
+It is easy to prove that $X$ is $(T, T')$-independent of $Y$
+iff $Y$ is $(T', T)$-independent of $X$, since independence of events is symmetric.</p>
+<h2>Equivalent definition for discrete random variable</h2>
+<p>Suppose $D$ is countable and $E$ is the power-set of $D$. So $X$ is discrete.
+Let $T = \{\{x\}: x \in D_1\}$.
+Let $T' \subseteq E'$ be an arbitrary set.</p>
+<p><strong>Theorem</strong>: $X$ is independent of $A \in F$ iff $X$ is $T$-independent of $A$.
+$X$ is $(E, T')$-independent of $A$ iff $X$ is $(T, T')$-independent of $Y$.</p>
+<p><strong>Proof</strong>: Let $S \in E$ and $S' \in T'$.
+$X \in S = \bigcup_{x \in S} (X = x)$.
+Since $\forall x \in D, X = x$ is independent of $A$ and $Y \in S'$
+and independence is preserved by countable disjoint unions,
+$X \in S$ is independent of $A$ and $Y \in S'$.</p>
+<p>As a corollary, if $X$ and $Y$ are both discrete,
+then they are independent iff $f_{X,Y}(x, y) = f_X(x)f_Y(y)$,
+i.e. their joint probability mass function is equal to the product of their mass functions.</p>
+<h2>Equivalent definitions for real-valued random variables</h2>
+<p>Suppose $D = \mathbb{R}$ and $T = \{(-\infty, x]: x \in \mathbb{R}\}$
+$E = \sigma(T) = \mathcal{B}(\mathbb{R})$.
+Let $T' \subseteq E'$ be an arbitrary set.</p>
+<p><strong>Theorem</strong>: $X$ is independent of $A \in F$ iff $X$ is $T$-independent of $A$.
+$X$ is $(E, T')$-independent of $A$ iff $X$ is $(T, T')$-independent of $Y$.</p>
+<p><strong>Proof</strong>: <span class="text-danger">(Pending)</span></p>
+<p>As a corollary, if $X$ and $Y$ are real-valued,
+then they are independent iff $F_{X,Y}(x, y) = F_X(x)F_Y(y)$,
+i.e. their joint CDF is equal to the product of their CDFs.</p>
+<h3>Joint density function</h3>
+<p>We can prove that when $X$ and $Y$ are continuous, they are independent iff
+their joint density function is the product of their density functions,
+i.e. $f_{X, Y}(x, y) = f_X(x)f_Y(y)$.</p>
+<p>\[ \int_{-\infty}^x \int_{-\infty}^y f_X(x)f_Y(y) dy dx
+= \left(\int_{-\infty}^x f_X(x) dx \right)\left(\int_{-\infty}^y f_Y(y) dy\right)
+= F_X(x)F_Y(y)  \tag{definition of density} \]</p>
+<p>Therefore, if $f_{X, Y}(x, y) = f_X(x)f(y)$, then
+\[ F_{X, Y}(x, y) = \int_{-\infty}^x \int_{-\infty}^y f_{X, Y}(x, y)
+= \int_{-\infty}^x \int_{-\infty}^y f_X(x)f_Y(y) = F_X(x)F_Y(y) \]
+so $X$ and $Y$ are independent.</p>
+<p>If $X$ and $Y$ are independent,
+\[ \int_{-\infty}^x \int_{-\infty}^y f_X(x)f_Y(y) = F_X(x)F_Y(y) = F_{X, Y}(x, y) \]
+So $f_X(x)f_Y(y)$ is a joint density function for $(X, Y)$.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/chernoff-bound.html">
+        <span class="deptitle">
+        Chernoff bound</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/indep-prod-expec.html">
+        <span class="deptitle">
+        Expectation of product of independent random variables</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/distr-of-sum-of-rand-vars.html">
+        <span class="deptitle">
+        Sum of independent normal random variables is normal</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 7</li><li>Number of transitive dependencies: 15</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/analysis/topological-space</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/countable-set</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra.html">
+        <span class="deptitle">
+        σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/generated-sigma-algebra.html">
+        <span class="deptitle">
+        Generated σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/borel-algebra.html">
+        <span class="deptitle">
+        Borel algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measurable-func.html">
+        <span class="deptitle">
+        Measurable function</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/real-borel-algebra-generators.html">
+        <span class="deptitle">
+        Generators of the real Borel algebra</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measure.html">
+        <span class="deptitle">
+        Measure</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra-closed-under-intersection.html">
+        <span class="deptitle">
+        σ-algebra is closed under countable intersections</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/probability.html">
+        <span class="deptitle">
+        Probability</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cond-prob.html">
+        <span class="deptitle">
+        Conditional probability</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
+        <span class="deptitle">
+        Random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/ind-events.html">
+        <span class="deptitle">
+        Independence of events</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/ind-of-comp-events.html">
+        <span class="deptitle">
+        Independence of composite events</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

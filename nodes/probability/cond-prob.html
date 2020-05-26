@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Conditional probability - TheoremDep</title>
+<meta name="description" content="The probability of event A conditioned on event B is denoted as P(A|B)." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Conditional probability <span class="doc-status">(incomplete)</span> </h1>
+<h2> Dependencies:
+<span class="deps-status">(incomplete)</span> </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/probability.html">
+        <span class="deptitle">
+        Probability</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measure.html">
+        <span class="deptitle">
+        Measure</span>
+    </a>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra-closed-under-intersection.html">
+        <span class="deptitle">
+        σ-algebra is closed under countable intersections</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $\Pr$ be a probability measure over the $\sigma$-algebra $(\Omega, \mathcal{F})$.
+For $B \in \Omega$ such that $\Pr(B) &gt; 0$, define $\Pr_{|B}: \Omega \mapsto [0, 1]$ as
+\[ \Pr_{|B}(X) = \frac{\Pr(X \cap B)}{\Pr(B)} \]
+We'll prove that $\Pr_{|B}$ is also a probability measure.</p>
+<p>When $B = \{\}$, $\Pr_{|B}$ is not defined (or invalid).</p>
+<p>It is sometimes possible to extend the definition of $\Pr_{|B}$
+to the case where $B \neq \{\}$ and $\Pr(B) = 0$ and prove that $\Pr_{|B}$ is a probability measure,
+but <span class="text-danger">I don't know when it's possible
+and how it is defined in that case</span>
+(maybe it's done using
+<a href="https://en.wikipedia.org/wiki/Regular_conditional_probability">
+regular conditional probability</a>)
+Intuitively, $\Pr_{|B}$ is defined iff $B$ is not 'impossible' as per $\Pr$
+(<span class="text-warning">rigor needed</span>).</p>
+<p>Despite my unsurity of the exact definition of $\Pr_{|B}$, I know that
+(<span class="text-danger">proof/citation needed</span>) $\Pr_{|B}$ satisfies these properties:</p>
+<ul>
+<li>If $\Pr_{|B}$ is defined, $\Pr_{|B}(X)\Pr(B) = \Pr(X \cap B)$.</li>
+<li>If $\Pr_{|B}$ is defined and $B \subseteq C$, then $\Pr_{|C}$ is defined.</li>
+<li>If $\Pr_{|B}$ is not defined and $C \subseteq B$, then $\Pr_{|C}$ is not defined.</li>
+<li>If $\Pr_{|A}$ is not defined and $\Pr_{|B}$ is defined,
+then $\Pr_{|B}(A) = 0$.</li>
+<li>If $\Omega$ is countable, $\Pr_{|B}$ is defined iff $\Pr(B) &gt; 0$.</li>
+</ul>
+<p>$\Pr_{|B}(X)$ is usually denoted as $\Pr(X \mid B)$
+and is called 'probability of $X$ given $B$' or 'probability of $X$ conditioned on $B$'.
+Often, $\Pr(A \mid B_1 \cap B_2 \cap \ldots \cap B_m)$ is denoted as $\Pr(A \mid B_1, B_2, \ldots, B_m)$.
+$\Pr(A) = \Pr(A \mid \Omega)$.</p>
+<p>If $\Pr(B \cap C) &gt; 0$, then
+\[ \Pr(A \mid B \cap C) = \frac{\Pr(A \cap B \cap C)}{\Pr(B \cap C)}
+= \frac{\Pr(A \cap B \mid C)}{\Pr(B \mid C)} \]</p>
+<h2>Proof that $\Pr_{|B}$ is a probability measure when $\Pr(B) &gt; 0$</h2>
+<p>$\Pr$ is non-negative implies $\Pr_{|B}$ is non-negative.
+$\Pr_{|B}({\{\}}) = 0$.
+$\Pr_{|B}(\Omega) = \frac{\Pr(\Omega \cap B)}{\Pr(B)} = 1$.</p>
+<p><strong>$\sigma$-additivity</strong>:
+Let $S$ be a countable subset of $\mathcal{F}$ such that
+all sets in $S$ are pairwise-disjoint. Let $S' = \{A \cap B: A \in S\}$.
+Since a $\sigma$-algebra is closed under finite intersections, $S' \in \mathcal{F}$.
+All sets in $S'$ are also pairwise disjoint.
+\begin{align}
+\Pr_{|B}\left(\bigcup_{A \in S} A\right)
+&amp;= \frac{1}{\Pr(B)}\Pr\left(\left(\bigcup_{A \in S} A\right) \cap B\right)
+\\ &amp;= \frac{1}{\Pr(B)}\Pr\left(\bigcup_{A \in S} (A \cap B) \right)
+\tag{De Morgan's laws}
+\\ &amp;= \frac{1}{\Pr(B)}\left(\sum_{A \in S} \Pr(A \cap B) \right)
+\tag{$S' \in \mathcal{F}$ and $S'$ is pairwise-disjoint}
+\\ &amp;= \sum_{A \in S} \Pr_{|B}(A)
+\end{align}
+Therefore, $\Pr_{|B}$ is $\sigma$-additive.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/ind-events.html">
+        <span class="deptitle">
+        Independence of events</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cond-expec.html">
+        <span class="deptitle">
+        Conditional expectation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/ind-of-comp-events.html">
+        <span class="deptitle">
+        Independence of composite events</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 4</li><li>Number of transitive dependencies: 6</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/countable-set</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra.html">
+        <span class="deptitle">
+        σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measure.html">
+        <span class="deptitle">
+        Measure</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra-closed-under-intersection.html">
+        <span class="deptitle">
+        σ-algebra is closed under countable intersections</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/probability.html">
+        <span class="deptitle">
+        Probability</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

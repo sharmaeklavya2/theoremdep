@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Independence of composite events - TheoremDep</title>
+<meta name="description" content="Suppose events A1 and A2 are independent of event B. If A1 and A2 are disjoint, then A1⋃A2 is independent of B. If A1 ⊆ A2, then A2 - A1 is independent of B." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Independence of composite events </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/probability.html">
+        <span class="deptitle">
+        Probability</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/ind-events.html">
+        <span class="deptitle">
+        Independence of events</span>
+    </a>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cond-prob.html">
+        <span class="deptitle">
+        Conditional probability</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let events $A_1$ and $A_2$ be independent of $B$.
+Suppose $A_1 \subseteq A_2$. Then $A_2 - A_1$ is independent of $B$.</p>
+<p>$\Omega$ is independent of $B$, so by replacing $A_2$ by $\Omega$
+we get that $\overline{A}$ is independent of $B$.</p>
+<p>Let $S$ be a countable set of pairwise-disjoint events such that
+$\forall A \in S, A$ is independent of $B$.
+Then $\bigcup_{A \in S} A$ is independent of $B$.
+Furthermore, this theorem has a counterexample when sets in $S$ are not pairwise-disjoint.</p>
+<h2>Proof</h2>
+<p>\begin{align}
+&amp; \Pr((A_2 - A_1) \cap B)
+\\ &amp;= \Pr((A_2 \cap B) - (A_1 \cap B))
+\\ &amp;= \Pr(A_2 \cap B) - \Pr(A_1 \cap B)
+\tag{$A_1 \cap B \subseteq A_2 \cap B$}
+\\ &amp;= \Pr(A_2)\Pr(B) - \Pr(A_1)\Pr(B)
+\tag{by independence}
+\\ &amp;= \Pr(B)(\Pr(A_2) - \Pr(A_1))
+\\ &amp;= \Pr(B)\Pr(A_2 - A_1)
+\tag{$A_1 \subseteq A_2$}
+\end{align}
+Therefore, $A_2 - A_1$ is independent of $B$.</p>
+<p>\begin{align}
+&amp; \Pr\left(\left(\bigcup_{A \in S} A\right) \cap B\right)
+\\ &amp;= \Pr\left(\bigcup_{A \in S} (A \cap B)\right)
+\tag{De Morgan's law}
+\\ &amp;= \sum_{A \in S} \Pr(A \cap B)
+\tag{events in $\{A \cap B: A \in S\}$ are disjoint}
+\\ &amp;= \sum_{A \in S} \Pr(A)\Pr(B)
+\tag{by independence}
+\\ &amp;= \Pr(B)\Pr\left(\bigcup_{A \in S} A\right)
+\tag{events in $S$ are disjoint}
+\end{align}
+Therefore, $\bigcup_{A \in S} A$ is independent of $B$.</p>
+<p>Let $\Omega = \{1, 2, 3, 4\}$, $\Pr(X) = |X|/4$, $B = \{2, 4\}$,
+$A_1 = \{1, 4\}$, $A_2 = \{3, 4\}$ and $S = \{A_1, A_2\}$.
+Then $A_1$ and $A_2$ are not disjoint, $A_1$ is independent of $B$,
+$A_2$ is independent of $B$ and $A_1 \cup A_2$ is not independent of $B$.</p>
+<h2>Proof for alternative definition of independence</h2>
+<p>If $\Pr_{|B}$ is not defined, then the theorems are trivially true.
+So let $\Pr_{|B}$ be defined, then we can use the fact that it is a probability measure.</p>
+<p>\[ \Pr_{|B}(A_2 - A_1) &amp;= \Pr_{|B}(A_2) - \Pr_{|B}(A_1)
+= \Pr(A_2) - \Pr(A_1) = \Pr(A_2 - A_1) \]</p>
+<p>\[ \Pr_{|B}\left(\bigcup_{A \in S} A \right)
+= \sum_{A \in S} \Pr_{|B}(A)
+= \sum_{A \in S} \Pr(A)
+= \Pr\left(\bigcup_{A \in S} A\right) \]</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var-ind.html">
+        <span class="deptitle">
+        Independence of random variables</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 6</li><li>Number of transitive dependencies: 8</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/countable-set</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra.html">
+        <span class="deptitle">
+        σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measure.html">
+        <span class="deptitle">
+        Measure</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra-closed-under-intersection.html">
+        <span class="deptitle">
+        σ-algebra is closed under countable intersections</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/probability.html">
+        <span class="deptitle">
+        Probability</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cond-prob.html">
+        <span class="deptitle">
+        Conditional probability</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/ind-events.html">
+        <span class="deptitle">
+        Independence of events</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

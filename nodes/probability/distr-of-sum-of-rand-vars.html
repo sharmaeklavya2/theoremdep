@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Distribution of sum of random variables - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Distribution of sum of random variables <span class="doc-status">(incomplete)</span> </h1>
+<h2> Dependencies:
+<span class="deps-status">(incomplete)</span> </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
+        <span class="deptitle">
+        Random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+        <span class="deptitle">
+        Group</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $X$ and $Y$ be 2 random variables with the same support $D$,
+where $(D, +)$ is a group. Let $Z = X + Y$.</p>
+<p>Let $X$ and $Y$ be discrete. Let $f_{X,Y}$ be the joint probability mass function of $X$ and $Y$
+and let $f_Z$ be the probability mass function of $Z$. Then
+\[ f_Z(z) = \sum_{y \in D} f_{X, Y}(z - y, y) \]</p>
+<p>Let $X$ and $Y$ be continuous random variables
+and let $+$ (as usual) correspond to addition of real numbers.
+Let $f_{X,Y}$ be the joint probability density function of $X$ and $Y$
+and let $f_Z$ be the probability density function of $Z$. Then
+\[ f_Z(z) = \int_{-\infty}^{\infty} f_{X, Y}(z - y, y) dy \]</p>
+<h2>Proof for discrete random variables</h2>
+<p>\begin{align}
+f_Z(z) &amp;= \Pr(X + Y = z)
+\\ &amp;= \sum_{y \in D} \Pr(X + Y = z \cap Y = y)
+\\ &amp;= \sum_{y \in D} \Pr(X = z - y \cap Y = y)
+\\ &amp;= \sum_{y \in D} f_{X, Y}(z - y, y)
+\end{align}</p>
+<h2>Proof for continuous random variables</h2>
+<p><span class="text-danger">(Proof pending)</span></p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/distr-of-sum-of-rand-vars.html">
+        <span class="deptitle">
+        Sum of independent normal random variables is normal</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 6</li><li>Number of transitive dependencies: 13</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/analysis/topological-space</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/countable-set</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra.html">
+        <span class="deptitle">
+        σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/generated-sigma-algebra.html">
+        <span class="deptitle">
+        Generated σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/borel-algebra.html">
+        <span class="deptitle">
+        Borel algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measurable-func.html">
+        <span class="deptitle">
+        Measurable function</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/real-borel-algebra-generators.html">
+        <span class="deptitle">
+        Generators of the real Borel algebra</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measure.html">
+        <span class="deptitle">
+        Measure</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra-closed-under-intersection.html">
+        <span class="deptitle">
+        σ-algebra is closed under countable intersections</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+        <span class="deptitle">
+        Group</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/probability.html">
+        <span class="deptitle">
+        Probability</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
+        <span class="deptitle">
+        Random variable</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

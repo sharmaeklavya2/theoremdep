@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Independence of events - TheoremDep</title>
+<meta name="description" content="A and B are independent iff P(A∩B) = P(A)P(B)." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Independence of events </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cond-prob.html">
+        <span class="deptitle">
+        Conditional probability</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<h2>Standard definition</h2>
+<p>Events $A$ and $B$ are said to be independent for the probability measure $\Pr$
+iff $\Pr(A \cap B) = \Pr(A)\Pr(B)$.</p>
+<p>It is easy to see that independence is a symmetric relation.</p>
+<p>If for event $C$, $\Pr_{|C}$ is defined and $A$ and $B$ are independent for $\Pr_{|C}$,
+then $A$ and $B$ are said to be independent conditioned on $C$.</p>
+<p>Let $S = \{A_1, A_2, \ldots\}$ be a countable set of events.
+Then events in $S$ are said to be independent iff
+\[ \Pr\left(\bigcap_{A \in S} A\right) = \prod_{A \in S} \Pr(A) \]
+The events in $S$ are said to be pairwise independent iff
+any 2 distinct events in $S$ are independent.</p>
+<h2>Alternative definition</h2>
+<p>I'm unsatisfied with the standard definition.
+See <a href="https://math.stackexchange.com/q/3692185/573551">this math.se post</a> for the reason.
+Therefore, I'm proposing an alternative definition here.</p>
+<p>Events $A$ and $B$ are said to be independent (in the alternative sense)
+for the probability measure $\Pr$ iff at least one of these holds:</p>
+<ul>
+<li>$\Pr_{|B}$ is not defined.</li>
+<li>$\Pr_{|B}$ is defined, and $\Pr(A \mid B) = \Pr(A)$.</li>
+</ul>
+<p>Below are 2 theorems that slightly legitimize my definition
+by comparing it with the standard definition.</p>
+<p><strong>Theorem 1</strong>: If $A$ and $B$ are alternatively independent,
+then $A$ and $B$ are independent.</p>
+<p><strong>Proof</strong>:
+If $\Pr_{|B}$ is not defined, then $\Pr(B) = 0$.
+Since $\Pr(A \cap B) \le \Pr(B)$, $\Pr(A \cap B) = 0 = \Pr(A)\Pr(B)$.</p>
+<p>If $\Pr_{|B}$ is defined, then the definition of $\Pr_{|B}$ dictates that
+$\Pr(A \cap B) = \Pr_{|B}(A)\Pr(B)$.
+Since $A$ and $B$ are independent, $\Pr_{|B}(A) = \Pr(A)$.
+\[ \tag*{$\square$} \]</p>
+<p><strong>Theorem 2</strong>: If $\Omega$ is countable or $\Pr(B) &gt; 0$, then
+$A$ and $B$ are alternatively independent iff they are independent.</p>
+<p><strong>Proof</strong>:
+Suppose $\Pr(B) &gt; 0$.
+\begin{align}
+&amp; A \textrm{ and } B \textrm{ are alternatively independent}
+\\ &amp;\iff \Pr(A \mid B) = \Pr(A)
+\\ &amp;\iff \Pr(A \cap B) = \Pr(A)\Pr(B)
+\\ &amp;A \textrm{ and } B \textrm{ are independent}
+\end{align}
+When $\Omega$ is countable and $\Pr(B) = 0$, then $\Pr_{|B}$ is not defined,
+so $A$ and $B$ are alternatively independent.</p>
+<p><strong>Corollary</strong>:
+When $\Omega$ is countable or both $\Pr(A)$ and $\Pr(B)$ are positive,
+then alternative independence is a symmetric relation.</p>
+<p>The main drawback of my definition is that I'm unable to prove that it's symmetric.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var-ind.html">
+        <span class="deptitle">
+        Independence of random variables</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/ind-of-comp-events.html">
+        <span class="deptitle">
+        Independence of composite events</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 5</li><li>Number of transitive dependencies: 7</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/countable-set</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra.html">
+        <span class="deptitle">
+        σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measure.html">
+        <span class="deptitle">
+        Measure</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra-closed-under-intersection.html">
+        <span class="deptitle">
+        σ-algebra is closed under countable intersections</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/probability.html">
+        <span class="deptitle">
+        Probability</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cond-prob.html">
+        <span class="deptitle">
+        Conditional probability</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

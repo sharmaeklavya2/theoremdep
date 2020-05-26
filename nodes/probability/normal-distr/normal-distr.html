@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Normal distribution - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Normal distribution </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
+        <span class="deptitle">
+        Random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/expected-value.html">
+        <span class="deptitle">
+        Expected value of a random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/variance.html">
+        <span class="deptitle">
+        Variance of a random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/analysis/gaussian-integral.html">
+        <span class="deptitle">
+        Gaussian integral</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/linearity-of-expec.html">
+        <span class="deptitle">
+        Linearity of expectation</span>
+    </a>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/analysis/integration-by-parts</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/analysis/exponential-grows-superpolynomially</span>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $X$ be a continuous random variable with probability density function
+$\newcommand{\E}{\operatorname{E}}$
+\[ f_X(x) = \frac{1}{\sqrt{2\pi}\sigma} \exp\left( -\frac{(x-\mu)^2}{2\sigma^2} \right) \]
+Then the probability distribution of $X$ is called the normal distribution
+with parameters $\mu$ and $\sigma^2$. This is denoted by
+$X \sim \mathcal{N}(\mu, \sigma^2)$.</p>
+<p>$\mathcal{N}(0, 1)$ is called the standard normal distribution.</p>
+<p><strong>Theorem 1</strong>: $\int_{-\infty}^{\infty} f_X(x) = 1$,
+so $f_X$ is a valid probability density function.</p>
+<p><strong>Proof</strong>:
+\begin{align}
+&amp; \int_{-\infty}^{\infty} f_X(x)dx
+\\ &amp;= \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}\sigma}
+\exp\left( -\frac{1}{2} \left(\frac{x-\mu}{\sigma}\right)^2 \right) dx
+\\ &amp;= \int_{-\infty}^{\infty} \frac{1}{\sqrt{\pi}} e^{-y^2} dy
+\tag{$y = \frac{x-\mu}{\sqrt{2}\sigma}$}
+\\ &amp;= \frac{2}{\sqrt{\pi}} \int_0^{\infty} e^{-y^2} dy
+\\ &amp;= 1  \tag*{$\square$}
+\end{align}</p>
+<p><strong>Theorem 2</strong>: Let $Z = (X-\mu)/\sigma$. Then $Z \sim \mathcal{N}(0, 1)$.</p>
+<p><strong>Proof</strong>:
+\begin{align}
+F_Z(z) &amp;= \Pr(Z \le z)
+\\ &amp;= \Pr(X \le \mu + \sigma z)
+\\ &amp;= \int_{-\infty}^{\mu + \sigma z} \frac{1}{\sqrt{2\pi}\sigma}
+\exp\left( -\frac{1}{2} \left(\frac{x-\mu}{\sigma}\right)^2 \right) dx
+\\ &amp;= \int_{-\infty}^{z} \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2}y^2} dy
+\end{align}
+By the definition of probability density function, we get that
+\[ f_Z(z) = \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2}z^2} \]
+Therefore, $Z \sim \mathcal{N}(0, 1)$.
+\[ \tag*{$\square$} \]</p>
+<p>Usually $f_Z$ is denoted by $\phi$ and $F_Z$ is denoted by $\Phi$.</p>
+<p><strong>Theorem 3</strong>: $\E(X) = \mu$.</p>
+<p><strong>Proof</strong>:
+Let $Z = (X - \mu)/\sigma$.
+\[ \E(Z) = \int_{-\infty}^{\infty} z f_Z(z) dz \]
+Since $f_Z(z)$ is an even function of $z$, this integral is 0.
+\[ \E(X) = \E(\mu + \sigma Z) = \mu + \sigma \E(Z) = \mu
+\tag*{$\square$} \]</p>
+<p><strong>Theorem 4</strong>: $\operatorname{Var}(X) = \sigma^2$.</p>
+<p><strong>Proof</strong>: <a href="https://proofwiki.org/wiki/Variance_of_Gaussian_Distribution/Proof_1">https://proofwiki.org/wiki/Variance_of_Gaussian_Distribution/Proof_1</a></p>
+<p>Because of theorems 3 and 4, the parameters $\mu$ and $\sigma^2$ are called
+mean and variance respectively.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/distr-of-sum-of-rand-vars.html">
+        <span class="deptitle">
+        Sum of independent normal random variables is normal</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 9</li><li>Number of transitive dependencies: 24</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/analysis/topological-space</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/countable-set</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/analysis/exponential-grows-superpolynomially</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/analysis/integration-by-parts</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/measure-theory/lebesgue-integral</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/measure-theory/linearity-of-lebesgue-integral</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra.html">
+        <span class="deptitle">
+        σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/generated-sigma-algebra.html">
+        <span class="deptitle">
+        Generated σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/borel-algebra.html">
+        <span class="deptitle">
+        Borel algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measurable-func.html">
+        <span class="deptitle">
+        Measurable function</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/real-borel-algebra-generators.html">
+        <span class="deptitle">
+        Generators of the real Borel algebra</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measure.html">
+        <span class="deptitle">
+        Measure</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra-closed-under-intersection.html">
+        <span class="deptitle">
+        σ-algebra is closed under countable intersections</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+        <span class="deptitle">
+        Group</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+        <span class="deptitle">
+        Ring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+        <span class="deptitle">
+        Field</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+        <span class="deptitle">
+        Vector Space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/probability.html">
+        <span class="deptitle">
+        Probability</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
+        <span class="deptitle">
+        Random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/expected-value.html">
+        <span class="deptitle">
+        Expected value of a random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/linearity-of-expec.html">
+        <span class="deptitle">
+        Linearity of expectation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/variance.html">
+        <span class="deptitle">
+        Variance of a random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/analysis/gaussian-integral.html">
+        <span class="deptitle">
+        Gaussian integral</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

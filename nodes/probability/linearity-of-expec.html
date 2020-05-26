@@ -25,30 +25,191 @@
 </nav>
 
 <div id="main">
-<h1> Linearity of expectation <span class="doc-status">(incomplete)</span> </h1>
-<h2 class="no-deps"> Dependencies:
-Unspecified </h2>
+<h1> Linearity of expectation </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+        <span class="deptitle">
+        Vector Space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/probability.html">
+        <span class="deptitle">
+        Probability</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
+        <span class="deptitle">
+        Random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/expected-value.html">
+        <span class="deptitle">
+        Expected value of a random variable</span>
+    </a>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/measure-theory/linearity-of-lebesgue-integral</span>
+    </li>
+</ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $X_1, X_2, \ldots, X_n$ be random variables. Let $a_1, a_2, \ldots, a_n$ be real numbers.
-$\newcommand{\E}{\operatorname{E}}$ Then
-\[ \E\left(\sum_{i=1}^n a_iX_i\right) = \sum_{i=1}^n a_i\E(X_i) \]</p>
-<p><span class="text-danger">(proof pending)</span></p>
+<p>Let $V$ be a vector space over $\mathbb{R}$.
+Let $X_1, X_2, \ldots, X_n$ be random variables in $V$
+over the probability space $(\Omega, \mathcal{F}, \Pr)$.
+Let $b, a_1, a_2, \ldots, a_n$ be real numbers.
+$\newcommand{\E}{\operatorname{E}}$</p>
+<p>Let $Y = b + \sum_{i=1}^n a_iX_i$. Then
+\[ \E(Y) = b + \sum_{i=1}^n a_i\E(X_i) \]</p>
+<h2>Proof</h2>
+<p>\begin{align}
+\E(Y) &amp;= \int_{\omega \subseteq \Omega} Y(\omega) \Pr(\omega)
+\\ &amp;= \int_{\omega \subseteq \Omega} \left(b + \sum_{i=1}^n a_iX_i(\omega)\right) \Pr(\omega)
+\\ &amp;= b \left( \int_{\omega \subseteq \Omega} \Pr(\omega) \right)
+    + \sum_{i=1}^n a_i \left(\int_{\omega \subseteq \Omega}X_i(\omega) \Pr(\omega)\right)
+\tag{linearity of Lebesgue integral}
+\\ &amp;= b + \sum_{i=1}^n a_i \E(X_i)
+\end{align}</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/variance-of-affine.html">
+        <span class="deptitle">
+        Var(aX + b) = a^2 Var(X)</span>
+    </a>
+    </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/chernoff-bound.html">
         <span class="deptitle">
         Chernoff bound</span>
     </a>
     </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/variance.html">
+        <span class="deptitle">
+        Variance of a random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/normal-distr.html">
+        <span class="deptitle">
+        Normal distribution</span>
+    </a>
+    </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 0</li><li>Number of transitive dependencies: 0</li></ul>
+<ul><li>Depth: 7</li><li>Number of transitive dependencies: 19</li></ul>
 
-<h2 class="no-deps"> Transitive dependencies: None </h2>
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/analysis/topological-space</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/countable-set</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/measure-theory/lebesgue-integral</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/measure-theory/linearity-of-lebesgue-integral</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra.html">
+        <span class="deptitle">
+        σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/generated-sigma-algebra.html">
+        <span class="deptitle">
+        Generated σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/borel-algebra.html">
+        <span class="deptitle">
+        Borel algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measurable-func.html">
+        <span class="deptitle">
+        Measurable function</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/real-borel-algebra-generators.html">
+        <span class="deptitle">
+        Generators of the real Borel algebra</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measure.html">
+        <span class="deptitle">
+        Measure</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra-closed-under-intersection.html">
+        <span class="deptitle">
+        σ-algebra is closed under countable intersections</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+        <span class="deptitle">
+        Group</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+        <span class="deptitle">
+        Ring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+        <span class="deptitle">
+        Field</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+        <span class="deptitle">
+        Vector Space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/probability.html">
+        <span class="deptitle">
+        Probability</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
+        <span class="deptitle">
+        Random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/expected-value.html">
+        <span class="deptitle">
+        Expected value of a random variable</span>
+    </a>
+    </li>
+</ol>
 
 </div>
 </body>
