@@ -53,11 +53,23 @@
 <p>Let $X \sim \mathcal{N}(\mu_X, \sigma_X^2)$ and $Y \sim \mathcal{N}(\mu_Y, \sigma_Y^2)$.
 Let $X$ and $Y$ be independent. Let $Z = X + Y$.
 Then $Z \sim \mathcal{N}(\mu_X + \mu_Y, \sigma_X^2 + \sigma_Y^2)$.</p>
+<p>Also, $aX + bY \sim \mathcal{N}(a\mu_X + b\mu_Y, a^2\sigma_X^2 + b^2\sigma_Y^2)$.</p>
 <h2>Proof</h2>
 <p><a href="https://en.wikipedia.org/wiki/Sum_of_normally_distributed_random_variables#Proof_using_convolutions">https://en.wikipedia.org/wiki/Sum_of_normally_distributed_random_variables#Proof_using_convolutions</a></p>
+<p>Let $X' = aX$ and $Y' = bY$.
+Then $X' \sim \mathcal{N}(a\mu_X, a^2\sigma_X^2)$ and $Y' \sim \mathcal{N}(b\mu_Y, b^2\sigma_Y^2)$.
+\[ aX + bY = X' + Y' \sim \mathcal{N}(a\mu_X + b\mu_Y, a^2\sigma_X^2 + b^2\sigma_Y^2) \]</p>
 
 <div class="horizontal-rule"></div>
-<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/multivariate.html">
+        <span class="deptitle">
+        Multivariate normal distribution</span>
+    </a>
+    </li>
+</ol>
 <h2> Info: </h2>
 <ul><li>Depth: 10</li><li>Number of transitive dependencies: 30</li></ul>
 

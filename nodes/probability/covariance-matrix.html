@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Expected value of a random variable - TheoremDep</title>
-<meta name="description" content="The expected value of a random variable is its (Lebesgue) integral over the sample space." />
+<title>Covariance matrix - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -25,16 +25,10 @@
 </nav>
 
 <div id="main">
-<h1> Expected value of a random variable </h1>
+<h1> Covariance matrix </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/probability.html">
-        <span class="deptitle">
-        Probability</span>
-    </a>
-    </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
         <span class="deptitle">
@@ -42,81 +36,23 @@
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cross-covariance-matrix.html">
         <span class="deptitle">
-        Vector Space</span>
+        Cross-covariance matrix</span>
     </a>
-    </li>
-    <li>
-    <span class="deptitleuci missing">/measure-theory/lebesgue-integral</span>
     </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $(\Sigma, \mathcal{F}, \Pr)$ be a probability space.
-Let $V$ be a vector space over $\mathbb{R}$ and let $D \subseteq V$.
-Let $X: \Sigma \mapsto D$ be a random variable.</p>
-<p>Then the expected value of $X$, denoted as $\operatorname{E}(X)$, is
-\[ \operatorname{E}(X) = \int_{\omega \subseteq \Omega} X(\omega) \Pr(\omega) \]
-The integral above is the Lebesgue integral.</p>
-<p>There are easier-to-comprehend equivalent definitions for simpler cases:</p>
-<ul>
-<li>When $D$ is countable,
-\[ \operatorname{E}(X) = \sum_{x \in D} x \Pr(X = x) \]</li>
-<li>When $D = \mathbb{R}$,
-\[ \operatorname{E}(X) = \int_{-\infty}^{\infty} x f_X(x) \mathrm{d}x \]
-Here $f_X$ is the probability density function of $X$.</li>
-</ul>
-<p>It is easy to see that if $X$ is a matrix, then $\E(X)_{i, j} = \E(X_{i, j})$.</p>
+<p>Let $X = [X_1, X_2, \ldots, X_n]$ be a sequence of random variables.
+Then the covariance matrix of $X$, an $n$-by-$n$ matrix, is defined as
+the cross-covariance matrix of $X$ with itself:
+$\operatorname{Var}(X) = \operatorname{Cov}(X) = \operatorname{Cov}(X, X)$</p>
 
 <div class="horizontal-rule"></div>
-<h2> Dependency for: </h2>
-<ol class="deplist">
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/linearity-of-expec.html">
-        <span class="deptitle">
-        Linearity of expectation</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/covariance.html">
-        <span class="deptitle">
-        Covariance of 2 random variables</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cond-expec.html">
-        <span class="deptitle">
-        Conditional expectation</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/chernoff-bound.html">
-        <span class="deptitle">
-        Chernoff bound</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/variance.html">
-        <span class="deptitle">
-        Variance of a random variable</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/indep-prod-expec.html">
-        <span class="deptitle">
-        Expectation of product of independent random variables</span>
-<span class="doc-status">(incomplete)</span>    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/normal-distr.html">
-        <span class="deptitle">
-        Normal distribution</span>
-    </a>
-    </li>
-</ol>
+<h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul><li>Depth: 6</li><li>Number of transitive dependencies: 17</li></ul>
+<ul><li>Depth: 10</li><li>Number of transitive dependencies: 23</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -132,6 +68,9 @@ Here $f_X$ is the probability density function of $X$.</li>
     </li>
     <li>
     <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/measure-theory/linearity-of-lebesgue-integral</span>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra.html">
@@ -209,6 +148,36 @@ Here $f_X$ is the probability density function of $X$.</li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
         <span class="deptitle">
         Random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/expected-value.html">
+        <span class="deptitle">
+        Expected value of a random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/linearity-of-expec.html">
+        <span class="deptitle">
+        Linearity of expectation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/linearity-of-expec-for-matrices.html">
+        <span class="deptitle">
+        Linearity of expectation for matrices</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/covariance.html">
+        <span class="deptitle">
+        Covariance of 2 random variables</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cross-covariance-matrix.html">
+        <span class="deptitle">
+        Cross-covariance matrix</span>
     </a>
     </li>
 </ol>

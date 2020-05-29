@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Multivariate normal distribution - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" type="text" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Multivariate normal distribution </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
+        <span class="deptitle">
+        Random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/normal-distr.html">
+        <span class="deptitle">
+        Normal distribution</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var-ind.html">
+        <span class="deptitle">
+        Independence of random variables</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/distr-of-sum-of-rand-vars.html">
+        <span class="deptitle">
+        Sum of independent normal random variables is normal</span>
+    </a>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/probability/variance-of-affine-form-of-matrix</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/linearity-of-expec-for-matrices.html">
+        <span class="deptitle">
+        Linearity of expectation for matrices</span>
+    </a>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/probability/var-matrix-is-psd</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/probability/moment-generating-function</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/probability/mgf-gives-distr</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/probability/normal-distribution/mgf</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity.html">
+        <span class="deptitle">
+        Identity matrix</span>
+    </a>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/linear-algebra/matrices/sqrt-of-symm-matrix</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-inv.html">
+        <span class="deptitle">
+        Full-rank square matrix is invertible</span>
+    </a>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/linear-algebra/matrices/psd-full-rank</span>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $X = [X_1, X_2, \ldots, X_n]$ and $Z = [Z_1, Z_2, \ldots, Z_k]$
+be sequences of random variables.
+$\newcommand{\E}{\operatorname{E}}$
+$\newcommand{\Var}{\operatorname{Var}}$
+$\newcommand{\Cov}{\operatorname{Cov}}$</p>
+<p>$Z$ is said to follow the standard multivariate normal distribution
+(or more simply, $Z$ is standard normal)
+iff all $Z_i$ are pairwise independent and each $Z_i \sim \mathcal{N}(0, 1)$.
+There is a unique standard multivariate normal distribution
+because there is a unique probability density associated with it:
+$f_Z(z) = \prod_{i=1}^n \phi(z_i)$.
+This is because the joint probability density of independent random
+variables is the product of the probability densities of the components.</p>
+<p>$\E(Z) = 0$.
+When $i \neq j$, $\Var(Z)_{i, j} = \Cov(Z_i, Z_j) = 0$.
+$\Var(Z)_{i, i} = \Var(Z_i) = 1$.
+Therefore, $\Var(Z) = I$.</p>
+<p>There is a certain class of probability distributions called multivariate normal distributions.
+$X$ is said to follow a multivariate normal distribution
+(or more simply, $X$ is normal) iff
+\[ \forall a \in \mathbb{R}^n, \exists (\mu, \sigma), a^TX \sim \mathcal{N}(\mu, \sigma^2) \]</p>
+<p>For a $k$-by-$n$ matrix $A$, $X$ is said to be $(\mu, A)$-normal iff
+$\exists$ a standard multivariate normal random variable $Z$ such that $X = \mu + AZ$.</p>
+<p>We can prove that $X$ is normal iff
+$\exists \mu \in \mathbb{R}^n, \exists A \in \mathbb{R}^{k \times n}$
+such that $X$ is $(\mu, A)$-normal.
+Therefore, $(\mu, A)$-normality can be used as an alternative definition
+of the class of multivariate normal distributions.</p>
+<p>If $X$ is $(\mu, A)$-normal, then $\E(X) = \mu$ and $\Var(X) = AA^T$.
+We'll also prove that if $X$ is $(\mu, A)$-normal, then the probability distribution of $X$
+is uniquely determined by $\mu$ and $AA^T$.
+Therefore, a multivariate normal distribution is uniquely defined
+by its mean $\mu$ and covariance matrix $\Sigma$.
+Denote this distribution by $\mathcal{N}(\mu, \Sigma)$.
+The standard normal distribution is therefore, $\mathcal{N}(0, I)$.</p>
+<p>This finally gives us that $X \sim \mathcal{N}(\mu, \Sigma)$ iff
+\[ \exists A \in \mathbb{R}^{n \times k}, \exists Z \sim \mathcal{N}(0, I), X = \mu + AZ \]</p>
+<p>When $\Sigma$ is positive definite, $X \sim \mathcal{N}(\mu, \Sigma)$ has a density function given by
+\[ f_X(x) = \frac{1}{\sqrt{(2\pi)^k |\Sigma|}}
+\exp\left( -\frac{1}{2} (x-\mu)^T \Sigma^{-1} (x-\mu) \right) \]</p>
+<h2>$\E(X)$ and $\Var(X)$</h2>
+<p>Suppose $X$ is $(\mu, A)$-normal.
+\[ \E(X) = \E(\mu + AZ) = \mu + A\E(Z) = \mu \]
+\[ \Var(X) = \Var(\mu + AZ) = A\Var(Z)A^T = AA^T \]</p>
+<h2>Proof that $(\mu, A)$-normal iff normal</h2>
+<p>Suppose $X$ is $(\mu, A)$-normal, where $A \in \mathbb{R}^{n \times k}$.
+So $X = \mu + AZ$, where $Z$ is standard normal.</p>
+<p>Let $b = A^Ta$. Then $a^TX = a^T\mu + b^TZ$
+Since $b^TZ$ is a linear combination of standard normal variables,
+$b^TZ \sim \mathcal{N}(0, b^Tb)$.
+So, $a^TX \sim \mathcal{N}(a^T\mu, a^TAA^Ta)$.</p>
+<p>Since $\forall a \in \mathbb{R}^n, a^TX$ is normal, $X$ is normal.</p>
+<p>The proof that normal implies $(\mu, A)$-normal can be found in
+theorem 1 in <a href="http://www2.stat.duke.edu/~st118/sta732/mvnormal.pdf">http://www2.stat.duke.edu/~st118/sta732/mvnormal.pdf</a>.
+The proof uses these lemmas/definitions:</p>
+<ul>
+<li>moment generating functions for vector-valued random variables.</li>
+<li>moment generating function uniquely determines probability distribution.</li>
+<li>moment generating function of univariate normal distribution.</li>
+<li>covariance matrix is positive semidefinite.</li>
+<li>A PSD matrix $B$ can be expressed as $B = CC^T$.</li>
+<li>$\Var(PX + Q) = P\Var(X)P^T$.</li>
+<li>$(\mu, A)$-normal implies normal.</li>
+</ul>
+<p>The theorem above also proves that if $X$ is $(\mu, A)$-normal,
+the moment generating function of $X$ depends only on $\mu$ and $AA^T$,
+and that $\E(X) = \mu$ and $\Var(X) = AA^T$.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/std-normal-vector-on-vector-space.html">
+        <span class="deptitle">
+        Standard normal random vector on vector space</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 11</li><li>Number of transitive dependencies: 67</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/analysis/topological-space</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/countable-set</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/linear-algebra/matrices/gauss-jordan-algo</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/equivalence-relation</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/analysis/exponential-grows-superpolynomially</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/analysis/integration-by-parts</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/linear-algebra/matrices/psd-full-rank</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/linear-algebra/matrices/sqrt-of-symm-matrix</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/probability/normal-distribution/mgf</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/probability/mgf-gives-distr</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/probability/moment-generating-function</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/probability/var-matrix-is-psd</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/probability/variance-of-affine-form-of-matrix</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/measure-theory/lebesgue-integral</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/measure-theory/linearity-of-lebesgue-integral</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra.html">
+        <span class="deptitle">
+        σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/generated-sigma-algebra.html">
+        <span class="deptitle">
+        Generated σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/borel-algebra.html">
+        <span class="deptitle">
+        Borel algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measurable-func.html">
+        <span class="deptitle">
+        Measurable function</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/real-borel-algebra-generators.html">
+        <span class="deptitle">
+        Generators of the real Borel algebra</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measure.html">
+        <span class="deptitle">
+        Measure</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra-closed-under-intersection.html">
+        <span class="deptitle">
+        σ-algebra is closed under countable intersections</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+        <span class="deptitle">
+        Group</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+        <span class="deptitle">
+        Ring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/polynomial.html">
+        <span class="deptitle">
+        Polynomial</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/intdom.html">
+        <span class="deptitle">
+        Integral Domain</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/compare-coeff-disjoint-var.html">
+        <span class="deptitle">
+        Comparing coefficients of a polynomial with disjoint variables</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+        <span class="deptitle">
+        Field</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+        <span class="deptitle">
+        Vector Space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html">
+        <span class="deptitle">
+        Semiring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+        <span class="deptitle">
+        Matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/stacking.html">
+        <span class="deptitle">
+        Stacking</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/system-of-linear-equations.html">
+        <span class="deptitle">
+        System of linear equations</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/product.html">
+        <span class="deptitle">
+        Product of stacked matrices</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/mult-assoc.html">
+        <span class="deptitle">
+        Matrix multiplication is associative</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rref.html">
+        <span class="deptitle">
+        Reduced Row Echelon Form (RREF)</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity.html">
+        <span class="deptitle">
+        Identity matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inverse.html">
+        <span class="deptitle">
+        Inverse of a matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inverse-of-product.html">
+        <span class="deptitle">
+        Inverse of product</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-square-rref-is-identity.html">
+        <span class="deptitle">
+        Full-rank square matrix in RREF is the identity matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-space.html">
+        <span class="deptitle">
+        Row space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop.html">
+        <span class="deptitle">
+        Elementary row operation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop-inv.html">
+        <span class="deptitle">
+        Every elementary row operation has a unique inverse</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop-matrix.html">
+        <span class="deptitle">
+        Elementary row operation is matrix pre-multiplication</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv.html">
+        <span class="deptitle">
+        Row equivalence of matrices</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv-matrices-have-same-row-space.html">
+        <span class="deptitle">
+        Row equivalent matrices have the same row space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/unique-rref.html">
+        <span class="deptitle">
+        RREF is unique</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rank.html">
+        <span class="deptitle">
+        Rank of a matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv-matrix.html">
+        <span class="deptitle">
+        Row equivalence matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/row-equiv-have-same-solutions.html">
+        <span class="deptitle">
+        Equations with row equivalent matrices have the same solution set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/rank-homogenous.html">
+        <span class="deptitle">
+        Rank of a homogenous system of linear equations</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-inv.html">
+        <span class="deptitle">
+        Full-rank square matrix is invertible</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/probability.html">
+        <span class="deptitle">
+        Probability</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cond-prob.html">
+        <span class="deptitle">
+        Conditional probability</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
+        <span class="deptitle">
+        Random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/expected-value.html">
+        <span class="deptitle">
+        Expected value of a random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/distr-of-sum-of-rand-vars.html">
+        <span class="deptitle">
+        Distribution of sum of random variables</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/ind-events.html">
+        <span class="deptitle">
+        Independence of events</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/ind-of-comp-events.html">
+        <span class="deptitle">
+        Independence of composite events</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var-ind.html">
+        <span class="deptitle">
+        Independence of random variables</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/linearity-of-expec.html">
+        <span class="deptitle">
+        Linearity of expectation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/variance.html">
+        <span class="deptitle">
+        Variance of a random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/linearity-of-expec-for-matrices.html">
+        <span class="deptitle">
+        Linearity of expectation for matrices</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/analysis/gaussian-integral.html">
+        <span class="deptitle">
+        Gaussian integral</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/normal-distr.html">
+        <span class="deptitle">
+        Normal distribution</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/distr-of-sum-of-rand-vars.html">
+        <span class="deptitle">
+        Sum of independent normal random variables is normal</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

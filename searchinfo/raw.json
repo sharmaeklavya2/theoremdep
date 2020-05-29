@@ -2081,6 +2081,13 @@
 },
 {
 "type": "theorem",
+"title": "Orthonormal basis change matrix",
+"description": "Let U and V be 2 orthonormal bases. Then the basis change matrix from U to V is orthogonal.",
+"uci": "/linear-algebra/inner-product-spaces/basis-changer",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/basis-changer.html"
+},
+{
+"type": "theorem",
 "title": "RREF([A|I]) = [I|inv(A)] iff A is invertible",
 "description": "This is an algorithm for finding the inverse of a matrix by calculating RREF.",
 "uci": "/linear-algebra/matrices/rref-inv",
@@ -2858,6 +2865,32 @@
 },
 {
 "type": "theorem",
+"title": "Linearity of expectation for matrices",
+"description": "If A is a matrix and X is a random matrix, then E(AX) = AE(X) and E(XA) = E(X)A.",
+"uci": "/probability/linearity-of-expec-for-matrices",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/linearity-of-expec-for-matrices.html"
+},
+{
+"type": "theoremdef",
+"title": "Covariance of 2 random variables",
+"description": "Cov(X, Y) = E((X - E(X))(Y - E(Y))).",
+"uci": "/probability/covariance",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/covariance.html"
+},
+{
+"type": "theoremdef",
+"title": "Cross-covariance matrix",
+"uci": "/probability/cross-covariance-matrix",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cross-covariance-matrix.html"
+},
+{
+"type": "def",
+"title": "Covariance matrix",
+"uci": "/probability/covariance-matrix",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/covariance-matrix.html"
+},
+{
+"type": "theorem",
 "title": "Var(aX + b) = a^2 Var(X)",
 "keywords": [
 "variance",
@@ -2901,6 +2934,18 @@
 "title": "Sum of independent normal random variables is normal",
 "uci": "/probability/normal-distr/distr-of-sum-of-rand-vars",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/distr-of-sum-of-rand-vars.html"
+},
+{
+"type": "theoremdef",
+"title": "Multivariate normal distribution",
+"uci": "/probability/normal-distr/multivariate",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/multivariate.html"
+},
+{
+"type": "theoremdef",
+"title": "Standard normal random vector on vector space",
+"uci": "/probability/normal-distr/std-normal-vector-on-vector-space",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/std-normal-vector-on-vector-space.html"
 },
 {
 "type": "def",
