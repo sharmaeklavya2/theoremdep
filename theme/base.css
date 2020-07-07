@@ -145,3 +145,6 @@ pre > code, code {
 .cite-ref{
     font-family: monospace;
 }
+.invisible {
+    display: none;
+}
