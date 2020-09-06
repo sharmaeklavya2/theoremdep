@@ -1,9 +1,32 @@
+body {
+    color: rgb(50, 50, 50);
+    --nav-bgcolor-lo: rgb(0, 0, 0, 0.05);
+    --nav-bgcolor: rgb(0, 0, 0, 0.1);
+    --nav-bgcolor-hi: rgb(0, 0, 0, 0.15);
+    --nav-bgcolor-hi2: rgb(0, 0, 0, 0.2);
+    --my-green: darkgreen;
+}
+@media (prefers-color-scheme: dark) {
+    body, #searchbox {
+        background-color: rgb(27, 30, 32);
+        color: rgb(210, 210, 210);
+    }
+    body {
+        --nav-bgcolor-lo: rgb(255, 255, 255, 0.05);
+        --nav-bgcolor: rgb(255, 255, 255, 0.1);
+        --nav-bgcolor-hi: rgb(255, 255, 255, 0.15);
+        --nav-bgcolor-hi2: rgb(255, 255, 255, 0.2);
+        --my-green: green;
+    }
+    a {color: rgb(65, 175, 235);}
+    a:visited {color: rgb(150, 100, 230);}
+}
+
 html {
     font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Open Sans", "Helvetica Neue", sans-serif;
 }
 body {
     margin: 0;
-    color: #202020;
     line-height: 1.5;
     font-size: 1.1em;
 }
@@ -11,7 +34,7 @@ body {
     padding: 0 2rem 2rem 2rem;
 }
 nav {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--nav-bgcolor);
     display: flex;
     justify-content: space-between;
 }
@@ -38,14 +61,14 @@ nav #searchbox, nav #searchbutton {
     border: none;
 }
 #searchbutton:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--nav-bgcolor);
 }
 #searchbutton:active {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--nav-bgcolor-hi2);
 }
 #searchbox {
     flex: 1;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--nav-bgcolor);
     box-sizing: border-box;
     font-size: 1em;
     padding: 0.2rem 0.5rem;
@@ -97,7 +120,7 @@ pre > code, code {
 }
 .horizontal-rule {
     margin: 1em 0;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--nav-bgcolor);
 }
 .text-danger { color: #dc3545; }
 .text-warning { color: #ffc107; }
@@ -111,14 +134,14 @@ pre > code, code {
 }
 .deplist .reason {
     margin-left: 1em;
-    color: rgba(0, 0, 0, 0, 0.4);
+    color: rgb(128, 128, 128);
     font-size: 0.8em;
 }
 .no-deps {
     font-size: 1em;
 }
 .tree-collapse-js .index-heading:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: var(--nav-bgcolor-lo);
     cursor: pointer;
 }
 .collapsor-tree-node::after {
@@ -129,16 +152,16 @@ pre > code, code {
 }
 .deps-status, .doc-status {
     font-size: 80%;
-    color: rgba(0, 0, 0, 0.5);
+    color: rgb(128, 128, 128);
 }
 .citation {
     margin: 0.5em 0 0.5em 0;
 }
 .citation:target {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--nav-bgcolor);
 }
 .citation .cite-name {
-    color: darkgreen;
+    color: var(--my-green);
     font-family: monospace;
     font-size: 0.8em;
 }

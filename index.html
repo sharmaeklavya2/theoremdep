@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
 <title>TheoremDep</title>
 <meta name="description" content="Track dependencies between theorems." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
@@ -18,15 +19,15 @@ h1, .description {text-align: center;}
 .button {
     display: block;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--nav-bgcolor);
     padding: 0.15em;
     border-radius: 0.1em;
 }
 .button:hover {
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: var(--nav-bgcolor-hi);
 }
 .button:active {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--nav-bgcolor-hi2);
 }
 </style>
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
