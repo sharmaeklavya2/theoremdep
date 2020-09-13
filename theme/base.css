@@ -55,10 +55,12 @@ nav #searchbox, nav #searchbutton {
     display: block;
 }
 #searchbutton {
+    width: 1.6em;
     font-size: 1.6em;
     padding: 0.2rem;
     background-color: rgba(0, 0, 0, 0);
     border: none;
+    cursor: pointer;
 }
 #searchbutton:hover {
     background-color: var(--nav-bgcolor);
