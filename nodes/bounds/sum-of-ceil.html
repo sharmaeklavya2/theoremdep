@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>Sum of ceilings - TheoremDep</title>
+<meta name="description" content="∑⌈aᵢ⌉ ≤ ⌈∑aᵢ⌉ + (n-1)." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" aria-label="Search" type="text" autocomplete="off" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Sum of ceilings </h1>
+<h2 class="no-deps"> Dependencies:
+None </h2>
+
+<div class="horizontal-rule"></div>
+<p>Let $n \ge 1$ and $a_1, a_2, \ldots, a_n \in \mathbb{R}$. Then
+$\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}$
+\[ \sum_{i=1}^n \ceil{a_i} \le \ceil{\sum_{i=1}^n a_i} + (n-1) \]</p>
+<h2>Proof</h2>
+<p>We'll prove this by induction.</p>
+<p>Let $P(k): \sum_{i=1}^k \ceil{a_i} \le \ceil{\sum_{i=1}^k a_i} + (k-1)$.</p>
+<p>Base case: $P(1)$ holds trivially. $P(2)$ holds because
+\begin{align}
+&amp; a_1 \in (\ceil{a_1}-1, \ceil{a_1}] \textrm{ and }
+    a_2 \in (\ceil{a_2}-1, \ceil{a_2}]
+\\ &amp;\implies a_1 + a_2 \in
+    (\ceil{a_1} + \ceil{a_2} - 2, \ceil{a_1} + \ceil{a_2}]
+\\ &amp;\implies \ceil{a_1 + a_2} \in
+    \{\ceil{a_1} + \ceil{a_2} - 1, \ceil{a_1} + \ceil{a_2}\}
+\\ &amp;\implies \ceil{a_1} + \ceil{a_2} \le \ceil{a_1 + a_2} + 1
+\end{align}</p>
+<p>Inductive step: Assume $P(k)$ holds for $2 \le k \le n-1$.
+\begin{align}
+\sum_{i=1}^{k+1} \ceil{a_i}
+&amp;\le \left(\ceil{\sum_{i=1}^k a_i} + (k-1)\right) + \ceil{a_{k+1}}
+\tag{by $P(k)$}
+\\ &amp;= \left(\ceil{\sum_{i=1}^k a_i} + \ceil{a_{k+1}}\right) + (k-1)
+\le \ceil{\sum_{i=1}^{k+1} a_i} + k  \tag{by $P(2)$}
+\end{align}
+Since $P(1)$, $P(2)$ and $\forall 2 \le k &lt; n, P(k) \implies P(k+1)$, we get $P(n)$.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 0</li><li>Number of transitive dependencies: 0</li></ul>
+
+<h2 class="no-deps"> Transitive dependencies: None </h2>
+
+</div>
+</body>
+</html>

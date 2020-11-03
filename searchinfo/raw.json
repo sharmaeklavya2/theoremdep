@@ -2977,6 +2977,13 @@
 },
 {
 "type": "theorem",
+"title": "Sum of ceilings",
+"description": "\u2211\u2308a\u1d62\u2309 \u2264 \u2308\u2211a\u1d62\u2309 + (n-1).",
+"uci": "/bounds/sum-of-ceil",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/sum-of-ceil.html"
+},
+{
+"type": "theorem",
 "title": "Simple bound on harmonic sum",
 "description": "ln(n) + 1/n \u2264 H(n) \u2264 ln(n) + 1",
 "uci": "/bounds/simple-harmonic-bound",
