@@ -2942,10 +2942,16 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/distr-of-sum-of-rand-vars.html"
 },
 {
+"type": "def",
+"title": "Standard multivariate normal distribution",
+"uci": "/probability/normal-distr/std-multivariate",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/std-multivariate.html"
+},
+{
 "type": "theoremdef",
-"title": "Multivariate normal distribution",
-"uci": "/probability/normal-distr/multivariate",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/multivariate.html"
+"title": "General multivariate normal distribution",
+"uci": "/probability/normal-distr/gen-multivariate",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/gen-multivariate.html"
 },
 {
 "type": "theoremdef",

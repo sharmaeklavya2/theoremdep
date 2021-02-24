@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Multivariate normal distribution - TheoremDep</title>
+<title>General multivariate normal distribution - TheoremDep</title>
 <meta name="description" content="Track dependencies between theorems." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
@@ -26,20 +26,14 @@
 </nav>
 
 <div id="main">
-<h1> Multivariate normal distribution </h1>
+<h1> General multivariate normal distribution </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/std-multivariate.html">
         <span class="deptitle">
-        Random variable</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/normal-distr.html">
-        <span class="deptitle">
-        Normal distribution</span>
+        Standard multivariate normal distribution</span>
     </a>
     </li>
     <li>
@@ -96,29 +90,18 @@
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $X = [X_1, X_2, \ldots, X_n]$ and $Z = [Z_1, Z_2, \ldots, Z_k]$
-be sequences of random variables.
+<p><span class="invisible">
 $\newcommand{\E}{\operatorname{E}}$
 $\newcommand{\Var}{\operatorname{Var}}$
-$\newcommand{\Cov}{\operatorname{Cov}}$</p>
-<p>$Z$ is said to follow the standard multivariate normal distribution
-(or more simply, $Z$ is standard normal)
-iff all $Z_i$ are pairwise independent and each $Z_i \sim \mathcal{N}(0, 1)$.
-There is a unique standard multivariate normal distribution
-because there is a unique probability density associated with it:
-$f_Z(z) = \prod_{i=1}^n \phi(z_i)$.
-This is because the joint probability density of independent random
-variables is the product of the probability densities of the components.</p>
-<p>$\E(Z) = 0$.
-When $i \neq j$, $\Var(Z)_{i, j} = \Cov(Z_i, Z_j) = 0$.
-$\Var(Z)_{i, i} = \Var(Z_i) = 1$.
-Therefore, $\Var(Z) = I$.</p>
-<p>There is a certain class of probability distributions called multivariate normal distributions.
+$\newcommand{\Cov}{\operatorname{Cov}}$
+</span></p>
+<p>There is a class of probability distributions called multivariate normal distributions.
+Let $X = [X_1, X_2, \ldots, X_n]$ be a sequence of random variables.
 $X$ is said to follow a multivariate normal distribution
 (or more simply, $X$ is normal) iff
 \[ \forall a \in \mathbb{R}^n, \exists (\mu, \sigma), a^TX \sim \mathcal{N}(\mu, \sigma^2) \]</p>
 <p>For a $k$-by-$n$ matrix $A$, $X$ is said to be $(\mu, A)$-normal iff
-$\exists$ a standard multivariate normal random variable $Z$ such that $X = \mu + AZ$.</p>
+$\exists Z \sim \mathcal{N}(0, 1)^k$ such that $X = \mu + AZ$.</p>
 <p>We can prove that $X$ is normal iff
 $\exists \mu \in \mathbb{R}^n, \exists A \in \mathbb{R}^{k \times n}$
 such that $X$ is $(\mu, A)$-normal.
@@ -132,7 +115,8 @@ by its mean $\mu$ and covariance matrix $\Sigma$.
 Denote this distribution by $\mathcal{N}(\mu, \Sigma)$.
 The standard normal distribution is therefore, $\mathcal{N}(0, I)$.</p>
 <p>This finally gives us that $X \sim \mathcal{N}(\mu, \Sigma)$ iff
-\[ \exists A \in \mathbb{R}^{n \times k}, \exists Z \sim \mathcal{N}(0, I), X = \mu + AZ \]</p>
+\[ \exists A, (\Sigma = AA^T \textrm{ and }
+\exists Z \sim \mathcal{N}(0, I), X = \mu + AZ) \]</p>
 <p>When $\Sigma$ is positive definite, $X \sim \mathcal{N}(\mu, \Sigma)$ has a density function given by
 \[ f_X(x) = \frac{1}{\sqrt{(2\pi)^k |\Sigma|}}
 \exp\left( -\frac{1}{2} (x-\mu)^T \Sigma^{-1} (x-\mu) \right) \]</p>
@@ -165,17 +149,9 @@ the moment generating function of $X$ depends only on $\mu$ and $AA^T$,
 and that $\E(X) = \mu$ and $\Var(X) = AA^T$.</p>
 
 <div class="horizontal-rule"></div>
-<h2> Dependency for: </h2>
-<ol class="deplist">
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/std-normal-vector-on-vector-space.html">
-        <span class="deptitle">
-        Standard normal random vector on vector space</span>
-    </a>
-    </li>
-</ol>
+<h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul><li>Depth: 11</li><li>Number of transitive dependencies: 67</li></ul>
+<ul><li>Depth: 12</li><li>Number of transitive dependencies: 71</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -191,12 +167,6 @@ and that $\E(X) = \mu$ and $\Var(X) = AA^T$.</p>
     </li>
     <li>
     <span class="deptitleuci missing">/sets-and-relations/equivalence-relation</span>
-    </li>
-    <li>
-    <span class="deptitleuci missing">/analysis/exponential-grows-superpolynomially</span>
-    </li>
-    <li>
-    <span class="deptitleuci missing">/analysis/integration-by-parts</span>
     </li>
     <li>
     <span class="deptitleuci missing">/linear-algebra/matrices/psd-full-rank</span>
@@ -218,6 +188,12 @@ and that $\E(X) = \mu$ and $\Var(X) = AA^T$.</p>
     </li>
     <li>
     <span class="deptitleuci missing">/probability/rand-vars/variance-of-affine-form-of-matrix</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/analysis/exponential-grows-superpolynomially</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/analysis/integration-by-parts</span>
     </li>
     <li>
     <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
@@ -517,6 +493,24 @@ and that $\E(X) = \mu$ and $\Var(X) = AA^T$.</p>
     </a>
     </li>
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/covariance.html">
+        <span class="deptitle">
+        Covariance of 2 random variables</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/cross-covariance-matrix.html">
+        <span class="deptitle">
+        Cross-covariance matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/covariance-matrix.html">
+        <span class="deptitle">
+        Covariance matrix</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/analysis/gaussian-integral.html">
         <span class="deptitle">
         Gaussian integral</span>
@@ -532,6 +526,12 @@ and that $\E(X) = \mu$ and $\Var(X) = AA^T$.</p>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/distr-of-sum-of-rand-vars.html">
         <span class="deptitle">
         Sum of independent normal random variables is normal</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/std-multivariate.html">
+        <span class="deptitle">
+        Standard multivariate normal distribution</span>
     </a>
     </li>
 </ol>
