@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Linearity of expectation for matrices - TheoremDep</title>
-<meta name="description" content="If A is a matrix and X is a random matrix, then E(AX) = AE(X) and E(XA) = E(X)A." />
+<title>Variance of a random variable - TheoremDep</title>
+<meta name="description" content="The variance of a random variable X is Var(X) = E((X-E(X))^2)." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,7 +26,7 @@
 </nav>
 
 <div id="main">
-<h1> Linearity of expectation for matrices </h1>
+<h1> Variance of a random variable </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
@@ -34,6 +34,12 @@
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var.html">
         <span class="deptitle">
         Random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/expected-value.html">
+        <span class="deptitle">
+        Expected value of a random variable</span>
     </a>
     </li>
     <li>
@@ -45,43 +51,46 @@
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $X_1, X_2, \ldots, X_n$ be random matrices. Then
+<p>Let $X$ be a real random variable.
 $\newcommand{\E}{\operatorname{E}}$
-\[ \E\left(\sum_{i=1}^n X_i\right) = \sum_{i=1}^n \E(X_i) \]
-This follows simply from linearity of expectation for real-valued random variables
-and that $\E(X)_{i, j} = \E(X_{i, j})$.</p>
-<p>Let $A$ be a $m$-by-$p$ matrix and $X$ be a random $p$-by-$n$ matrix. Then $\E(AX) = A\E(X)$.</p>
-<p>Let $A$ be a $p$-by-$n$ matrix and $X$ be a random $m$-by-$p$ matrix. Then $\E(XA) = \E(X)A$.</p>
-<p>The above results are collectively called 'linearity of expectation for matrices'.</p>
+$\newcommand{\Var}{\operatorname{Var}}$
+Then the variance of $X$, denoted as $\Var(X)$,
+is $\E((X-\E(X))^2)$.</p>
+<p>An equivalent definition is $\Var(X) = \E(X^2) - \E(X)^2$.</p>
 <h2>Proof</h2>
 <p>\begin{align}
-\E(AX)[i, j] &amp;= \E((AX)[i, j])
-= \E\left(\sum_{k=1}^p A[i, k]X[k, j]\right)
-\\ &amp;= \sum_{k=1}^p A[i, k]\E(X)[k, j]
-\tag{by linearity of expectation}
-= (A\E(X))[i, j]
-\end{align}</p>
-<p>\begin{align}
-\E(XA)[i, j] &amp;= \E((XA)[i, j])
-= \E\left(\sum_{k=1}^p X[i, k]A[k, j]\right)
-\\ &amp;= \sum_{k=1}^p \E(X)[i, k]A[k, j]
-\tag{by linearity of expectation}
-= (\E(X)A)[i, j]
+\Var(X) &amp;= \E((X-\E(X))^2)
+\\ &amp;= \E(X^2 - 2\E(X)X + \E(X)^2)
+\\ &amp;= \E(X^2) - 2\E(X)\E(X) + \E(X)^2
+\tag{linearity of expectation}
+\\ &amp;= \E(X^2) - \E(X)^2
 \end{align}</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/variance/cross-covariance-matrix.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/conc-ineq/chebyshev.html">
         <span class="deptitle">
-        Cross-covariance matrix</span>
+        Chebyshev's inequality</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/gen-multivariate.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/variance/var-of-sum-of-ind.html">
         <span class="deptitle">
-        General multivariate normal distribution</span>
+        Variance of sum of independent random variables</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/variance/variance-of-affine.html">
+        <span class="deptitle">
+        Var(aX + b) = a^2 Var(X)</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/normal-distr.html">
+        <span class="deptitle">
+        Normal distribution</span>
     </a>
     </li>
 </ol>

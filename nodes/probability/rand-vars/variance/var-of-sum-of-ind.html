@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Linearity of expectation for matrices - TheoremDep</title>
-<meta name="description" content="If A is a matrix and X is a random matrix, then E(AX) = AE(X) and E(XA) = E(X)A." />
+<title>Variance of sum of independent random variables - TheoremDep</title>
+<meta name="description" content="If X_1, X_2, ..., X_n are independent random variables, then Var(X_1 + X_2 + ... + X_n) = Var(X_1) + Var(X_2) + ... + Var(X_n)." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,15 +26,21 @@
 </nav>
 
 <div id="main">
-<h1> Linearity of expectation for matrices </h1>
+<h1> Variance of sum of independent random variables </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/variance/variance.html">
         <span class="deptitle">
-        Random variable</span>
+        Variance of a random variable</span>
     </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var-ind.html">
+        <span class="deptitle">
+        Independence of random variables</span>
+<span class="doc-status">(incomplete)</span>    </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/linearity-of-expec.html">
@@ -42,51 +48,47 @@
         Linearity of expectation</span>
     </a>
     </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/indep-prod-expec.html">
+        <span class="deptitle">
+        Expectation of product of independent random variables</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $X_1, X_2, \ldots, X_n$ be random matrices. Then
+<p><span class="invisible">
+$\newcommand{\Var}{\operatorname{Var}}$
 $\newcommand{\E}{\operatorname{E}}$
-\[ \E\left(\sum_{i=1}^n X_i\right) = \sum_{i=1}^n \E(X_i) \]
-This follows simply from linearity of expectation for real-valued random variables
-and that $\E(X)_{i, j} = \E(X_{i, j})$.</p>
-<p>Let $A$ be a $m$-by-$p$ matrix and $X$ be a random $p$-by-$n$ matrix. Then $\E(AX) = A\E(X)$.</p>
-<p>Let $A$ be a $p$-by-$n$ matrix and $X$ be a random $m$-by-$p$ matrix. Then $\E(XA) = \E(X)A$.</p>
-<p>The above results are collectively called 'linearity of expectation for matrices'.</p>
+</span>
+Let $X_1, X_2, \ldots, X_n$ be independent random variables. Then
+\[ \Var\left(\sum_{i=1}^n X_i\right) = \sum_{i=1}^n \Var(X_i) \]</p>
 <h2>Proof</h2>
-<p>\begin{align}
-\E(AX)[i, j] &amp;= \E((AX)[i, j])
-= \E\left(\sum_{k=1}^p A[i, k]X[k, j]\right)
-\\ &amp;= \sum_{k=1}^p A[i, k]\E(X)[k, j]
-\tag{by linearity of expectation}
-= (A\E(X))[i, j]
+<p>This is trivially true when $n$ is 0 or 1.</p>
+<p>For $n = 2$, we have
+\begin{align}
+\Var(X_1 + X_2) &amp;= \E((X_1 + X_2)^2) - (\E(X_1 + X_2))^2
+\\ &amp;= (\E(X_1^2) + \E(X_2^2) + 2\E(X_1X_2))
+\\ &amp;\qquad - (\E(X_1)^2 + \E(X_2)^2 + 2\E(X_1)\E(X_2))
+\tag{linearity of expectation}
+\\ &amp;= \Var(X_1) + \Var(X_2) + 2(\E(X_1X_2) - \E(X_1)\E(X_2))
+\\ &amp;= \Var(X_1) + \Var(X_2)
+\tag{$X_1$ and $X_2$ are independent}
 \end{align}</p>
-<p>\begin{align}
-\E(XA)[i, j] &amp;= \E((XA)[i, j])
-= \E\left(\sum_{k=1}^p X[i, k]A[k, j]\right)
-\\ &amp;= \sum_{k=1}^p \E(X)[i, k]A[k, j]
-\tag{by linearity of expectation}
-= (\E(X)A)[i, j]
+<p>For $n \ge 3$, we can prove by induction.
+\begin{align}
+&amp; \Var\left(\sum_{i=1}^n X_i\right)
+\\ &amp;= \Var\left(\sum_{i=1}^{n-1} X_i\right) + \Var(X_n)
+\tag{using induction hypothesis for $n=2$}
+\\ &amp;= \left(\sum_{i=1}^{n-1} \Var(X_i)\right) + \Var(X_n)
+\tag{using induction hypothesis for $n-1$}
+\\ &amp;= \sum_{i=1}^n \Var(X_i)
 \end{align}</p>
 
 <div class="horizontal-rule"></div>
-<h2> Dependency for: </h2>
-<ol class="deplist">
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/variance/cross-covariance-matrix.html">
-        <span class="deptitle">
-        Cross-covariance matrix</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/gen-multivariate.html">
-        <span class="deptitle">
-        General multivariate normal distribution</span>
-    </a>
-    </li>
-</ol>
+<h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul><li>Depth: 8</li><li>Number of transitive dependencies: 20</li></ul>
+<ul><li>Depth: 9</li><li>Number of transitive dependencies: 26</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -179,6 +181,24 @@ and that $\E(X)_{i, j} = \E(X_{i, j})$.</p>
     </a>
     </li>
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/cond-prob.html">
+        <span class="deptitle">
+        Conditional probability</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/ind-events.html">
+        <span class="deptitle">
+        Independence of events</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/ind-of-comp-events.html">
+        <span class="deptitle">
+        Independence of composite events</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var.html">
         <span class="deptitle">
         Random variable</span>
@@ -191,9 +211,27 @@ and that $\E(X)_{i, j} = \E(X_{i, j})$.</p>
     </a>
     </li>
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var-ind.html">
+        <span class="deptitle">
+        Independence of random variables</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/indep-prod-expec.html">
+        <span class="deptitle">
+        Expectation of product of independent random variables</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/linearity-of-expec.html">
         <span class="deptitle">
         Linearity of expectation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/variance/variance.html">
+        <span class="deptitle">
+        Variance of a random variable</span>
     </a>
     </li>
 </ol>

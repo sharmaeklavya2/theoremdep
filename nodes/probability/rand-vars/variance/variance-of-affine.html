@@ -4,8 +4,9 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Linearity of expectation for matrices - TheoremDep</title>
-<meta name="description" content="If A is a matrix and X is a random matrix, then E(AX) = AE(X) and E(XA) = E(X)A." />
+<title>Var(aX + b) = a^2 Var(X) - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<meta name="keywords" content="variance,affine,linear" />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,14 +27,14 @@
 </nav>
 
 <div id="main">
-<h1> Linearity of expectation for matrices </h1>
+<h1> Var(aX + b) = a^2 Var(X) </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/variance/variance.html">
         <span class="deptitle">
-        Random variable</span>
+        Variance of a random variable</span>
     </a>
     </li>
     <li>
@@ -45,48 +46,20 @@
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $X_1, X_2, \ldots, X_n$ be random matrices. Then
-$\newcommand{\E}{\operatorname{E}}$
-\[ \E\left(\sum_{i=1}^n X_i\right) = \sum_{i=1}^n \E(X_i) \]
-This follows simply from linearity of expectation for real-valued random variables
-and that $\E(X)_{i, j} = \E(X_{i, j})$.</p>
-<p>Let $A$ be a $m$-by-$p$ matrix and $X$ be a random $p$-by-$n$ matrix. Then $\E(AX) = A\E(X)$.</p>
-<p>Let $A$ be a $p$-by-$n$ matrix and $X$ be a random $m$-by-$p$ matrix. Then $\E(XA) = \E(X)A$.</p>
-<p>The above results are collectively called 'linearity of expectation for matrices'.</p>
+<p>Let $X$ be a random variable. Let $a \in \mathbb{R}$ and $b \in \operatorname{support}(X)$.
+Then $\newcommand{\E}{\operatorname{E}}\newcommand{\Var}{\operatorname{Var}}$
+$\Var(aX + b) = a^2\Var(X)$.</p>
 <h2>Proof</h2>
-<p>\begin{align}
-\E(AX)[i, j] &amp;= \E((AX)[i, j])
-= \E\left(\sum_{k=1}^p A[i, k]X[k, j]\right)
-\\ &amp;= \sum_{k=1}^p A[i, k]\E(X)[k, j]
-\tag{by linearity of expectation}
-= (A\E(X))[i, j]
-\end{align}</p>
-<p>\begin{align}
-\E(XA)[i, j] &amp;= \E((XA)[i, j])
-= \E\left(\sum_{k=1}^p X[i, k]A[k, j]\right)
-\\ &amp;= \sum_{k=1}^p \E(X)[i, k]A[k, j]
-\tag{by linearity of expectation}
-= (\E(X)A)[i, j]
-\end{align}</p>
+<p>\[ \Var(aX + b)
+= \E((aX + b - \E(aX + b))^2)
+= \E((aX - a\E(X))^2)
+= a^2\E((X - \E(X))^2)
+= a^2\Var(X) \]</p>
 
 <div class="horizontal-rule"></div>
-<h2> Dependency for: </h2>
-<ol class="deplist">
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/variance/cross-covariance-matrix.html">
-        <span class="deptitle">
-        Cross-covariance matrix</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/gen-multivariate.html">
-        <span class="deptitle">
-        General multivariate normal distribution</span>
-    </a>
-    </li>
-</ol>
+<h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul><li>Depth: 8</li><li>Number of transitive dependencies: 20</li></ul>
+<ul><li>Depth: 9</li><li>Number of transitive dependencies: 21</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -194,6 +167,12 @@ and that $\E(X)_{i, j} = \E(X_{i, j})$.</p>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/linearity-of-expec.html">
         <span class="deptitle">
         Linearity of expectation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/variance/variance.html">
+        <span class="deptitle">
+        Variance of a random variable</span>
     </a>
     </li>
 </ol>
