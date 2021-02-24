@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Sum of independent normal random variables is normal - TheoremDep</title>
-<meta name="description" content="Track dependencies between theorems." />
+<title>Chebyshev's inequality - TheoremDep</title>
+<meta name="description" content="For a real random variable X, Pr(|X - E(X)| ≥ a) ≤ Var(X)/a^2." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,53 +26,48 @@
 </nav>
 
 <div id="main">
-<h1> Sum of independent normal random variables is normal </h1>
+<h1> Chebyshev's inequality </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/normal-distr.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/expected-value.html">
         <span class="deptitle">
-        Normal distribution</span>
+        Expected value of a random variable</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var-ind.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/variance.html">
         <span class="deptitle">
-        Independence of random variables</span>
-<span class="doc-status">(incomplete)</span>    </a>
+        Variance of a random variable</span>
+    </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/distr-of-sum-of-rand-vars.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/conc-ineq/markov.html">
         <span class="deptitle">
-        Distribution of sum of random variables</span>
-<span class="doc-status">(incomplete)</span>    </a>
+        Markov's bound</span>
+    </a>
     </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $X \sim \mathcal{N}(\mu_X, \sigma_X^2)$ and $Y \sim \mathcal{N}(\mu_Y, \sigma_Y^2)$.
-Let $X$ and $Y$ be independent. Let $Z = X + Y$.
-Then $Z \sim \mathcal{N}(\mu_X + \mu_Y, \sigma_X^2 + \sigma_Y^2)$.</p>
-<p>Also, $aX + bY \sim \mathcal{N}(a\mu_X + b\mu_Y, a^2\sigma_X^2 + b^2\sigma_Y^2)$.</p>
+<p><span class="invisible">
+$\newcommand{\E}{\operatorname{E}}$
+$\newcommand{\Var}{\operatorname{Var}}$
+</span>
+Let $X$ be a real-valued random variable and let $a &gt; 0$. Then
+\[ \Pr(|X - \E(X)| \ge a) \le \frac{\Var(X)}{a^2} \]</p>
 <h2>Proof</h2>
-<p><a href="https://en.wikipedia.org/wiki/Sum_of_normally_distributed_random_variables#Proof_using_convolutions">https://en.wikipedia.org/wiki/Sum_of_normally_distributed_random_variables#Proof_using_convolutions</a></p>
-<p>Let $X' = aX$ and $Y' = bY$.
-Then $X' \sim \mathcal{N}(a\mu_X, a^2\sigma_X^2)$ and $Y' \sim \mathcal{N}(b\mu_Y, b^2\sigma_Y^2)$.
-\[ aX + bY = X' + Y' \sim \mathcal{N}(a\mu_X + b\mu_Y, a^2\sigma_X^2 + b^2\sigma_Y^2) \]</p>
+<p>\begin{align}
+\Pr(|X - \E(X)| \ge a) &amp;= \Pr((X - \E(X))^2 \ge a^2)
+\\ &amp;\le \frac{\E((X - \E(X))^2)}{a^2}  \tag{by Markov's bound}
+\\ &amp;= \frac{\Var(X)}{a^2}
+\end{align}</p>
 
 <div class="horizontal-rule"></div>
-<h2> Dependency for: </h2>
-<ol class="deplist">
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/gen-multivariate.html">
-        <span class="deptitle">
-        General multivariate normal distribution</span>
-    </a>
-    </li>
-</ol>
+<h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul><li>Depth: 10</li><li>Number of transitive dependencies: 30</li></ul>
+<ul><li>Depth: 9</li><li>Number of transitive dependencies: 22</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -82,12 +77,6 @@ Then $X' \sim \mathcal{N}(a\mu_X, a^2\sigma_X^2)$ and $Y' \sim \mathcal{N}(b\mu_
     </li>
     <li>
     <span class="deptitleuci missing">/sets-and-relations/countable-set</span>
-    </li>
-    <li>
-    <span class="deptitleuci missing">/analysis/exponential-grows-superpolynomially</span>
-    </li>
-    <li>
-    <span class="deptitleuci missing">/analysis/integration-by-parts</span>
     </li>
     <li>
     <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
@@ -171,24 +160,6 @@ Then $X' \sim \mathcal{N}(a\mu_X, a^2\sigma_X^2)$ and $Y' \sim \mathcal{N}(b\mu_
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/cond-prob.html">
-        <span class="deptitle">
-        Conditional probability</span>
-<span class="doc-status">(incomplete)</span>    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/ind-events.html">
-        <span class="deptitle">
-        Independence of events</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/ind-of-comp-events.html">
-        <span class="deptitle">
-        Independence of composite events</span>
-    </a>
-    </li>
-    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var.html">
         <span class="deptitle">
         Random variable</span>
@@ -199,18 +170,6 @@ Then $X' \sim \mathcal{N}(a\mu_X, a^2\sigma_X^2)$ and $Y' \sim \mathcal{N}(b\mu_
         <span class="deptitle">
         Expected value of a random variable</span>
     </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/distr-of-sum-of-rand-vars.html">
-        <span class="deptitle">
-        Distribution of sum of random variables</span>
-<span class="doc-status">(incomplete)</span>    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var-ind.html">
-        <span class="deptitle">
-        Independence of random variables</span>
-<span class="doc-status">(incomplete)</span>    </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/linearity-of-expec.html">
@@ -225,15 +184,9 @@ Then $X' \sim \mathcal{N}(a\mu_X, a^2\sigma_X^2)$ and $Y' \sim \mathcal{N}(b\mu_
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/analysis/gaussian-integral.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/conc-ineq/markov.html">
         <span class="deptitle">
-        Gaussian integral</span>
-<span class="doc-status">(incomplete)</span>    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/normal-distr.html">
-        <span class="deptitle">
-        Normal distribution</span>
+        Markov's bound</span>
     </a>
     </li>
 </ol>

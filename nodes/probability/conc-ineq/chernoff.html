@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Variance of sum of independent random variables - TheoremDep</title>
-<meta name="description" content="If X_1, X_2, ..., X_n are independent random variables, then Var(X_1 + X_2 + ... + X_n) = Var(X_1) + Var(X_2) + ... + Var(X_n)." />
+<title>Chernoff bound - TheoremDep</title>
+<meta name="description" content="Chernoff bound gives concentration result for the sum of independent bernouilli random variables." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,14 +26,20 @@
 </nav>
 
 <div id="main">
-<h1> Variance of sum of independent random variables </h1>
+<h1> Chernoff bound </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/variance.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var.html">
         <span class="deptitle">
-        Variance of a random variable</span>
+        Random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/distrs/bernoulli.html">
+        <span class="deptitle">
+        Bernoulli random variable</span>
     </a>
     </li>
     <li>
@@ -43,9 +49,15 @@
 <span class="doc-status">(incomplete)</span>    </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/linearity-of-expec.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/expected-value.html">
         <span class="deptitle">
-        Linearity of expectation</span>
+        Expected value of a random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/conc-ineq/markov.html">
+        <span class="deptitle">
+        Markov's bound</span>
     </a>
     </li>
     <li>
@@ -54,41 +66,103 @@
         Expectation of product of independent random variables</span>
 <span class="doc-status">(incomplete)</span>    </a>
     </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/linearity-of-expec.html">
+        <span class="deptitle">
+        Linearity of expectation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/exp-bound.html">
+        <span class="deptitle">
+        Bound on exponential</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/log-bound-2.html">
+        <span class="deptitle">
+        Bound on log 2</span>
+    </a>
+    </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p><span class="invisible">
-$\newcommand{\Var}{\operatorname{Var}}$
+<p>Let $X_1, X_2, \ldots, X_n$
 $\newcommand{\E}{\operatorname{E}}$
-</span>
-Let $X_1, X_2, \ldots, X_n$ be independent random variables. Then
-\[ \Var\left(\sum_{i=1}^n X_i\right) = \sum_{i=1}^n \Var(X_i) \]</p>
+be independent Bernoulli random variables, where $\Pr(X_i=1) = p_i$.</p>
+<p>Let $X = \sum_{i=1}^n X_i$. Let $\mu = \E(X)$. Let $\delta &gt; 0$.</p>
+<p>\[ \Pr(X \ge (1+\delta)\mu)
+\le \left(\frac{e^{\delta}}{(1+\delta)^{1+\delta}}\right)^{\mu}
+\le \exp\left(-\frac{\mu\delta^2}{2+\delta}\right)
+\le \begin{cases}\exp\left( - \frac{\mu\delta^2}{3} \right) &amp; 0 &lt; \delta \le 1
+\\ \exp\left( - \frac{\mu\delta}{3} \right) &amp; \delta \ge 1 \end{cases} \]</p>
+<p>\[ \Pr(X \le (1-\delta)\mu)
+\le \left(\frac{e^{-\delta}}{(1-\delta)^{1-\delta}}\right)^{\mu}
+\le \exp\left(-\frac{\mu\delta^2}{2}\right)
+\quad \textrm{where } \delta &lt; 1 \]</p>
+<p>\[ \Pr(\lvert X - \mu \rvert &gt; \delta\mu)
+\le 2\left(\frac{e^{\delta}}{(1+\delta)^{1+\delta}}\right)^{\mu}
+\le 2\exp\left(-\frac{\mu\delta^2}{3}\right)
+\quad \textrm{where } \delta &lt; 1 \]</p>
 <h2>Proof</h2>
-<p>This is trivially true when $n$ is 0 or 1.</p>
-<p>For $n = 2$, we have
+<p>By linearity of expectation, we get
+\[ \mu = \E(X) = \sum_{i=1}^n \E(X_i) = \sum_{i=1}^n p_i \]
 \begin{align}
-\Var(X_1 + X_2) &amp;= \E((X_1 + X_2)^2) - (\E(X_1 + X_2))^2
-\\ &amp;= (\E(X_1^2) + \E(X_2^2) + 2\E(X_1X_2))
-\\ &amp;\qquad - (\E(X_1)^2 + \E(X_2)^2 + 2\E(X_1)\E(X_2))
-\tag{linearity of expectation}
-\\ &amp;= \Var(X_1) + \Var(X_2) + 2(\E(X_1X_2) - \E(X_1)\E(X_2))
-\\ &amp;= \Var(X_1) + \Var(X_2)
-\tag{$X_1$ and $X_2$ are independent}
+\Pr(e^{tX} \ge e^{ta})
+&amp;\le \frac{\E(e^{tX})}{e^{ta}}  \tag{Markov bound}
+\\ &amp;= e^{-ta}\E\left(\prod_{i=1}^n e^{tX_i}\right)
+\\ &amp;= e^{-ta}\prod_{i=1}^n \E(e^{tX_i})  \tag{$X_i$ are independent}
+\\ &amp;= e^{-ta}\prod_{i=1}^n (1 + p_i(e^t-1))
+\\ &amp;\le e^{-ta}\prod_{i=1}^n e^{p_i(e^t-1)}  \tag{$1+x \le e^x$}
+\\ &amp;= \exp(\mu(e^t-1) - ta)
 \end{align}</p>
-<p>For $n \ge 3$, we can prove by induction.
+<p>Let $t = \ln(1+\delta)$, $a = \mu(1+\delta)$.
+Since $t &gt; 0$, $\Pr(X \ge a) = \Pr(e^{tX} \ge e^{ta})$.
+\[ \Pr(X \ge (1+\delta)\mu) \le \exp(\mu(\delta - (1+\delta)\ln(1+\delta)))
+= \left(\frac{e^{\delta}}{(1+\delta)^{1+\delta}}\right)^{\mu} \]
+Using the bound $\ln(1+\delta) \ge \frac{2\delta}{1+\delta}$, we get
+\[ \Pr(X \ge (1+\delta)\mu) \le \exp\left(-\frac{\mu\delta^2}{2+\delta}\right) \]</p>
+<p>We can further simplify this by considering the cases $\delta \le 1$ and $\delta \ge 1$ separately.
 \begin{align}
-&amp; \Var\left(\sum_{i=1}^n X_i\right)
-\\ &amp;= \Var\left(\sum_{i=1}^{n-1} X_i\right) + \Var(X_n)
-\tag{using induction hypothesis for $n=2$}
-\\ &amp;= \left(\sum_{i=1}^{n-1} \Var(X_i)\right) + \Var(X_n)
-\tag{using induction hypothesis for $n-1$}
-\\ &amp;= \sum_{i=1}^n \Var(X_i)
+&amp; \delta \le 1 \implies 2 + \delta \le 3 \implies \frac{\delta^2}{2+\delta} \ge \frac{\delta^2}{3}
+\\ &amp;\implies \Pr(X \ge (1+\delta)\mu) \le \exp\left(-\frac{\mu\delta^2}{2+\delta}\right)
+\le \exp\left( - \frac{\mu\delta^2}{3} \right)
+\end{align}
+\begin{align}
+&amp; \delta \ge 1 \implies 1 + \frac{2}{\delta} \le 3 \implies \frac{\delta}{\delta+2} \ge \frac{1}{3}
+\\ &amp;\implies \Pr(X \ge (1+\delta)\mu) \le \exp\left(-\frac{\mu\delta^2}{2+\delta}\right)
+\le \exp\left( - \frac{\mu\delta}{3} \right)
+\end{align}</p>
+<p>Now let $0 &lt; \delta &lt; 1$, $t = \ln(1-\delta)$, $a = \mu(1-\delta)$.
+Since $t &lt; 0$, $\Pr(X \le a) = \Pr(e^{tX} \ge e^{ta})$.
+\[ \Pr(X \le (1-\delta)\mu) \le \exp(\mu(-\delta - (1-\delta)\ln(1-\delta)))
+= \left(\frac{e^{-\delta}}{(1-\delta)^{1-\delta}}\right)^{\mu} \]</p>
+<p>Let $f(x) = x + (1-x)\ln(1-x) - \frac{x^2}{2}$.
+Then $f'(x) = - x - \ln(1-x)$ and $f''(x) = \frac{x}{1-x}$.
+For $0 &lt; x &lt; 1$, $f''(x) &gt; 0$.
+Since $f'(0) = 0$, $f'(x) \ge 0$.
+Since $f(0) = 0$, $f(x) \ge 0$.</p>
+<p>\[ \Pr(X \le (1-\delta)\mu)
+\le \exp(\mu(-\delta - (1-\delta)\ln(1-\delta)))
+\le \exp\left(-\frac{\mu\delta^2}{2}\right) \]</p>
+<p>Let $g(x) = (x - (1+x)\ln(1+x)) - (-x-(1-x)\ln(1-x)) = 2x - (1+x)\ln(1+x) + (1-x)\ln(1-x)$.</p>
+<p>Then $g'(x) = -\ln(1-x^2)$. Since $g(0) = 0$ and $g'(x) \ge 0$, $g(x) \ge 0$.
+This gives us
+\[ \left(\frac{e^{\delta}}{(1+\delta)^{1+\delta}}\right)^{\mu}
+\ge \left(\frac{e^{-\delta}}{(1-\delta)^{1-\delta}}\right)^{\mu} \]</p>
+<p>\begin{align}
+&amp; \Pr(\lvert X - \mu \rvert &gt; \delta\mu)
+\\ &amp;= \Pr(X \ge (1+\delta)\mu) + \Pr(X \le (1-\delta)\mu)
+\\ &amp;\le \left(\frac{e^{\delta}}{(1+\delta)^{1+\delta}}\right)^{\mu}
++ \left(\frac{e^{-\delta}}{(1-\delta)^{1-\delta}}\right)^{\mu}
+\\ &amp;\le 2\left(\frac{e^{\delta}}{(1+\delta)^{1+\delta}}\right)^{\mu}
+\\ &amp;\le 2\exp\left(-\frac{\mu\delta^2}{3}\right)
 \end{align}</p>
 
 <div class="horizontal-rule"></div>
 <h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul><li>Depth: 9</li><li>Number of transitive dependencies: 26</li></ul>
+<ul><li>Depth: 9</li><li>Number of transitive dependencies: 29</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -229,9 +303,27 @@ Let $X_1, X_2, \ldots, X_n$ be independent random variables. Then
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/variance.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/distrs/bernoulli.html">
         <span class="deptitle">
-        Variance of a random variable</span>
+        Bernoulli random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/conc-ineq/markov.html">
+        <span class="deptitle">
+        Markov's bound</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/log-bound-2.html">
+        <span class="deptitle">
+        Bound on log 2</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/exp-bound.html">
+        <span class="deptitle">
+        Bound on exponential</span>
     </a>
     </li>
 </ol>

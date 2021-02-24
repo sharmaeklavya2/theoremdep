@@ -2903,8 +2903,15 @@
 "type": "theorem",
 "title": "Markov's bound",
 "description": "Let X be a non-negative random variable. Then P(X \u2265 a) \u2264 E(X)/a.",
-"uci": "/probability/conc-ineq/markov-bound",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/conc-ineq/markov-bound.html"
+"uci": "/probability/conc-ineq/markov",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/conc-ineq/markov.html"
+},
+{
+"type": "theorem",
+"title": "Chebyshev's inequality",
+"description": "For a real random variable X, Pr(|X - E(X)| \u2265 a) \u2264 Var(X)/a^2.",
+"uci": "/probability/conc-ineq/chebyshev",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/conc-ineq/chebyshev.html"
 },
 {
 "type": "theorem",
@@ -3034,8 +3041,8 @@
 "type": "theorem",
 "title": "Chernoff bound",
 "description": "Chernoff bound gives concentration result for the sum of independent bernouilli random variables.",
-"uci": "/probability/conc-ineq/chernoff-bound",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/conc-ineq/chernoff-bound.html"
+"uci": "/probability/conc-ineq/chernoff",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/conc-ineq/chernoff.html"
 },
 {
 "type": "theorem",
