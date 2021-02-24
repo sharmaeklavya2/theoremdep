@@ -36,8 +36,8 @@
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $X$ be a set and let $F$ be a subset of the power-set of $X$.
-We say that $(X, F)$ is a $\sigma$-algebra (or $F$ is a $sigma$-algebra over $X$)
+<p>Let $X$ be a set (called 'ground set') and let $F$ be a subset of the power-set of $X$.
+We say that $(X, F)$ is a $\sigma$-algebra (or $F$ is a $\sigma$-algebra over $X$)
 iff all of these properties hold:</p>
 <ol>
 <li>$X \in F$.</li>
@@ -45,23 +45,23 @@ iff all of these properties hold:</p>
 $A \in F \implies X-A \in F$.
 $X-A$ is called the complement of $A$, and is denoted by $\overline{A}$.</li>
 <li>closure under countable unions:
-Let $S = \{A_1, A_2, \ldots\} \in F$ be a countable set. Then
+Let $S = \{A_1, A_2, \ldots\} \subseteq F$ be a countable set. Then
 $\left(\bigcup_{A \in S} A\right) \in F$.</li>
 </ol>
-<p>As a trivial example, $\{\{\}, X\}$ is a $\sigma$-algebra over $X$
-and the power-set of $X$ is a $\sigma$-algebra over $X$.</p>
+<p>As a trivial example, $\{\{\}, X\}$ is a $\sigma$-algebra over $X$.
+The power-set of $X$ is a $\sigma$-algebra over $X$ if $X$ is finite.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var-ind.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var-ind.html">
         <span class="deptitle">
         Independence of random variables</span>
 <span class="doc-status">(incomplete)</span>    </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/probability.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/probability.html">
         <span class="deptitle">
         Probability</span>
     </a>

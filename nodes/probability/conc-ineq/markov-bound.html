@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Conditional decomposition of expectation - TheoremDep</title>
-<meta name="description" content="Track dependencies between theorems." />
+<title>Markov's bound - TheoremDep</title>
+<meta name="description" content="Let X be a non-negative random variable. Then P(X ≥ a) ≤ E(X)/a." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,44 +26,43 @@
 </nav>
 
 <div id="main">
-<h1> Conditional decomposition of expectation <span class="doc-status">(incomplete)</span> </h1>
+<h1> Markov's bound </h1>
 <h2> Dependencies:
-<span class="deps-status">(incomplete)</span> </h2>
+ </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var.html">
         <span class="deptitle">
         Random variable</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cond-expec.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/cond-expec-decomp.html">
         <span class="deptitle">
-        Conditional expectation</span>
+        Conditional decomposition of expectation</span>
     </a>
     </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $S$ be a countable set of pairwise-disjoint events
-such that $\bigcup_{A \in S} A = \Omega$
-and $\Pr(\cdot \mid A)$ is defined $\forall A \in S$.
-Let $X$ be a random variable. Then $\newcommand{\E}{\operatorname{E}}$
-\[ \E(X) = \sum_{A \in S} \E(X \mid A)\Pr(A) \]</p>
-<p><span class="text-danger">(proof pending)</span></p>
+<p>Let $X$ be a non-negative random variable and let $a &gt; 0$. Then
+$\newcommand{\E}{\operatorname{E}}$
+\[ \Pr(X \ge a) \le \frac{\E(X)}{a} \]</p>
+<h2>Proof</h2>
+<p>\[ \E(X) = \E(X | X &lt; a)\Pr(X &lt; a) + \E(X | X \ge a)\Pr(X \ge a) \ge a\Pr(X \ge a) \]</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-bound.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/conc-ineq/chernoff-bound.html">
         <span class="deptitle">
-        Markov's bound</span>
+        Chernoff bound</span>
     </a>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 8</li><li>Number of transitive dependencies: 20</li></ul>
+<ul><li>Depth: 9</li><li>Number of transitive dependencies: 22</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -75,10 +74,13 @@ Let $X$ be a random variable. Then $\newcommand{\E}{\operatorname{E}}$
     <span class="deptitleuci missing">/sets-and-relations/countable-set</span>
     </li>
     <li>
+    <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
+    </li>
+    <li>
     <span class="deptitleuci missing">/measure-theory/lebesgue-integral</span>
     </li>
     <li>
-    <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
+    <span class="deptitleuci missing">/measure-theory/linearity-of-lebesgue-integral</span>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra.html">
@@ -147,33 +149,39 @@ Let $X$ be a random variable. Then $\newcommand{\E}{\operatorname{E}}$
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/probability.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/probability.html">
         <span class="deptitle">
         Probability</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cond-prob.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/cond-prob.html">
         <span class="deptitle">
         Conditional probability</span>
 <span class="doc-status">(incomplete)</span>    </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var.html">
         <span class="deptitle">
         Random variable</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/expected-value.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/expected-value.html">
         <span class="deptitle">
         Expected value of a random variable</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cond-expec.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/cond-expec.html">
         <span class="deptitle">
         Conditional expectation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/cond-expec-decomp.html">
+        <span class="deptitle">
+        Conditional decomposition of expectation</span>
     </a>
     </li>
 </ol>

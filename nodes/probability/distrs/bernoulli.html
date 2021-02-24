@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Markov's bound - TheoremDep</title>
-<meta name="description" content="Let X be a non-negative random variable. Then P(X ≥ a) ≤ E(X)/a." />
+<title>Bernoulli random variable - TheoremDep</title>
+<meta name="description" content="A random variable which takes at most 2 possible values is called a Bernoulli random variable." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,43 +26,36 @@
 </nav>
 
 <div id="main">
-<h1> Markov's bound </h1>
+<h1> Bernoulli random variable </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var.html">
         <span class="deptitle">
         Random variable</span>
     </a>
     </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cond-expec-decomp.html">
-        <span class="deptitle">
-        Conditional decomposition of expectation</span>
-<span class="doc-status">(incomplete)</span>    </a>
-    </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $X$ be a non-negative random variable and let $a &gt; 0$. Then
-$\newcommand{\E}{\operatorname{E}}$
-\[ \Pr(X \ge a) \le \frac{\E(X)}{a} \]</p>
-<h2>Proof</h2>
-<p>\[ \E(X) = \E(X | X &lt; a)\Pr(X &lt; a) + \E(X | X \ge a)\Pr(X \ge a) \ge a\Pr(X \ge a) \]</p>
+<p>Let $X$ be a random variable whose support $S$ has just 2 items.
+Then $X$ is called a Bernoulli random variable.</p>
+<p>When $S = \{0, 1\}$, $X$ is called a 0-1 Bernoulli random variable.
+Usually when we say 'Bernoulli random variable', we mean 0-1 Bernoulli random variable.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/chernoff-bound.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/conc-ineq/chernoff-bound.html">
         <span class="deptitle">
         Chernoff bound</span>
     </a>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 9</li><li>Number of transitive dependencies: 21</li></ul>
+<ul><li>Depth: 6</li><li>Number of transitive dependencies: 12</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -72,9 +65,6 @@ $\newcommand{\E}{\operatorname{E}}$
     </li>
     <li>
     <span class="deptitleuci missing">/sets-and-relations/countable-set</span>
-    </li>
-    <li>
-    <span class="deptitleuci missing">/measure-theory/lebesgue-integral</span>
     </li>
     <li>
     <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
@@ -122,64 +112,16 @@ $\newcommand{\E}{\operatorname{E}}$
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
-        <span class="deptitle">
-        Group</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
-        <span class="deptitle">
-        Ring</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
-        <span class="deptitle">
-        Field</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
-        <span class="deptitle">
-        Vector Space</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/probability.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/probability.html">
         <span class="deptitle">
         Probability</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cond-prob.html">
-        <span class="deptitle">
-        Conditional probability</span>
-<span class="doc-status">(incomplete)</span>    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var.html">
         <span class="deptitle">
         Random variable</span>
     </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/expected-value.html">
-        <span class="deptitle">
-        Expected value of a random variable</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cond-expec.html">
-        <span class="deptitle">
-        Conditional expectation</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cond-expec-decomp.html">
-        <span class="deptitle">
-        Conditional decomposition of expectation</span>
-<span class="doc-status">(incomplete)</span>    </a>
     </li>
 </ol>
 

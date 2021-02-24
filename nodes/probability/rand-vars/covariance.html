@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Linearity of expectation for matrices - TheoremDep</title>
-<meta name="description" content="If A is a matrix and X is a random matrix, then E(AX) = AE(X) and E(XA) = E(X)A." />
+<title>Covariance of 2 random variables - TheoremDep</title>
+<meta name="description" content="Cov(X, Y) = E((X - E(X))(Y - E(Y)))." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,18 +26,24 @@
 </nav>
 
 <div id="main">
-<h1> Linearity of expectation for matrices </h1>
+<h1> Covariance of 2 random variables </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var.html">
         <span class="deptitle">
         Random variable</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/linearity-of-expec.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/expected-value.html">
+        <span class="deptitle">
+        Expected value of a random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/linearity-of-expec.html">
         <span class="deptitle">
         Linearity of expectation</span>
     </a>
@@ -45,43 +51,29 @@
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $X_1, X_2, \ldots, X_n$ be random matrices. Then
+<p>Let $X$ and $Y$ be real random variables.
+Then the covariance of $X$ and $Y$ is defined to be
 $\newcommand{\E}{\operatorname{E}}$
-\[ \E\left(\sum_{i=1}^n X_i\right) = \sum_{i=1}^n \E(X_i) \]
-This follows simply from linearity of expectation for real-valued random variables
-and that $\E(X)_{i, j} = \E(X_{i, j})$.</p>
-<p>Let $A$ be a $m$-by-$p$ matrix and $X$ be a random $p$-by-$n$ matrix. Then $\E(AX) = A\E(X)$.</p>
-<p>Let $A$ be a $p$-by-$n$ matrix and $X$ be a random $m$-by-$p$ matrix. Then $\E(XA) = \E(X)A$.</p>
-<p>The above results are collectively called 'linearity of expectation for matrices'.</p>
+\[ \operatorname{Cov}(X, Y) = \E((X - \E(X))(Y - \E(Y))) \]
+An alternative definition is
+\[ \operatorname{Cov}(X, Y) = \E(XY) - \E(X)\E(Y) \]
+These definitions are equivalent.</p>
 <h2>Proof</h2>
 <p>\begin{align}
-\E(AX)[i, j] &amp;= \E((AX)[i, j])
-= \E\left(\sum_{k=1}^p A[i, k]X[k, j]\right)
-\\ &amp;= \sum_{k=1}^p A[i, k]\E(X)[k, j]
-\tag{by linearity of expectation}
-= (A\E(X))[i, j]
-\end{align}</p>
-<p>\begin{align}
-\E(XA)[i, j] &amp;= \E((XA)[i, j])
-= \E\left(\sum_{k=1}^p X[i, k]A[k, j]\right)
-\\ &amp;= \sum_{k=1}^p \E(X)[i, k]A[k, j]
-\tag{by linearity of expectation}
-= (\E(X)A)[i, j]
+&amp; \E((X-\E(X))(Y - \E(Y)))
+\\ &amp;= \E(XY - \E(X)Y - \E(Y)X + \E(X)\E(Y))
+\\ &amp;= \E(XY) - \E(X)\E(Y) - \E(Y)\E(X) + \E(X)\E(Y)
+\tag{linearity of expectation}
+\\ &amp;= \E(XY) - \E(X)\E(Y)
 \end{align}</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cross-covariance-matrix.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/cross-covariance-matrix.html">
         <span class="deptitle">
         Cross-covariance matrix</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/multivariate.html">
-        <span class="deptitle">
-        Multivariate normal distribution</span>
     </a>
     </li>
 </ol>
@@ -98,10 +90,10 @@ and that $\E(X)_{i, j} = \E(X_{i, j})$.</p>
     <span class="deptitleuci missing">/sets-and-relations/countable-set</span>
     </li>
     <li>
-    <span class="deptitleuci missing">/measure-theory/lebesgue-integral</span>
+    <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
     </li>
     <li>
-    <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
+    <span class="deptitleuci missing">/measure-theory/lebesgue-integral</span>
     </li>
     <li>
     <span class="deptitleuci missing">/measure-theory/linearity-of-lebesgue-integral</span>
@@ -173,25 +165,25 @@ and that $\E(X)_{i, j} = \E(X_{i, j})$.</p>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/probability.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/probability.html">
         <span class="deptitle">
         Probability</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var.html">
         <span class="deptitle">
         Random variable</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/expected-value.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/expected-value.html">
         <span class="deptitle">
         Expected value of a random variable</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/linearity-of-expec.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/linearity-of-expec.html">
         <span class="deptitle">
         Linearity of expectation</span>
     </a>

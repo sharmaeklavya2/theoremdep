@@ -4,8 +4,9 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Bernoulli random variable - TheoremDep</title>
-<meta name="description" content="A random variable which takes at most 2 possible values is called a Bernoulli random variable." />
+<title>Var(aX + b) = a^2 Var(X) - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<meta name="keywords" content="variance,affine,linear" />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,36 +27,39 @@
 </nav>
 
 <div id="main">
-<h1> Bernoulli random variable </h1>
+<h1> Var(aX + b) = a^2 Var(X) </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/variance.html">
         <span class="deptitle">
-        Random variable</span>
+        Variance of a random variable</span>
     </a>
     </li>
-</ol>
-
-<div class="horizontal-rule"></div>
-<p>Let $X$ be a random variable whose support $S$ has just 2 items.
-Then $X$ is called a Bernoulli random variable.</p>
-<p>When $S = \{0, 1\}$, $X$ is called a 0-1 Bernoulli random variable.
-Usually when we say 'Bernoulli random variable', we mean 0-1 Bernoulli random variable.</p>
-
-<div class="horizontal-rule"></div>
-<h2> Dependency for: </h2>
-<ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/chernoff-bound.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/linearity-of-expec.html">
         <span class="deptitle">
-        Chernoff bound</span>
+        Linearity of expectation</span>
     </a>
     </li>
 </ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $X$ be a random variable. Let $a \in \mathbb{R}$ and $b \in \operatorname{support}(X)$.
+Then $\newcommand{\E}{\operatorname{E}}\newcommand{\Var}{\operatorname{Var}}$
+$\Var(aX + b) = a^2\Var(X)$.</p>
+<h2>Proof</h2>
+<p>\[ \Var(aX + b)
+= \E((aX + b - \E(aX + b))^2)
+= \E((aX - a\E(X))^2)
+= a^2\E((X - \E(X))^2)
+= a^2\Var(X) \]</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul><li>Depth: 6</li><li>Number of transitive dependencies: 12</li></ul>
+<ul><li>Depth: 9</li><li>Number of transitive dependencies: 21</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -68,6 +72,12 @@ Usually when we say 'Bernoulli random variable', we mean 0-1 Bernoulli random va
     </li>
     <li>
     <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/measure-theory/lebesgue-integral</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/measure-theory/linearity-of-lebesgue-integral</span>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra.html">
@@ -112,15 +122,57 @@ Usually when we say 'Bernoulli random variable', we mean 0-1 Bernoulli random va
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/probability.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+        <span class="deptitle">
+        Group</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+        <span class="deptitle">
+        Ring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+        <span class="deptitle">
+        Field</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+        <span class="deptitle">
+        Vector Space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/probability.html">
         <span class="deptitle">
         Probability</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var.html">
         <span class="deptitle">
         Random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/expected-value.html">
+        <span class="deptitle">
+        Expected value of a random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/linearity-of-expec.html">
+        <span class="deptitle">
+        Linearity of expectation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/variance.html">
+        <span class="deptitle">
+        Variance of a random variable</span>
     </a>
     </li>
 </ol>

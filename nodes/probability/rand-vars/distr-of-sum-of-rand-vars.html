@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Cross-covariance matrix - TheoremDep</title>
+<title>Distribution of sum of random variables - TheoremDep</title>
 <meta name="description" content="Track dependencies between theorems." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
@@ -26,69 +26,57 @@
 </nav>
 
 <div id="main">
-<h1> Cross-covariance matrix </h1>
+<h1> Distribution of sum of random variables <span class="doc-status">(incomplete)</span> </h1>
 <h2> Dependencies:
- </h2>
+<span class="deps-status">(incomplete)</span> </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var.html">
         <span class="deptitle">
         Random variable</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/covariance.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
         <span class="deptitle">
-        Covariance of 2 random variables</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/linearity-of-expec-for-matrices.html">
-        <span class="deptitle">
-        Linearity of expectation for matrices</span>
+        Group</span>
     </a>
     </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $X = [X_1, X_2, \ldots, X_m]$ and $Y = [Y_1, Y_2, \ldots, Y_n]$
-be sequences of random variables.
-Then the cross-covariance matrix $\operatorname{Cov}(X, Y)$,
-an $m$-by-$n$ matrix, is defined as
-$\newcommand{\E}{\operatorname{E}}$
-$\newcommand{\Cov}{\operatorname{Cov}}$
-\[ \Cov(X, Y)_{i, j} = \Cov(X_i, Y_j) \]
-An alternative definition is
-\[ \Cov(X, Y) = \E((X-\E(X))(Y-\E(Y))^T) \]
-Another definition is
-\[ \Cov(X, Y) = \E(XY^T) - \E(X)\E(Y)^T \]
-These definitions are equivalent</p>
-<h2>Proof</h2>
+<p>Let $X$ and $Y$ be 2 random variables with the same support $D$,
+where $(D, +)$ is a group. Let $Z = X + Y$.</p>
+<p>Let $X$ and $Y$ be discrete. Let $f_{X,Y}$ be the joint probability mass function of $X$ and $Y$
+and let $f_Z$ be the probability mass function of $Z$. Then
+\[ f_Z(z) = \sum_{y \in D} f_{X, Y}(z - y, y) \]</p>
+<p>Let $X$ and $Y$ be continuous random variables
+and let $+$ (as usual) correspond to addition of real numbers.
+Let $f_{X,Y}$ be the joint probability density function of $X$ and $Y$
+and let $f_Z$ be the probability density function of $Z$. Then
+\[ f_Z(z) = \int_{-\infty}^{\infty} f_{X, Y}(z - y, y) dy \]</p>
+<h2>Proof for discrete random variables</h2>
 <p>\begin{align}
-\E((X-\E(X))(Y-\E(Y))^T)[i, j]
-&amp;= \E((X-\E(X))_i (Y-\E(Y))_j)
-\\ &amp;= \E((X_i-\E(X_i)) (Y_j-\E(Y_j)))
-= \Cov(X_i, Y_j)
+f_Z(z) &amp;= \Pr(X + Y = z)
+\\ &amp;= \sum_{y \in D} \Pr(X + Y = z \cap Y = y)
+\\ &amp;= \sum_{y \in D} \Pr(X = z - y \cap Y = y)
+\\ &amp;= \sum_{y \in D} f_{X, Y}(z - y, y)
 \end{align}</p>
-<p>Using linearity of expectation for matrices, we get
-\begin{align}
-\E((X-\E(X))(Y-\E(Y))^T)
-&amp;= \E(XY^T - \E(X)Y^T - X\E(Y)^T + \E(X)\E(Y)^T
-\\ &amp;= \E(XY^T) - \E(X)\E(Y)^T
-\end{align}</p>
+<h2>Proof for continuous random variables</h2>
+<p><span class="text-danger">(Proof pending)</span></p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/covariance-matrix.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/distr-of-sum-of-rand-vars.html">
         <span class="deptitle">
-        Covariance matrix</span>
+        Sum of independent normal random variables is normal</span>
     </a>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 9</li><li>Number of transitive dependencies: 22</li></ul>
+<ul><li>Depth: 6</li><li>Number of transitive dependencies: 13</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -100,13 +88,7 @@ These definitions are equivalent</p>
     <span class="deptitleuci missing">/sets-and-relations/countable-set</span>
     </li>
     <li>
-    <span class="deptitleuci missing">/measure-theory/lebesgue-integral</span>
-    </li>
-    <li>
     <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
-    </li>
-    <li>
-    <span class="deptitleuci missing">/measure-theory/linearity-of-lebesgue-integral</span>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra.html">
@@ -157,57 +139,15 @@ These definitions are equivalent</p>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
-        <span class="deptitle">
-        Ring</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
-        <span class="deptitle">
-        Field</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
-        <span class="deptitle">
-        Vector Space</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/probability.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/probability.html">
         <span class="deptitle">
         Probability</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var.html">
         <span class="deptitle">
         Random variable</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/expected-value.html">
-        <span class="deptitle">
-        Expected value of a random variable</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/linearity-of-expec.html">
-        <span class="deptitle">
-        Linearity of expectation</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/linearity-of-expec-for-matrices.html">
-        <span class="deptitle">
-        Linearity of expectation for matrices</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/covariance.html">
-        <span class="deptitle">
-        Covariance of 2 random variables</span>
     </a>
     </li>
 </ol>

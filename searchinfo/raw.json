@@ -2754,140 +2754,125 @@
 "probability measure",
 "probability space"
 ],
-"uci": "/probability/probability",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/probability.html"
+"uci": "/probability/prob-and-events/probability",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/probability.html"
 },
 {
 "type": "theoremdef",
 "title": "Conditional probability",
 "description": "The probability of event A conditioned on event B is denoted as P(A|B).",
-"uci": "/probability/cond-prob",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cond-prob.html",
-"status": "incomplete"
-},
-{
-"type": "theoremdef",
-"title": "Random variable",
-"description": "A random variable is a measurable function that maps each element of the sample space to an element in some set.",
-"uci": "/probability/rand-var",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html"
-},
-{
-"type": "def",
-"title": "Expected value of a random variable",
-"description": "The expected value of a random variable is its (Lebesgue) integral over the sample space.",
-"uci": "/probability/expected-value",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/expected-value.html"
-},
-{
-"type": "theorem",
-"title": "Probability: limit of CDF",
-"description": "Let F be a CDF of a real random variable. Then F(-\u221e) = 0 and F(\u221e) = 1.",
-"uci": "/probability/cdf-limit",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cdf-limit.html"
-},
-{
-"type": "theorem",
-"title": "Distribution of sum of random variables",
-"uci": "/probability/distr-of-sum-of-rand-vars",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/distr-of-sum-of-rand-vars.html",
+"uci": "/probability/prob-and-events/cond-prob",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/cond-prob.html",
 "status": "incomplete"
 },
 {
 "type": "def",
-"title": "Bernoulli random variable",
-"description": "A random variable which takes at most 2 possible values is called a Bernoulli random variable.",
-"uci": "/probability/bernoulli",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/bernoulli.html"
-},
-{
-"type": "def",
-"title": "Conditional expectation",
-"uci": "/probability/cond-expec",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cond-expec.html"
-},
-{
-"type": "theoremdef",
 "title": "Independence of events",
 "description": "A and B are independent iff P(A\u2229B) = P(A)P(B).",
-"uci": "/probability/ind-events",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/ind-events.html"
+"uci": "/probability/prob-and-events/ind-events",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/ind-events.html"
 },
 {
 "type": "theorem",
 "title": "Independence of composite events",
 "description": "Suppose events A1 and A2 are independent of event B. If A1 and A2 are disjoint, then A1\u22c3A2 is independent of B. If A1 \u2286 A2, then A2 - A1 is independent of B.",
-"uci": "/probability/ind-of-comp-events",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/ind-of-comp-events.html"
+"uci": "/probability/prob-and-events/ind-of-comp-events",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/ind-of-comp-events.html"
+},
+{
+"type": "theoremdef",
+"title": "Random variable",
+"description": "A random variable is a measurable function that maps each element of the sample space to an element in some set.",
+"uci": "/probability/rand-vars/rand-var",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var.html"
+},
+{
+"type": "def",
+"title": "Expected value of a random variable",
+"description": "The expected value of a random variable is its (Lebesgue) integral over the sample space.",
+"uci": "/probability/rand-vars/expected-value",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/expected-value.html"
+},
+{
+"type": "theorem",
+"title": "Probability: limit of CDF",
+"description": "Let F be a CDF of a real random variable. Then F(-\u221e) = 0 and F(\u221e) = 1.",
+"uci": "/probability/rand-vars/cdf-limit",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/cdf-limit.html"
+},
+{
+"type": "theorem",
+"title": "Distribution of sum of random variables",
+"uci": "/probability/rand-vars/distr-of-sum-of-rand-vars",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/distr-of-sum-of-rand-vars.html",
+"status": "incomplete"
+},
+{
+"type": "def",
+"title": "Conditional expectation",
+"uci": "/probability/rand-vars/cond-expec",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/cond-expec.html"
 },
 {
 "type": "theoremdef",
 "title": "Independence of random variables",
-"uci": "/probability/rand-var-ind",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var-ind.html",
+"uci": "/probability/rand-vars/rand-var-ind",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var-ind.html",
 "status": "incomplete"
 },
 {
 "type": "theorem",
 "title": "Expectation of product of independent random variables",
 "description": "Let X and Y be independent random variables. Then E(XY) = E(X)E(Y).",
-"uci": "/probability/indep-prod-expec",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/indep-prod-expec.html",
+"uci": "/probability/rand-vars/indep-prod-expec",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/indep-prod-expec.html",
 "status": "incomplete"
 },
 {
 "type": "theorem",
 "title": "Conditional decomposition of expectation",
-"uci": "/probability/cond-expec-decomp",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cond-expec-decomp.html",
-"status": "incomplete"
-},
-{
-"type": "theorem",
-"title": "Markov's bound",
-"description": "Let X be a non-negative random variable. Then P(X \u2265 a) \u2264 E(X)/a.",
-"uci": "/probability/markov-bound",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-bound.html"
+"uci": "/probability/rand-vars/cond-expec-decomp",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/cond-expec-decomp.html"
 },
 {
 "type": "theorem",
 "title": "Linearity of expectation",
 "description": "Expectation of sum of random variables is sum of expectation of those random variables.",
-"uci": "/probability/linearity-of-expec",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/linearity-of-expec.html"
+"uci": "/probability/rand-vars/linearity-of-expec",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/linearity-of-expec.html"
 },
 {
 "type": "theoremdef",
 "title": "Variance of a random variable",
 "description": "The variance of a random variable X is Var(X) = E((X-E(X))^2).",
-"uci": "/probability/variance",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/variance.html"
+"uci": "/probability/rand-vars/variance",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/variance.html"
 },
 {
 "type": "theorem",
 "title": "Linearity of expectation for matrices",
 "description": "If A is a matrix and X is a random matrix, then E(AX) = AE(X) and E(XA) = E(X)A.",
-"uci": "/probability/linearity-of-expec-for-matrices",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/linearity-of-expec-for-matrices.html"
+"uci": "/probability/rand-vars/linearity-of-expec-for-matrices",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/linearity-of-expec-for-matrices.html"
 },
 {
 "type": "theoremdef",
 "title": "Covariance of 2 random variables",
 "description": "Cov(X, Y) = E((X - E(X))(Y - E(Y))).",
-"uci": "/probability/covariance",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/covariance.html"
+"uci": "/probability/rand-vars/covariance",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/covariance.html"
 },
 {
 "type": "theoremdef",
 "title": "Cross-covariance matrix",
-"uci": "/probability/cross-covariance-matrix",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/cross-covariance-matrix.html"
+"uci": "/probability/rand-vars/cross-covariance-matrix",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/cross-covariance-matrix.html"
 },
 {
 "type": "def",
 "title": "Covariance matrix",
-"uci": "/probability/covariance-matrix",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/covariance-matrix.html"
+"uci": "/probability/rand-vars/covariance-matrix",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/covariance-matrix.html"
 },
 {
 "type": "theorem",
@@ -2897,8 +2882,29 @@
 "affine",
 "linear"
 ],
-"uci": "/probability/variance-of-affine",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/variance-of-affine.html"
+"uci": "/probability/rand-vars/variance-of-affine",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/variance-of-affine.html"
+},
+{
+"type": "theorem",
+"title": "Variance of sum of independent random variables",
+"description": "If X_1, X_2, ..., X_n are independent random variables, then Var(X_1 + X_2 + ... + X_n) = Var(X_1) + Var(X_2) + ... + Var(X_n).",
+"uci": "/probability/rand-vars/var-of-sum-of-ind",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/var-of-sum-of-ind.html"
+},
+{
+"type": "def",
+"title": "Bernoulli random variable",
+"description": "A random variable which takes at most 2 possible values is called a Bernoulli random variable.",
+"uci": "/probability/distrs/bernoulli",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/distrs/bernoulli.html"
+},
+{
+"type": "theorem",
+"title": "Markov's bound",
+"description": "Let X be a non-negative random variable. Then P(X \u2265 a) \u2264 E(X)/a.",
+"uci": "/probability/conc-ineq/markov-bound",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/conc-ineq/markov-bound.html"
 },
 {
 "type": "theorem",
@@ -3022,8 +3028,8 @@
 "type": "theorem",
 "title": "Chernoff bound",
 "description": "Chernoff bound gives concentration result for the sum of independent bernouilli random variables.",
-"uci": "/probability/chernoff-bound",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/chernoff-bound.html"
+"uci": "/probability/conc-ineq/chernoff-bound",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/conc-ineq/chernoff-bound.html"
 },
 {
 "type": "theorem",

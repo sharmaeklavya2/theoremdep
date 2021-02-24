@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Distribution of sum of random variables - TheoremDep</title>
-<meta name="description" content="Track dependencies between theorems." />
+<title>Probability: limit of CDF - TheoremDep</title>
+<meta name="description" content="Let F be a CDF of a real random variable. Then F(-∞) = 0 and F(∞) = 1." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,57 +26,39 @@
 </nav>
 
 <div id="main">
-<h1> Distribution of sum of random variables <span class="doc-status">(incomplete)</span> </h1>
+<h1> Probability: limit of CDF </h1>
 <h2> Dependencies:
 <span class="deps-status">(incomplete)</span> </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var.html">
         <span class="deptitle">
         Random variable</span>
     </a>
     </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
-        <span class="deptitle">
-        Group</span>
-    </a>
-    </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $X$ and $Y$ be 2 random variables with the same support $D$,
-where $(D, +)$ is a group. Let $Z = X + Y$.</p>
-<p>Let $X$ and $Y$ be discrete. Let $f_{X,Y}$ be the joint probability mass function of $X$ and $Y$
-and let $f_Z$ be the probability mass function of $Z$. Then
-\[ f_Z(z) = \sum_{y \in D} f_{X, Y}(z - y, y) \]</p>
-<p>Let $X$ and $Y$ be continuous random variables
-and let $+$ (as usual) correspond to addition of real numbers.
-Let $f_{X,Y}$ be the joint probability density function of $X$ and $Y$
-and let $f_Z$ be the probability density function of $Z$. Then
-\[ f_Z(z) = \int_{-\infty}^{\infty} f_{X, Y}(z - y, y) dy \]</p>
-<h2>Proof for discrete random variables</h2>
-<p>\begin{align}
-f_Z(z) &amp;= \Pr(X + Y = z)
-\\ &amp;= \sum_{y \in D} \Pr(X + Y = z \cap Y = y)
-\\ &amp;= \sum_{y \in D} \Pr(X = z - y \cap Y = y)
-\\ &amp;= \sum_{y \in D} f_{X, Y}(z - y, y)
+<p>Let $X$ be a real random variable. Let $F_X$ be the CDF of $X$. Then
+\begin{align}
+\lim_{x \rightarrow -\infty} F_X(x) &amp;= 0
+&amp; \lim_{x \rightarrow \infty} F_X(x) &amp;= 1
 \end{align}</p>
-<h2>Proof for continuous random variables</h2>
-<p><span class="text-danger">(Proof pending)</span></p>
+<h2>Proof</h2>
+<p>See lemma 2.1.6 (a), page 28, <a href="#cite-prob-and-rand-proc-book">[prob-and-rand-proc-book]</a>.</p>
+<div class="citation" id="cite-prob-and-rand-proc-book">
+<span class="cite-name">prob-and-rand-proc-book</span><br/>
+<span class="cite-authors">Geoffrey Grimmett and David Stirzanker</span><br/>
+<cite class="cite-title"><a href="http://home.ustc.edu.cn/~zt001062/PTmaterials/Grimmett&Stirzaker--Probability%20and%20Random%20Processes%20%20Third%20Ed(2001).pdf">
+Probability and Random Processes (Third Edition)</a></cite><br/>
+<span class="cite-source">Oxford University Press</span>
+</div>
+
 
 <div class="horizontal-rule"></div>
-<h2> Dependency for: </h2>
-<ol class="deplist">
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/distr-of-sum-of-rand-vars.html">
-        <span class="deptitle">
-        Sum of independent normal random variables is normal</span>
-    </a>
-    </li>
-</ol>
+<h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul><li>Depth: 6</li><li>Number of transitive dependencies: 13</li></ul>
+<ul><li>Depth: 6</li><li>Number of transitive dependencies: 12</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -133,19 +115,13 @@ f_Z(z) &amp;= \Pr(X + Y = z)
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
-        <span class="deptitle">
-        Group</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/probability.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/probability.html">
         <span class="deptitle">
         Probability</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-var.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var.html">
         <span class="deptitle">
         Random variable</span>
     </a>
