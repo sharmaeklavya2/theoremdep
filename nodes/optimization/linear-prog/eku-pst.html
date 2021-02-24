@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>Approximation algorithm for covering LPs - TheoremDep</title>
+<meta name="description" content="An α(1 + ε)-approximation algorithm for solving covering LPs, assuming the presence of a (1/α)-approximation algorithm for a certain optimization problem" />
+<meta name="keywords" content="eku,pst,covering-lp,approx,index-finding" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" aria-label="Search" type="text" autocomplete="off" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Approximation algorithm for covering LPs </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+        <span class="deptitle">
+        Matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/log-bound.html">
+        <span class="deptitle">
+        Bound on log</span>
+    </a>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/bounds/upper-exp-bound</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/optimization/lin-func-is-max-at-extreme-point-of-polytope</span>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p><span class="invisible">
+$\newcommand{\eps}{\varepsilon}$
+$\newcommand{\xhat}{\widehat{x}}$
+$\newcommand{\Otild}{\widetilde{O}}$
+$\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}$
+$\newcommand{\covLP}{\operatorname{covLP}}$
+$\newcommand{\poly}{\operatorname{poly}}$
+$\newcommand{\opt}{\operatorname{opt}}$
+$\newcommand{\support}{\operatorname{support}}$
+$\newcommand{\defeq}{:=}$
+$\newcommand{\Th}{^{\textrm{th}}}$
+$\newcommand{\Uexpr}{m + \ceil{\ln\left(\frac{m}{\eta}\right)}\ceil{\frac{312m\rho(1+\eps)}{\eta\eps^3}\ln\left(\frac{12m}{\eps}\right)}}$
+</span>
+A linear program is called a covering linear program iff it is of the form
+\[ \min_{x \in \mathbb{R}^N} c^Tx \textrm{ where } Ax \ge b \textrm{ and } x \ge 0, \]
+where $A \in \mathbb{R}_{\ge 0}^{m \times N}$ ($m$-by-$N$ matrix over non-negative reals),
+$b \in \mathbb{R}^m_{&gt;0}$ and $c \in \mathbb{R}^N_{&gt; 0}$.
+Denote this covering LP by $\operatorname{covLP}(A, b, c)$.</p>
+<p>An implicit covering LP is one where $A$ and $c$ are not given to us explicitly.
+Instead, we are given an input $I$, and $A$, $b$, $c$ are defined in terms of $I$.
+(The configuration LP for bin-packing, for example, is defined implicitly.)
+Such an implicit definition is helpful when $N$, the number of columns in $A$,
+is super-polynomial in the input size $|I|$.
+We assume that $m$, the number of rows in $A$, is polynomial in $|I|$
+and that $b$ has already been computed.
+Since $A$ and $c$ are not given to us explicitly, we will assume the presence of certain oracles
+that can help us indirectly get useful information about $A$ and $c$.
+We will describe the approximation algorithm of <a href="#cite-eku-pst">[eku-pst]</a>
+called <code>covLPsolve</code> that solves $\covLP(A, b, c)$ in polynomial time using these oracles.</p>
+<p><strong>Preliminaries:</strong></p>
+<ul>
+<li>For a non-negative integer $n$, let $[n] \defeq \{1, 2, \ldots, n\}$.</li>
+<li>Let $\mathbb{R}_{\ge 0}$ be the set of non-negative real numbers.
+Let $\mathbb{R}_{&gt; 0} \defeq \mathbb{R}_{\ge 0} - \{0\}$.</li>
+<li>For a vector $x$, $\support(x) \defeq \{j: x_j \neq 0\}$.</li>
+<li>For a vector $x$, $x \ge 0$ means that every coordinate of $x$ is non-negative.</li>
+<li>For a matrix $A$, $A[i, j]$ is the entry in the $i\Th$ row and $j\Th$ column of $A$.</li>
+<li>Let $e_j$ be a vector whose $j\Th$ component is 1 and all other components are 0.</li>
+<li>Let $\poly(n)$ be the set of functions of $n$ that are upper-bounded
+by a polynomial in $n$.</li>
+</ul>
+<p><strong>Column oracle</strong>: The column oracle for $A \in \mathbb{R}_{\ge 0}^{m \times N}$
+takes $j \in [N]$ as input and returns the $j\Th$ column of $A$.</p>
+<p><strong>Cost oracle</strong>: The cost oracle for $c \in \mathbb{R}_{&gt; 0}^N$
+takes $j \in [N]$ as input and returns $c_j$.</p>
+<p><strong>Index oracle</strong>: Let $A \in \mathbb{R}_{\ge 0}^{m \times N}$ and $c \in \mathbb{R}^N_{&gt; 0}$
+be implicitly defined in terms of input $I$.
+For $j \in [N]$, define the function
+$D_j: \mathbb{R}^m_{\ge 0} \mapsto \mathbb{R}_{\ge 0}$ as
+\[ D_j(y) \defeq y^TA\left(\frac{e_j}{c_j}\right) = \frac{1}{c_j} \sum_{i=1}^m y_iA[i, j] \]
+Then for $\eta \in (0, 1]$, an $\eta$-weak index-finding oracle for $I$,
+denoted by <code>indexFind</code>, is an algorithm that takes as input $y \in \mathbb{R}^m_{\ge 0}$
+and returns $k \in [N]$ such that $D_k(y) \ge \eta \max_{j=1}^N D_j(y)$.</p>
+<p>The algorithm <code>covLPsolve</code> takes the following inputs:</p>
+<ul>
+<li>$b$</li>
+<li>$q$: an upper-bound on $\opt(\covLP(A, b, c))$.</li>
+<li>$\rho$: an upper-bound on
+${\displaystyle q\max_{i=1}^m \max_{j=1}^N \frac{A[i,j]}{b_ic_j}}$.</li>
+<li>constants $\eps, \eta \in (0, 1]$.</li>
+<li>a column oracle for $A$.</li>
+<li>a cost oracle for $c$.</li>
+<li>an $\eta$-weak index-finding oracle.</li>
+</ul>
+<p>The following two theorems are the main results of <a href="#cite-eku-pst">[eku-pst]</a>.
+See <a href="#cite-eku-pst">[eku-pst]</a> for proof.</p>
+<p><strong>Theorem 1</strong>: <code>covLPsolve</code> returns a
+$(1+\eps+\eps^2)/\eta$-approximate solution to $\covLP(A, b, c)$.</p>
+<p><strong>Theorem 2</strong>: Let
+\begin{align}
+M &amp;\defeq 3 + 2\lg\left(\frac{1}{\eps}+1\right)
+    + \lg\left(\frac{1}{\eta}\right) + \lg\left(\frac{q}{\opt(\covLP(A, b, c))}\right)
+\\ U &amp;\defeq \Uexpr \in \Otild\left(\frac{m\rho}{\eta\eps^3}\right)
+\end{align}
+Then all of the following hold for <code>covLPsolve</code>:</p>
+<ul>
+<li><code>covLPsolve</code> makes at most $MU$ calls to the index-finding oracle,
+at most $MU$ calls to the column oracle, and at most $MU$ calls to the cost oracle.</li>
+<li>In <code>covLPsolve</code>, the time taken by non-oracle operations is $O(MUm)$.</li>
+<li>The solution $\xhat$ returned by <code>covLPsolve</code> has $|\support(\xhat)| \le U$.</li>
+</ul>
+<div class="citation" id="cite-eku-pst">
+<span class="cite-name">eku-pst</span><br/>
+<span class="cite-authors">Eklavya Sharma</span><br/>
+<cite class="cite-title"><a href="https://arxiv.org/abs/2011.11268">
+An Approximation Algorithm for Covering Linear Programs and its Application to Bin-Packing
+</a></cite><br/>
+<span class="cite-source">arXiv:2011.11268 [cs.DS]</span>
+</div>
+
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 3</li><li>Number of transitive dependencies: 7</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/optimization/lin-func-is-max-at-extreme-point-of-polytope</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/bounds/upper-exp-bound</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+        <span class="deptitle">
+        Group</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+        <span class="deptitle">
+        Ring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html">
+        <span class="deptitle">
+        Semiring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+        <span class="deptitle">
+        Matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/log-bound.html">
+        <span class="deptitle">
+        Bound on log</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

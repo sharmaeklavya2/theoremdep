@@ -2645,12 +2645,6 @@
 },
 {
 "type": "theorem",
-"title": "Linear programming: linear program of ellipsoid run",
-"uci": "/optimization/linear-prog/ellipsoid-run-program",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/ellipsoid-run-program.html"
-},
-{
-"type": "theorem",
 "title": "Linear programming: rank lemma",
 "description": "For an extreme-point solution, the maximum number of linearly independent tight constraints equals the number of non-zero variables.",
 "uci": "/optimization/linear-prog/rank-lemma",
@@ -2692,6 +2686,14 @@
 },
 {
 "type": "theorem",
+"title": "Bin-packing: Solving fractional config LP using FPTAS for knapsack",
+"description": "The fractional bin-packing problem can be approximately solved in polynomial time if a FPTAS is available for the corresponding knapsack problem.",
+"uci": "/packing/config-lp/kp-fptas",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/kp-fptas.html",
+"status": "incomplete"
+},
+{
+"type": "theorem",
 "title": "Bin-packing: config LP dual solution increases with size",
 "description": "Let y be the optimal solution to the dual of the config LP of a bin-packing instance. If item i is at least as large as item j then y_i is at least as large as y_j.",
 "uci": "/packing/config-lp/sol-prop-size",
@@ -2703,21 +2705,6 @@
 "description": "The optimal objective value of a linear program and its dual are equal.",
 "uci": "/optimization/linear-prog/strong-duality",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/strong-duality.html",
-"status": "incomplete"
-},
-{
-"type": "theorem",
-"title": "Linear programming: Solving dual using separation oracle for primal",
-"description": "How to solve a dual linear program using a separation oracle for the primal.",
-"uci": "/optimization/linear-prog/sep-for-dual",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/sep-for-dual.html"
-},
-{
-"type": "theorem",
-"title": "Bin-packing: Solving fractional config LP using FPTAS for knapsack",
-"description": "The fractional bin-packing problem can be approximately solved in polynomial time if a FPTAS is available for the corresponding knapsack problem.",
-"uci": "/packing/config-lp/kp-fptas",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/kp-fptas.html",
 "status": "incomplete"
 },
 {
@@ -2993,6 +2980,20 @@
 "description": "(x-1)/x \u2264 ln(x) \u2264 x-1.",
 "uci": "/bounds/log-bound",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/log-bound.html"
+},
+{
+"type": "theorem",
+"title": "Approximation algorithm for covering LPs",
+"description": "An \u03b1(1 + \u03b5)-approximation algorithm for solving covering LPs, assuming the presence of a (1/\u03b1)-approximation algorithm for a certain optimization problem",
+"keywords": [
+"eku",
+"pst",
+"covering-lp",
+"approx",
+"index-finding"
+],
+"uci": "/optimization/linear-prog/eku-pst",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/eku-pst.html"
 },
 {
 "type": "theorem",
