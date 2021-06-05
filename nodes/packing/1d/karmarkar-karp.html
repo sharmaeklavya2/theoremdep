@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>1D bin-packing: Karmarkar-Karp algorithm - TheoremDep</title>
-<meta name="description" content="The Karmarkar-Karp algorithm is an algorithm for 1D bin-packing that achieves an additive approximation of O(log(I)^2)." />
+<title>1BP: Karmarkar-Karp algorithm - TheoremDep</title>
+<meta name="description" content="The Karmarkar-Karp algorithm is an algorithm for 1BP that achieves an additive approximation of O(log(I)^2)." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,72 +26,80 @@
 </nav>
 
 <div id="main">
-<h1> 1D bin-packing: Karmarkar-Karp algorithm </h1>
+<h1> 1BP: Karmarkar-Karp algorithm <span class="doc-status">(broken)</span> </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
+        <span class="deptitle">
+        Bin packing and Knapsack</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/size-le-opt.html">
+        <span class="deptitle">
+        1BP: ⌈size(I)⌉ ≤ opt(I)</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/extend-by-small.html">
         <span class="deptitle">
-        1D bin-packing: extending by small items</span>
+        1BP: extending by small items</span>
     </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/next-fit.html">
         <span class="deptitle">
-        1D bin-packing: next-fit(S) < 2size(S)+1</span>
+        1BP: NextFit(S) ≤ ⌈2size(S)⌉</span>
     </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/config-lp.html">
         <span class="deptitle">
-        Bin-packing: configuration LP</span>
+        Bin packing: configuration LP</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/kp-fptas.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/fptas-for-config-lp.html">
         <span class="deptitle">
-        Bin-packing: Solving fractional config LP using FPTAS for knapsack</span>
-<span class="doc-status">(incomplete)</span>    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/ks-fptas.html">
-        <span class="deptitle">
-        FPTAS for 1D knapsack</span>
+        1BP: FPTAS for config LP</span>
     </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/prec.html">
         <span class="deptitle">
-        Bin-packing: config LP of predecessor</span>
-    </a>
+        Bin packing: config LP of predecessor</span>
+<span class="doc-status">(broken)</span>    </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/harmonic-grouping.html">
         <span class="deptitle">
-        1D bin-packing: harmonic grouping</span>
+        1BP: harmonic grouping</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/size-lb-config-lp.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/size-lb.html">
         <span class="deptitle">
-        Geometric bin-packing: rsize(I) lower-bounds lin(I)</span>
+        1BP: size(I) ≤ lin(I)</span>
     </a>
     </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>The Karmarkar-Karp algorithm is a polynomial-time algorithm for 1D bin-packing.
+<p><span class="invisible">
 $\newcommand{\Size}{\operatorname{size}}$
 $\newcommand{\floor}[1]{\left\lfloor{#1}\right\rfloor}$
 $\newcommand{\lin}{\operatorname{lin}}$
 $\newcommand{\LP}{\operatorname{LP}}$
 $\newcommand{\Opt}{\operatorname{opt}}$
-$\newcommand{\Sum}{\operatorname{sum}}$</p>
+$\newcommand{\Sum}{\operatorname{sum}}$
+</span>
+The Karmarkar-Karp algorithm is a polynomial-time algorithm for 1D bin packing.</p>
 <p>Its output's cost is at most $\lin(I) + O(\log^2(\Size(I)))$.
 This makes it achieve an additive approximation of $O(\log^2(\Opt(I)))$.</p>
 <h2>Algorithm</h2>
-<p>Let $I$ be a bin-packing instance with $m$ distinct items.
+<p>Let $I$ be a bin packing instance with $m$ distinct items.
 Let there be $b_i$ items of type $I$.
 Call $b$ the item frequency vector of $I$.
 Let $L$ be the config LP, let $T$ be the configuration matrix
@@ -100,13 +108,14 @@ Let $\delta = 1 / \Size(I)$.</p>
 <p>Algorithm $\operatorname{large-bin-pack}(I)$:</p>
 <ul>
 <li>if $\Size(I) &lt; 10$:<ul>
-<li>Pack $I$ using next-fit algorithm.</li>
+<li>Pack $I$ using Next-Fit algorithm.</li>
 </ul>
 </li>
 <li>else:<ul>
 <li>$(I', J) = \operatorname{harmonic-grouping}(I)$</li>
-<li>Pack $J$ using next-fit algorithm (packing discards).</li>
-<li>$x = \operatorname{approx-solve-config-lp}(I', \delta)$.</li>
+<li>Pack $J$ using Next-Fit algorithm (packing discards).</li>
+<li>$x = \operatorname{approx-solve-config-lp}(I', \delta)$.
+In the configuration LP, items have the same type iff they have the same size.</li>
 <li>For each config $C$, pack $\floor{x_C}$ bins of $C$ (integral packing).
   Call the packed items $I_1$ and the remaining items $I_2$.</li>
 <li>$\operatorname{large-bin-pack}(I_2)$.</li>
@@ -120,7 +129,9 @@ Let $\delta = 1 / \Size(I)$.</p>
 <li>Add $I_S$ to $P$ using first-fit to get packing $Q$. Return $Q$.</li>
 </ul>
 <h2>Correctness, running time and approximation</h2>
-<p>Since an FPTAS exists for 1D knapsack, it is possible to approximately fractionally solve the config LP.</p>
+<p>Since an FPTAS exists for the configuration LP,
+we can obtain a feasible solution to the configuration LP of objective value
+at most $\lin(I) + 1$.</p>
 <p>Let there be $t$ invocations of large-bin-pack
 where $\Size(I) \ge 10$.</p>
 <h3>Cost of integral packing</h3>
@@ -139,7 +150,11 @@ Therefore, $x - \floor{x}$ is a feasible solution to $\LP(I_2)$.</p>
 \Sum(\floor{x}) &amp;\le \Sum(x) - \lin(I_2)  \tag{$x - \floor{x}$ is feasible for $\LP(I_2)$}
 \\ &amp;\le (\lin(I') + \delta) - \lin(I_2)  \tag{$x$ is approx optimal for $\LP(I')$}
 \\ &amp;\le \lin(I) - \lin(I_2) + \delta  \tag{$I' \preceq I$}
-\end{align}</p>
+\end{align}
+<span class="text-danger">How can we compare configuration LPs of $I'$ and $I$
+if they categorize items into types differently?</span></p>
+<p><span class="text-danger">It looks like we have assumed that we can solve
+the configuration LP of $I$ exactly. We should fix this.</span></p>
 <p>$I_2$ in a certain invocation of large-bin-pack becomes $I$ in the next invocation.
 This implies that the cost of packing items as per $\floor{x}$
 over all invocations of large-bin-pack is at most $\lin(I) + t\delta \le \Opt(I) + t\delta$.</p>
@@ -164,7 +179,7 @@ Since $\Size(I)$ reduces by at least half in each invocation,
 \in O(\lg^2\Size(I)) \subseteq O(\lg^2\Opt(I)) \]</p>
 <h3>Running time and total cost</h3>
 <p>There are $O(\lg(\Size(I))) \subseteq O(\lg(n))$ iterations
-and each iteration takes polynomial time, since harmonic grouping, next-fit
+and each iteration takes polynomial time, since harmonic grouping, Next-Fit
 and solving the config LP can be done in polynomial time.</p>
 <p>The cost of packing in the base case ($\Size(I) &lt; 10$) is at most 21.
 The cost of integral packing is $\Opt(I) + O\left(\frac{\lg(\Size(I))}{\Size(I)}\right)$.
@@ -174,24 +189,39 @@ Therefore, total cost of packing is at most $\Opt(I) + O(\lg^2(\Opt(I)))$.</p>
 <div class="horizontal-rule"></div>
 <h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul><li>Depth: 4</li><li>Number of transitive dependencies: 21</li></ul>
+<ul><li>Depth: 6</li><li>Number of transitive dependencies: 26</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
 <ol class="deplist">
     <li>
-    <span class="deptitleuci missing">/optimization/linear-prog/sep-for-dual</span>
+    <span class="deptitleuci missing">/optimization/lin-func-is-max-at-extreme-point-of-polytope</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/bounds/upper-exp-bound</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
+        <span class="deptitle">
+        Bin packing and Knapsack</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/size-le-opt.html">
+        <span class="deptitle">
+        1BP: ⌈size(I)⌉ ≤ opt(I)</span>
+    </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/next-fit.html">
         <span class="deptitle">
-        1D bin-packing: next-fit(S) < 2size(S)+1</span>
+        1BP: NextFit(S) ≤ ⌈2size(S)⌉</span>
     </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/ks-dp-algo.html">
         <span class="deptitle">
-        Quasi-polynomial time algorithm for 1D knapsack</span>
+        Pseudo-polynomial time algorithm for 1D knapsack</span>
     </a>
     </li>
     <li>
@@ -203,79 +233,91 @@ Therefore, total cost of packing is at most $\Opt(I) + O(\lg^2(\Opt(I)))$.</p>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/extend-by-small.html">
         <span class="deptitle">
-        1D bin-packing: extending by small items</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/size.html">
-        <span class="deptitle">
-        Geometric packing: size and rsize</span>
+        1BP: extending by small items</span>
     </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/config-lp.html">
         <span class="deptitle">
-        Bin-packing: configuration LP</span>
+        Bin packing: configuration LP</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/size-lb-config-lp.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/size-lb.html">
         <span class="deptitle">
-        Geometric bin-packing: rsize(I) lower-bounds lin(I)</span>
+        1BP: size(I) ≤ lin(I)</span>
     </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/union.html">
         <span class="deptitle">
-        Bin-packing: union of input instances</span>
+        Bin packing: union of input instances</span>
     </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/predecessor.html">
         <span class="deptitle">
-        Bin-packing: predecessor of an input instance</span>
+        Bin packing: predecessor of an input instance</span>
     </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/prec.html">
         <span class="deptitle">
-        Bin-packing: config LP of predecessor</span>
+        Bin packing: config LP of predecessor</span>
+<span class="doc-status">(broken)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+        <span class="deptitle">
+        Group</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/rank-lemma.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
         <span class="deptitle">
-        Linear programming: rank lemma</span>
-<span class="doc-status">(incomplete)</span>    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/dual.html">
-        <span class="deptitle">
-        Optimization: Dual and Lagrangian </span>
+        Ring</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/dual.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html">
         <span class="deptitle">
-        Dual of a linear program</span>
+        Semiring</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/dual.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
         <span class="deptitle">
-        Bin-packing: dual of config LP</span>
+        Matrix</span>
     </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/kp-fptas.html">
-        <span class="deptitle">
-        Bin-packing: Solving fractional config LP using FPTAS for knapsack</span>
-<span class="doc-status">(incomplete)</span>    </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/integration-bound.html">
         <span class="deptitle">
         Integration bound</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/log-bound.html">
+        <span class="deptitle">
+        Bound on log</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/eku-pst.html">
+        <span class="deptitle">
+        Approximation algorithm for covering LPs</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/ks-approx.html">
+        <span class="deptitle">
+        BP: α(1+ε)-approx solution to config LP using α-approx algorithm for knapsack</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/fptas-for-config-lp.html">
+        <span class="deptitle">
+        1BP: FPTAS for config LP</span>
     </a>
     </li>
     <li>
@@ -299,7 +341,7 @@ Therefore, total cost of packing is at most $\Opt(I) + O(\lg^2(\Opt(I)))$.</p>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/harmonic-grouping.html">
         <span class="deptitle">
-        1D bin-packing: harmonic grouping</span>
+        1BP: harmonic grouping</span>
     </a>
     </li>
 </ol>

@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Bin packing: union of input instances - TheoremDep</title>
-<meta name="description" content="The union of I and J, denoted as I+J, is the input instance which contains items from both I and J (with duplication)." />
+<title>1BP: ⌈size(I)⌉ ≤ opt(I) - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,7 +26,7 @@
 </nav>
 
 <div id="main">
-<h1> Bin packing: union of input instances </h1>
+<h1> 1BP: ⌈size(I)⌉ ≤ opt(I) </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
@@ -41,34 +41,38 @@
 <div class="horizontal-rule"></div>
 <p><span class="invisible">
 $\newcommand{\Size}{\operatorname{size}}$
+$\newcommand{\Sum}{\operatorname{sum}}$
 $\newcommand{\opt}{\operatorname{opt}}$
+$\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}$
 </span>
-Let $I$ and $J$ be bin packing instances.
-Then $I + J$, called the union of $I$ and $J$ is the instance
-which contains all items of $I$ and $J$.</p>
-<p>Note that all items here are considered to be distinct from each other,
-so $I+J$ contains $|I| + |J|$ items.</p>
-<p>Let $\opt(I)$ be the minimum number of bins required to pack $I$.
-Then $\opt(I+J) \le \opt(I) + \opt(J)$
-because to pack $I+J$ we can first optimally pack $I$ in $\opt(I)$ bins
-and then optimally pack $J$ in $\opt(J)$ bins.</p>
-<p>For classical packing,
-$\Size(I+J) = \Size(I) + \Size(J)$.</p>
+Let $I$ be a 1BP instance.
+Then $\ceil{\Size(I)} \le \opt(I)$.</p>
+<h2>Proof</h2>
+<p>Let $m = \opt(I)$. Let $B_i$ be the items in the $i^{\textrm{th}}$ bin in the optimal packing.
+Then $\Size(B_i) \le 1$ and
+\[ \ceil{\Size(I)} = \ceil{\sum_{i=1}^m \Size(B_i)}
+\le \ceil{\sum_{i=1}^m 1} = m = \opt(I). \]</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/harmonic-grouping.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/aptas.html">
         <span class="deptitle">
-        1BP: harmonic grouping</span>
+        1BP: APTAS</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/linear-grouping.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/next-fit.html">
         <span class="deptitle">
-        1BP: linear grouping</span>
+        1BP: NextFit(S) ≤ ⌈2size(S)⌉</span>
     </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/karmarkar-karp.html">
+        <span class="deptitle">
+        1BP: Karmarkar-Karp algorithm</span>
+<span class="doc-status">(broken)</span>    </a>
     </li>
 </ol>
 <h2> Info: </h2>

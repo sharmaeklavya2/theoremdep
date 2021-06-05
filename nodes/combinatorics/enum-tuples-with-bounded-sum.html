@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>Algorithm for enumerating tuples with bounded sum - TheoremDep</title>
+<meta name="description" content="An algorithm that outputs all n-tuples of non-negative integers having sum at most s in time O(C(n+s,n))." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" aria-label="Search" type="text" autocomplete="off" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Algorithm for enumerating tuples with bounded sum </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/add-recursion.html">
+        <span class="deptitle">
+        Binomial coefficient: Additive recursion</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/tuples-with-bounded-sum.html">
+        <span class="deptitle">
+        Number of tuples with bounded sum</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>We will look at the algorithm <code>enumTuples(n, s)</code> that outputs all $n$-tuples
+of non-negative integers that sum to at most $s$ in time
+$\Theta(\binom{s+n}{n}) \subseteq O((s+1)^n)$.</p>
+<h2>Algorithm</h2>
+<p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a>
+code using <a href="https://en.wikipedia.org/wiki/Generator_(computer_programming)">generators</a>:</p>
+<pre><code>def enumTuplesHelper(n, s, a):
+    # for all yielded outputs, the first n elements of a sum to s.
+    # in the beginning and end of the generator, the first n elements of a are 0.
+    if s == 0 or n == 0:
+        yield a
+    else:
+        for t in range(s, -1, -1):  # t in [s, s-1, ..., 0]
+            a[n-1] = t
+            yield from enumTuples(n-1, s-t, a)
+
+def enumTuples(n, s):
+    a = [0] * n
+    return enumTuples(n, s, a)
+</code></pre>
+<p>It's easy to see that <code>enumTuples(n, s)</code> yields all lists of length $n$
+that sum to at most $s$.</p>
+<h2>Analysis</h2>
+<p>Let $T(n, s)$ be the time taken by <code>enumTuplesHelper(n, s, a)</code> to run.
+Let $T(0, s)$ and $T(n, 0)$ be upper-bounded by a constant $b \ge 0$.</p>
+<p>From the <code>for</code> loop in the program, we get that for some constant $c \ge 0$,
+\[ T(n, s) \le \sum_{t=0}^s (T(n-1, s-t) + c) = cs + \sum_{i=0}^s T(n-1, i). \]
+Define
+\[ g(n, s) = \begin{cases} b &amp; \textrm{if } n = 0 \textrm{ or } s = 0
+\\ cs + \sum_{i=0}^s g(n-1, i) &amp; \textrm{otherwise} \end{cases}. \]
+We can prove using induction that $T(n, s) \le g(n, s)$ for all $n$ and $s$.
+Also note that
+\[ g(n, s) = \begin{cases} b &amp; \textrm{if } n = 0
+\\ cs + \sum_{i=0}^s g(n-1, i) &amp; \textrm{otherwise} \end{cases}, \]
+since for $s = 0$,
+\[ cs + \sum_{i=0}^s g(n-1, i) = g(n-1, 0) = b = g(n, s). \]</p>
+<p>For $n \ge 1$ and $s \ge 1$, we get $g(n, s) - g(n, s-1) = c + g(n-1, s)$.
+Let $f(n, s) = (g(n, s) + c)/(b+c)$. Then we get
+\[ f(n, s) = \begin{cases}1 &amp; \textrm{if } n = 0 \textrm{ or } s = 0
+\\ f(n-1, s) + f(n, s-1) &amp; \textrm{otherwise}\end{cases}. \]
+This recursion is satisfied by $f(n, s) = \binom{n+s}{n}$, since
+\begin{align}
+f(n-1, s) + f(n, s-1) &amp;= \binom{n+s-1}{n-1} + \binom{n+s-1}{n}
+\\ &amp;= \binom{n+s}{n} = f(n, s).
+\end{align}
+Therefore, $T(n, s) \le g(n, s) = (b+c)\binom{n+s}{n} - c$.</p>
+<p>The number of $n$-tuples of non-negative integers summing to at most $s$
+is $\binom{n+s}{n} \le (s+1)^n$.
+Therefore, $T(n, s) \in \Theta(\binom{n+s}{n}) \subseteq O((s+1)^n)$.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-brute-algo.html">
+        <span class="deptitle">
+        Bin packing: config-enum algorithm</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 4</li><li>Number of transitive dependencies: 4</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/bin-coeff.html">
+        <span class="deptitle">
+        Binomial Coefficient</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/add-recursion.html">
+        <span class="deptitle">
+        Binomial coefficient: Additive recursion</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/sum-2.html">
+        <span class="deptitle">
+        Binomial coefficient: Sum 2</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/tuples-with-bounded-sum.html">
+        <span class="deptitle">
+        Number of tuples with bounded sum</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

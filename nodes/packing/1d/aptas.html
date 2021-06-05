@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>1D bin-packing: APTAS - TheoremDep</title>
+<title>1BP: APTAS - TheoremDep</title>
 <meta name="description" content="Track dependencies between theorems." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
@@ -26,60 +26,67 @@
 </nav>
 
 <div id="main">
-<h1> 1D bin-packing: APTAS </h1>
+<h1> 1BP: APTAS </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/size.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
         <span class="deptitle">
-        Geometric packing: size and rsize</span>
+        Bin packing and Knapsack</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/size-le-opt.html">
+        <span class="deptitle">
+        1BP: ⌈size(I)⌉ ≤ opt(I)</span>
     </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-brute-algo.html">
         <span class="deptitle">
-        Bin-packing: config-enum algorithm</span>
+        Bin packing: config-enum algorithm</span>
     </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/predecessor.html">
         <span class="deptitle">
-        Bin-packing: predecessor of an input instance</span>
+        Bin packing: predecessor of an input instance</span>
     </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/linear-grouping.html">
         <span class="deptitle">
-        1D bin-packing: linear grouping</span>
+        1BP: linear grouping</span>
     </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/extend-by-small.html">
         <span class="deptitle">
-        1D bin-packing: extending by small items</span>
+        1BP: extending by small items</span>
     </a>
     </li>
 </ol>
 
 <div class="horizontal-rule"></div>
 <p><span class="invisible">
+$\newcommand{\eps}{\varepsilon}$
 $\newcommand{\Size}{\operatorname{size}}\newcommand{\Opt}{\operatorname{opt}}$
 $\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}$
 $\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}$
 </span>
-Let $I$ be a 1D bin-packing instance.
+Let $I$ be a 1D bin packing instance containing $n$ items.
 Without loss of generality, assume bins have size 1.
-Let $\Opt(I)$ be the minimum number of bins needed to pack $I$.
-Then for any constant $\epsilon$, there is a polynomial-time algorithm which packs $I$ in
-$\frac{1}{1-\epsilon}\Opt(I) + 1$ bins.</p>
+Then for any constant $\eps &gt; 0$, there is an algorithm that packs $I$ in
+$\frac{1}{1-\eps}\Opt(I) + 1$ bins in $O((n+1)^R R/\eps^2)$ time,
+where $R = \ceil{1/\eps}^{\ceil{1/\eps^2}}$.</p>
 <h2>Algorithm</h2>
-<p>Algorithm $\operatorname{bin-pack}(I, \epsilon)$:</p>
+<p>Algorithm $\operatorname{binPack}(I, \eps)$:</p>
 <ul>
-<li>$I_S = \{s \in I: s &lt; \epsilon\}$ and $I_L = \{s \in I: s \ge \epsilon\}$.</li>
-<li>$k = \floor{\epsilon \Size(I_L)} + 1$.</li>
+<li>$I_S = \{s \in I: s \le \eps\}$ and $I_L = \{s \in I: s &gt; \eps\}$.</li>
+<li>$k = \floor{\eps \Size(I_L)} + 1$.</li>
 <li>$(I_1, I_2) = \operatorname{linear-grouping}(I_L, k)$.</li>
-<li>$P_1 = \operatorname{exact-bin-pack}(I_1)$.</li>
+<li>$P_1 = \operatorname{exactBinPack}(I_1)$.</li>
 <li>Pack each item in $I_2$ in a separate bin. Let $P_2$ be the resulting packing.</li>
 <li>$P' = P_1 + P_2$ (i.e. pack $I_1 + I_2$ using $|P_1| + |P_2|$ bins).</li>
 <li>Use $P'$, which is a packing of $I_1 + I_2$, to get a packing $P$ for $I_L$.
@@ -88,65 +95,71 @@ $\frac{1}{1-\epsilon}\Opt(I) + 1$ bins.</p>
 </ul>
 <p>In this algorithm, $P$ is a packing of $I_L$ and $Q$ is a packing of $I$.</p>
 <h2>Running time and approximation ratio</h2>
-<p>Since $I_L$ has items of size $\ge \epsilon$,
-\[ \Size(I_L) \ge \epsilon |I_L| \implies |I_L| \le \frac{\Size(I_L)}{\epsilon} \]</p>
+<p>Since $I_L$ has items of size $&gt; \eps$,
+\[ \Size(I_L) \ge \eps |I_L| \implies |I_L| \le \frac{\Size(I_L)}{\eps} \]</p>
 <p>The number of distinct items in $I_1$ is
 \[ \ceil{\frac{|I_L|}{k}}
-\le 1 + \frac{\Size(I_L)/\epsilon}{\floor{\epsilon \Size(I_L)} + 1}
-\le 1 + \frac{1}{\epsilon^2} \]
-Therefore, there is a constant number of distinct item types.
-The maximum number of items a bin can accommodate is $\frac{1}{\epsilon}$, which is also a constant.
-So the exact-bin-pack algorithm runs in polynomial time.</p>
+\le \ceil{\frac{\Size(I_L)/\eps}{\floor{\eps \Size(I_L)} + 1}}
+\le \ceil{\frac{1}{\eps^2}} \]
+The maximum number of items a bin can accommodate is $\ceil{\frac{1}{\eps}}-1$.
+So the <code>exactBinPack</code> algorithm runs in time $O((n+1)^R R/\eps^2)$,
+where $R = \ceil{1/\eps}^{\ceil{1/\eps^2}}$.</p>
 <p>By the property of linear grouping, we get $I_1 \preceq I_L$. Therefore,
 \begin{align}
 |P| &amp;= |P_1| + |P_2| \le \Opt(I_1) + k-1
-\\ &amp;\le \Opt(I_L) + \epsilon \Size(I_L)
-\le (1+\epsilon)\Opt(I_L)
-\\ &amp;\le (1+\epsilon)\Opt(I)
+\\ &amp;\le \Opt(I_L) + \eps \Size(I_L)
+\le (1+\eps)\Opt(I_L)
+\\ &amp;\le (1+\eps)\Opt(I)
 \end{align}</p>
 <p>Since $Q$ is obtained by adding $I_S$ to $P$ via first-fit,
 \begin{align}
-|Q| &amp;\le \max\left(|P|, \frac{1}{1-\epsilon}\Size(I)+1\right)
-\\ &amp;\le \max\left( (1+\epsilon)\Opt(I), \frac{1}{1-\epsilon}\Opt(I)+1 \right)
-\\ &amp;\le \frac{1}{1-\epsilon}\Opt(I)+1
+|Q| &amp;\le \max\left(|P|, \frac{1}{1-\eps}\Size(I)+1\right)
+\\ &amp;\le \max\left( (1+\eps)\Opt(I), \frac{1}{1-\eps}\Opt(I)+1 \right)
+\\ &amp;\le \frac{1}{1-\eps}\Opt(I)+1
 \end{align}</p>
 
 <div class="horizontal-rule"></div>
 <h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul><li>Depth: 5</li><li>Number of transitive dependencies: 10</li></ul>
+<ul><li>Depth: 6</li><li>Number of transitive dependencies: 12</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/extend-by-small.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
         <span class="deptitle">
-        1D bin-packing: extending by small items</span>
+        Bin packing and Knapsack</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/size.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/size-le-opt.html">
         <span class="deptitle">
-        Geometric packing: size and rsize</span>
+        1BP: ⌈size(I)⌉ ≤ opt(I)</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/extend-by-small.html">
+        <span class="deptitle">
+        1BP: extending by small items</span>
     </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/union.html">
         <span class="deptitle">
-        Bin-packing: union of input instances</span>
+        Bin packing: union of input instances</span>
     </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/predecessor.html">
         <span class="deptitle">
-        Bin-packing: predecessor of an input instance</span>
+        Bin packing: predecessor of an input instance</span>
     </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/linear-grouping.html">
         <span class="deptitle">
-        1D bin-packing: linear grouping</span>
+        1BP: linear grouping</span>
     </a>
     </li>
     <li>
@@ -174,9 +187,15 @@ So the exact-bin-pack algorithm runs in polynomial time.</p>
     </a>
     </li>
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/enum-tuples-with-bounded-sum.html">
+        <span class="deptitle">
+        Algorithm for enumerating tuples with bounded sum</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-brute-algo.html">
         <span class="deptitle">
-        Bin-packing: config-enum algorithm</span>
+        Bin packing: config-enum algorithm</span>
     </a>
     </li>
 </ol>

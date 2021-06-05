@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Geometric bin-packing: rsize(I) lower-bounds lin(I) - TheoremDep</title>
+<title>1BP: size(I) ≤ lin(I) - TheoremDep</title>
 <meta name="description" content="Track dependencies between theorems." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
@@ -26,38 +26,42 @@
 </nav>
 
 <div id="main">
-<h1> Geometric bin-packing: rsize(I) lower-bounds lin(I) </h1>
+<h1> 1BP: size(I) ≤ lin(I) </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/size.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
         <span class="deptitle">
-        Geometric packing: size and rsize</span>
+        Bin packing and Knapsack</span>
     </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/config-lp.html">
         <span class="deptitle">
-        Bin-packing: configuration LP</span>
+        Bin packing: configuration LP</span>
     </a>
     </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $I$ be a $d$-dimensional geometric bin-packing instance.
-Then $\operatorname{rsize}(I) \le \operatorname{lin}(I)$.</p>
+<p><span class="invisible">
+$\newcommand{\Size}{\operatorname{size}}$
+$\newcommand{\lin}{\operatorname{lin}}$
+$\newcommand{\Th}{^{\textrm{th}}}$
+</span>
+Let $I$ be a 1BP instance. Then $\Size(I) \le \lin(I)$.</p>
 <h2>Proof</h2>
-<p>Let there be $m$ distinct items. Let $b_i$ be the number of items of the $i^{\textrm{th}}$ type.
-Let $s_i$ be the rsize of the $i^{\textrm{th}}$ type.
+<p>Let there be $m$ distinct items. Let $b_i$ be the number of items of the $i\Th$ type.
+Let $s_i$ be the size of the $i\Th$ type.
 Let $T$ be the configuration matrix. Let $N$ be the total number of configurations.
 Let $x^*$ be the optimal solution to the config LP.</p>
 <p>\begin{align}
-\operatorname{rsize}(I) &amp;= \sum_{i=1}^m b_is_i
-\\ &amp;\le \sum_{i=1}^m (Tx^*)_is_i  \tag{by $i^{\textrm{th}}$ constraint of config lp}
+\Size(I) &amp;= \sum_{i=1}^m b_is_i
+\\ &amp;\le \sum_{i=1}^m (Tx^*)_is_i  \tag{by $i\Th$ constraint of config lp}
 \\ &amp;= \sum_{j=1}^N x_j^* \left( \sum_{i=1}^m T[i, j]s_i \right)
-\\ &amp;\le \sum_{j=1}^N x_j^*  \tag{sum of rsizes in $j^{\textrm{th}}$ bin is at most 1}
-\\ &amp;= \operatorname{lin}(I)
+\\ &amp;\le \sum_{j=1}^N x_j^*  \tag{sum of sizes in $j\Th$ bin is at most 1}
+\\ &amp;= \lin(I)
 \end{align}</p>
 
 <div class="horizontal-rule"></div>
@@ -66,26 +70,26 @@ Let $x^*$ be the optimal solution to the config LP.</p>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/karmarkar-karp.html">
         <span class="deptitle">
-        1D bin-packing: Karmarkar-Karp algorithm</span>
-    </a>
+        1BP: Karmarkar-Karp algorithm</span>
+<span class="doc-status">(broken)</span>    </a>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 1</li><li>Number of transitive dependencies: 2</li></ul>
+<ul><li>Depth: 2</li><li>Number of transitive dependencies: 2</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/size.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
         <span class="deptitle">
-        Geometric packing: size and rsize</span>
+        Bin packing and Knapsack</span>
     </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/config-lp.html">
         <span class="deptitle">
-        Bin-packing: configuration LP</span>
+        Bin packing: configuration LP</span>
     </a>
     </li>
 </ol>

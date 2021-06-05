@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>Bin packing and Knapsack - TheoremDep</title>
+<meta name="description" content="In the bin packing problem, we are given a set of items and an infinite supply of identical bins. Our task is to pack the items into the minimum number of bins. In the knapsack problem, we are given a set of items, and each item has a non-negative profit associated with it. Our task is to pack a maximum-profit subset of the items into a single bin." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" aria-label="Search" type="text" autocomplete="off" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Bin packing and Knapsack </h1>
+<h2 class="no-deps"> Dependencies:
+None </h2>
+
+<div class="horizontal-rule"></div>
+<p><span class="invisible">
+$\newcommand{\Size}{\operatorname{size}}$
+$\newcommand{\opt}{\operatorname{opt}}$
+</span>
+In the bin packing problem (BP), we are given a set $I$ of items
+and an infinite supply of identical bins.
+Our task is to pack the items $I$ into the minimum number of bins.
+Depending on the kind of items and bins, we can get different versions of the problem.</p>
+<p>The minimum number of bins needed to pack $I$ is denoted by $\opt(I)$.
+The number of items in $I$ is denoted by $|I|$.</p>
+<p>In the classical bin packing problem (also called the 1-dimensional bin packing problem or 1BP),
+each item $i$ has a number $\Size(i) \in (0, 1]$ associated with it,
+and a set of items fits into the bin iff the sum of their sizes is at most 1.
+For a set $X$ of items, define $\Size(X) = \sum_{i \in X} \Size(i)$.</p>
+<p>In the knapsack problem (KS), we are given a set $I$ of items,
+and each item $i$ has a profit $p(i) \ge 0$ associated with it.
+Our task is to pack a maximum-profit subset of the items into a single bin.
+Here the bin is also called <em>knapsack</em>.
+In the classical knapsack problem (also called 1-dimensional knapsack or 1KS),
+each item $i$ has a number $\Size(i) \in (0, 1]$ associated with it,
+and a set of items fits into a bin iff the sum of their sizes is at most 1.</p>
+<p>The profit of a maximum-profit packing of a subset of $I$ into a bin is denoted by $\opt(I)$.
+Usually, it will be clear from context whether $\opt(I)$ refers to bin packing or knapsack,
+but when disambiguation is necessary, we will use $\opt_{\mathrm{BP}}(I)$
+and $\opt_{\mathrm{KS}}(I)$ for bin packing and knapsack, respectively.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/predecessor.html">
+        <span class="deptitle">
+        Bin packing: predecessor of an input instance</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-brute-algo.html">
+        <span class="deptitle">
+        Bin packing: config-enum algorithm</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/union.html">
+        <span class="deptitle">
+        Bin packing: union of input instances</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/ks-approx.html">
+        <span class="deptitle">
+        BP: α(1+ε)-approx solution to config LP using α-approx algorithm for knapsack</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/config-lp.html">
+        <span class="deptitle">
+        Bin packing: configuration LP</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/size-lb.html">
+        <span class="deptitle">
+        1BP: size(I) ≤ lin(I)</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/1.5-inapprox.html">
+        <span class="deptitle">
+        1BP is (1.5-ε)-inapprox</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/extend-by-small.html">
+        <span class="deptitle">
+        1BP: extending by small items</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/aptas.html">
+        <span class="deptitle">
+        1BP: APTAS</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/ks-dp-algo.html">
+        <span class="deptitle">
+        Pseudo-polynomial time algorithm for 1D knapsack</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/next-fit.html">
+        <span class="deptitle">
+        1BP: NextFit(S) ≤ ⌈2size(S)⌉</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/fptas-for-config-lp.html">
+        <span class="deptitle">
+        1BP: FPTAS for config LP</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/size-le-opt.html">
+        <span class="deptitle">
+        1BP: ⌈size(I)⌉ ≤ opt(I)</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/harmonic-grouping.html">
+        <span class="deptitle">
+        1BP: harmonic grouping</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/ks-fptas.html">
+        <span class="deptitle">
+        FPTAS for 1D knapsack</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/karmarkar-karp.html">
+        <span class="deptitle">
+        1BP: Karmarkar-Karp algorithm</span>
+<span class="doc-status">(broken)</span>    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 0</li><li>Number of transitive dependencies: 0</li></ul>
+
+<h2 class="no-deps"> Transitive dependencies: None </h2>
+
+</div>
+</body>
+</html>

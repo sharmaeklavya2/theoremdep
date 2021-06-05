@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Bin-packing: config-enum algorithm - TheoremDep</title>
-<meta name="description" content="An algorithm for bin-packing that enumerates all bin configurations and then considers all combinations of those combinations." />
+<title>Bin packing: config-enum algorithm - TheoremDep</title>
+<meta name="description" content="An algorithm for bin packing that enumerates all bin configurations and then considers all combinations of those combinations." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,51 +26,72 @@
 </nav>
 
 <div id="main">
-<h1> Bin-packing: config-enum algorithm </h1>
+<h1> Bin packing: config-enum algorithm </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
+        <span class="deptitle">
+        Bin packing and Knapsack</span>
+    </a>
+    </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/tuples-with-bounded-sum.html">
         <span class="deptitle">
         Number of tuples with bounded sum</span>
     </a>
     </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/enum-tuples-with-bounded-sum.html">
+        <span class="deptitle">
+        Algorithm for enumerating tuples with bounded sum</span>
+    </a>
+    </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>For a bin-packing problem, suppose we have $k$ different types of items
+<p>For a bin packing problem, suppose we have $k$ different types of items
 and there are $n_i$ items of each type.
-We are also given that a bin can accommodate at most $t$ items (regardless of the types of the items).</p>
+We are also promised that a bin can accommodate at most $t$ items
+(regardless of the types of the items).</p>
 <p>A configuration is defined to be a $k$-tuple $(m_1, m_2, \ldots, m_k)$
 such that it is possible to pack $m_i$ copies of items of type $i$ for all $i$ in a single bin.
 Let there be $R$ possible configurations.
 Assume that we have an algorithm that given a $k$-tuple,
 decides whether it is a configuration or not
-(for 1D bin-packing, this algorithm simply checks that the sum of the items is at most 1).</p>
-<p>Any bin-packing instance can be solved exactly using the 'config-enum algorithm',
+(for 1D bin packing, this algorithm simply checks that the sum of the items is at most 1).
+Assume this algorithm runs in time $O(V(t, k))$
+(for 1D bin packing, $V(t, k) = k$).</p>
+<p>Any bin packing instance can be solved exactly using the 'config-enum algorithm',
 also known as 'exact algorithm' or 'brute-force algorithm'.
 This algorithm first enumerates all possible configurations.
-Then it looks at all possible combinations of configurations that can give a valid bin-packing.
+Then it looks at all possible combinations of configurations that can give a valid bin packing.
 Out of these, we pick the combination with the least number of bins.</p>
 <p>Let $m$ be a known upper-bound on the number of bins in the optimal solution.
 A naive upper-bound is $m \le n$, since we can pack each item in its own bin.</p>
-<p>The config-enum algorithm is a $O\left(\frac{k(m+R)^R}{(R-1)!}\right)$-time algorithm.
-We can prove that $R \le \binom{k+t}{t}$.
-So when $k$ and $t$ are constants, this is a polynomial-time algorithm.</p>
+<p>The config-enum algorithm is a $O\left(kR\binom{m+R}{R} + V(t,k)\binom{t+k}{k}\right)$-time algorithm.
+We can prove that $R \le \binom{k+t}{t} \le (t+1)^k$, so when $k$ and $t$ are constants,
+this is a polynomial-time algorithm. Also,
+\begin{align}
+&amp; kR\binom{m+R}{R} + V(t,k)\binom{t+k}{k}
+\\ &amp;\le kR(m+1)^R + V(t,k)(t+1)^k
+\\ &amp;\le k(t+1)^k(m+1)^{(t+1)^k} + V(t,k)(t+1)^k.
+\end{align}</p>
 <h2>Algorithm</h2>
 <h3>Enumerating configurations</h3>
 <p>To enumerate all possible configurations, iterate over all $k$-tuples with sum at most $t$
 and where the $i^{\textrm{th}}$ element of the tuple is at most $n_i$.
 Then check if the tuple is a valid configuration.
+This takes time $O(V(t, k)\binom{t+k}{k})$.
 Since there can be at most $\binom{t+k}{k}$ such tuples, $R \le \binom{t+k}{k}$.
 Assign an integer identifier from 1 to $R$ to each configuration.</p>
 <h3>Enumerating combinations</h3>
 <p>To enumerate all possible combinations of configurations,
 iterate over all $R$-tuples with sum at most $m$.
 Here the $i^{\textrm{th}}$ element of the $R$-tuple is the number of bins of configuration $i$.
-This gives us $\binom{m+R}{R} \in O\left(\frac{(m+R)^R}{R!}\right)$ tuples.</p>
-<p>To check if a combination is a valid bin-packing,
+This gives us $\binom{m+R}{R}$ tuples.</p>
+<p>To check if a combination is a valid bin packing,
 find the number of items of type $i$ across all bins.
 This should be greater than or equal to $n_i$.
 Checking the validity of a combination takes $O(kR)$ time.</p>
@@ -82,16 +103,22 @@ Checking the validity of a combination takes $O(kR)$ time.</p>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/aptas.html">
         <span class="deptitle">
-        1D bin-packing: APTAS</span>
+        1BP: APTAS</span>
     </a>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 4</li><li>Number of transitive dependencies: 4</li></ul>
+<ul><li>Depth: 5</li><li>Number of transitive dependencies: 6</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
 <ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
+        <span class="deptitle">
+        Bin packing and Knapsack</span>
+    </a>
+    </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/bin-coeff/bin-coeff.html">
         <span class="deptitle">
@@ -114,6 +141,12 @@ Checking the validity of a combination takes $O(kR)$ time.</p>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/tuples-with-bounded-sum.html">
         <span class="deptitle">
         Number of tuples with bounded sum</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/enum-tuples-with-bounded-sum.html">
+        <span class="deptitle">
+        Algorithm for enumerating tuples with bounded sum</span>
     </a>
     </li>
 </ol>

@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>1D bin-packing: next-fit(S) < 2size(S)+1 - TheoremDep</title>
-<meta name="description" content="The next-fit algorithm's output is at most twice the sum of sizes of items plus 1. This gives us an asymptotic 2-approx algorithm for 1D bin-packing." />
+<title>1BP: NextFit(S) ≤ ⌈2size(S)⌉ - TheoremDep</title>
+<meta name="description" content="The number of bins used by the Next-Fit algorithm to pack a set S of items is at most ⌈2size(S)⌉. This gives us a 2-approx algorithm for 1BP." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,35 +26,53 @@
 </nav>
 
 <div id="main">
-<h1> 1D bin-packing: next-fit(S) < 2size(S)+1 </h1>
-<h2 class="no-deps"> Dependencies:
-None </h2>
+<h1> 1BP: NextFit(S) ≤ ⌈2size(S)⌉ </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
+        <span class="deptitle">
+        Bin packing and Knapsack</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/size-le-opt.html">
+        <span class="deptitle">
+        1BP: ⌈size(I)⌉ ≤ opt(I)</span>
+    </a>
+    </li>
+</ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $S = \{s_1, s_2, \ldots, s_n\}$ be a 1D bin-packing instance.
-Let $\operatorname{size}(S) = \sum_{i=1}^n s_i$.
+<p><span class="invisible">
+$\newcommand{\Size}{\operatorname{size}}$
+$\newcommand{\Sum}{\operatorname{sum}}$
+$\newcommand{\opt}{\operatorname{opt}}$
+$\newcommand{\NextFit}{\operatorname{NextFit}}$
+$\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}$
+</span>
+Let $S$ be a 1D bin packing instance.
 Assume WLoG that bins have size 1.</p>
-<p>The next-fit algorithm keeps one open bin at all times.
+<p>The Next-Fit algorithm keeps one open bin at all times.
 For every item, it tries to fit the item in the open bin.
 If it can't, then it closes that bin and opens a new bin for that item.</p>
-<p>The next-fit algorithm is an online algorithm that uses $O(1)$ space and $O(n)$ time.</p>
-<p>Let $\operatorname{next-fit}(S)$ be the number of bins used by the next-fit algorithm.
-Then $\operatorname{next-fit}(S) &lt; 2\operatorname{size}(S) + 1$.
-Since $\operatorname{next-fit}(S)$ is an integer, we get that
-$\operatorname{next-fit}(S) \le \lceil 2\operatorname{size}(S) \rceil$.</p>
-<p>Let $\operatorname{opt}(S)$ be the minimum number of bins that $S$ can be packed into.
-Then $\operatorname{size}(S)$ is a lower-bound on $\operatorname{opt}(S)$.
-This tells us that the next-fit algorithm is an asymptotic 2-approx algorithm for bin-packing.</p>
+<p>The Next-Fit algorithm is an online algorithm that uses $O(1)$ space and $O(n)$ time.</p>
+<p>Let $\NextFit(S)$ be the number of bins used by the Next-Fit algorithm.
+Then $\NextFit(S) &lt; 2\Size(S) + 1$.
+Since $\NextFit(S)$ is an integer, we get that
+$\NextFit(S) \le \ceil{2\Size(S)}$.</p>
+<p>Since $\Size(S) \le \opt(S)$, we get $\NextFit(S) \le 2\opt(S)$.</p>
 <h2>Proof</h2>
-<p>Let $a_i$ be the sum of sizes of items in the $i^{\textrm{th}}$ bin.
-Let $k = \operatorname{next-fit}(S)$. Let $A = [a_1, a_2, \ldots, a_k]$.
-Then $\operatorname{sum}(A) = \operatorname{size}(S)$.</p>
+<p>Let $a_i$ be the sum of sizes of items in the $i^{\textrm{th}}$ bin packed by Next-Fit.
+Let $k = \NextFit(S)$. Let $A = [a_1, a_2, \ldots, a_k]$.
+Then $\Sum(A) = \Size(S)$.</p>
 <p>Consider the first item placed in the $i^{\textrm{th}}$ bin for $i \ge 2$.
 This item could not fit into the $(i-1)^{\textrm{th}}$ bin,
 so $a_{i-1} + a_i \ge 1$.</p>
-<p>\[ k-1 \le \sum_{i=2}^k (a_{i-1}+a_i) &lt; 2\operatorname{sum}(A) = 2\operatorname{size}(S) \]</p>
-<p>Therefore, $k &lt; 2\operatorname{size}(S)+1$. Since $k$ is an integer,
-we also get $k \le \lceil 2\operatorname{size}(S) \rceil$.</p>
+<p>\[ k-1 \le \sum_{i=2}^k (a_{i-1}+a_i) &lt; 2\Sum(A) = 2\Size(S) \]</p>
+<p>Therefore, $k &lt; 2\Size(S)+1$. Since $k$ is an integer,
+we also get $k \le \ceil{2\Size(S)}$.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
@@ -62,20 +80,35 @@ we also get $k \le \lceil 2\operatorname{size}(S) \rceil$.</p>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/karmarkar-karp.html">
         <span class="deptitle">
-        1D bin-packing: Karmarkar-Karp algorithm</span>
-    </a>
+        1BP: Karmarkar-Karp algorithm</span>
+<span class="doc-status">(broken)</span>    </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/nfdh/bp-perf2.html">
         <span class="deptitle">
-        2D geometric bin-packing: nfdh(I) < 4rsize(I) + 2</span>
+        2D geometric bin packing: nfdh(I) < 4rsize(I) + 2</span>
     </a>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 0</li><li>Number of transitive dependencies: 0</li></ul>
+<ul><li>Depth: 2</li><li>Number of transitive dependencies: 2</li></ul>
 
-<h2 class="no-deps"> Transitive dependencies: None </h2>
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
+        <span class="deptitle">
+        Bin packing and Knapsack</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/size-le-opt.html">
+        <span class="deptitle">
+        1BP: ⌈size(I)⌉ ≤ opt(I)</span>
+    </a>
+    </li>
+</ol>
 
 </div>
 </body>

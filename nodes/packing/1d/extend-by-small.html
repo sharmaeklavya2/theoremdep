@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>1D bin-packing: extending by small items - TheoremDep</title>
+<title>1BP: extending by small items - TheoremDep</title>
 <meta name="description" content="Packing of items of size > ε into m bins can be extended to a packing for the entire input with at most max(l, size(I)/(1-ε)+1) bins." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
@@ -26,13 +26,20 @@
 </nav>
 
 <div id="main">
-<h1> 1D bin-packing: extending by small items </h1>
-<h2 class="no-deps"> Dependencies:
-None </h2>
+<h1> 1BP: extending by small items </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
+        <span class="deptitle">
+        Bin packing and Knapsack</span>
+    </a>
+    </li>
+</ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $I$ be a 1D bin-packing instance.
-Let $\operatorname{size}(S) = \sum_{i=1}^n s_i$.</p>
+<p>Let $I$ be a 1D bin packing instance.</p>
 <p>Let $I_L = \{s \in I: s &gt; \epsilon\}$ and $I_S = \{s \in I: s \le \epsilon\}$.
 Let there be a packing of $I_L$ into $m$ bins.
 Then we can use that packing to get a packing of $I$ into at most
@@ -55,20 +62,29 @@ Therefore,
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/aptas.html">
         <span class="deptitle">
-        1D bin-packing: APTAS</span>
+        1BP: APTAS</span>
     </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/karmarkar-karp.html">
         <span class="deptitle">
-        1D bin-packing: Karmarkar-Karp algorithm</span>
-    </a>
+        1BP: Karmarkar-Karp algorithm</span>
+<span class="doc-status">(broken)</span>    </a>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 0</li><li>Number of transitive dependencies: 0</li></ul>
+<ul><li>Depth: 1</li><li>Number of transitive dependencies: 1</li></ul>
 
-<h2 class="no-deps"> Transitive dependencies: None </h2>
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
+        <span class="deptitle">
+        Bin packing and Knapsack</span>
+    </a>
+    </li>
+</ol>
 
 </div>
 </body>

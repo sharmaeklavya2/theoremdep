@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Bin-packing: predecessor of an input instance - TheoremDep</title>
+<title>Bin packing: predecessor of an input instance - TheoremDep</title>
 <meta name="description" content="Input instance I is said to be a predecessor of input instance J iff each item in I has a corresponding item in J which is at least as large in every dimension." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
@@ -26,25 +26,41 @@
 </nav>
 
 <div id="main">
-<h1> Bin-packing: predecessor of an input instance </h1>
-<h2 class="no-deps"> Dependencies:
-None </h2>
+<h1> Bin packing: predecessor of an input instance </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
+        <span class="deptitle">
+        Bin packing and Knapsack</span>
+    </a>
+    </li>
+</ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $I$ and $J$ be bin-packing instances.</p>
-<p>$I$ is said to be a predecessor of $J$ (written as $I \preceq J$)
+<p><span class="invisible">
+$\newcommand{\Size}{\operatorname{size}}$
+$\newcommand{\opt}{\operatorname{opt}}$
+</span>
+In the context of bin packing or knapsack, let $i$ and $j$ be two items.
+Then $i$ is said to be a predecessor of $j$ (written as $i \preceq j$) iff
+for any packing of items into a bin, we can replace $j$ in the packing by $i$
+and the resulting packing is still valid.
+For classical packing, $i \preceq j \iff \Size(i) \le \Size(j)$.</p>
+<p>Let $I$ and $J$ be bin packing instances.
+$I$ is said to be a predecessor of $J$ (written as $I \preceq J$)
 or equivalently $J$ is said to be a successor of $I$
 iff there is a mapping $\sigma: I \mapsto J$ such that</p>
 <ul>
 <li>$\forall i_1 \neq i_2, \sigma(i_1) \neq \sigma(i_2)$.</li>
-<li>$\sigma(i)$ is at least as large as $i$.
-When an item is represented as a $d$-dimensional object, this means that
-$\forall 1 \le k \le d, \sigma(i)_k \ge i_k$.</li>
+<li>$i \preceq \sigma(i)$.</li>
 </ul>
-<p>It is trivial to see that for 1D instances,
-$I \preceq J \implies \operatorname{size}(I) \le \operatorname{size}(J)$.</p>
-<p>Also, any packing of $J$ gives a packing of $I$,
-just pack every $i \in I$ wherever $\sigma(i)$ is packed in the packing of $J$.</p>
+<p>Any packing of $J$ gives a packing of $I$:
+just pack every $i \in I$ wherever $\sigma(i)$ is packed in the packing of $J$.
+Therefore, $\opt(I) \le \opt(J)$.</p>
+<p>For classical packing,
+$I \preceq J \implies \Size(I) \le \Size(J)$.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
@@ -52,32 +68,41 @@ just pack every $i \in I$ wherever $\sigma(i)$ is packed in the packing of $J$.<
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/prec.html">
         <span class="deptitle">
-        Bin-packing: config LP of predecessor</span>
-    </a>
+        Bin packing: config LP of predecessor</span>
+<span class="doc-status">(broken)</span>    </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/aptas.html">
         <span class="deptitle">
-        1D bin-packing: APTAS</span>
+        1BP: APTAS</span>
     </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/harmonic-grouping.html">
         <span class="deptitle">
-        1D bin-packing: harmonic grouping</span>
+        1BP: harmonic grouping</span>
     </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/linear-grouping.html">
         <span class="deptitle">
-        1D bin-packing: linear grouping</span>
+        1BP: linear grouping</span>
     </a>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 0</li><li>Number of transitive dependencies: 0</li></ul>
+<ul><li>Depth: 1</li><li>Number of transitive dependencies: 1</li></ul>
 
-<h2 class="no-deps"> Transitive dependencies: None </h2>
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
+        <span class="deptitle">
+        Bin packing and Knapsack</span>
+    </a>
+    </li>
+</ol>
 
 </div>
 </body>

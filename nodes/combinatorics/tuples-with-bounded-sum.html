@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
 <title>Number of tuples with bounded sum - TheoremDep</title>
-<meta name="description" content="The number of tuples of length n of non-negative numbers whose sum is at most s is C(s+n, n)." />
+<meta name="description" content="The number of tuples of length n of non-negative numbers whose sum is at most s is C(s+n, n) ≤ (s+1)^n." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -40,7 +40,7 @@
 
 <div class="horizontal-rule"></div>
 <p>Let $f(n, s)$ be the number of $n$-tuples of non-negative integers whose sum is at most $s$. Then
-\[ f(n, s) = \binom{s+n}{n} \]</p>
+\[ f(n, s) = \binom{s+n}{n} \le (s+1)^n \]</p>
 <h2>Proof</h2>
 <p>We'll find a recurrence relation for $f$ and then find a solution to that recurrence.</p>
 <p>Base case: $f(1, s) = s+1$.</p>
@@ -53,14 +53,22 @@
 because
 \[ \sum_{i=0}^s f(n-1, s-i) = \sum_{i=0}^s \binom{s-i+n-1}{n-1}
 = \sum_{j=n-1}^{s+n-1} \binom{j}{n-1} = \binom{s+n}{n} \]</p>
+<p>There are $(s+1)^n$ tuples for which each entry lies in $[0, s]$.
+Therefore, $f(n, s) \le (s+1)^n$.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/combinatorics/enum-tuples-with-bounded-sum.html">
+        <span class="deptitle">
+        Algorithm for enumerating tuples with bounded sum</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-brute-algo.html">
         <span class="deptitle">
-        Bin-packing: config-enum algorithm</span>
+        Bin packing: config-enum algorithm</span>
     </a>
     </li>
 </ol>

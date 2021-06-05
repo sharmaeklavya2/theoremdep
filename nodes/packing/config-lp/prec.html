@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Bin-packing: config LP of predecessor - TheoremDep</title>
+<title>Bin packing: config LP of predecessor - TheoremDep</title>
 <meta name="description" content="Let I be the predecessor of J. Then lin(I) ≤ lin(J)." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
@@ -26,28 +26,30 @@
 </nav>
 
 <div id="main">
-<h1> Bin-packing: config LP of predecessor </h1>
+<h1> Bin packing: config LP of predecessor <span class="doc-status">(broken)</span> </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/config-lp.html">
         <span class="deptitle">
-        Bin-packing: configuration LP</span>
+        Bin packing: configuration LP</span>
     </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/predecessor.html">
         <span class="deptitle">
-        Bin-packing: predecessor of an input instance</span>
+        Bin packing: predecessor of an input instance</span>
     </a>
     </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $I$ and $J$ be bin-packing instances such that $I \preceq J$.
+<p>Let $I$ and $J$ be bin packing instances such that $I \preceq J$.
 $\newcommand{\lin}{\operatorname{lin}}\newcommand{\LP}{\operatorname{LP}}$</p>
 <p>Then $\lin(I) \le \lin(J)$.</p>
+<p><span class="text-danger">It's not clear how items are categorized into types,
+so the theorem's statement isn't clear.</span></p>
 <h2>Proof</h2>
 <p>Let $\sigma$ be the mapping from $I$ to $J$.
 Let $C$ be a configuration of items in $J$. Let $\sigma^{-1}(C)$ be the configuration where
@@ -55,11 +57,7 @@ each item in $J$ which doesn't have a corresponding item in $I$ is removed
 and for the other items each item $j$ is replaced by item $\sigma^{-1}(i)$.
 Therefore, $\sigma^{-1}(C)$ is a configuration of items in $I$.
 $\sigma^{-1}(C)$ is a valid configuration because each item either gets removed or decreases in size.</p>
-<p>Therefore, the set of configurations of $I$ is a superset of the set of configurations of $J$.
-Since $I$ has at most as many items as $J$, the set of constraints
-of $\LP(I)$ has at most as many constraints as $J$.
-Therefore, $\LP(I)$ is a relaxation of $\LP(J)$.
-So $\lin(I) \le \lin(J)$.</p>
+<p><span class="text-danger">(incomplete)</a></p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
@@ -67,26 +65,32 @@ So $\lin(I) \le \lin(J)$.</p>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/karmarkar-karp.html">
         <span class="deptitle">
-        1D bin-packing: Karmarkar-Karp algorithm</span>
-    </a>
+        1BP: Karmarkar-Karp algorithm</span>
+<span class="doc-status">(broken)</span>    </a>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 1</li><li>Number of transitive dependencies: 2</li></ul>
+<ul><li>Depth: 2</li><li>Number of transitive dependencies: 3</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
 <ol class="deplist">
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
+        <span class="deptitle">
+        Bin packing and Knapsack</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/config-lp.html">
         <span class="deptitle">
-        Bin-packing: configuration LP</span>
+        Bin packing: configuration LP</span>
     </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/predecessor.html">
         <span class="deptitle">
-        Bin-packing: predecessor of an input instance</span>
+        Bin packing: predecessor of an input instance</span>
     </a>
     </li>
 </ol>

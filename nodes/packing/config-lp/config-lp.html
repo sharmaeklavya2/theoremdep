@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Bin-packing: configuration LP - TheoremDep</title>
-<meta name="description" content="Representation of the bin-packing problem as an integer linear program. Each variable corresponds to a configuration, which is a feasible packing of a subset of items in 1 bin." />
+<title>Bin packing: configuration LP - TheoremDep</title>
+<meta name="description" content="Representation of the bin packing problem as an integer linear program. Each variable corresponds to a configuration, which is a feasible packing of a subset of items in 1 bin." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,36 +26,51 @@
 </nav>
 
 <div id="main">
-<h1> Bin-packing: configuration LP </h1>
-<h2 class="no-deps"> Dependencies:
-None </h2>
+<h1> Bin packing: configuration LP </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
+        <span class="deptitle">
+        Bin packing and Knapsack</span>
+    </a>
+    </li>
+</ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $I$ be a bin-packing instance with $n$ items such that there are $m$ distinct items
-(we may either treat items of different sizes as distinct
-or we may treat all items as distinct, as per convenience).
+<p><span class="invisible">
+$\newcommand{\opt}{\operatorname{opt}}$
+$\newcommand{\lin}{\operatorname{lin}}$
+$\newcommand{\Ccal}{\mathcal{C}}$
+</span>
+Let $I$ be a bin packing instance with $n$ items such that there are
+$m$ types of items, and all items of the same type are identical.
 Let $b_i$ be the number of items of type $i$.</p>
 <p>Define a configuration as a subset of items of $I$ that can fit in 1 bin.
-A configuration can be represented as a $m$-tuple $(t_1, \ldots, t_m)$.
+A configuration can be represented as an $m$-tuple $(t_1, \ldots, t_m)$.
 Here $t_i$ is the number of items of type $i$ in the bin.</p>
-<p>Let $\mathcal{C}$ be the set of all configurations. Let $N = |\mathcal{C}|$.
+<p>Let $\Ccal$ be the set of all configurations. Let $N = |\Ccal|$.
 Number the configurations from 1 to $N$.
-Let $T$ be a $m$ by $N$ matrix such that $T[i, j]$ is the number of items
+Let $T$ be an $m$ by $N$ matrix such that $T[i, j]$ is the number of items
 of type $i$ in the $j^{\textrm{th}}$ configuration.
 $T$ is called the configuration matrix.</p>
 <p>Then the linear program
 \[ \min_{x \in \mathbb{R}^N} \operatorname{sum}(x) \textrm{ where } Tx \ge b, x \ge 0 \]
 is called the configuration LP of $I$.
-Here the constraint $Tx \ge b$ implies that each item should be covered.
-The integer configuration LP's optimal solution gives us the best bin packing.
-The real-valued relaxation of this LP is called the fractional bin-packing problem.
-The optimal value of the relaxed LP is denoted by $\operatorname{lin}(I)$.</p>
-<p>When all items are considered distinct ($m = n, b_i = 1$), we get this LP:
+When $x$ is integral, $(Tx)_i$ is the total number of items of type $i$ in the packing $x$.
+Hence, the constraint $Tx \ge b$ implies that $x$ should contain all items.
+The optimal integer solution to the configuration LP gives us the best bin packing.
+The optimal objective value of the real-valued relaxation of this LP is denoted by $\lin(I)$.
+Hence, $\lin(I) \le \opt(I)$.</p>
+<p>When all items have different types ($m = n, b_i = 1$), we get this LP:
 \begin{align}
-\min_x &amp; \sum_{C \in \mathcal{C}} x_C
+\min_x &amp; \sum_{C \in \Ccal} x_C
 \\ \textrm{ where } &amp; \sum_{C \ni i} x_C \ge 1, \forall i \in [n]
 \\ &amp; x \ge 0
 \end{align}</p>
+<p>We will get different LPs depending on which items are declared to be of the same type.
+I don't know whether this choice affects the value of $\lin(I)$.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
@@ -63,56 +78,65 @@ The optimal value of the relaxed LP is denoted by $\operatorname{lin}(I)$.</p>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/dual.html">
         <span class="deptitle">
-        Bin-packing: dual of config LP</span>
+        Bin packing: dual of config LP</span>
     </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/kp-fptas.html">
-        <span class="deptitle">
-        Bin-packing: Solving fractional config LP using FPTAS for knapsack</span>
-<span class="doc-status">(incomplete)</span>    </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/prec.html">
         <span class="deptitle">
-        Bin-packing: config LP of predecessor</span>
+        Bin packing: config LP of predecessor</span>
+<span class="doc-status">(broken)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/ks-approx.html">
+        <span class="deptitle">
+        BP: α(1+ε)-approx solution to config LP using α-approx algorithm for knapsack</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/union.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/size-lb.html">
         <span class="deptitle">
-        Bin-packing: config LP of union</span>
+        1BP: size(I) ≤ lin(I)</span>
     </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/config-lp-density-unrestr.html">
         <span class="deptitle">
-        Geometric bin-packing: removing density restriction</span>
+        Geometric bin packing: removing density restriction</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/size-lb-config-lp.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/fptas-for-config-lp.html">
         <span class="deptitle">
-        Geometric bin-packing: rsize(I) lower-bounds lin(I)</span>
+        1BP: FPTAS for config LP</span>
     </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/karmarkar-karp.html">
         <span class="deptitle">
-        1D bin-packing: Karmarkar-Karp algorithm</span>
-    </a>
+        1BP: Karmarkar-Karp algorithm</span>
+<span class="doc-status">(broken)</span>    </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/aptas-for-config-lp.html">
         <span class="deptitle">
-        2D geometric bin-packing: APTAS for config LP</span>
+        2D geometric bin packing: APTAS for config LP</span>
 <span class="doc-status">(incomplete)</span>    </a>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 0</li><li>Number of transitive dependencies: 0</li></ul>
+<ul><li>Depth: 1</li><li>Number of transitive dependencies: 1</li></ul>
 
-<h2 class="no-deps"> Transitive dependencies: None </h2>
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
+        <span class="deptitle">
+        Bin packing and Knapsack</span>
+    </a>
+    </li>
+</ol>
 
 </div>
 </body>
