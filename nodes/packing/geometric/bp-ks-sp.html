@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>Geometric packing problems (BP, KS, SP) and rvol - TheoremDep</title>
+<meta name="description" content="Definitions of geometric bin packing, geometric knapsack, strip packing (SP), vol and rvol." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" aria-label="Search" type="text" autocomplete="off" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Geometric packing problems (BP, KS, SP) and rvol </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
+        <span class="deptitle">
+        Bin packing and Knapsack</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p><span class="invisible">
+$\newcommand{\opt}{\operatorname{opt}}$
+$\newcommand{\vol}{\operatorname{vol}}$
+$\newcommand{\rvol}{\operatorname{rvol}}$
+$\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}$
+$\newcommand{\defeq}{:=}$
+$\newcommand{\Th}{^{\textrm{th}}}$
+</span></p>
+<p>Let $I$ be a set of $d$D cuboidal items, where each item $i$
+has length $\ell_j(i)$ in the $j\Th$ dimension.
+The $d\Th$ dimension is called <em>height</em> and denoted as $h(i) \defeq \ell_d(i)$.
+The first $d-1$ dimensions are called <em>base dimensions</em>.
+A feasible packing of items into a $d$D cuboid is a packing where items are
+placed inside the cuboid parallel to the axes without any overlapping.</p>
+<ul>
+<li>In the $d$D geometric bin packing problem ($d \ge 1$),
+we are given an infinite supply of identical $d$D cuboidal bins.
+The bin has length $L_j$ in the $j\Th$ dimension.
+Our task is to pack the items $I$ into the minimum number of bins.
+The minimum number of bins is denoted by $\opt(I)$.</li>
+<li>In the $d$D geometric knapsack problem ($d \ge 1$),
+each item $i$ has a profit $p(i)$ associated with it
+and we have to pack a maximum-profit subset of the items into a single bin.
+The maximum profit attainable is denoted by $\opt(I)$.</li>
+<li>In the $d$D strip packing problem ($d \ge 2$),
+the lengths $L_1, L_2, \ldots, L_{d-1}$ are fixed,
+and we have to pack items $I$ into a single bin of minimum height.
+Here the bin is also called <em>strip</em>.
+The minimum height is denoted by $\opt(I)$.</li>
+</ul>
+<p>Sometimes we may be allowed to orthogonally rotate items,
+i.e., permuting the dimensions of each item.
+Hence, we get multiple variants of geometric BP, KS, SP
+depending on which orientations are allowed.</p>
+<p>Relation between problems (non-rotational versions):</p>
+<ul>
+<li>$d$D geometric BP generalizes $(d-1)$D geometric BP.</li>
+<li>$d$D geometric KS generalizes $(d-1)$D geometric KS.</li>
+<li>$d$D SP generalizes $(d-1)$D SP.</li>
+<li>1D geometric BP is the classical bin packing problem.</li>
+<li>1D geometric KS is the classical knapsack problem.</li>
+<li>When all items in a $d$D SP instance have the same height, we get the $(d-1)$D BP problem.</li>
+</ul>
+<p>Let $\vol(i)$ be the volume of item $i$. Formally,
+\[ \vol(i) \defeq \prod_{j=1}^d \ell_j(i). \]
+For BP and KS, define $\rvol(i)$ (called <em>relative volume</em>) as the volume of $i$
+divided by the volume of the bin. Formally,
+\[ \rvol(i) \defeq \prod_{j=1}^d \frac{\ell_j(i)}{L_j}. \]
+For SP, define $\rvol(i)$ as the volume of $i$
+divided by the product of base dimensions of the strip. Formally,
+\[ \rvol(i) \defeq \ell_d(i) \prod_{j=1}^{d-1} \frac{\ell_j(i)}{L_j}. \]</p>
+<p>For a set $X$ of items, define $\vol(X) \defeq \sum_{i \in X} \vol(i)$
+and $\rvol(X) \defeq \sum_{i \in X} \rvol(i)$.</p>
+<p>For BP and KS, if a set $I$ of items fit into a bin, then $\rvol(I) \le 1$.
+For SP, we get that $\rvol(I) \le \opt(I)$.</p>
+<p><strong>Lemma</strong>: For BP (both rotational and non-rotational versions), $\ceil{\rvol(I)} \le \opt(I)$.</p>
+<p><em>Proof</em>. Let $m = \opt(I)$.
+Let $B_i$ be the items in the $i\Th$ bin in the optimal packing.
+Then $\rvol(B_i) \le 1$ and
+\[ \ceil{\rvol(I)} = \ceil{\sum_{i=1}^m \rvol(B_i)}
+\le \ceil{\sum_{i=1}^m 1} = m = \opt(I). \tag*{□} \]</p>
+<p>In two dimensions, $w(i) \defeq \ell_1(i)$, $h(i) \defeq \ell_2(i)$, $a(i) \defeq \vol(i)$.</p>
+<p>When rotations are not allowed, we can assume without loss of generality that
+bins have side length 1 and strips have base dimensions 1.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/2d-dr-ks-ptas.html">
+        <span class="deptitle">
+        PTAS for 2D geometric density-restricted knapsack</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/2d-config-lp-aptas.html">
+        <span class="deptitle">
+        2D BP: APTAS for config LP</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/bp-tall.html">
+        <span class="deptitle">
+        2D BP: NFDH for items of small width</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/bp-small.html">
+        <span class="deptitle">
+        2D BP: NFDH for small items</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/bp-wide.html">
+        <span class="deptitle">
+        2D BP: NFDH for items of small height</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/bp.html">
+        <span class="deptitle">
+        2D BP: NFDH(I) ≤ 4⌈rvol(I)⌉ + 1</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/sp.html">
+        <span class="deptitle">
+        2D SP: NFDH(I) < 2rvol(I) + hmax</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/sp-small.html">
+        <span class="deptitle">
+        2D SP: NFDH(I) < a(I)/(W-ε) + hmax for ε-small items</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/bp-adj.html">
+        <span class="deptitle">
+        NFDH: area of adjacent bins</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/algo.html">
+        <span class="deptitle">
+        NFDH algorithm</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 1</li><li>Number of transitive dependencies: 1</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
+        <span class="deptitle">
+        Bin packing and Knapsack</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

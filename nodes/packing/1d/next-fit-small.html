@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>1BP: NextFit(S) ≤ ⌈2size(S)⌉ - TheoremDep</title>
-<meta name="description" content="The number of bins used by the Next-Fit algorithm to pack a set S of items is at most ⌈2size(S)⌉. This gives us a 2-approx algorithm for 1BP." />
+<title>1BP: NextFit(I) ≤ ⌈size(I)/(1-ε)⌉ for ε-small items - TheoremDep</title>
+<meta name="description" content="The number of bins used by the Next-Fit algorithm to pack a set I of items is at most ⌈size(I)/(1-ε)⌉ when each item has size ≤ ε" />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,7 +26,7 @@
 </nav>
 
 <div id="main">
-<h1> 1BP: NextFit(S) ≤ ⌈2size(S)⌉ </h1>
+<h1> 1BP: NextFit(I) ≤ ⌈size(I)/(1-ε)⌉ for ε-small items </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
@@ -46,54 +46,44 @@
 
 <div class="horizontal-rule"></div>
 <p><span class="invisible">
+$\newcommand{\eps}{\varepsilon}$
 $\newcommand{\Size}{\operatorname{size}}$
 $\newcommand{\Sum}{\operatorname{sum}}$
 $\newcommand{\opt}{\operatorname{opt}}$
 $\newcommand{\NextFit}{\operatorname{NextFit}}$
 $\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}$
 </span>
-Let $S$ be a 1D bin packing instance.
+Let $I$ be a 1D bin packing instance.
 Assume WLoG that bins have size 1.</p>
 <p>The Next-Fit algorithm keeps one open bin at all times.
 For every item, it tries to fit the item in the open bin.
 If it can't, then it closes that bin and opens a new bin for that item.</p>
 <p>The Next-Fit algorithm is an online algorithm that uses $O(1)$ space and $O(n)$ time.</p>
-<p>Let $\NextFit(S)$ be the number of bins used by the Next-Fit algorithm.
-Then $\NextFit(S) &lt; 2\Size(S) + 1$.
-Since $\NextFit(S)$ is an integer, we get that
-$\NextFit(S) \le \ceil{2\Size(S)}$.</p>
-<p>Since $\Size(S) \le \opt(S)$, we get $\NextFit(S) \le 2\opt(S)$.</p>
+<p>Let $\NextFit(I)$ be the number of bins used by the Next-Fit algorithm.
+When $\Size(i) \le \eps$ for each item $i \in I$, we get
+$\NextFit(I) &lt; \Size(I)/(1-\eps) + 1$.
+Since $\NextFit(I)$ is an integer, we get that
+\[ \NextFit(I) \le \ceil{\frac{\Size(I)}{1-\eps}}. \]
+Since $\Size(I) \le \opt(I)$, we get $\NextFit(I) &lt; \opt(I)/(1-\eps) + 1$.</p>
 <h2>Proof</h2>
 <p>Let $a_i$ be the sum of sizes of items in the $i^{\textrm{th}}$ bin packed by Next-Fit.
-Let $k = \NextFit(S)$. Let $A = [a_1, a_2, \ldots, a_k]$.
-Then $\Sum(A) = \Size(S)$.</p>
-<p>Consider the first item placed in the $i^{\textrm{th}}$ bin for $i \ge 2$.
-This item could not fit into the $(i-1)^{\textrm{th}}$ bin,
-so $a_{i-1} + a_i \ge 1$.</p>
-<p>\[ k-1 \le \sum_{i=2}^k (a_{i-1}+a_i) &lt; 2\Sum(A) = 2\Size(S) \]</p>
-<p>Therefore, $k &lt; 2\Size(S)+1$. Since $k$ is an integer,
-we also get $k \le \ceil{2\Size(S)}$.</p>
+Let $k = \NextFit(I)$. Let $A = [a_1, a_2, \ldots, a_k]$.
+Then $\Sum(A) = \Size(I)$.</p>
+<p>For $i &lt; k$, we have $a_i &gt; 1-\eps$, because otherwise we could have packed another item
+in the $i^{\textrm{th}}$ bin.</p>
+<p>\begin{align}
+&amp; \Size(I) = \Sum(A) &gt; \sum_{i=1}^{k-1} a_i \ge (1-\eps)(k-1)
+\\ &amp;\implies \NextFit(I) = k &lt; \frac{\Size(I)}{1-\eps} + 1
+\end{align}</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/bp-tall.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/bp-wide.html">
         <span class="deptitle">
-        2D BP: NFDH for items of small width</span>
+        2D BP: NFDH for items of small height</span>
     </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/bp.html">
-        <span class="deptitle">
-        2D BP: NFDH(I) ≤ 4⌈rvol(I)⌉ + 1</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/karmarkar-karp.html">
-        <span class="deptitle">
-        1BP: Karmarkar-Karp algorithm</span>
-<span class="doc-status">(broken)</span>    </a>
     </li>
 </ol>
 <h2> Info: </h2>

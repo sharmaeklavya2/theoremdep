@@ -43,6 +43,7 @@
 $\newcommand{\opt}{\operatorname{opt}}$
 $\newcommand{\lin}{\operatorname{lin}}$
 $\newcommand{\Ccal}{\mathcal{C}}$
+$\newcommand{\Th}{^{\textrm{th}}}$
 </span>
 Let $I$ be a bin packing instance with $n$ items such that there are
 $m$ types of items, and all items of the same type are identical.
@@ -53,8 +54,9 @@ Here $t_i$ is the number of items of type $i$ in the bin.</p>
 <p>Let $\Ccal$ be the set of all configurations. Let $N = |\Ccal|$.
 Number the configurations from 1 to $N$.
 Let $T$ be an $m$ by $N$ matrix such that $T[i, j]$ is the number of items
-of type $i$ in the $j^{\textrm{th}}$ configuration.
-$T$ is called the configuration matrix.</p>
+of type $i$ in the $j\Th$ configuration.
+$T$ is called the configuration matrix.
+(If $C$ is the $j\Th$ configuration, sometimes we write $T[i, C]$ instead of $T[i, j]$.)</p>
 <p>Then the linear program
 \[ \min_{x \in \mathbb{R}^N} \operatorname{sum}(x) \textrm{ where } Tx \ge b, x \ge 0 \]
 is called the configuration LP of $I$.
@@ -76,6 +78,12 @@ I don't know whether this choice affects the value of $\lin(I)$.</p>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/density-unrestr.html">
+        <span class="deptitle">
+        Bin packing: removing density restriction from config LP</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/dual.html">
         <span class="deptitle">
         Bin packing: dual of config LP</span>
@@ -94,15 +102,15 @@ I don't know whether this choice affects the value of $\lin(I)$.</p>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/size-lb.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/dr-config-lp.html">
         <span class="deptitle">
-        1BP: size(I) ≤ lin(I)</span>
+        Bin packing: density-restricted config LP</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/config-lp-density-unrestr.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/size-lb.html">
         <span class="deptitle">
-        Geometric bin packing: removing density restriction</span>
+        1BP: size(I) ≤ lin(I)</span>
     </a>
     </li>
     <li>
@@ -116,12 +124,6 @@ I don't know whether this choice affects the value of $\lin(I)$.</p>
         <span class="deptitle">
         1BP: Karmarkar-Karp algorithm</span>
 <span class="doc-status">(broken)</span>    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/aptas-for-config-lp.html">
-        <span class="deptitle">
-        2D geometric bin packing: APTAS for config LP</span>
-<span class="doc-status">(incomplete)</span>    </a>
     </li>
 </ol>
 <h2> Info: </h2>

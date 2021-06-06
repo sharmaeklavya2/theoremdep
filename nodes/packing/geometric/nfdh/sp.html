@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>2D geometric strip packing: nfdh(I) < 2rsize(I) + hmax - TheoremDep</title>
-<meta name="description" content="NFDH is an asymptotic 2-approx algorithm for strip packing." />
+<title>2D SP: NFDH(I) < 2rvol(I) + hmax - TheoremDep</title>
+<meta name="description" content="NFDH is an asymptotic 2-approx algorithm for 2D strip packing." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,36 +26,40 @@
 </nav>
 
 <div id="main">
-<h1> 2D geometric strip packing: nfdh(I) < 2rsize(I) + hmax </h1>
+<h1> 2D SP: NFDH(I) < 2rvol(I) + hmax </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/size.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/bp-ks-sp.html">
         <span class="deptitle">
-        Geometric packing: size and rsize</span>
+        Geometric packing problems (BP, KS, SP) and rvol</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/nfdh/algo.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/algo.html">
         <span class="deptitle">
-        2D geometric packing: NFDH algorithm</span>
+        NFDH algorithm</span>
     </a>
     </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $I$ be a 2D strip-packing instance.
-Let $\operatorname{nfdh}(I)$ be the height of the packing produced by the NFDH algorithm
+<p><span class="invisible">
+$\newcommand{\rvol}{\operatorname{rvol}}$
+$\newcommand{\NFDH}{\operatorname{NFDH}}$
+$\newcommand{\Th}{^{\textrm{th}}}$
+</span>
+Let $I$ be a 2D strip packing instance.
+Let $\NFDH(I)$ be the height of the packing produced by the NFDH algorithm
 and let $h_{\max}$ be the maximum height of an item in $I$. Then
-$\newcommand{\rsize}{\operatorname{rsize}}$
-$\newcommand{\th}{^{\textrm{th}}}$
-\[ \operatorname{nfdh}(I) &lt; 2\rsize(I) + h_{\max} \]</p>
-<p>Since $\rsize(I)$ is a lower bound on optimal strip packing height,
-NFDH is an asymptotic 2-approx strip-packing algorithm.</p>
+\[ \NFDH(I) &lt; 2\rvol(I) + h_{\max} \]</p>
+<p>Since $\rvol(I)$ is a lower bound on optimal strip packing height,
+NFDH is an asymptotic 2-approx strip packing algorithm.</p>
 <h2>Proof</h2>
 <ul>
-<li>Let there be $p$ shelves. Let $V_i$ be the set of items in the $i\th$ shelf.</li>
+<li>Let there be $p$ shelves in the output of NFDH.
+Let $V_i$ be the set of items in the $i\Th$ shelf.</li>
 <li>Let $W$ be the width of the strip.</li>
 <li>Let $W_i$ be the sum of widths of items in $V_i$.</li>
 <li>Let $A_i$ be the sum of areas of items in $V_i$.</li>
@@ -68,35 +72,47 @@ NFDH is an asymptotic 2-approx strip-packing algorithm.</p>
 2\sum_{i=1}^p A_i &amp;= A_1 + \sum_{i=1}^{p-1} (A_i + A_{i+1}) + A_p
 \\ &amp;&gt; \sum_{i=1}^{p-1} WH_{i+1} = W(H - h_{\max})
 \end{align}
-\[ \rsize(I) = \frac{1}{W} \sum_{i=1}^p A_i &gt; \frac{H - h_{\max}}{2}
-\implies H &lt; 2\rsize(I) + h_{\max} \]</p>
+\[ \rvol(I) = \frac{1}{W} \sum_{i=1}^p A_i &gt; \frac{H - h_{\max}}{2}
+\implies H &lt; 2\rvol(I) + h_{\max} \]</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/nfdh/bp-perf2.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/bp-wide.html">
         <span class="deptitle">
-        2D geometric bin packing: nfdh(I) < 4rsize(I) + 2</span>
+        2D BP: NFDH for items of small height</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/bp.html">
+        <span class="deptitle">
+        2D BP: NFDH(I) ≤ 4⌈rvol(I)⌉ + 1</span>
     </a>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 1</li><li>Number of transitive dependencies: 2</li></ul>
+<ul><li>Depth: 3</li><li>Number of transitive dependencies: 3</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/nfdh/algo.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
         <span class="deptitle">
-        2D geometric packing: NFDH algorithm</span>
+        Bin packing and Knapsack</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/size.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/bp-ks-sp.html">
         <span class="deptitle">
-        Geometric packing: size and rsize</span>
+        Geometric packing problems (BP, KS, SP) and rvol</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/algo.html">
+        <span class="deptitle">
+        NFDH algorithm</span>
     </a>
     </li>
 </ol>

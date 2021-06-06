@@ -7,47 +7,6 @@
 "corpus": [
 {
 "type": "def",
-"title": "2D geometric packing: NFDH algorithm",
-"description": "Next-fit decreasing height (NFDH) is an algorithm for 2D geometric bin packing and strip packing. It sorts items by height in descending order and packs them into shelves.",
-"uci": "/packing/2d-geom/nfdh/algo",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/nfdh/algo.html"
-},
-{
-"type": "theorem",
-"title": "PTAS for 2D geometric density-restricted knapsack",
-"description": "When the profit-to-area ratio is upper-bounded and lower-bounded by a constant, then there is a PTAS for the knapsack problem.",
-"uci": "/packing/2d-geom/ptas-for-density-restr-ks",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/ptas-for-density-restr-ks.html"
-},
-{
-"type": "theoremdef",
-"title": "Geometric packing: size and rsize",
-"description": "In a d-dimensional geometric packing problem, size of an item is the product of all dimensions of the item. Size of an instance is the sum of sizes of items. Size of an item item i relative to a bin, denoted as rsize(i), is the ratio of size(i) to the size of the bin.",
-"uci": "/packing/d-geom/size",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/size.html"
-},
-{
-"type": "theorem",
-"title": "2D geometric strip packing: nfdh(I) < 2rsize(I) + hmax",
-"description": "NFDH is an asymptotic 2-approx algorithm for strip packing.",
-"uci": "/packing/2d-geom/nfdh/strip-perf",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/nfdh/strip-perf.html"
-},
-{
-"type": "theorem",
-"title": "2D geometric bin packing: NFDH for wide items",
-"description": "Analysis of performance of NFDH for bin packing when each item's width is larger than or equal to its height.",
-"uci": "/packing/2d-geom/nfdh/wide-bp-perf",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/nfdh/wide-bp-perf.html"
-},
-{
-"type": "theorem",
-"title": "2D geometric packing: NFDH for small items",
-"uci": "/packing/2d-geom/nfdh/small-items",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/nfdh/small-items.html"
-},
-{
-"type": "def",
 "title": "Bin packing and Knapsack",
 "description": "In the bin packing problem, we are given a set of items and an infinite supply of identical bins. Our task is to pack the items into the minimum number of bins. In the knapsack problem, we are given a set of items, and each item has a non-negative profit associated with it. Our task is to pack a maximum-profit subset of the items into a single bin.",
 "uci": "/packing/bp-and-ks",
@@ -61,17 +20,17 @@
 },
 {
 "type": "theorem",
+"title": "1BP: NextFit(I) \u2264 \u2308size(I)/(1-\u03b5)\u2309 for \u03b5-small items",
+"description": "The number of bins used by the Next-Fit algorithm to pack a set I of items is at most \u2308size(I)/(1-\u03b5)\u2309 when each item has size \u2264 \u03b5",
+"uci": "/packing/1d/next-fit-small",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/next-fit-small.html"
+},
+{
+"type": "theorem",
 "title": "1BP: NextFit(S) \u2264 \u23082size(S)\u2309",
 "description": "The number of bins used by the Next-Fit algorithm to pack a set S of items is at most \u23082size(S)\u2309. This gives us a 2-approx algorithm for 1BP.",
 "uci": "/packing/1d/next-fit",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/next-fit.html"
-},
-{
-"type": "theorem",
-"title": "2D geometric bin packing: nfdh(I) < 4rsize(I) + 2",
-"description": "NFDH is an asymptotic 4-approx algorithm for 2D geometric bin packing.",
-"uci": "/packing/2d-geom/nfdh/bp-perf2",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/nfdh/bp-perf2.html"
 },
 {
 "type": "theorem",
@@ -96,6 +55,72 @@
 },
 {
 "type": "def",
+"title": "Geometric packing problems (BP, KS, SP) and rvol",
+"description": "Definitions of geometric bin packing, geometric knapsack, strip packing (SP), vol and rvol.",
+"uci": "/packing/geometric/bp-ks-sp",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/bp-ks-sp.html"
+},
+{
+"type": "def",
+"title": "NFDH algorithm",
+"description": "Next-Fit Decreasing Height (NFDH) is an algorithm for 2D geometric bin packing and 2D strip packing. It sorts items by height in descending order and packs them into shelves.",
+"uci": "/packing/geometric/nfdh/algo",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/algo.html"
+},
+{
+"type": "theorem",
+"title": "NFDH: area of adjacent bins",
+"description": "In the output of NFDH, for any pair of adjacent bins except the last, one of the bins has total rvol more than 1/4.",
+"uci": "/packing/geometric/nfdh/bp-adj",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/bp-adj.html"
+},
+{
+"type": "theorem",
+"title": "2D SP: NFDH(I) < a(I)/(W-\u03b5) + hmax for \u03b5-small items",
+"uci": "/packing/geometric/nfdh/sp-small",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/sp-small.html"
+},
+{
+"type": "theorem",
+"title": "2D SP: NFDH(I) < 2rvol(I) + hmax",
+"description": "NFDH is an asymptotic 2-approx algorithm for 2D strip packing.",
+"uci": "/packing/geometric/nfdh/sp",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/sp.html"
+},
+{
+"type": "theorem",
+"title": "2D BP: NFDH(I) \u2264 4\u2308rvol(I)\u2309 + 1",
+"description": "NFDH is an asymptotic 4-approx algorithm for 2D geometric bin packing.",
+"uci": "/packing/geometric/nfdh/bp",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/bp.html"
+},
+{
+"type": "theorem",
+"title": "2D BP: NFDH for items of small height",
+"uci": "/packing/geometric/nfdh/bp-wide",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/bp-wide.html"
+},
+{
+"type": "theorem",
+"title": "2D BP: NFDH for small items",
+"uci": "/packing/geometric/nfdh/bp-small",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/bp-small.html"
+},
+{
+"type": "theorem",
+"title": "2D BP: NFDH for items of small width",
+"uci": "/packing/geometric/nfdh/bp-tall",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/bp-tall.html"
+},
+{
+"type": "theorem",
+"title": "PTAS for 2D geometric density-restricted knapsack",
+"description": "When the profit-to-area ratio is upper-bounded and lower-bounded by a constant, then there is a PTAS for the knapsack problem.",
+"uci": "/packing/geometric/2d-dr-ks-ptas",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/2d-dr-ks-ptas.html"
+},
+{
+"type": "def",
 "title": "Bin packing: configuration LP",
 "description": "Representation of the bin packing problem as an integer linear program. Each variable corresponds to a configuration, which is a feasible packing of a subset of items in 1 bin.",
 "uci": "/packing/config-lp/config-lp",
@@ -106,6 +131,19 @@
 "title": "1BP: size(I) \u2264 lin(I)",
 "uci": "/packing/config-lp/size-lb",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/size-lb.html"
+},
+{
+"type": "def",
+"title": "Bin packing: density-restricted config LP",
+"uci": "/packing/config-lp/dr-config-lp",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/dr-config-lp.html"
+},
+{
+"type": "theorem",
+"title": "Bin packing: removing density restriction from config LP",
+"description": "Assuming the presence of a suitable primitive bin packing algorithm, we can solve the config LP almost optimally by solving the density-restricted config LP almost optimally.",
+"uci": "/packing/config-lp/density-unrestr",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/density-unrestr.html"
 },
 {
 "type": "def",
@@ -2679,18 +2717,10 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/dual.html"
 },
 {
-"type": "def",
-"title": "Geometric bin packing: density-restricted config LP",
-"description": "The density-restricted config LP is one where in the dual the profits have an upper-limit that is proportional to density.",
-"uci": "/packing/d-geom/density-restr-config-lp",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/density-restr-config-lp.html"
-},
-{
 "type": "theorem",
-"title": "Geometric bin packing: removing density restriction",
-"description": "Assuming the presence of a suitable primitive bin packing algorithm, we can solve the config LP almost optimally by solving the density-restricted config LP almost optimally.",
-"uci": "/packing/d-geom/config-lp-density-unrestr",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/config-lp-density-unrestr.html"
+"title": "Bin packing: dual of the density-restricted config LP",
+"uci": "/packing/config-lp/dr-config-lp-dual",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/dr-config-lp-dual.html"
 },
 {
 "type": "theorem",
@@ -3003,6 +3033,19 @@
 },
 {
 "type": "theorem",
+"title": "BP: \u03b1(1+\u03b5)-approx solution to density-restricted config LP using \u03b1-approx algorithm for density-restricted knapsack",
+"uci": "/packing/config-lp/dr-ks-approx",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/dr-ks-approx.html",
+"status": "incomplete"
+},
+{
+"type": "theorem",
+"title": "2D BP: APTAS for config LP",
+"uci": "/packing/geometric/2d-config-lp-aptas",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/2d-config-lp-aptas.html"
+},
+{
+"type": "theorem",
 "title": "BP: \u03b1(1+\u03b5)-approx solution to config LP using \u03b1-approx algorithm for knapsack",
 "uci": "/packing/config-lp/ks-approx",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/ks-approx.html"
@@ -3106,21 +3149,6 @@
 },
 {
 "type": "theorem",
-"title": "2D geometric bin packing: NFDH performance",
-"description": "Analysis of performance of NFDH for bin packing.",
-"uci": "/packing/2d-geom/nfdh/bp-perf",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/nfdh/bp-perf.html"
-},
-{
-"type": "theorem",
-"title": "2D geometric bin packing: APTAS for config LP",
-"description": "An APTAS exists for solving the fractional 2D geometric bin packing problem, i.e. obtaining a fractional solution to the 2D geometric configuration LP.",
-"uci": "/packing/2d-geom/aptas-for-config-lp",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/aptas-for-config-lp.html",
-"status": "incomplete"
-},
-{
-"type": "theorem",
 "title": "Negation of floor",
 "description": "floor(-x) = -ceil(x)",
 "uci": "/misc/floor-ceil/neg",
@@ -3152,14 +3180,6 @@
 "title": "1BP: config LP's dual gives a DFF",
 "uci": "/packing/1d/config-lp-dual-gives-dff",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/config-lp-dual-gives-dff.html"
-},
-{
-"type": "theoremdef",
-"title": "Geometric bin packing: DFF transform",
-"description": "Let I be a d-dimensional geometric bin packing instance. Let f1, f2, ..., fd be DFFs. Let J be the instance where for each item, ith dimension x is replaced by fi(x). J is called the DFF transform of I. If I can fit in 1 bin, then so can J.",
-"uci": "/packing/d-geom/dff-transform",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/dff-transform.html",
-"status": "incomplete"
 },
 {
 "type": "theorem",

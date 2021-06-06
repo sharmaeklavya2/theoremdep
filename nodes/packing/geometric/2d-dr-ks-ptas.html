@@ -27,15 +27,36 @@
 
 <div id="main">
 <h1> PTAS for 2D geometric density-restricted knapsack </h1>
-<h2 class="no-deps"> Dependencies:
-Unspecified </h2>
+<h2> Dependencies:
+<span class="deps-status">(incomplete)</span> </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/bp-ks-sp.html">
+        <span class="deptitle">
+        Geometric packing problems (BP, KS, SP) and rvol</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/algo.html">
+        <span class="deptitle">
+        NFDH algorithm</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/bp-small.html">
+        <span class="deptitle">
+        2D BP: NFDH for small items</span>
+    </a>
+    </li>
+</ol>
 
 <div class="horizontal-rule"></div>
 <p>Consider items in a 2D geometric knapsack problem.
 The density of an item is the ratio of its profit to its area.
 Let $\lambda$ be the ratio of the maximum density of an item to the minimum density of an item.
 If we only consider instances for which $\lambda$ is upper-bounded by a constant,
-then there is a PTAS for this variant of the knapsack problem.</p>
+then there is a PTAS for this variant of the knapsack problem
+(for both the rotational and non-rotational versions).</p>
 <p>Proof can be found in section 3 of
 <a class="cite-ref" href="#cite-bansal2009structural">[bansal2009structural]</a>.</p>
 <div class="citation" id="cite-bansal2009structural">
@@ -52,16 +73,43 @@ A structural lemma in 2-dimensional packing, and its implications on approximabi
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/aptas-for-config-lp.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/2d-config-lp-aptas.html">
         <span class="deptitle">
-        2D geometric bin packing: APTAS for config LP</span>
-<span class="doc-status">(incomplete)</span>    </a>
+        2D BP: APTAS for config LP</span>
+    </a>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 0</li><li>Number of transitive dependencies: 0</li></ul>
+<ul><li>Depth: 4</li><li>Number of transitive dependencies: 4</li></ul>
 
-<h2 class="no-deps"> Transitive dependencies: None </h2>
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
+        <span class="deptitle">
+        Bin packing and Knapsack</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/bp-ks-sp.html">
+        <span class="deptitle">
+        Geometric packing problems (BP, KS, SP) and rvol</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/algo.html">
+        <span class="deptitle">
+        NFDH algorithm</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/bp-small.html">
+        <span class="deptitle">
+        2D BP: NFDH for small items</span>
+    </a>
+    </li>
+</ol>
 
 </div>
 </body>

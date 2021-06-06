@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>1BP: ⌈size(I)⌉ ≤ opt(I) - TheoremDep</title>
+<title>Bin packing: density-restricted config LP - TheoremDep</title>
 <meta name="description" content="Track dependencies between theorems." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
@@ -26,7 +26,7 @@
 </nav>
 
 <div id="main">
-<h1> 1BP: ⌈size(I)⌉ ≤ opt(I) </h1>
+<h1> Bin packing: density-restricted config LP </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
@@ -36,53 +36,51 @@
         Bin packing and Knapsack</span>
     </a>
     </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/config-lp.html">
+        <span class="deptitle">
+        Bin packing: configuration LP</span>
+    </a>
+    </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p><span class="invisible">
-$\newcommand{\Size}{\operatorname{size}}$
-$\newcommand{\Sum}{\operatorname{sum}}$
-$\newcommand{\opt}{\operatorname{opt}}$
-$\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}$
-</span>
-Let $I$ be a 1BP instance.
-Then $\ceil{\Size(I)} \le \opt(I)$.</p>
-<h2>Proof</h2>
-<p>Let $m = \opt(I)$. Let $B_i$ be the items in the $i^{\textrm{th}}$ bin in the optimal packing.
-Then $\Size(B_i) \le 1$ and
-\[ \ceil{\Size(I)} = \ceil{\sum_{i=1}^m \Size(B_i)}
-\le \ceil{\sum_{i=1}^m 1} = m = \opt(I). \]</p>
+<p>Let $I$ be a bin packing instance with $n$ items such that there are
+$m$ types of items, and all items of the same type are identical.
+Let $b_i$ be the number of items of type $i$.
+Let $A$ be the configuration matrix of $I$.</p>
+<p>Let $g: I \mapsto \mathbb{R}_{\ge 0}$ be a function.
+For a set $X$ of items, define $g(X) = \sum_{i \in X} g(i)$.
+Let $\lambda$ be a positive real number.
+Then the density-restricted configuration LP of $I$
+parametrized by $g$ and $\lambda$ is defined as</p>
+<p>\[ \min\left\{ \sum_{C \in \mathcal{C}} x_C + \lambda \sum_{i=1}^m g(i)y_i:
+Ax + y \ge b \wedge x \ge 0 \wedge y \ge 0 \right\} \]</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/aptas.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/density-unrestr.html">
         <span class="deptitle">
-        1BP: APTAS</span>
+        Bin packing: removing density restriction from config LP</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/next-fit.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/dr-ks-approx.html">
         <span class="deptitle">
-        1BP: NextFit(S) ≤ ⌈2size(S)⌉</span>
-    </a>
+        BP: α(1+ε)-approx solution to density-restricted config LP using α-approx algorithm for density-restricted knapsack</span>
+<span class="doc-status">(incomplete)</span>    </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/karmarkar-karp.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/2d-config-lp-aptas.html">
         <span class="deptitle">
-        1BP: Karmarkar-Karp algorithm</span>
-<span class="doc-status">(broken)</span>    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/next-fit-small.html">
-        <span class="deptitle">
-        1BP: NextFit(I) ≤ ⌈size(I)/(1-ε)⌉ for ε-small items</span>
+        2D BP: APTAS for config LP</span>
     </a>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 1</li><li>Number of transitive dependencies: 1</li></ul>
+<ul><li>Depth: 2</li><li>Number of transitive dependencies: 2</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -91,6 +89,12 @@ Then $\Size(B_i) \le 1$ and
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
         <span class="deptitle">
         Bin packing and Knapsack</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/config-lp.html">
+        <span class="deptitle">
+        Bin packing: configuration LP</span>
     </a>
     </li>
 </ol>

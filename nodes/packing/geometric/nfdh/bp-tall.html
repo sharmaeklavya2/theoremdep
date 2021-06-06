@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>2D BP: NFDH for items of small width - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" aria-label="Search" type="text" autocomplete="off" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> 2D BP: NFDH for items of small width </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/bp-ks-sp.html">
+        <span class="deptitle">
+        Geometric packing problems (BP, KS, SP) and rvol</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/algo.html">
+        <span class="deptitle">
+        NFDH algorithm</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/sp-small.html">
+        <span class="deptitle">
+        2D SP: NFDH(I) < a(I)/(W-ε) + hmax for ε-small items</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/next-fit.html">
+        <span class="deptitle">
+        1BP: NextFit(S) ≤ ⌈2size(S)⌉</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p><span class="invisible">
+$\newcommand{\eps}{\varepsilon}$
+$\newcommand{\Size}{\operatorname{Size}}$
+$\newcommand{\opt}{\operatorname{opt}}$
+$\newcommand{\ceil}[1]{\left\lceil{#1}\right\rceil}$
+</span>
+Let $I$ be a 2D geometric bin packing instance,
+where items have width at most $\eps$.
+Let bins have height $H$ and width $W$.</p>
+<p>The number of bins used by NFDH to pack $I$ is at most
+\[ 1 + \ceil{\frac{2a(I)}{H(W-\eps)}}. \]</p>
+<h2>Proof</h2>
+<p>Using NFDH for bin packing is equivalent to using NFDH
+for packing items into shelves and then packing the shelves
+into bins using the Next-Fit algorithm.</p>
+<p>Let there be $p$ shelves in NFDH's output.
+Let $H_i$ be the height of the first item in the $i^{\textrm{th}}$ shelf.
+Define $I' = \{H_i/H: 1 \le i \le p\}$. Then $I'$ is a 1D bin packing instance.
+The height of the strip packing is $H\Size(I')$,
+so $H\Size(I') &lt; a(I)/(W-\eps_W) + H_1$.</p>
+<p>Let there be $m$ bins in NFDH's output.
+Let $P'$ be the heights of shelves in the first bin.
+Next-Fit packs $I'-P'$ into $m-1$ bins, so
+\[ m-1 &lt; 2\Size(I'-P') + 1 \le 2(\Size(I') - H_1/H) + 1
+&lt; \frac{2a(I)}{H(W-\eps)} + 1. \]
+Since $m \in \mathbb{Z}$, we get $m \le 1 + \ceil{2a(I)/H(W-\eps)}$.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 4</li><li>Number of transitive dependencies: 6</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
+        <span class="deptitle">
+        Bin packing and Knapsack</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/size-le-opt.html">
+        <span class="deptitle">
+        1BP: ⌈size(I)⌉ ≤ opt(I)</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/1d/next-fit.html">
+        <span class="deptitle">
+        1BP: NextFit(S) ≤ ⌈2size(S)⌉</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/bp-ks-sp.html">
+        <span class="deptitle">
+        Geometric packing problems (BP, KS, SP) and rvol</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/algo.html">
+        <span class="deptitle">
+        NFDH algorithm</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/sp-small.html">
+        <span class="deptitle">
+        2D SP: NFDH(I) < a(I)/(W-ε) + hmax for ε-small items</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

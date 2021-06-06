@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>2D BP: APTAS for config LP - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" aria-label="Search" type="text" autocomplete="off" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> 2D BP: APTAS for config LP </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/bp-ks-sp.html">
+        <span class="deptitle">
+        Geometric packing problems (BP, KS, SP) and rvol</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/bp-adj.html">
+        <span class="deptitle">
+        NFDH: area of adjacent bins</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/2d-dr-ks-ptas.html">
+        <span class="deptitle">
+        PTAS for 2D geometric density-restricted knapsack</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/dr-config-lp.html">
+        <span class="deptitle">
+        Bin packing: density-restricted config LP</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/dr-ks-approx.html">
+        <span class="deptitle">
+        BP: α(1+ε)-approx solution to density-restricted config LP using α-approx algorithm for density-restricted knapsack</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/density-unrestr.html">
+        <span class="deptitle">
+        Bin packing: removing density restriction from config LP</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p><span class="invisible">
+$\newcommand{\eps}{\varepsilon}$
+$\newcommand{\Th}{^{\textrm{th}}}$
+$\newcommand{\opt}{\operatorname{opt}}$
+$\newcommand{\rvol}{\operatorname{rvol}}$
+$\newcommand{\defeq}{:=}$
+</span>
+Let $I$ be a 2D geometric bin packing instance with $n$ items such that there are
+$m$ types of items, and all items of the same type are identical.
+Let $b_i$ be the number of items of type $i$.
+Let $A$ be the configuration matrix of $I$.</p>
+<p>Let $v^*$ be the optimal objective value of the configuration LP.
+Then for any $\eps &gt; 0$, we can obtain in polynomial time a feasible solution
+to the configuration LP of objective value at most $(1+\eps)v^* + 4$.</p>
+<h2>Proof</h2>
+<p>Let $g = \rvol$ and $\lambda = 4$.
+Let $P$ be the NFDH algorithm and $Q$ be a PTAS for
+density-restricted 2D geometric knapsack.
+For any $X \subseteq I$, if $\rvol(I) \le 1/\lambda = 1/4$,
+then $P$ can pack $X$ into at most $c = 2$ bins.
+Then the $(g, \lambda)$-density-restricted configuration LP of $I$
+can be approximately solved in polynomial time using $P$ and $Q$.
+We can then use NFDH to remove the density restriction.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 6</li><li>Number of transitive dependencies: 23</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/optimization/lin-func-is-max-at-extreme-point-of-polytope</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/bounds/upper-exp-bound</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
+        <span class="deptitle">
+        Bin packing and Knapsack</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/bp-ks-sp.html">
+        <span class="deptitle">
+        Geometric packing problems (BP, KS, SP) and rvol</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/algo.html">
+        <span class="deptitle">
+        NFDH algorithm</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/bp-adj.html">
+        <span class="deptitle">
+        NFDH: area of adjacent bins</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/bp-small.html">
+        <span class="deptitle">
+        2D BP: NFDH for small items</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/2d-dr-ks-ptas.html">
+        <span class="deptitle">
+        PTAS for 2D geometric density-restricted knapsack</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/config-lp.html">
+        <span class="deptitle">
+        Bin packing: configuration LP</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/dr-config-lp.html">
+        <span class="deptitle">
+        Bin packing: density-restricted config LP</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/density-unrestr.html">
+        <span class="deptitle">
+        Bin packing: removing density restriction from config LP</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+        <span class="deptitle">
+        Group</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+        <span class="deptitle">
+        Ring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/polynomial.html">
+        <span class="deptitle">
+        Polynomial</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/intdom.html">
+        <span class="deptitle">
+        Integral Domain</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/compare-coeff-disjoint-var.html">
+        <span class="deptitle">
+        Comparing coefficients of a polynomial with disjoint variables</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html">
+        <span class="deptitle">
+        Semiring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+        <span class="deptitle">
+        Matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/stacking.html">
+        <span class="deptitle">
+        Stacking</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity.html">
+        <span class="deptitle">
+        Identity matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/log-bound.html">
+        <span class="deptitle">
+        Bound on log</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/eku-pst.html">
+        <span class="deptitle">
+        Approximation algorithm for covering LPs</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/dr-ks-approx.html">
+        <span class="deptitle">
+        BP: α(1+ε)-approx solution to density-restricted config LP using α-approx algorithm for density-restricted knapsack</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

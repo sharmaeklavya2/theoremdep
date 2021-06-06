@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>2D SP: NFDH(I) < a(I)/(W-ε) + hmax for ε-small items - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" aria-label="Search" type="text" autocomplete="off" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> 2D SP: NFDH(I) < a(I)/(W-ε) + hmax for ε-small items </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/bp-ks-sp.html">
+        <span class="deptitle">
+        Geometric packing problems (BP, KS, SP) and rvol</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/algo.html">
+        <span class="deptitle">
+        NFDH algorithm</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p><span class="invisible">
+$\newcommand{\eps}{\varepsilon}$
+$\newcommand{\NFDH}{\operatorname{NFDH}}$
+$\newcommand{\Th}{^{\textrm{th}}}$
+</span>
+Let $I$ be a 2D strip packing instance. Let the strip have width $W$.
+Let $H = \NFDH(I)$ be the height of the packing produced by the NFDH algorithm.
+Let $h_{\max}$ be the maximum height of any item in $I$
+and let $\eps$ be the maximum width of any item. Then
+\[ \NFDH(I) &lt; a(I)/(W-\eps) + h_{\max}. \]</p>
+<p>Since $a(I)/W$ is a lower bound on optimal strip packing height,
+NFDH is an asymptotic $(1-\eps/W)^{-1}$-approx strip packing algorithm.</p>
+<h2>Proof</h2>
+<ul>
+<li>Let there be $p$ shelves in the output of NFDH.
+Let $V_i$ be the set of items in the $i\Th$ shelf.</li>
+<li>Let $H_i$ be the height of the first item in $V_i$.</li>
+<li>Let $W_i$ be the sum of widths of items in $V_i$.</li>
+<li>Let $A_i$ be the sum of areas of items in $V_i$.</li>
+</ul>
+<p>For $i &lt; p$, we have $W_i &gt; W - \eps$ and $A_i \ge W_iH_{i+1} &gt; (W - \eps)H_{i+1}$. Hence,
+\begin{align}
+&amp; a(I) &gt; \sum_{i=1}^{p-1} A_i \ge \sum_{i=1}^{p-1} (W-\eps)H_{i+1} = (W-\eps)(H - h_{\max}).
+\\ &amp;\implies \NFDH(I) = H \le a(I)/(W-\eps) + h_{\max}.
+\end{align}</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/bp-tall.html">
+        <span class="deptitle">
+        2D BP: NFDH for items of small width</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 3</li><li>Number of transitive dependencies: 3</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
+        <span class="deptitle">
+        Bin packing and Knapsack</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/bp-ks-sp.html">
+        <span class="deptitle">
+        Geometric packing problems (BP, KS, SP) and rvol</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/algo.html">
+        <span class="deptitle">
+        NFDH algorithm</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

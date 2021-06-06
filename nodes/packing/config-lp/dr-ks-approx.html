@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>BP: α(1+ε)-approx solution to density-restricted config LP using α-approx algorithm for density-restricted knapsack - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" aria-label="Search" type="text" autocomplete="off" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> BP: α(1+ε)-approx solution to density-restricted config LP using α-approx algorithm for density-restricted knapsack <span class="doc-status">(incomplete)</span> </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
+        <span class="deptitle">
+        Bin packing and Knapsack</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/dr-config-lp.html">
+        <span class="deptitle">
+        Bin packing: density-restricted config LP</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/eku-pst.html">
+        <span class="deptitle">
+        Approximation algorithm for covering LPs</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/stacking.html">
+        <span class="deptitle">
+        Stacking</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity.html">
+        <span class="deptitle">
+        Identity matrix</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p><span class="invisible">
+$\newcommand{\eps}{\varepsilon}$
+$\newcommand{\ihat}{\widehat{\imath}}$
+$\newcommand{\xhat}{\widehat{x}}$
+$\newcommand{\yhat}{\widehat{y}}$
+$\newcommand{\Ccal}{\mathcal{C}}$
+$\newcommand{\Chat}{\widehat{C}}$
+$\newcommand{\Th}{^{\textrm{th}}}$
+$\newcommand{\opt}{\operatorname{opt}}$
+$\newcommand{\covLP}{\operatorname{covLP}}$
+$\newcommand{\defeq}{:=}$
+</span>
+Let $I$ be a bin packing instance with $n$ items such that there are
+$m$ types of items, and all items of the same type are identical.
+Let $b_i$ be the number of items of type $i$.
+Let $A$ be the configuration matrix of $I$.</p>
+<p>Let $g: I \mapsto \mathbb{R}_{\ge 0}$ be a function.
+For a set $X$ of items, define $g(X) = \sum_{i \in X} g(i)$.
+Let $\beta$ be a constant such that if a set $X$ of items can fit in a bin,
+then $g(X) \le \beta$.
+Let $\lambda$ be a positive real number.
+Let $P$ be an algorithm that can pack a set $X \subseteq I$ of items
+into $c$ bins if $g(X) \le 1/c$.</p>
+<p>For the knapsack problem, the density of an item $i$ is given by $p(i)/g(i)$.
+Here $p(i)$ is the profit of item $i$.
+The $(g, \lambda)$-density-restricted knapsack problem is like the knapsack problem,
+except that we are promised that for each item, the ratio of the
+maximum density to the minimum density is upper-bounded by a constant $\lambda$.
+Let $Q$ be an $\eta$-approx algorithm for the $(g, \lambda)$-density-restricted
+knapsack problem that runs in time $T(m, n)$.</p>
+<p>Let $v^*$ be the optimal objective value of the
+$(g, \lambda)$-density-restricted configuration LP of $I$.
+For any $\eps &gt; 0$, we can find a solution to the
+density-restricted configuration LP of $I$ of objective value at most
+\[ \frac{1+\eps}{\eta}v^* + c \]
+in time
+\[ O\left( \frac{m^2n}{\eta\eps^3} \log\left(\frac{n}{\eps\eta}\right)^3 T(m, n)\right). \]</p>
+<h2>Proof</h2>
+<p><strong>Lemma 1</strong>: Let $r^*$ be the optimal objective value of the
+$(g, \lambda)$-density-restricted configuration LP of $I$. Then
+\[ \min\left(1, \lambda\max_{i=1}^m g(i)b_i\right) \le r^*
+\le n\min\left(1, \lambda\max_{i=1}^m g(i)b_i\right) \]</p>
+<p><em>Proof</em>. Let $k \in [m]$ such that $b_k &gt; 0$.
+Let $(x^*, y^*)$ be the optimal solution to the
+$(g, \lambda)$-density-restricted configuration LP of $I$. Then
+\begin{align}
+&amp; \min\left(1, \lambda g(k)b_k\right)
+\\ &amp;= \min\left(\frac{1}{b_k}, \lambda g(k)\right)b_k
+\\ &amp;\le \min\left(\frac{1}{b_k}, \lambda g(k)\right)
+    \left(y_k^* + \sum_C A[k, C]x_C^*\right)
+\\ &amp;\le \lambda g(k)y_k^* + \sum_C x_C^* \le r^*
+\end{align}
+Therefore,
+\[ \min\left(1, \lambda \max_{i=1}^m g(i)b_i\right) \le r^* \]</p>
+<p>Configurations that contain only a single item are called <em>singleton configurations</em>.
+Let $\xhat_C = 0$ when $C$ is not a singleton configuration
+and $\xhat_C = b_i$ when $C$ is a singleton configuration of item type $i$.
+Then $(\xhat, 0)$ is a feasible solution to the density-restricted configuration LP
+and has objective value $n$.</p>
+<p>Let $\yhat_i = b_i$. Then $(0, \yhat)$ is a feasible solution to the
+density-restricted configuration LP and has objective value $\lambda \sum_{i=1}^m g(i)b_i$.
+Therefore,
+\[ r^* \le \min\left(n, \lambda \sum_{i=1}^m g(i)b_i\right)
+\le n\min\left(1, \lambda\max_{i=1}^m g(i)b_i\right) \tag*{□} \]</p>
+<p>Very small items can cause problems, so we'll get rid of them.
+An item of type $i$ is called small iff $g(i) \le 1/(\lambda m b_i)$.
+Let $I_S$ be the set of small items. Let $I_L \defeq I - I_S$.</p>
+<p><strong>Lemma 2</strong>: Let $(x^{(L)}, y)$ be a solution to the density-restricted configuration LP of $I_L$
+having objective value $v$. Then we can obtain a feasible solution to the
+density-restricted configuration LP of $I$ of objective value at most $v + c$.</p>
+<p><em>Proof</em>. Observe that $g(I_S) \le 1/\lambda$.
+So $P$ can pack $I_S$ into at most $c$ bins.
+Let $x^{(S)}$ be the configurations in $P$'s solution.
+<span class="text-danger">(incomplete)</span> &emsp;□.</p>
+<p>Thanks to Lemma 2, from now on, we'll assume that $I$ has no small items.</p>
+<p>We will try to use the <code>covLPsolve</code> algorithm from <a href="#cite-eku-pst">[eku-pst]</a>
+to solve the density-restricted configuration LP.
+To do this, we need to express the density-restricted configuration LP as a covering LP.
+Let $A' = [A, I_m]$, where $I_m$ is the $m$-by-$m$ identity matrix.
+Let $z = [x, y]$. Then $A'z = Ax + y$.
+Let $c \in \mathbb{R}_{\ge 0}^{|\Ccal|+m}$ be a vector
+whose first $|\Ccal|$ entries are 1
+and the $(|\Ccal|+j)\Th$ entry is $\lambda g(i)$.
+Then $c^Tz = \sum_C x_C + \lambda \sum_{i=1}^m g(i)y_i$.
+Therefore, the $(g, \lambda)$-density-restricted configuration LP can be
+represented as $\covLP(A', b, c)$.</p>
+<p>The column oracle and the cost oracle are trivial to construct.
+The parameter $q$ of <code>covLPsolve</code> can be computed using Lemma 1,
+and $q/\opt(\covLP(A', b, c)) \le n$ by Lemma 1.</p>
+<p>\begin{align}
+\frac{\rho}{q} &amp;= \max_{i=1}^m \max_j \frac{A'[i, j]}{b_ic_j}
+\\ &amp;= \max_{i=1}^m \max\left( \max_{C \in \Ccal} \frac{A[i, C]}{b_i},
+    \frac{1}{\lambda g(i)b_i} \right)
+\\ &amp;\le \max_{i=1}^m \max\left( 1, m \right) = m
+\tag{$I$ has no small items}
+\end{align}
+Hence, $\rho \le mn$.</p>
+<p>For any vector $p \in \mathbb{R}_{\ge 0}^m$, let $p(C)$ denote the
+profit of configuration $C$ if each item of type $i$ has profit $p_i$.
+Let's now investigate the function $D$ associated with the index-finding oracle.
+For a configuration $C$,
+\[ D_C(p) = \sum_{i=1}^m p_iA[i, C] = p(C). \]
+For $j \in [m]$,
+\[ D_j(p) = \sum_{i=1}^m \frac{p_iI[i, j]}{\lambda g(j)} = \frac{p_j}{\lambda g(j)}. \]
+\[ D(p) = \max\left( \max_{C \in \Ccal} p(C), \max_{i=1}^m \frac{p_i}{\lambda g(i)} \right). \]
+Therefore, the index-finding oracle will either return a configuration $\Chat$
+such that $p(\Chat)$ is approximately $D(p)$ or return $\ihat \in [m]$ such that
+$(p_{\ihat}/\lambda g(\ihat))$ is approximately $D(p)$.</p>
+<p>For any $\delta &gt; 0$, we can implement an $\eta(1-\delta)$-weak index-finding oracle
+using an $\eta$-approx algorithm for $(g, \lambda \beta / \delta)$-density-restricted knapsack.
+<span class="text-danger">(proof needed)</span></p>
+<p>Hence, we can solve the densit-restricted config LP of $I$ using <code>covLPsolve</code>.
+The running time is
+\[ O\left( \frac{m^2n}{\eta\eps^3} \log\left(\frac{n}{\eps\eta}\right)^3 T(m, n)\right). \]</p>
+<div class="citation" id="cite-eku-pst">
+<span class="cite-name">eku-pst</span><br/>
+<span class="cite-authors">Eklavya Sharma</span><br/>
+<cite class="cite-title"><a href="https://arxiv.org/abs/2011.11268">
+An Approximation Algorithm for Covering Linear Programs and its Application to Bin-Packing
+</a></cite><br/>
+<span class="cite-source">arXiv:2011.11268 [cs.DS]</span>
+</div>
+
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/2d-config-lp-aptas.html">
+        <span class="deptitle">
+        2D BP: APTAS for config LP</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 5</li><li>Number of transitive dependencies: 16</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/optimization/lin-func-is-max-at-extreme-point-of-polytope</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/bounds/upper-exp-bound</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
+        <span class="deptitle">
+        Bin packing and Knapsack</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/config-lp.html">
+        <span class="deptitle">
+        Bin packing: configuration LP</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/dr-config-lp.html">
+        <span class="deptitle">
+        Bin packing: density-restricted config LP</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+        <span class="deptitle">
+        Group</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+        <span class="deptitle">
+        Ring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/polynomial.html">
+        <span class="deptitle">
+        Polynomial</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/intdom.html">
+        <span class="deptitle">
+        Integral Domain</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/compare-coeff-disjoint-var.html">
+        <span class="deptitle">
+        Comparing coefficients of a polynomial with disjoint variables</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html">
+        <span class="deptitle">
+        Semiring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+        <span class="deptitle">
+        Matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/stacking.html">
+        <span class="deptitle">
+        Stacking</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity.html">
+        <span class="deptitle">
+        Identity matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/bounds/log-bound.html">
+        <span class="deptitle">
+        Bound on log</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/linear-prog/eku-pst.html">
+        <span class="deptitle">
+        Approximation algorithm for covering LPs</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

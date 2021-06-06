@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>2D geometric bin packing: NFDH performance - TheoremDep</title>
-<meta name="description" content="Analysis of performance of NFDH for bin packing." />
+<title>NFDH: area of adjacent bins - TheoremDep</title>
+<meta name="description" content="In the output of NFDH, for any pair of adjacent bins except the last, one of the bins has total rvol more than 1/4." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,56 +26,42 @@
 </nav>
 
 <div id="main">
-<h1> 2D geometric bin packing: NFDH performance </h1>
+<h1> NFDH: area of adjacent bins </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/nfdh/algo.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/bp-ks-sp.html">
         <span class="deptitle">
-        2D geometric packing: NFDH algorithm</span>
+        Geometric packing problems (BP, KS, SP) and rvol</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/size.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/algo.html">
         <span class="deptitle">
-        Geometric packing: size and rsize</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/misc/floor-ceil/fraction.html">
-        <span class="deptitle">
-        Floor and ceil of fraction</span>
+        NFDH algorithm</span>
     </a>
     </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $I$ be a 2D geometric bin packing instance.
-Suppose NFDH packs them into $m$ bins of width and height 1.
-Let $S_i$ be the set of items in the $i^{\textrm{th}}$ bin.
-Then,
-$\newcommand{\Size}{\operatorname{size}}$
+<p><span class="invisible">
+$\newcommand{\rvol}{\operatorname{rvol}}$
 $\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}$
-$\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}$</p>
-<ul>
-<li>$m \le \ceil{8\Size(I)}+1$.</li>
-<li>When $m \ge 3$,
-$\forall j \le m-2, \max(\Size(S_j), \Size(S_{j+1})) &gt; 1/4$.</li>
-</ul>
+$\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}$
+</span>
+Let $I$ be a 2D geometric bin packing instance.
+Suppose NFDH packs $I$ into $m$ bins.
+Let $S_i$ be the set of items in the $i^{\textrm{th}}$ bin.
+If $m \ge 3$, then $\forall j \le m-2$, we get $\max(\rvol(S_j), \rvol(S_{j+1})) &gt; 1/4$.</p>
 <h2>Proof</h2>
+<p>Since NFDH doesn't rotate items, we can assume without loss of generality
+that the bin has width and height 1.</p>
 <p>The following lemma is proved in the appendix of
 <a href="#cite-bansal2009structural" class="cite-ref">[bansal2009structural]</a> (Proof of Lemma 2):
-\[ m &gt; 2 \implies \max(\Size(S_1), \Size(S_2)) &gt; 1/4 \]</p>
-<p>They prove the version with non-strict inequalities
-(i.e. $\max(\Size(S_1), \Size(S_2)) \ge 1/4$ instead of $\max(\Size(S_1), \Size(S_2)) &gt; 1/4$),
-but we can prove the theorem with strict inequalities by a simple modification of their proof.</p>
-<p>Consider the NFDH packing of $I' = I - \sum_{j=1}^{i-1} S_j$.
-In this packing, $S_i$ is the first bin.
-Applying the above lemma gives us:</p>
-<p>\[ m \ge 3 \implies (\forall j \le m-2, \max(\Size(S_j), \Size(S_{j+1})) &gt; 1/4 \]</p>
-<p>When $m \ge 3$, at least $\floor{\frac{m-1}{2}} \ge \frac{m}{2} - 1$ bins are more than $1/4$-filled.
-So, $m &lt; 8\Size(I) + 2$. Since $m \in \mathbb{Z}$, $m \le \ceil{8\Size(I)}+1$.</p>
+\[ m &gt; 2 \implies \max(a(S_1), a(S_2)) \ge 1/4. \]
+Some of the inequalities in their proof can be made strict to get
+\[ m &gt; 2 \implies \max(a(S_1), a(S_2)) &gt; 1/4. \]</p>
 <div class="citation" id="cite-bansal2009structural">
 <span class="cite-name">bansal2009structural</span><br/>
 <span class="cite-authors">Bansal N, Caprara A, Jansen K, Prädel L, Sviridenko M.</span><br/>
@@ -90,34 +76,34 @@ A structural lemma in 2-dimensional packing, and its implications on approximabi
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/aptas-for-config-lp.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/2d-config-lp-aptas.html">
         <span class="deptitle">
-        2D geometric bin packing: APTAS for config LP</span>
-<span class="doc-status">(incomplete)</span>    </a>
+        2D BP: APTAS for config LP</span>
+    </a>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 1</li><li>Number of transitive dependencies: 3</li></ul>
+<ul><li>Depth: 3</li><li>Number of transitive dependencies: 3</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/2d-geom/nfdh/algo.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/bp-and-ks.html">
         <span class="deptitle">
-        2D geometric packing: NFDH algorithm</span>
+        Bin packing and Knapsack</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/d-geom/size.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/bp-ks-sp.html">
         <span class="deptitle">
-        Geometric packing: size and rsize</span>
+        Geometric packing problems (BP, KS, SP) and rvol</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/misc/floor-ceil/fraction.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/packing/geometric/nfdh/algo.html">
         <span class="deptitle">
-        Floor and ceil of fraction</span>
+        NFDH algorithm</span>
     </a>
     </li>
 </ol>
