@@ -3034,9 +3034,12 @@
 {
 "type": "theorem",
 "title": "BP: \u03b1(1+\u03b5)-approx solution to density-restricted config LP using \u03b1-approx algorithm for density-restricted knapsack",
+"authors": [
+"Eklavya Sharma",
+"K.V.N. Sreenivas"
+],
 "uci": "/packing/config-lp/dr-ks-approx",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/dr-ks-approx.html",
-"status": "incomplete"
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/dr-ks-approx.html"
 },
 {
 "type": "theorem",

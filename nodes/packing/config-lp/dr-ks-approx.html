@@ -26,7 +26,7 @@
 </nav>
 
 <div id="main">
-<h1> BP: α(1+ε)-approx solution to density-restricted config LP using α-approx algorithm for density-restricted knapsack <span class="doc-status">(incomplete)</span> </h1>
+<h1> BP: α(1+ε)-approx solution to density-restricted config LP using α-approx algorithm for density-restricted knapsack </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
@@ -55,9 +55,9 @@
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/product.html">
         <span class="deptitle">
-        Identity matrix</span>
+        Product of stacked matrices</span>
     </a>
     </li>
 </ol>
@@ -68,14 +68,18 @@ $\newcommand{\eps}{\varepsilon}$
 $\newcommand{\ihat}{\widehat{\imath}}$
 $\newcommand{\xhat}{\widehat{x}}$
 $\newcommand{\yhat}{\widehat{y}}$
+$\newcommand{\Acal}{\mathcal{A}}$
 $\newcommand{\Ccal}{\mathcal{C}}$
 $\newcommand{\Chat}{\widehat{C}}$
 $\newcommand{\Th}{^{\textrm{th}}}$
 $\newcommand{\opt}{\operatorname{opt}}$
+$\newcommand{\optKS}{\operatorname{opt}_{\mathrm{KS}}}$
 $\newcommand{\covLP}{\operatorname{covLP}}$
 $\newcommand{\defeq}{:=}$
-</span>
-Let $I$ be a bin packing instance with $n$ items such that there are
+</span></p>
+<p>(Original work by <a href="https://sharmaeklavya2.github.io">Eklavya Sharma</a>
+and K.V.N. Sreenivas)</p>
+<p>Let $I$ be a bin packing instance with $n$ items such that there are
 $m$ types of items, and all items of the same type are identical.
 Let $b_i$ be the number of items of type $i$.
 Let $A$ be the configuration matrix of $I$.</p>
@@ -88,11 +92,11 @@ Let $P$ be an algorithm that can pack a set $X \subseteq I$ of items
 into $c$ bins if $g(X) \le 1/c$.</p>
 <p>For the knapsack problem, the density of an item $i$ is given by $p(i)/g(i)$.
 Here $p(i)$ is the profit of item $i$.
-The $(g, \lambda)$-density-restricted knapsack problem is like the knapsack problem,
+The $(g, \sigma)$-density-restricted knapsack problem is like the knapsack problem,
 except that we are promised that for each item, the ratio of the
-maximum density to the minimum density is upper-bounded by a constant $\lambda$.
-Let $Q$ be an $\eta$-approx algorithm for the $(g, \lambda)$-density-restricted
-knapsack problem that runs in time $T(m, n)$.</p>
+maximum density to the minimum density is upper-bounded by a constant $\sigma$.
+Let $Q$ be an $\eta$-approx algorithm for the $(g, \sigma)$-density-restricted
+knapsack problem ($\eta \le 1$) that runs in time $T(m, n)$ for any constant $\sigma$.</p>
 <p>Let $v^*$ be the optimal objective value of the
 $(g, \lambda)$-density-restricted configuration LP of $I$.
 For any $\eps &gt; 0$, we can find a solution to the
@@ -130,24 +134,74 @@ Therefore,
 <p>Very small items can cause problems, so we'll get rid of them.
 An item of type $i$ is called small iff $g(i) \le 1/(\lambda m b_i)$.
 Let $I_S$ be the set of small items. Let $I_L \defeq I - I_S$.</p>
-<p><strong>Lemma 2</strong>: Let $(x^{(L)}, y)$ be a solution to the density-restricted configuration LP of $I_L$
-having objective value $v$. Then we can obtain a feasible solution to the
+<p><strong>Lemma 2</strong>: Let $(x^{(L)}, y^{(L)})$ be a solution to the
+density-restricted configuration LP of $I_L$ having objective value $v$.
+Then we can obtain a feasible solution to the
 density-restricted configuration LP of $I$ of objective value at most $v + c$.</p>
 <p><em>Proof</em>. Observe that $g(I_S) \le 1/\lambda$.
-So $P$ can pack $I_S$ into at most $c$ bins.
-Let $x^{(S)}$ be the configurations in $P$'s solution.
-<span class="text-danger">(incomplete)</span> &emsp;□.</p>
+So $P$ can pack $I_S$ into at most $c$ bins.</p>
+<p>Let $\Ccal$ be the set of all configurations of $I$.
+Let $\Ccal_L \subseteq \Ccal$ be the configurations that only contain items from $I_L$.
+Let $\Ccal_S \subseteq \Ccal$ be the configurations that only contain items from $I_S$.
+Let $\Ccal' \subseteq \Ccal$ be the configurations that contain items from both $I_L$ and $I_S$.
+Hence, $\Ccal = \Ccal_L \cup \Ccal_S \cup \Ccal'$.</p>
+<p>Let there be $m_S$ types of small items and $m_L$ types of large items.
+We can split the vector $b$ of length $m$ into two vectors $b^{(S)}$ and $b^{(L)}$
+of length $m_S$ and $m_L$ respectively.
+After renumbering the item types so that large item types appear first,
+we get that $b = \begin{bmatrix}b^{(L)} \\ \hline b^{(S)}\end{bmatrix}$
+(i.e., $b$ is obtained by vertically stacking $b^{(L)}$ and $b^{(S)}$).</p>
+<p>Let $A^{(L)}$ be an $m_L$-by-$|\Ccal_L|$ configuration matrix for $I_L$.
+Then the density-restricted configuration LP of $I_L$ is given by
+\[ \min\left\{ \sum_{C \in \Ccal_L} x_C + \lambda \sum_{i=1}^{m_L} g(i)y_i:
+A^{(L)}x + y \ge b^{(L)} \wedge x \ge 0 \wedge y \ge 0 \right\} \]
+Let $A^{(S)}$ be an $m_S$-by-$|\Ccal_S|$ configuration matrix for $I_S$.
+After renumbering the configurations, we get that $A$ is of the form
+\[ A = \left[\begin{array}{c|c|c} A^{(L)} &amp; 0 &amp; ?
+\\ \hline 0 &amp; A^{(S)} &amp; ? \end{array}\right] \]</p>
+<p>Let $\mathcal{B}$ be the configurations of the bins used by $P$ to pack $I_S$.
+Let $x^{(S)}$ be a vector of length $|\Ccal_S|$ where
+$x^{(S)}_C$ is the number of bins of config $C$ used by $P$'s output on $I_S$.
+Then $\sum_{C \in \mathcal{C}_S} x^{(S)}_C \le c$.
+Since $x^{(S)}$ is gives a feasible bin packing, we get $A^{(S)}x^{(S)} \ge b^{(S)}$.</p>
+<p>Let $x'$ be a vector of length $|\Ccal'|$ where each entry is 0.
+Let $y^{(S)}$ be a vector of length $m_S$ where each entry is 0.
+Let $\xhat = \begin{bmatrix}x^{(L)} \\ \hline x^{(S)} \\ \hline x'\end{bmatrix}$.
+Let $\yhat = \begin{bmatrix}y^{(L)} \\ \hline y^{(S)} \end{bmatrix}$.
+We will now show that $(\xhat, \yhat)$ is feasible for the density-restricted config LP of $I$
+and has objective value at most $v + c$.</p>
+<p>\begin{align}
+A\xhat + \yhat &amp;=
+    \left[\begin{array}{c|c|c} A^{(L)} &amp; 0 &amp; ? \\ \hline 0 &amp; A^{(S)} &amp; ? \end{array}\right]
+    \left[\begin{array}{c} x^{(L)} \\ \hline x^{(S)} \\ \hline 0 \end{array}\right]
+    + \begin{bmatrix}y^{(L)} \\ \hline y^{(S)} \end{bmatrix}
+\\ &amp;= \left[\begin{array}{c} A^{(L)}x^{(L)} + y^{(L)}
+    \\ \hline A^{(S)}x^{(S)} \end{array}\right]
+\\ &amp;\ge \left[\begin{array}{c} b^{(L)} \\ \hline b^{(S)} \end{array}\right]
+= b
+\end{align}
+Therefore, $(\xhat, \yhat)$ is feasible for the config LP of $I$.
+\[ \sum_{C \in \Ccal} \xhat_C + \lambda \sum_{i=1}^m g(i)\yhat_i
+= \sum_{C \in \Ccal_L} x^{(L)}_C + \sum_{C \in \Ccal_S} x^{(S)}_C
+    + \lambda \sum_{i=1}^{m_L} g(i)y^{(L)}_i
+\le v + c \]
+Therefore, $(\xhat, \yhat)$ has objective value at most $v + c$.
+&emsp;□</p>
 <p>Thanks to Lemma 2, from now on, we'll assume that $I$ has no small items.</p>
 <p>We will try to use the <code>covLPsolve</code> algorithm from <a href="#cite-eku-pst">[eku-pst]</a>
 to solve the density-restricted configuration LP.
-To do this, we need to express the density-restricted configuration LP as a covering LP.
-Let $A' = [A, I_m]$, where $I_m$ is the $m$-by-$m$ identity matrix.
-Let $z = [x, y]$. Then $A'z = Ax + y$.
-Let $c \in \mathbb{R}_{\ge 0}^{|\Ccal|+m}$ be a vector
-whose first $|\Ccal|$ entries are 1
+To do this, we need to express the density-restricted configuration LP as a covering LP.</p>
+<ul>
+<li>Let $A' = [A, I_m]$ (i.e., horizontally stack $A$ and $I_m$),
+where $I_m$ is the $m$-by-$m$ identity matrix
+(i.e., $I_m[i, j] = 1$ if $i = j$ and $I_m[i, j] = 0$ if $i \neq j$).</li>
+<li>Let $z = \begin{bmatrix}x \\ y\end{bmatrix}$ (i.e., vertically stack $x$ and $y$).
+Then $A'z = Ax + y$.</li>
+<li>Let $c \in \mathbb{R}_{\ge 0}^{|\Ccal|+m}$ be a vector whose first $|\Ccal|$ entries are 1
 and the $(|\Ccal|+j)\Th$ entry is $\lambda g(i)$.
-Then $c^Tz = \sum_C x_C + \lambda \sum_{i=1}^m g(i)y_i$.
-Therefore, the $(g, \lambda)$-density-restricted configuration LP can be
+Then $c^Tz = \sum_C x_C + \lambda \sum_{i=1}^m g(i)y_i$.</li>
+</ul>
+<p>Therefore, the $(g, \lambda)$-density-restricted configuration LP can be
 represented as $\covLP(A', b, c)$.</p>
 <p>The column oracle and the cost oracle are trivial to construct.
 The parameter $q$ of <code>covLPsolve</code> can be computed using Lemma 1,
@@ -171,10 +225,52 @@ For $j \in [m]$,
 Therefore, the index-finding oracle will either return a configuration $\Chat$
 such that $p(\Chat)$ is approximately $D(p)$ or return $\ihat \in [m]$ such that
 $(p_{\ihat}/\lambda g(\ihat))$ is approximately $D(p)$.</p>
-<p>For any $\delta &gt; 0$, we can implement an $\eta(1-\delta)$-weak index-finding oracle
-using an $\eta$-approx algorithm for $(g, \lambda \beta / \delta)$-density-restricted knapsack.
-<span class="text-danger">(proof needed)</span></p>
-<p>Hence, we can solve the densit-restricted config LP of $I$ using <code>covLPsolve</code>.
+<p><strong>Lemma 3</strong>: For any $\delta &gt; 0$, we can implement an $\eta(1-\delta)$-weak index-finding oracle
+using an $\eta$-approx algorithm for $(g, \lambda \beta / \delta)$-density-restricted knapsack.</p>
+<p><em>Proof</em>.
+Let $i^*$ be the highest-density item. Let $\sigma = p_{i^*}/(\lambda g(i^*)) = D_{i^*}(p)$.
+This means that the density of items is upper-bounded by $\sigma\lambda$.
+Let $I_S = \{i \in I: p_i/g(i) &lt; \delta\sigma/\beta \}$ and $I_L = I - I_S$
+where $\delta$ is a (preferably small) positive constant.
+The density of items in $I_L$ ranges from $\sigma\delta/\beta$ to $\sigma\lambda$.
+The max-to-min density ratio is $\lambda\beta/\delta$, which is a constant.</p>
+<p>For a set $X$ of items, let $\optKS(X)$ denote the maximum profit attainable
+by packing a subset of $X$ into a bin, where the profit of an item of type $i$ is $p_i$.
+Since $g(I_S) \le \beta$, we get $\optKS(I_S) &lt; \delta\sigma$.
+Let $\Acal$ be an $\eta$-approx algorithm for the density-restricted knapsack problem.
+Let $\Chat$ be the config returned by $\Acal(I_L)$.
+Since $\Acal$ is $\eta$-approx, $p(\Chat) \ge \eta\optKS(I_L)$.
+Let $C^*$ be the maximum-profit subset of $I$, so $p(C^*) = \optKS(I)$.</p>
+<p>Case 1: $p(\Chat) \le \sigma$
+\begin{align}
+\optKS(I) &amp;= p(C^* \cap I_S) + p(C^* \cap I_L)
+\\ &amp;\le \optKS(I_S) + \optKS(I_L)
+\\ &amp;\le \delta\sigma + \frac{p(\Chat)}{\eta}
+\\ &amp;\le \sigma\left(\delta + \frac{1}{\eta}\right)
+\end{align}
+Therefore,
+\begin{align}
+&amp; D(p) = \max(\optKS(I), \sigma) \le \sigma \left(\delta + \frac{1}{\eta}\right)
+\\ &amp;\implies D_{i^*}(p) = \sigma \ge \frac{\eta}{1 + \eta\delta} D(p)
+\end{align}
+So returning $i^*$ is an $\eta/(1 + \eta\delta)$-approx solution
+to the index-finding oracle.</p>
+<p>Case 2: $p(\Chat) \ge \sigma$<br>
+Hence, $\sigma \le p(\Chat) \le p(C^*) = \optKS(I)$ and $D(p) = \optKS(I)$.
+\begin{align}
+p(\Chat) &amp;\ge \eta\optKS(I_L)
+\\ &amp;\ge \eta(\optKS(I) - \optKS(I_S))
+\\ &amp;\ge \eta(\optKS(I) - \sigma\delta)
+\\ &amp;\ge \eta(1 - \delta)\optKS(I)
+\end{align}
+Therefore, returning $\Chat$ is a $\eta(1-\delta)$-approx solution
+to the index-finding oracle.</p>
+<p>If $p(\Chat) \le \sigma$, have the index-finding subroutine return $i^*$.
+Otherwise return $\Chat$.
+\[ \min\left(\frac{\eta}{1+\eta\delta}, \eta(1-\delta) \right) = \eta(1-\delta) \]
+Therefore, we get a $\eta(1-\delta)$-weak index-finding subroutine.
+&emsp;□</p>
+<p>Hence, we can solve the density-restricted config LP of $I$ using <code>covLPsolve</code>.
 The running time is
 \[ O\left( \frac{m^2n}{\eta\eps^3} \log\left(\frac{n}{\eps\eta}\right)^3 T(m, n)\right). \]</p>
 <div class="citation" id="cite-eku-pst">
@@ -198,7 +294,7 @@ An Approximation Algorithm for Covering Linear Programs and its Application to B
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 5</li><li>Number of transitive dependencies: 16</li></ul>
+<ul><li>Depth: 5</li><li>Number of transitive dependencies: 13</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -240,24 +336,6 @@ An Approximation Algorithm for Covering Linear Programs and its Application to B
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/polynomial.html">
-        <span class="deptitle">
-        Polynomial</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/intdom.html">
-        <span class="deptitle">
-        Integral Domain</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/compare-coeff-disjoint-var.html">
-        <span class="deptitle">
-        Comparing coefficients of a polynomial with disjoint variables</span>
-    </a>
-    </li>
-    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html">
         <span class="deptitle">
         Semiring</span>
@@ -276,9 +354,9 @@ An Approximation Algorithm for Covering Linear Programs and its Application to B
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/product.html">
         <span class="deptitle">
-        Identity matrix</span>
+        Product of stacked matrices</span>
     </a>
     </li>
     <li>
