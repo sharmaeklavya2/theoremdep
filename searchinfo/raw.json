@@ -2811,6 +2811,20 @@
 },
 {
 "type": "def",
+"title": "Median of a random variable",
+"description": "For a real-valued random variable X, m is a median iff P(X \u2264 m) \u2265 1/2 and P(X \u2265 m) \u2265 1/2.",
+"uci": "/probability/rand-vars/median/median",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/median/median.html"
+},
+{
+"type": "theorem",
+"title": "Random variables: multiple medians",
+"description": "Let m1 and m2 be medians of a random variable X such that m1 < m2. Then P[X\u2264m1] = 1/2, P[m1<X<m2] = 0, and P[X\u2265m2] = 1/2.",
+"uci": "/probability/rand-vars/median/multi",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/median/multi.html"
+},
+{
+"type": "def",
 "title": "Expected value of a random variable",
 "description": "The expected value of a random variable is its (Lebesgue) integral over the sample space.",
 "uci": "/probability/rand-vars/expected-value",
@@ -2853,6 +2867,12 @@
 },
 {
 "type": "theorem",
+"title": "X \u2264 Y \u27f9 E(X) \u2264 E(Y)",
+"uci": "/probability/rand-vars/expec-le",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/expec-le.html"
+},
+{
+"type": "theorem",
 "title": "Conditional decomposition of expectation",
 "uci": "/probability/rand-vars/cond-expec-decomp",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/cond-expec-decomp.html"
@@ -2865,11 +2885,23 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/linearity-of-expec.html"
 },
 {
+"type": "theorem",
+"title": "Minimizer of f(z) = E(|X-z|) is median",
+"uci": "/probability/rand-vars/median/minimizer",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/median/minimizer.html"
+},
+{
 "type": "theoremdef",
 "title": "Variance of a random variable",
 "description": "The variance of a random variable X is Var(X) = E((X-E(X))^2).",
 "uci": "/probability/rand-vars/variance/variance",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/variance/variance.html"
+},
+{
+"type": "theorem",
+"title": "|mean - median| \u2264 stddev",
+"uci": "/probability/rand-vars/median/close-to-mean",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/median/close-to-mean.html"
 },
 {
 "type": "theoremdef",

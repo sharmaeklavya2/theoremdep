@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Variance of a random variable - TheoremDep</title>
-<meta name="description" content="The variance of a random variable X is Var(X) = E((X-E(X))^2)." />
+<title>|mean - median| ≤ stddev - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,20 +26,26 @@
 </nav>
 
 <div id="main">
-<h1> Variance of a random variable </h1>
+<h1> |mean - median| ≤ stddev </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var.html">
-        <span class="deptitle">
-        Random variable</span>
-    </a>
-    </li>
-    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/expected-value.html">
         <span class="deptitle">
         Expected value of a random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/variance/variance.html">
+        <span class="deptitle">
+        Variance of a random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/expec-le.html">
+        <span class="deptitle">
+        X ≤ Y ⟹ E(X) ≤ E(Y)</span>
     </a>
     </li>
     <li>
@@ -48,60 +54,43 @@
         Linearity of expectation</span>
     </a>
     </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/median/minimizer.html">
+        <span class="deptitle">
+        Minimizer of f(z) = E(|X-z|) is median</span>
+    </a>
+    </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $X$ be a real random variable.
+<p><span class="invisible">
 $\newcommand{\E}{\operatorname{E}}$
 $\newcommand{\Var}{\operatorname{Var}}$
-Then the variance of $X$, denoted as $\Var(X)$,
-is $\E((X-\E(X))^2)$.</p>
-<p>An equivalent definition is $\Var(X) = \E(X^2) - \E(X)^2$.</p>
+</span>
+Let $X$ be a real-valued random variable.
+Let $m$ be a median of $X$.
+Then $(\E(X) - m)^2 \le \Var(X)$.</p>
 <h2>Proof</h2>
 <p>\begin{align}
-\Var(X) &amp;= \E((X-\E(X))^2)
-\\ &amp;= \E(X^2 - 2\E(X)X + \E(X)^2)
-\\ &amp;= \E(X^2) - 2\E(X)\E(X) + \E(X)^2
-\tag{linearity of expectation}
-\\ &amp;= \E(X^2) - \E(X)^2
+&amp; -|X-m| \le X-m \le |X-m|
+\\ &amp;\implies |\E(X-m)| \le \E(|X-m|)
+\\ &amp;\implies \E(X-m)^2 \le \E(|X-m|)^2
+\end{align}</p>
+<p>Let $\mu = \E(X)$.
+Let $Y = |X-\mu|$.
+\[ \Var(Y) = \E(Y^2) - \E(Y)^2 = E((Y - \E(Y))^2) \ge 0. \]
+Hence, $\E(Y^2) \ge \E(Y)^2$, i.e., $\E((X-\mu)^2) \ge \E(|X-\mu|)^2$.</p>
+<p>\begin{align}
+(\E(X)-m)^2 &amp;= \E(X-m)^2  \tag{linearity of expectation}
+\\ &amp;\le \E(|X-m|)^2
+\\ &amp;\le \E(|X-\mu|)^2  \tag{$m$ minimizes $f(z) = \E(|X-z|)$}
+\\ &amp;\le \E((X-\mu)^2) = \Var(X)
 \end{align}</p>
 
 <div class="horizontal-rule"></div>
-<h2> Dependency for: </h2>
-<ol class="deplist">
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/conc-ineq/chebyshev.html">
-        <span class="deptitle">
-        Chebyshev's inequality</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/variance/var-of-sum-of-ind.html">
-        <span class="deptitle">
-        Variance of sum of independent random variables</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/variance/variance-of-affine.html">
-        <span class="deptitle">
-        Var(aX + b) = a^2 Var(X)</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/median/close-to-mean.html">
-        <span class="deptitle">
-        |mean - median| ≤ stddev</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/normal-distr.html">
-        <span class="deptitle">
-        Normal distribution</span>
-    </a>
-    </li>
-</ol>
+<h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul><li>Depth: 8</li><li>Number of transitive dependencies: 20</li></ul>
+<ul><li>Depth: 9</li><li>Number of transitive dependencies: 25</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -200,15 +189,45 @@ is $\E((X-\E(X))^2)$.</p>
     </a>
     </li>
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/median/median.html">
+        <span class="deptitle">
+        Median of a random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/median/multi.html">
+        <span class="deptitle">
+        Random variables: multiple medians</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/expected-value.html">
         <span class="deptitle">
         Expected value of a random variable</span>
     </a>
     </li>
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/expec-le.html">
+        <span class="deptitle">
+        X ≤ Y ⟹ E(X) ≤ E(Y)</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/linearity-of-expec.html">
         <span class="deptitle">
         Linearity of expectation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/median/minimizer.html">
+        <span class="deptitle">
+        Minimizer of f(z) = E(|X-z|) is median</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/variance/variance.html">
+        <span class="deptitle">
+        Variance of a random variable</span>
     </a>
     </li>
 </ol>

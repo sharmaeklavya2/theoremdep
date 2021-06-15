@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Variance of a random variable - TheoremDep</title>
-<meta name="description" content="The variance of a random variable X is Var(X) = E((X-E(X))^2)." />
+<title>Median of a random variable - TheoremDep</title>
+<meta name="description" content="For a real-valued random variable X, m is a median iff P(X ≤ m) ≥ 1/2 and P(X ≥ m) ≥ 1/2." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,7 +26,7 @@
 </nav>
 
 <div id="main">
-<h1> Variance of a random variable </h1>
+<h1> Median of a random variable </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
@@ -36,72 +36,31 @@
         Random variable</span>
     </a>
     </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/expected-value.html">
-        <span class="deptitle">
-        Expected value of a random variable</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/linearity-of-expec.html">
-        <span class="deptitle">
-        Linearity of expectation</span>
-    </a>
-    </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $X$ be a real random variable.
-$\newcommand{\E}{\operatorname{E}}$
-$\newcommand{\Var}{\operatorname{Var}}$
-Then the variance of $X$, denoted as $\Var(X)$,
-is $\E((X-\E(X))^2)$.</p>
-<p>An equivalent definition is $\Var(X) = \E(X^2) - \E(X)^2$.</p>
-<h2>Proof</h2>
-<p>\begin{align}
-\Var(X) &amp;= \E((X-\E(X))^2)
-\\ &amp;= \E(X^2 - 2\E(X)X + \E(X)^2)
-\\ &amp;= \E(X^2) - 2\E(X)\E(X) + \E(X)^2
-\tag{linearity of expectation}
-\\ &amp;= \E(X^2) - \E(X)^2
-\end{align}</p>
+<p>Let $X$ be a real-valued random variable.
+$m$ is a median of $X$ iff
+$\Pr(X \le m) \ge 1/2$ and $\Pr(X \ge m) \ge 1/2$.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/conc-ineq/chebyshev.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/median/multi.html">
         <span class="deptitle">
-        Chebyshev's inequality</span>
+        Random variables: multiple medians</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/variance/var-of-sum-of-ind.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/median/minimizer.html">
         <span class="deptitle">
-        Variance of sum of independent random variables</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/variance/variance-of-affine.html">
-        <span class="deptitle">
-        Var(aX + b) = a^2 Var(X)</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/median/close-to-mean.html">
-        <span class="deptitle">
-        |mean - median| ≤ stddev</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/normal-distr.html">
-        <span class="deptitle">
-        Normal distribution</span>
+        Minimizer of f(z) = E(|X-z|) is median</span>
     </a>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 8</li><li>Number of transitive dependencies: 20</li></ul>
+<ul><li>Depth: 6</li><li>Number of transitive dependencies: 12</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -114,12 +73,6 @@ is $\E((X-\E(X))^2)$.</p>
     </li>
     <li>
     <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
-    </li>
-    <li>
-    <span class="deptitleuci missing">/measure-theory/linearity-of-lebesgue-integral</span>
-    </li>
-    <li>
-    <span class="deptitleuci missing">/measure-theory/lebesgue-integral</span>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra.html">
@@ -164,30 +117,6 @@ is $\E((X-\E(X))^2)$.</p>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
-        <span class="deptitle">
-        Group</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
-        <span class="deptitle">
-        Ring</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
-        <span class="deptitle">
-        Field</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
-        <span class="deptitle">
-        Vector Space</span>
-    </a>
-    </li>
-    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/probability.html">
         <span class="deptitle">
         Probability</span>
@@ -197,18 +126,6 @@ is $\E((X-\E(X))^2)$.</p>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var.html">
         <span class="deptitle">
         Random variable</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/expected-value.html">
-        <span class="deptitle">
-        Expected value of a random variable</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/linearity-of-expec.html">
-        <span class="deptitle">
-        Linearity of expectation</span>
     </a>
     </li>
 </ol>
