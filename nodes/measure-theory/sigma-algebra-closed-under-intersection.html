@@ -45,18 +45,22 @@
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $F$ be a $\sigma$-algebra over $X$.
-Let $S = \{A_1, A_2, \ldots\}$ be a countable subset of $F$.
+<p><span class="invisible">
+$\newcommand{\Fcal}{\mathcal{F}}$
+$\newcommand{\Scal}{\mathcal{S}}$
+</span>
+Let $\Fcal$ be a $\sigma$-algebra over $X$.
+Let $\Scal = \{A_1, A_2, \ldots\}$ be a countable subset of $\Fcal$.
 Then
-\[ T = \bigcap_{A \in S} A \in F \]</p>
+\[ T = \bigcap_{A \in \Scal} A \in \Fcal \]</p>
 <h2>Proof</h2>
-<p>Let $S' = \{\overline{A}: A \in S\}$.
-Since $F$ is closed under complementation, $S' \subseteq F$.</p>
+<p>Let $\Scal' = \{\overline{A}: A \in \Scal\}$.
+Since $\Fcal$ is closed under complementation, $\Scal' \subseteq \Fcal$.</p>
 <p>By closure under countable unions, we get
-\[ \bigcup_{B \in S'} B = \bigcup_{A \in S} \overline{A} \in F \]
+\[ \bigcup_{B \in \Scal'} B = \bigcup_{A \in \Scal} \overline{A} \in \Fcal \]
 By De-Morgan's laws, we get
-\[ \overline{T} = \overline{\bigcap_{A \in S} A} = \bigcup_{A \in S} \overline{A} \in F \]
-By closure under complementation, we get $T \in F$.</p>
+\[ \overline{T} = \overline{\bigcap_{A \in \Scal} A} = \bigcup_{A \in \Scal} \overline{A} \in \Fcal \]
+By closure under complementation, we get $T \in \Fcal$.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>

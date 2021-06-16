@@ -2873,6 +2873,12 @@
 },
 {
 "type": "theorem",
+"title": "X and Y are independent implies X and f(Y) are independent",
+"uci": "/probability/rand-vars/derived-ind",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/derived-ind.html"
+},
+{
+"type": "theorem",
 "title": "Conditional decomposition of expectation",
 "uci": "/probability/rand-vars/cond-expec-decomp",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/cond-expec-decomp.html"

@@ -39,19 +39,23 @@
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>A measure on a set is a systematic way to assign a number
+<p><span class="invisible">
+$\newcommand{\Fcal}{\mathcal{F}}$
+$\newcommand{\Scal}{\mathcal{S}}$
+</span>
+A measure on a set is a systematic way to assign a number
 to each suitable subset of that set, intuitively interpreted as its size.</p>
-<p>Let $F$ be a $\sigma$-algebra over $X$.
-A function $\mu: F \mapsto \mathbb{R} \cup \{\infty, -\infty\}$
-is called a measure over $(X, F)$ iff it satisfies all of these properties:</p>
+<p>Let $\Fcal$ be a $\sigma$-algebra over $X$.
+A function $\mu: \Fcal \mapsto \mathbb{R} \cup \{\infty, -\infty\}$
+is called a measure over $(X, \Fcal)$ iff it satisfies all of these properties:</p>
 <ul>
-<li>non-negativity: $\forall A \in F, \mu(A) \ge 0$.</li>
+<li>non-negativity: $\forall A \in \Fcal, \mu(A) \ge 0$.</li>
 <li>$\mu(\{\}) = 0$.</li>
-<li>$\sigma$-additivity: Let $S = \{A_1, A_2, \ldots\}$ be a countable subset of $F$,
-such that all sets in $S$ are pairwise-disjoint. Then
-\[ \mu\left( \bigcup_{A \in S} A \right) = \sum_{A \in S} \mu(A) \]</li>
+<li>$\sigma$-additivity: Let $\Scal = \{A_1, A_2, \ldots\}$ be a countable subset of $\Fcal$,
+such that all sets in $\Scal$ are pairwise-disjoint. Then
+\[ \mu\left( \bigcup_{A \in \Scal} A \right) = \sum_{A \in \Scal} \mu(A) \]</li>
 </ul>
-<p>The triple $(X, F, \mu)$ is called a measure space.</p>
+<p>The triple $(X, \Fcal, \mu)$ is called a measure space.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>

@@ -36,17 +36,21 @@
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $X$ be a set (called 'ground set') and let $F$ be a subset of the power-set of $X$.
-We say that $(X, F)$ is a $\sigma$-algebra (or $F$ is a $\sigma$-algebra over $X$)
+<p><span class="invisible">
+$\newcommand{\Fcal}{\mathcal{F}}$
+$\newcommand{\Scal}{\mathcal{S}}$
+</span>
+Let $X$ be a set (called 'ground set') and let $\Fcal$ be a subset of the power-set of $X$.
+We say that $(X, \Fcal)$ is a $\sigma$-algebra (or $\Fcal$ is a $\sigma$-algebra over $X$)
 iff all of these properties hold:</p>
 <ol>
-<li>$X \in F$.</li>
+<li>$X \in \Fcal$.</li>
 <li>closure under complementation:
-$A \in F \implies X-A \in F$.
+$A \in \Fcal \implies X-A \in \Fcal$.
 $X-A$ is called the complement of $A$, and is denoted by $\overline{A}$.</li>
 <li>closure under countable unions:
-Let $S = \{A_1, A_2, \ldots\} \subseteq F$ be a countable set. Then
-$\left(\bigcup_{A \in S} A\right) \in F$.</li>
+Let $\Scal = \{A_1, A_2, \ldots\} \subseteq \Fcal$ be a countable set. Then
+$\left(\bigcup_{A \in \Scal} A\right) \in \Fcal$.</li>
 </ol>
 <p>As a trivial example, $\{\{\}, X\}$ is a $\sigma$-algebra over $X$.
 The power-set of $X$ is a $\sigma$-algebra over $X$ if $X$ is finite.</p>
@@ -54,6 +58,12 @@ The power-set of $X$ is a $\sigma$-algebra over $X$ if $X$ is finite.</p>
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/derived-ind.html">
+        <span class="deptitle">
+        X and Y are independent implies X and f(Y) are independent</span>
+    </a>
+    </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var-ind.html">
         <span class="deptitle">
