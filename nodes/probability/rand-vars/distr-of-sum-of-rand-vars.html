@@ -49,18 +49,25 @@
 where $(D, +)$ is a group. Let $Z = X + Y$.</p>
 <p>Let $X$ and $Y$ be discrete. Let $f_{X,Y}$ be the joint probability mass function of $X$ and $Y$
 and let $f_Z$ be the probability mass function of $Z$. Then
-\[ f_Z(z) = \sum_{y \in D} f_{X, Y}(z - y, y) \]</p>
+\[ f_Z(z) = \sum_{y \in D} f_{X, Y}(z - y, y) = \sum_{x \in D} f_{X, Y}(x, z-x). \]</p>
 <p>Let $X$ and $Y$ be continuous random variables
 and let $+$ (as usual) correspond to addition of real numbers.
 Let $f_{X,Y}$ be the joint probability density function of $X$ and $Y$
 and let $f_Z$ be the probability density function of $Z$. Then
-\[ f_Z(z) = \int_{-\infty}^{\infty} f_{X, Y}(z - y, y) dy \]</p>
+\[ f_Z(z) = \int_{-\infty}^{\infty} f_{X, Y}(z - y, y) dy
+    = \int_{-\infty}^{\infty} f_{X, Y}(x, z-x) dx. \]</p>
 <h2>Proof for discrete random variables</h2>
 <p>\begin{align}
 f_Z(z) &amp;= \Pr(X + Y = z)
 \\ &amp;= \sum_{y \in D} \Pr(X + Y = z \cap Y = y)
 \\ &amp;= \sum_{y \in D} \Pr(X = z - y \cap Y = y)
 \\ &amp;= \sum_{y \in D} f_{X, Y}(z - y, y)
+\end{align}</p>
+<p>\begin{align}
+f_Z(z) &amp;= \Pr(X + Y = z)
+\\ &amp;= \sum_{x \in D} \Pr(X + Y = z \cap X = x)
+\\ &amp;= \sum_{x \in D} \Pr(X = x \cap Y = z - x)
+\\ &amp;= \sum_{x \in D} f_{X, Y}(x, z - x)
 \end{align}</p>
 <h2>Proof for continuous random variables</h2>
 <p><span class="text-danger">(Proof pending)</span></p>

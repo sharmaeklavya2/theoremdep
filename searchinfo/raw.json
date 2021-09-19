@@ -140,6 +140,12 @@
 },
 {
 "type": "theorem",
+"title": "Bin packing: config LP is not affected by grouping identical items",
+"uci": "/packing/config-lp/identical",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/identical.html"
+},
+{
+"type": "theorem",
 "title": "Bin packing: removing density restriction from config LP",
 "description": "Assuming the presence of a suitable primitive bin packing algorithm, we can solve the config LP almost optimally by solving the density-restricted config LP almost optimally.",
 "uci": "/packing/config-lp/density-unrestr",
@@ -171,8 +177,7 @@
 "title": "Bin packing: config LP of predecessor",
 "description": "Let I be the predecessor of J. Then lin(I) \u2264 lin(J).",
 "uci": "/packing/config-lp/prec",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/prec.html",
-"status": "broken"
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/packing/config-lp/prec.html"
 },
 {
 "type": "def",
@@ -2954,6 +2959,13 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/variance/covariance-matrix.html"
 },
 {
+"type": "theorem",
+"title": "Cauchy-Schwarz inequality for random variables",
+"description": "Let X and Y be two complex-valued random variables. Then |E(XY')|\u00b2 \u2264 E(|X|\u00b2)E(|Y|\u00b2).",
+"uci": "/probability/rand-vars/cauchy-schwarz",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/cauchy-schwarz.html"
+},
+{
 "type": "def",
 "title": "Bernoulli random variable",
 "description": "A random variable which takes at most 2 possible values is called a Bernoulli random variable.",
@@ -2966,6 +2978,13 @@
 "description": "Let X be a non-negative random variable. Then P(X \u2265 a) \u2264 E(X)/a.",
 "uci": "/probability/conc-ineq/markov",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/conc-ineq/markov.html"
+},
+{
+"type": "theorem",
+"title": "One-sided Chebyshev's inequality",
+"description": "Let X be a random variable with mean \u03bc and variance \u03c3\u00b2. Then P(X \u2265 \u03bc + a) \u2264 \u03c3\u00b2/(\u03c3\u00b2+a\u00b2).",
+"uci": "/probability/conc-ineq/one-sided-chebyshev",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/conc-ineq/one-sided-chebyshev.html"
 },
 {
 "type": "theorem",
