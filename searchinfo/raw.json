@@ -2981,10 +2981,14 @@
 },
 {
 "type": "theorem",
-"title": "One-sided Chebyshev's inequality",
-"description": "Let X be a random variable with mean \u03bc and variance \u03c3\u00b2. Then P(X \u2265 \u03bc + a) \u2264 \u03c3\u00b2/(\u03c3\u00b2+a\u00b2).",
-"uci": "/probability/conc-ineq/one-sided-chebyshev",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/conc-ineq/one-sided-chebyshev.html"
+"title": "Cantelli's inequality",
+"keywords": [
+"one-sided",
+"chebyshev"
+],
+"description": "Let X be a random variable with mean \u03bc and variance \u03c3\u00b2. Then P(X \u2265 \u03bc + t) \u2264 \u03c3\u00b2/(\u03c3\u00b2+t\u00b2).",
+"uci": "/probability/conc-ineq/cantelli",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/conc-ineq/cantelli.html"
 },
 {
 "type": "theorem",

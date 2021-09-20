@@ -4,8 +4,9 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>One-sided Chebyshev's inequality - TheoremDep</title>
-<meta name="description" content="Let X be a random variable with mean μ and variance σ². Then P(X ≥ μ + a) ≤ σ²/(σ²+a²)." />
+<title>Cantelli's inequality - TheoremDep</title>
+<meta name="description" content="Let X be a random variable with mean μ and variance σ². Then P(X ≥ μ + t) ≤ σ²/(σ²+t²)." />
+<meta name="keywords" content="one-sided,chebyshev" />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,7 +27,7 @@
 </nav>
 
 <div id="main">
-<h1> One-sided Chebyshev's inequality </h1>
+<h1> Cantelli's inequality </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
@@ -55,9 +56,9 @@
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/cauchy-schwarz.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/conc-ineq/markov.html">
         <span class="deptitle">
-        Cauchy-Schwarz inequality for random variables</span>
+        Markov's bound</span>
     </a>
     </li>
 </ol>
@@ -67,33 +68,31 @@
 $\newcommand{\E}{\operatorname{E}}$
 $\newcommand{\Var}{\operatorname{Var}}$
 </span>
-Let $X$ be a real-valued random variable. Let $\E(X) = \mu$ and $\Var(X) = \sigma^2$. Then
-\[ \Pr(X \ge \mu + t) \le \frac{\sigma^2}{\sigma^2 + t^2}. \]</p>
+Let $X$ be a real-valued random variable. Let $t \ge 0$ and $\Var(X) = \sigma^2$. Then
+\[ \Pr(X \ge \E(X) + t) \le \frac{\sigma^2}{\sigma^2 + t^2}, \]
+\[ \Pr(X \le \E(X) - t) \le \frac{\sigma^2}{\sigma^2 + t^2}. \]</p>
+<p>This is called Cantelli's inequality, or the one-sided Chebyshev inequality.</p>
 <h2>Proof</h2>
-<p>Let $Z = X - \mu$. Then $\E(Z) = 0$ and $\Var(Z) = \E(Z^2) = \sigma^2$.</p>
-<p>Let $J = \begin{cases}1 &amp; \textrm{ if } Z &lt; t \\ 0 &amp; \textrm{ if } Z \ge t\end{cases}$.
-Then $\E(J) = \Pr(Z &lt; t) = \Pr(X &lt; \mu + t)$.</p>
-<p>Let $Y = (t-Z)J$.
-When $Z &lt; t$, we get $Y = (t-Z)$.
-When $Z \ge t$, we get $Y = 0 \ge t - Z$.
-Hence, $Y = (t-Z)J \ge t - Z$.</p>
-<p>\begin{align}
-t^2 &amp;= \E(t - Z)^2
-\\ &amp;\le \E((t-Z)J)^2  \tag{$(t-Z)J \ge t-Z$}
-\\ &amp;\le \E((t-Z)^2)\E(J^2)  \tag{Cauchy-Schwarz inequality}
-\\ &amp;= \E(t^2 - 2tZ + Z^2)\E(J)
-\\ &amp;= (t^2 + \sigma^2)\Pr(X &lt; \mu + t).
+<p>Let $Z = X - \E(X)$. Then $\E(Z) = 0$ and $\Var(Z) = \E(Z^2) = \sigma^2$.</p>
+<p>Let $u = \sigma^2/t$. Then
+\begin{align}
+&amp; \Pr(X \ge \E(X) + t)
+\\ &amp;= \Pr(Z \ge t)
+\\ &amp;\le \Pr((Z+u)^2 \ge (t+u)^2)
+\\ &amp;\le \frac{\E((Z+u)^2)}{(t+u)^2}
+    \tag{by Markov's bound}
+\\ &amp;= \frac{\sigma^2 + u^2}{(t+u)^2}
+\\ &amp;= \frac{\sigma^2}{\sigma^2 + t^2}.
 \end{align}</p>
-<p>Hence, we get
-\[ \Pr(X &lt; \mu + t) \ge \frac{t^2}{t^2 + \sigma^2}
-\implies \Pr(X \ge \mu + t) \le \frac{\sigma^2}{\sigma^2 + t^2}. \]</p>
-<p><em>Credits</em>: This proof is based on a proof given in a lecture by
-<a href="http://shj.cs.illinois.edu">Prof. Sheldon Howard Jacobson</a>.</p>
+<p>This proves the first part of Cantelli's inequality.
+To prove the second part, let $Y = \E(X) - X$, and apply Cantelli's inequality to $Y$.
+Since $\E(Y) = 0$ and $\Var(Y) = \sigma^2$, we get</p>
+<p>\[ \Pr(X \le \E(X) - t) = \Pr(Y \ge t) \le \frac{\sigma^2}{\sigma^2 + t^2}. \]</p>
 
 <div class="horizontal-rule"></div>
 <h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul><li>Depth: 9</li><li>Number of transitive dependencies: 27</li></ul>
+<ul><li>Depth: 9</li><li>Number of transitive dependencies: 22</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -103,9 +102,6 @@ t^2 &amp;= \E(t - Z)^2
     </li>
     <li>
     <span class="deptitleuci missing">/sets-and-relations/countable-set</span>
-    </li>
-    <li>
-    <span class="deptitleuci missing">/complex-numbers/conjugation-is-homomorphic</span>
     </li>
     <li>
     <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
@@ -183,30 +179,6 @@ t^2 &amp;= \E(t - Z)^2
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/inner-product-space.html">
-        <span class="deptitle">
-        Inner product space</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/antilin-in-2nd.html">
-        <span class="deptitle">
-        Inner product is anti-linear in second argument</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/zero.html">
-        <span class="deptitle">
-        Zero in inner product</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/cauchy-schwarz-inequality.html">
-        <span class="deptitle">
-        Cauchy-Schwarz Inequality</span>
-    </a>
-    </li>
-    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/probability.html">
         <span class="deptitle">
         Probability</span>
@@ -237,9 +209,9 @@ t^2 &amp;= \E(t - Z)^2
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/cauchy-schwarz.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/conc-ineq/markov.html">
         <span class="deptitle">
-        Cauchy-Schwarz inequality for random variables</span>
+        Markov's bound</span>
     </a>
     </li>
 </ol>
