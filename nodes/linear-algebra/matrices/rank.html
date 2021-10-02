@@ -42,16 +42,82 @@
         RREF is unique</span>
     </a>
     </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-space.html">
+        <span class="deptitle">
+        Row space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html">
+        <span class="deptitle">
+        Basis of a vector space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv-matrices-have-same-row-space.html">
+        <span class="deptitle">
+        Row equivalent matrices have the same row space</span>
+    </a>
+    </li>
 </ol>
 
 <div class="horizontal-rule"></div>
 <p>The rank of a matrix over a field is the number of non-zero rows in the RREF of the matrix.</p>
 <p>Since any 2 row-equivalent matrices have the same RREF, they also have the same rank.</p>
 <p>A matrix is called full-rank when its rank equals the number of rows in it.</p>
+<p>Equivalently, the rank of a matrix is the dimension of its row space.</p>
+<h2>Proof of equivalence of definitions</h2>
+<p>Let $A$ be a matrix. Let $R$ be its RREF.
+Since the RREF is obtained by elementary row operations on $A$,
+$A$ and $R$ are row-equivalent.
+Row-equivalent matrices have the same row space,
+so $A$ and $R$ have the same row space,
+and consequently have the same dimension for the row space.</p>
+<p>The non-zero rows in $R$ are linearly independent,
+and they span the row space of $R$.
+Hence, those rows form a basis of $R$'s row space.
+Hence, the dimension of $R$'s row space equals the number of non-zero rows in $R$.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/orth-lp.html">
+        <span class="deptitle">
+        LP in orthant is optimized at BFS</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/extreme-point-iff-bfs.html">
+        <span class="deptitle">
+        Extreme point iff BFS</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bfs-existence.html">
+        <span class="deptitle">
+        Condition for existence of BFS in a polyhedron</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bounded-repr.html">
+        <span class="deptitle">
+        Point in polytope is convex combination of BFS</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bfs-is-vertex.html">
+        <span class="deptitle">
+        BFS is vertex</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/orth-repr.html">
+        <span class="deptitle">
+        Representing a point in polyhedron in positive orthant</span>
+    </a>
+    </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-inv.html">
         <span class="deptitle">
@@ -78,11 +144,14 @@
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 8</li><li>Number of transitive dependencies: 14</li></ul>
+<ul><li>Depth: 8</li><li>Number of transitive dependencies: 37</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
 <ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/linear-algebra/vector-spaces/condition-for-subspace</span>
+    </li>
     <li>
     <span class="deptitleuci missing">/linear-algebra/matrices/gauss-jordan-algo</span>
     </li>
@@ -102,9 +171,45 @@
     </a>
     </li>
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/polynomial.html">
+        <span class="deptitle">
+        Polynomial</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/intdom.html">
+        <span class="deptitle">
+        Integral Domain</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/compare-coeff-disjoint-var.html">
+        <span class="deptitle">
+        Comparing coefficients of a polynomial with disjoint variables</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
         <span class="deptitle">
         Field</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+        <span class="deptitle">
+        Vector Space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep.html">
+        <span class="deptitle">
+        Linear independence</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span.html">
+        <span class="deptitle">
+        Span</span>
     </a>
     </li>
     <li>
@@ -120,9 +225,63 @@
     </a>
     </li>
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/stacking.html">
+        <span class="deptitle">
+        Stacking</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/system-of-linear-equations.html">
+        <span class="deptitle">
+        System of linear equations</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/product.html">
+        <span class="deptitle">
+        Product of stacked matrices</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/mult-assoc.html">
+        <span class="deptitle">
+        Matrix multiplication is associative</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rref.html">
         <span class="deptitle">
         Reduced Row Echelon Form (RREF)</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity.html">
+        <span class="deptitle">
+        Identity matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inverse.html">
+        <span class="deptitle">
+        Inverse of a matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inverse-of-product.html">
+        <span class="deptitle">
+        Inverse of product</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/transpose-of-product.html">
+        <span class="deptitle">
+        Transpose of product</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/vector-space.html">
+        <span class="deptitle">
+        Matrices over a field form a vector space</span>
     </a>
     </li>
     <li>
@@ -144,6 +303,12 @@
     </a>
     </li>
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop-matrix.html">
+        <span class="deptitle">
+        Elementary row operation is matrix pre-multiplication</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv.html">
         <span class="deptitle">
         Row equivalence of matrices</span>
@@ -159,6 +324,42 @@
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/unique-rref.html">
         <span class="deptitle">
         RREF is unique</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv-matrix.html">
+        <span class="deptitle">
+        Row equivalence matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/row-equiv-have-same-solutions.html">
+        <span class="deptitle">
+        Equations with row equivalent matrices have the same solution set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html">
+        <span class="deptitle">
+        Basis of a vector space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-is-smaller-than-span.html">
+        <span class="deptitle">
+        Linearly independent set is smaller than a span</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/more-variables-than-equations.html">
+        <span class="deptitle">
+        Homogeneous linear equations with more variables than equations</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/rank-homogenous.html">
+        <span class="deptitle">
+        Rank of a homogenous system of linear equations</span>
     </a>
     </li>
 </ol>

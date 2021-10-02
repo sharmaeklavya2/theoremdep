@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>min linear over sum=1 constraint - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" aria-label="Search" type="text" autocomplete="off" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> min linear over sum=1 constraint </h1>
+<h2 class="no-deps"> Dependencies:
+None </h2>
+
+<div class="horizontal-rule"></div>
+<p><span class="invisible">
+$\newcommand{\xhat}{\widehat{x}}$
+</span>
+Let $a_1, a_2, \ldots, a_n$ be real numbers.
+Let $a_k \le a_i$ for all $i$.
+The optimization program
+\[ \min_{x \in \mathbb{R}^n} \sum_{i=1}^n a_ix_i
+\textrm{ where } \sum_{i=1}^n x_i = 1
+\textrm{ and } x_i \ge 0 \quad \forall i \]
+has $x^*$ as an optimal solution, where
+\[ x_i^* = \begin{cases}1 &amp; \textrm{ if } i = k \\ 0 &amp; \textrm{ otherwise}\end{cases}, \]
+and thus the optimal value is $a_k$.</p>
+<p>Similarly, if $a_r \ge a_i$ for all $i$, then the optimal solution to
+the maximization problem is where the $r^{\textrm{th}}$ coordinate is 1
+and all other coordinates are 0.</p>
+<h2>Proof</h2>
+<p>Let $\xhat$ be a feasible solution to the optimization program.
+Then $\sum_{i=1}^n \xhat_i = 1$ and $\xhat_i \ge 0$ for all $i$.</p>
+<p>\begin{align}
+&amp; \sum_{i=1}^n a_i\xhat_i - \sum_{i=1}^n a_ix^*_i
+\\ &amp;= \sum_{i=1}^n a_i\xhat_i - a_k
+\\ &amp;= \sum_{i=1}^n a_i\xhat_i - a_k \left(\sum_{i=1}^n \xhat_i\right)
+\\ &amp;= \sum_{i=1}^n (a_i - a_k)\xhat_i
+\\ &amp;\ge 0.
+\end{align}
+Hence, $\sum_{i=1}^n a_i^Tx^*_i \le \sum_{i=1}^n a_i^T\xhat_i$.
+Hence, $x^*$ is an optimal solution.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/orth-lp.html">
+        <span class="deptitle">
+        LP in orthant is optimized at BFS</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 0</li><li>Number of transitive dependencies: 0</li></ul>
+
+<h2 class="no-deps"> Transitive dependencies: None </h2>
+
+</div>
+</body>
+</html>

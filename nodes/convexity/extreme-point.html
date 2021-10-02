@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>Extreme point of a convex set - TheoremDep</title>
+<meta name="description" content="x is an extreme point of a set S iff x ∈ S and x cannot be represented as a convex combination of a finite number of elements of S." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" aria-label="Search" type="text" autocomplete="off" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Extreme point of a convex set </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-combination.html">
+        <span class="deptitle">
+        Convex combination and convex hull</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-set.html">
+        <span class="deptitle">
+        Convex set</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $S$ be a convex set.
+Let $v \in S$. $v$ is called a non-extreme point of $S$ iff
+$\exists y \in S, \exists z \in S, \exists \alpha \in (0, 1)$
+such that $y \neq z$ and $v = (1-\alpha)y + \alpha z$.
+A point in $S$ is called an extreme point of $S$ if it is not a non-extreme point of $S$.</p>
+<p>Equivalently, $v \in S$ is a non-extreme point of $S$ if it can be represented as
+a strict convex combination of $X$, for some finite subset $X \subseteq S$ where $|X| &gt; 1$.</p>
+<h2>Proof of equivalence of definitions</h2>
+<p>If $\exists y \in S, \exists z \in S, \exists \alpha \in (0, 1)$
+such that $y \neq z$ and $v = (1-\alpha)y + \alpha z$,
+then $v$ is a strict convex combination of $\{y, z\}$.</p>
+<p>Suppose $X \subseteq S$ and $|X|$ is finite and more than 1
+and $v$ is a strict convex combination of $X$.
+Let $X = \{x_1, \ldots, x_n\}$ and $v = \sum_{i=1}^n \lambda_ix_i$,
+where $\sum_{i=1}^n \lambda_i = 1$.
+Without loss of generality, assume $\lambda_1 \ge \lambda_2 \ge \ldots \ge \lambda_n$.
+Since $|X| \ge 2$, we get that $0 &lt; \lambda_i &lt; 1$ for all $i \in [n]$.</p>
+<p>Let $y = \sum_{i=1}^{n-1} \lambda_ix_i / \sum_{i=1}^{n-1} \lambda_i$.
+Since $y$ is a convex combination of $\{x_1, x_2, \ldots, x_{n-1}\}$
+and $S$ is convex, we get $y \in S$. Then $v = (1 - \lambda_n)y + \lambda_nx_n$.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/extreme-point-condition.html">
+        <span class="deptitle">
+        Condition for a point to be extreme</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/vertex-implies-extreme-point.html">
+        <span class="deptitle">
+        Vertex implies extreme point</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/extreme-point-iff-bfs.html">
+        <span class="deptitle">
+        Extreme point iff BFS</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/orth-extr-dir.html">
+        <span class="deptitle">
+        Extreme directions of polyhedron in positive orthant</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bfs-iff-vertex-iff-extreme-point.html">
+        <span class="deptitle">
+        BFS iff vertex iff extreme point</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 6</li><li>Number of transitive dependencies: 6</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+        <span class="deptitle">
+        Group</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+        <span class="deptitle">
+        Ring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+        <span class="deptitle">
+        Field</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+        <span class="deptitle">
+        Vector Space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-combination.html">
+        <span class="deptitle">
+        Convex combination and convex hull</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-set.html">
+        <span class="deptitle">
+        Convex set</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

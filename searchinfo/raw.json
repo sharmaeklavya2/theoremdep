@@ -1829,13 +1829,6 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/hermitian.html"
 },
 {
-"type": "def",
-"title": "Row space",
-"description": "The row space of a matrix is the set of all linear combinations of the rows of the matrix.",
-"uci": "/linear-algebra/matrices/row-space",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-space.html"
-},
-{
 "type": "theorem",
 "title": "Transpose of product",
 "description": "(AB)' = B'A'",
@@ -1888,6 +1881,13 @@
 "description": "",
 "uci": "/linear-algebra/matrices/vector-space",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/vector-space.html"
+},
+{
+"type": "theoremdef",
+"title": "Row space",
+"description": "The row space of a matrix is the set of all linear combinations of the rows of the matrix. The row space is a vector space.",
+"uci": "/linear-algebra/matrices/row-space",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-space.html"
 },
 {
 "type": "theorem",
@@ -1958,19 +1958,6 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/unique-rref.html"
 },
 {
-"type": "def",
-"title": "Rank of a matrix",
-"description": "The rank of a matrix is the number of non-zero rows in the RREF of the matrix.",
-"uci": "/linear-algebra/matrices/rank",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rank.html"
-},
-{
-"type": "theorem",
-"title": "A matrix is full-rank iff its determinant is non-0",
-"uci": "/linear-algebra/matrices/determinants/rank",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/rank.html"
-},
-{
 "type": "theorem",
 "title": "Row equivalence matrix",
 "description": "If A and B are row equivalent, then there exists an invertible matrix R such that B = RA.",
@@ -1992,11 +1979,18 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/rank-homogenous.html"
 },
 {
-"type": "theorem",
-"title": "Homogeneous linear equations with more variables than equations",
-"description": "If AX = 0 is a system of linear equations with more variables than equations, then there exists a non-trivial solution.",
-"uci": "/linear-algebra/system-of-linear-equations/more-variables-than-equations",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/more-variables-than-equations.html"
+"type": "def",
+"title": "Rank of a matrix",
+"description": "The rank of a matrix is the number of non-zero rows in the RREF of the matrix.",
+"uci": "/linear-algebra/matrices/rank",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rank.html"
+},
+{
+"type": "theoremdef",
+"title": "Basis of a vector space",
+"description": "If a set of vectors B is linearly independent and spans a vector space V, then B is a basis of V. All bases of a vector space have the same size.",
+"uci": "/linear-algebra/vector-spaces/basis/basis",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html"
 },
 {
 "type": "theorem",
@@ -2004,6 +1998,13 @@
 "description": "The size of every finite linearly independent subset of a vector space is less than or equal to the size of every spanning set of that vector space.",
 "uci": "/linear-algebra/vector-spaces/linindep-is-smaller-than-span",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-is-smaller-than-span.html"
+},
+{
+"type": "theorem",
+"title": "Homogeneous linear equations with more variables than equations",
+"description": "If AX = 0 is a system of linear equations with more variables than equations, then there exists a non-trivial solution.",
+"uci": "/linear-algebra/system-of-linear-equations/more-variables-than-equations",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/more-variables-than-equations.html"
 },
 {
 "type": "theorem",
@@ -2017,11 +2018,10 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/matroids/examples/vector.html"
 },
 {
-"type": "theoremdef",
-"title": "Basis of a vector space",
-"description": "If a set of vectors B is linearly independent and spans a vector space V, then B is a basis of V. All bases of a vector space have the same size.",
-"uci": "/linear-algebra/vector-spaces/basis/basis",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html"
+"type": "theorem",
+"title": "A matrix is full-rank iff its determinant is non-0",
+"uci": "/linear-algebra/matrices/determinants/rank",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/rank.html"
 },
 {
 "type": "theorem",
@@ -2047,6 +2047,12 @@
 "description": "A finite set of vectors S minimally spans V iff S is a basis.",
 "uci": "/linear-algebra/vector-spaces/basis/minimal-span-is-basis",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/minimal-span-is-basis.html"
+},
+{
+"type": "theorem",
+"title": "Preserving a basis by replacing a vector",
+"uci": "/linear-algebra/vector-spaces/basis/replace-vector",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/replace-vector.html"
 },
 {
 "type": "theorem",
@@ -2709,6 +2715,12 @@
 "status": "incomplete"
 },
 {
+"type": "theorem",
+"title": "min linear over sum=1 constraint",
+"uci": "/optimization/sum-1",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/sum-1.html"
+},
+{
 "type": "def",
 "title": "Optimization: Dual and Lagrangian ",
 "uci": "/optimization/dual",
@@ -2768,6 +2780,164 @@
 "description": "Consider the problem of minimizing max(x) where a^Tx = b. Here a is a vector with non-negative coordinates and max(x) is the maximum coordinate of x. Then the optimal solution is where each coordinate is b/sum(a).",
 "uci": "/optimization/min-max-coord",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/optimization/min-max-coord.html"
+},
+{
+"type": "def",
+"title": "Cone",
+"description": "A set S is a cone if for any non-negative \u03b1, x \u2208 S \u27f9 \u03b1x \u2208 S.",
+"uci": "/convexity/cone",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/cone.html"
+},
+{
+"type": "def",
+"title": "Convex combination and convex hull",
+"uci": "/convexity/convex-combination",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-combination.html"
+},
+{
+"type": "def",
+"title": "Vertex of a set",
+"keywords": [
+"vertices"
+],
+"uci": "/convexity/vertex",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/vertex.html"
+},
+{
+"type": "theorem",
+"title": "Transitivity of convexity",
+"description": "If x is a convex combination of set Y and each y_i \u2208 Y is a convex combination of Z_i, then x is a convex combination of Z_1 \u222a Z_2 \u222a ...",
+"uci": "/convexity/transitivity",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/transitivity.html"
+},
+{
+"type": "def",
+"title": "Convex set",
+"description": "A set S in the vector space V is convex iff (x \u2208 S and y \u2208 S and t \u2208 [0, 1]) implies (1-t)x + ty \u2208 S.",
+"uci": "/convexity/convex-set",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-set.html"
+},
+{
+"type": "theoremdef",
+"title": "Polyhedral set",
+"description": "A set defined as the intersection of halfspaces is a polyhedral set.",
+"keywords": [
+"polyhedron",
+"polyhedral set",
+"polyhedral cone",
+"standard form"
+],
+"uci": "/convexity/polyhedra/polyhedron",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/polyhedron.html"
+},
+{
+"type": "def",
+"title": "Basic feasible solutions",
+"description": "Let P = {x: Ax \u2264 b, Cx = d} be a polyhedron in R^n. A point x in P is called a basic feasible solution of P iff at least n linearly independent constraints are tight at x.",
+"keywords": [
+"bfs",
+"basic solution",
+"degenerate",
+"degeneracy"
+],
+"uci": "/convexity/polyhedra/bfs",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bfs.html"
+},
+{
+"type": "theorem",
+"title": "BFS is vertex",
+"description": "A basic feasible solution of a polyhedron is also a vertex of the polyhedron.",
+"uci": "/convexity/polyhedra/bfs-is-vertex",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bfs-is-vertex.html"
+},
+{
+"type": "theorem",
+"title": "Condition for existence of BFS in a polyhedron",
+"description": "For a non-empty polyhedron P, a BFS exists in P iff there is no line in P iff the constraint matrix has full rank.",
+"uci": "/convexity/polyhedra/bfs-existence",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bfs-existence.html"
+},
+{
+"type": "theorem",
+"title": "Point in polytope is convex combination of BFS",
+"description": "Let P be a polyhedron that doesn't contain a ray. Then every point in P can be expressed as a convex combination of basic feasible solutions of P.",
+"uci": "/convexity/polyhedra/bounded-repr",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bounded-repr.html"
+},
+{
+"type": "def",
+"title": "Extreme point of a convex set",
+"description": "x is an extreme point of a set S iff x \u2208 S and x cannot be represented as a convex combination of a finite number of elements of S.",
+"uci": "/convexity/extreme-point",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/extreme-point.html"
+},
+{
+"type": "theorem",
+"title": "Extreme point iff BFS",
+"description": "x is an extreme point of polyhedron P iff x is a BFS of P.",
+"uci": "/convexity/polyhedra/extreme-point-iff-bfs",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/extreme-point-iff-bfs.html"
+},
+{
+"type": "theorem",
+"title": "Vertex implies extreme point",
+"uci": "/convexity/vertex-implies-extreme-point",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/vertex-implies-extreme-point.html"
+},
+{
+"type": "theorem",
+"title": "BFS iff vertex iff extreme point",
+"description": "For a polyhedron, the set of basic feasible solutions is the same as the set of vertices and is the same as the set of extreme points.",
+"uci": "/convexity/polyhedra/bfs-iff-vertex-iff-extreme-point",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bfs-iff-vertex-iff-extreme-point.html"
+},
+{
+"type": "theorem",
+"title": "Condition for a point to be extreme",
+"description": "x is a non-extreme point of S iff there is a non-zero vector y such that x+y \u2208 S and x-y \u2208 S.",
+"uci": "/convexity/extreme-point-condition",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/extreme-point-condition.html"
+},
+{
+"type": "def",
+"title": "Direction of a convex set",
+"description": "d is a direction of a convex set S iff \u2200 x \u2208 S, {x + \u03bbd: \u03bb \u2265 0} \u2286 S.",
+"uci": "/convexity/direction",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/direction.html"
+},
+{
+"type": "theorem",
+"title": "Recession cone of a polyhedron",
+"uci": "/convexity/polyhedra/recession-cone",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/recession-cone.html"
+},
+{
+"type": "def",
+"title": "Extreme directions of a convex set",
+"description": "d is an extreme direction of a convex set S iff d cannot be written as a positive linear combination of two non-collinear directions of S.",
+"uci": "/convexity/extreme-direction",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/extreme-direction.html"
+},
+{
+"type": "theorem",
+"title": "Extreme directions of polyhedron in positive orthant",
+"description": "Let P be a polyhedron in the positive orthant. Then the normalized extreme directions of P are the extreme points of another polytope.",
+"uci": "/convexity/polyhedra/orth-extr-dir",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/orth-extr-dir.html"
+},
+{
+"type": "theorem",
+"title": "Representing a point in polyhedron in positive orthant",
+"description": "Let P be a non-empty polyhedron contained in the positive orthant of R^n. Then any point x \u2208 P can be represented as a convex combination of the basic feasible solutions of P plus a non-negative combination of the extreme directions of P.",
+"uci": "/convexity/polyhedra/orth-repr",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/orth-repr.html"
+},
+{
+"type": "theorem",
+"title": "LP in orthant is optimized at BFS",
+"description": "Let P be the polytope of a linear program that lies in the positive orthant. Then either P is unbounded or has an optimal solution at a BFS of P.",
+"uci": "/convexity/polyhedra/orth-lp",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/orth-lp.html"
 },
 {
 "type": "def",
@@ -3004,13 +3174,6 @@
 "uci": "/analysis/nonneg-dd-func-with-2-zeros",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/analysis/nonneg-dd-func-with-2-zeros.html",
 "status": "incomplete"
-},
-{
-"type": "def",
-"title": "Convex set",
-"description": "A set S in the vector space V is convex iff (x \u2208 S and y \u2208 S and t \u2208 [0, 1]) implies (1-t)x + ty \u2208 S.",
-"uci": "/analysis/convex-set",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/analysis/convex-set.html"
 },
 {
 "type": "theorem",

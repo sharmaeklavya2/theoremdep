@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>Transitivity of convexity - TheoremDep</title>
+<meta name="description" content="If x is a convex combination of set Y and each y_i ∈ Y is a convex combination of Z_i, then x is a convex combination of Z_1 ∪ Z_2 ∪ ..." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" aria-label="Search" type="text" autocomplete="off" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Transitivity of convexity </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-combination.html">
+        <span class="deptitle">
+        Convex combination and convex hull</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $x$ be a convex combination of $\{y_1, y_2, \ldots, y_n\}$
+and $y_i$ be a convex combination of $\{z_{i,1}, z_{i,2}, \ldots, z_{i,m_i}\}$.
+Then $x$ is a convex combination of $\{z_{i,j}: 1 \le i \le n, 1 \le j \le m_i\}$.</p>
+<h2>Proof</h2>
+<p>Let $x = \sum_{i=1}^n \lambda_i y_i$, where $\sum_{i=1}^n \lambda_i = 1$.
+Let $y_i = \sum_{j=1}^{m_i} \mu_{i,j} z_{i,j}$, where $\sum_{j=1}^{m_i} \mu_{i,j} = 1$.
+Let $\eta_{i,j} = \lambda_i\mu_{i,j}$. Then
+\[ \sum_{i=1}^n \sum_{j=1}^{m_i} \eta_{i,j}
+= \sum_{i=1}^n \lambda_i \sum_{j=1}^{m_i} \mu_{i,j}
+= \sum_{i=1}^n \lambda_i = 1, \]
+\[ \sum_{i=1}^n \sum_{j=1}^{m_i} \eta_{i,j}z_{i,j}
+= \sum_{i=1}^n \lambda_i \sum_{j=1}^{m_i} \mu_{i,j}z_{i,j}
+= \sum_{i=1}^n \lambda_iy_i = x. \]
+Hence, $x$ is a convex combination of $\{z_{i,j}: 1 \le i \le n, 1 \le j \le m_i\}$.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bounded-repr.html">
+        <span class="deptitle">
+        Point in polytope is convex combination of BFS</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 5</li><li>Number of transitive dependencies: 5</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+        <span class="deptitle">
+        Group</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+        <span class="deptitle">
+        Ring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+        <span class="deptitle">
+        Field</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+        <span class="deptitle">
+        Vector Space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-combination.html">
+        <span class="deptitle">
+        Convex combination and convex hull</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

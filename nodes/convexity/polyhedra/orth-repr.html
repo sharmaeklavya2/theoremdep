@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>Representing a point in polyhedron in positive orthant - TheoremDep</title>
+<meta name="description" content="Let P be a non-empty polyhedron contained in the positive orthant of R^n. Then any point x ∈ P can be represented as a convex combination of the basic feasible solutions of P plus a non-negative combination of the extreme directions of P." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" aria-label="Search" type="text" autocomplete="off" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Representing a point in polyhedron in positive orthant </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bfs.html">
+        <span class="deptitle">
+        Basic feasible solutions</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/extreme-direction.html">
+        <span class="deptitle">
+        Extreme directions of a convex set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bfs-existence.html">
+        <span class="deptitle">
+        Condition for existence of BFS in a polyhedron</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bounded-repr.html">
+        <span class="deptitle">
+        Point in polytope is convex combination of BFS</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html">
+        <span class="deptitle">
+        Basis of a vector space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rank.html">
+        <span class="deptitle">
+        Rank of a matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/extreme-point-iff-bfs.html">
+        <span class="deptitle">
+        Extreme point iff BFS</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/recession-cone.html">
+        <span class="deptitle">
+        Recession cone of a polyhedron</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/orth-extr-dir.html">
+        <span class="deptitle">
+        Extreme directions of polyhedron in positive orthant</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/rank-homogenous.html">
+        <span class="deptitle">
+        Rank of a homogenous system of linear equations</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p><span class="invisible">
+$\newcommand{\eps}{\varepsilon}$
+$\newcommand{\xhat}{\widehat{x}}$
+$\newcommand{\xstar}{x^*}$
+$\newcommand{\rank}{\operatorname{rank}}$
+</span>
+Let $P = \{x: (a_i^Tx \ge b_i, \forall i \in I) \textrm{ and } (a_i^Tx = b_i, \forall i \in E) \textrm{ and } (x_i \ge 0, \forall 1 \le i \le n)\}$
+be a non-empty polyhedron in $\mathbb{R}^n$.
+Let $c = [1, 1, \ldots, 1] \in \mathbb{R}^n$.
+Let $\{x^{(1)}, x^{(2)}, \ldots, x^{(p)}\}$ be the set of basic feasible solutions of $P$.
+Let $\{d^{(1)}, d^{(2)}, \ldots, d^{(q)}\}$ be the set of extreme directions of $P$.
+Without loss of generality, assume that the extreme directions are normalized, i.e., $c^Td^{(i)} = 1$.
+Then any point in $P$ can be represented as
+$\sum_{i=1}^p \lambda_ix^{(i)} + \sum_{i=1}^q \mu_id^{(i)}$
+for some non-negative $\lambda_i$ and $\mu_i$,
+where $\sum_{i=1}^p \lambda_i = 1$.
+Furthermore, any point that can be represented in this way lies in $P$.</p>
+<h2>Proof</h2>
+<p>A point that can be represented this way lies in $P$
+by the definition of direction and by the convexity of $P$.</p>
+<p>The constraints $\{x_i \ge 0, \forall i\}$ form a basis of $\mathbb{R}^n$,
+so the rank of all the constraints is $n$.
+Hence, $P$ contains at least one BFS, so $p \ge 1$.
+Also, $P$ doesn't contain a line.</p>
+<p>Let $\xhat$ be a point in $P$.
+Let $M$ be a number strictly larger than $c^T\xhat$ and $\max_{i=1}^p c^Tx^{(i)}$.
+Let $P' = P \cap \{x: c^Tx \le M\}$.
+Then $\forall x \in P'$, we get $0 \le x_i \le M$, so $P'$ is bounded.
+All BFSes of $P$ are also BFSes of $P'$.
+Let $x^{(p+1)}, x^{(p+2)}, \ldots, x^{(p+r)}$ be the additional BFSes of $P'$.
+Since $P'$ is bounded, $\xhat$ can be written as a convex combination of the BFSes of $P'$.
+We will now show that for each $1 \le k \le r$, $x^{(p+k)}$ can be written as
+a convex combination of the BFSes of $P$ plus a non-negative combination of the extreme directions of $P$.</p>
+<p>Let $1 \le k \le r$.
+Let $B$ be the matrix whose rows are the tight constraints of $P$ at $x^{(p+k)}$.
+Since $x^{(p+k)}$ is not a BFS of $P$, $\rank(B) &lt; n$.
+Since $x^{(p+k)}$ is a BFS of $P'$, $\rank(B) = n-1$ and
+$c$ is not a linear combination of the rows of $B$.
+Since $\rank(B) &lt; n$, $\exists d \neq 0$ such that $Bd = 0$.
+If $c^Td = 0$, then $d$ is a solution to the system $Bd = 0, c^Td = 0$,
+but this system has rank $n$ and $d \neq 0$, which cannot happen.
+Hence, $c^Td \neq 0$. Scale $d$ to ensure $c^Td = 1$.
+Since equality constraints are tight at $x^{(p+k)}$, $a_i^Td = 0$ for $i \in E$.</p>
+<p>Suppose $\exists \lambda &gt; 0$ such that $x^{(p+k)} + \lambda d \not\in P$.
+Then $\exists \lambda^* &gt; 0$ such that a constraint of $P$
+is tight at $\xstar = x^{(p+k)} + \lambda^* d$,
+and that constraint is independent of the rows of $B$
+(because constraints tight at $x^{(p+k)}$ are in $B$, so are also
+tight at $x^{(p+k)} + \lambda d$ for all $\lambda \in \mathbb{R}$).
+Hence, we get $n$ linearly independent constraints at $\xstar$,
+which means $\xstar$ must be a BFS of $P$.
+But $c^T\xstar = c^Tx^{(p+k)} + \lambda c^Td = M + \lambda c^Td &gt; M$,
+which is a contradiction based on how $M$ was chosen.
+Hence, $x^{(p+k)} + \lambda d \in P$ for all $\lambda \ge 0$.</p>
+<p>Let $i \in I$. Then $x^{(p+k)} + \lambda d \in P, \forall \lambda \ge 0$ implies
+$a_i^Tx^{(p+k)} + \lambda a_i^Td \ge b_i, \forall \lambda \ge 0$.
+This isn't possible when $a_i^Td &lt; 0$. Hence, $a_i^Td \ge 0$ for all $i \in I$.
+$x^{(p+k)} + \lambda d \in P \implies x^{(p+k)}_i + \lambda d_i \ge 0$.
+This isn't possible when $d_i &lt; 0$. Hence, $d_i \ge 0$ for all $1 \le i \le n$.</p>
+<p>Let $D = \{x: (a_i^Tx \ge 0, \forall i \in I) \textrm{ and } (a_i^Tx = 0, \forall i \in E) \textrm{ and } (x_i \ge 0, \forall 1 \le i \le n) \textrm{ and } c^Tx = 1\}$. Then $d \in D$.
+$D$ is a bounded polytope, so $d$ can be expressed as a convex combination of its BFSes.
+The BFSes of a polyhedron are also extreme points of the polyhdron.
+The extreme points of $D$ are the extreme directions of $P$.</p>
+<p>Since $x^{(p+k)} + \lambda d \in P$ for all $\lambda \ge 0$
+and $P$ doesn't contain a line, $\exists \lambda &lt; 0$ such that $x^{(p+k)} + \lambda d \not\in P$.
+Then $\exists \lambda^* &gt; 0$ such that a constraint of $P$
+is tight at $\xstar = x^{(p+k)} - \lambda^* d$,
+and that constraint is independent of the rows of $B$
+(because constraints tight at $x^{(p+k)}$ are in $B$, so are also
+tight at $x^{(p+k)} - \lambda d$ for all $\lambda \in \mathbb{R}$).
+Hence, we get $n$ linearly independent constraints at $\xstar$,
+which means $\xstar$ must be a BFS of $P$.
+Hence, $x^{(p+k)} = \xstar + \lambda^* d$.
+This means $x^{(p+k)}$ can be written as a convex combination of a BFS $\xstar$
+plus a non-negative combination of the extreme directions of $P$.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/orth-lp.html">
+        <span class="deptitle">
+        LP in orthant is optimized at BFS</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 12</li><li>Number of transitive dependencies: 52</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/linear-algebra/vector-spaces/condition-for-subspace</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/linear-algebra/matrices/gauss-jordan-algo</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/equivalence-relation</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+        <span class="deptitle">
+        Group</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+        <span class="deptitle">
+        Ring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/polynomial.html">
+        <span class="deptitle">
+        Polynomial</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/intdom.html">
+        <span class="deptitle">
+        Integral Domain</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/compare-coeff-disjoint-var.html">
+        <span class="deptitle">
+        Comparing coefficients of a polynomial with disjoint variables</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+        <span class="deptitle">
+        Field</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+        <span class="deptitle">
+        Vector Space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep.html">
+        <span class="deptitle">
+        Linear independence</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span.html">
+        <span class="deptitle">
+        Span</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html">
+        <span class="deptitle">
+        Semiring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+        <span class="deptitle">
+        Matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/stacking.html">
+        <span class="deptitle">
+        Stacking</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/system-of-linear-equations.html">
+        <span class="deptitle">
+        System of linear equations</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/product.html">
+        <span class="deptitle">
+        Product of stacked matrices</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/mult-assoc.html">
+        <span class="deptitle">
+        Matrix multiplication is associative</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rref.html">
+        <span class="deptitle">
+        Reduced Row Echelon Form (RREF)</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity.html">
+        <span class="deptitle">
+        Identity matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inverse.html">
+        <span class="deptitle">
+        Inverse of a matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inverse-of-product.html">
+        <span class="deptitle">
+        Inverse of product</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/transpose-of-product.html">
+        <span class="deptitle">
+        Transpose of product</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/vector-space.html">
+        <span class="deptitle">
+        Matrices over a field form a vector space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-space.html">
+        <span class="deptitle">
+        Row space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop.html">
+        <span class="deptitle">
+        Elementary row operation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop-inv.html">
+        <span class="deptitle">
+        Every elementary row operation has a unique inverse</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop-matrix.html">
+        <span class="deptitle">
+        Elementary row operation is matrix pre-multiplication</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv.html">
+        <span class="deptitle">
+        Row equivalence of matrices</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv-matrices-have-same-row-space.html">
+        <span class="deptitle">
+        Row equivalent matrices have the same row space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/unique-rref.html">
+        <span class="deptitle">
+        RREF is unique</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv-matrix.html">
+        <span class="deptitle">
+        Row equivalence matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/row-equiv-have-same-solutions.html">
+        <span class="deptitle">
+        Equations with row equivalent matrices have the same solution set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rank.html">
+        <span class="deptitle">
+        Rank of a matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html">
+        <span class="deptitle">
+        Basis of a vector space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-is-smaller-than-span.html">
+        <span class="deptitle">
+        Linearly independent set is smaller than a span</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/more-variables-than-equations.html">
+        <span class="deptitle">
+        Homogeneous linear equations with more variables than equations</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/rank-homogenous.html">
+        <span class="deptitle">
+        Rank of a homogenous system of linear equations</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/cone.html">
+        <span class="deptitle">
+        Cone</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-combination.html">
+        <span class="deptitle">
+        Convex combination and convex hull</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/transitivity.html">
+        <span class="deptitle">
+        Transitivity of convexity</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-set.html">
+        <span class="deptitle">
+        Convex set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/polyhedron.html">
+        <span class="deptitle">
+        Polyhedral set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bfs.html">
+        <span class="deptitle">
+        Basic feasible solutions</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bfs-existence.html">
+        <span class="deptitle">
+        Condition for existence of BFS in a polyhedron</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bounded-repr.html">
+        <span class="deptitle">
+        Point in polytope is convex combination of BFS</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/extreme-point.html">
+        <span class="deptitle">
+        Extreme point of a convex set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/extreme-point-iff-bfs.html">
+        <span class="deptitle">
+        Extreme point iff BFS</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/direction.html">
+        <span class="deptitle">
+        Direction of a convex set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/recession-cone.html">
+        <span class="deptitle">
+        Recession cone of a polyhedron</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/extreme-direction.html">
+        <span class="deptitle">
+        Extreme directions of a convex set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/orth-extr-dir.html">
+        <span class="deptitle">
+        Extreme directions of polyhedron in positive orthant</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

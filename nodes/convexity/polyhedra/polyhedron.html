@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>Polyhedral set - TheoremDep</title>
+<meta name="description" content="A set defined as the intersection of halfspaces is a polyhedral set." />
+<meta name="keywords" content="polyhedron,polyhedral set,polyhedral cone,standard form" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" aria-label="Search" type="text" autocomplete="off" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Polyhedral set </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+        <span class="deptitle">
+        Matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-set.html">
+        <span class="deptitle">
+        Convex set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/cone.html">
+        <span class="deptitle">
+        Cone</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Any set $P$ that can be represented as $P = \{x: Ax \le b \textrm{ and } Cx = d\}$,
+where $A \in \mathbb{R}^{m_1 \times n}$, $b \in \mathbb{R}^{m_1}$,
+$C \in \mathbb{R}^{m_2 \times n}$ and $d \in \mathbb{R}^{m_2}$,
+is called a <em>polyhedral set</em> (or <em>polyhedron</em>) in $\mathbb{R}^n$.
+Here $Ax \le b$ means $(Ax)_i \le b_i$ for each $1 \le i \le m_1$.</p>
+<p>Note that if $a_1^T, a_2^T, \ldots, a_{m_1}^T$ are the rows of $A$,
+then we can write $Ax \le b$ as $(\forall 1 \le i \le m_1, a_i^Tx \le b_i)$.</p>
+<p>We can assume without loss of generality that $P$ has the form
+$\{x: Ax \le b\}$, since $Cx = d$ can be written as $Cx \le d \wedge (-C)x \le -d$.</p>
+<p>Note that the same polyhedral set can have multiple different representations.</p>
+<p>If $\exists t \ge 0$ such that $\|x\| \le t$ $\forall x \in P$,
+then $P$ is said to be <em>bounded</em>.
+A bounded polyhedron is called a <em>polytope</em>.</p>
+<p>A polyhedron of the form $\{x: Ax \ge 0 \textrm{ and } Cx = 0\}$ is called a <em>polyhedral cone</em>.
+We can assume without loss of generality that a polyhedral cone has the form
+$\{x: Ax \ge 0\}$, since $Cx = 0$ is the same as $Cx \ge 0 \wedge (-C)x \ge 0$.</p>
+<p>A polyhedron of the form $\{x: Ax = b \textrm{ and } x \ge 0\}$
+is said to be in <em>standard form</em>.</p>
+<h2>Proof that $P$ is convex</h2>
+<p>Let $P = \{x: Ax \le b \textrm{ and } Cx = d\}$.
+Let $x, y \in P$. Let $\alpha \in [0, 1]$ and $z = (1-\alpha)x + \alpha y$.
+Then $Az = A((1-\alpha)x + \alpha y) = (1-\alpha)Ax + \alpha Ay \le b$
+and $Cz = C((1-\alpha)x + \alpha y) = (1-\alpha)Cx + \alpha Cy = d$.
+Hence, $z \in P$.</p>
+<h2>Proof that a polyhedral cone is a cone</h2>
+<p>Let $P = \{x: Ax \ge 0\}$.
+Let $x \in P$ and $\alpha \ge 0$.
+Then $A(\alpha x) = \alpha(Ax) \ge 0$, so $\alpha x \in P$.
+Hence, $P$ is a cone.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/orth-extr-dir.html">
+        <span class="deptitle">
+        Extreme directions of polyhedron in positive orthant</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/recession-cone.html">
+        <span class="deptitle">
+        Recession cone of a polyhedron</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bfs.html">
+        <span class="deptitle">
+        Basic feasible solutions</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 6</li><li>Number of transitive dependencies: 9</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+        <span class="deptitle">
+        Group</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+        <span class="deptitle">
+        Ring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+        <span class="deptitle">
+        Field</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+        <span class="deptitle">
+        Vector Space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html">
+        <span class="deptitle">
+        Semiring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+        <span class="deptitle">
+        Matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/cone.html">
+        <span class="deptitle">
+        Cone</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-combination.html">
+        <span class="deptitle">
+        Convex combination and convex hull</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-set.html">
+        <span class="deptitle">
+        Convex set</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>Condition for existence of BFS in a polyhedron - TheoremDep</title>
+<meta name="description" content="For a non-empty polyhedron P, a BFS exists in P iff there is no line in P iff the constraint matrix has full rank." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" aria-label="Search" type="text" autocomplete="off" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Condition for existence of BFS in a polyhedron </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bfs.html">
+        <span class="deptitle">
+        Basic feasible solutions</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rank.html">
+        <span class="deptitle">
+        Rank of a matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/rank-homogenous.html">
+        <span class="deptitle">
+        Rank of a homogenous system of linear equations</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p><span class="invisible">
+$\newcommand{\eps}{\varepsilon}$
+$\newcommand{\xhat}{\widehat{x}}$
+$\newcommand{\xstar}{x^*}$
+$\newcommand{\rank}{\operatorname{rank}}$
+</span>
+Let $P = \{x: (a_i^Tx \ge b_i, \forall i \in I) \textrm{ and } (a_i^Tx = b_i, \forall i \in E)\}$
+be a non-empty polyhedron in $\mathbb{R}^n$.
+Let $A$ be the matrix whose rows are $\{a_i^T: i \in I \cup E\}$.
+Then the following statements are equivalent:</p>
+<ol>
+<li>$P$ has a BFS.</li>
+<li>$P$ does not contain a line.</li>
+<li>$\rank(A) = n$.</li>
+</ol>
+<p>Here a line is a set of the form $\{z + \lambda d: \lambda \in \mathbb{R}\}$,
+where $z \in \mathbb{R}^n$ and $d \in \mathbb{R}^n - \{0\}$.</p>
+<h2>Proof</h2>
+<h3>Proof that BFS implies $\rank(A) = n$</h3>
+<p>Let $\xhat$ be a BFS of $P$.
+Let $B$ be a matrix whose rows are $\{a_i^T: a_i^T\xhat = b_i\}$.
+Then $n \ge \rank(A) \ge \rank(B) = n$.
+Hence, $\rank(A) = n$.</p>
+<h3>Proof that $\rank(A) = n$ implies $P$ doesn't contain a line</h3>
+<p>We'll prove the contrapositive.
+Suppose $P$ contains a line. Let $z \in \mathbb{R}^n$ and $d \in \mathbb{R}^n - \{0\}$
+and $L = \{z + \lambda d: \lambda \in \mathbb{R}\} \subseteq P$.</p>
+<p>Let $i \in E$. Then
+\begin{align}
+&amp; \forall x \in L, a_i^Tx = b_i
+\\ &amp;\implies \forall \lambda \in \mathbb{R}, a_i^T(z + \lambda d) = b_i
+\\ &amp;\implies \forall \lambda \in \mathbb{R}, \lambda a_i^Td = b_i - a_i^Tz
+\\ &amp;\implies a_i^Td = 0 \textrm{ and } b_i = a_i^Tz
+\end{align}</p>
+<p>Let $i \in I$. If $a_i^Td \neq 0$, then for $\eps &gt; 0$ and $\lambda = (b_i - \eps - a_i^Tz)/(a_i^Td)$,
+we get $a_i^T(z + \lambda d) = b_i - \eps &lt; b_i$. Hence, $a_i^Td = 0$.</p>
+<p>Hence, $Ad = 0$. Since $d \neq 0$, we get that $\rank(A) \neq n$.</p>
+<h3>Proof that $P$ doesn't contain a line implies $P$ has a BFS</h3>
+<p>Suppose $P$ doesn't contain a line.
+Let $\xhat \in P$. If $\xhat$ is a BFS, we're done, so assume that's not the case.
+Let $T = \{i: a_i^T\xhat = b_i\}$.
+Let $B$ be a matrix with rows $\{a_i^T: a_i^T\xhat = b_i\}$.
+Since $\xhat$ is not a BFS, $\rank(B) &lt; n$.
+Then $\exists d \neq 0$ such that $Bd = 0$.
+Hence, $\forall i \in T, a_i^Td = 0$.</p>
+<p>Suppose $Ad = 0$. Then $a_i^Td = 0$ for all $i \in I \cup E$.
+Let $L = \{\xhat + \lambda d: \lambda \in \mathbb{R}\}$.
+For $i \in E$, we get $a_i^T(\xhat + \lambda d) = a_i^T\xhat = b_i$,
+and for $i \in I$, we get $a_i^T(\xhat + \lambda d) = a_i^T\xhat \ge b_i$,
+so $L \subseteq P$. But we know that $P$ doesn't contain a line.
+Hence, $Ad \neq 0$. Thus, $\exists k$ such that $a_k^Td \neq 0$.
+Replace $d$ by $-d$ if needed to ensure that $a_k^Td &gt; 0$.</p>
+<p>Let
+\[ \lambda^* = \max_{i: a_i^Td &gt; 0} \frac{b_i - a_i^T\xhat}{a_i^Td}. \]
+Since $a_i^T\xhat \ge b_i$, we get that $\lambda^* \le 0$.
+Let $\xstar = \xhat + \lambda^* d$. We will now show that $\xstar \in P$.
+To do this, we need to show that all equality and inequality constraints are satisfied at $\xstar$.</p>
+<p>If $a_i^Td = 0$, we have $a_i^T\xstar = a_i^T\xhat + \lambda^* a_i^Td = a_i^T\xhat$.
+If $i \in T$, then $a_i^Td = 0$. Since $E \subseteq T$, we get that $a_i^Td \neq 0 \implies i \in I$.
+If $a_i^Td &lt; 0$, we get $a_i^T\xstar = a_i^T\xhat + \lambda^* a_i^Td \ge a_i^T\xhat \ge b_i$.
+If $a_i^Td &gt; 0$, we get
+\[ \lambda^* = \max_{j: a_j^Td &gt; 0} \frac{b_j - a_j^T\xhat}{a_j^Td}
+    \ge \frac{b_i - a_i^T\xhat}{a_i^Td}
+\implies a_i^T\xstar \ge b_i. \]
+Hence, $\xstar \in P$.</p>
+<p>Let $R = \{i: a_i^Td &gt; 0 \textrm{ and } (b_i - a_i^T\xhat)/a_i^Td = \lambda^* \}$.
+Then $R$ is non-empty by the definition of $\lambda^*$.
+For $i \in T$, we saw that $a_i^T\xstar = a_i^T\xhat = b_i$.
+For $i \in R$, we have $a_i^T\xstar = b_i$.
+Hence, the set of tight constraints at $\xstar$ contains $T \cup R$.</p>
+<p>For $i \in T$, we have $a_i^Td = 0$, so $T$ and $R$ are disjoint.
+Furthermore, for any linear combination $c$ of $\{a_i: i \in T\}$, we have $c^Td = 0$,
+but for any $i \in R$, we have $a_i^Td &gt; 0$.
+Hence, no vector in $\{a_i: i \in R\}$ is a linear combination of $\{a_i: i \in T\}$.
+Hence, for a matrix $C$ with rows $\{a_i^T: a_i^T\xstar = b_i\}$,
+we get $\rank(C) &gt; \rank(B)$.</p>
+<p>To conclude, if $\xhat$ isn't a BFS of $P$, we can find another point $\xstar$ in $P$
+for which the rank of tight constraints is larger.
+Hence, by repeating this process, we will eventually get a point in $P$ that is a BFS.
+Hence, $P$ contains a BFS.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bounded-repr.html">
+        <span class="deptitle">
+        Point in polytope is convex combination of BFS</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/orth-repr.html">
+        <span class="deptitle">
+        Representing a point in polyhedron in positive orthant</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 10</li><li>Number of transitive dependencies: 43</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/linear-algebra/vector-spaces/condition-for-subspace</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/linear-algebra/matrices/gauss-jordan-algo</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/equivalence-relation</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+        <span class="deptitle">
+        Group</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+        <span class="deptitle">
+        Ring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/polynomial.html">
+        <span class="deptitle">
+        Polynomial</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/intdom.html">
+        <span class="deptitle">
+        Integral Domain</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/compare-coeff-disjoint-var.html">
+        <span class="deptitle">
+        Comparing coefficients of a polynomial with disjoint variables</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+        <span class="deptitle">
+        Field</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+        <span class="deptitle">
+        Vector Space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep.html">
+        <span class="deptitle">
+        Linear independence</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span.html">
+        <span class="deptitle">
+        Span</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html">
+        <span class="deptitle">
+        Semiring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+        <span class="deptitle">
+        Matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/stacking.html">
+        <span class="deptitle">
+        Stacking</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/system-of-linear-equations.html">
+        <span class="deptitle">
+        System of linear equations</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/stacking/product.html">
+        <span class="deptitle">
+        Product of stacked matrices</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/mult-assoc.html">
+        <span class="deptitle">
+        Matrix multiplication is associative</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rref.html">
+        <span class="deptitle">
+        Reduced Row Echelon Form (RREF)</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity.html">
+        <span class="deptitle">
+        Identity matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inverse.html">
+        <span class="deptitle">
+        Inverse of a matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inverse-of-product.html">
+        <span class="deptitle">
+        Inverse of product</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/transpose-of-product.html">
+        <span class="deptitle">
+        Transpose of product</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/vector-space.html">
+        <span class="deptitle">
+        Matrices over a field form a vector space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-space.html">
+        <span class="deptitle">
+        Row space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop.html">
+        <span class="deptitle">
+        Elementary row operation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop-inv.html">
+        <span class="deptitle">
+        Every elementary row operation has a unique inverse</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop-matrix.html">
+        <span class="deptitle">
+        Elementary row operation is matrix pre-multiplication</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv.html">
+        <span class="deptitle">
+        Row equivalence of matrices</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv-matrices-have-same-row-space.html">
+        <span class="deptitle">
+        Row equivalent matrices have the same row space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/unique-rref.html">
+        <span class="deptitle">
+        RREF is unique</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv-matrix.html">
+        <span class="deptitle">
+        Row equivalence matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/row-equiv-have-same-solutions.html">
+        <span class="deptitle">
+        Equations with row equivalent matrices have the same solution set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rank.html">
+        <span class="deptitle">
+        Rank of a matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html">
+        <span class="deptitle">
+        Basis of a vector space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-is-smaller-than-span.html">
+        <span class="deptitle">
+        Linearly independent set is smaller than a span</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/more-variables-than-equations.html">
+        <span class="deptitle">
+        Homogeneous linear equations with more variables than equations</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/rank-homogenous.html">
+        <span class="deptitle">
+        Rank of a homogenous system of linear equations</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/cone.html">
+        <span class="deptitle">
+        Cone</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-combination.html">
+        <span class="deptitle">
+        Convex combination and convex hull</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-set.html">
+        <span class="deptitle">
+        Convex set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/polyhedron.html">
+        <span class="deptitle">
+        Polyhedral set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bfs.html">
+        <span class="deptitle">
+        Basic feasible solutions</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

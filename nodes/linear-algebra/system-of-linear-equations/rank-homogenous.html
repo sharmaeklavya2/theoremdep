@@ -54,11 +54,20 @@
         Equations with row equivalent matrices have the same solution set</span>
     </a>
     </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html">
+        <span class="deptitle">
+        Basis of a vector space</span>
+    </a>
+    </li>
 </ol>
 
 <div class="horizontal-rule"></div>
 <p>Let $AX = 0$ be a system of $m$ linear equations in $n$ variables.
-Then $\operatorname{rank}(A) = n \iff$ the only solution is $X = 0$.</p>
+Then $\operatorname{rank}(A) = n \iff$ the only solution is $X = 0$.
+If $\operatorname{rank}(A) &lt; n$, then $AX = 0$ has infinitely many solutions.
+($\operatorname{rank}(A) &gt; n$ is not possible.)
+Also, $\dim(\{x: Ax = 0\}) = n - \operatorname{rank}(A)$.</p>
 <h2>Proof</h2>
 <p>Let $R = \operatorname{RREF}(A)$.
 Then $R$ is row equivalent to $A$.
@@ -88,15 +97,54 @@ and $X$ is an $n$ by $1$ matrix.</p>
 <p>Therefore, by fixing arbitrary values for non-pivot variables,
 we can find a unique value of the $i^{\textrm{th}}$ pivot variable
 which satisfies the $i^{\textrm{th}}$ equation.</p>
+<p>If $z$ is a non-zero solution to $AX = 0$, then $\beta z$ is also a solution to $AX = 0$
+for any $\beta \in \mathbb{R}$. Hence, if $AX = 0$ has a non-zero solution,
+then there are an infinite number of solutions.</p>
 <p>If $\operatorname{rank}(A) &lt; n$, then $Q \neq \{\}$.
-Therefore, a non-trivial solution exists because non-pivot variables can take on non-zero values.</p>
+Therefore, a non-zero solution exists because non-pivot variables can take on non-zero values.</p>
 <p>If $\operatorname{rank}(A) = n$, every column is a pivot column, so $Q = \{\}$.
 \[ X[\alpha_i, 1] = - \sum_{j \in Q} R[i, j] X[j, 1] = 0 \]
 Therefore, $X = 0$.</p>
+<p>Let $z^{(i)}$ be a solution to $AX = 0$ where the $i^{\textrm{th}}$ non-pivot variable is 1
+and the other non-pivot variables are 0.
+Then any solution to $AX = 0$ can be written as a linear combination of
+$\{z^{(i)}: 1 \le i \le |Q|\}$.
+Furthermore, $\{z^{(i)}: 1 \le i \le |Q|\}$ is linearly independent.
+Hence, it is a basis of $\{x: Ax = 0\}$, and so $\dim(\{x: Ax = 0\}) = |Q| = n - \operatorname{rank}(A)$.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/extreme-point-iff-bfs.html">
+        <span class="deptitle">
+        Extreme point iff BFS</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bfs-existence.html">
+        <span class="deptitle">
+        Condition for existence of BFS in a polyhedron</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bounded-repr.html">
+        <span class="deptitle">
+        Point in polytope is convex combination of BFS</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bfs-is-vertex.html">
+        <span class="deptitle">
+        BFS is vertex</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/orth-repr.html">
+        <span class="deptitle">
+        Representing a point in polyhedron in positive orthant</span>
+    </a>
+    </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/every-complex-matrix-has-eigenvalue.html">
         <span class="deptitle">
@@ -129,11 +177,14 @@ Therefore, $X = 0$.</p>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 9</li><li>Number of transitive dependencies: 28</li></ul>
+<ul><li>Depth: 9</li><li>Number of transitive dependencies: 37</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
 <ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/linear-algebra/vector-spaces/condition-for-subspace</span>
+    </li>
     <li>
     <span class="deptitleuci missing">/linear-algebra/matrices/gauss-jordan-algo</span>
     </li>
@@ -174,6 +225,24 @@ Therefore, $X = 0$.</p>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
         <span class="deptitle">
         Field</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+        <span class="deptitle">
+        Vector Space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep.html">
+        <span class="deptitle">
+        Linear independence</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span.html">
+        <span class="deptitle">
+        Span</span>
     </a>
     </li>
     <li>
@@ -237,6 +306,18 @@ Therefore, $X = 0$.</p>
     </a>
     </li>
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/transpose-of-product.html">
+        <span class="deptitle">
+        Transpose of product</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/vector-space.html">
+        <span class="deptitle">
+        Matrices over a field form a vector space</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-space.html">
         <span class="deptitle">
         Row space</span>
@@ -279,12 +360,6 @@ Therefore, $X = 0$.</p>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rank.html">
-        <span class="deptitle">
-        Rank of a matrix</span>
-    </a>
-    </li>
-    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv-matrix.html">
         <span class="deptitle">
         Row equivalence matrix</span>
@@ -294,6 +369,30 @@ Therefore, $X = 0$.</p>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/row-equiv-have-same-solutions.html">
         <span class="deptitle">
         Equations with row equivalent matrices have the same solution set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rank.html">
+        <span class="deptitle">
+        Rank of a matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html">
+        <span class="deptitle">
+        Basis of a vector space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-is-smaller-than-span.html">
+        <span class="deptitle">
+        Linearly independent set is smaller than a span</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/more-variables-than-equations.html">
+        <span class="deptitle">
+        Homogeneous linear equations with more variables than equations</span>
     </a>
     </li>
 </ol>

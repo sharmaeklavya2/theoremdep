@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>Extreme directions of polyhedron in positive orthant - TheoremDep</title>
+<meta name="description" content="Let P be a polyhedron in the positive orthant. Then the normalized extreme directions of P are the extreme points of another polytope." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" aria-label="Search" type="text" autocomplete="off" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Extreme directions of polyhedron in positive orthant </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/polyhedron.html">
+        <span class="deptitle">
+        Polyhedral set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/extreme-direction.html">
+        <span class="deptitle">
+        Extreme directions of a convex set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/extreme-point.html">
+        <span class="deptitle">
+        Extreme point of a convex set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/recession-cone.html">
+        <span class="deptitle">
+        Recession cone of a polyhedron</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p><span class="invisible">
+$\newcommand{\dhat}{\widehat{d}}$
+$\newcommand{\xhat}{\widehat{x}}$
+</span>
+Let $P = \{x: (a_i^Tx \ge b_i, \forall i \in I) \textrm{ and } (a_i^Tx = b_i, \forall i \in E) \textrm{ and } (x_i \ge 0, \forall 1 \le i \le n)\}$
+be a non-empty polyhedron in $\mathbb{R}^n$.
+Let $c = [1, 1, \ldots, 1] \in \mathbb{R}^n$.
+Let $Q = \{x: (a_i^Tx \ge 0, \forall i \in I) \textrm{ and } (a_i^Tx = 0, \forall i \in E) \textrm{ and } (x_i \ge 0, \forall 1 \le i \le n) \textrm{ and } c^Tx = 1\}$.</p>
+<p>If $d$ is an extreme direction of $P$, then $d/c^Td$ is an extreme point of $Q$.
+If $d$ is an extreme point of $Q$, then $d$ is an extreme direction of $P$.</p>
+<h2>Proof</h2>
+<p>Let $D = \{x: (a_i^Tx \ge 0, \forall i \in I) \textrm{ and } (a_i^Tx = 0, \forall i \in E) \textrm{ and } (x_i \ge 0, \forall 1 \le i \le n)\}$.
+Then $D$ is the set of directions of $P$.
+Since $Q \subseteq D$, $Q$ contains directions of $P$.</p>
+<p>Two vectors $u$ and $v$ in $\mathbb{R}_{\ge 0}^n$ are collinear iff $u/c^Tu = v/c^Tv$.</p>
+<p>Let $d \in D - \{0\}$. Let $\dhat = d/(c^Td)$. Then $c^T\dhat = 1$, so $\dhat \in Q$.
+Suppose $\dhat$ is a non-extreme point of $Q$.
+Then $\dhat = (1-\alpha) d^{(1)} + \alpha d^{(2)}$ for some $d^{(1)}, d^{(2)} \in Q$
+where $d^{(1)} \neq d^{(2)}$ and $\alpha \in (0, 1)$.
+Since $d^{(1)}/c^Td^{(1)} \neq d^{(2)}/c^Td^{(2)}$,
+$d^{(1)}$ and $d^{(2)}$ are not collinear.
+Then $d = (c^Td)(1-\alpha) d^{(1)} + (c^Td)\alpha d^{(2)}$,
+so $d$ is not an extreme direction of $P$.
+Hence, if $d$ is an extreme direction of $P$, then $\dhat$ is an extreme point of $Q$.</p>
+<p>Let $d$ be an extreme point of $Q$. Then $d \neq 0$.
+Suppose $d$ is not an extreme direction of $P$.
+Then $d = \alpha d^{(1)} + \beta d^{(2)}$, such that $\alpha &gt; 0$, $\beta &gt; 0$,
+and $d^{(1)}, d^{(2)} \in D - \{0\}$ such that $d^{(1)}/c^Td^{(1)} \neq d^{(2)}/c^Td^{(2)}$.
+Let $\dhat^{(1)} = d^{(1)}/c^Td^{(1)}$ and $\dhat^{(2)} = d^{(2)}/c^Td^{(2)}$.
+Then $\dhat^{(1)} \neq \dhat^{(2)}$ and $\dhat^{(1)}, \dhat^{(2)} \in Q$.
+Hence, we get $d = (\alpha c^Td^{(1)})\dhat^{(1)} + (\beta c^Td^{(2)}) \dhat^{(2)}$.
+Since, $1 = c^Td = \alpha c^Td^{(1)} + \beta c^Td^{(2)}$,
+we get that $d$ is a strict convex combination of $\dhat^{(1)}$ and $\dhat^{(2)}$.
+Hence, $d$ is not an extreme point of $Q$, which is a contradiction.
+Hence, $d$ is an extreme direction of $D$.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/orth-repr.html">
+        <span class="deptitle">
+        Representing a point in polyhedron in positive orthant</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 8</li><li>Number of transitive dependencies: 14</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+        <span class="deptitle">
+        Group</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+        <span class="deptitle">
+        Ring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+        <span class="deptitle">
+        Field</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+        <span class="deptitle">
+        Vector Space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html">
+        <span class="deptitle">
+        Semiring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+        <span class="deptitle">
+        Matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/cone.html">
+        <span class="deptitle">
+        Cone</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-combination.html">
+        <span class="deptitle">
+        Convex combination and convex hull</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-set.html">
+        <span class="deptitle">
+        Convex set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/polyhedron.html">
+        <span class="deptitle">
+        Polyhedral set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/extreme-point.html">
+        <span class="deptitle">
+        Extreme point of a convex set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/direction.html">
+        <span class="deptitle">
+        Direction of a convex set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/recession-cone.html">
+        <span class="deptitle">
+        Recession cone of a polyhedron</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/extreme-direction.html">
+        <span class="deptitle">
+        Extreme directions of a convex set</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

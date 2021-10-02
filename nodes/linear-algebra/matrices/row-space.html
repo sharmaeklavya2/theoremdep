@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
 <title>Row space - TheoremDep</title>
-<meta name="description" content="The row space of a matrix is the set of all linear combinations of the rows of the matrix." />
+<meta name="description" content="The row space of a matrix is the set of all linear combinations of the rows of the matrix. The row space is a vector space." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -36,14 +36,44 @@
         Matrix</span>
     </a>
     </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+        <span class="deptitle">
+        Vector Space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/vector-space.html">
+        <span class="deptitle">
+        Matrices over a field form a vector space</span>
+    </a>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/linear-algebra/vector-spaces/condition-for-subspace</span>
+    </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>The row space of a matrix is the set of all linear combinations of the rows of the matrix.</p>
+<p>Let $A$ be a matrix. The row space of $A$ is the set of all linear combinations of the rows of $A$.</p>
+<p>The row space is a vector space.</p>
+<h2>Proof that row space is a vector space</h2>
+<p>Let $A$ be an $m$ by $n$ matrix.
+Let $V$ be the set of all linear combinations of rows of $A$.
+Then $V \subseteq \mathbb{R}^n$.</p>
+<p>We know that $\mathbb{R}^n$ is a vector space.
+Since $V$ is closed under addition and scalar multiplication,
+$V$ is a subspace of $\mathbb{R}^n$.
+Hence, $V$ is a vector space.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rank.html">
+        <span class="deptitle">
+        Rank of a matrix</span>
+    </a>
+    </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/row-equiv-matrices-have-same-row-space.html">
         <span class="deptitle">
@@ -52,11 +82,14 @@
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 3</li><li>Number of transitive dependencies: 4</li></ul>
+<ul><li>Depth: 5</li><li>Number of transitive dependencies: 8</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
 <ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/linear-algebra/vector-spaces/condition-for-subspace</span>
+    </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
         <span class="deptitle">
@@ -70,6 +103,18 @@
     </a>
     </li>
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+        <span class="deptitle">
+        Field</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+        <span class="deptitle">
+        Vector Space</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html">
         <span class="deptitle">
         Semiring</span>
@@ -79,6 +124,12 @@
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
         <span class="deptitle">
         Matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/vector-space.html">
+        <span class="deptitle">
+        Matrices over a field form a vector space</span>
     </a>
     </li>
 </ol>
