@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>Limit of a function at a point - TheoremDep</title>
+<meta name="description" content="Limit of a function at a point" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" aria-label="Search" type="text" autocomplete="off" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Limit of a function at a point </h1>
+<h2 class="no-deps"> Dependencies:
+None </h2>
+
+<div class="horizontal-rule"></div>
+<p><span class="invisible">
+$\newcommand{\eps}{\varepsilon}$
+</span>
+Let $f: D \mapsto \mathbb{R}$ be a function, where $D \subseteq \mathbb{R}$.</p>
+<p>Let $(b, c) \subseteq D$, where $b &lt; c$. Then $\limsup_{x \to b} f(x)$ is defined as
+\[ \limsup_{x \to b} f(x) = C \iff
+    \forall \eps &gt; 0, \exists \delta &gt; 0, \forall x \in (b, b + \delta],
+    |f(x) - C| \le \eps. \]
+If no such $C$ exists, then $\limsup_{x \to b} f(x)$ is not defined.
+$\limsup_{x \to b}$ is also written as $\lim_{x \to b^+}$.
+It can be proven that if $\limsup$ exists, it is unique.</p>
+<p>Let $(a, b) \subseteq D$, where $a &lt; b$. Then $\liminf_{x \to b} f(x)$ is defined as
+\[ \liminf_{x \to b} f(x) = C \iff
+    \forall \eps &gt; 0, \exists \delta &gt; 0, \forall x \in [b - \delta, b),
+    |f(x) - C| \le \eps. \]
+If no such $C$ exists, then $\liminf_{x \to b} f(x)$ is not defined.
+$\liminf_{x \to b}$ is also written as $\lim_{x \to b^-}$.
+It can be proven that if $\liminf$ exists, it is unique.</p>
+<p>Let $a \le b \le c$ and $a &lt; c$ and $(a, c) - \{b\} \subseteq D$. Then
+\[ \lim_{x \to b} f(x) = C \iff \forall \eps &gt; 0, \exists \delta &gt; 0,
+(0 \le |x - b| \le \delta \implies |f(x) - C| \le \eps. \]
+If no such $C$ exists, then $\lim_{x \to b} f(x)$ is not defined.
+It can be proven that if $\lim$ exists, it is unique.</p>
+<p>If $a &lt; b &lt; c$, and $(a, c) - \{b\} \subseteq D$,
+then it can be proven that $\lim_{x \to b} f(x) = C$ iff
+$\limsup_{x \to b} f(x) = \liminf_{x \to b} f(x) = C$.</p>
+<p>$f$ is said to be continuous at $z$ iff $\lim_{x \to z} f(x) = f(z)$.
+$f$ is continuous on a set $S$ iff $f$ is continuous at $z$ for every $z \in S$.</p>
+<h2>Proof that if $\limsup$ exists, then it is unique</h2>
+<p>Let $(b, c) \subseteq D$, where $b &lt; c$. Let $C_1$ and $C_2$ be two $\limsup$s, i.e.,
+\[ \forall \eps &gt; 0, \exists \delta &gt; 0, \forall x \in (b, b + \delta],
+    (|f(x) - C_1| \le \eps \textrm{ and } |f(x) - C_2|). \]
+But then $|C_1 - C_2| = |(f(x) - C_2) - (f(x) - C_1)| \le |f(x) - C_1| + |f(x) - C_2| \le 2\eps$,
+so $\eps \ge |C_1 - C_2|/2$, which contradicts the '$\forall \eps &gt; 0$' part of the definition.</p>
+<h2>Proof that if $\liminf$ exists, then it is unique</h2>
+<p>Proof is analogous to that of $\limsup$.</p>
+<h2>Proof that if $\lim$ exists, then it is unique</h2>
+<p>Proof is analogous to that of $\limsup$.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 0</li><li>Number of transitive dependencies: 0</li></ul>
+
+<h2 class="no-deps"> Transitive dependencies: None </h2>
+
+</div>
+</body>
+</html>

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
 <title>Identity matrix - TheoremDep</title>
-<meta name="description" content="The identity matrix is a matrix I such that AI = IA = A." />
+<meta name="description" content="Track dependencies between theorems." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -31,15 +31,15 @@
  </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html">
         <span class="deptitle">
-        Matrix</span>
+        Semiring</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/compare-coeff-disjoint-var.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
         <span class="deptitle">
-        Comparing coefficients of a polynomial with disjoint variables</span>
+        Matrix</span>
     </a>
     </li>
 </ol>
@@ -48,31 +48,6 @@
 <p>Let $R$ be a semiring with unity.
 The identity matrix of size $n$, denoted as $I_n$, is a matrix in $\mathbb{M}_{n, n}(R)$ such that
 \[ I_n[i, j] = \begin{cases} 1 &amp; i = j \\ 0 &amp; i \neq j \end{cases} \]</p>
-<p>Let $A \in \mathbb{M}_{m, n}$. Then</p>
-<p>\[ AB = A \iff B = I_n \]
-\[ BA = A \iff B = I_m \]</p>
-<h2>Proof</h2>
-<h3>Part 1</h3>
-<p>\begin{align}
-&amp; (AI_n)[i, j]
-\\ &amp;= \sum_{k=1}^n A[i, k] I_n[k, j]
-\\ &amp;= \left(\sum_{k=1}^{j-1} A[i, k] I_n[k, j]\right) + (A[i, j] I_n[j, j]) + \left(\sum_{k=j+1}^n A[i, k] I_n[k, j] \right)
-\\ &amp;= \left(\sum_{k=1}^{j-1} A[i, k] 0\right) + (A[i, j] 1) + \left(\sum_{k=j+1}^n A[i, k] 0 \right)
-\\ &amp;= A[i, j]
-\end{align}</p>
-<p>Therefore, $AI_n = A$.</p>
-<p>Similarly,
-\[ (I_mA)[i, j] = \sum_{k=1}^m I_m[i, k] A[k, j] = A[i, j]
-\implies I_mA = A \]</p>
-<h3>Part 2</h3>
-<p>$AB = A \Rightarrow B \in \mathbb{M}_{n, n}(R)$.</p>
-<p>\begin{align}
-&amp; (AB)[i, j] = A[i, j]
-\\ &amp;\Rightarrow \sum_{k=1}^n A[i, k]B[k, j] = A[i, j]
-\\ &amp;\Rightarrow B[k, j] = \begin{cases} 1 &amp; k = j \\ 0 &amp; k \neq j \end{cases} \tag{comparing coefficients of $A[i, *]$}
-\end{align}</p>
-<p>Therefore, $B = I_n$.</p>
-<p>Similarly, when $BA = A$, $B = I_m$.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
@@ -93,6 +68,12 @@ The identity matrix of size $n$, denoted as $I_n$, is a matrix in $\mathbb{M}_{n
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/normal-distr/gen-multivariate.html">
         <span class="deptitle">
         General multivariate normal distribution</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/chap-kol-eqn.html">
+        <span class="deptitle">
+        Chapman-Kolmogorov equation</span>
     </a>
     </li>
     <li>
@@ -132,6 +113,12 @@ The identity matrix of size $n$, denoted as $I_n$, is a matrix in $\mathbb{M}_{n
     </a>
     </li>
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity-condition.html">
+        <span class="deptitle">
+        Identity matrix is identity of matrix product</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop-matrix.html">
         <span class="deptitle">
         Elementary row operation is matrix pre-multiplication</span>
@@ -145,7 +132,7 @@ The identity matrix of size $n$, denoted as $I_n$, is a matrix in $\mathbb{M}_{n
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 4</li><li>Number of transitive dependencies: 7</li></ul>
+<ul><li>Depth: 3</li><li>Number of transitive dependencies: 4</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -160,24 +147,6 @@ The identity matrix of size $n$, denoted as $I_n$, is a matrix in $\mathbb{M}_{n
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
         <span class="deptitle">
         Ring</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/polynomial.html">
-        <span class="deptitle">
-        Polynomial</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/intdom.html">
-        <span class="deptitle">
-        Integral Domain</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/polynomials/compare-coeff-disjoint-var.html">
-        <span class="deptitle">
-        Comparing coefficients of a polynomial with disjoint variables</span>
     </a>
     </li>
     <li>

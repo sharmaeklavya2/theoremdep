@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>Markov chains: recurrent class is sink - TheoremDep</title>
+<meta name="description" content="If a state class is recurrent, then no other class is accessible from it." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" aria-label="Search" type="text" autocomplete="off" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Markov chains: recurrent class is sink </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/markov-chain.html">
+        <span class="deptitle">
+        Markov chain</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/recurrence.html">
+        <span class="deptitle">
+        Markov chains: recurrent states</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/state-classes.html">
+        <span class="deptitle">
+        Markov chains: accessibility and state classes</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/rec-class.html">
+        <span class="deptitle">
+        Markov chains: recurrence is a class property</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p><span class="invisible">
+$\newcommand{\ihat}{\widehat{\imath}}$
+$\newcommand{\khat}{\widehat{k}}$
+</span>
+Let $X = [X_0, X_1, \ldots]$ be a markov chain with transition function $P$.
+Let $J$ be a state class that is accessible from another state class $I$.
+Then $I$ isn't a recurrent class.</p>
+<h2>Proof</h2>
+<p>$J$ is accessible from $I$ implies that for some $i \in I$ and $j \in J$,
+there exists a sequence $Q$ of states from $i$ to $j$ such that each transition
+in the sequence has positive probability.
+Let $\ihat$ be the last state from $I$ in $Q$.
+Let $\khat$ be the state after $\ihat$ in $Q$.
+Then $\khat$ belongs to state class $K \neq I$.
+Let $q = P(\ihat, \khat)$. Then $q &gt; 0$.</p>
+<p>Since accessibility of state classes is anti-symmetric,
+$\ihat$ is not accessible from $\khat$.
+Hence, for all $t \ge 0$, $P^{(t)}(\khat, \ihat) = 0$.</p>
+<p>\begin{align}
+&amp; \Pr(\textrm{get back to } \ihat \mid X_0 = \ihat)
+\\ &amp;= \Pr\left(\bigvee_{t=1}^{\infty} (X_t = \ihat) \mid X_0 = \ihat\right)
+\\ &amp;= \Pr\left(\bigvee_{t=1}^{\infty} (X_t = \ihat) \mid X_1 = \khat, X_0 = \ihat\right)
+    \Pr(X_1 = \khat \mid X_0 = \ihat)
+    \\ &amp;\quad+ \Pr\left(\bigvee_{t=1}^{\infty} (X_t = \ihat) \mid X_1 \neq \khat, X_0 = \ihat\right)
+    \Pr(X_1 \neq \khat \mid X_0 = \ihat)
+\\ &amp;= q\Pr\left(\bigvee_{t=1}^{\infty} (X_t = \ihat) \mid X_0 = \khat\right)
+    \tag{by markov property}
+    \\ &amp;\quad+ (1-q)\Pr\left(\bigvee_{t=1}^{\infty} (X_t = \ihat) \mid X_1 \neq \khat, X_0 = \ihat\right)
+\\ &amp;\le q\sum_{t=1}^{\infty} \Pr(X_t = \ihat \mid X_0 = \khat) + (1-q)
+\\ &amp;= q\sum_{t=1}^{\infty} P^{(t)}(\khat, \ihat) + (1-q)
+\\ &amp;= (1 - q) &lt; 1.
+\end{align}</p>
+<p>Since probability of getting back to $\ihat$ from $\ihat$ is less than 1,
+$\ihat$ is not recurrent. Since recurrence is a class property, $I$ is not recurrent.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 10</li><li>Number of transitive dependencies: 32</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/analysis/topological-space</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/countable-set</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/poset</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/equivalence-relation</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/measure-theory/linearity-of-lebesgue-integral</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/measure-theory/lebesgue-integral</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra.html">
+        <span class="deptitle">
+        σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/generated-sigma-algebra.html">
+        <span class="deptitle">
+        Generated σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/borel-algebra.html">
+        <span class="deptitle">
+        Borel algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measurable-func.html">
+        <span class="deptitle">
+        Measurable function</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/real-borel-algebra-generators.html">
+        <span class="deptitle">
+        Generators of the real Borel algebra</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measure.html">
+        <span class="deptitle">
+        Measure</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra-closed-under-intersection.html">
+        <span class="deptitle">
+        σ-algebra is closed under countable intersections</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+        <span class="deptitle">
+        Group</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+        <span class="deptitle">
+        Ring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+        <span class="deptitle">
+        Field</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+        <span class="deptitle">
+        Vector Space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html">
+        <span class="deptitle">
+        Semiring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+        <span class="deptitle">
+        Matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity.html">
+        <span class="deptitle">
+        Identity matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/probability.html">
+        <span class="deptitle">
+        Probability</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/cond-prob.html">
+        <span class="deptitle">
+        Conditional probability</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var.html">
+        <span class="deptitle">
+        Random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/markov-chain.html">
+        <span class="deptitle">
+        Markov chain</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/recurrence.html">
+        <span class="deptitle">
+        Markov chains: recurrent states</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/chap-kol-eqn.html">
+        <span class="deptitle">
+        Chapman-Kolmogorov equation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/state-classes.html">
+        <span class="deptitle">
+        Markov chains: accessibility and state classes</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/expected-value.html">
+        <span class="deptitle">
+        Expected value of a random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/linearity-of-expec.html">
+        <span class="deptitle">
+        Linearity of expectation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/rec-n-visits.html">
+        <span class="deptitle">
+        Markov chains: recurrent iff expected number of visits is infinite</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/rec-class.html">
+        <span class="deptitle">
+        Markov chains: recurrence is a class property</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

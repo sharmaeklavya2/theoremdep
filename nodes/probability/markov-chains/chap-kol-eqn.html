@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>Chapman-Kolmogorov equation - TheoremDep</title>
+<meta name="description" content="Let P be the transition matrix of a markov chain. Then the probability of being in state j after t steps starting from state i is (P^t)[i,j]." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" aria-label="Search" type="text" autocomplete="off" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Chapman-Kolmogorov equation </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/markov-chain.html">
+        <span class="deptitle">
+        Markov chain</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+        <span class="deptitle">
+        Matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity.html">
+        <span class="deptitle">
+        Identity matrix</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p>Let $X = [X_0, X_1, \ldots]$ be a markov chain having transition matrix $P$.
+Recall that for any non-negative integer $n$, we have $P^{(n)}(i, j) = \Pr(X_n = j \mid X_0 = i)$.
+Then for any $m \ge 0$ and $n \ge 0$, we get
+\[ P^{(m+n)}(i, j) = \sum_{k}P^{(m)}(i, k)P^{(n)}(k, j). \]
+This equation is called the <em>Chapman-Kolmogorov equation</em>.</p>
+<p>If $X$ has a finite state space, we can write $P^{(n)}$ as a matrix,
+called the <em>$n$-step transition matrix</em>.
+Then $P^{(n)} = P^n$ for all $n \ge 0$.</p>
+<h2>Proof</h2>
+<p>By the definition of $P^{(n)}$, we get that
+\[ P^{(0)}(i, j) = \begin{cases}1 &amp; \textrm{ if } i = j \\ 0 &amp; \textrm{ if } i \neq j\end{cases}. \]
+Hence, the Chapman-Kolmogorov equations are trivially true if $m = 0$ or $n = 0$.</p>
+<p>Now let $m \ge 1$ and $n \ge 1$. Then
+\begin{align}
+&amp; P^{(m+n)}(i, j)
+\\ &amp;= \Pr(X_{m+n} = j \mid X_0 = i)
+\\ &amp;= \sum_{k} \Pr(X_{m+n} = j \mid X_m = k, X_0 = i)\Pr(X_m = k \mid X_0 = i)
+\\ &amp;= \sum_{k} \Pr(X_n = j \mid X_0 = k)\Pr(X_m = k \mid X_0 = i)
+    \tag{since $X$ is a homogeneous markov chain}
+\\ &amp;= \sum_{k} P^{(n)}(k, j)P^{(m)}(i, k)
+\end{align}</p>
+<p>When $X$ has a finite state space, the Chapman-Kolmogorov equation can be expressed in matrix form:
+$P^{(m+n)} = P^{(m)}P^{(n)}$ for all $m \ge 0$ and $n \ge 0$.</p>
+<p>$P^{(0)} = I$ and $P^{(1)} = P$ by the definition of $P^{(n)}$.
+The Chapman-Kolmogorov equation gives us $P^{(n+1)} = P^{(n)}P^{(1)} = P^{(n)}P$.
+Using mathematical induction, we can prove that $P^{(n)} = P^n$ for all $n \ge 0$.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/state-classes.html">
+        <span class="deptitle">
+        Markov chains: accessibility and state classes</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 7</li><li>Number of transitive dependencies: 19</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/analysis/topological-space</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/countable-set</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra.html">
+        <span class="deptitle">
+        σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/generated-sigma-algebra.html">
+        <span class="deptitle">
+        Generated σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/borel-algebra.html">
+        <span class="deptitle">
+        Borel algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measurable-func.html">
+        <span class="deptitle">
+        Measurable function</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/real-borel-algebra-generators.html">
+        <span class="deptitle">
+        Generators of the real Borel algebra</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measure.html">
+        <span class="deptitle">
+        Measure</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra-closed-under-intersection.html">
+        <span class="deptitle">
+        σ-algebra is closed under countable intersections</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+        <span class="deptitle">
+        Group</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+        <span class="deptitle">
+        Ring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html">
+        <span class="deptitle">
+        Semiring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+        <span class="deptitle">
+        Matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity.html">
+        <span class="deptitle">
+        Identity matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/probability.html">
+        <span class="deptitle">
+        Probability</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/cond-prob.html">
+        <span class="deptitle">
+        Conditional probability</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var.html">
+        <span class="deptitle">
+        Random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/markov-chain.html">
+        <span class="deptitle">
+        Markov chain</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

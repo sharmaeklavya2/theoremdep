@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Conditional decomposition of expectation - TheoremDep</title>
-<meta name="description" content="Track dependencies between theorems." />
+<title>Markov chains: recurrent state to acessible state - TheoremDep</title>
+<meta name="description" content="If i is a recurrent state of a markov chain and state j is accessible from state i, then the marov chain will eventually reach j from i." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,47 +26,56 @@
 </nav>
 
 <div id="main">
-<h1> Conditional decomposition of expectation </h1>
+<h1> Markov chains: recurrent state to acessible state <span class="doc-status">(incomplete)</span> </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/markov-chain.html">
         <span class="deptitle">
-        Random variable</span>
+        Markov chain</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/cond-expec.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/recurrence.html">
         <span class="deptitle">
-        Conditional expectation</span>
+        Markov chains: recurrent states</span>
     </a>
     </li>
     <li>
-    <span class="deptitleuci missing">/measure-theory/linearity-of-lebesgue-integral</span>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/rec-infinite-visits.html">
+        <span class="deptitle">
+        Markov chains: recurrent iff infinite visits</span>
+    </a>
     </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $S$ be a countable set of pairwise-disjoint events
-such that $\bigcup_{A \in S} A = \Omega$
-and $\Pr(\cdot \mid A)$ is defined $\forall A \in S$.
-Let $X$ be a random variable. Then $\newcommand{\E}{\operatorname{E}}$
-\[ \E(X) = \sum_{A \in S} \E(X \mid A)\Pr(A) \]</p>
+<p>Let $X = [X_0, X_1, \ldots]$ be a markov chain with transformation function $P$.
+Let $i$ be a recurrent state and let state $j$ be accessible from state $i$.
+Then the markov chain will eventually reach $j$ with probability 1 if it starts from $i$.
+Formally, let $R_j = \bigvee_{t=1}^{\infty} (X_t = j)$.
+Then $\Pr(R_j \mid X_0 = i) = 1$.</p>
 <h2>Proof</h2>
-<p>\begin{align}
-\E(X) &amp;= \int_{\omega \subseteq \Omega} X(\omega)\Pr(\omega)
-\\ &amp;= \int_{\omega \subseteq \Omega} X(\omega)\left(\sum_{A \in S} \Pr(\omega \cap A)\right)
-\\ &amp;= \int_{\omega \subseteq \Omega} X(\omega)\left(\sum_{A \in S} \Pr(\omega \mid A) \Pr(A)\right)
-\\ &amp;= \sum_{A \in S} \Pr(A)\left(\int_{\omega \subseteq \Omega} X(\omega)\Pr(\omega \mid A)\right)
-\tag{linearity of Lebesgue integral}
-\\ &amp;= \sum_{A \in S} \Pr(A)\E(X \mid A)
-\end{align}</p>
+<p>Since $i$ is recurrent, the markov chain will visit $i$ an infinite number of times.
+Let $T_k$ be the $k^{\textrm{th}}$ time (for $t \ge 1$) when the markov chain visits $i$.
+Since $j$ is accessible from $i$, there exists a path of states $Q = [k_0, k_1, k_2, \ldots, k_r]$
+such that $i = k_0$, $j = k_r$ and $P(k_{t-1}, k_t) &gt; 0$ for all $1 \le t \le r$
+and $k_t \not\in \{i, j\}$ for all $1 \le t &lt; r$.
+Let $q = \prod_{t=1}^r P(k_{t-1}, k_t)$. Then $q &gt; 0$.</p>
+<p>Let $E$ be the event that $j$ is never visited via $Q$.
+We will show that $\Pr(E \mid X_0 = i, T_1 = t_1, T_2 = t_2, \ldots) = 0$,
+which will prove that $j$ will be eventually visited (and that too via $Q$).</p>
+<p><span class="text-danger">(Non-rigorous proof ahead)</span></p>
+<p>Since $i$ is visited an infinite number of times,
+we have an infinite number of opportunities to visit $j$ via $Q$,
+and each such opportunity will succeed with probability $q &gt; 0$.
+Hence, we will succeed eventually, so $j$ will be reached eventually from $i$ via $Q$.</p>
 
 <div class="horizontal-rule"></div>
 <h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul><li>Depth: 8</li><li>Number of transitive dependencies: 21</li></ul>
+<ul><li>Depth: 9</li><li>Number of transitive dependencies: 20</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -79,12 +88,6 @@ Let $X$ be a random variable. Then $\newcommand{\E}{\operatorname{E}}$
     </li>
     <li>
     <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
-    </li>
-    <li>
-    <span class="deptitleuci missing">/measure-theory/linearity-of-lebesgue-integral</span>
-    </li>
-    <li>
-    <span class="deptitleuci missing">/measure-theory/lebesgue-integral</span>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra.html">
@@ -141,15 +144,15 @@ Let $X$ be a random variable. Then $\newcommand{\E}{\operatorname{E}}$
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html">
         <span class="deptitle">
-        Field</span>
+        Semiring</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
         <span class="deptitle">
-        Vector Space</span>
+        Matrix</span>
     </a>
     </li>
     <li>
@@ -171,15 +174,21 @@ Let $X$ be a random variable. Then $\newcommand{\E}{\operatorname{E}}$
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/expected-value.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/markov-chain.html">
         <span class="deptitle">
-        Expected value of a random variable</span>
+        Markov chain</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/cond-expec.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/recurrence.html">
         <span class="deptitle">
-        Conditional expectation</span>
+        Markov chains: recurrent states</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/rec-infinite-visits.html">
+        <span class="deptitle">
+        Markov chains: recurrent iff infinite visits</span>
     </a>
     </li>
 </ol>

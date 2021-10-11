@@ -1781,34 +1781,6 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rref-linindep.html"
 },
 {
-"type": "theoremdef",
-"title": "Identity matrix",
-"description": "The identity matrix is a matrix I such that AI = IA = A.",
-"uci": "/linear-algebra/matrices/identity",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity.html"
-},
-{
-"type": "theoremdef",
-"title": "Inverse of a matrix",
-"description": "The inverse of matrix A is a matrix B such that AB = BA = I.",
-"uci": "/linear-algebra/matrices/inverse",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inverse.html"
-},
-{
-"type": "theorem",
-"title": "Inverse of product",
-"description": "inv(AB) = inv(B)inv(A)",
-"uci": "/linear-algebra/matrices/inverse-of-product",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inverse-of-product.html"
-},
-{
-"type": "theorem",
-"title": "Full-rank square matrix in RREF is the identity matrix",
-"description": "Let A be an n by n matrix. If A is in RREF and all rows of A are non-zero, then A is the identity matrix.",
-"uci": "/linear-algebra/matrices/full-rank-square-rref-is-identity",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-square-rref-is-identity.html"
-},
-{
 "type": "theorem",
 "title": "Matrix multiplication distributes over addition",
 "description": "A(B+C) = AB + AC.",
@@ -1931,13 +1903,6 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop-inv.html"
 },
 {
-"type": "theorem",
-"title": "Elementary row operation is matrix pre-multiplication",
-"description": "Every elementary row operation has a corresponding invertible matrix R such that the result of applying the operation on a matrix A is RA.",
-"uci": "/linear-algebra/matrices/elementary-rowop-matrix",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop-matrix.html"
-},
-{
 "type": "theoremdef",
 "title": "Row equivalence of matrices",
 "description": "Matrices A and B are row equivalent iff B can be obtained from A by applying a finite number of elementary row operations to A.",
@@ -1956,6 +1921,40 @@
 "description": "Every matrix is row equivalent to a unique matrix in RREF.",
 "uci": "/linear-algebra/matrices/unique-rref",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/unique-rref.html"
+},
+{
+"type": "def",
+"title": "Identity matrix",
+"uci": "/linear-algebra/matrices/identity",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity.html"
+},
+{
+"type": "theorem",
+"title": "Identity matrix is identity of matrix product",
+"description": "The identity matrix is the unique matrix I satisfying (\u2200A, I = IA = A).",
+"uci": "/linear-algebra/matrices/identity-condition",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity-condition.html"
+},
+{
+"type": "theoremdef",
+"title": "Inverse of a matrix",
+"description": "The inverse of matrix A is a matrix B such that AB = BA = I.",
+"uci": "/linear-algebra/matrices/inverse",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inverse.html"
+},
+{
+"type": "theorem",
+"title": "Inverse of product",
+"description": "inv(AB) = inv(B)inv(A)",
+"uci": "/linear-algebra/matrices/inverse-of-product",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/inverse-of-product.html"
+},
+{
+"type": "theorem",
+"title": "Elementary row operation is matrix pre-multiplication",
+"description": "Every elementary row operation has a corresponding invertible matrix R such that the result of applying the operation on a matrix A is RA.",
+"uci": "/linear-algebra/matrices/elementary-rowop-matrix",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/elementary-rowop-matrix.html"
 },
 {
 "type": "theorem",
@@ -2019,12 +2018,6 @@
 },
 {
 "type": "theorem",
-"title": "A matrix is full-rank iff its determinant is non-0",
-"uci": "/linear-algebra/matrices/determinants/rank",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/rank.html"
-},
-{
-"type": "theorem",
 "title": "A set of dim(V) linearly independent vectors is a basis",
 "uci": "/linear-algebra/vector-spaces/basis/n-linindep-is-basis",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/n-linindep-is-basis.html"
@@ -2061,6 +2054,13 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis-of-fn.html"
 },
 {
+"type": "theorem",
+"title": "Matrix of linear transformation",
+"description": "Every linear transformation from F^m to F^n can be expressed as a matrix pre-multiplication. Conversely, a pre-multiplication by a matrix forms a linear transformation.",
+"uci": "/linear-algebra/linear-transformation/matrix",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix.html"
+},
+{
 "type": "theoremdef",
 "title": "Coordinatization over a basis",
 "description": "Let B be a basis of vector space V. Then every vector in V can be expressed uniquely as a finite linear combination of vectors in B. The coefficients of the linear combination are called the coordinates of that vector.",
@@ -2095,75 +2095,6 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/canonical-decomposition.html"
 },
 {
-"type": "theorem",
-"title": "Maximally linearly independent iff basis",
-"description": "A finite set is maximally linearly independent iff it is a basis.",
-"uci": "/linear-algebra/vector-spaces/basis/maximal-linindep-is-basis",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/maximal-linindep-is-basis.html"
-},
-{
-"type": "theorem",
-"title": "Linearly independent set can be expanded into a basis",
-"description": "If a set of vectors is linearly independent, a finite number of vectors can be added to it to make it a basis if the vector space has a finite-sized basis.",
-"uci": "/linear-algebra/vector-spaces/basis/expand-linindep-to-basis",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/expand-linindep-to-basis.html"
-},
-{
-"type": "theorem",
-"title": "Basis of range of linear transformation",
-"description": "If P is a basis of the kernel and P union Q is a basis of U, then T(Q) is a basis of T(U).",
-"uci": "/linear-algebra/linear-transformation/basis-of-range",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/basis-of-range.html"
-},
-{
-"type": "theorem",
-"title": "Full-rank square matrix is invertible",
-"description": "Let A be an n by n matrix. Then rank(A) = n iff A has an inverse.",
-"uci": "/linear-algebra/matrices/full-rank-inv",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-inv.html"
-},
-{
-"type": "theorem",
-"title": "AB = I implies BA = I",
-"uci": "/linear-algebra/matrices/product-equals-identity-implies-invertible",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/product-equals-identity-implies-invertible.html"
-},
-{
-"type": "theorem",
-"title": "Determinant of product is product of determinants",
-"description": "|AB| = |A||B|",
-"uci": "/linear-algebra/matrices/determinants/product",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/product.html"
-},
-{
-"type": "theoremdef",
-"title": "Orthogonal matrix",
-"description": "A matrix A is orthogonal iff A'A = I. Equivalently, A is orthogonal iff rows of A are orthonormal.",
-"uci": "/linear-algebra/matrices/orthogonal",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/orthogonal.html"
-},
-{
-"type": "theorem",
-"title": "Orthonormal basis change matrix",
-"description": "Let U and V be 2 orthonormal bases. Then the basis change matrix from U to V is orthogonal.",
-"uci": "/linear-algebra/inner-product-spaces/basis-changer",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/basis-changer.html"
-},
-{
-"type": "theorem",
-"title": "RREF([A|I]) = [I|inv(A)] iff A is invertible",
-"description": "This is an algorithm for finding the inverse of a matrix by calculating RREF.",
-"uci": "/linear-algebra/matrices/rref-inv",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rref-inv.html"
-},
-{
-"type": "theorem",
-"title": "Matrix of linear transformation",
-"description": "Every linear transformation from F^m to F^n can be expressed as a matrix pre-multiplication. Conversely, a pre-multiplication by a matrix forms a linear transformation.",
-"uci": "/linear-algebra/linear-transformation/matrix",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix.html"
-},
-{
 "type": "theoremdef",
 "title": "Eigenvalues and Eigenvectors",
 "description": "Let T be a linear transformation. If T(x) = kx is satisfied for some k and some x, then k is an eigenvalue and x is an eigenvector.",
@@ -2186,20 +2117,6 @@
 "title": "All eigenvalues of a symmetric operator are real",
 "uci": "/linear-algebra/eigenvectors/symmetric-real",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-real.html"
-},
-{
-"type": "theoremdef",
-"title": "Characteristic polynomial of a matrix",
-"description": "The characteristic polynomial of a matrix A is |xI - A|. Its roots are the eigenvalues of A.",
-"uci": "/linear-algebra/eigenvectors/char-poly",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/char-poly.html"
-},
-{
-"type": "theorem",
-"title": "Degree and monicness of a characteristic polynomial",
-"description": "Let A be an n by n matrix. The characteristic polynomial of A is a monic polynomial of degree n.",
-"uci": "/linear-algebra/eigenvectors/char-poly-degree-monic",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/char-poly-degree-monic.html"
 },
 {
 "type": "theorem",
@@ -2231,24 +2148,78 @@
 },
 {
 "type": "theorem",
-"title": "A is diagonalizable iff there are n linearly independent eigenvectors",
-"description": "Let A be an n by n matrix. Then A is diagonalizable iff A has n linearly independent eigenvectors.",
-"uci": "/linear-algebra/eigenvectors/diag-linindep",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/diag-linindep.html"
+"title": "Symmetric operator iff hermitian",
+"description": "Let L: V to V be a linear transformation and A be the square matrix associated with L. Then L is symmetric iff A is hermitian. Also, if T(u) = Au, then A is hermitian iff T is a symmetric operator.",
+"uci": "/linear-algebra/linear-transformation/symmetric-operator-matrix",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/symmetric-operator-matrix.html"
 },
 {
 "type": "theorem",
-"title": "Eigenpair of affine transformation",
-"description": "If (\u03bb, v) is an eigenpair of matrix A, then (a\u03bb+b, v) is an eigenpair of aA+bI.",
-"uci": "/linear-algebra/eigenvectors/affine",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/affine.html"
+"title": "Maximally linearly independent iff basis",
+"description": "A finite set is maximally linearly independent iff it is a basis.",
+"uci": "/linear-algebra/vector-spaces/basis/maximal-linindep-is-basis",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/maximal-linindep-is-basis.html"
 },
 {
 "type": "theorem",
-"title": "Eigenpair of power of a matrix",
-"description": "If (\u03bb, v) is an eigenpair of matrix A, then (\u03bb^k, v) is an eigenpair of A^k.",
-"uci": "/linear-algebra/eigenvectors/power",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/power.html"
+"title": "Linearly independent set can be expanded into a basis",
+"description": "If a set of vectors is linearly independent, a finite number of vectors can be added to it to make it a basis if the vector space has a finite-sized basis.",
+"uci": "/linear-algebra/vector-spaces/basis/expand-linindep-to-basis",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/expand-linindep-to-basis.html"
+},
+{
+"type": "theorem",
+"title": "Basis of range of linear transformation",
+"description": "If P is a basis of the kernel and P union Q is a basis of U, then T(Q) is a basis of T(U).",
+"uci": "/linear-algebra/linear-transformation/basis-of-range",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/basis-of-range.html"
+},
+{
+"type": "theorem",
+"title": "Full-rank square matrix in RREF is the identity matrix",
+"description": "Let A be an n by n matrix. If A is in RREF and all rows of A are non-zero, then A is the identity matrix.",
+"uci": "/linear-algebra/matrices/full-rank-square-rref-is-identity",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-square-rref-is-identity.html"
+},
+{
+"type": "theorem",
+"title": "A matrix is full-rank iff its determinant is non-0",
+"uci": "/linear-algebra/matrices/determinants/rank",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/rank.html"
+},
+{
+"type": "theoremdef",
+"title": "Characteristic polynomial of a matrix",
+"description": "The characteristic polynomial of a matrix A is |xI - A|. Its roots are the eigenvalues of A.",
+"uci": "/linear-algebra/eigenvectors/char-poly",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/char-poly.html"
+},
+{
+"type": "theorem",
+"title": "Degree and monicness of a characteristic polynomial",
+"description": "Let A be an n by n matrix. The characteristic polynomial of A is a monic polynomial of degree n.",
+"uci": "/linear-algebra/eigenvectors/char-poly-degree-monic",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/char-poly-degree-monic.html"
+},
+{
+"type": "theorem",
+"title": "Full-rank square matrix is invertible",
+"description": "Let A be an n by n matrix. Then rank(A) = n iff A has an inverse.",
+"uci": "/linear-algebra/matrices/full-rank-inv",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/full-rank-inv.html"
+},
+{
+"type": "theorem",
+"title": "AB = I implies BA = I",
+"uci": "/linear-algebra/matrices/product-equals-identity-implies-invertible",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/product-equals-identity-implies-invertible.html"
+},
+{
+"type": "theorem",
+"title": "Determinant of product is product of determinants",
+"description": "|AB| = |A||B|",
+"uci": "/linear-algebra/matrices/determinants/product",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/determinants/product.html"
 },
 {
 "type": "theorem",
@@ -2264,11 +2235,18 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-operator-has-n-ortho-eigenvectors.html"
 },
 {
+"type": "theoremdef",
+"title": "Orthogonal matrix",
+"description": "A matrix A is orthogonal iff A'A = I. Equivalently, A is orthogonal iff rows of A are orthonormal.",
+"uci": "/linear-algebra/matrices/orthogonal",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/orthogonal.html"
+},
+{
 "type": "theorem",
-"title": "Symmetric operator iff hermitian",
-"description": "Let L: V to V be a linear transformation and A be the square matrix associated with L. Then L is symmetric iff A is hermitian. Also, if T(u) = Au, then A is hermitian iff T is a symmetric operator.",
-"uci": "/linear-algebra/linear-transformation/symmetric-operator-matrix",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/symmetric-operator-matrix.html"
+"title": "Orthonormal basis change matrix",
+"description": "Let U and V be 2 orthonormal bases. Then the basis change matrix from U to V is orthogonal.",
+"uci": "/linear-algebra/inner-product-spaces/basis-changer",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/basis-changer.html"
 },
 {
 "type": "theorem",
@@ -2293,16 +2271,44 @@
 },
 {
 "type": "theorem",
+"title": "Matrix of orthonormal basis change",
+"description": "Let P and Q be orthonormal bases of U and V respectively. Then the transformation matrix of the basis-changer from P to Q is orthogonal.",
+"uci": "/linear-algebra/linear-transformation/matrix-of-orthonormal-basis-change",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix-of-orthonormal-basis-change.html"
+},
+{
+"type": "theorem",
+"title": "A is diagonalizable iff there are n linearly independent eigenvectors",
+"description": "Let A be an n by n matrix. Then A is diagonalizable iff A has n linearly independent eigenvectors.",
+"uci": "/linear-algebra/eigenvectors/diag-linindep",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/diag-linindep.html"
+},
+{
+"type": "theorem",
+"title": "RREF([A|I]) = [I|inv(A)] iff A is invertible",
+"description": "This is an algorithm for finding the inverse of a matrix by calculating RREF.",
+"uci": "/linear-algebra/matrices/rref-inv",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rref-inv.html"
+},
+{
+"type": "theorem",
+"title": "Eigenpair of affine transformation",
+"description": "If (\u03bb, v) is an eigenpair of matrix A, then (a\u03bb+b, v) is an eigenpair of aA+bI.",
+"uci": "/linear-algebra/eigenvectors/affine",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/affine.html"
+},
+{
+"type": "theorem",
 "title": "Bound on eigenvalues of sum of matrices",
 "uci": "/linear-algebra/eigenvectors/sum",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/sum.html"
 },
 {
 "type": "theorem",
-"title": "Matrix of orthonormal basis change",
-"description": "Let P and Q be orthonormal bases of U and V respectively. Then the transformation matrix of the basis-changer from P to Q is orthogonal.",
-"uci": "/linear-algebra/linear-transformation/matrix-of-orthonormal-basis-change",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix-of-orthonormal-basis-change.html"
+"title": "Eigenpair of power of a matrix",
+"description": "If (\u03bb, v) is an eigenpair of matrix A, then (\u03bb^k, v) is an eigenpair of A^k.",
+"uci": "/linear-algebra/eigenvectors/power",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/power.html"
 },
 {
 "type": "theorem",
@@ -2986,6 +2992,63 @@
 },
 {
 "type": "def",
+"title": "Markov chain",
+"uci": "/probability/markov-chains/markov-chain",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/markov-chain.html"
+},
+{
+"type": "def",
+"title": "Markov chains: recurrent states",
+"description": "A state is recurrent iff the probability of returning to it is 1.",
+"uci": "/probability/markov-chains/recurrence",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/recurrence.html"
+},
+{
+"type": "theorem",
+"title": "Markov chains: recurrent iff infinite visits",
+"description": "State i is recurrent iff we will visit it infinitely many times with probability 1.",
+"uci": "/probability/markov-chains/rec-infinite-visits",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/rec-infinite-visits.html"
+},
+{
+"type": "theorem",
+"title": "Chapman-Kolmogorov equation",
+"description": "Let P be the transition matrix of a markov chain. Then the probability of being in state j after t steps starting from state i is (P^t)[i,j].",
+"uci": "/probability/markov-chains/chap-kol-eqn",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/chap-kol-eqn.html"
+},
+{
+"type": "theoremdef",
+"title": "Markov chains: accessibility and state classes",
+"description": "Two states i and j in a markov chain are said to communicate iff P^n(i, j) > 0 and P^n(j, i) > 0. Communication is an equivalence relation, and the equivalence classes are called state classes.",
+"keywords": [
+"accessibility",
+"accessible",
+"communicate",
+"communicable",
+"irreducible",
+"irreducibility"
+],
+"uci": "/probability/markov-chains/state-classes",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/state-classes.html"
+},
+{
+"type": "theorem",
+"title": "Markov chains: recurrent state to acessible state",
+"description": "If i is a recurrent state of a markov chain and state j is accessible from state i, then the marov chain will eventually reach j from i.",
+"uci": "/probability/markov-chains/rec-to-other",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/rec-to-other.html",
+"status": "incomplete"
+},
+{
+"type": "def",
+"title": "Markov chains: positive recurrence",
+"description": "A recurrent state is called positive recurrent if the expected time to return to that state is finite.",
+"uci": "/probability/markov-chains/positive-rec",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/positive-rec.html"
+},
+{
+"type": "def",
 "title": "Median of a random variable",
 "description": "For a real-valued random variable X, m is a median iff P(X \u2264 m) \u2265 1/2 and P(X \u2265 m) \u2265 1/2.",
 "uci": "/probability/rand-vars/median/median",
@@ -3013,6 +3076,13 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/cdf-limit.html"
 },
 {
+"type": "def",
+"title": "Conditioning over random variable",
+"description": "Let X be a random variable and A be an event. Let g(x) = P(A|X=x). Then P(A|X) is defined as g(X).",
+"uci": "/probability/rand-vars/cond-over-rand-var",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/cond-over-rand-var.html"
+},
+{
 "type": "theorem",
 "title": "Distribution of sum of random variables",
 "uci": "/probability/rand-vars/distr-of-sum-of-rand-vars",
@@ -3024,6 +3094,26 @@
 "title": "Conditional expectation",
 "uci": "/probability/rand-vars/cond-expec",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/cond-expec.html"
+},
+{
+"type": "theorem",
+"title": "Law of total probability: E(Y) = E(E(Y|X))",
+"uci": "/probability/rand-vars/ltp3",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/ltp3.html",
+"status": "incomplete"
+},
+{
+"type": "theorem",
+"title": "Law of total probability: P(A) = E(P(A|X))",
+"uci": "/probability/rand-vars/ltp2",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/ltp2.html",
+"status": "incomplete"
+},
+{
+"type": "theorem",
+"title": "Law of total probability: decomposing expectation over countable events",
+"uci": "/probability/rand-vars/ltp1",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/ltp1.html"
 },
 {
 "type": "theoremdef",
@@ -3054,16 +3144,39 @@
 },
 {
 "type": "theorem",
-"title": "Conditional decomposition of expectation",
-"uci": "/probability/rand-vars/cond-expec-decomp",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/cond-expec-decomp.html"
-},
-{
-"type": "theorem",
 "title": "Linearity of expectation",
 "description": "Expectation of sum of random variables is sum of expectation of those random variables.",
 "uci": "/probability/rand-vars/linearity-of-expec",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/linearity-of-expec.html"
+},
+{
+"type": "theorem",
+"title": "Markov chains: recurrent iff expected number of visits is infinite",
+"description": "State i is recurrent iff the expected number of times we visit it is infinite.",
+"uci": "/probability/markov-chains/rec-n-visits",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/rec-n-visits.html"
+},
+{
+"type": "theorem",
+"title": "Markov chains: recurrence is a class property",
+"description": "In a state class, either all states are recurrent or no states are recurrent.",
+"uci": "/probability/markov-chains/rec-class",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/rec-class.html"
+},
+{
+"type": "theorem",
+"title": "Markov chains: recurrent class is sink",
+"description": "If a state class is recurrent, then no other class is accessible from it.",
+"uci": "/probability/markov-chains/rec-is-sink",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/rec-is-sink.html"
+},
+{
+"type": "theorem",
+"title": "Markov chains: finite sink is recurrent",
+"description": "In a markov chain, let I be a state class having a finite number of states. Then I is recurrent iff no other state class is accessible from I.",
+"uci": "/probability/markov-chains/finite-sink-is-rec",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/finite-sink-is-rec.html",
+"status": "incomplete"
 },
 {
 "type": "theorem",
@@ -3085,11 +3198,23 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/median/close-to-mean.html"
 },
 {
+"type": "def",
+"title": "Conditional variance",
+"uci": "/probability/rand-vars/variance/cond-var",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/variance/cond-var.html"
+},
+{
 "type": "theoremdef",
 "title": "Covariance of 2 random variables",
 "description": "Cov(X, Y) = E((X - E(X))(Y - E(Y))).",
 "uci": "/probability/rand-vars/variance/covariance",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/variance/covariance.html"
+},
+{
+"type": "theorem",
+"title": "Var(Y) = Var(E(Y|X)) + E(Var(Y|X))",
+"uci": "/probability/rand-vars/variance/cond-decomp",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/variance/cond-decomp.html"
 },
 {
 "type": "theorem",
@@ -3174,6 +3299,13 @@
 "uci": "/analysis/nonneg-dd-func-with-2-zeros",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/analysis/nonneg-dd-func-with-2-zeros.html",
 "status": "incomplete"
+},
+{
+"type": "theoremdef",
+"title": "Limit of a function at a point",
+"description": "Limit of a function at a point",
+"uci": "/analysis/limit",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/analysis/limit.html"
 },
 {
 "type": "theorem",

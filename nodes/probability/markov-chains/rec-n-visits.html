@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>Markov chains: recurrent iff expected number of visits is infinite - TheoremDep</title>
+<meta name="description" content="State i is recurrent iff the expected number of times we visit it is infinite." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" aria-label="Search" type="text" autocomplete="off" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Markov chains: recurrent iff expected number of visits is infinite </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/markov-chain.html">
+        <span class="deptitle">
+        Markov chain</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/recurrence.html">
+        <span class="deptitle">
+        Markov chains: recurrent states</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/linearity-of-expec.html">
+        <span class="deptitle">
+        Linearity of expectation</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p><span class="invisible">
+$\newcommand{\E}{\operatorname{E}}$
+</span>
+Let $X = [X_0, X_1, \ldots]$ be a markov chain with transition function $P$.
+For state $i$, define $R_i$ and $N_i$ as
+\[ R_i = \bigvee_{t=1}^{\infty} (X_t = i), \]
+\[ N_i = \sum_{t=0}^{\infty} \begin{cases}
+1 &amp; \textrm{ if } X_t = i \\ 0 &amp; \textrm{ otherwise}
+\end{cases}. \]
+Intuitively, $N_i$ is the number of times we visit $i$. Then
+\[ \frac{1}{1 - \Pr(R_i \mid X_0 = i)} = \E(N_i \mid X_0 = i) = \sum_{t=0}^{\infty} P^{(t)}(i, i). \]
+This means that $i$ is recurrent iff $\E(N_i \mid X_0 = i)$ is infinite.
+(The sum $\sum_{t=1}^{\infty} P^{(t)}(i, i)$ is a convenient way to compute $\E(N_i \mid X_0 = i)$.)</p>
+<h2>Proof</h2>
+<p>Let $T_i$ be the first time we revisit $i$, i.e.,
+\[ T_i = \min_{t \ge 1} (X_t = i). \]
+Note that $\overline{R_i} \iff T_i = \infty$
+(intuitively, $R_i$ is the event that we visit $i$ at time $t$ for some $t \ge 1$).</p>
+<p>\begin{align}
+&amp; \E(N_i \mid X_0 = i)
+\\ &amp;= \E(N_i \mid X_0 = i, T_i = \infty)\Pr(T_i = \infty \mid X_0 = i)
+    \\ &amp;\quad+ \sum_{t=1}^{\infty} \E(N_i \mid X_0 = i, T_i = t)\Pr(T_i = t \mid X_0 = i)
+\\ &amp;= \Pr(T_i = \infty \mid X_0 = i)
+    \\ &amp;\quad+ \sum_{t=1}^{\infty} (1 + \E(N_i \mid X_0 = i))\Pr(T_i = t \mid X_0 = i)
+    \tag{$\begin{array}{ll}\textrm{by markov property} \\ \textrm{and time homogeneity}\end{array}$}
+\\ &amp;= \Pr(T_i = \infty \mid X_0 = i)
+    \\ &amp;\quad+ (1 + \E(N_i \mid X_0 = i))\Pr(T_i \neq \infty \mid X_0 = i)
+\\ &amp;= 1 + \E(N_i \mid X_0 = i)\Pr(T_i \neq \infty \mid X_0 = i)
+\\ &amp;= 1 + \E(N_i \mid X_0 = i)\Pr(R_i \mid X_0 = i).
+\end{align}
+Hence,
+\[ \E(N_i \mid X_0 = i) = \frac{1}{1 - \Pr(R_i \mid X_0 = 1)}. \]</p>
+<p>Let
+\[ A_{i,t} = \begin{cases}
+1 &amp; \textrm{ if } X_t = i \\ 0 &amp; \textrm{ otherwise}
+\end{cases}. \]
+Then $N_i = \sum_{t=0}^{\infty} A_{i,t}$.</p>
+<p>\begin{align}
+&amp; \E(N_i \mid X_0 = i)
+\\ &amp;= \sum_{t=0}^{\infty} \E(A_{i,t} \mid X_0 = i)
+    \tag{linearity of expectation}
+\\ &amp;= \sum_{t=0}^{\infty} \Pr(X_t = i \mid X_0 = i)
+\\ &amp;= \sum_{t=0}^{\infty} P^{(t)}(i, i).
+\end{align}</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/rec-class.html">
+        <span class="deptitle">
+        Markov chains: recurrence is a class property</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/finite-sink-is-rec.html">
+        <span class="deptitle">
+        Markov chains: finite sink is recurrent</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 8</li><li>Number of transitive dependencies: 25</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/analysis/topological-space</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/countable-set</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/measure-theory/linearity-of-lebesgue-integral</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/measure-theory/lebesgue-integral</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra.html">
+        <span class="deptitle">
+        σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/generated-sigma-algebra.html">
+        <span class="deptitle">
+        Generated σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/borel-algebra.html">
+        <span class="deptitle">
+        Borel algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measurable-func.html">
+        <span class="deptitle">
+        Measurable function</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/real-borel-algebra-generators.html">
+        <span class="deptitle">
+        Generators of the real Borel algebra</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measure.html">
+        <span class="deptitle">
+        Measure</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra-closed-under-intersection.html">
+        <span class="deptitle">
+        σ-algebra is closed under countable intersections</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+        <span class="deptitle">
+        Group</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+        <span class="deptitle">
+        Ring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+        <span class="deptitle">
+        Field</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+        <span class="deptitle">
+        Vector Space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html">
+        <span class="deptitle">
+        Semiring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+        <span class="deptitle">
+        Matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/probability.html">
+        <span class="deptitle">
+        Probability</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/cond-prob.html">
+        <span class="deptitle">
+        Conditional probability</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var.html">
+        <span class="deptitle">
+        Random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/markov-chain.html">
+        <span class="deptitle">
+        Markov chain</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/recurrence.html">
+        <span class="deptitle">
+        Markov chains: recurrent states</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/expected-value.html">
+        <span class="deptitle">
+        Expected value of a random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/linearity-of-expec.html">
+        <span class="deptitle">
+        Linearity of expectation</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

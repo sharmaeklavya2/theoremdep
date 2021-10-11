@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>Markov chain - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" aria-label="Search" type="text" autocomplete="off" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Markov chain </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var.html">
+        <span class="deptitle">
+        Random variable</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/cond-prob.html">
+        <span class="deptitle">
+        Conditional probability</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+        <span class="deptitle">
+        Matrix</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p><span class="invisible">
+$\newcommand{\Xvec}{\mathbf{X}}$
+</span>
+For $t \in \mathbb{Z}_{\ge 0}$, let $X_t$ be a discrete random variable having support $D$.
+Then the sequence $\Xvec = [X_0, X_1, X_2, \ldots]$ is called a
+<em>discrete-space discrete-time markov chain</em> (usually just called a <em>markov chain</em>)
+iff $\forall t \ge 0$, we have
+\[ \Pr\left(X_{t+1} = i_{t+1} \mid \bigvee_{j=1}^t (X_j = i_j)\right)
+    = \Pr(X_{t+1} = i_{t+1} \mid X_t = i_t). \]
+$D$ is called the state space of $\Xvec$.
+If $D$ is infinite, then $\Xvec$ is called an infinite-state markov chain.
+If $D$ is finite, we can assume without loss of generality that $D = \{1, 2, \ldots, n\}$.
+Then $\Xvec$ is called an $n$-state markov chain.</p>
+<p>$\Xvec$ is said to be <em>time-homogeneous</em> iff $\forall t \ge 0$, $\forall i \in D$, $\forall j \in D$,
+$\Pr(X_{t+2} = j \mid X_{t+1} = i) = \Pr(X_{t+1} = j \mid X_t = i)$.
+We will assume that markov chains are time-homogeneous unless specified otherwise.
+For a time-homogenous markov chain, let $P(i, j) = \Pr(X_1 = j \mid X_0 = i)$.
+Then $P$ is called the <em>single-step transition function</em> of $\Xvec$
+(usually just called <em>transition function</em>).
+For any non-negative integer $n$, define $P^{(n)}(i, j) = \Pr(X_n = j \mid X_0 = i)$.
+Then $P$ is called the <em>$n$-step transition function</em> of $\Xvec$.
+Note that $P^{(1)} = P$.
+If $D$ is discrete, $P^{(n)}$ is often denoted as a matrix,
+where $P^{(n)}_{i,j} = P^{(n)}(i, j)$.
+This matrix is called the <em>$n$-step transition matrix</em> of $\Xvec$.</p>
+<h2>Basic facts about markov chains</h2>
+<p>\[ \sum_{j \in D} P(i, j) = \sum_{j \in D} \Pr(X_1 = j \mid X_0 = i) = 1. \]
+This implies that if $P$ is a matrix, then each row sums to 1.</p>
+<p>Let $X$ be a markov chain with state space $\{1, 2, \ldots, n\}$.
+Let $x$ and $y$ be column vectors in $[0, 1]^n$ where
+$x_i = \Pr(X_t = i)$ and $y_i = \Pr(X_{t+1} = i)$.
+Then $y = P^Tx$, because
+\[ y_j = \Pr(X_{t+1} = j) = \sum_{i=1}^n \Pr(X_{t+1} = j \mid X_t = i)\Pr(X_t = i)
+    = \sum_{i=1}^n P_{i,j}x_i = (P^Tx)_j. \]</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/positive-rec.html">
+        <span class="deptitle">
+        Markov chains: positive recurrence</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/rec-to-other.html">
+        <span class="deptitle">
+        Markov chains: recurrent state to acessible state</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/chap-kol-eqn.html">
+        <span class="deptitle">
+        Chapman-Kolmogorov equation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/recurrence.html">
+        <span class="deptitle">
+        Markov chains: recurrent states</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/rec-infinite-visits.html">
+        <span class="deptitle">
+        Markov chains: recurrent iff infinite visits</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/rec-class.html">
+        <span class="deptitle">
+        Markov chains: recurrence is a class property</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/finite-sink-is-rec.html">
+        <span class="deptitle">
+        Markov chains: finite sink is recurrent</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/rec-is-sink.html">
+        <span class="deptitle">
+        Markov chains: recurrent class is sink</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/state-classes.html">
+        <span class="deptitle">
+        Markov chains: accessibility and state classes</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/rec-n-visits.html">
+        <span class="deptitle">
+        Markov chains: recurrent iff expected number of visits is infinite</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 6</li><li>Number of transitive dependencies: 17</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/analysis/topological-space</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/countable-set</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra.html">
+        <span class="deptitle">
+        σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/generated-sigma-algebra.html">
+        <span class="deptitle">
+        Generated σ-algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/borel-algebra.html">
+        <span class="deptitle">
+        Borel algebra</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measurable-func.html">
+        <span class="deptitle">
+        Measurable function</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/real-borel-algebra-generators.html">
+        <span class="deptitle">
+        Generators of the real Borel algebra</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/measure.html">
+        <span class="deptitle">
+        Measure</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/measure-theory/sigma-algebra-closed-under-intersection.html">
+        <span class="deptitle">
+        σ-algebra is closed under countable intersections</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+        <span class="deptitle">
+        Group</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+        <span class="deptitle">
+        Ring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html">
+        <span class="deptitle">
+        Semiring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+        <span class="deptitle">
+        Matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/probability.html">
+        <span class="deptitle">
+        Probability</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/cond-prob.html">
+        <span class="deptitle">
+        Conditional probability</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/rand-vars/rand-var.html">
+        <span class="deptitle">
+        Random variable</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>
