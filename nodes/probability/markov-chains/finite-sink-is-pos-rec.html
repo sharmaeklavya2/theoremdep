@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Markov chains: recurrent states - TheoremDep</title>
-<meta name="description" content="A state is recurrent iff the probability of returning to it is 1." />
+<title>Markov chains: finite sink is positive recurrent - TheoremDep</title>
+<meta name="description" content="If no other state class is accessible from a finite state class J, then J is positive recurrent." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,7 +26,7 @@
 </nav>
 
 <div id="main">
-<h1> Markov chains: recurrent states </h1>
+<h1> Markov chains: finite sink is positive recurrent </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
@@ -36,19 +36,12 @@
         Markov chain</span>
     </a>
     </li>
-</ol>
-
-<div class="horizontal-rule"></div>
-<p>Let $X = [X_0, X_1, \ldots]$ be a markov chain.
-Let $R_i = \bigvee_{t=1}^{\infty} (X_t = i)$,
-i.e., $R_i$ is the event that we'll enter state $i$ at some time $t \ge 1$.
-Then state $i$ is said to be recurrent iff $\Pr(R_i \mid X_0 = i) = 1$.
-Intuitively, this means state $i$ is recurrent iff
-we will always come back to state $i$ if we start from it.</p>
-
-<div class="horizontal-rule"></div>
-<h2> Dependency for: </h2>
-<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/state-classes.html">
+        <span class="deptitle">
+        Markov chains: accessibility and state classes</span>
+    </a>
+    </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/positive-rec.html">
         <span class="deptitle">
@@ -56,50 +49,38 @@ we will always come back to state $i$ if we start from it.</p>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/rec-to-other.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/pos-rec-class.html">
         <span class="deptitle">
-        Markov chains: recurrent state to acessible state</span>
-<span class="doc-status">(incomplete)</span>    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/rec-infinite-visits.html">
-        <span class="deptitle">
-        Markov chains: recurrent iff infinite visits</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/long-run-prop-vs-time-to-reenter.html">
-        <span class="deptitle">
-        Markov chains: long run proportion is inverse of time to reenter</span>
-<span class="doc-status">(incomplete)</span>    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/rec-class.html">
-        <span class="deptitle">
-        Markov chains: recurrence is a class property</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/finite-sink-is-rec.html">
-        <span class="deptitle">
-        Markov chains: finite sink is recurrent</span>
-<span class="doc-status">(incomplete)</span>    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/rec-is-sink.html">
-        <span class="deptitle">
-        Markov chains: recurrent class is sink</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/rec-n-visits.html">
-        <span class="deptitle">
-        Markov chains: recurrent iff expected number of visits is infinite</span>
+        Markov chains: positive recurrence is a class property</span>
     </a>
     </li>
 </ol>
+
+<div class="horizontal-rule"></div>
+<p><span class="invisible">
+$\newcommand{\E}{\operatorname{E}}$
+</span>
+Let $X = [X_0, X_1, \ldots]$ be a markov chain.
+Let $J$ be a state class containing a finite number of states.
+If no other state class is accessible from $J$, then all states in $J$ are positive recurrent.</p>
+<h2>Proof</h2>
+<p>Let $i \in J$. Since only states in $J$ are accessible from $i$,
+and there are a finite number of states in $J$,
+\[ \Pr\left(\sum_{j \in J} \pi_j = 1 \mid X_0 = i\right). \]</p>
+<p>Let $T_j = \min_{t \ge 1} (X_t = j)$ and $m_j = \E(T_j \mid X_0 = j)$.
+Suppose no state in $J$ is positive recurrent.
+Then $\forall j \in J$, $m_j = \infty$.
+Hence, $\forall j \in J$, $\Pr(\pi_j = 0 \mid X_0 = i) = 1$,
+which implies $\Pr(\sum_{j \in J} \pi_j = 0 \mid X_0 = i)$,
+which is a contradiction.
+Hence, some state in $J$ is positive recurrent.
+Since positive recurrence is a class property,
+all states in $J$ are positive recurrent.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul><li>Depth: 7</li><li>Number of transitive dependencies: 18</li></ul>
+<ul><li>Depth: 11</li><li>Number of transitive dependencies: 28</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -109,6 +90,12 @@ we will always come back to state $i$ if we start from it.</p>
     </li>
     <li>
     <span class="deptitleuci missing">/sets-and-relations/countable-set</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/poset</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/sets-and-relations/equivalence-relation</span>
     </li>
     <li>
     <span class="deptitleuci missing">/sets-and-relations/de-morgan-laws</span>
@@ -180,6 +167,12 @@ we will always come back to state $i$ if we start from it.</p>
     </a>
     </li>
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/identity.html">
+        <span class="deptitle">
+        Identity matrix</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/prob-and-events/probability.html">
         <span class="deptitle">
         Probability</span>
@@ -201,6 +194,48 @@ we will always come back to state $i$ if we start from it.</p>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/markov-chain.html">
         <span class="deptitle">
         Markov chain</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/long-run-prop.html">
+        <span class="deptitle">
+        Markov chains: long run proportion of a state</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/recurrence.html">
+        <span class="deptitle">
+        Markov chains: recurrent states</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/chap-kol-eqn.html">
+        <span class="deptitle">
+        Chapman-Kolmogorov equation</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/state-classes.html">
+        <span class="deptitle">
+        Markov chains: accessibility and state classes</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/long-run-prop-vs-time-to-reenter.html">
+        <span class="deptitle">
+        Markov chains: long run proportion is inverse of time to reenter</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/positive-rec.html">
+        <span class="deptitle">
+        Markov chains: positive recurrence</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/pos-rec-class.html">
+        <span class="deptitle">
+        Markov chains: positive recurrence is a class property</span>
     </a>
     </li>
 </ol>

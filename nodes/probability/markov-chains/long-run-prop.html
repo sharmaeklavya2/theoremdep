@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Markov chains: recurrent states - TheoremDep</title>
-<meta name="description" content="A state is recurrent iff the probability of returning to it is 1." />
+<title>Markov chains: long run proportion of a state - TheoremDep</title>
+<meta name="description" content="The long run proportion of a state in a markov chain is the proportion of time spent in that state." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,7 +26,7 @@
 </nav>
 
 <div id="main">
-<h1> Markov chains: recurrent states </h1>
+<h1> Markov chains: long run proportion of a state </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
@@ -40,62 +40,20 @@
 
 <div class="horizontal-rule"></div>
 <p>Let $X = [X_0, X_1, \ldots]$ be a markov chain.
-Let $R_i = \bigvee_{t=1}^{\infty} (X_t = i)$,
-i.e., $R_i$ is the event that we'll enter state $i$ at some time $t \ge 1$.
-Then state $i$ is said to be recurrent iff $\Pr(R_i \mid X_0 = i) = 1$.
-Intuitively, this means state $i$ is recurrent iff
-we will always come back to state $i$ if we start from it.</p>
+Let $N_{j,n}$ be the number of times the markov chain is in state $j$ in the first $n$ steps, i.e.,
+\[ N_{j,n} = \sum_{t=0}^{n-1} \begin{cases}1 &amp; \textrm{ if }X_t = j \\ 0 &amp; \textrm{ if }X_t \neq j\end{cases}. \]
+Define
+\[ \pi_j = \lim_{n \to \infty} \frac{N_{j,n}}{n}. \]
+Then $\pi_j$ is called the long-run proportion of state $j$.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/positive-rec.html">
-        <span class="deptitle">
-        Markov chains: positive recurrence</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/rec-to-other.html">
-        <span class="deptitle">
-        Markov chains: recurrent state to acessible state</span>
-<span class="doc-status">(incomplete)</span>    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/rec-infinite-visits.html">
-        <span class="deptitle">
-        Markov chains: recurrent iff infinite visits</span>
-    </a>
-    </li>
-    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/long-run-prop-vs-time-to-reenter.html">
         <span class="deptitle">
         Markov chains: long run proportion is inverse of time to reenter</span>
 <span class="doc-status">(incomplete)</span>    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/rec-class.html">
-        <span class="deptitle">
-        Markov chains: recurrence is a class property</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/finite-sink-is-rec.html">
-        <span class="deptitle">
-        Markov chains: finite sink is recurrent</span>
-<span class="doc-status">(incomplete)</span>    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/rec-is-sink.html">
-        <span class="deptitle">
-        Markov chains: recurrent class is sink</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/rec-n-visits.html">
-        <span class="deptitle">
-        Markov chains: recurrent iff expected number of visits is infinite</span>
-    </a>
     </li>
 </ol>
 <h2> Info: </h2>

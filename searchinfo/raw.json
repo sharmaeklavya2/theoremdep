@@ -2998,6 +2998,13 @@
 },
 {
 "type": "def",
+"title": "Markov chains: long run proportion of a state",
+"description": "The long run proportion of a state in a markov chain is the proportion of time spent in that state.",
+"uci": "/probability/markov-chains/long-run-prop",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/long-run-prop.html"
+},
+{
+"type": "def",
 "title": "Markov chains: recurrent states",
 "description": "A state is recurrent iff the probability of returning to it is 1.",
 "uci": "/probability/markov-chains/recurrence",
@@ -3034,6 +3041,14 @@
 },
 {
 "type": "theorem",
+"title": "Markov chains: long run proportion is inverse of time to reenter",
+"description": "Let m_j be the expected time to return to state j starting from state j. Let i be a state that communicates with j. Then the long run proportion of state j starting from i is 1/m_j.",
+"uci": "/probability/markov-chains/long-run-prop-vs-time-to-reenter",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/long-run-prop-vs-time-to-reenter.html",
+"status": "incomplete"
+},
+{
+"type": "theorem",
 "title": "Markov chains: recurrent state to acessible state",
 "description": "If i is a recurrent state of a markov chain and state j is accessible from state i, then the marov chain will eventually reach j from i.",
 "uci": "/probability/markov-chains/rec-to-other",
@@ -3046,6 +3061,20 @@
 "description": "A recurrent state is called positive recurrent if the expected time to return to that state is finite.",
 "uci": "/probability/markov-chains/positive-rec",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/positive-rec.html"
+},
+{
+"type": "theorem",
+"title": "Markov chains: positive recurrence is a class property",
+"description": "If a state is positive recurrent, then all states in its class are positive recurrent.",
+"uci": "/probability/markov-chains/pos-rec-class",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/pos-rec-class.html"
+},
+{
+"type": "theorem",
+"title": "Markov chains: finite sink is positive recurrent",
+"description": "If no other state class is accessible from a finite state class J, then J is positive recurrent.",
+"uci": "/probability/markov-chains/finite-sink-is-pos-rec",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/probability/markov-chains/finite-sink-is-pos-rec.html"
 },
 {
 "type": "def",
