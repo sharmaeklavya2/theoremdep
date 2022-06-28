@@ -1089,19 +1089,6 @@
 },
 {
 "type": "theorem",
-"title": "Incrementing a linearly independent set",
-"keywords": [
-"increment",
-"expand",
-"increase",
-"grow"
-],
-"description": "If S is linearly independent and v is not a linear combination of S, then S+{v} is linearly independent.",
-"uci": "/linear-algebra/vector-spaces/linindep-increment",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-increment.html"
-},
-{
-"type": "theorem",
 "title": "Zeros in vector space",
 "description": "0v = 0, a0 = 0, (av = 0 iff a=0 or v=0).",
 "uci": "/linear-algebra/vector-spaces/zero",
@@ -1133,6 +1120,19 @@
 "description": "If S has a linearly dependent element v, then span(S-{v}) = span(S).",
 "uci": "/linear-algebra/vector-spaces/span-decrement",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span-decrement.html"
+},
+{
+"type": "theorem",
+"title": "Incrementing a linearly independent set",
+"keywords": [
+"increment",
+"expand",
+"increase",
+"grow"
+],
+"description": "If S is linearly independent and v is not a linear combination of S, then S+{v} is linearly independent.",
+"uci": "/linear-algebra/vector-spaces/linindep-increment",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-increment.html"
 },
 {
 "type": "def",
@@ -1986,7 +1986,7 @@
 },
 {
 "type": "theorem",
-"title": "Linearly independent set is smaller than a span",
+"title": "Linearly independent set is not bigger than a span",
 "description": "The size of every finite linearly independent subset of a vector space is less than or equal to the size of every spanning set of that vector space.",
 "uci": "/linear-algebra/vector-spaces/linindep-is-smaller-than-span",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-is-smaller-than-span.html"
