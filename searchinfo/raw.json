@@ -1136,6 +1136,26 @@
 },
 {
 "type": "def",
+"title": "Linear transformation",
+"description": "A linear transformation is a linear function mapping one vector space to another.",
+"uci": "/linear-algebra/linear-transformation/linear-transformation",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/linear-transformation.html"
+},
+{
+"type": "theorem",
+"title": "Composition of linear transformations",
+"description": "Composition of linear transformations is a linear transformation.",
+"uci": "/linear-algebra/linear-transformation/composition",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/composition.html"
+},
+{
+"type": "theorem",
+"title": "Vector space isomorphism is an equivalence relation",
+"uci": "/linear-algebra/linear-transformation/isomorphism-equiv",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/isomorphism-equiv.html"
+},
+{
+"type": "def",
 "title": "Inner product space",
 "description": "An inner product space is a vector space equipped with an inner product operator, which is an abstract generalization of the dot product.",
 "uci": "/linear-algebra/inner-product-spaces/inner-product-space",
@@ -1147,20 +1167,6 @@
 "description": "< u, av > = conj(a) < u, v > and < u, v1+v2 > = < u, v1 > + < u, v2 >",
 "uci": "/linear-algebra/inner-product-spaces/antilin-in-2nd",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/antilin-in-2nd.html"
-},
-{
-"type": "theorem",
-"title": "Pythagorean theorem",
-"description": "If < u, v > = 0, < u, u > + < v, v > = < u+v, u+v >.",
-"uci": "/linear-algebra/inner-product-spaces/pythagorean-theorem",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/pythagorean-theorem.html"
-},
-{
-"type": "def",
-"title": "Norm",
-"description": "norm(x) = sqrt(< x, x >)",
-"uci": "/linear-algebra/inner-product-spaces/norm",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/norm.html"
 },
 {
 "type": "def",
@@ -1198,10 +1204,17 @@
 },
 {
 "type": "theorem",
-"title": "Triangle inequality",
-"description": "|x+y| \u2264 |x| + |y|",
-"uci": "/linear-algebra/inner-product-spaces/triangle-inequality",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/triangle-inequality.html"
+"title": "Pythagorean theorem",
+"description": "If < u, v > = 0, < u, u > + < v, v > = < u+v, u+v >.",
+"uci": "/linear-algebra/inner-product-spaces/pythagorean-theorem",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/pythagorean-theorem.html"
+},
+{
+"type": "theorem",
+"title": "Coordinatization over orthogonal vectors",
+"description": "Let (x1, x2, ..., xn) be orthogonal vectors. Coordinate of v along xi is (v.xi)/(xi.x).",
+"uci": "/linear-algebra/inner-product-spaces/coordinatization",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/coordinatization.html"
 },
 {
 "type": "theorem",
@@ -1212,17 +1225,10 @@
 },
 {
 "type": "theorem",
-"title": "Coordinatization over orthogonal vectors",
-"description": "Let (x1, x2, ..., xn) be orthogonal vectors. Coordinate of v along xi is (v.xi)/(xi.x).",
-"uci": "/linear-algebra/inner-product-spaces/coordinatization",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/coordinatization.html"
-},
-{
-"type": "def",
-"title": "Linear transformation",
-"description": "A linear transformation is a linear function mapping one vector space to another.",
-"uci": "/linear-algebra/linear-transformation/linear-transformation",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/linear-transformation.html"
+"title": "Triangle inequality",
+"description": "|x+y| \u2264 |x| + |y|",
+"uci": "/linear-algebra/inner-product-spaces/triangle-inequality",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/triangle-inequality.html"
 },
 {
 "type": "def",
@@ -1230,19 +1236,6 @@
 "description": "A linear transformation L is a symmetric operator iff L(u)v = uL(v).",
 "uci": "/linear-algebra/linear-transformation/symmetric-operator",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/symmetric-operator.html"
-},
-{
-"type": "theorem",
-"title": "Composition of linear transformations",
-"description": "Composition of linear transformations is a linear transformation.",
-"uci": "/linear-algebra/linear-transformation/composition",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/composition.html"
-},
-{
-"type": "theorem",
-"title": "Vector space isomorphism is an equivalence relation",
-"uci": "/linear-algebra/linear-transformation/isomorphism-equiv",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/isomorphism-equiv.html"
 },
 {
 "type": "theorem",
