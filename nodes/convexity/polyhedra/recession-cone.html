@@ -39,7 +39,7 @@
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/direction.html">
         <span class="deptitle">
-        Direction of a convex set</span>
+        Direction of a convex set and Recession cone</span>
     </a>
     </li>
     <li>
@@ -56,16 +56,16 @@ be a non-empty polyhedron.
 Let $Q$ be the set of all directions of $P$.
 Let $R = \{x: (a_i^Tx \ge 0, \forall i \in I) \textrm{ and } (a_i^Tx = 0, \forall i \in E)\}$.
 Then $Q = R$.
-$Q$ is called the recession cone of $P$,
-since $R$ is a cone.</p>
+$Q$ is called the recession cone of $P$, since $R$ is a cone.</p>
+<p>Furthermore, $d \in \mathbb{R}^n$ is a direction of $P$ iff
+for some $x \in P$, we have $\{x + \lambda d: \lambda \ge 0\} \subseteq P$.</p>
 <h2>Proof that $R \subseteq Q$</h2>
 <p>Let $d \in R$. Let $x \in P$. Let $\lambda \ge 0$.
 Then $a_i^T(x + \lambda d) = a_i^Tx + \lambda a_i^Td = a_i^Tx$.
 Hence, $x + \lambda d \in P$ for all $x \in P$ and $\lambda \ge 0$.
 Hence, $d \in Q$.</p>
-<h2>Proof that $Q \subseteq R$</h2>
-<p>Let $d \in Q$ and $x \in P$.
-Then $\forall \lambda \ge 0$, $x + \lambda d \in P$.</p>
+<h2>Proof that $Q \subseteq R$ and condition for direction</h2>
+<p>Let $x \in P$ and $\{x + \lambda d: \lambda \ge 0\} \subseteq P$.</p>
 <p>Let $i \in E$. Then $\forall \lambda \ge 0, a_i^T(x + \lambda d) = b_i$,
 so $\forall \lambda \ge 0, \lambda a_i^Td = b_i - a_i^Tx = 0$.
 Hence, $a_i^Td = 0$.</p>
@@ -73,24 +73,10 @@ Hence, $a_i^Td = 0$.</p>
 so $\forall \lambda \ge 0, \lambda a_i^Td \ge b_i - a_i^Tx$.
 Suppose $a_i^Td &lt; 0$. Then $\forall \lambda \ge 0, \lambda \le (b_i - a_i^Tx)/(a_i^Td)$.
 This is a contradiction. Hence, $a_i^Td \ge 0$.</p>
-<p>Hence, $d \in R$.</p>
+<p>Hence, $d \in R$. Hence, $Q \subseteq R$.</p>
 
 <div class="horizontal-rule"></div>
-<h2> Dependency for: </h2>
-<ol class="deplist">
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/orth-extr-dir.html">
-        <span class="deptitle">
-        Extreme directions of polyhedron in positive orthant</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/orth-repr.html">
-        <span class="deptitle">
-        Representing a point in polyhedron in positive orthant</span>
-    </a>
-    </li>
-</ol>
+<h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
 <ul><li>Depth: 7</li><li>Number of transitive dependencies: 11</li></ul>
 
@@ -160,7 +146,7 @@ This is a contradiction. Hence, $a_i^Td \ge 0$.</p>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/direction.html">
         <span class="deptitle">
-        Direction of a convex set</span>
+        Direction of a convex set and Recession cone</span>
     </a>
     </li>
 </ol>

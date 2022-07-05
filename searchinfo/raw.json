@@ -2898,9 +2898,9 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/extreme-point-condition.html"
 },
 {
-"type": "def",
-"title": "Direction of a convex set",
-"description": "d is a direction of a convex set S iff \u2200 x \u2208 S, {x + \u03bbd: \u03bb \u2265 0} \u2286 S.",
+"type": "theoremdef",
+"title": "Direction of a convex set and Recession cone",
+"description": "d is a direction of a convex set S iff \u2200 x \u2208 S, {x + \u03bbd: \u03bb \u2265 0} \u2286 S. The recession cone of S is the set of all directions of S. The recession cone is a convex cone.",
 "uci": "/convexity/direction",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/direction.html"
 },
@@ -2919,10 +2919,17 @@
 },
 {
 "type": "theorem",
-"title": "Extreme directions of polyhedron in positive orthant",
-"description": "Let P be a polyhedron in the positive orthant. Then the normalized extreme directions of P are the extreme points of another polytope.",
-"uci": "/convexity/polyhedra/orth-extr-dir",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/orth-extr-dir.html"
+"title": "Extreme direction of convex cone as extreme point of intersection with hyperplane",
+"description": "Let C be a convex cone. Then for some hyperplane H, extreme directions of C correspond to extreme points of C\u2229H.",
+"uci": "/convexity/extdir-of-ccone-as-extp-of-inter",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/extdir-of-ccone-as-extp-of-inter.html"
+},
+{
+"type": "theorem",
+"title": "Representing point in polyhedral cone",
+"description": "A point in a polyhedral cone can be represented as a non-negative combination of extreme directions.",
+"uci": "/convexity/polyhedra/cone-repr",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/cone-repr.html"
 },
 {
 "type": "theorem",

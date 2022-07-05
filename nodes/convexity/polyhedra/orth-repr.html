@@ -31,9 +31,21 @@
  </h2>
 <ol class="deplist">
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/polyhedron.html">
+        <span class="deptitle">
+        Polyhedral set</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bfs.html">
         <span class="deptitle">
         Basic feasible solutions</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/direction.html">
+        <span class="deptitle">
+        Direction of a convex set and Recession cone</span>
     </a>
     </li>
     <li>
@@ -43,9 +55,21 @@
     </a>
     </li>
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rank.html">
+        <span class="deptitle">
+        Rank of a matrix</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bfs-existence.html">
         <span class="deptitle">
         Condition for existence of BFS in a polyhedron</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/cone-repr.html">
+        <span class="deptitle">
+        Representing point in polyhedral cone</span>
     </a>
     </li>
     <li>
@@ -55,39 +79,9 @@
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/transitivity.html">
         <span class="deptitle">
-        Basis of a vector space</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rank.html">
-        <span class="deptitle">
-        Rank of a matrix</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/extreme-point-iff-bfs.html">
-        <span class="deptitle">
-        Extreme point iff BFS</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/recession-cone.html">
-        <span class="deptitle">
-        Recession cone of a polyhedron</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/orth-extr-dir.html">
-        <span class="deptitle">
-        Extreme directions of polyhedron in positive orthant</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/rank-homogenous.html">
-        <span class="deptitle">
-        Rank of a homogenous system of linear equations</span>
+        Transitivity of convexity</span>
     </a>
     </li>
 </ol>
@@ -98,76 +92,104 @@ $\newcommand{\eps}{\varepsilon}$
 $\newcommand{\xhat}{\widehat{x}}$
 $\newcommand{\xstar}{x^*}$
 $\newcommand{\rank}{\operatorname{rank}}$
+$\newcommand{\support}{\operatorname{support}}$
+$\newcommand{\argmin}{\operatorname{argmin}}$
+$\newcommand{\argmax}{\operatorname{argmax}}$
+$\newcommand{\defeq}{=}$
 </span>
-Let $P = \{x: (a_i^Tx \ge b_i, \forall i \in I) \textrm{ and } (a_i^Tx = b_i, \forall i \in E) \textrm{ and } (x_i \ge 0, \forall 1 \le i \le n)\}$
-be a non-empty polyhedron in $\mathbb{R}^n$.
-Let $c = [1, 1, \ldots, 1] \in \mathbb{R}^n$.
+Let $P = \{x \in \mathbb{R}^n: (a_i^Tx \ge b_i, \forall i \in I) \textrm{ and } (a_i^Tx = b_i, \forall i \in E)\}$
+be a non-empty polyhedron in $\mathbb{R}^n_{\ge 0}$.
 Let $\{x^{(1)}, x^{(2)}, \ldots, x^{(p)}\}$ be the set of basic feasible solutions of $P$.
 Let $\{d^{(1)}, d^{(2)}, \ldots, d^{(q)}\}$ be the set of extreme directions of $P$.
-Without loss of generality, assume that the extreme directions are normalized, i.e., $c^Td^{(i)} = 1$.
-Then any point in $P$ can be represented as
-$\sum_{i=1}^p \lambda_ix^{(i)} + \sum_{i=1}^q \mu_id^{(i)}$
-for some non-negative $\lambda_i$ and $\mu_i$,
-where $\sum_{i=1}^p \lambda_i = 1$.
-Furthermore, any point that can be represented in this way lies in $P$.</p>
+Let $\xhat \in \mathbb{R}^n$ and $B \defeq \{a_i: a_i^T\xhat = b_i\}$.</p>
+<p>Then $\xhat \in P$ iff $\exists \lambda \in \mathbb{R}^p_{\ge 0}$ and $\exists \mu \in \mathbb{R}^q_{\ge 0}$
+such that $\xhat = \sum_{i=1}^p \lambda_ix^{(i)} + \sum_{i=1}^q \mu_id^{(i)}$,
+$\sum_{i=1}^p \lambda_i = 1$, and $|\support(\lambda)| + |\support(\mu)| \le n + 1 - \rank(B)$.
+(For any vector $v \in \mathbb{R}^n$, $|\support(v)|$ is the number of non-zero entries in $v$).</p>
 <h2>Proof</h2>
-<p>A point that can be represented this way lies in $P$
-by the definition of direction and by the convexity of $P$.</p>
-<p>The constraints $\{x_i \ge 0, \forall i\}$ form a basis of $\mathbb{R}^n$,
-so the rank of all the constraints is $n$.
-Hence, $P$ contains at least one BFS, so $p \ge 1$.
-Also, $P$ doesn't contain a line.</p>
-<p>Let $\xhat$ be a point in $P$.
-Let $M$ be a number strictly larger than $c^T\xhat$ and $\max_{i=1}^p c^Tx^{(i)}$.
-Let $P' = P \cap \{x: c^Tx \le M\}$.
-Then $\forall x \in P'$, we get $0 \le x_i \le M$, so $P'$ is bounded.
-All BFSes of $P$ are also BFSes of $P'$.
-Let $x^{(p+1)}, x^{(p+2)}, \ldots, x^{(p+r)}$ be the additional BFSes of $P'$.
-Since $P'$ is bounded, $\xhat$ can be written as a convex combination of the BFSes of $P'$.
-We will now show that for each $1 \le k \le r$, $x^{(p+k)}$ can be written as
-a convex combination of the BFSes of $P$ plus a non-negative combination of the extreme directions of $P$.</p>
-<p>Let $1 \le k \le r$.
-Let $B$ be the matrix whose rows are the tight constraints of $P$ at $x^{(p+k)}$.
-Since $x^{(p+k)}$ is not a BFS of $P$, $\rank(B) &lt; n$.
-Since $x^{(p+k)}$ is a BFS of $P'$, $\rank(B) = n-1$ and
-$c$ is not a linear combination of the rows of $B$.
-Since $\rank(B) &lt; n$, $\exists d \neq 0$ such that $Bd = 0$.
-If $c^Td = 0$, then $d$ is a solution to the system $Bd = 0, c^Td = 0$,
-but this system has rank $n$ and $d \neq 0$, which cannot happen.
-Hence, $c^Td \neq 0$. Scale $d$ to ensure $c^Td = 1$.
-Since equality constraints are tight at $x^{(p+k)}$, $a_i^Td = 0$ for $i \in E$.</p>
-<p>Suppose $\exists \lambda &gt; 0$ such that $x^{(p+k)} + \lambda d \not\in P$.
-Then $\exists \lambda^* &gt; 0$ such that a constraint of $P$
-is tight at $\xstar = x^{(p+k)} + \lambda^* d$,
-and that constraint is independent of the rows of $B$
-(because constraints tight at $x^{(p+k)}$ are in $B$, so are also
-tight at $x^{(p+k)} + \lambda d$ for all $\lambda \in \mathbb{R}$).
-Hence, we get $n$ linearly independent constraints at $\xstar$,
-which means $\xstar$ must be a BFS of $P$.
-But $c^T\xstar = c^Tx^{(p+k)} + \lambda c^Td = M + \lambda c^Td &gt; M$,
-which is a contradiction based on how $M$ was chosen.
-Hence, $x^{(p+k)} + \lambda d \in P$ for all $\lambda \ge 0$.</p>
-<p>Let $i \in I$. Then $x^{(p+k)} + \lambda d \in P, \forall \lambda \ge 0$ implies
-$a_i^Tx^{(p+k)} + \lambda a_i^Td \ge b_i, \forall \lambda \ge 0$.
-This isn't possible when $a_i^Td &lt; 0$. Hence, $a_i^Td \ge 0$ for all $i \in I$.
-$x^{(p+k)} + \lambda d \in P \implies x^{(p+k)}_i + \lambda d_i \ge 0$.
-This isn't possible when $d_i &lt; 0$. Hence, $d_i \ge 0$ for all $1 \le i \le n$.</p>
-<p>Let $D = \{x: (a_i^Tx \ge 0, \forall i \in I) \textrm{ and } (a_i^Tx = 0, \forall i \in E) \textrm{ and } (x_i \ge 0, \forall 1 \le i \le n) \textrm{ and } c^Tx = 1\}$. Then $d \in D$.
-$D$ is a bounded polytope, so $d$ can be expressed as a convex combination of its BFSes.
-The BFSes of a polyhedron are also extreme points of the polyhdron.
-The extreme points of $D$ are the extreme directions of $P$.</p>
-<p>Since $x^{(p+k)} + \lambda d \in P$ for all $\lambda \ge 0$
-and $P$ doesn't contain a line, $\exists \lambda &lt; 0$ such that $x^{(p+k)} + \lambda d \not\in P$.
-Then $\exists \lambda^* &gt; 0$ such that a constraint of $P$
-is tight at $\xstar = x^{(p+k)} - \lambda^* d$,
-and that constraint is independent of the rows of $B$
-(because constraints tight at $x^{(p+k)}$ are in $B$, so are also
-tight at $x^{(p+k)} - \lambda d$ for all $\lambda \in \mathbb{R}$).
-Hence, we get $n$ linearly independent constraints at $\xstar$,
-which means $\xstar$ must be a BFS of $P$.
-Hence, $x^{(p+k)} = \xstar + \lambda^* d$.
-This means $x^{(p+k)}$ can be written as a convex combination of a BFS $\xstar$
-plus a non-negative combination of the extreme directions of $P$.</p>
+<p>A point $\xhat$ that can be represented this way lies in $P$
+by the definition of direction and by the convexity of $P$.
+We will now assume $\xhat \in P$ and show the existence of $\lambda$ and $\mu$.</p>
+<p><strong>Lemma 1</strong>: Let $z \in \mathbb{R}^n$ and $d \in \mathbb{R}^n$.
+If $\{z + \alpha d: \alpha \ge 0\} \subseteq P$, then $d \ge 0$.</p>
+<p><em>Proof</em>:
+Let $1 \le i \le n$. Since $P \subseteq \mathbb{R}^n_{\ge 0}$, we have $z_i + \alpha d_i \ge 0$.
+If $d_i &lt; 0$, then for sufficiently large $\alpha$, we get $z_i + \alpha d_i &lt; 0$,
+which is a contradiction. Hence, $d_i \ge 0$ for all $1 \le i \le n$.
+\[ \tag*{$\square$} \]</p>
+<p>Let $c = [1, 1, \ldots, 1] \in \mathbb{R}^n$.
+By Lemma 1, we get $c^Td^{(i)} &gt; 0$ for all $1 \le i \le q$.
+Hence, we can assume without loss of generality that extreme directions are normalized,
+i.e., $c^Td^{(i)} = 1$ for all $1 \le i \le q$.</p>
+<p>Suppose $P$ contains the line $\{z + \alpha d: \alpha \in \mathbb{R}\}$,
+where $z \in \mathbb{R}^n$ and $d \in \mathbb{R}^n - \{0\}$.
+By applying Lemma 1 to $d$ and $-d$, we get $d = 0$, which is a contradiction.
+Hence, $P$ doesn't contain a line.
+Hence, $P$ contains at least one BFS, so $p \ge 1$.</p>
+<p>We will prove the main claim using induction on $\rank(B)$.
+If $\rank(B) = n$, then $\xhat$ is a BFS, so we are done.
+Now assume that this result is true for $\rank(B) \ge r+1$, where $r \le n-1$.
+We will prove this when $\rank(B) = r$.
+Since $\rank(B) = r \le n-1$, $\xhat$ is not a BFS.</p>
+<p>Let $T \defeq \{i: a_i^T\xhat = b_i\}$.
+Let $P' \defeq \{x: (a_i^Tx = b_i, \forall i \in T) \textrm{ and } (a_i^Tx \ge b_i, \forall i \in (I \cup E) - T)\}$.
+Then $P' \subseteq P$ and $\xhat \in P'$.
+Since $P'$ is non-empty and cannot contain a line, it contains a BFS $y$.
+Since $y$ is tight at $n$ linearly independent constraints, it is also a BFS of $P$.</p>
+<p>Let $d = \xhat - y$. Since $\xhat$ is not a BFS of $P$, $d \neq 0$.
+For each $i \in T$, we get $a_i^Ty = b_i$ and $a_i^T\xhat = b_i$.
+Interpret $B$ as a matrix whose rows are $\{a_i^T: i \in T\}$.
+Hence, $Bd = 0$ and $d \neq 0$.</p>
+<h3>Case 1: $y + \alpha d \in P'$ for all $\alpha \ge 0$.</h3>
+<p>Let $D$ be the recession cone of $P$. Then
+$D = \{x: (a_i^Tx = 0, \forall i \in E) \textrm{ and } (a_i^Tx \ge 0, \forall i \in I)\}$.
+Hence, $d \in D$.</p>
+<p>We will show that $d$ can be represented as a
+non-negative combination of $n - r$ extreme directions of $P$.</p>
+<p>By applying Lemma 1 to all directions of $P$, we get $D \subseteq \mathbb{R}^n_{\ge 0}$.
+Hence, $d \ge 0$ and $c^Td &gt; 0$.
+Let $P'' = \{x \in D: c^Tx = 1\}$. Then $P'' \subseteq [0, 1]^d$,
+so $P''$ is bounded and hence doesn't contain a ray.
+$Bd = 0$, so $d$ is tight at $r$ linearly independent constraints of $D$.
+Hence, $d$ can be represented as a non-negative combination of at most $n - r$
+extreme directions of $D$ (which are the same as the extreme directions of $P$).</p>
+<p>Hence, $\xhat = y + d$, so $|\support(\lambda)| = 1$ and $|\support(\mu)| = n-r$.
+This completes the proof.</p>
+<h3>Case 2: $\max_{\alpha \ge 0} (y + \alpha d \in P')$ is finite.</h3>
+<p>When $i \in T$, $a_i^Td = 0$ (since $Bd = 0$) and $a_i^Ty = b_i$ (since $y \in P'$),
+so $a_i^T(y + \alpha d) = a_i^Ty = b_i$.
+If $a_i^Td \ge 0$ for all $i$, then for all $\alpha \ge 0$, we get
+$a_i^T(y + \alpha d) = a_i^Ty + \alpha a_i^Td \ge a_i^Ty \ge b_i$.
+Thus, $y + \alpha d \in P'$ for all $\alpha \ge 0$.
+But this isn't possible since we're in case 2.
+Hence, $\exists k$ such that $a_k^Td &lt; 0$.
+In fact, choose $k$ as $\argmin_{i: a_i^Td &lt; 0} (b_i - a_i^Ty)/(a_i^Td)$.
+Let $\alpha^* = (b_k - a_k^Ty)/(a_k^Td)$.
+Note that $\alpha^* \ge 0$, since $y \in P'$.
+Let $\xstar = y + \alpha^* d$.
+We will show that $\xstar \in P'.$</p>
+<p>When $i \in T$, we have $a_i^Td = 0$.
+When $a_i^Td = 0$, we get $a_i^T\xstar = a_i^Ty$.
+When $a_i^Td &gt; 0$, we get $a_i^T\xstar = a_i^Ty + \alpha^* a_i^Td \ge b_i$.
+Now let $a_i^Td &lt; 0$.
+$\alpha^* \le (b_i - a_i^Ty)/(a_i^Td) \implies a_i^Ty + \alpha^* a_i^Td \ge b_i$.
+Hence, $a_i^T\xstar \ge b_i$. Therefore, $\xstar \in P'$.
+Furthermore, $a_k^T\xstar = a_k^Ty + \alpha^* a_i^Td = b_i$.</p>
+<p>$a_k$ isn't a linear combination of $B$,
+since $a_i^Td = 0$ for all $i \in T$ but $a_k^Td &lt; 0$.
+Let $C$ be the matrix with rows $\{a_i^T: a_i^T\xstar = b_i\}$.
+Then $C$ contains the rows of $B$ and contains $a_k^T$.
+Hence, $\rank(C) &gt; \rank(B) = r$.</p>
+<p>By the inductive hypothesis, $\exists \lambda^* \in \mathbb{R}^p_{\ge 0}$
+and $\exists \mu^* \in \mathbb{R}^q_{\ge 0}$ such that
+$\xstar = \sum_{i=1}^p \lambda^*x^{(i)} + \sum_{i=1}^q \mu^*d^{(i)}$
+and $\sum_{i=1}^p \lambda^* = 1$ and $|\support(\lambda^*)| + |\support(\mu^*)| \le n + 1 - \rank(C)$.
+\[ \xstar = \xhat + \alpha^* (\xhat - y)
+\implies \xhat = \frac{1}{1+\alpha^*}\xstar + \frac{\alpha^*}{1+\alpha^*}y. \]
+Since $\xhat$ is a convex combination of $\xstar$ and $y$,
+by the transitivity of convexity, we get that $\xhat$ can be represented
+as a convex combination of BFSes of $P$ plus a non-negative combination of extreme directions of $P$.
+Furthermore, $|\support(\lambda)| + |\support(\mu)| = |\support(\lambda^*)| + |\support(\mu^*)| + 1 \le n + 2 - \rank(C) \le n + 1 - \rank(B)$.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
@@ -180,7 +202,7 @@ plus a non-negative combination of the extreme directions of $P$.</p>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 11</li><li>Number of transitive dependencies: 51</li></ul>
+<ul><li>Depth: 12</li><li>Number of transitive dependencies: 54</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -190,6 +212,9 @@ plus a non-negative combination of the extreme directions of $P$.</p>
     </li>
     <li>
     <span class="deptitleuci missing">/linear-algebra/matrices/gauss-jordan-algo</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/complex-numbers/conjugation-is-homomorphic</span>
     </li>
     <li>
     <span class="deptitleuci missing">/sets-and-relations/equivalence-relation</span>
@@ -246,6 +271,18 @@ plus a non-negative combination of the extreme directions of $P$.</p>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span.html">
         <span class="deptitle">
         Span</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/inner-product-space.html">
+        <span class="deptitle">
+        Inner product space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/antilin-in-2nd.html">
+        <span class="deptitle">
+        Inner product is anti-linear in second argument</span>
     </a>
     </li>
     <li>
@@ -461,13 +498,7 @@ plus a non-negative combination of the extreme directions of $P$.</p>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/direction.html">
         <span class="deptitle">
-        Direction of a convex set</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/recession-cone.html">
-        <span class="deptitle">
-        Recession cone of a polyhedron</span>
+        Direction of a convex set and Recession cone</span>
     </a>
     </li>
     <li>
@@ -477,9 +508,15 @@ plus a non-negative combination of the extreme directions of $P$.</p>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/orth-extr-dir.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/extdir-of-ccone-as-extp-of-inter.html">
         <span class="deptitle">
-        Extreme directions of polyhedron in positive orthant</span>
+        Extreme direction of convex cone as extreme point of intersection with hyperplane</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/cone-repr.html">
+        <span class="deptitle">
+        Representing point in polyhedral cone</span>
     </a>
     </li>
 </ol>

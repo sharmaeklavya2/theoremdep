@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Extreme directions of polyhedron in positive orthant - TheoremDep</title>
-<meta name="description" content="Let P be a polyhedron in the positive orthant. Then the normalized extreme directions of P are the extreme points of another polytope." />
+<title>Extreme direction of convex cone as extreme point of intersection with hyperplane - TheoremDep</title>
+<meta name="description" content="Let C be a convex cone. Then for some hyperplane H, extreme directions of C correspond to extreme points of C∩H." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,14 +26,26 @@
 </nav>
 
 <div id="main">
-<h1> Extreme directions of polyhedron in positive orthant </h1>
+<h1> Extreme direction of convex cone as extreme point of intersection with hyperplane </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/polyhedron.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/inner-product-space.html">
         <span class="deptitle">
-        Polyhedral set</span>
+        Inner product space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-set.html">
+        <span class="deptitle">
+        Convex set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/cone.html">
+        <span class="deptitle">
+        Cone</span>
     </a>
     </li>
     <li>
@@ -49,66 +61,71 @@
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/recession-cone.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-combination.html">
         <span class="deptitle">
-        Recession cone of a polyhedron</span>
+        Convex combination and convex hull</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/antilin-in-2nd.html">
+        <span class="deptitle">
+        Inner product is anti-linear in second argument</span>
     </a>
     </li>
 </ol>
 
 <div class="horizontal-rule"></div>
 <p><span class="invisible">
+$\newcommand{\inprod}[2]{\langle #1, #2 \rangle}$
 $\newcommand{\dhat}{\widehat{d}}$
-$\newcommand{\xhat}{\widehat{x}}$
 </span>
-Let $P = \{x: (a_i^Tx \ge b_i, \forall i \in I) \textrm{ and } (a_i^Tx = b_i, \forall i \in E) \textrm{ and } (x_i \ge 0, \forall 1 \le i \le n)\}$
-be a non-empty polyhedron in $\mathbb{R}^n$.
-Let $c = [1, 1, \ldots, 1] \in \mathbb{R}^n$.
-Let $Q = \{x: (a_i^Tx \ge 0, \forall i \in I) \textrm{ and } (a_i^Tx = 0, \forall i \in E) \textrm{ and } (x_i \ge 0, \forall 1 \le i \le n) \textrm{ and } c^Tx = 1\}$.</p>
-<p>If $d$ is an extreme direction of $P$, then $d/c^Td$ is an extreme point of $Q$.
-If $d$ is an extreme point of $Q$, then $d$ is an extreme direction of $P$.</p>
+Let $C$ be a convex cone (in an inner product space over $\mathbb{R}$).
+Let $c$ be a vector such that $\inprod{c}{x} &gt; 0$ for all $x \in C - \{0\}$.
+Let $\gamma \in \mathbb{R}_{&gt; 0}$ and $S = \{x \in C: \inprod{c}{x} = \gamma\}$.</p>
+<p>If $d$ is an extreme direction of $C$, then $(\gamma/\inprod{c}{d})d$ is an extreme point of $S$.
+If $d$ is an extreme point of $S$, then $d$ is an extreme direction of $C$.</p>
 <h2>Proof</h2>
-<p>Let $D = \{x: (a_i^Tx \ge 0, \forall i \in I) \textrm{ and } (a_i^Tx = 0, \forall i \in E) \textrm{ and } (x_i \ge 0, \forall 1 \le i \le n)\}$.
-Then $D$ is the set of directions of $P$.
-Since $Q \subseteq D$, $Q$ contains directions of $P$.</p>
-<p>Two vectors $u$ and $v$ in $\mathbb{R}_{\ge 0}^n$ are collinear iff $u/c^Tu = v/c^Tv$.</p>
-<p>Let $d \in D - \{0\}$. Let $\dhat = d/(c^Td)$. Then $c^T\dhat = 1$, so $\dhat \in Q$.
-Suppose $\dhat$ is a non-extreme point of $Q$.
-Then $\dhat = (1-\alpha) d^{(1)} + \alpha d^{(2)}$ for some $d^{(1)}, d^{(2)} \in Q$
+<p>We can assume without loss of generality that $\gamma$ is 1, since we can scale $c$.</p>
+<p>Two vectors $u$ and $v$ are called collinear iff $u/\inprod{c}{u} = v/\inprod{c}{v}$.</p>
+<p>Let $d \in C - \{0\}$. Let $\dhat = d/\inprod{c}{d}$. Then $\inprod{c}{\dhat} = 1$, so $\dhat \in S$.
+Suppose $\dhat$ is a non-extreme point of $S$.
+Then $\dhat = (1-\alpha) d^{(1)} + \alpha d^{(2)}$ for some $d^{(1)}, d^{(2)} \in S$
 where $d^{(1)} \neq d^{(2)}$ and $\alpha \in (0, 1)$.
-Since $d^{(1)}/c^Td^{(1)} \neq d^{(2)}/c^Td^{(2)}$,
-$d^{(1)}$ and $d^{(2)}$ are not collinear.
-Then $d = (c^Td)(1-\alpha) d^{(1)} + (c^Td)\alpha d^{(2)}$,
-so $d$ is not an extreme direction of $P$.
-Hence, if $d$ is an extreme direction of $P$, then $\dhat$ is an extreme point of $Q$.</p>
-<p>Let $d$ be an extreme point of $Q$. Then $d \neq 0$.
-Suppose $d$ is not an extreme direction of $P$.
+Note that $d^{(1)}$ and $d^{(2)}$ are not collinear.
+Then $d = \inprod{c}{d}(1-\alpha) d^{(1)} + \inprod{c}{d}\alpha d^{(2)}$,
+so $d$ is not an extreme direction of $C$.
+Hence, if $d$ is an extreme direction of $C$, then $\dhat$ is an extreme point of $S$.</p>
+<p>Let $d$ be an extreme point of $S$. Then $d \neq 0$.
+Suppose $d$ is not an extreme direction of $C$.
 Then $d = \alpha d^{(1)} + \beta d^{(2)}$, such that $\alpha &gt; 0$, $\beta &gt; 0$,
-and $d^{(1)}, d^{(2)} \in D - \{0\}$ such that $d^{(1)}/c^Td^{(1)} \neq d^{(2)}/c^Td^{(2)}$.
-Let $\dhat^{(1)} = d^{(1)}/c^Td^{(1)}$ and $\dhat^{(2)} = d^{(2)}/c^Td^{(2)}$.
-Then $\dhat^{(1)} \neq \dhat^{(2)}$ and $\dhat^{(1)}, \dhat^{(2)} \in Q$.
-Hence, we get $d = (\alpha c^Td^{(1)})\dhat^{(1)} + (\beta c^Td^{(2)}) \dhat^{(2)}$.
-Since, $1 = c^Td = \alpha c^Td^{(1)} + \beta c^Td^{(2)}$,
+and $d^{(1)}, d^{(2)} \in C - \{0\}$ such that $d^{(1)}/\inprod{c}{d^{(1)}} \neq d^{(2)}/\inprod{c}{d^{(2)}}$.
+Let $\dhat^{(1)} = d^{(1)}/\inprod{c}{d^{(1)}}$ and $\dhat^{(2)} = d^{(2)}/\inprod{c}{d^{(2)}}$.
+Then $\dhat^{(1)} \neq \dhat^{(2)}$ and $\dhat^{(1)}, \dhat^{(2)} \in S$.
+Hence, we get $d = (\alpha \inprod{c}{d^{(1)}})\dhat^{(1)} + (\beta \inprod{c}{d^{(2)}}) \dhat^{(2)}$.
+Since, $1 = \inprod{c}{d} = \alpha \inprod{c}{d^{(1)}} + \beta \inprod{c}{d^{(2)}}$,
 we get that $d$ is a strict convex combination of $\dhat^{(1)}$ and $\dhat^{(2)}$.
-Hence, $d$ is not an extreme point of $Q$, which is a contradiction.
-Hence, $d$ is an extreme direction of $D$.</p>
+Hence, $d$ is not an extreme point of $S$, which is a contradiction.
+Hence, $d$ is an extreme direction of $C$.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/orth-repr.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/cone-repr.html">
         <span class="deptitle">
-        Representing a point in polyhedron in positive orthant</span>
+        Representing point in polyhedral cone</span>
     </a>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 8</li><li>Number of transitive dependencies: 14</li></ul>
+<ul><li>Depth: 8</li><li>Number of transitive dependencies: 13</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
 <ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/complex-numbers/conjugation-is-homomorphic</span>
+    </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
         <span class="deptitle">
@@ -134,15 +151,15 @@ Hence, $d$ is an extreme direction of $D$.</p>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/inner-product-space.html">
         <span class="deptitle">
-        Semiring</span>
+        Inner product space</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/antilin-in-2nd.html">
         <span class="deptitle">
-        Matrix</span>
+        Inner product is anti-linear in second argument</span>
     </a>
     </li>
     <li>
@@ -164,12 +181,6 @@ Hence, $d$ is an extreme direction of $D$.</p>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/polyhedron.html">
-        <span class="deptitle">
-        Polyhedral set</span>
-    </a>
-    </li>
-    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/extreme-point.html">
         <span class="deptitle">
         Extreme point of a convex set</span>
@@ -178,13 +189,7 @@ Hence, $d$ is an extreme direction of $D$.</p>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/direction.html">
         <span class="deptitle">
-        Direction of a convex set</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/recession-cone.html">
-        <span class="deptitle">
-        Recession cone of a polyhedron</span>
+        Direction of a convex set and Recession cone</span>
     </a>
     </li>
     <li>
