@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>LP in orthant is optimized at BFS - TheoremDep</title>
-<meta name="description" content="Let P be the polytope of a linear program that lies in the positive orthant. Then either P is unbounded or has an optimal solution at a BFS of P." />
+<title>LP is optimized at BFS - TheoremDep</title>
+<meta name="description" content="A full-rank LP is either unbounded or has an optimal solution at a BFS." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,7 +26,7 @@
 </nav>
 
 <div id="main">
-<h1> LP in orthant is optimized at BFS </h1>
+<h1> LP is optimized at BFS </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
@@ -43,21 +43,21 @@
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/orth-repr.html">
-        <span class="deptitle">
-        Representing a point in polyhedron in positive orthant</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html">
-        <span class="deptitle">
-        Basis of a vector space</span>
-    </a>
-    </li>
-    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rank.html">
         <span class="deptitle">
         Rank of a matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bfs-existence.html">
+        <span class="deptitle">
+        Condition for existence of BFS in a polyhedron</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/repr.html">
+        <span class="deptitle">
+        Representing a point in polyhedron</span>
     </a>
     </li>
     <li>
@@ -74,13 +74,18 @@ $\newcommand{\xhat}{\widehat{x}}$
 $\newcommand{\rank}{\operatorname{rank}}$
 $\newcommand{\argmin}{\operatorname{argmin}}$
 </span>
-Let $P = \{x: (a_i^Tx \ge b_i, \forall i \in I) \textrm{ and } (a_i^Tx = b_i, \forall i \in E) \textrm{ and } (x_i \ge 0, \forall 1 \le i \le n)\}$
-be a non-empty polyhedron in $\mathbb{R}^n$. Let $c \in \mathbb{R}^n$.
-The the linear program $\min_{x \in P} c^Tx$ either has optimal objective $-\infty$
-or has an optimal solution at a BFS of $P$.</p>
+Let $P = \{x \in \mathbb{R}^n: (a_i^Tx \ge b_i, \forall i \in I) \textrm{ and } (a_i^Tx = b_i, \forall i \in E)\}$
+be a non-empty polyhedron. Let $c \in \mathbb{R}^n$.
+Let $A$ be the matrix whose rows are $\{a_i: i \in I \cup E\}$. Suppose $\rank(A) = n$.
+Then exactly one of the following hold for the linear program $\min_{x \in P} c^Tx$:</p>
+<ol>
+<li>The LP has an optimal solution at a BFS of $P$,
+    and $c^Td \ge 0$ for each extreme direction $d$ of $P$.</li>
+<li>The LP has optimal objective value $-\infty$,
+    and there is a non-zero extreme direction $d$ of $P$ such that $c^Td &lt; 0$.</li>
+</ol>
 <h2>Proof</h2>
-<p>Since the last $n$ constraints of $P$ form a basis of $\mathbb{R}^n$,
-the constraints have rank $n$, so $P$ has at least one BFS.
+<p>Since $\rank(A) = n$, $P$ has at least one BFS.
 If $c = 0$, then every point in $P$ is an optimal solution, so we can pick the BFS.
 Now assume $c \neq 0$.</p>
 <p>Let $x^{(1)}, x^{(2)}, \ldots, x^{(p)}$ be the BFSes of $P$
@@ -116,7 +121,7 @@ or the optimal solution occurs at a BFS of $P$.</p>
 <div class="horizontal-rule"></div>
 <h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul><li>Depth: 13</li><li>Number of transitive dependencies: 56</li></ul>
+<ul><li>Depth: 15</li><li>Number of transitive dependencies: 61</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -382,7 +387,7 @@ or the optimal solution occurs at a BFS of $P$.</p>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/polyhedron.html">
         <span class="deptitle">
-        Polyhedral set</span>
+        Polyhedral set and polyhedral cone</span>
     </a>
     </li>
     <li>
@@ -416,9 +421,39 @@ or the optimal solution occurs at a BFS of $P$.</p>
     </a>
     </li>
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/extreme-point-condition.html">
+        <span class="deptitle">
+        Condition for a point to be extreme</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/pointed-cone-cond.html">
+        <span class="deptitle">
+        Condition for polyhedral cone to be pointed</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/direction.html">
         <span class="deptitle">
         Direction of a convex set and Recession cone</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/recession-cone.html">
+        <span class="deptitle">
+        Recession cone of a polyhedron</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/unbounded-has-direction.html">
+        <span class="deptitle">
+        Polyhedron is unbounded iff it has direction</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bounded-section-of-cone.html">
+        <span class="deptitle">
+        Bounded section of pointed cone</span>
     </a>
     </li>
     <li>
@@ -440,9 +475,9 @@ or the optimal solution occurs at a BFS of $P$.</p>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/orth-repr.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/repr.html">
         <span class="deptitle">
-        Representing a point in polyhedron in positive orthant</span>
+        Representing a point in polyhedron</span>
     </a>
     </li>
 </ol>

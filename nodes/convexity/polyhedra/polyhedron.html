@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Polyhedral set - TheoremDep</title>
+<title>Polyhedral set and polyhedral cone - TheoremDep</title>
 <meta name="description" content="A set defined as the intersection of halfspaces is a polyhedral set." />
 <meta name="keywords" content="polyhedron,polyhedral set,polyhedral cone,standard form" />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
@@ -27,7 +27,7 @@
 </nav>
 
 <div id="main">
-<h1> Polyhedral set </h1>
+<h1> Polyhedral set and polyhedral cone </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
@@ -71,7 +71,8 @@ A bounded polyhedron is called a <em>polytope</em>.</p>
 <p>A <em>polyhedral cone</em> is a polyhedron that is also a cone.
 Equivalently, a polyhedral cone is a set of the form $\{x: Ax \ge 0 \textrm{ and } Cx = 0\}$.
 We can assume without loss of generality that a polyhedral cone has the form
-$\{x: Ax \ge 0\}$, since $Cx = 0$ is the same as $Cx \ge 0 \wedge (-C)x \ge 0$.</p>
+$\{x: Ax \ge 0\}$, since $Cx = 0$ is the same as $Cx \ge 0 \wedge (-C)x \ge 0$.
+A polyhedral cone $C$ is called <em>pointed</em> iff $x \in C - \{0\} \implies x \not\in C$.</p>
 <p>A polyhedron of the form $\{x: Ax = b \textrm{ and } x \ge 0\}$
 is said to be in <em>standard form</em>.</p>
 <h2>Proof that $P$ is convex</h2>
@@ -96,6 +97,18 @@ Hence, $P \subseteq D$.</p>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/unbounded-has-direction.html">
+        <span class="deptitle">
+        Polyhedron is unbounded iff it has direction</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bounded-section-of-cone.html">
+        <span class="deptitle">
+        Bounded section of pointed cone</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bounded-repr.html">
         <span class="deptitle">
         Point in polytope is convex combination of BFS</span>
@@ -108,12 +121,6 @@ Hence, $P \subseteq D$.</p>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/orth-repr.html">
-        <span class="deptitle">
-        Representing a point in polyhedron in positive orthant</span>
-    </a>
-    </li>
-    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bfs.html">
         <span class="deptitle">
         Basic feasible solutions</span>
@@ -123,6 +130,18 @@ Hence, $P \subseteq D$.</p>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/cone-repr.html">
         <span class="deptitle">
         Representing point in polyhedral cone</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/repr.html">
+        <span class="deptitle">
+        Representing a point in polyhedron</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/pointed-cone-cond.html">
+        <span class="deptitle">
+        Condition for polyhedral cone to be pointed</span>
     </a>
     </li>
 </ol>

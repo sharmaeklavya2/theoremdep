@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
 <title>Representing point in polyhedral cone - TheoremDep</title>
-<meta name="description" content="A point in a polyhedral cone can be represented as a non-negative combination of extreme directions." />
+<meta name="description" content="A point in a pointed polyhedral cone can be represented as a non-negative combination of extreme directions." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -33,7 +33,7 @@
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/polyhedron.html">
         <span class="deptitle">
-        Polyhedral set</span>
+        Polyhedral set and polyhedral cone</span>
     </a>
     </li>
     <li>
@@ -49,9 +49,9 @@
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/rank-homogenous.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bounded-section-of-cone.html">
         <span class="deptitle">
-        Rank of a homogenous system of linear equations</span>
+        Bounded section of pointed cone</span>
     </a>
     </li>
     <li>
@@ -81,23 +81,22 @@ $\newcommand{\defeq}{=}$
 $\newcommand{\rank}{\operatorname{rank}}$
 </span>
 Let $C = \{x \in \mathbb{R}^n: (a_i^Tx \ge 0, \forall i \in I) \textrm{ and } (a_i^Tx = 0, \forall i \in E)\}$
-be a polyhedral cone.
-Let $c \in \mathbb{R}^n$ such that $c^Tx &gt; 0$ for all $x \in C - \{0\}$.
-Let $\gamma &gt; 0$ and $P = \{x \in C: c^Tx = \gamma\}$.
-Suppose $P$ doesn't contain a ray.</p>
+be a pointed polyhedral cone.</p>
 <p>Let $\xhat \in C$. Let $T \defeq \{i \in I \cap E: a_i^T\xhat = 0\}$ and $B \defeq \{a_i: i \in T\}$.
-Then $\xhat$ can be represented as a non-negative combination of
+Then $\xhat$ can be represented as a non-negative combination of at most
 $n-\rank(B)$ extreme directions of $C$.</p>
 <h2>Proof</h2>
-<p>Without loss of generality, assume $\gamma = 1$ and $c^T\xhat = 1$
-(because we can scale $c$ and $\xhat$, and because $c^T\xhat &gt; 0$). Hence, $\xhat \in P$.</p>
-<p>We will first show that $c$ is not a linear combination of $B$.
-Suppose $c$ is a linear combination of $B$.
-Let $c = \sum_{i \in T}\alpha_ia_i$. Then
+<p>This is trivially true when $\xhat = 0$, so assume $\xhat \neq 0$.</p>
+<p>Since $C$ is pointed, $\exists c$ such that $c^Tx &gt; 0$ $\forall x \in C - \{0\}$.
+Without loss of generality, assume $c^T\xhat = 1$ (because we can scale $c$).
+Let $P \defeq \{x \in C: c^Tx = 1\}$.
+Then $\xhat \in P$ and $P$ is bounded.</p>
+<p><strong>Lemma</strong>: $c$ is not a linear combination of $B$.</p>
+<p><em>Proof</em>: Suppose $c$ is a linear combination of $B$.
+Let $c = \sum_{i \in T}\alpha_i a_i$. Then
 \[ 1 = c^T\xhat = \sum_{i \in T}\alpha_i(a_i^T\xhat) = 0. \]
-This is a contradiction. Hence, $c$ is not a linear combination of $B$.</p>
-<p>Since $P$ is a polyhedron that doesn't contain a ray,
-and $\xhat$ is tight at $\rank(B) + 1$ linearly independent constraints of $P$,
+This is a contradiction. Hence, $c$ is not a linear combination of $B$. □</p>
+<p>Since $P$ is bounded and $\xhat$ is tight at $\rank(B) + 1$ linearly independent constraints of $P$,
 we can represent $\xhat$ as a convex combination of $n - \rank(B)$ BFSes of $P$.
 The BFSes of $P$ are extreme points of $P$, which are extreme directions of $C$.</p>
 
@@ -105,14 +104,14 @@ The BFSes of $P$ are extreme points of $P$, which are extreme directions of $C$.
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/orth-repr.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/repr.html">
         <span class="deptitle">
-        Representing a point in polyhedron in positive orthant</span>
+        Representing a point in polyhedron</span>
     </a>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 11</li><li>Number of transitive dependencies: 53</li></ul>
+<ul><li>Depth: 13</li><li>Number of transitive dependencies: 58</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -372,7 +371,7 @@ The BFSes of $P$ are extreme points of $P$, which are extreme directions of $C$.
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/polyhedron.html">
         <span class="deptitle">
-        Polyhedral set</span>
+        Polyhedral set and polyhedral cone</span>
     </a>
     </li>
     <li>
@@ -406,9 +405,39 @@ The BFSes of $P$ are extreme points of $P$, which are extreme directions of $C$.
     </a>
     </li>
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/extreme-point-condition.html">
+        <span class="deptitle">
+        Condition for a point to be extreme</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/pointed-cone-cond.html">
+        <span class="deptitle">
+        Condition for polyhedral cone to be pointed</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/direction.html">
         <span class="deptitle">
         Direction of a convex set and Recession cone</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/recession-cone.html">
+        <span class="deptitle">
+        Recession cone of a polyhedron</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/unbounded-has-direction.html">
+        <span class="deptitle">
+        Polyhedron is unbounded iff it has direction</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bounded-section-of-cone.html">
+        <span class="deptitle">
+        Bounded section of pointed cone</span>
     </a>
     </li>
     <li>

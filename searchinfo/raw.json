@@ -2818,7 +2818,7 @@
 },
 {
 "type": "theoremdef",
-"title": "Polyhedral set",
+"title": "Polyhedral set and polyhedral cone",
 "description": "A set defined as the intersection of halfspaces is a polyhedral set.",
 "keywords": [
 "polyhedron",
@@ -2898,6 +2898,13 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/extreme-point-condition.html"
 },
 {
+"type": "theorem",
+"title": "Condition for polyhedral cone to be pointed",
+"description": "A polyhedral cone C is pointed iff C contains a BFS iff C doesn't contain a line iff constraints of C have full rank.",
+"uci": "/convexity/polyhedra/pointed-cone-cond",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/pointed-cone-cond.html"
+},
+{
 "type": "theoremdef",
 "title": "Direction of a convex set and Recession cone",
 "description": "d is a direction of a convex set S iff \u2200 x \u2208 S, {x + \u03bbd: \u03bb \u2265 0} \u2286 S. The recession cone of S is the set of all directions of S. The recession cone is a convex cone.",
@@ -2909,6 +2916,19 @@
 "title": "Recession cone of a polyhedron",
 "uci": "/convexity/polyhedra/recession-cone",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/recession-cone.html"
+},
+{
+"type": "theorem",
+"title": "Polyhedron is unbounded iff it has direction",
+"uci": "/convexity/polyhedra/unbounded-has-direction",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/unbounded-has-direction.html"
+},
+{
+"type": "theorem",
+"title": "Bounded section of pointed cone",
+"description": "For a pointed cone C, we can find a vector b such that P = {x \u2208 C: b^Tx = 1} is bounded and every element of C can be normalized to be in P.",
+"uci": "/convexity/polyhedra/bounded-section-of-cone",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bounded-section-of-cone.html"
 },
 {
 "type": "def",
@@ -2927,23 +2947,23 @@
 {
 "type": "theorem",
 "title": "Representing point in polyhedral cone",
-"description": "A point in a polyhedral cone can be represented as a non-negative combination of extreme directions.",
+"description": "A point in a pointed polyhedral cone can be represented as a non-negative combination of extreme directions.",
 "uci": "/convexity/polyhedra/cone-repr",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/cone-repr.html"
 },
 {
 "type": "theorem",
-"title": "Representing a point in polyhedron in positive orthant",
-"description": "Let P be a non-empty polyhedron contained in the positive orthant of R^n. Then any point x \u2208 P can be represented as a convex combination of the basic feasible solutions of P plus a non-negative combination of the extreme directions of P.",
-"uci": "/convexity/polyhedra/orth-repr",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/orth-repr.html"
+"title": "Representing a point in polyhedron",
+"description": "Let P be a non-empty full-rank polyhedron. Then any point x \u2208 P can be represented as a convex combination of the basic feasible solutions of P plus a non-negative combination of the extreme directions of P.",
+"uci": "/convexity/polyhedra/repr",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/repr.html"
 },
 {
 "type": "theorem",
-"title": "LP in orthant is optimized at BFS",
-"description": "Let P be the polytope of a linear program that lies in the positive orthant. Then either P is unbounded or has an optimal solution at a BFS of P.",
-"uci": "/convexity/polyhedra/orth-lp",
-"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/orth-lp.html"
+"title": "LP is optimized at BFS",
+"description": "A full-rank LP is either unbounded or has an optimal solution at a BFS.",
+"uci": "/convexity/polyhedra/lp-opt-at-bfs",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/lp-opt-at-bfs.html"
 },
 {
 "type": "def",

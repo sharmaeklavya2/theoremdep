@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Representing a point in polyhedron in positive orthant - TheoremDep</title>
-<meta name="description" content="Let P be a non-empty polyhedron contained in the positive orthant of R^n. Then any point x ∈ P can be represented as a convex combination of the basic feasible solutions of P plus a non-negative combination of the extreme directions of P." />
+<title>Representing a point in polyhedron - TheoremDep</title>
+<meta name="description" content="Let P be a non-empty full-rank polyhedron. Then any point x ∈ P can be represented as a convex combination of the basic feasible solutions of P plus a non-negative combination of the extreme directions of P." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,14 +26,14 @@
 </nav>
 
 <div id="main">
-<h1> Representing a point in polyhedron in positive orthant </h1>
+<h1> Representing a point in polyhedron </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/polyhedron.html">
         <span class="deptitle">
-        Polyhedral set</span>
+        Polyhedral set and polyhedral cone</span>
     </a>
     </li>
     <li>
@@ -64,6 +64,18 @@
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bfs-existence.html">
         <span class="deptitle">
         Condition for existence of BFS in a polyhedron</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/recession-cone.html">
+        <span class="deptitle">
+        Recession cone of a polyhedron</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/pointed-cone-cond.html">
+        <span class="deptitle">
+        Condition for polyhedral cone to be pointed</span>
     </a>
     </li>
     <li>
@@ -98,8 +110,8 @@ $\newcommand{\argmax}{\operatorname{argmax}}$
 $\newcommand{\defeq}{=}$
 </span>
 Let $P = \{x \in \mathbb{R}^n: (a_i^Tx \ge b_i, \forall i \in I) \textrm{ and } (a_i^Tx = b_i, \forall i \in E)\}$
-be a non-empty polyhedron in $\mathbb{R}^n_{\ge 0}$.
-Let $\{x^{(1)}, x^{(2)}, \ldots, x^{(p)}\}$ be the set of basic feasible solutions of $P$.
+be a non-empty polyhedron. Let $A$ be the matrix whose rows are $\{a_i: i \in I \cup E\}$. Suppose $\rank(A) = n$.</p>
+<p>Let $\{x^{(1)}, x^{(2)}, \ldots, x^{(p)}\}$ be the set of basic feasible solutions of $P$.
 Let $\{d^{(1)}, d^{(2)}, \ldots, d^{(q)}\}$ be the set of extreme directions of $P$.
 Let $\xhat \in \mathbb{R}^n$ and $B \defeq \{a_i: a_i^T\xhat = b_i\}$.</p>
 <p>Then $\xhat \in P$ iff $\exists \lambda \in \mathbb{R}^p_{\ge 0}$ and $\exists \mu \in \mathbb{R}^q_{\ge 0}$
@@ -110,22 +122,6 @@ $\sum_{i=1}^p \lambda_i = 1$, and $|\support(\lambda)| + |\support(\mu)| \le n +
 <p>A point $\xhat$ that can be represented this way lies in $P$
 by the definition of direction and by the convexity of $P$.
 We will now assume $\xhat \in P$ and show the existence of $\lambda$ and $\mu$.</p>
-<p><strong>Lemma 1</strong>: Let $z \in \mathbb{R}^n$ and $d \in \mathbb{R}^n$.
-If $\{z + \alpha d: \alpha \ge 0\} \subseteq P$, then $d \ge 0$.</p>
-<p><em>Proof</em>:
-Let $1 \le i \le n$. Since $P \subseteq \mathbb{R}^n_{\ge 0}$, we have $z_i + \alpha d_i \ge 0$.
-If $d_i &lt; 0$, then for sufficiently large $\alpha$, we get $z_i + \alpha d_i &lt; 0$,
-which is a contradiction. Hence, $d_i \ge 0$ for all $1 \le i \le n$.
-\[ \tag*{$\square$} \]</p>
-<p>Let $c = [1, 1, \ldots, 1] \in \mathbb{R}^n$.
-By Lemma 1, we get $c^Td^{(i)} &gt; 0$ for all $1 \le i \le q$.
-Hence, we can assume without loss of generality that extreme directions are normalized,
-i.e., $c^Td^{(i)} = 1$ for all $1 \le i \le q$.</p>
-<p>Suppose $P$ contains the line $\{z + \alpha d: \alpha \in \mathbb{R}\}$,
-where $z \in \mathbb{R}^n$ and $d \in \mathbb{R}^n - \{0\}$.
-By applying Lemma 1 to $d$ and $-d$, we get $d = 0$, which is a contradiction.
-Hence, $P$ doesn't contain a line.
-Hence, $P$ contains at least one BFS, so $p \ge 1$.</p>
 <p>We will prove the main claim using induction on $\rank(B)$.
 If $\rank(B) = n$, then $\xhat$ is a BFS, so we are done.
 Now assume that this result is true for $\rank(B) \ge r+1$, where $r \le n-1$.
@@ -134,23 +130,18 @@ Since $\rank(B) = r \le n-1$, $\xhat$ is not a BFS.</p>
 <p>Let $T \defeq \{i: a_i^T\xhat = b_i\}$.
 Let $P' \defeq \{x: (a_i^Tx = b_i, \forall i \in T) \textrm{ and } (a_i^Tx \ge b_i, \forall i \in (I \cup E) - T)\}$.
 Then $P' \subseteq P$ and $\xhat \in P'$.
-Since $P'$ is non-empty and cannot contain a line, it contains a BFS $y$.
+Since $P'$ is non-empty and $\rank(A) = n$, $P'$ contains at least one BFS $y$.
 Since $y$ is tight at $n$ linearly independent constraints, it is also a BFS of $P$.</p>
 <p>Let $d = \xhat - y$. Since $\xhat$ is not a BFS of $P$, $d \neq 0$.
 For each $i \in T$, we get $a_i^Ty = b_i$ and $a_i^T\xhat = b_i$.
 Interpret $B$ as a matrix whose rows are $\{a_i^T: i \in T\}$.
 Hence, $Bd = 0$ and $d \neq 0$.</p>
 <h3>Case 1: $y + \alpha d \in P'$ for all $\alpha \ge 0$.</h3>
-<p>Let $D$ be the recession cone of $P$. Then
+<p>Hence, $d$ is a direction of $P'$. Let $D$ be the recession cone of $P$. Then
 $D = \{x: (a_i^Tx = 0, \forall i \in E) \textrm{ and } (a_i^Tx \ge 0, \forall i \in I)\}$.
 Hence, $d \in D$.</p>
-<p>We will show that $d$ can be represented as a
-non-negative combination of $n - r$ extreme directions of $P$.</p>
-<p>By applying Lemma 1 to all directions of $P$, we get $D \subseteq \mathbb{R}^n_{\ge 0}$.
-Hence, $d \ge 0$ and $c^Td &gt; 0$.
-Let $P'' = \{x \in D: c^Tx = 1\}$. Then $P'' \subseteq [0, 1]^d$,
-so $P''$ is bounded and hence doesn't contain a ray.
-$Bd = 0$, so $d$ is tight at $r$ linearly independent constraints of $D$.
+<p>Since $\rank(A) = n$, $D$ is a pointed cone.
+Since $Bd = 0$, $d$ is tight at $r$ linearly independent constraints of $D$.
 Hence, $d$ can be represented as a non-negative combination of at most $n - r$
 extreme directions of $D$ (which are the same as the extreme directions of $P$).</p>
 <p>Hence, $\xhat = y + d$, so $|\support(\lambda)| = 1$ and $|\support(\mu)| = n-r$.
@@ -195,14 +186,14 @@ Furthermore, $|\support(\lambda)| + |\support(\mu)| = |\support(\lambda^*)| + |\
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/orth-lp.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/lp-opt-at-bfs.html">
         <span class="deptitle">
-        LP in orthant is optimized at BFS</span>
+        LP is optimized at BFS</span>
     </a>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 12</li><li>Number of transitive dependencies: 54</li></ul>
+<ul><li>Depth: 14</li><li>Number of transitive dependencies: 59</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -462,7 +453,7 @@ Furthermore, $|\support(\lambda)| + |\support(\mu)| = |\support(\lambda^*)| + |\
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/polyhedron.html">
         <span class="deptitle">
-        Polyhedral set</span>
+        Polyhedral set and polyhedral cone</span>
     </a>
     </li>
     <li>
@@ -496,9 +487,39 @@ Furthermore, $|\support(\lambda)| + |\support(\mu)| = |\support(\lambda^*)| + |\
     </a>
     </li>
     <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/extreme-point-condition.html">
+        <span class="deptitle">
+        Condition for a point to be extreme</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/pointed-cone-cond.html">
+        <span class="deptitle">
+        Condition for polyhedral cone to be pointed</span>
+    </a>
+    </li>
+    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/direction.html">
         <span class="deptitle">
         Direction of a convex set and Recession cone</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/recession-cone.html">
+        <span class="deptitle">
+        Recession cone of a polyhedron</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/unbounded-has-direction.html">
+        <span class="deptitle">
+        Polyhedron is unbounded iff it has direction</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bounded-section-of-cone.html">
+        <span class="deptitle">
+        Bounded section of pointed cone</span>
     </a>
     </li>
     <li>
