@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>Fourier-Motzkin Elimination - TheoremDep</title>
+<meta name="description" content="An algorithm for projecting a polyhedron into one lower dimension." />
+<meta name="keywords" content="FME,projection,projecting,dimension reduction" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" aria-label="Search" type="text" autocomplete="off" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Fourier-Motzkin Elimination </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/polyhedron.html">
+        <span class="deptitle">
+        Polyhedral set and polyhedral cone</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p><span class="invisible">
+$\newcommand{\defeq}{=}$
+$\newcommand{\Th}{^{\textrm{th}}}$
+$\newcommand{\xhat}{\widehat{x}}$
+$\newcommand{\yhat}{\widehat{y}}$
+$\newcommand{\floor}[1]{\lfloor #1 \rfloor}$
+</span>
+Fourier-Motzkin Elimination (FME) is an algorithm for projecting a polyhedron into one lower dimension.</p>
+<p>Let $P \subseteq \mathbb{R}^n$ be a polyhedron.
+Define $Q \defeq \{x \in \mathbb{R}^{n-1}: \exists y \in \mathbb{R} \textrm{ such that } (x, y) \in P\}$.
+Then $Q$ is called the <em>projection</em> of $P$ into $n-1$ dimensions.</p>
+<p>FME takes $P$ as input and outputs $Q$, where $P$ and $Q$ are described as intersection of halfspaces.
+This shows that $Q$ is a polyhedron.
+Furthermore, if $P$ has $m$ constraints, then FME's output
+can have at most $\max(m, \floor{m^2/4})$ constraints,
+and this is tight for any even $m \ge 4$.</p>
+<h2>Algorithm</h2>
+<p>We first scale $P$'s constraints so that they are in this form:
+\begin{align}
+P = \left\{(x, y): \begin{array}{l}
+    (a_i^Tx - b_i \ge y, \forall i \in I_+),
+\\  (a_i^Tx - b_i \ge -y, \forall i \in I_-),
+\\  (a_i^Tx - b_i = y, \forall i \in E),
+\\  (a_i^Tx - b_i \ge 0, \forall i \in I_0),
+\\  (a_i^Tx - b_i = 0, \forall i \in E_0)
+\end{array}\right\}.
+\end{align}</p>
+<p>If $|E| = 0$, then output
+\begin{align}
+R \defeq \left\{x \in \mathbb{R}^{n-1}: \begin{array}{l}
+    ((a_i+a_j)^Tx - (b_i+b_j) \ge 0, \forall i \in I_+, \forall j \in I_-),
+\\  (a_i^Tx - b_i \ge 0, \forall i \in I_0),
+\\  (a_i^Tx - b_i = 0, \forall i \in E_0)
+\end{array}\right\},
+\end{align}</p>
+<p>If $|E| &gt; 0$, let $k$ be an arbitrary element in $E$. Output
+\begin{align}
+R \defeq \left\{x \in \mathbb{R}^{n-1}: \begin{array}{l}
+    ((a_i-a_k)^Tx - (b_i-b_k) \ge 0, \forall i \in I_+),
+\\  ((a_i+a_k)^Tx - (b_i+b_k) \ge 0, \forall i \in I_-),
+\\  ((a_i-a_k)^Tx - (b_i-b_k) = 0, \forall i \in E - \{k\}),
+\\  (a_i^Tx - b_i \ge 0, \forall i \in I_0),
+\\  (a_i^Tx - b_i = 0, \forall i \in E_0)
+\end{array}\right\}.
+\end{align}</p>
+<h2>Proof that $Q = R$</h2>
+<h3>Proof that $Q \subseteq R$</h3>
+<p>Suppose $\xhat \in Q$. Then $\exists \yhat \in \mathbb{R}$ such that $(\xhat, \yhat) \in P$.
+$\xhat$ satisfies the $I_0$ and $E_0$ constraints in $R$.</p>
+<h4>Case 1: $|E| = 0$</h4>
+<p>For each $i \in I_+$ and $j \in I_-$, add inequalities $i$ and $j$ from $P$ to get
+$((a_i+a_j)^T\xhat + (b_i+b_j) \ge 0$.</p>
+<p>Hence, $\xhat \in R$.</p>
+<h4>Case 2: $|E| &gt; 0$</h4>
+<ul>
+<li>Subtract the $k\Th$ constraint of $P$ from each constraint in $I_+$.
+This gives us the first set of constraints in $R$.</li>
+<li>Add the $k\Th$ constraint of $P$ to each constraint in $I_-$.
+This gives us the second set of constraints in $R$.</li>
+<li>Subtract the $k\Th$ constraint of $P$ from each constraint in $E - \{k\}$.
+This gives us the third set of constraints in $R$.</li>
+</ul>
+<p>Hence, $\xhat \in R$.</p>
+<h3>Proof that $R \subseteq Q$</h3>
+<p>Let $\xhat \in R$. For any $y \in \mathbb{R}$,
+$(\xhat, y)$ satisfies the $I_0$ and $E_0$ constraints in $P$.
+For any set $C$ of constraints, define
+\[ \alpha(C) \defeq \min_{i \in C} (a_i^Tx - b). \]</p>
+<h4>Case 1: $|E| = 0$</h4>
+<p>By the first set of constraints in $R$, we get that $\alpha(I_+) \ge -\alpha(I_-)$.
+If $|E| = 0$, pick any $\yhat$ such that $\alpha(I_+) \ge \yhat \ge -\alpha(I_-)$.
+Then $(\xhat, \yhat)$ satisfies the $I_+$ and $I_-$ constraints in $P$,
+and so $(\xhat, \yhat) \in P$, and so $\xhat \in Q$.</p>
+<h4>Case 2: $|E| &gt; 0$</h4>
+<p>Let $\yhat \defeq a_k^T\xhat - b_k$.</p>
+<ul>
+<li>From the first set of constraints in $R$, $\alpha(I_+) \ge \yhat$.</li>
+<li>From the second set of constraints in $R$, $\alpha(I_-) \ge -\yhat$.</li>
+<li>From the third set of constraints in $R$, we get $a_i^T\xhat - b_i = \yhat$ for each $i \in E$.</li>
+</ul>
+<h2>Number of constraints in $R$</h2>
+<p>Suppose $P$ has $m$ constraints, i.e., $|I_+| + |I_-| + |E| + |I_0| + |E_0| = m$.
+Let $m'$ be the number of constraints in $R$.</p>
+<p>If $|E| &gt; 0$, then $m' = m-1$.</p>
+<p>If $|E| = 0$, then $R$ has $m' \defeq |I_+||I_-| + |I_0| + |E_0| \le m^2$ constraints.
+Let $a \defeq |I_+|$, $b \defeq |I_-|$, and $c \defeq |I_0| + |E_0|$.
+Then $m = a + b + c$ and $m' \defeq ab + c$.</p>
+<p>If $a = 0$ or $b = 0$, then $m' = c \le m$. For $a \ge 1$ and $b \ge 1$, we get
+\begin{align}
+m^2 - 4m' &amp;= (a+b+c)^2 - 4(ab + c)
+\\ &amp;= (a-b)^2 + c(c + 2(a-1) + 2(b-1))
+\\ &amp;\ge 0
+\end{align}
+Hence, $m' \le m^2/4$. Since $m' \in \mathbb{Z}$, we get $m' \le \floor{m^2/4}$.</p>
+<p>Furthermore, when $m$ is even, setting $a = b = m/2$ and $c = 0$, we get $m' = m^2/4$.
+When $m \ge 4$, $m^2/4 \ge m$, so $m^2/4 = \max(m, m^2/4)$.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/finite-gen.html">
+        <span class="deptitle">
+        Finitely generated set is polyhedron</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 7</li><li>Number of transitive dependencies: 10</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+        <span class="deptitle">
+        Group</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+        <span class="deptitle">
+        Ring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+        <span class="deptitle">
+        Field</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+        <span class="deptitle">
+        Vector Space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html">
+        <span class="deptitle">
+        Semiring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+        <span class="deptitle">
+        Matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/cone.html">
+        <span class="deptitle">
+        Cone</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-combination.html">
+        <span class="deptitle">
+        Convex combination and convex hull</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-set.html">
+        <span class="deptitle">
+        Convex set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/polyhedron.html">
+        <span class="deptitle">
+        Polyhedral set and polyhedral cone</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

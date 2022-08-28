@@ -2830,6 +2830,19 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/polyhedron.html"
 },
 {
+"type": "theoremdef",
+"title": "Fourier-Motzkin Elimination",
+"description": "An algorithm for projecting a polyhedron into one lower dimension.",
+"keywords": [
+"FME",
+"projection",
+"projecting",
+"dimension reduction"
+],
+"uci": "/convexity/polyhedra/fme",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/fme.html"
+},
+{
 "type": "def",
 "title": "Basic feasible solutions",
 "description": "Let P = {x: Ax \u2264 b, Cx = d} be a polyhedron in R^n. A point x in P is called a basic feasible solution of P iff at least n linearly independent constraints are tight at x.",
@@ -2862,6 +2875,18 @@
 "description": "Let P be a polyhedron that doesn't contain a ray. Then every point in P can be expressed as a convex combination of basic feasible solutions of P.",
 "uci": "/convexity/polyhedra/bounded-repr",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bounded-repr.html"
+},
+{
+"type": "theorem",
+"title": "Convex hull of a finite number of points in Euclidean space is bounded",
+"uci": "/convexity/euc-convex-hull-is-bounded",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/euc-convex-hull-is-bounded.html"
+},
+{
+"type": "theorem",
+"title": "Finitely generated set is polyhedron",
+"uci": "/convexity/polyhedra/finite-gen",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/finite-gen.html"
 },
 {
 "type": "def",

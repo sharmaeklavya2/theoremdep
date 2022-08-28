@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Convex combination and convex hull - TheoremDep</title>
+<title>Convex hull of a finite number of points in Euclidean space is bounded - TheoremDep</title>
 <meta name="description" content="Track dependencies between theorems." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
@@ -26,61 +26,14 @@
 </nav>
 
 <div id="main">
-<h1> Convex combination and convex hull </h1>
+<h1> Convex hull of a finite number of points in Euclidean space is bounded </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-combination.html">
         <span class="deptitle">
-        Vector Space</span>
-    </a>
-    </li>
-</ol>
-
-<div class="horizontal-rule"></div>
-<p>Let $V$ be a vector space over $\mathbb{R}$.
-Let $X = \{x_1, x_2, \ldots, x_n\} \subseteq V$ be a (multi-)set.
-Then $z \in V$ is called a convex combination of $X$ iff
-there exist $\lambda_1, \lambda_2, \ldots, \lambda_n$
-such that all of the following hold:</p>
-<ul>
-<li>$\lambda_i \in \mathbb{R}$ and $\lambda_i \ge 0$ for all $i$.</li>
-<li>$\sum_{i=1}^n \lambda_i = 1$.</li>
-<li>$z = \sum_{i=1}^n \lambda_ix_i$.</li>
-</ul>
-<p>$z \in V$ is called a strict convex combination of $X$ iff
-all elements of $X$ are distinct and
-there exist $\lambda_1, \lambda_2, \ldots, \lambda_n$
-such that all of the following hold:</p>
-<ul>
-<li>$\lambda_i \in \mathbb{R}$ and $\lambda_i &gt; 0$ for all $i$.</li>
-<li>$\sum_{i=1}^n \lambda_i = 1$.</li>
-<li>$z = \sum_{i=1}^n \lambda_ix_i$.</li>
-</ul>
-<p>It is easy to see that if $z$ is a convex combination of $X$,
-then it is a strict convex combination of a subset of $X$.</p>
-<p>The set of all convex combinations of $X$ is called the convex hull of $X$.</p>
-
-<div class="horizontal-rule"></div>
-<h2> Dependency for: </h2>
-<ol class="deplist">
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/extreme-point.html">
-        <span class="deptitle">
-        Extreme point of a convex set</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/euc-convex-hull-is-bounded.html">
-        <span class="deptitle">
-        Convex hull of a finite number of points in Euclidean space is bounded</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/extdir-of-ccone-as-extp-of-inter.html">
-        <span class="deptitle">
-        Extreme direction of convex cone as extreme point of intersection with hyperplane</span>
+        Convex combination and convex hull</span>
     </a>
     </li>
     <li>
@@ -89,15 +42,44 @@ then it is a strict convex combination of a subset of $X$.</p>
         Convex set</span>
     </a>
     </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p><span class="invisible">
+$\newcommand{\defeq}{=}$
+$\newcommand{\xhat}{\widehat{x}}$
+</span>
+Let $X \defeq \{x^{(i)} \in \mathbb{R}^n: 1 \le i \le m\}$.
+Let $P$ be the convex hull of $X$.
+Then $|x_j|$ is finite for all $j$ and all $x \in P$.</p>
+<h2>Proof</h2>
+<p>Let $\beta \defeq \max_{i=1}^m \max_{j=1}^n |x^{(i)}_j|$.
+Let $\xhat \in P$. Let $\xhat = \sum_{i=1}^m \alpha_i x^{(i)}$ such that
+$\alpha_i \ge 0$ for all $i$ and $\sum_{i=1}^m \alpha_i = 1$. Then for any $j$,
+\begin{align}
+\|\xhat_j\| &amp;= \left|\sum_{i=1}^m \alpha_i x^{(i)}_j\right|
+\\ &amp;\le \sum_{i=1}^m |\alpha_i x^{(i)}_j|
+\\ &amp;\le \sum_{i=1}^m \alpha_i \beta = \beta.
+\end{align}</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/transitivity.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/unbounded-has-direction.html">
         <span class="deptitle">
-        Transitivity of convexity</span>
+        Polyhedron is unbounded iff it has direction</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/finite-gen.html">
+        <span class="deptitle">
+        Finitely generated set is polyhedron</span>
     </a>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 4</li><li>Number of transitive dependencies: 4</li></ul>
+<ul><li>Depth: 6</li><li>Number of transitive dependencies: 6</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -124,6 +106,18 @@ then it is a strict convex combination of a subset of $X$.</p>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
         <span class="deptitle">
         Vector Space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-combination.html">
+        <span class="deptitle">
+        Convex combination and convex hull</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-set.html">
+        <span class="deptitle">
+        Convex set</span>
     </a>
     </li>
 </ol>

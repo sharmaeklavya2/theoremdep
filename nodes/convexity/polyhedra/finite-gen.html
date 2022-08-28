@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>Finitely generated set is polyhedron - TheoremDep</title>
+<meta name="description" content="Track dependencies between theorems." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" aria-label="Search" type="text" autocomplete="off" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Finitely generated set is polyhedron </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/polyhedron.html">
+        <span class="deptitle">
+        Polyhedral set and polyhedral cone</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/fme.html">
+        <span class="deptitle">
+        Fourier-Motzkin Elimination</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/euc-convex-hull-is-bounded.html">
+        <span class="deptitle">
+        Convex hull of a finite number of points in Euclidean space is bounded</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p><span class="invisible">
+$\newcommand{\defeq}{=}$
+$\newcommand{\xhat}{\widehat{x}}$
+</span>
+Let $\{x^{(i)} \in \mathbb{R}^n: 1 \le i \le p\}$ and $\{d^{(j)} \in \mathbb{R}^n - \{0\}: 1 \le j \le q\}$
+be $p+q$ vectors ($p$ and $q$ are finite). Let
+\[ P \defeq \left\{\sum_{i=1}^p \lambda_i x^{(i)} + \sum_{j=1}^q \mu_j d^{(j)}:
+\begin{array}{l}
+\lambda \in \mathbb{R}_{\ge 0}^p, \mu \in \mathbb{R}_{\ge 0}^q,
+\\ \sum_{i=1}^p \lambda_i = 1
+\end{array} \right\}. \]
+Then $P$ is a polyhedron.</p>
+<p>Furthermore, $P$ is a polytope iff $q = 0$.
+$P$ is a polyhedral cone if $x^{(i)} = 0$ for all $i$.</p>
+<h2>Proof that $P$ is a polyhedron</h2>
+<p>Let
+\[ Q \defeq \left\{(z, \lambda, \mu): \begin{array}{l}
+\lambda \in \mathbb{R}_{\ge 0}^p, \mu \in \mathbb{R}_{\ge 0}^q,
+\\ \sum_{i=1}^p \lambda_i = 1,
+\\ z = \sum_{i=1}^p \lambda_i x^{(i)} + \sum_{j=1}^q \mu_j d^{(j)}
+\end{array} \right\}. \]</p>
+<p>By applying Fourier-Motzkin Elimination $p+q$ times to $Q$, we get $P$.
+Hence, $P$ is a polyhedron.</p>
+<h2>Proof that $P$ is a polytope iff $q = 0$.</h2>
+<p>If $q \neq 0$, then $x^{(1)} + \alpha d^{(1)} \in P$ for all $\alpha \in \mathbb{R}_{\ge 0}$.
+By picking a sufficiently large $\alpha$,
+we can make $\|x^{(1)} + \alpha d^{(1)}\|$ arbitrarily large.
+Hence, $P$ is not bounded.</p>
+<p>If $q = 0$, then $P$ is the convex hull of $\{x^{(i)}: 1 \le i \le p\}$, and so it is bounded.</p>
+<h2>Proof that $P$ is a cone if $x^{(i)} = 0$ for all $i$</h2>
+<p>If $x^{(i)} = 0$ for all $i$, then
+$P = \{\sum_{j=1}^q \mu_jd^{(j)}: \mu \in \mathbb{R}^q_{\ge 0}\}$.
+Suppose $\xhat \in P$. Then $\exists \mu \in \mathbb{R}_{\ge 0}^q$ such that
+$\xhat = \sum_{i=1}^q \mu_jd^{(j)}$.
+Let $\alpha \in \mathbb{R}_{\ge 0}$.
+Then $\alpha\xhat = \sum_{j=1}^d (\alpha\mu_j)d^{(j)}$.
+Hence, $\alpha\xhat \in P$. Hence, $P$ is a cone.</p>
+
+<div class="horizontal-rule"></div>
+<h2 class="no-deps"> Dependency for: None </h2>
+<h2> Info: </h2>
+<ul><li>Depth: 8</li><li>Number of transitive dependencies: 12</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+        <span class="deptitle">
+        Group</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+        <span class="deptitle">
+        Ring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+        <span class="deptitle">
+        Field</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+        <span class="deptitle">
+        Vector Space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html">
+        <span class="deptitle">
+        Semiring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
+        <span class="deptitle">
+        Matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/cone.html">
+        <span class="deptitle">
+        Cone</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-combination.html">
+        <span class="deptitle">
+        Convex combination and convex hull</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-set.html">
+        <span class="deptitle">
+        Convex set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/polyhedron.html">
+        <span class="deptitle">
+        Polyhedral set and polyhedral cone</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/fme.html">
+        <span class="deptitle">
+        Fourier-Motzkin Elimination</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/euc-convex-hull-is-bounded.html">
+        <span class="deptitle">
+        Convex hull of a finite number of points in Euclidean space is bounded</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>
