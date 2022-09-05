@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Basis of F^n - TheoremDep</title>
-<meta name="description" content="Track dependencies between theorems." />
+<title>Pointing a polyhedron - TheoremDep</title>
+<meta name="description" content="Pointing is the process of decomposing a polyhedron into a pointed polyhedron and a subspace." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,26 +26,14 @@
 </nav>
 
 <div id="main">
-<h1> Basis of F^n </h1>
+<h1> Pointing a polyhedron </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/polyhedron.html">
         <span class="deptitle">
-        Field</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
-        <span class="deptitle">
-        Vector Space</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/vector-space.html">
-        <span class="deptitle">
-        Matrices over a field form a vector space</span>
+        Polyhedral set and polyhedral cone</span>
     </a>
     </li>
     <li>
@@ -54,54 +42,95 @@
         Basis of a vector space</span>
     </a>
     </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rank.html">
+        <span class="deptitle">
+        Rank of a matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep.html">
+        <span class="deptitle">
+        Linear independence</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/double-recession-space.html">
+        <span class="deptitle">
+        Double directions of a polyhedron</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/rank-homogenous.html">
+        <span class="deptitle">
+        Rank of a homogenous system of linear equations</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/ortho-joining.html">
+        <span class="deptitle">
+        Joining orthogonal linindep sets</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/n-linindep-is-basis.html">
+        <span class="deptitle">
+        A set of dim(V) linearly independent vectors is a basis</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis-of-fn.html">
+        <span class="deptitle">
+        Basis of F^n</span>
+    </a>
+    </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $F$ be a field.
-$F^n = \{(a_1, a_2, \ldots, a_n): a_i \in F\}$,
-where addition and scalar multiplication is defined to be element-wise.</p>
-<p>Then $F^n$ is a vector space with a basis of size n:
-$E = \{e_1 = (1, 0, \ldots, 0), e_2 = (0, 1, \ldots, 0), \ldots, e_n = (0, 0, \ldots, 1) \}$.</p>
-<p>$E$ is called the standard basis of $F^n$.</p>
+<p><span class="invisible">
+$\newcommand{\defeq}{=}$
+$\newcommand{\rank}{\operatorname{rank}}$
+$\newcommand{\Span}{\operatorname{span}}$
+$\newcommand{\xhat}{\widehat{x}}$
+$\newcommand{\xtild}{\widetilde{x}}$
+$\newcommand{\yhat}{\widehat{y}}$
+</span></p>
+<p>Let $P \defeq \{x \in \mathbb{R}^n: (a_i^Tx = b_i, \forall i \in E) \wedge (a_i^Tx \ge b_i, \forall i \in I)\}$
+be a non-empty polyhedron.
+Let $A \defeq \{a_i: i \in I \cup E\}$.
+Let $B \defeq \{a_i: i \in T\}$ (where $T \subseteq I \cup E$) be a basis of $A$.</p>
+<p>Let $D \defeq \{x \in \mathbb{R}^n: (a_i^Tx = 0, \forall i \in I \cup E)\}$.
+Let $C \defeq \{a_i: i \in H\}$ (where $H$ is a new set of indices, i.e., $H \cap (I \cup E) = \emptyset$)
+be a basis of $D$.
+Let $P' \defeq \{x \in P: (a_i^Tx = 0, \forall i \in H)\}$.</p>
+<p>Then the following hold:</p>
+<ol>
+<li>$|C| = n - \rank(A)$ and $B \cup C$ is a basis of $\mathbb{R}^n$</li>
+<li>$P = \{\xhat + d: \xhat \in P', d \in D\}$.</li>
+</ol>
+<p>Note that part 1 implies that $P'$ is a full-rank polyhedron.
+Part 2 implies that any polyhedron $P$ can be decomposed into a full-rank polyhedron $P'$
+and the double recession space of $P$.</p>
 <h2>Proof</h2>
-<p>$F^n$ is the set of $n$ by $1$ matrices, so it is a vector space.</p>
-<p>\[ \sum_{i=1}^n a_ie_i = 0
-\implies (a_1, a_2, \ldots, a_n) = 0
-\implies a_i = 0 \forall i \]</p>
-<p>Therefore, $E$ is linearly independent.</p>
-<p>Since $(a_1, a_2, \ldots, a_n) = \sum_{i=1}^n a_ie_i$, $E$ spans $F^n$.
-Therefore, $E$ is a basis of $F^n$.</p>
+<p>By the rank-nullity theorem, we get $|C| = n - \rank(A) = n - |B|$.
+Since $\forall i \in I \cup E$, $\forall j \in H$, $a_i^Ta_j = 0$,
+we get that $B \cup C$ is linearly independent.
+Since $|B \cup C| = |B| + |C| = n$, we get that $B \cup C$ is a basis of $\mathbb{R}^n$.</p>
+<p>For $\xhat \in P'$ and $d \in D$, we get $\xhat + d \in P$
+since $d$ is a double direction of $P$.</p>
+<p>Let $x \in P$. Since $B \cup C$ is a basis of $\mathbb{R}^n$, we get
+$x = \sum_{i \in I \cup E \cup H} \alpha_ia_i$.
+Let $\xhat \defeq \sum_{i \in I \cup E} \alpha_ia_i$ and $d \defeq \sum_{i \in H} \alpha_ia_i$.
+Then $\xhat + d = x$. $d \in \Span(C) = D$.
+For $i \in I \cup E$, $a_i^T\xhat = a_i^Tx - a_i^Td = a_i^Tx$.
+Hence, $\xhat \in P$.
+Also, for $j \in H$, $a_j^T\xhat = \sum_{i \in I \cup E} \alpha_i(a_j^Ta_i) = 0$.
+Hence, $\xhat \in P'$.</p>
 
 <div class="horizontal-rule"></div>
-<h2> Dependency for: </h2>
-<ol class="deplist">
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/pointing.html">
-        <span class="deptitle">
-        Pointing a polyhedron</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/canonical-decomposition.html">
-        <span class="deptitle">
-        Canonical decomposition of a linear transformation</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix-of-orthonormal-basis-change.html">
-        <span class="deptitle">
-        Matrix of orthonormal basis change</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix.html">
-        <span class="deptitle">
-        Matrix of linear transformation</span>
-    </a>
-    </li>
-</ol>
+<h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul><li>Depth: 6</li><li>Number of transitive dependencies: 37</li></ul>
+<ul><li>Depth: 9</li><li>Number of transitive dependencies: 53</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -111,6 +140,9 @@ Therefore, $E$ is a basis of $F^n$.</p>
     </li>
     <li>
     <span class="deptitleuci missing">/linear-algebra/matrices/gauss-jordan-algo</span>
+    </li>
+    <li>
+    <span class="deptitleuci missing">/complex-numbers/conjugation-is-homomorphic</span>
     </li>
     <li>
     <span class="deptitleuci missing">/sets-and-relations/equivalence-relation</span>
@@ -167,6 +199,48 @@ Therefore, $E$ is a basis of $F^n$.</p>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span.html">
         <span class="deptitle">
         Span</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-increment.html">
+        <span class="deptitle">
+        Incrementing a linearly independent set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/inner-product-space.html">
+        <span class="deptitle">
+        Inner product space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/antilin-in-2nd.html">
+        <span class="deptitle">
+        Inner product is anti-linear in second argument</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/orthogonality.html">
+        <span class="deptitle">
+        Orthogonality and orthonormality</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/gram-schmidt-process.html">
+        <span class="deptitle">
+        Gram-Schmidt Process</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/ortho-vectors-are-linindep.html">
+        <span class="deptitle">
+        A set of mutually orthogonal vectors is linearly independent</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/ortho-joining.html">
+        <span class="deptitle">
+        Joining orthogonal linindep sets</span>
     </a>
     </li>
     <li>
@@ -318,6 +392,54 @@ Therefore, $E$ is a basis of $F^n$.</p>
         <span class="deptitle">
         Rank of a matrix</span>
     </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/n-linindep-is-basis.html">
+        <span class="deptitle">
+        A set of dim(V) linearly independent vectors is a basis</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis-of-fn.html">
+        <span class="deptitle">
+        Basis of F^n</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/cone.html">
+        <span class="deptitle">
+        Cone</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-combination.html">
+        <span class="deptitle">
+        Convex combination and convex hull</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-set.html">
+        <span class="deptitle">
+        Convex set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/polyhedron.html">
+        <span class="deptitle">
+        Polyhedral set and polyhedral cone</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/double-direction.html">
+        <span class="deptitle">
+        Double direction of a convex set and double recession space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/double-recession-space.html">
+        <span class="deptitle">
+        Double directions of a polyhedron</span>
+<span class="doc-status">(incomplete)</span>    </a>
     </li>
 </ol>
 

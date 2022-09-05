@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>A set of mutually orthogonal vectors is linearly independent - TheoremDep</title>
-<meta name="description" content="Track dependencies between theorems." />
+<title>Implicit equality - TheoremDep</title>
+<meta name="description" content="An inequality constraint a^Tx ≥ b in a polyhedron P is called an implicit equality for P if a^Tx = b for all x ∈ P." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,66 +26,40 @@
 </nav>
 
 <div id="main">
-<h1> A set of mutually orthogonal vectors is linearly independent </h1>
+<h1> Implicit equality </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/inner-product-space.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/polyhedron.html">
         <span class="deptitle">
-        Inner product space</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep.html">
-        <span class="deptitle">
-        Linear independence</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/orthogonality.html">
-        <span class="deptitle">
-        Orthogonality and orthonormality</span>
+        Polyhedral set and polyhedral cone</span>
     </a>
     </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $S = \{v_1, v_2, \ldots, v_n\}$ be a set of orthogonal vectors from an inner product space $V$.
-Then $S$ is linearly independent.</p>
-<h2>Proof</h2>
-<p>Assume that $S$ is linearly dependent.
-Without loss of generality, assume that $v_n$ is a linear combination of the rest of the vectors.
-Let $v_n = \sum_{i=1}^{n-1} a_iv_i$.</p>
-<p>\begin{align}
-&amp; \|v_n\|^2 = \langle v_n , v_n \rangle
-\\ &amp;= \left\langle \sum_{i=1}^{n-1} a_iv_i , v_n \right\rangle
-\\ &amp;= \sum_{i=1}^{n-1} a_i \langle v_i, v_n \rangle \tag{by linearity}
-\\ &amp;= \sum_{i=1}^{n-1} a_i 0
-\\ &amp;= 0
-\end{align}</p>
-<p>By the positive-definiteness property of inner-product spaces, $\|v_n\|^2 = 0 \Rightarrow v_n = 0$.
-This contradicts the fact that all vectors in $S$ are non-zero.
-Therefore, $S$ is linearly independent.</p>
+<p>Let $P = \{x \in \mathbb{R}^n: (a_i^Tx \ge b_i, \forall i \in I) \wedge (a_i^Tx = b_i, \forall i \in E)\}$.
+For $i \in I$, $a_i^Tx \ge b_i$ is called an implicit equality for $P$ if $a_i^Tx = b_i$ for all $x \in P$.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/eigenvectors/symmetric-operator-has-n-ortho-eigenvectors.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/interior-point.html">
         <span class="deptitle">
-        Symmetric operator on V has a basis of orthonormal eigenvectors</span>
+        Interior point of polyhedron</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/ortho-joining.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/dimension.html">
         <span class="deptitle">
-        Joining orthogonal linindep sets</span>
+        Dimension of a polyhedron</span>
     </a>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 6</li><li>Number of transitive dependencies: 7</li></ul>
+<ul><li>Depth: 7</li><li>Number of transitive dependencies: 10</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -115,21 +89,39 @@ Therefore, $S$ is linearly independent.</p>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/semiring.html">
         <span class="deptitle">
-        Linear independence</span>
+        Semiring</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/inner-product-space.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/matrix.html">
         <span class="deptitle">
-        Inner product space</span>
+        Matrix</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/orthogonality.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/cone.html">
         <span class="deptitle">
-        Orthogonality and orthonormality</span>
+        Cone</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-combination.html">
+        <span class="deptitle">
+        Convex combination and convex hull</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-set.html">
+        <span class="deptitle">
+        Convex set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/polyhedron.html">
+        <span class="deptitle">
+        Polyhedral set and polyhedral cone</span>
     </a>
     </li>
 </ol>

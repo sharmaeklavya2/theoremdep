@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Basis of F^n - TheoremDep</title>
+<title>span(A)=span(B) & |A|=|B| & A is linindep ⟹ B is linindep - TheoremDep</title>
 <meta name="description" content="Track dependencies between theorems." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
@@ -26,16 +26,10 @@
 </nav>
 
 <div id="main">
-<h1> Basis of F^n </h1>
+<h1> span(A)=span(B) & |A|=|B| & A is linindep ⟹ B is linindep </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
-        <span class="deptitle">
-        Field</span>
-    </a>
-    </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
         <span class="deptitle">
@@ -43,65 +37,49 @@
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/vector-space.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep.html">
         <span class="deptitle">
-        Matrices over a field form a vector space</span>
+        Linear independence</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span.html">
         <span class="deptitle">
-        Basis of a vector space</span>
+        Span</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span-decrement.html">
+        <span class="deptitle">
+        Decrementing a span</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-is-smaller-than-span.html">
+        <span class="deptitle">
+        Linearly independent set is not bigger than a span</span>
     </a>
     </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $F$ be a field.
-$F^n = \{(a_1, a_2, \ldots, a_n): a_i \in F\}$,
-where addition and scalar multiplication is defined to be element-wise.</p>
-<p>Then $F^n$ is a vector space with a basis of size n:
-$E = \{e_1 = (1, 0, \ldots, 0), e_2 = (0, 1, \ldots, 0), \ldots, e_n = (0, 0, \ldots, 1) \}$.</p>
-<p>$E$ is called the standard basis of $F^n$.</p>
+<p><span class="invisible">
+$\newcommand{Span}{\operatorname{span}}$
+</span>
+Let $A$ and $B$ be sets of vectors such that
+$\Span(A) = \Span(B)$ and $|A| = |B|$ and $A$ is linearly independent.
+Then $B$ is also linearly independent.</p>
 <h2>Proof</h2>
-<p>$F^n$ is the set of $n$ by $1$ matrices, so it is a vector space.</p>
-<p>\[ \sum_{i=1}^n a_ie_i = 0
-\implies (a_1, a_2, \ldots, a_n) = 0
-\implies a_i = 0 \forall i \]</p>
-<p>Therefore, $E$ is linearly independent.</p>
-<p>Since $(a_1, a_2, \ldots, a_n) = \sum_{i=1}^n a_ie_i$, $E$ spans $F^n$.
-Therefore, $E$ is a basis of $F^n$.</p>
+<p>Let $V = \Span(A) = \Span(B)$. Suppose $B$ is linearly dependent.
+Then $\exists v \in B$ such that $\Span(B) = \Span(B - \{v\})$.
+Since $A$ is linearly independent, $A \subseteq V$, and $B - \{v\}$ spans $V$,
+we get $|A| \le |B - \{v\}| = |B|-1$, which is a contradiction.
+Hence, $B$ is linearly independent.</p>
 
 <div class="horizontal-rule"></div>
-<h2> Dependency for: </h2>
-<ol class="deplist">
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/pointing.html">
-        <span class="deptitle">
-        Pointing a polyhedron</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/canonical-decomposition.html">
-        <span class="deptitle">
-        Canonical decomposition of a linear transformation</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix-of-orthonormal-basis-change.html">
-        <span class="deptitle">
-        Matrix of orthonormal basis change</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix.html">
-        <span class="deptitle">
-        Matrix of linear transformation</span>
-    </a>
-    </li>
-</ol>
+<h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul><li>Depth: 6</li><li>Number of transitive dependencies: 37</li></ul>
+<ul><li>Depth: 6</li><li>Number of transitive dependencies: 38</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -167,6 +145,12 @@ Therefore, $E$ is a basis of $F^n$.</p>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span.html">
         <span class="deptitle">
         Span</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span-decrement.html">
+        <span class="deptitle">
+        Decrementing a span</span>
     </a>
     </li>
     <li>
@@ -290,12 +274,6 @@ Therefore, $E$ is a basis of $F^n$.</p>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html">
-        <span class="deptitle">
-        Basis of a vector space</span>
-    </a>
-    </li>
-    <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-is-smaller-than-span.html">
         <span class="deptitle">
         Linearly independent set is not bigger than a span</span>
@@ -317,6 +295,12 @@ Therefore, $E$ is a basis of $F^n$.</p>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rank.html">
         <span class="deptitle">
         Rank of a matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html">
+        <span class="deptitle">
+        Basis of a vector space</span>
     </a>
     </li>
 </ol>

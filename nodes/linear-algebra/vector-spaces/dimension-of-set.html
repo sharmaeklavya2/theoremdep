@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Basis of F^n - TheoremDep</title>
-<meta name="description" content="Track dependencies between theorems." />
+<title>Dimension of a set of vectors - TheoremDep</title>
+<meta name="description" content="The dimension of a set of vectors is the maximum number of affinely independent vectors in the set minus 1." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,16 +26,10 @@
 </nav>
 
 <div id="main">
-<h1> Basis of F^n </h1>
+<h1> Dimension of a set of vectors </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
-        <span class="deptitle">
-        Field</span>
-    </a>
-    </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
         <span class="deptitle">
@@ -43,10 +37,10 @@
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/vector-space.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/affindep.html">
         <span class="deptitle">
-        Matrices over a field form a vector space</span>
-    </a>
+        Affine independence</span>
+<span class="doc-status">(incomplete)</span>    </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html">
@@ -54,54 +48,45 @@
         Basis of a vector space</span>
     </a>
     </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-is-smaller-than-span.html">
+        <span class="deptitle">
+        Linearly independent set is not bigger than a span</span>
+    </a>
+    </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $F$ be a field.
-$F^n = \{(a_1, a_2, \ldots, a_n): a_i \in F\}$,
-where addition and scalar multiplication is defined to be element-wise.</p>
-<p>Then $F^n$ is a vector space with a basis of size n:
-$E = \{e_1 = (1, 0, \ldots, 0), e_2 = (0, 1, \ldots, 0), \ldots, e_n = (0, 0, \ldots, 1) \}$.</p>
-<p>$E$ is called the standard basis of $F^n$.</p>
-<h2>Proof</h2>
-<p>$F^n$ is the set of $n$ by $1$ matrices, so it is a vector space.</p>
-<p>\[ \sum_{i=1}^n a_ie_i = 0
-\implies (a_1, a_2, \ldots, a_n) = 0
-\implies a_i = 0 \forall i \]</p>
-<p>Therefore, $E$ is linearly independent.</p>
-<p>Since $(a_1, a_2, \ldots, a_n) = \sum_{i=1}^n a_ie_i$, $E$ spans $F^n$.
-Therefore, $E$ is a basis of $F^n$.</p>
+<p><span class="invisible">
+$\newcommand{\defeq}{=}$
+</span>
+Let $S$ be a set of vectors. Let $X \defeq \{x_1, \ldots, x_n\}$ be the
+maximum-cardinality affinely independent subset of $S$.
+Then the dimension of $S$, denoted as $\dim(S)$, is defined to be $n-1$.</p>
+<p>Note that if $S$ is a vector space, then this definition of $\dim$
+is the same as the other definition (cardinality of basis).</p>
+<h2>Proof of equivalence of definitions for vector spaces</h2>
+<p>Suppose $S$ is a vector space. Let $B \defeq \{v_1, \ldots, v_m\}$ be a basis of $S$.
+We will show that $m = n-1$.</p>
+<p>$B \cup \{0\} = \{v_1, \ldots, v_m, 0\}$ is affinely independent.
+Hence, $|B \cup \{0\}| \le |X|$, i.e., $m \le n-1$.</p>
+<p>Let $d_i \defeq x_i - x_n$ for $i \in [n-1]$, and $D \defeq \{d_i: i \in [n-1]\}$.
+Then by closure of vector spaces under addition and scalar multiplication,
+we get that $D \subseteq S$. Also, $D$ is linearly independent.
+Since $B$ spans $S$, we have $|D| \le |B|$. So, $n-1 \le m$.</p>
 
 <div class="horizontal-rule"></div>
 <h2> Dependency for: </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/pointing.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/dimension.html">
         <span class="deptitle">
-        Pointing a polyhedron</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/canonical-decomposition.html">
-        <span class="deptitle">
-        Canonical decomposition of a linear transformation</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix-of-orthonormal-basis-change.html">
-        <span class="deptitle">
-        Matrix of orthonormal basis change</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix.html">
-        <span class="deptitle">
-        Matrix of linear transformation</span>
+        Dimension of a polyhedron</span>
     </a>
     </li>
 </ol>
 <h2> Info: </h2>
-<ul><li>Depth: 6</li><li>Number of transitive dependencies: 37</li></ul>
+<ul><li>Depth: 6</li><li>Number of transitive dependencies: 38</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -162,6 +147,12 @@ Therefore, $E$ is a basis of $F^n$.</p>
         <span class="deptitle">
         Linear independence</span>
     </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/affindep.html">
+        <span class="deptitle">
+        Affine independence</span>
+<span class="doc-status">(incomplete)</span>    </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span.html">

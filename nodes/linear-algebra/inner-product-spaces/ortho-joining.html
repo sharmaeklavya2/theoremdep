@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>Joining orthogonal linindep sets - TheoremDep</title>
+<meta name="description" content="Let A and B be sets of linindep vectors such that ∀ (u, v) ∈ A × B, we have <u,v> = 0. Then A ∪ B is linindep." />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
+"extensions": ["tex2jax.js"],
+"jax": ["input/TeX", "output/CommonHTML"],
+"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
+});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="sitename"><a href="https://sharmaeklavya2.github.io/theoremdep">TheoremDep</a></div>
+    <form id="searchform" method="get" action="https://sharmaeklavya2.github.io/theoremdep/search.html">
+        <input id="searchbox" aria-label="Search" type="text" autocomplete="off" name="q" placeholder="Search" />
+        <button id="searchbutton" type="submit" >&#x1F50D;</button>
+    </form>
+</nav>
+
+<div id="main">
+<h1> Joining orthogonal linindep sets </h1>
+<h2> Dependencies:
+ </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/inner-product-space.html">
+        <span class="deptitle">
+        Inner product space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep.html">
+        <span class="deptitle">
+        Linear independence</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span.html">
+        <span class="deptitle">
+        Span</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/gram-schmidt-process.html">
+        <span class="deptitle">
+        Gram-Schmidt Process</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/ortho-vectors-are-linindep.html">
+        <span class="deptitle">
+        A set of mutually orthogonal vectors is linearly independent</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/antilin-in-2nd.html">
+        <span class="deptitle">
+        Inner product is anti-linear in second argument</span>
+    </a>
+    </li>
+</ol>
+
+<div class="horizontal-rule"></div>
+<p><span class="invisible">
+$\newcommand{\defeq}{=}$
+$\newcommand{\Span}{\operatorname{span}}$
+</span>
+Let $A$ and $B$ be sets of vectors from an inner-product space such that
+$A$ is linearly independent, $B$ is linearly independent,
+and $\forall u \in A$, $\forall v \in B$, $\langle u, v \rangle = 0$.
+Then $A \cup B$ is linearly independent.</p>
+<h2>Proof</h2>
+<p>Apply the Gram-Schmidt process to $A$ to get orthogonal vectors $A'$.
+Apply the Gram-Schmidt process to $B$ to get orthogonal vectors $B'$.
+Then $\Span(A) = \Span(A')$ and $\Span(B) = \Span(B')$.
+Hence, $\Span(A \cup B) = \Span(A' \cup B')$.
+Also, $|A' \cup B'| = |A \cup B|$.
+We will see that $A' \cup B'$ is linearly independent,
+which will imply $A \cup B$ is linearly independent.</p>
+<p>Let $u' \in A'$ and $v' \in B'$.
+Let $A \defeq \{a_1, a_2, \ldots, a_m\}$ and $B \defeq \{b_1, b_2, \ldots, b_n\}$.
+Since $u' \in \Span(A') = \Span(A)$, we get that $u' = \sum_{i=1}^m \alpha_ia_i$
+for some $\alpha_1, \ldots, \alpha_m$.
+Similarly, $v' = \sum_{j=1}^n \beta_jb_j$. Hence,
+\[ \langle u', v' \rangle
+= \left\langle \sum_{i=1}^m \alpha_ia_i, \sum_{j=1}^n \beta_jb_j \right\rangle
+= \sum_{i=1}^m \sum_{j=1}^n \alpha_i\overline{\beta_j} \langle a_i, b_j \rangle
+= \sum_{i=1}^m \sum_{j=1}^n \alpha_i\overline{\beta_j} 0 = 0. \]
+Hence, $A' \cup B'$ is orthogonal.
+Hence, $A' \cup B'$ is linearly independent.
+Hence, $A \cup B$ is linearly independent.</p>
+
+<div class="horizontal-rule"></div>
+<h2> Dependency for: </h2>
+<ol class="deplist">
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/pointing.html">
+        <span class="deptitle">
+        Pointing a polyhedron</span>
+    </a>
+    </li>
+</ol>
+<h2> Info: </h2>
+<ul><li>Depth: 7</li><li>Number of transitive dependencies: 12</li></ul>
+
+<div class="horizontal-rule"></div>
+<h2> Transitive dependencies: </h2>
+<ol class="deplist">
+    <li>
+    <span class="deptitleuci missing">/complex-numbers/conjugation-is-homomorphic</span>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/groups/group.html">
+        <span class="deptitle">
+        Group</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/ring.html">
+        <span class="deptitle">
+        Ring</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+        <span class="deptitle">
+        Field</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+        <span class="deptitle">
+        Vector Space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep.html">
+        <span class="deptitle">
+        Linear independence</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span.html">
+        <span class="deptitle">
+        Span</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/inner-product-space.html">
+        <span class="deptitle">
+        Inner product space</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/antilin-in-2nd.html">
+        <span class="deptitle">
+        Inner product is anti-linear in second argument</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/orthogonality.html">
+        <span class="deptitle">
+        Orthogonality and orthonormality</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/gram-schmidt-process.html">
+        <span class="deptitle">
+        Gram-Schmidt Process</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/ortho-vectors-are-linindep.html">
+        <span class="deptitle">
+        A set of mutually orthogonal vectors is linearly independent</span>
+    </a>
+    </li>
+</ol>
+
+</div>
+</body>
+</html>

@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Basis of F^n - TheoremDep</title>
-<meta name="description" content="Track dependencies between theorems." />
+<title>Dimension of a polyhedron - TheoremDep</title>
+<meta name="description" content="The dimension of a polyhedron is n-rank(A), where A is set of equality constraint vectors." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({
 "TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
@@ -26,82 +26,92 @@
 </nav>
 
 <div id="main">
-<h1> Basis of F^n </h1>
+<h1> Dimension of a polyhedron </h1>
 <h2> Dependencies:
  </h2>
 <ol class="deplist">
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/abstract-algebra/rings/field.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/polyhedron.html">
         <span class="deptitle">
-        Field</span>
+        Polyhedral set and polyhedral cone</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/vector-space.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/implicit-eq.html">
         <span class="deptitle">
-        Vector Space</span>
+        Implicit equality</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/vector-space.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/affindep.html">
         <span class="deptitle">
-        Matrices over a field form a vector space</span>
+        Affine independence</span>
+<span class="doc-status">(incomplete)</span>    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/dimension-of-set.html">
+        <span class="deptitle">
+        Dimension of a set of vectors</span>
     </a>
     </li>
     <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/basis/basis.html">
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/system-of-linear-equations/rank-homogenous.html">
         <span class="deptitle">
-        Basis of a vector space</span>
+        Rank of a homogenous system of linear equations</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep-is-smaller-than-span.html">
+        <span class="deptitle">
+        Linearly independent set is not bigger than a span</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/interior-point.html">
+        <span class="deptitle">
+        Interior point of polyhedron</span>
     </a>
     </li>
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Let $F$ be a field.
-$F^n = \{(a_1, a_2, \ldots, a_n): a_i \in F\}$,
-where addition and scalar multiplication is defined to be element-wise.</p>
-<p>Then $F^n$ is a vector space with a basis of size n:
-$E = \{e_1 = (1, 0, \ldots, 0), e_2 = (0, 1, \ldots, 0), \ldots, e_n = (0, 0, \ldots, 1) \}$.</p>
-<p>$E$ is called the standard basis of $F^n$.</p>
+<p><span class="invisible">
+$\newcommand{\defeq}{=}$
+$\newcommand{\rank}{\operatorname{rank}}$
+$\newcommand{\xhat}{\widehat{x}}$
+$\let\eps\epsilon$
+</span>
+Let $P \defeq \{x \in \mathbb{R}^n: (a_i^Tx \ge b_i, \forall i \in I) \wedge (a_i^Tx = b_i, \forall i \in E)\}$
+be a non-empty polyhedron without any implicit equalities.
+Let $A \defeq \{a_i: i \in E\}$. Then $\dim(P) = n - \rank(A)$.</p>
 <h2>Proof</h2>
-<p>$F^n$ is the set of $n$ by $1$ matrices, so it is a vector space.</p>
-<p>\[ \sum_{i=1}^n a_ie_i = 0
-\implies (a_1, a_2, \ldots, a_n) = 0
-\implies a_i = 0 \forall i \]</p>
-<p>Therefore, $E$ is linearly independent.</p>
-<p>Since $(a_1, a_2, \ldots, a_n) = \sum_{i=1}^n a_ie_i$, $E$ spans $F^n$.
-Therefore, $E$ is a basis of $F^n$.</p>
+<p>Interpret $A$ as a matrix whose rows are $\{a_i^T: i \in E\}$.
+Let $S \defeq \{x \in \mathbb{R}^n: Ax = 0\}$.
+By the rank-nullity theorem, $\dim(S) = n - \rank(A)$.</p>
+<h3>Proof that $\dim(P) \le n - \rank(A)$.</h3>
+<p>Let $X \defeq \{x^{(0)}, x^{(1)}, \ldots, x^{(m)}\}$ be the
+max number of affinely independent vectors in $P$.
+Then $\dim(P) = m$. For $i \in [m]$, let $d^{(i)} \defeq x^{(i)} - x^{(0)}$
+and $D \defeq \{d^{(i)}: i \in [m]\}$. Then $D$ is linearly independent.</p>
+<p>For any $j \in E$, we have $a_j^Td^{(i)} = a_j^Tx^{(j)} - a_j^Tx^{(0)} = b_j - b_j = 0$.
+Hence, $Ad^{(i)} = 0$. Hence, $D \subseteq S$.
+Since $D$ is linearly independent, $|D| \le \dim(S) = n - \rank(A)$.
+Since, $\dim(P) = |D|$, we get $\dim(P) \le n - \rank(A)$.</p>
+<h3>Proof that $\dim(P) \ge n - \rank(A)$</h3>
+<p>Let $D \defeq \{d^{(1)}, \ldots, d^{(m)}\}$ be a basis of $S$. Then $m = n - \rank(A)$.
+Let $\xhat \in P$ be an interior point of $P$. Let $x^{(0)} \defeq \xhat$.
+For $i \in [m]$, let $x^{(i)} \defeq \xhat + \eps d^{(i)}$,
+where $\eps$ is an arbitrarily small positive real number.
+For small enough $\eps$, we can guarantee that $x^{(i)} \in P$ for all $i \in [m]$.
+This is because $\xhat$ is an interior point of $P$,
+and for every $j \in E$, $a_j^Tx^{(i)} = a_j^T\xhat = b_j$.
+By construction, $X \defeq \{x^{(i)}: 0 \le i \le m\}$ is affinely independent.
+Also, $X \subseteq P$. Hence, $\dim(P) \ge |X| - 1 = m = n - \rank(A)$.</p>
 
 <div class="horizontal-rule"></div>
-<h2> Dependency for: </h2>
-<ol class="deplist">
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/pointing.html">
-        <span class="deptitle">
-        Pointing a polyhedron</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/canonical-decomposition.html">
-        <span class="deptitle">
-        Canonical decomposition of a linear transformation</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix-of-orthonormal-basis-change.html">
-        <span class="deptitle">
-        Matrix of orthonormal basis change</span>
-    </a>
-    </li>
-    <li>
-    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/matrix.html">
-        <span class="deptitle">
-        Matrix of linear transformation</span>
-    </a>
-    </li>
-</ol>
+<h2 class="no-deps"> Dependency for: None </h2>
 <h2> Info: </h2>
-<ul><li>Depth: 6</li><li>Number of transitive dependencies: 37</li></ul>
+<ul><li>Depth: 9</li><li>Number of transitive dependencies: 45</li></ul>
 
 <div class="horizontal-rule"></div>
 <h2> Transitive dependencies: </h2>
@@ -162,6 +172,12 @@ Therefore, $E$ is a basis of $F^n$.</p>
         <span class="deptitle">
         Linear independence</span>
     </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/affindep.html">
+        <span class="deptitle">
+        Affine independence</span>
+<span class="doc-status">(incomplete)</span>    </a>
     </li>
     <li>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/span.html">
@@ -317,6 +333,48 @@ Therefore, $E$ is a basis of $F^n$.</p>
     <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/matrices/rank.html">
         <span class="deptitle">
         Rank of a matrix</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/dimension-of-set.html">
+        <span class="deptitle">
+        Dimension of a set of vectors</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/cone.html">
+        <span class="deptitle">
+        Cone</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-combination.html">
+        <span class="deptitle">
+        Convex combination and convex hull</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/convex-set.html">
+        <span class="deptitle">
+        Convex set</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/polyhedron.html">
+        <span class="deptitle">
+        Polyhedral set and polyhedral cone</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/implicit-eq.html">
+        <span class="deptitle">
+        Implicit equality</span>
+    </a>
+    </li>
+    <li>
+    <a href="https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/interior-point.html">
+        <span class="deptitle">
+        Interior point of polyhedron</span>
     </a>
     </li>
 </ol>

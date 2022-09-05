@@ -1088,6 +1088,13 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/linindep.html"
 },
 {
+"type": "theoremdef",
+"title": "Affine independence",
+"uci": "/linear-algebra/vector-spaces/affindep",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/affindep.html",
+"status": "incomplete"
+},
+{
 "type": "theorem",
 "title": "Zeros in vector space",
 "description": "0v = 0, a0 = 0, (av = 0 iff a=0 or v=0).",
@@ -1187,6 +1194,13 @@
 "title": "A set of mutually orthogonal vectors is linearly independent",
 "uci": "/linear-algebra/inner-product-spaces/ortho-vectors-are-linindep",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/ortho-vectors-are-linindep.html"
+},
+{
+"type": "theorem",
+"title": "Joining orthogonal linindep sets",
+"description": "Let A and B be sets of linindep vectors such that \u2200 (u, v) \u2208 A \u00d7 B, we have <u,v> = 0. Then A \u222a B is linindep.",
+"uci": "/linear-algebra/inner-product-spaces/ortho-joining",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/inner-product-spaces/ortho-joining.html"
 },
 {
 "type": "theorem",
@@ -2168,6 +2182,19 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/linear-transformation/basis-of-range.html"
 },
 {
+"type": "theoremdef",
+"title": "Dimension of a set of vectors",
+"description": "The dimension of a set of vectors is the maximum number of affinely independent vectors in the set minus 1.",
+"uci": "/linear-algebra/vector-spaces/dimension-of-set",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/dimension-of-set.html"
+},
+{
+"type": "theorem",
+"title": "span(A)=span(B) & |A|=|B| & A is linindep \u27f9 B is linindep",
+"uci": "/linear-algebra/vector-spaces/eq-span-size-linindep",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/linear-algebra/vector-spaces/eq-span-size-linindep.html"
+},
+{
 "type": "theorem",
 "title": "Full-rank square matrix in RREF is the identity matrix",
 "description": "Let A be an n by n matrix. If A is in RREF and all rows of A are non-zero, then A is the identity matrix.",
@@ -2877,6 +2904,48 @@
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/bounded-repr.html"
 },
 {
+"type": "def",
+"title": "Implicit equality",
+"description": "An inequality constraint a^Tx \u2265 b in a polyhedron P is called an implicit equality for P if a^Tx = b for all x \u2208 P.",
+"uci": "/convexity/polyhedra/implicit-eq",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/implicit-eq.html"
+},
+{
+"type": "theorem",
+"title": "Interior point of polyhedron",
+"description": "If there are no implicit equality constraints, there exists a point that is not tight at any inequality constraint.",
+"uci": "/convexity/polyhedra/interior-point",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/interior-point.html"
+},
+{
+"type": "theorem",
+"title": "Dimension of a polyhedron",
+"description": "The dimension of a polyhedron is n-rank(A), where A is set of equality constraint vectors.",
+"uci": "/convexity/polyhedra/dimension",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/dimension.html"
+},
+{
+"type": "theoremdef",
+"title": "Double direction of a convex set and double recession space",
+"description": "d is a double direction of a convex set S iff \u2200 x \u2208 S, {x + \u03bbd: \u03bb \u2208 \u211d} \u2286 S. The double recession space of S is the set of all double directions of S.",
+"uci": "/convexity/double-direction",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/double-direction.html"
+},
+{
+"type": "theorem",
+"title": "Double directions of a polyhedron",
+"uci": "/convexity/polyhedra/double-recession-space",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/double-recession-space.html",
+"status": "incomplete"
+},
+{
+"type": "theorem",
+"title": "Pointing a polyhedron",
+"description": "Pointing is the process of decomposing a polyhedron into a pointed polyhedron and a subspace.",
+"uci": "/convexity/polyhedra/pointing",
+"url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/pointing.html"
+},
+{
 "type": "theorem",
 "title": "Convex hull of a finite number of points in Euclidean space is bounded",
 "uci": "/convexity/euc-convex-hull-is-bounded",
@@ -2971,14 +3040,14 @@
 },
 {
 "type": "theorem",
-"title": "Representing point in polyhedral cone",
+"title": "Representing point in pointed polyhedral cone",
 "description": "A point in a pointed polyhedral cone can be represented as a non-negative combination of extreme directions.",
 "uci": "/convexity/polyhedra/cone-repr",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/cone-repr.html"
 },
 {
 "type": "theorem",
-"title": "Representing a point in polyhedron",
+"title": "Representing point in full-rank polyhedron",
 "description": "Let P be a non-empty full-rank polyhedron. Then any point x \u2208 P can be represented as a convex combination of the basic feasible solutions of P plus a non-negative combination of the extreme directions of P.",
 "uci": "/convexity/polyhedra/repr",
 "url": "https://sharmaeklavya2.github.io/theoremdep/nodes/convexity/polyhedra/repr.html"
