@@ -1,5 +1,13 @@
 body {
-    color: rgb(50, 50, 50);
+    --bg-color: white;
+    --text-color: #202020;
+    --emph-color: #101010;
+    --link-color: #1a0dab;
+    --vlink-color: #681da8;
+    --text-danger: #dc3545;
+    --text-warning: #ffc107;
+    --text-success: #198754;
+    --text-secondary: #888;
     --nav-bgcolor-lo: rgb(0, 0, 0, 0.05);
     --nav-bgcolor: rgb(0, 0, 0, 0.1);
     --nav-bgcolor-hi: rgb(0, 0, 0, 0.15);
@@ -7,20 +15,29 @@ body {
     --my-green: darkgreen;
 }
 @media (prefers-color-scheme: dark) {
-    body, #searchbox {
-        background-color: rgb(27, 30, 32);
-        color: rgb(210, 210, 210);
-    }
-    body {
-        --nav-bgcolor-lo: rgb(255, 255, 255, 0.05);
-        --nav-bgcolor: rgb(255, 255, 255, 0.1);
-        --nav-bgcolor-hi: rgb(255, 255, 255, 0.15);
-        --nav-bgcolor-hi2: rgb(255, 255, 255, 0.2);
-        --my-green: green;
-    }
-    a {color: rgb(65, 175, 235);}
-    a:visited {color: rgb(150, 100, 230);}
+body {
+    --bg-color: #1b1e20;
+    --text-color: #c8c8c8;
+    --emph-color: #e4e4e4;
+    --link-color: #8ab4f8;
+    --vlink-color: #c58af9;
+    --text-danger: #e74c3c;
+    --text-warning: #f39c12;
+    --text-success: #00bc8c;
+    --nav-bgcolor-lo: rgb(255, 255, 255, 0.05);
+    --nav-bgcolor: rgb(255, 255, 255, 0.1);
+    --nav-bgcolor-hi: rgb(255, 255, 255, 0.15);
+    --nav-bgcolor-hi2: rgb(255, 255, 255, 0.2);
+    --my-green: green;
 }
+}
+
+body, #searchbox {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+a {color: var(--link-color);}
+a:visited {color: var(--vlink-color);}
 
 html {
     font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Open Sans", "Helvetica Neue", sans-serif;
@@ -58,7 +75,7 @@ nav #searchbox, nav #searchbutton {
     width: 1.6em;
     font-size: 1.6em;
     padding: 0.2rem;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
     border: none;
     cursor: pointer;
 }
@@ -124,9 +141,9 @@ pre > code, code {
     margin: 1em 0;
     border: 1px solid var(--nav-bgcolor);
 }
-.text-danger { color: #dc3545; }
-.text-warning { color: #ffc107; }
-.text-success { color: #28a745; }
+.text-danger {color: var(--text-danger);}
+.text-warning {color: var(--text-warning);}
+.text-success {color: var(--text-success);}
 
 .deplist .missing {
     font-family: monospace;
@@ -136,7 +153,7 @@ pre > code, code {
 }
 .deplist .reason {
     margin-left: 1em;
-    color: rgb(128, 128, 128);
+    color: var(--text-secondary);
     font-size: 0.8em;
 }
 .no-deps {
@@ -154,7 +171,7 @@ pre > code, code {
 }
 .deps-status, .doc-status {
     font-size: 80%;
-    color: rgb(128, 128, 128);
+    color: var(--text-secondary);
 }
 .citation {
     margin: 0.5em 0 0.5em 0;
