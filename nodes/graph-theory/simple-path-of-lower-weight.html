@@ -7,13 +7,19 @@
 <title>Removing cycles can make a path shorter - TheoremDep</title>
 <meta name="description" content="Let p be a path from u to v which does not contain any negative cycles. Then there exists a simple path p' from u to v such that w(p') ≤ w(p)." />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/theoremdep/theme/base.css" />
-<script type="text/x-mathjax-config">MathJax.Hub.Config({
-"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]},
-"extensions": ["tex2jax.js"],
-"jax": ["input/TeX", "output/CommonHTML"],
-"tex2jax": {"inlineMath": [ ["$","$"], ["\\(","\\)"] ], "processEscapes": true},
-});</script>
-<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+<script type="text/javascript">
+MathJax = {
+    "tex": {
+        "inlineMath": [["$", "$"], ["\\(", "\\)"]],
+        "displayMath": [["\\[", "\\]"]]
+    },
+    "chtml": {
+        "displayAlign": "left",
+        "displayIndent": "1em",
+    }
+}
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 
 <body>
