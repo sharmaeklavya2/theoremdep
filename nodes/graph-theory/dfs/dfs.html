@@ -64,24 +64,30 @@ MathJax = {
 </ol>
 
 <div class="horizontal-rule"></div>
-<p>Depth-first search (DFS) is an algorithm which systematically explores a graph $G = (V, E)$.</p>
+<p><span class="invisible">
+$\newcommand{\color}{\operatorname{color}}$
+$\newcommand{\depth}{\operatorname{depth}}$
+$\newcommand{\visit}{\operatorname{visit}}$
+$\newcommand{\adj}{\operatorname{adj}}$
+</span>
+Depth-first search (DFS) is an algorithm which systematically explores a graph $G = (V, E)$.</p>
 <p>It returns a DFS forest of $G$ and
 discovery-start-time and discovery-finish-time for each vertex.</p>
 <h2>The algorithm</h2>
 <p>DFS maintains 5 attributes for every vertex:</p>
 <ul>
-<li>Start time: $\operatorname{s}: V \mapsto \mathbb{N}$</li>
-<li>Finish time: $\operatorname{f}: V \mapsto \mathbb{N}$</li>
-<li>$\operatorname{\pi}: V \mapsto V \cup \{\textrm{null}\}$</li>
-<li>$\operatorname{color}: V \mapsto \{\textrm{black}, \textrm{gray}, \textrm{white}\}$</li>
-<li>$\operatorname{depth}: V \mapsto \mathbb{N}$</li>
+<li>Start time: $s: V \mapsto \mathbb{N}$</li>
+<li>Finish time: $f: V \mapsto \mathbb{N}$</li>
+<li>$\pi: V \mapsto V \cup \{\textrm{null}\}$</li>
+<li>$\color: V \mapsto \{\textrm{black}, \textrm{gray}, \textrm{white}\}$</li>
+<li>$\depth: V \mapsto \mathbb{N}$</li>
 </ul>
-<p>Initially,
-$\operatorname{s}(v) = \operatorname{f}(v) = 0$,
-$\operatorname{\pi}(v) = \textrm{null}$,
-$\operatorname{color}(v) = \textrm{white}$
-and $\operatorname{depth}(v) = 0$.</p>
-<p>Let $\operatorname{adj}(u) = \{v \in V: (u, v) \in E\}$.</p>
+<p>Initially, for every vertex $v$,
+$s(v) = f(v) = 0$,
+$\pi(v) = \textrm{null}$,
+$\color(v) = \textrm{white}$,
+and $\depth(v) = 0$.</p>
+<p>Let $\adj(u) = \{v \in V: (u, v) \in E\}$.</p>
 <p>DFS algorithm on $G$:</p>
 <pre><code>for u in G.V:
     color[u] = white
@@ -107,13 +113,13 @@ for u in G.V:
         visit(u, 0)
 </code></pre>
 <p>As <code>visit(u)</code> iterates over <code>adj[u]</code>, we say that the edge $(u, v)$ is
-<strong>explored</strong> for $v \in \operatorname{adj}(u)$.</p>
+<strong>explored</strong> for $v \in \adj(u)$.</p>
 <p>Vertices with depth 0 are called <strong>root vertices</strong>.
 When DFS terminates, root vertices are the only vertices to have $\pi(u) = \textrm{null}$,
 since $\pi(v)$ is set to a vertex before all non-root <code>visit(v)</code> calls.</p>
 <p>When DFS terminates, $\pi$ can be interpreted as a graph $G_π = (V, E_π)$
 where $(u, v) \in E_π \iff π(v) = u \neq \textrm{null}$.
-Since $\pi(v)$ is set to $u$ only for $v \in \operatorname{adj}(u)$, $G_π \subseteq G$.
+Since $\pi(v)$ is set to $u$ only for $v \in \adj(u)$, $G_π \subseteq G$.
 Therefore, $G_π$ is called the <strong>predecessor subgraph</strong> of $G$.</p>
 <h2>Properties of DFS</h2>
 <ul>
@@ -123,7 +129,7 @@ because <code>visit</code> is only called on white vertices
 and <code>visit(u)</code> makes $u$ gray before any recursive calls.</p>
 </li>
 <li>
-<p>During the execution of DFS, whenever <code>time</code> is set, the following invariant holds on $\operatorname{color}(u)$:</p>
+<p>During the execution of DFS, whenever <code>time</code> is set, the following invariant holds on $\color(u)$:</p>
 <ul>
 <li>If <code>visit(u)</code> hasn't yet been called, $u$ is white.</li>
 <li>If <code>visit(u)</code> was called but <code>visit(u)</code> hasn't ended, $u$ is gray.</li>
@@ -132,16 +138,16 @@ and <code>visit(u)</code> makes $u$ gray before any recursive calls.</p>
 </li>
 <li>
 <p>$G_π$ is acyclic because for every edge $(v, u)$ in $G_π$,
-$\operatorname{depth}(v) = \operatorname{depth}(u) + 1$.
+$\depth(v) = \depth(u) + 1$.
 Since $G_π$ is an acyclic predecessor graph, it is a union of rooted trees.
 Therefore, $G_π$ is also called the <strong>DFS forest</strong> of $G$.</p>
 </li>
 <li>
 <p><code>visit(v)</code> was called during <code>visit(u)</code> iff $v$ is a descendant of $u$ in $G_π$. Proof: \begin{align}
-    &amp; \operatorname{visit}(v) \textrm{ was called during } \operatorname{visit}(u)
+    &amp; \visit(v) \textrm{ was called during } \visit(u)
     \\ &amp;\iff \exists w_0, w_1, \ldots, w_k, \textrm{ such that } (
         w_0 = u \wedge w_k = v \wedge (\forall 1 \le i &lt; k,
-            \operatorname{visit}(w_i) \textrm{ made a direct call to } \operatorname{visit}(w_{i+1})))
+            \visit(w_i) \textrm{ made a direct call to } \visit(w_{i+1})))
     \\ &amp;\iff \exists w_0, w_1, \ldots, w_k, \textrm{ such that } (
         w_0 = u \wedge w_k = v \wedge (\forall 1 \le i &lt; k, \pi(w_{i+1}) = w_i))
     \\ &amp;\iff \textrm{ there is a path in } G_π \textrm{ from } u \textrm{ to } v
