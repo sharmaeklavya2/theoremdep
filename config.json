@@ -4,7 +4,7 @@
     "DESCRIPTION": "Track dependencies between theorems.",
     "SITEURL": "https://sharmaeklavya2.github.io/theoremdep",
 
-    "REPO": "https://github.com/sharmaeklavya2/theoremdep-source",
+    "REPO": "https://github.com/sharmaeklavya2/theoremdep",
     "LONG_DESCRIPTION": "TheoremDep contains many theorems and shows you the dependencies for each theorem. Theorem X is said to be dependent on theorem Y iff Y is used as a lemma in the proof of X. Therefore, this website presents proofs in a way which simultaneously achieves the goals of not assuming any prior knowledge and making it easy to skip parts you already know.",
     "SIMILAR_PROJECTS": {
         "Metacademy": "https://metacademy.org/about",
